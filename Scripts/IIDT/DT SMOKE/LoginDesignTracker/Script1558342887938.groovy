@@ -13,3 +13,17 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
+WebUI.openBrowser('')
+
+WebUI.navigateToUrl('http://designtracker.uat.brandmuscle.net/login.aspx?ReturnUrl=%2f')
+
+WebUI.maximizeWindow()
+
+WebUI.setText(findTestObject('DESIGNTRACKER/LoginPage/Page_DesignTracker -  Brandmuscle/UserName'), 'dibyashree.jyoti@brandmuscle.com')
+
+WebUI.setEncryptedText(findTestObject('DESIGNTRACKER/LoginPage/Page_DesignTracker -  Brandmuscle/Password'), '8bxY5gEhEkwKDaQT9s4tsg==')
+
+WebUI.click(findTestObject('DESIGNTRACKER/LoginPage/Page_DesignTracker -  Brandmuscle/LoginBtn'))
+
+WebUI.click(findTestObject('Object Repository/Page_DesignTracker -  Brandmuscle/a_Logout'))
+

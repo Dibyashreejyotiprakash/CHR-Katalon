@@ -3,7 +3,7 @@
    <description></description>
    <name>input_Password_ctl00cphMainLoginCentivPassword</name>
    <tag></tag>
-   <elementGuidId>83a4d24d-4c7b-458e-b7b6-303a55acb9a9</elementGuidId>
+   <elementGuidId>ff86b13d-7be2-47f0-85b2-7d68643665f1</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>

@@ -13,17 +13,27 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.openBrowser('http://designtracker.uat.brandmuscle.net')
+WebUI.openBrowser('')
 
-WebUI.maximizeWindow()
+WebUI.navigateToUrl('http://designtracker.uat.brandmuscle.net/login.aspx?ReturnUrl=%2f')
 
-WebUI.setText(findTestObject('DESIGNTRACKER/LoginPage/Page_DesignTracker -  Brandmuscle/input_Username_ctl00cphMainLoginCentivUserName'), 
-    '')
+WebUI.setText(findTestObject('Object Repository/Page_DesignTracker -  Brandmuscle/input_Username_ctl00cphMainLoginCentivUserName'), 
+    'dibyashree.jyoti@brandmuscle.com')
 
-WebUI.setText(findTestObject('DESIGNTRACKER/LoginPage/Page_DesignTracker -  Brandmuscle/input_Password_ctl00cphMainLoginCentivPassword'), 
-    '')
+WebUI.setEncryptedText(findTestObject('Object Repository/Page_DesignTracker -  Brandmuscle/input_Password_ctl00cphMainLoginCentivPassword'), 
+    '8bxY5gEhEkwKDaQT9s4tsg==')
 
-WebUI.click(findTestObject(null))
+WebUI.click(findTestObject('Object Repository/Page_DesignTracker -  Brandmuscle/input__ctl00cphMainLoginCentivLoginButton'))
 
-WebUI.acceptAlert()
+WebUI.click(findTestObject('Object Repository/Page_DesignTracker -  Brandmuscle/input_Jobs with Inventoried Parts_ctl00ctl00cphMaincphMainbtnSearch'))
+
+WebUI.click(findTestObject('Object Repository/Page_DesignTracker -  Brandmuscle/a_Select'))
+
+WebUI.click(findTestObject('Object Repository/Page_DesignTracker -  Brandmuscle/input_Jobs with Inventoried Parts_ctl00ctl00cphMaincphMainbtnReset'))
+
+WebUI.click(findTestObject('Object Repository/Page_DesignTracker -  Brandmuscle/span_SEARCH'))
+
+WebUI.closeBrowser()
+
+WebUI.click(findTestObject('Object Repository/Page_DesignTracker -  Brandmuscle/span_HOME'))
 

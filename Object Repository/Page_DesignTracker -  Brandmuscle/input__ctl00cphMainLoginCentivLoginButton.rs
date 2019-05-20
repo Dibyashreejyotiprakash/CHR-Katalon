@@ -3,7 +3,7 @@
    <description></description>
    <name>input__ctl00cphMainLoginCentivLoginButton</name>
    <tag></tag>
-   <elementGuidId>fb3e47d7-7482-40ef-a1c5-2f8724642cb9</elementGuidId>
+   <elementGuidId>0339efe5-bff3-40a9-934e-8085aee65aea</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
@@ -94,7 +94,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
       <type>Main</type>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Capture object:'])[1]/preceding::input[1]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)=concat('id(', '&quot;', 'ctl00_cphMain_LoginCentiv_LoginButton', '&quot;', ')')])[1]/preceding::input[1]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>

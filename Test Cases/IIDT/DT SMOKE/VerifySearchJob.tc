@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>Test</name>
+   <name>VerifySearchJob</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>e68ac9ac-23a3-403e-b3ac-2cd464b55979</testCaseGuid>
+   <testCaseGuid>5c9b9007-ab25-4109-9046-eeadaf4f5a04</testCaseGuid>
 </TestCaseEntity>
