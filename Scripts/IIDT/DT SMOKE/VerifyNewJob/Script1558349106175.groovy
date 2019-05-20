@@ -17,27 +17,43 @@ WebUI.openBrowser('http://designtracker.uat.brandmuscle.net')
 
 WebUI.maximizeWindow()
 
-WebUI.waitForPageLoad(0)
+WebUI.waitForPageLoad(30)
 
 WebUI.setText(findTestObject('DESIGNTRACKER/LoginPage/Page_DesignTracker -  Brandmuscle/UserName'), 'dibyashree.jyoti@brandmuscle.com')
 
 WebUI.setText(findTestObject('DESIGNTRACKER/LoginPage/Page_DesignTracker -  Brandmuscle/Password'), 'dibya@1234')
 
-WebUI.waitForElementVisible(findTestObject('DESIGNTRACKER/LoginPage/Page_DesignTracker -  Brandmuscle/LoginBtn'), 0)
+WebUI.waitForElementVisible(findTestObject('DESIGNTRACKER/LoginPage/Page_DesignTracker -  Brandmuscle/LoginBtn'), 30)
 
 WebUI.click(findTestObject('DESIGNTRACKER/LoginPage/Page_DesignTracker -  Brandmuscle/LoginBtn'))
 
-WebUI.waitForPageLoad(0)
+WebUI.waitForPageLoad(30)
 
-WebUI.waitForElementVisible(findTestObject('DESIGNTRACKER/HomePage/Page_DesignTracker -  Brandmuscle/Jobs'), 0)
+WebUI.waitForElementVisible(findTestObject('DESIGNTRACKER/HomePage/Page_DesignTracker -  Brandmuscle/Jobs'), 30)
 
 WebUI.mouseOverOffset(findTestObject('DESIGNTRACKER/HomePage/Page_DesignTracker -  Brandmuscle/Jobs'), 0, 0)
 
-WebUI.waitForElementVisible(findTestObject('DESIGNTRACKER/HomePage/Page_DesignTracker -  Brandmuscle/New'), 0)
+WebUI.waitForElementVisible(findTestObject('DESIGNTRACKER/HomePage/Page_DesignTracker -  Brandmuscle/New'), 30)
 
 WebUI.mouseOver(findTestObject('DESIGNTRACKER/HomePage/Page_DesignTracker -  Brandmuscle/New'))
 
 WebUI.click(findTestObject('DESIGNTRACKER/HomePage/Page_DesignTracker -  Brandmuscle/New'))
 
-WebUI.waitForPageLoad(0)
+WebUI.waitForPageLoad(30)
+
+WebUI.acceptAlert()
+
+WebUI.verifyElementVisible(findTestObject('DESIGNTRACKER/JobNew/Page_DesignTracker -  Brandmuscle/CorporationDropDown'))
+
+WebUI.verifyElementVisible(findTestObject('DESIGNTRACKER/JobNew/Page_DesignTracker -  Brandmuscle/SupplierDistributorDropdown'))
+
+WebUI.verifyElementVisible(findTestObject('DESIGNTRACKER/JobNew/Page_DesignTracker -  Brandmuscle/SalesPersonDropDown'))
+
+WebUI.verifyElementVisible(findTestObject('DESIGNTRACKER/JobNew/Page_DesignTracker -  Brandmuscle/AccontDropDown'))
+
+WebUI.verifyElementVisible(findTestObject('DESIGNTRACKER/JobNew/Page_DesignTracker -  Brandmuscle/Jobtype'))
+
+WebUI.verifyElementClickable(findTestObject('DESIGNTRACKER/JobNew/Page_DesignTracker -  Brandmuscle/CreateJobBtn'))
+
+WebUI.closeBrowser()
 
