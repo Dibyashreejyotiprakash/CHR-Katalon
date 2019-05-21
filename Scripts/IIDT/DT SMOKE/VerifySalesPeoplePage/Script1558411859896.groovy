@@ -15,19 +15,31 @@ import internal.GlobalVariable as GlobalVariable
 
 WebUI.openBrowser('')
 
-WebUI.navigateToUrl('http://designtracker.uat.brandmuscle.net/login.aspx?ReturnUrl=%2f')
-
-WebUI.maximizeWindow()
+CustomKeywords.'com.dtmethods.utilitymethods.OpenApplication'('http://designtracker.uat.brandmuscle.net')
 
 WebUI.setText(findTestObject('DESIGNTRACKER/LoginPage/UserName'), 'dibyashree.jyoti@brandmuscle.com')
 
-WebUI.setEncryptedText(findTestObject('DESIGNTRACKER/LoginPage/Password'), '8bxY5gEhEkwKDaQT9s4tsg==')
+WebUI.setText(findTestObject('DESIGNTRACKER/LoginPage/Password'), 'dibya@1234')
 
 WebUI.click(findTestObject('DESIGNTRACKER/LoginPage/LoginBtn'))
 
 WebUI.waitForPageLoad(30)
 
-WebUI.click(findTestObject('DESIGNTRACKER/HomePage/LogOutLink'))
+WebUI.waitForElementVisible(findTestObject('DESIGNTRACKER/HomePage/SITEADMINISTRATION'), 
+    30)
+
+WebUI.mouseOverOffset(findTestObject('DESIGNTRACKER/HomePage/SITEADMINISTRATION'), 0, 
+    0)
+
+WebUI.waitForElementVisible(findTestObject('DESIGNTRACKER/HomePage/SALES PEOPLE'), 30)
+
+WebUI.mouseOver(findTestObject('DESIGNTRACKER/HomePage/SALES PEOPLE'))
+
+WebUI.click(findTestObject('DESIGNTRACKER/HomePage/SALES PEOPLE'))
+
+WebUI.waitForPageLoad(30)
+
+WebUI.verifyTextPresent('Market User Management', false)
 
 WebUI.closeBrowser()
 

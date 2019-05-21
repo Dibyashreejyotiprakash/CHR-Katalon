@@ -17,31 +17,31 @@ WebUI.openBrowser('http://designtracker.uat.brandmuscle.net/login.aspx?ReturnUrl
 
 WebUI.maximizeWindow()
 
-WebUI.setText(findTestObject('DESIGNTRACKER/LoginPage/Page_DesignTracker -  Brandmuscle/UserName'), 'dibyashree.jyoti@brandmuscle.com')
+WebUI.setText(findTestObject('DESIGNTRACKER/LoginPage/UserName'), 'dibyashree.jyoti@brandmuscle.com')
 
-WebUI.setText(findTestObject('DESIGNTRACKER/LoginPage/Page_DesignTracker -  Brandmuscle/Password'), 'dibya@1234')
+WebUI.setText(findTestObject('DESIGNTRACKER/LoginPage/Password'), 'dibya@1234')
 
-WebUI.click(findTestObject('DESIGNTRACKER/LoginPage/Page_DesignTracker -  Brandmuscle/LoginBtn'))
+WebUI.click(findTestObject('DESIGNTRACKER/LoginPage/LoginBtn'))
 
 WebUI.waitForPageLoad(0)
 
 WebUI.getUrl()
 
-WebUI.scrollToElement(findTestObject('DESIGNTRACKER/HomePage/Page_DesignTracker -  Brandmuscle/ResetBtn'), 0)
+WebUI.scrollToElement(findTestObject('DESIGNTRACKER/HomePage/ResetBtn'), 0)
 
-WebUI.verifyElementClickable(findTestObject('DESIGNTRACKER/HomePage/Page_DesignTracker -  Brandmuscle/ResetBtn'), FailureHandling.STOP_ON_FAILURE)
+WebUI.verifyElementClickable(findTestObject('DESIGNTRACKER/HomePage/ResetBtn'), FailureHandling.STOP_ON_FAILURE)
 
-WebUI.verifyElementPresent(findTestObject('DESIGNTRACKER/HomePage/Page_DesignTracker -  Brandmuscle/Jobs'), 0)
+WebUI.verifyElementPresent(findTestObject('DESIGNTRACKER/HomePage/Jobs'), 0)
 
-WebUI.mouseOver(findTestObject('DESIGNTRACKER/HomePage/Page_DesignTracker -  Brandmuscle/Jobs'))
+WebUI.mouseOver(findTestObject('DESIGNTRACKER/HomePage/Jobs'))
 
-WebUI.mouseOver(findTestObject('DESIGNTRACKER/HomePage/Page_DesignTracker -  Brandmuscle/SearchBtn'))
+WebUI.mouseOver(findTestObject('DESIGNTRACKER/HomePage/SearchBtn'))
 
-WebUI.click(findTestObject('DESIGNTRACKER/HomePage/Page_DesignTracker -  Brandmuscle/SearchBtn'))
+WebUI.click(findTestObject('DESIGNTRACKER/HomePage/SearchBtn'))
 
-WebUI.scrollToElement(findTestObject('DESIGNTRACKER/HomePage/Page_DesignTracker -  Brandmuscle/SelectLink'), 0)
+WebUI.scrollToElement(findTestObject('DESIGNTRACKER/HomePage/SelectLink'), 0)
 
-WebUI.click(findTestObject('DESIGNTRACKER/HomePage/Page_DesignTracker -  Brandmuscle/SelectLink'))
+WebUI.click(findTestObject('DESIGNTRACKER/HomePage/SelectLink'))
 
 WebUI.waitForPageLoad(0)
 

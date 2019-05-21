@@ -1,0 +1,100 @@
+1
+00:00:00,134 --> 00:00:00,136
+1. openBrowser("")
+
+2
+00:00:03,797 --> 00:00:03,798
+5. navigateToUrl("https://admintool.v5qa.brandmuscle.net")
+
+3
+00:00:07,767 --> 00:00:07,767
+9. waitForPageLoad(30)
+
+4
+00:00:07,786 --> 00:00:07,786
+13. maximizeWindow()
+
+5
+00:00:08,920 --> 00:00:08,921
+17. waitForElementVisible(findTestObject("CONSOLIDATOR/LogInPage/Username"), 30)
+
+6
+00:00:08,974 --> 00:00:08,974
+21. setText(findTestObject("CONSOLIDATOR/LogInPage/Username"), "chrtestuser@brandmuscle.com")
+
+7
+00:00:09,188 --> 00:00:09,189
+25. waitForElementVisible(findTestObject("CONSOLIDATOR/LogInPage/Password"), 30)
+
+8
+00:00:09,220 --> 00:00:09,220
+29. setText(findTestObject("CONSOLIDATOR/LogInPage/Password"), "Ownlocal@123")
+
+9
+00:00:09,352 --> 00:00:09,352
+33. click(findTestObject("CONSOLIDATOR/LogInPage/LoginBtn"))
+
+10
+00:00:12,273 --> 00:00:12,274
+37. waitForPageLoad(30)
+
+11
+00:00:12,300 --> 00:00:12,300
+41. waitForElementVisible(findTestObject("CONSOLIDATOR/LogInPage/BusinessUnitDropdown"), 30)
+
+12
+00:00:12,345 --> 00:00:12,346
+45. click(findTestObject("CONSOLIDATOR/LogInPage/BusinessUnitDropdown"))
+
+13
+00:00:12,489 --> 00:00:12,489
+49. click(findTestObject("CONSOLIDATOR/LogInPage/BusinessUnitName"))
+
+14
+00:00:27,296 --> 00:00:27,297
+53. waitForPageLoad(30, STOP_ON_FAILURE)
+
+15
+00:00:27,307 --> 00:00:27,308
+57. waitForElementVisible(findTestObject("CONSOLIDATOR/UpdateLogPage/Select Business UnitBtn"), 30)
+
+16
+00:00:27,364 --> 00:00:27,365
+61. click(findTestObject("CONSOLIDATOR/UpdateLogPage/Select Business UnitBtn"))
+
+17
+00:00:27,448 --> 00:00:27,449
+65. waitForPageLoad(30)
+
+18
+00:00:27,458 --> 00:00:27,458
+69. waitForElementVisible(findTestObject("CONSOLIDATOR/ParentBusinessUnit/ParentBusinessUnitDropDown"), 30)
+
+19
+00:00:31,941 --> 00:00:31,941
+73. click(findTestObject("CONSOLIDATOR/ParentBusinessUnit/ParentBusinessUnitDropDown"))
+
+20
+00:00:32,055 --> 00:00:32,056
+77. click(findTestObject("CONSOLIDATOR/ParentBusinessUnit/ParentBusinessUnitName"))
+
+21
+00:00:36,701 --> 00:00:36,701
+81. click(findTestObject("CONSOLIDATOR/ParentBusinessUnit/SubmitBtn (1)"))
+
+22
+00:00:40,911 --> 00:00:40,912
+85. waitForElementVisible(findTestObject("CONSOLIDATOR/UpdateLogPage/span_Modules"), 30)
+
+23
+00:00:40,981 --> 00:00:40,982
+89. mouseOverOffset(findTestObject("CONSOLIDATOR/UpdateLogPage/span_Modules"), 0, 0)
+
+24
+00:00:41,037 --> 00:00:41,038
+93. mouseOver(findTestObject("CONSOLIDATOR/UpdateLogPage/span_Consolidator"))
+
+25
+00:00:41,099 --> 00:00:41,099
+97. click(findTestObject("CONSOLIDATOR/UpdateLogPage/span_Consolidator"))
+

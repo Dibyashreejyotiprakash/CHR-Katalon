@@ -1,0 +1,118 @@
+Suite/Test/Step Name,Browser,Description,Tag,Start time,End time,Duration,Status
+ConsolidatorSmoke,Chrome 74.0.3729.157,,,2019-05-21 14:21:04,2019-05-21 14:22:33,1m - 28.661s,PASSED
+,,,,,,,
+Test Cases/IIDT/DT SMOKE/LoginDesignTracker,Chrome 74.0.3729.157,,,2019-05-21 14:21:04,2019-05-21 14:21:19,14.690s,PASSED
+"openBrowser("""")",Chrome 74.0.3729.157,,,2019-05-21 14:21:05,2019-05-21 14:21:10,5.070s,PASSED
+"navigateToUrl(""http://designtracker.uat.brandmuscle.net/login.aspx?ReturnUrl=%2f"")",Chrome 74.0.3729.157,,,2019-05-21 14:21:10,2019-05-21 14:21:13,3.001s,PASSED
+maximizeWindow(),Chrome 74.0.3729.157,,,2019-05-21 14:21:13,2019-05-21 14:21:14,1.155s,PASSED
+"setText(findTestObject(""DESIGNTRACKER/LoginPage/Page_DesignTrackerLogin/UserName""), ""dibyashree.jyoti@brandmuscle.com"")",Chrome 74.0.3729.157,,,2019-05-21 14:21:14,2019-05-21 14:21:14,0.249s,PASSED
+"setEncryptedText(findTestObject(""DESIGNTRACKER/LoginPage/Page_DesignTrackerLogin/Password""), ""8bxY5gEhEkwKDaQT9s4tsg=="")",Chrome 74.0.3729.157,,,2019-05-21 14:21:14,2019-05-21 14:21:15,0.180s,PASSED
+"click(findTestObject(""DESIGNTRACKER/LoginPage/Page_DesignTrackerLogin/LoginBtn""))",Chrome 74.0.3729.157,,,2019-05-21 14:21:15,2019-05-21 14:21:17,2.205s,PASSED
+waitForPageLoad(30),Chrome 74.0.3729.157,,,2019-05-21 14:21:17,2019-05-21 14:21:17,0.059s,PASSED
+"click(findTestObject(""DESIGNTRACKER/HomePage/Page_DesignTracker -  Brandmuscle/LogOutLink""))",Chrome 74.0.3729.157,,,2019-05-21 14:21:17,2019-05-21 14:21:18,1.007s,PASSED
+closeBrowser(),Chrome 74.0.3729.157,,,2019-05-21 14:21:18,2019-05-21 14:21:19,1.176s,PASSED
+,,,,,,,
+Test Cases/IIDT/DT SMOKE/VerifyJobClosingPage,Chrome 74.0.3729.157,,,2019-05-21 14:21:19,2019-05-21 14:21:31,12.357s,PASSED
+"openBrowser("""")",Chrome 74.0.3729.157,,,2019-05-21 14:21:19,2019-05-21 14:21:22,2.378s,PASSED
+"navigateToUrl(""http://designtracker.uat.brandmuscle.net/"")",Chrome 74.0.3729.157,,,2019-05-21 14:21:22,2019-05-21 14:21:26,3.755s,PASSED
+maximizeWindow(),Chrome 74.0.3729.157,,,2019-05-21 14:21:26,2019-05-21 14:21:27,1.175s,PASSED
+waitForPageLoad(30),Chrome 74.0.3729.157,,,2019-05-21 14:21:27,2019-05-21 14:21:27,0.019s,PASSED
+"waitForElementVisible(findTestObject(""DESIGNTRACKER/LoginPage/Page_DesignTrackerLogin/UserName""), 30)",Chrome 74.0.3729.157,,,2019-05-21 14:21:27,2019-05-21 14:21:27,0.071s,PASSED
+"setText(findTestObject(""DESIGNTRACKER/LoginPage/Page_DesignTrackerLogin/UserName""), ""dibyashree.jyoti@brandmuscle.com"")",Chrome 74.0.3729.157,,,2019-05-21 14:21:27,2019-05-21 14:21:27,0.209s,PASSED
+"waitForElementVisible(findTestObject(""DESIGNTRACKER/LoginPage/Page_DesignTrackerLogin/Password""), 30)",Chrome 74.0.3729.157,,,2019-05-21 14:21:27,2019-05-21 14:21:27,0.050s,PASSED
+"setText(findTestObject(""DESIGNTRACKER/LoginPage/Page_DesignTrackerLogin/Password""), ""dibya@1234"")",Chrome 74.0.3729.157,,,2019-05-21 14:21:27,2019-05-21 14:21:27,0.127s,PASSED
+"waitForElementVisible(findTestObject(""DESIGNTRACKER/LoginPage/Page_DesignTrackerLogin/LoginBtn""), 30)",Chrome 74.0.3729.157,,,2019-05-21 14:21:27,2019-05-21 14:21:27,0.061s,PASSED
+"click(findTestObject(""DESIGNTRACKER/LoginPage/Page_DesignTrackerLogin/LoginBtn""))",Chrome 74.0.3729.157,,,2019-05-21 14:21:27,2019-05-21 14:21:29,2.201s,PASSED
+waitForPageLoad(30),Chrome 74.0.3729.157,,,2019-05-21 14:21:29,2019-05-21 14:21:30,0.073s,PASSED
+"waitForElementVisible(findTestObject(""DESIGNTRACKER/HomePage/Page_DesignTracker -  Brandmuscle/SITEADMINISTRATION""), 30)",Chrome 74.0.3729.157,,,2019-05-21 14:21:30,2019-05-21 14:21:30,0.079s,PASSED
+"mouseOverOffset(findTestObject(""DESIGNTRACKER/HomePage/Page_DesignTracker -  Brandmuscle/SITEADMINISTRATION""), 0, 0)",Chrome 74.0.3729.157,,,2019-05-21 14:21:30,2019-05-21 14:21:30,0.101s,PASSED
+"waitForElementVisible(findTestObject(""DESIGNTRACKER/HomePage/Page_DesignTracker -  Brandmuscle/JOB CLOSING""), 30)",Chrome 74.0.3729.157,,,2019-05-21 14:21:30,2019-05-21 14:21:30,0.115s,PASSED
+"mouseOver(findTestObject(""DESIGNTRACKER/HomePage/Page_DesignTracker -  Brandmuscle/JOB CLOSING""))",Chrome 74.0.3729.157,,,2019-05-21 14:21:30,2019-05-21 14:21:30,0.063s,PASSED
+"click(findTestObject(""DESIGNTRACKER/HomePage/Page_DesignTracker -  Brandmuscle/JOB CLOSING""))",Chrome 74.0.3729.157,,,2019-05-21 14:21:30,2019-05-21 14:21:31,0.837s,PASSED
+waitForPageLoad(30),Chrome 74.0.3729.157,,,2019-05-21 14:21:31,2019-05-21 14:21:31,0.019s,PASSED
+closeBrowser(),Chrome 74.0.3729.157,,,2019-05-21 14:21:31,2019-05-21 14:21:31,0.723s,PASSED
+,,,,,,,
+Test Cases/IIDT/DT SMOKE/VerifyNewJobPage,Chrome 74.0.3729.157,,,2019-05-21 14:21:31,2019-05-21 14:21:48,16.257s,PASSED
+"openBrowser(""http://designtracker.uat.brandmuscle.net"")",Chrome 74.0.3729.157,,,2019-05-21 14:21:32,2019-05-21 14:21:38,6.102s,PASSED
+maximizeWindow(),Chrome 74.0.3729.157,,,2019-05-21 14:21:38,2019-05-21 14:21:39,1.164s,PASSED
+waitForPageLoad(30),Chrome 74.0.3729.157,,,2019-05-21 14:21:39,2019-05-21 14:21:39,0.015s,PASSED
+"setText(findTestObject(""DESIGNTRACKER/LoginPage/Page_DesignTrackerLogin/UserName""), ""dibyashree.jyoti@brandmuscle.com"")",Chrome 74.0.3729.157,,,2019-05-21 14:21:39,2019-05-21 14:21:39,0.254s,PASSED
+"setText(findTestObject(""DESIGNTRACKER/LoginPage/Page_DesignTrackerLogin/Password""), ""dibya@1234"")",Chrome 74.0.3729.157,,,2019-05-21 14:21:39,2019-05-21 14:21:39,0.174s,PASSED
+"waitForElementVisible(findTestObject(""DESIGNTRACKER/LoginPage/Page_DesignTrackerLogin/LoginBtn""), 30)",Chrome 74.0.3729.157,,,2019-05-21 14:21:39,2019-05-21 14:21:40,0.070s,PASSED
+"click(findTestObject(""DESIGNTRACKER/LoginPage/Page_DesignTrackerLogin/LoginBtn""))",Chrome 74.0.3729.157,,,2019-05-21 14:21:40,2019-05-21 14:21:43,3.427s,PASSED
+waitForPageLoad(30),Chrome 74.0.3729.157,,,2019-05-21 14:21:43,2019-05-21 14:21:43,0.072s,PASSED
+"waitForElementVisible(findTestObject(""DESIGNTRACKER/HomePage/Page_DesignTracker -  Brandmuscle/Jobs""), 30)",Chrome 74.0.3729.157,,,2019-05-21 14:21:43,2019-05-21 14:21:43,0.102s,PASSED
+"mouseOverOffset(findTestObject(""DESIGNTRACKER/HomePage/Page_DesignTracker -  Brandmuscle/Jobs""), 0, 0)",Chrome 74.0.3729.157,,,2019-05-21 14:21:43,2019-05-21 14:21:43,0.094s,PASSED
+"waitForElementVisible(findTestObject(""DESIGNTRACKER/HomePage/Page_DesignTracker -  Brandmuscle/New""), 30)",Chrome 74.0.3729.157,,,2019-05-21 14:21:43,2019-05-21 14:21:44,0.579s,PASSED
+"mouseOver(findTestObject(""DESIGNTRACKER/HomePage/Page_DesignTracker -  Brandmuscle/New""))",Chrome 74.0.3729.157,,,2019-05-21 14:21:44,2019-05-21 14:21:44,0.069s,PASSED
+"click(findTestObject(""DESIGNTRACKER/HomePage/Page_DesignTracker -  Brandmuscle/New""))",Chrome 74.0.3729.157,,,2019-05-21 14:21:44,2019-05-21 14:21:46,2.117s,PASSED
+waitForPageLoad(30),Chrome 74.0.3729.157,,,2019-05-21 14:21:46,2019-05-21 14:21:46,0.017s,PASSED
+"waitForElementVisible(findTestObject(""DESIGNTRACKER/JobNew/Page_DesignTracker -  Brandmuscle/CorporationDropDown""), 30)",Chrome 74.0.3729.157,,,2019-05-21 14:21:46,2019-05-21 14:21:46,0.064s,PASSED
+"verifyElementVisible(findTestObject(""DESIGNTRACKER/JobNew/Page_DesignTracker -  Brandmuscle/CorporationDropDown""))",Chrome 74.0.3729.157,,,2019-05-21 14:21:46,2019-05-21 14:21:46,0.047s,PASSED
+"waitForElementVisible(findTestObject(""DESIGNTRACKER/JobNew/Page_DesignTracker -  Brandmuscle/SupplierDistributorDropdown""), 30)",Chrome 74.0.3729.157,,,2019-05-21 14:21:46,2019-05-21 14:21:46,0.044s,PASSED
+"verifyElementVisible(findTestObject(""DESIGNTRACKER/JobNew/Page_DesignTracker -  Brandmuscle/SupplierDistributorDropdown""))",Chrome 74.0.3729.157,,,2019-05-21 14:21:46,2019-05-21 14:21:46,0.072s,PASSED
+"waitForElementVisible(findTestObject(""DESIGNTRACKER/JobNew/Page_DesignTracker -  Brandmuscle/SalesPersonDropDown""), 30)",Chrome 74.0.3729.157,,,2019-05-21 14:21:46,2019-05-21 14:21:46,0.050s,PASSED
+"verifyElementVisible(findTestObject(""DESIGNTRACKER/JobNew/Page_DesignTracker -  Brandmuscle/SalesPersonDropDown""))",Chrome 74.0.3729.157,,,2019-05-21 14:21:46,2019-05-21 14:21:46,0.040s,PASSED
+"waitForElementVisible(findTestObject(""DESIGNTRACKER/JobNew/Page_DesignTracker -  Brandmuscle/AccontDropDown""), 30)",Chrome 74.0.3729.157,,,2019-05-21 14:21:46,2019-05-21 14:21:46,0.049s,PASSED
+"verifyElementVisible(findTestObject(""DESIGNTRACKER/JobNew/Page_DesignTracker -  Brandmuscle/AccontDropDown""))",Chrome 74.0.3729.157,,,2019-05-21 14:21:46,2019-05-21 14:21:46,0.031s,PASSED
+"waitForElementVisible(findTestObject(""DESIGNTRACKER/JobNew/Page_DesignTracker -  Brandmuscle/Jobtype""), 30)",Chrome 74.0.3729.157,,,2019-05-21 14:21:46,2019-05-21 14:21:46,0.045s,PASSED
+"verifyElementVisible(findTestObject(""DESIGNTRACKER/JobNew/Page_DesignTracker -  Brandmuscle/Jobtype""))",Chrome 74.0.3729.157,,,2019-05-21 14:21:46,2019-05-21 14:21:46,0.029s,PASSED
+"waitForElementVisible(findTestObject(""DESIGNTRACKER/JobNew/Page_DesignTracker -  Brandmuscle/CreateJobBtn""), 30)",Chrome 74.0.3729.157,,,2019-05-21 14:21:46,2019-05-21 14:21:47,0.053s,PASSED
+"verifyElementClickable(findTestObject(""DESIGNTRACKER/JobNew/Page_DesignTracker -  Brandmuscle/CreateJobBtn""))",Chrome 74.0.3729.157,,,2019-05-21 14:21:47,2019-05-21 14:21:47,0.037s,PASSED
+"verifyTextPresent(""New Job"", false)",Chrome 74.0.3729.157,,,2019-05-21 14:21:47,2019-05-21 14:21:47,0.193s,PASSED
+closeBrowser(),Chrome 74.0.3729.157,,,2019-05-21 14:21:47,2019-05-21 14:21:48,0.965s,PASSED
+,,,,,,,
+Test Cases/IIDT/DT SMOKE/VerifySalesPeoplePage,Chrome 74.0.3729.157,,,2019-05-21 14:21:48,2019-05-21 14:22:03,15.144s,PASSED
+"openBrowser("""")",Chrome 74.0.3729.157,,,2019-05-21 14:21:48,2019-05-21 14:21:51,2.501s,PASSED
+"com.dtmethods.utilitymethods.OpenApplication(""http://designtracker.uat.brandmuscle.net"")",Chrome 74.0.3729.157,,,2019-05-21 14:21:51,2019-05-21 14:21:57,6.595s,PASSED
+"setText(findTestObject(""DESIGNTRACKER/LoginPage/Page_DesignTrackerLogin/UserName""), ""dibyashree.jyoti@brandmuscle.com"")",Chrome 74.0.3729.157,,,2019-05-21 14:21:57,2019-05-21 14:21:57,0.182s,PASSED
+"setText(findTestObject(""DESIGNTRACKER/LoginPage/Page_DesignTrackerLogin/Password""), ""dibya@1234"")",Chrome 74.0.3729.157,,,2019-05-21 14:21:57,2019-05-21 14:21:57,0.106s,PASSED
+"click(findTestObject(""DESIGNTRACKER/LoginPage/Page_DesignTrackerLogin/LoginBtn""))",Chrome 74.0.3729.157,,,2019-05-21 14:21:57,2019-05-21 14:22:01,3.562s,PASSED
+waitForPageLoad(30),Chrome 74.0.3729.157,,,2019-05-21 14:22:01,2019-05-21 14:22:01,0.009s,PASSED
+"waitForElementVisible(findTestObject(""DESIGNTRACKER/HomePage/Page_DesignTracker -  Brandmuscle/SITEADMINISTRATION""), 30)",Chrome 74.0.3729.157,,,2019-05-21 14:22:01,2019-05-21 14:22:01,0.047s,PASSED
+"mouseOverOffset(findTestObject(""DESIGNTRACKER/HomePage/Page_DesignTracker -  Brandmuscle/SITEADMINISTRATION""), 0, 0)",Chrome 74.0.3729.157,,,2019-05-21 14:22:01,2019-05-21 14:22:01,0.047s,PASSED
+"waitForElementVisible(findTestObject(""DESIGNTRACKER/HomePage/Page_DesignTracker -  Brandmuscle/SALES PEOPLE""), 30)",Chrome 74.0.3729.157,,,2019-05-21 14:22:01,2019-05-21 14:22:01,0.051s,PASSED
+"mouseOver(findTestObject(""DESIGNTRACKER/HomePage/Page_DesignTracker -  Brandmuscle/SALES PEOPLE""))",Chrome 74.0.3729.157,,,2019-05-21 14:22:01,2019-05-21 14:22:01,0.038s,PASSED
+"click(findTestObject(""DESIGNTRACKER/HomePage/Page_DesignTracker -  Brandmuscle/SALES PEOPLE""))",Chrome 74.0.3729.157,,,2019-05-21 14:22:01,2019-05-21 14:22:02,0.951s,PASSED
+waitForPageLoad(30),Chrome 74.0.3729.157,,,2019-05-21 14:22:02,2019-05-21 14:22:02,0.013s,PASSED
+"verifyTextPresent(""Market User Management"", false)",Chrome 74.0.3729.157,,,2019-05-21 14:22:02,2019-05-21 14:22:02,0.118s,PASSED
+closeBrowser(),Chrome 74.0.3729.157,,,2019-05-21 14:22:02,2019-05-21 14:22:03,0.655s,PASSED
+,,,,,,,
+Test Cases/IIDT/DT SMOKE/VerifySalesPeopleSafeListPage,Chrome 74.0.3729.157,,,2019-05-21 14:22:03,2019-05-21 14:22:18,14.766s,PASSED
+"openBrowser("""")",Chrome 74.0.3729.157,,,2019-05-21 14:22:03,2019-05-21 14:22:07,3.691s,PASSED
+maximizeWindow(),Chrome 74.0.3729.157,,,2019-05-21 14:22:07,2019-05-21 14:22:08,1.124s,PASSED
+"navigateToUrl(""http://designtracker.uat.brandmuscle.net"")",Chrome 74.0.3729.157,,,2019-05-21 14:22:08,2019-05-21 14:22:11,3.148s,PASSED
+waitForPageLoad(30),Chrome 74.0.3729.157,,,2019-05-21 14:22:11,2019-05-21 14:22:11,0.015s,PASSED
+"waitForElementVisible(findTestObject(""DESIGNTRACKER/LoginPage/Page_DesignTrackerLogin/UserName""), 30)",Chrome 74.0.3729.157,,,2019-05-21 14:22:11,2019-05-21 14:22:11,0.043s,PASSED
+"setText(findTestObject(""DESIGNTRACKER/LoginPage/Page_DesignTrackerLogin/UserName""), ""dibyashree.jyoti@brandmuscle.com"")",Chrome 74.0.3729.157,,,2019-05-21 14:22:11,2019-05-21 14:22:11,0.176s,PASSED
+"waitForElementVisible(findTestObject(""DESIGNTRACKER/LoginPage/Page_DesignTrackerLogin/Password""), 30)",Chrome 74.0.3729.157,,,2019-05-21 14:22:11,2019-05-21 14:22:11,0.083s,PASSED
+"setText(findTestObject(""DESIGNTRACKER/LoginPage/Page_DesignTrackerLogin/Password""), ""dibya@1234"")",Chrome 74.0.3729.157,,,2019-05-21 14:22:11,2019-05-21 14:22:11,0.110s,PASSED
+"click(findTestObject(""DESIGNTRACKER/LoginPage/Page_DesignTrackerLogin/LoginBtn""))",Chrome 74.0.3729.157,,,2019-05-21 14:22:11,2019-05-21 14:22:15,3.096s,PASSED
+waitForPageLoad(30),Chrome 74.0.3729.157,,,2019-05-21 14:22:15,2019-05-21 14:22:15,0.014s,PASSED
+"waitForElementVisible(findTestObject(""DESIGNTRACKER/HomePage/Page_DesignTracker -  Brandmuscle/SITEADMINISTRATION""), 30)",Chrome 74.0.3729.157,,,2019-05-21 14:22:15,2019-05-21 14:22:15,0.058s,PASSED
+"mouseOverOffset(findTestObject(""DESIGNTRACKER/HomePage/Page_DesignTracker -  Brandmuscle/SITEADMINISTRATION""), 0, 0)",Chrome 74.0.3729.157,,,2019-05-21 14:22:15,2019-05-21 14:22:15,0.044s,PASSED
+"waitForElementVisible(findTestObject(""DESIGNTRACKER/HomePage/Page_DesignTracker -  Brandmuscle/EXCEPTION LIST - SALES PEOPLE""), 30)",Chrome 74.0.3729.157,,,2019-05-21 14:22:15,2019-05-21 14:22:15,0.576s,PASSED
+"mouseOver(findTestObject(""DESIGNTRACKER/HomePage/Page_DesignTracker -  Brandmuscle/EXCEPTION LIST - SALES PEOPLE""))",Chrome 74.0.3729.157,,,2019-05-21 14:22:15,2019-05-21 14:22:15,0.049s,PASSED
+"click(findTestObject(""DESIGNTRACKER/HomePage/Page_DesignTracker -  Brandmuscle/EXCEPTION LIST - SALES PEOPLE""))",Chrome 74.0.3729.157,,,2019-05-21 14:22:15,2019-05-21 14:22:17,1.663s,PASSED
+waitForPageLoad(30),Chrome 74.0.3729.157,,,2019-05-21 14:22:17,2019-05-21 14:22:17,0.012s,PASSED
+closeBrowser(),Chrome 74.0.3729.157,,,2019-05-21 14:22:17,2019-05-21 14:22:18,0.710s,PASSED
+,,,,,,,
+Test Cases/IIDT/DT SMOKE/VerifySearchJob,Chrome 74.0.3729.157,,,2019-05-21 14:22:18,2019-05-21 14:22:33,14.900s,PASSED
+"openBrowser(""http://designtracker.uat.brandmuscle.net/login.aspx?ReturnUrl=%2f"")",Chrome 74.0.3729.157,,,2019-05-21 14:22:18,2019-05-21 14:22:26,7.915s,PASSED
+maximizeWindow(),Chrome 74.0.3729.157,,,2019-05-21 14:22:26,2019-05-21 14:22:27,1.132s,PASSED
+"setText(findTestObject(""DESIGNTRACKER/LoginPage/Page_DesignTrackerLogin/UserName""), ""dibyashree.jyoti@brandmuscle.com"")",Chrome 74.0.3729.157,,,2019-05-21 14:22:27,2019-05-21 14:22:27,0.182s,PASSED
+"setText(findTestObject(""DESIGNTRACKER/LoginPage/Page_DesignTrackerLogin/Password""), ""dibya@1234"")",Chrome 74.0.3729.157,,,2019-05-21 14:22:27,2019-05-21 14:22:27,0.104s,PASSED
+"click(findTestObject(""DESIGNTRACKER/LoginPage/Page_DesignTrackerLogin/LoginBtn""))",Chrome 74.0.3729.157,,,2019-05-21 14:22:27,2019-05-21 14:22:29,2.013s,PASSED
+waitForPageLoad(0),Chrome 74.0.3729.157,,,2019-05-21 14:22:29,2019-05-21 14:22:29,0.018s,PASSED
+getUrl(),Chrome 74.0.3729.157,,,2019-05-21 14:22:29,2019-05-21 14:22:29,0.015s,PASSED
+"scrollToElement(findTestObject(""DESIGNTRACKER/HomePage/Page_DesignTracker -  Brandmuscle/ResetBtn""), 0)",Chrome 74.0.3729.157,,,2019-05-21 14:22:29,2019-05-21 14:22:29,0.039s,PASSED
+"verifyElementClickable(findTestObject(""DESIGNTRACKER/HomePage/Page_DesignTracker -  Brandmuscle/ResetBtn""), STOP_ON_FAILURE)",Chrome 74.0.3729.157,,,2019-05-21 14:22:29,2019-05-21 14:22:29,0.028s,PASSED
+"verifyElementPresent(findTestObject(""DESIGNTRACKER/HomePage/Page_DesignTracker -  Brandmuscle/Jobs""), 0)",Chrome 74.0.3729.157,,,2019-05-21 14:22:29,2019-05-21 14:22:29,0.043s,PASSED
+"mouseOver(findTestObject(""DESIGNTRACKER/HomePage/Page_DesignTracker -  Brandmuscle/Jobs""))",Chrome 74.0.3729.157,,,2019-05-21 14:22:29,2019-05-21 14:22:29,0.045s,PASSED
+"mouseOver(findTestObject(""DESIGNTRACKER/HomePage/Page_DesignTracker -  Brandmuscle/SearchBtn""))",Chrome 74.0.3729.157,,,2019-05-21 14:22:29,2019-05-21 14:22:29,0.049s,PASSED
+"click(findTestObject(""DESIGNTRACKER/HomePage/Page_DesignTracker -  Brandmuscle/SearchBtn""))",Chrome 74.0.3729.157,,,2019-05-21 14:22:29,2019-05-21 14:22:30,0.111s,PASSED
+"scrollToElement(findTestObject(""DESIGNTRACKER/HomePage/Page_DesignTracker -  Brandmuscle/SelectLink""), 0)",Chrome 74.0.3729.157,,,2019-05-21 14:22:30,2019-05-21 14:22:32,2.088s,PASSED
+"click(findTestObject(""DESIGNTRACKER/HomePage/Page_DesignTracker -  Brandmuscle/SelectLink""))",Chrome 74.0.3729.157,,,2019-05-21 14:22:32,2019-05-21 14:22:32,0.101s,PASSED
+waitForPageLoad(0),Chrome 74.0.3729.157,,,2019-05-21 14:22:32,2019-05-21 14:22:32,0.035s,PASSED
+getUrl(),Chrome 74.0.3729.157,,,2019-05-21 14:22:32,2019-05-21 14:22:32,0.014s,PASSED
+closeBrowser(),Chrome 74.0.3729.157,,,2019-05-21 14:22:32,2019-05-21 14:22:33,0.783s,PASSED
