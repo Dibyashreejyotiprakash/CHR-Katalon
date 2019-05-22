@@ -13,3 +13,33 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
+WebUI.openBrowser('')
+
+WebUI.navigateToUrl('http://designtracker.uat.brandmuscle.net/')
+
+WebUI.maximizeWindow()
+
+WebUI.waitForPageLoad(30)
+
+WebUI.setText(findTestObject('DESIGNTRACKER/LoginPage/UserName'), 'dibyashree.jyoti@brandmuscle.com')
+
+WebUI.setText(findTestObject('DESIGNTRACKER/LoginPage/Password'), 'dibya@1234')
+
+WebUI.click(findTestObject('DESIGNTRACKER/LoginPage/LoginBtn'))
+
+WebUI.waitForPageLoad(30)
+
+WebUI.scrollToElement(findTestObject('DESIGNTRACKER/HomePage/SearchBtn'), 0)
+
+WebUI.click(findTestObject('DESIGNTRACKER/HomePage/SearchBtn'))
+
+WebUI.waitForPageLoad(30)
+
+WebUI.scrollToElement(findTestObject('DESIGNTRACKER/HomePage/SelectLink'), 0)
+
+WebUI.click(findTestObject('DESIGNTRACKER/HomePage/SelectLink'))
+
+WebUI.waitForPageLoad(30)
+
+WebUI.verifyElementPresent(findTestObject('DESIGNTRACKER/JobDetailsPage/JobDetail'), 0)
+

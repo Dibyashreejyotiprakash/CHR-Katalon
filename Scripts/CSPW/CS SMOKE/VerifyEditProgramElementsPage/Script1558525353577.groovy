@@ -15,17 +15,13 @@ import internal.GlobalVariable as GlobalVariable
 
 WebUI.openBrowser('')
 
-WebUI.navigateToUrl('https://admintool.v5qa.brandmuscle.net')
+WebUI.navigateToUrl('https://admintool.v5qa.brandmuscle.net/')
 
-WebUI.waitForPageLoad(30)
+WebUI.waitForPageLoad(0)
 
 WebUI.maximizeWindow()
 
-WebUI.waitForElementVisible(findTestObject('CONSOLIDATOR/LogInPage/Username'), 30)
-
 WebUI.setText(findTestObject('CONSOLIDATOR/LogInPage/Username'), 'chrtestuser@brandmuscle.com')
-
-WebUI.waitForElementVisible(findTestObject('CONSOLIDATOR/LogInPage/Password'), 30)
 
 WebUI.setText(findTestObject('CONSOLIDATOR/LogInPage/Password'), 'Ownlocal@123')
 
@@ -37,8 +33,6 @@ WebUI.waitForElementVisible(findTestObject('CONSOLIDATOR/LogInPage/BusinessUnitD
 
 WebUI.click(findTestObject('CONSOLIDATOR/LogInPage/BusinessUnitDropdown'))
 
-WebUI.waitForElementVisible(findTestObject('CONSOLIDATOR/LogInPage/BusinessUnitName'), 30)
-
 WebUI.click(findTestObject('CONSOLIDATOR/LogInPage/BusinessUnitName'))
 
 WebUI.waitForPageLoad(30)
@@ -47,17 +41,17 @@ WebUI.waitForElementVisible(findTestObject('CONSOLIDATOR/UpdateLogPage/Select Bu
 
 WebUI.click(findTestObject('CONSOLIDATOR/UpdateLogPage/Select Business UnitBtn'))
 
-WebUI.waitForPageLoad(30)
+WebUI.waitForPageLoad(300)
 
 WebUI.waitForElementVisible(findTestObject('CONSOLIDATOR/ParentBusinessUnit/ParentBusinessUnitDropDown'), 30)
 
 WebUI.click(findTestObject('CONSOLIDATOR/ParentBusinessUnit/ParentBusinessUnitDropDown'))
 
-WebUI.waitForElementVisible(findTestObject('CONSOLIDATOR/ParentBusinessUnit/ParentBusinessUnitName'), 30)
-
 WebUI.click(findTestObject('CONSOLIDATOR/ParentBusinessUnit/ParentBusinessUnitName'))
 
 WebUI.click(findTestObject('CONSOLIDATOR/ParentBusinessUnit/SubmitBtn (1)'))
+
+WebUI.verifyElementPresent(findTestObject('CONSOLIDATOR/ParentBusinessUnit/BusinessUnitSelectedMessage'), 0)
 
 WebUI.waitForElementVisible(findTestObject('CONSOLIDATOR/UpdateLogPage/span_Modules'), 30)
 
@@ -69,13 +63,5 @@ WebUI.click(findTestObject('CONSOLIDATOR/UpdateLogPage/span_Consolidator'))
 
 WebUI.waitForPageLoad(30)
 
-WebUI.navigateToUrl('https://admintool.v5qa.brandmuscle.net/Admin/Consolidator/ConsolidatorManageBaseElement.aspx')
-
-WebUI.waitForPageLoad(30)
-
-WebUI.waitForElementVisible(findTestObject('CONSOLIDATOR/ManageElementsPage/AddNewItemBtn'), 30)
-
-WebUI.click(findTestObject('CONSOLIDATOR/ManageElementsPage/AddNewItemBtn'))
-
-WebUI.closeBrowser()
+WebUI.navigateToUrl('https://admintool.v5qa.brandmuscle.net/Admin/Consolidator/ConsolidatorManageProgramItem.aspx')
 

@@ -15,51 +15,39 @@ import internal.GlobalVariable as GlobalVariable
 
 WebUI.openBrowser('')
 
-WebUI.navigateToUrl('https://admintool.v5qa.brandmuscle.net')
+WebUI.navigateToUrl('https://admintool.v5stage.brandmuscle.net')
 
 WebUI.waitForPageLoad(30)
 
 WebUI.maximizeWindow()
 
-WebUI.waitForElementVisible(findTestObject('CONSOLIDATOR/LogInPage/Username'), 30)
-
 WebUI.setText(findTestObject('CONSOLIDATOR/LogInPage/Username'), 'chrtestuser@brandmuscle.com')
-
-WebUI.waitForElementVisible(findTestObject('CONSOLIDATOR/LogInPage/Password'), 30)
 
 WebUI.setText(findTestObject('CONSOLIDATOR/LogInPage/Password'), 'Ownlocal@123')
 
 WebUI.click(findTestObject('CONSOLIDATOR/LogInPage/LoginBtn'))
 
-WebUI.waitForPageLoad(30)
-
-WebUI.waitForElementVisible(findTestObject('CONSOLIDATOR/LogInPage/BusinessUnitDropdown'), 30)
+WebUI.waitForPageLoad(0)
 
 WebUI.click(findTestObject('CONSOLIDATOR/LogInPage/BusinessUnitDropdown'))
-
-WebUI.waitForElementVisible(findTestObject('CONSOLIDATOR/LogInPage/BusinessUnitName'), 30)
 
 WebUI.click(findTestObject('CONSOLIDATOR/LogInPage/BusinessUnitName'))
 
 WebUI.waitForPageLoad(30)
 
-WebUI.waitForElementVisible(findTestObject('CONSOLIDATOR/UpdateLogPage/Select Business UnitBtn'), 30)
+WebUI.waitForElementVisible(findTestObject('CONSOLIDATOR/UpdateLogPage/Select Business UnitBtn'), 0)
 
 WebUI.click(findTestObject('CONSOLIDATOR/UpdateLogPage/Select Business UnitBtn'))
-
-WebUI.waitForPageLoad(30)
 
 WebUI.waitForElementVisible(findTestObject('CONSOLIDATOR/ParentBusinessUnit/ParentBusinessUnitDropDown'), 30)
 
 WebUI.click(findTestObject('CONSOLIDATOR/ParentBusinessUnit/ParentBusinessUnitDropDown'))
 
-WebUI.waitForElementVisible(findTestObject('CONSOLIDATOR/ParentBusinessUnit/ParentBusinessUnitName'), 30)
-
 WebUI.click(findTestObject('CONSOLIDATOR/ParentBusinessUnit/ParentBusinessUnitName'))
 
 WebUI.click(findTestObject('CONSOLIDATOR/ParentBusinessUnit/SubmitBtn (1)'))
 
-WebUI.waitForElementVisible(findTestObject('CONSOLIDATOR/UpdateLogPage/span_Modules'), 30)
+WebUI.waitForElementVisible(findTestObject('CONSOLIDATOR/ParentBusinessUnit/BusinessUnitSelectedMessage'), 0)
 
 WebUI.mouseOverOffset(findTestObject('CONSOLIDATOR/UpdateLogPage/span_Modules'), 0, 0)
 
@@ -69,7 +57,7 @@ WebUI.click(findTestObject('CONSOLIDATOR/UpdateLogPage/span_Consolidator'))
 
 WebUI.waitForPageLoad(30)
 
-WebUI.navigateToUrl('https://admintool.v5qa.brandmuscle.net/Admin/Consolidator/ConsolidatorManageBaseElement.aspx')
+WebUI.navigateToUrl('https://admintool.v5stage.brandmuscle.net/Admin/Consolidator/ConsolidatorManageBaseElement.aspx')
 
 WebUI.waitForPageLoad(30)
 
@@ -77,5 +65,9 @@ WebUI.waitForElementVisible(findTestObject('CONSOLIDATOR/ManageElementsPage/AddN
 
 WebUI.click(findTestObject('CONSOLIDATOR/ManageElementsPage/AddNewItemBtn'))
 
-WebUI.closeBrowser()
+WebUI.waitForPageLoad(30)
+
+WebUI.waitForElementVisible(findTestObject('CONSOLIDATOR/AddBaseElementPage/SearchElement'), 0)
+
+WebUI.verifyElementPresent(findTestObject('CONSOLIDATOR/AddBaseElementPage/SearchElement'), 0)
 
