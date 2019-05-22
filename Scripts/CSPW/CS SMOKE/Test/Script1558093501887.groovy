@@ -17,23 +17,23 @@ WebUI.openBrowser('')
 
 WebUI.navigateToUrl('http://designtracker.uat.brandmuscle.net/login.aspx?ReturnUrl=%2f')
 
-WebUI.setText(findTestObject('Object Repository/Page_DesignTracker -  Brandmuscle/input_Username_ctl00cphMainLoginCentivUserName'), 
+WebUI.setText(findTestObject('DesignTracke/input_Username_ctl00cphMainLoginCentivUserName'), 
     'dibyashree.jyoti@brandmuscle.com')
 
-WebUI.setEncryptedText(findTestObject('Object Repository/Page_DesignTracker -  Brandmuscle/input_Password_ctl00cphMainLoginCentivPassword'), 
+WebUI.setEncryptedText(findTestObject('DesignTracke/input_Password_ctl00cphMainLoginCentivPassword'), 
     '8bxY5gEhEkwKDaQT9s4tsg==')
 
-WebUI.click(findTestObject('Object Repository/Page_DesignTracker -  Brandmuscle/input__ctl00cphMainLoginCentivLoginButton'))
+WebUI.click(findTestObject('DesignTracke/input__ctl00cphMainLoginCentivLoginButton'))
 
-WebUI.click(findTestObject('Object Repository/Page_DesignTracker -  Brandmuscle/input_Jobs with Inventoried Parts_ctl00ctl00cphMaincphMainbtnSearch'))
+WebUI.click(findTestObject('DesignTracke/input_Jobs with Inventoried Parts_ctl00ctl00cphMaincphMainbtnSearch'))
 
-WebUI.click(findTestObject('Object Repository/Page_DesignTracker -  Brandmuscle/a_Select'))
+WebUI.click(findTestObject('DesignTracke/a_Select'))
 
-WebUI.click(findTestObject('Object Repository/Page_DesignTracker -  Brandmuscle/input_Jobs with Inventoried Parts_ctl00ctl00cphMaincphMainbtnReset'))
+WebUI.click(findTestObject('DesignTracke/input_Jobs with Inventoried Parts_ctl00ctl00cphMaincphMainbtnReset'))
 
-WebUI.click(findTestObject('Object Repository/Page_DesignTracker -  Brandmuscle/span_SEARCH'))
+WebUI.click(findTestObject('DesignTracke/span_SEARCH'))
 
 WebUI.closeBrowser()
 
-WebUI.click(findTestObject('Object Repository/Page_DesignTracker -  Brandmuscle/span_HOME'))
+WebUI.click(findTestObject('DesignTracke/span_HOME'))
 

@@ -25,5 +25,5 @@ WebUI.setEncryptedText(findTestObject('DESIGNTRACKER/LoginPage/Page_DesignTracke
 
 WebUI.click(findTestObject('DESIGNTRACKER/LoginPage/Page_DesignTracker -  Brandmuscle/LoginBtn'))
 
-WebUI.click(findTestObject('Object Repository/Page_DesignTracker -  Brandmuscle/a_Logout'))
+WebUI.click(findTestObject('DesignTracke/a_Logout'))
 
