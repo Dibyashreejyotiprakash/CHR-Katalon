@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="DTSmoke" time="0" tests="1" failures="0" errors="0">
+   <testsuite name="DTSmoke" tests="1" failures="0" errors="0" time="0" timestamp="2019-05-28 13:54:58" hostname="Dibyashree.Jyoti - E3480-Djyoti.brandmuscle.local" id="Test Suites/DTSmoke">
+      <properties>
+         <property name="deviceName" value=""/>
+         <property name="devicePlatform" value=""/>
+         <property name="logFolder" value="D:\\CHR-Katalon\\ABAUTOMATION\\Reports\\DTSmoke\\20190528_135455"/>
+         <property name="logFiles" value="D:\\CHR-Katalon\\ABAUTOMATION\\Reports\\DTSmoke\\20190528_135455\\execution0.log"/>
+         <property name="attachments" value=""/>
+         <property name="hostName" value="Dibyashree.Jyoti - E3480-Djyoti.brandmuscle.local"/>
+         <property name="hostAddress" value="10.15.3.216"/>
+         <property name="os" value="Windows 10 64bit"/>
+         <property name="katalonVersion" value="6.1.2.2"/>
+      </properties>
+      <testcase name="Test Cases/IIDT/DT SMOKE/LoginDesignTracker" classname="Test Cases/IIDT/DT SMOKE/LoginDesignTracker" status="PASSED">
+         <system-out><![CDATA[2019-05-28 13:54:58 - [TEST_CASE][PASSED] - Test Cases/IIDT/DT SMOKE/LoginDesignTracker: null]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <system-out><![CDATA[2019-05-28 13:54:58 - [TEST_SUITE][INCOMPLETE] - DTSmoke: null]]></system-out>
+      <system-err><![CDATA[2019-05-28 13:54:58 - [TEST_SUITE][INCOMPLETE] - DTSmoke: null]]></system-err>
+   </testsuite>
+</testsuites>

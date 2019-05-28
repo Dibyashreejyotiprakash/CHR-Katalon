@@ -1,0 +1,8 @@
+1
+00:00:00,087 --> 00:00:00,088
+1. openBrowser("")
+
+2
+00:00:02,474 --> 00:00:02,475
+5. com.dtmethods.utilitymethods.OpenApplication("http://designtracker.uat.brandmuscle.net")
+

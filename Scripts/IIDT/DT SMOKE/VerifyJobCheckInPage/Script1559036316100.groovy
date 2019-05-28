@@ -13,15 +13,39 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.openBrowser('http://designtracker.uat.brandmuscle.net/login.aspx')
+WebUI.openBrowser('')
+
+WebUI.navigateToUrl('http://designtracker.uat.brandmuscle.net/')
 
 WebUI.maximizeWindow()
 
-WebUI.waitForPageLoad(10)
+WebUI.waitForPageLoad(30)
 
-WebUI.setText(findTestObject('DESIGNTRACKER/LoginPage/UserName'), '')
+WebUI.setText(findTestObject('DESIGNTRACKER/LoginPage/UserName'), 'dibyashree.jyoti@brandmuscle.com')
 
-WebUI.setText(findTestObject('DESIGNTRACKER/LoginPage/Password'), '')
+WebUI.setText(findTestObject('DESIGNTRACKER/LoginPage/Password'), 'dibya@1234')
 
-WebUI.click(findTestObject(null))
+WebUI.click(findTestObject('DESIGNTRACKER/LoginPage/LoginBtn'))
+
+WebUI.waitForPageLoad(30)
+
+WebUI.waitForElementVisible(findTestObject('DESIGNTRACKER/HomePage/ShipServiceBtn'), 30)
+
+WebUI.mouseOverOffset(findTestObject('DESIGNTRACKER/HomePage/ShipServiceBtn'), 0, 0)
+
+WebUI.waitForElementVisible(findTestObject('DESIGNTRACKER/HomePage/JobCheckInBtn'), 30)
+
+WebUI.mouseOver(findTestObject('DESIGNTRACKER/HomePage/JobCheckInBtn'))
+
+WebUI.click(findTestObject('DESIGNTRACKER/HomePage/JobCheckInBtn'))
+
+WebUI.waitForPageLoad(30)
+
+WebUI.verifyTextPresent('Job Check In', false)
+
+WebUI.click(findTestObject('DESIGNTRACKER/HomePage/LogOutLink'))
+
+WebUI.waitForPageLoad(30)
+
+WebUI.closeBrowser()
 

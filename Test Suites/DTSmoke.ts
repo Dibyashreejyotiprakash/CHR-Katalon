@@ -32,7 +32,7 @@
       <guid>2e895a91-b6cf-479a-9f3e-3a0b14a0bffb</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/DT SMOKE/VerifyDTMarketSalesPeopleSafeList</testCaseId>
+      <testCaseId>Test Cases/IIDT/DT SMOKE/VerifyJobCheckInPage</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>5858e32c-08f3-4ddf-b1e0-670e81ad1637</guid>
