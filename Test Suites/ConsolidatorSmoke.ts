@@ -11,25 +11,37 @@
    <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
    <testSuiteGuid>ee41f664-3fe1-4c6c-9d0a-011200440f70</testSuiteGuid>
    <testCaseLink>
-      <guid>a92774fa-0693-4265-a258-353ac90a6eef</guid>
+      <guid>5ccf4376-c7a6-4160-b958-5d87aff727be</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/CSPW/CS SMOKE/VerifyAddBaseElementPage</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>30078742-1326-4965-87ed-466224578133</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/CSPW/CS SMOKE/VerifyAddNewItemPage</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>f82f6763-dd47-48e3-a4df-a1acbea7a3e1</guid>
+      <guid>cfea4ab5-78ef-464a-93cc-0318ecf8920c</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/CSPW/CS SMOKE/VerifyEditBaseElementsPage</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>b96f028b-b454-405d-98f7-c60e42b66ab4</guid>
+      <guid>02b49503-af70-478d-b64e-cd241061387a</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/CSPW/CS SMOKE/VerifyEditProgramElementsPage</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>5bd45b37-b53d-449e-8a09-1ae74b95d27d</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/CSPW/CS SMOKE/VerifyManageBaseElementsPage</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>42e6ed12-e88a-477c-bf5d-0b087ee71cc5</guid>
+      <guid>dd90a7ea-c502-46b1-b2a2-55f3b08db6e5</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/CSPW/CS SMOKE/VerifyManageProgramElementsPage</testCaseId>

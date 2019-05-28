@@ -18,18 +18,5 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 import internal.GlobalVariable
 
-public class utilitymethods {
-
-
-	@Keyword
-	def OpenApplication(String url) {
-		WebUI.navigateToUrl(url)
-	}
-
-	@Keyword
-	def LoginToDT(String UserName, String Password) {
-		WebUI.setText(findTestObject('DESIGNTRACKER/LoginPage/UserName',UserName))
-		WebUI.setText(findTestObject('DESIGNTRACKER/LoginPage/Password'), Password)
-		WebUI.click(findTestObject('DESIGNTRACKER/LoginPage/LoginBtn'))
-	}
+public class CommonUtility {
 }
