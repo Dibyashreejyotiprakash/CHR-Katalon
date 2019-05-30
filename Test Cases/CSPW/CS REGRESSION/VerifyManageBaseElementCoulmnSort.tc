@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>Test</name>
+   <name>VerifyManageBaseElementCoulmnSort</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>10286bba-94f2-4e3f-b01b-c4c88abacc2a</testCaseGuid>
+   <testCaseGuid>17561334-37dc-4e8d-a83f-6e5d72ed673f</testCaseGuid>
 </TestCaseEntity>
