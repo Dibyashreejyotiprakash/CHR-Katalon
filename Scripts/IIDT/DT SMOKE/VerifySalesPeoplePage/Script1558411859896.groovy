@@ -15,7 +15,9 @@ import internal.GlobalVariable as GlobalVariable
 
 WebUI.openBrowser('')
 
-CustomKeywords.'com.dtmethods.utilitymethods.OpenApplication'('http://designtracker.uat.brandmuscle.net')
+WebUI.navigateToUrl('http://designtracker.uat.brandmuscle.net/')
+
+WebUI.waitForPageLoad(30)
 
 WebUI.setText(findTestObject('DESIGNTRACKER/LoginPage/UserName'), 'dibyashree.jyoti@brandmuscle.com')
 
@@ -25,11 +27,9 @@ WebUI.click(findTestObject('DESIGNTRACKER/LoginPage/LoginBtn'))
 
 WebUI.waitForPageLoad(30)
 
-WebUI.waitForElementVisible(findTestObject('DESIGNTRACKER/HomePage/SITEADMINISTRATION'), 
-    30)
+WebUI.waitForElementVisible(findTestObject('DESIGNTRACKER/HomePage/SITEADMINISTRATION'), 30)
 
-WebUI.mouseOverOffset(findTestObject('DESIGNTRACKER/HomePage/SITEADMINISTRATION'), 0, 
-    0)
+WebUI.mouseOverOffset(findTestObject('DESIGNTRACKER/HomePage/SITEADMINISTRATION'), 0, 0)
 
 WebUI.waitForElementVisible(findTestObject('DESIGNTRACKER/HomePage/SALES PEOPLE'), 30)
 

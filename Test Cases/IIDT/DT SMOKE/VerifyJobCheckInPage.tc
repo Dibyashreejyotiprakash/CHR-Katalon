@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>VerifyDTMarketSalesPeopleSafeList</name>
+   <name>VerifyJobCheckInPage</name>
    <tag></tag>
    <comment></comment>
    <testCaseGuid>061218ea-75fa-47fa-9401-20d5beb6b13d</testCaseGuid>

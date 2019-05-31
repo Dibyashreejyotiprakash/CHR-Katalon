@@ -43,3 +43,5 @@ WebUI.waitForPageLoad(30)
 
 WebUI.verifyElementPresent(findTestObject('DESIGNTRACKER/JobDetailsPage/JobDetail'), 0)
 
+WebUI.closeBrowser()
+
