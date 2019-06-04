@@ -23,12 +23,6 @@
       <testCaseId>Test Cases/CSPW/CS REGRESSION/ManageBaseElementDelete</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>b22c867d-07f9-4840-af5d-78b41234029d</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/CSPW/CS REGRESSION/ManageBaseElementEdit</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
       <guid>23b75eeb-d6c3-402b-a34d-6f5783d05687</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
@@ -39,5 +33,11 @@
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/CSPW/CS REGRESSION/VerifyManageBaseElementCoulmnSort</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>9c1646d9-85b7-4c53-8ae2-ce8a1dbd4df5</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/CSPW/CS REGRESSION/ManageBaseElementEdit</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>
