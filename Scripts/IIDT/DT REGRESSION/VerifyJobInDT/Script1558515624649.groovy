@@ -51,21 +51,7 @@ WebUI.click(findTestObject('II-USERSITE/ItemSearchPage/SearchBtn'))
 
 WebUI.navigateToUrl('http://ii4.uat.brandmuscle.net/POS/ItemDetails.aspx?tid=97323')
 
-WebUI.scrollToElement(findTestObject('II-USERSITE/ItemSearchPage/CreateDesignBtn'), 0)
-
-WebUI.waitForElementVisible(findTestObject('II-USERSITE/ItemSearchPage/CreateDesignBtn'), 30)
-
-WebUI.click(findTestObject('II-USERSITE/ItemSearchPage/CreateDesignBtn'))
-
 WebUI.waitForPageLoad(30)
 
-WebUI.scrollToElement(findTestObject('II-USERSITE/CreateDesignPage/PreviewChangesBtn'), 0)
-
-WebUI.waitForElementVisible(findTestObject('II-USERSITE/ItemSearchPage/PreviewChangesBtn'), 30)
-
-WebUI.click(findTestObject('II-USERSITE/ItemSearchPage/PreviewChangesBtn'))
-
-WebUI.waitForElementVisible(findTestObject('II-USERSITE/CreateDesignPage/NextStepBtn'), 0)
-
-WebUI.click(findTestObject('II-USERSITE/CreateDesignPage/NextStepBtn'))
+WebUI.closeBrowser()
 
