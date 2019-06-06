@@ -79,3 +79,5 @@ WebUI.verifyElementPresent(findTestObject('II-WSWADMIN/ItemSearchTaggingPage/Sel
 
 WebUI.verifyElementPresent(findTestObject('II-WSWADMIN/ItemSearchTaggingPage/SaveSelectedBtn'), 10)
 
+WebUI.closeBrowser()
+
