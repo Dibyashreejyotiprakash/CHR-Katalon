@@ -35,7 +35,11 @@
       <testCaseId>Test Cases/CSPW/CS REGRESSION/VerifyManageBaseElementCoulmnSort</testCaseId>
    </testCaseLink>
    <testCaseLink>
+<<<<<<< HEAD
       <guid>1c373d47-8c1c-4a6d-bab3-50ca38b539a7</guid>
+=======
+      <guid>9c1646d9-85b7-4c53-8ae2-ce8a1dbd4df5</guid>
+>>>>>>> d2e7c45b4e000c9d2f69788b0509fab65538aa9f
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/CSPW/CS REGRESSION/ManageBaseElementEdit</testCaseId>
