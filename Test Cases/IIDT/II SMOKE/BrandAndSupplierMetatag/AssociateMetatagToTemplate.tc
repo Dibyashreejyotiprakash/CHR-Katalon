@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>ManageBaseElementEdit</name>
+   <name>AssociateMetatagToTemplate</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>55bc633d-b23f-4a7f-98da-83157d943551</testCaseGuid>
+   <testCaseGuid>a448f68f-971a-4c61-9a5d-a17855766146</testCaseGuid>
 </TestCaseEntity>

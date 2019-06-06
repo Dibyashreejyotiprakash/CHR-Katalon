@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>ManageBaseElementEdit</name>
+   <name>ValidateGlobalMetaTagPage</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>55bc633d-b23f-4a7f-98da-83157d943551</testCaseGuid>
+   <testCaseGuid>dd3c6f96-18c2-405f-b17d-0d32d8f56851</testCaseGuid>
 </TestCaseEntity>
