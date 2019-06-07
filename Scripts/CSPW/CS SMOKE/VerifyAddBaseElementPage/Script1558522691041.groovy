@@ -21,9 +21,9 @@ WebUI.waitForPageLoad(30)
 
 WebUI.maximizeWindow()
 
-WebUI.setText(findTestObject('CONSOLIDATOR/LogInPage/Username'), 'chrtestuser@brandmuscle.com')
+WebUI.setText(findTestObject('CONSOLIDATOR/LogInPage/Username'), consolusername)
 
-WebUI.setText(findTestObject('CONSOLIDATOR/LogInPage/Password'), 'Ownlocal@123')
+WebUI.setText(findTestObject('CONSOLIDATOR/LogInPage/Password'), consolpassword)
 
 WebUI.click(findTestObject('CONSOLIDATOR/LogInPage/LoginBtn'))
 

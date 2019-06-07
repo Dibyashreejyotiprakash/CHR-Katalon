@@ -5,4 +5,18 @@
    <tag></tag>
    <comment></comment>
    <testCaseGuid>bccf9792-8956-4d1f-9efe-f73f94d96f81</testCaseGuid>
+   <variable>
+      <defaultValue>'chrtestuser@brandmuscle.com'</defaultValue>
+      <description></description>
+      <id>4d55dcc2-10e7-491c-a20b-47564550998e</id>
+      <masked>false</masked>
+      <name>consolusername</name>
+   </variable>
+   <variable>
+      <defaultValue>'Ownlocal@123'</defaultValue>
+      <description></description>
+      <id>6c409de1-a0d2-4a03-b1ad-2e39bfb4328a</id>
+      <masked>false</masked>
+      <name>consolpassword</name>
+   </variable>
 </TestCaseEntity>
