@@ -41,8 +41,6 @@ WebUI.mouseOverOffset(findTestObject('CONSOLIDATOR/UpdateLogPage/span_Modules'),
 
 WebUI.waitForElementVisible(findTestObject('CONSOLIDATOR/UpdateLogPage/span_Consolidator'), 0)
 
-WebUI.mouseOver(findTestObject('CONSOLIDATOR/UpdateLogPage/span_Consolidator'))
-
 WebUI.click(findTestObject('CONSOLIDATOR/UpdateLogPage/span_Consolidator'))
 
 WebUI.waitForPageLoad(30)
@@ -59,11 +57,15 @@ WebUI.waitForPageLoad(30)
 
 WebUI.navigateToUrl('https://admintool.v5qa.brandmuscle.net/Admin/Consolidator/ConsolidatorManageProgramItem.aspx')
 
-WebUI.waitForElementVisible(findTestObject('CONSOLIDATOR/ManageProgramElementPage/ManageProgramElementsLabel'), 0)
+WebUI.waitForPageLoad(30)
 
-WebUI.clearText(findTestObject('CONSOLIDATOR/ManageProgramElementPage/txbSearchForProgram'))
+WebUI.waitForElementVisible(findTestObject('CONSOLIDATOR/ManageProgramElementPage/headerManageProgramElements'), 0)
 
-WebUI.setText(findTestObject('CONSOLIDATOR/ManageProgramElementPage/txbSearchForProgram'), 'demo')
+WebUI.waitForElementVisible(findTestObject('CONSOLIDATOR/ManageProgramElementPage/ddlAllStatus'), 0)
+
+WebUI.verifyElementPresent(findTestObject('CONSOLIDATOR/ManageProgramElementPage/ddlAllStatus'), 0)
+
+WebUI.verifyElementClickable(findTestObject('CONSOLIDATOR/ManageProgramElementPage/ddlAllStatus'))
 
 WebUI.closeBrowser()
 
