@@ -15,6 +15,18 @@
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/CSPW/CS SMOKE/VerifyAddBaseElementPage</testCaseId>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>4d55dcc2-10e7-491c-a20b-47564550998e</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>6c409de1-a0d2-4a03-b1ad-2e39bfb4328a</variableId>
+      </variableLink>
    </testCaseLink>
    <testCaseLink>
       <guid>30078742-1326-4965-87ed-466224578133</guid>
