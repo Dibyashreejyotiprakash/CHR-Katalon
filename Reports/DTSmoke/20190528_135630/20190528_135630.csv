@@ -1,4 +1,0 @@
-Suite/Test/Step Name,Browser,Description,Tag,Start time,End time,Duration,Status
-DTSmoke,,,,2019-05-28 13:56:32,2019-05-28 13:56:32,0.363s,INCOMPLETE
-,,,,,,,
-Test Cases/IIDT/DT SMOKE/LoginDesignTracker,,,,2019-05-28 13:56:32,2019-05-28 13:56:32,0.008s,PASSED
