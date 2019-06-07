@@ -4,4 +4,24 @@
    <name>default</name>
    <tag></tag>
    <defaultProfile>true</defaultProfile>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'demoQA@brandmuscle.com'</initValue>
+      <name>iiusername</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'go2web'</initValue>
+      <name>iipassword</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'chrtestuser@brandmuscle.com'</initValue>
+      <name>consolusername</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'Ownlocal@123'</initValue>
+      <name>consolpassword</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>
