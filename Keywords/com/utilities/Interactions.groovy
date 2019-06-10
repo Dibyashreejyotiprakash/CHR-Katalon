@@ -112,6 +112,24 @@ public class Interactions {
 						WebUI.closeBrowser()
 					}
 				}
+				else if(BuName.equalsIgnoreCase("POSW")){
+					if (EnvironmentName.equalsIgnoreCase("UAT")) {
+						WebUI.navigateToUrl("http://csg.v5qa.brandmuscle.net")
+					}
+					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
+						WebUI.navigateToUrl("https://csg.v5stage.brandmuscle.net")
+					}
+					else if (EnvironmentName.equalsIgnoreCase("PROD")) {
+						WebUI.navigateToUrl("http://csg.brandmuscle.net")
+					}
+					else if (EnvironmentName.equalsIgnoreCase("DEV")) {
+						WebUI.navigateToUrl("https://csg.v5dev.brandmuscle.net")
+					}
+					else{
+						println ("Environment is not correct")
+						WebUI.closeBrowser()
+					}
+				}
 
 				else if (BuName.equalsIgnoreCase("INSTANTIMPACTUSERSITE")) {
 
@@ -580,6 +598,7 @@ public class Interactions {
 	def ClickOnPosOnDemand(){
 
 		WaitVisible(findTestObject("Object Repository/II-USERSITE/Home Page/POSOnDemand"))
+
 		MouseHoverAndClick(findTestObject("Object Repository/II-USERSITE/Home Page/POSOnDemand"),findTestObject("Object Repository/II-USERSITE/Home Page/POSTemplates"))
 		WaitForPageToLoad()
 

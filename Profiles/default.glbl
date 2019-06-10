@@ -6,22 +6,77 @@
    <defaultProfile>true</defaultProfile>
    <GlobalVariableEntity>
       <description></description>
+      <initValue>'http://ii4.uat.brandmuscle.net/'</initValue>
+      <name>iiusersiteurl</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
       <initValue>'demoQA@brandmuscle.com'</initValue>
-      <name>iiusername</name>
+      <name>iiusersiteusername</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
       <initValue>'go2web'</initValue>
-      <name>iipassword</name>
+      <name>iiusersitepassword</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'chrtestuser@brandmuscle.com'</initValue>
+      <initValue>'https://admintool.v5qa.brandmuscle.net'</initValue>
+      <name>consolidatorurl</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'chrtestuser@bradnmuscle.com'</initValue>
       <name>consolusername</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
       <initValue>'Ownlocal@123'</initValue>
-      <name>consolpassword</name>
+      <name>conslopassword</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'http://designtracker.uat.brandmuscle.net'</initValue>
+      <name>dturl</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'dibyashree.jyoti@brandmuscle.com'</initValue>
+      <name>dtusername</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'dibya@1234'</initValue>
+      <name>dtpassowrd</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'dibyashree.jyoti@brandmuscle.com'</initValue>
+      <name>wswadminusername</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'dibya@1234'</initValue>
+      <name>wswpassword</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'http://wswadmin.uat.brandmuscle.net'</initValue>
+      <name>wswadminurl</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'http://csg.v5qa.brandmuscle.net'</initValue>
+      <name>posurl</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'adminil@brandmuscle.com'</initValue>
+      <name>posusername</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'password'</initValue>
+      <name>pospassword</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>
