@@ -19,7 +19,7 @@ WebUI.maximizeWindow()
 
 WebUI.waitForPageLoad(30)
 
-CustomKeywords.'com.utilities.Interactions.GetUrl'('CONSOLIDATOR', 'SMOKE', 'UAT')
+CustomKeywords.'com.utilities.Interactions.GetUrl'('CONSOLIDATOR', GlobalVariable.testtype, GlobalVariable.environment)
 
 WebUI.setText(findTestObject('CONSOLIDATOR/LogInPage/Username'), GlobalVariable.consolusername)
 
