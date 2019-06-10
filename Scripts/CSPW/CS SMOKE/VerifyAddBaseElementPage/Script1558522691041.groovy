@@ -13,17 +13,19 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.openBrowser('Chrome')
-
-CustomKeywords.'com.utilities.Interactions.GetUrl'('CONSOLIDATOR', GlobalVariable.testtype, GlobalVariable.environment)
+WebUI.openBrowser('')
 
 WebUI.waitForPageLoad(30)
 
+CustomKeywords.'com.utilities.Interactions.GetUrl'('CONSOLIDATOR', GlobalVariable.testtype, GlobalVariable.environment)
+
 WebUI.maximizeWindow()
+
+WebUI.waitForElementVisible(findTestObject('CONSOLIDATOR/LogInPage/Username'), 300)
 
 WebUI.setText(findTestObject('CONSOLIDATOR/LogInPage/Username'), GlobalVariable.consolusername)
 
-WebUI.setText(findTestObject('CONSOLIDATOR/LogInPage/Password'), GlobalVariable.consolpassword)
+WebUI.setText(findTestObject('CONSOLIDATOR/LogInPage/Password'), GlobalVariable.conslopassword)
 
 WebUI.click(findTestObject('CONSOLIDATOR/LogInPage/LoginBtn'))
 

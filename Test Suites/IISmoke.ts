@@ -5,39 +5,99 @@
    <tag></tag>
    <isRerun>false</isRerun>
    <mailRecipient></mailRecipient>
-   <numberOfRerun>0</numberOfRerun>
-   <pageLoadTimeout>30</pageLoadTimeout>
-   <pageLoadTimeoutDefault>true</pageLoadTimeoutDefault>
+   <numberOfRerun>2</numberOfRerun>
+   <pageLoadTimeout>300</pageLoadTimeout>
+   <pageLoadTimeoutDefault>false</pageLoadTimeoutDefault>
    <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
    <testSuiteGuid>aad8d920-c60e-44f2-a319-2421b6bae507</testSuiteGuid>
    <testCaseLink>
-      <guid>f0f0ba50-982a-4e1a-b7ef-03a118417526</guid>
+      <guid>3155e2ca-d8d0-459c-bbc0-29d796ca63c0</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/II SMOKE/OrderOnlineForm/VerifyBooksAccessories</testCaseId>
+      <testCaseId>Test Cases/IIDT/II SMOKE/BrandAndSupplierMetatag/AssociateMetatagToTemplate</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>fd23a6b2-6558-4025-b714-81cc519268d9</guid>
+      <guid>d022d8e1-df4e-4d6d-b148-f5e9cd68e1b1</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/II SMOKE/OrderOnlineForm/VerifyCreateANewCustomOrder</testCaseId>
+      <testCaseId>Test Cases/IIDT/II SMOKE/BrandAndSupplierMetatag/ValidateCategoryMaintenancePage</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>148beff0-ef14-44a8-b75f-cb8a739965ae</guid>
+      <guid>804f9925-e73d-4eeb-9ab7-c693a9379041</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/II SMOKE/OrderOnlineForm/VerifyLargePrint</testCaseId>
+      <testCaseId>Test Cases/IIDT/II SMOKE/BrandAndSupplierMetatag/ValidateEditDeletePage</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>6449c223-dd6f-482e-b80e-288df9e9193d</guid>
+      <guid>ca88d914-1f25-4dc7-9339-00285afdcdcd</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/II SMOKE/OrderOnlineForm/VerifyLoginLogout</testCaseId>
+      <testCaseId>Test Cases/IIDT/II SMOKE/BrandAndSupplierMetatag/ValidateExternalItemCorpSettings</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>79ff6a36-efdf-4e90-ba0d-de54749602d3</guid>
+      <guid>82d6bc62-ba4f-4c51-b472-ddde688896c0</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/II SMOKE/OrderOnlineForm/VerifySelectSmallPrint</testCaseId>
+      <testCaseId>Test Cases/IIDT/II SMOKE/BrandAndSupplierMetatag/ValidateGlobalAddMetatagFields</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>ed8f436e-efeb-4a6b-8b3e-69f1fb002d66</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/IIDT/II SMOKE/BrandAndSupplierMetatag/ValidateGlobalElipssys</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>f74315c7-0f14-4844-bd2b-9d4618221fd2</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/IIDT/II SMOKE/BrandAndSupplierMetatag/ValidateGlobalMetaTagPage</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>f22bf3a5-ece9-4f86-a159-11ac0e371942</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/IIDT/II SMOKE/OrderOnlineForm/To Verfiy Finsh An Incomplete Order flow</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>f3be4be6-ab84-4ae1-af9e-49deb78988aa</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/IIDT/II SMOKE/OrderOnlineForm/To Verfiy Large Print Format</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>4c2bca0e-9108-490d-909c-a3dfbfc1938a</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/IIDT/II SMOKE/OrderOnlineForm/To Verify Clone an Order Flow</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>7aa05156-68c6-4126-934c-255159ee16e9</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/IIDT/II SMOKE/OrderOnlineForm/To Verify Login Logout</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>6d2d50d3-1968-44d1-b598-64a3a0d69d95</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/IIDT/II SMOKE/OrderOnlineForm/To Verify Menu Books Flow</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>915f5220-df63-4caa-acb7-9e9da349445c</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/IIDT/II SMOKE/OrderOnlineForm/To Verify Small Print Format</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>a3c10de2-95f4-4c67-b07b-1eef19c4f3da</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/IIDT/II SMOKE/OrderOnlineForm/To VerifyBooksMenu flow</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>fbb523ab-64fb-441d-a6f3-921657f61549</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/IIDT/II SMOKE/OrderOnlineForm/Verify Create A New Custom Order Flow</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>
