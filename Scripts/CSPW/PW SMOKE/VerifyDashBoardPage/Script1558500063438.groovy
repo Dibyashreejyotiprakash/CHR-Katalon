@@ -15,7 +15,7 @@ import internal.GlobalVariable as GlobalVariable
 
 WebUI.openBrowser('')
 
-WebUI.navigateToUrl('https://csg.v5qa.brandmuscle.net')
+CustomKeywords.'com.utilities.Interactions.GetUrl'('CONSOLIDATOR', 'SMOKE', 'UAT')
 
 WebUI.waitForPageLoad(30)
 
@@ -23,11 +23,11 @@ WebUI.maximizeWindow()
 
 WebUI.waitForElementVisible(findTestObject('POSW/LoginPage/UserNameTxtBox'), 30)
 
-WebUI.setText(findTestObject('POSW/LoginPage/UserNameTxtBox'), 'adminil@brandmuscle.com')
+WebUI.setText(findTestObject('POSW/LoginPage/UserNameTxtBox'), GlobalVariable.posusername)
 
 WebUI.waitForElementVisible(findTestObject('POSW/LoginPage/PasswordTxtBox'), 30)
 
-WebUI.setText(findTestObject('POSW/LoginPage/PasswordTxtBox'), 'password')
+WebUI.setText(findTestObject('POSW/LoginPage/PasswordTxtBox'), GlobalVariable.pospassword)
 
 WebUI.waitForPageLoad(30)
 

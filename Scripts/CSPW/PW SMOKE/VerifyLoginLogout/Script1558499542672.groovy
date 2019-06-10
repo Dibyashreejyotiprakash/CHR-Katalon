@@ -13,9 +13,9 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.openBrowser('')
+WebUI.openBrowser('Chrome')
 
-WebUI.navigateToUrl('https://csg.v5qa.brandmuscle.net')
+CustomKeywords.'com.utilities.Interactions.GetUrl'('POSW', 'SMOKE', 'UAT')
 
 WebUI.waitForPageLoad(30)
 
@@ -23,11 +23,11 @@ WebUI.maximizeWindow()
 
 WebUI.waitForElementVisible(findTestObject('POSW/LoginPage/UserNameTxtBox'), 30)
 
-WebUI.setText(findTestObject('POSW/LoginPage/UserNameTxtBox'), 'adminil@brandmuscle.com')
+WebUI.setText(findTestObject('POSW/LoginPage/UserNameTxtBox'), GlobalVariable.posusername)
 
 WebUI.waitForElementVisible(findTestObject('POSW/LoginPage/PasswordTxtBox'), 30)
 
-WebUI.setText(findTestObject('POSW/LoginPage/PasswordTxtBox'), 'password')
+WebUI.setText(findTestObject('POSW/LoginPage/PasswordTxtBox'), GlobalVariable.pospassword)
 
 WebUI.waitForElementVisible(findTestObject('POSW/LoginPage/LoginBtn'), 30)
 
