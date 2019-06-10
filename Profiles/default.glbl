@@ -79,4 +79,49 @@
       <initValue>'password'</initValue>
       <name>pospassword</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'uat'</initValue>
+      <name>environment</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'smoke'</initValue>
+      <name>testtype</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'consolidator'</initValue>
+      <name>bunameconsolidator</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'instantimpactusersite'</initValue>
+      <name>bunameiiusersite</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'posw'</initValue>
+      <name>bunameposw</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'designtracker'</initValue>
+      <name>bunamedesigntracker</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'wswadmin'</initValue>
+      <name>bunamewswadmin</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'proofgallery'</initValue>
+      <name>bunameproofgallery</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'iiadmin'</initValue>
+      <name>bunameiiadmin</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>
