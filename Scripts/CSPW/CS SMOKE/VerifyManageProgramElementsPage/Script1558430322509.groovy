@@ -15,7 +15,7 @@ import internal.GlobalVariable as GlobalVariable
 
 WebUI.openBrowser('')
 
-WebUI.navigateToUrl('https://admintool.v5qa.brandmuscle.net')
+CustomKeywords.'com.utilities.Interactions.GetUrl'('CONSOLIDATOR', 'SMOKE', 'UAT')
 
 WebUI.waitForPageLoad(30)
 
@@ -23,11 +23,11 @@ WebUI.maximizeWindow()
 
 WebUI.waitForElementVisible(findTestObject('CONSOLIDATOR/LogInPage/Username'), 30)
 
-WebUI.setText(findTestObject('CONSOLIDATOR/LogInPage/Username'), 'chrtestuser@brandmuscle.com')
+WebUI.setText(findTestObject('CONSOLIDATOR/LogInPage/Username'), GlobalVariable.consolusername)
 
 WebUI.waitForElementVisible(findTestObject('CONSOLIDATOR/LogInPage/Password'), 30)
 
-WebUI.setText(findTestObject('CONSOLIDATOR/LogInPage/Password'), 'Ownlocal@123')
+WebUI.setText(findTestObject('CONSOLIDATOR/LogInPage/Password'), GlobalVariable.conslopassword)
 
 WebUI.click(findTestObject('CONSOLIDATOR/LogInPage/LoginBtn'))
 

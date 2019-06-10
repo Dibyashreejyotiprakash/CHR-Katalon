@@ -13,17 +13,17 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.openBrowser('')
+WebUI.openBrowser('Chrome')
 
-WebUI.navigateToUrl('https://admintool.v5stage.brandmuscle.net')
+CustomKeywords.'com.utilities.Interactions.GetUrl'('CONSOLIDATOR', GlobalVariable.testtype, GlobalVariable.environment)
 
 WebUI.waitForPageLoad(30)
 
 WebUI.maximizeWindow()
 
-WebUI.setText(findTestObject('CONSOLIDATOR/LogInPage/Username'), 'chrtestuser@brandmuscle.com')
+WebUI.setText(findTestObject('CONSOLIDATOR/LogInPage/Username'), GlobalVariable.consolusername)
 
-WebUI.setText(findTestObject('CONSOLIDATOR/LogInPage/Password'), 'Ownlocal@123')
+WebUI.setText(findTestObject('CONSOLIDATOR/LogInPage/Password'), GlobalVariable.consolpassword)
 
 WebUI.click(findTestObject('CONSOLIDATOR/LogInPage/LoginBtn'))
 
