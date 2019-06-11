@@ -15,7 +15,7 @@ import internal.GlobalVariable as GlobalVariable
 
 WebUI.openBrowser('Chrome')
 
-CustomKeywords.'com.utilities.Interactions.GetUrl'('CONSOLIDATOR', 'SMOKE', 'UAT')
+CustomKeywords.'com.utilities.Interactions.GetUrl'(GlobalVariable.bunameconsolidator, GlobalVariable.testtype, GlobalVariable.environment)
 
 WebUI.waitForPageLoad(30)
 

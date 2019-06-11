@@ -5,9 +5,9 @@
    <tag></tag>
    <isRerun>false</isRerun>
    <mailRecipient></mailRecipient>
-   <numberOfRerun>0</numberOfRerun>
-   <pageLoadTimeout>30</pageLoadTimeout>
-   <pageLoadTimeoutDefault>true</pageLoadTimeoutDefault>
+   <numberOfRerun>2</numberOfRerun>
+   <pageLoadTimeout>300</pageLoadTimeout>
+   <pageLoadTimeoutDefault>false</pageLoadTimeoutDefault>
    <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
    <testSuiteGuid>de45b05b-efa8-4e48-81df-e89788815175</testSuiteGuid>
    <testCaseLink>
