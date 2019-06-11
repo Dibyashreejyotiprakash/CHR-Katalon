@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>GroupsLabel</name>
+   <name>UploadBtn</name>
    <tag></tag>
-   <elementGuidId>26c7ae36-bd95-4d47-87ad-c0c37a9b1bc7</elementGuidId>
+   <elementGuidId>6b573d9f-395e-4560-be1a-23bf997086ab</elementGuidId>
    <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//*[@id='cphMain_cphMain_uploadbtnlable']</value>
+      </entry>
       <entry>
          <key>BASIC</key>
          <value></value>
-      </entry>
-      <entry>
-         <key>XPATH</key>
-         <value>//*[text()='Groups']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

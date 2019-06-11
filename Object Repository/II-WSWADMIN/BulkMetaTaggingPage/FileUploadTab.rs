@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>GroupMaintenance</name>
+   <name>FileUploadTab</name>
    <tag></tag>
-   <elementGuidId>9bf5a656-9f40-4816-bbb1-7188568d57f4</elementGuidId>
+   <elementGuidId>3dcc2d9a-fa93-4891-922b-16b9a4e9b6b9</elementGuidId>
    <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//*[@id='file']</value>
+      </entry>
       <entry>
          <key>BASIC</key>
          <value></value>
-      </entry>
-      <entry>
-         <key>XPATH</key>
-         <value>//*[text()='Group Maintenance']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
