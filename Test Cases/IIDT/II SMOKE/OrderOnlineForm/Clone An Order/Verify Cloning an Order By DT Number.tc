@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Verify Cloning an Order By DT Number</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>087c0c44-822e-4ba7-b23b-2317cf4e5ef4</testCaseGuid>
+</TestCaseEntity>
