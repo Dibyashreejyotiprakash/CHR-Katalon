@@ -56,13 +56,10 @@ WebUI.click(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/ItemTypeDropDownBulk
 
 WebUI.delay(3)
 
-WebUI.scrollToElement(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/AddToExistingRadioBtn'), 5)
+CustomKeywords.'com.utilities.Interactions.UploadFile'(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/FileUploadTab'), 
+    'C:\\Users\\dibyashree.jyoti\\Desktop\\checkTemplate.txt')
 
-WebUI.click(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/AddToExistingRadioBtn'))
+WebUI.waitForElementVisible(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/UploadBtn'), 300)
 
-WebUI.waitForElementPresent(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/ContinueBtn'), 10)
-
-WebUI.scrollToElement(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/ContinueBtn'), 5)
-
-WebUI.verifyElementNotClickable(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/ContinueBtn'))
+WebUI.click(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/UploadBtn'))
 
