@@ -38,6 +38,8 @@ WebUI.click(findTestObject('II-WSWADMIN/MainMenu/MetaTaggingBulkImportPage'))
 
 WebUI.waitForElementPresent(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/CorpDropDownBulkPage'), 10)
 
+CustomKeywords.'com.consolidator.LoginPage.LoginConsolidator'()
+
 WebUI.waitForElementPresent(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/ItemTypeDropDownBulkPage'), 10)
 
 WebUI.click(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/CorpDropDownBulkPage'))
@@ -62,6 +64,32 @@ CustomKeywords.'com.utilities.Interactions.UploadFile'(findTestObject('II-WSWADM
 WebUI.waitForElementVisible(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/UploadBtn'), 300)
 
 WebUI.click(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/UploadBtn'))
+
+WebUI.waitForElementVisible(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/ActionTypeRadioBtn'), 300)
+
+WebUI.click(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/ActionTypeRadioBtn'))
+
+WebUI.waitForElementVisible(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/ContinueBtn'), 300)
+
+WebUI.scrollToElement(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/ContinueBtn'), 0)
+
+WebUI.click(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/ContinueBtn'))
+
+WebUI.waitForPageLoad(300)
+
+WebUI.click(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/AdminApprovalCheckbox'))
+
+WebUI.waitForElementVisible(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/SaveSelected'), 300)
+
+WebUI.scrollToElement(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/SaveSelected'), 0)
+
+WebUI.click(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/SaveSelected'))
+
+CustomKeywords.'com.utilities.Interactions.GetUrl'(GlobalVariable.bunameiiusersite, GlobalVariable.testtype, GlobalVariable.environment)
+
+CustomKeywords.'com.iiusersites.LoginPage.LoginUserSite'(GlobalVariable.iiusersiteusername, GlobalVariable.iiusersitepassword)
+
+CustomKeywords.'com.iiusersites.ItemSearchPage.TemplateSearch'()
 
 WebUI.closeBrowser()
 
