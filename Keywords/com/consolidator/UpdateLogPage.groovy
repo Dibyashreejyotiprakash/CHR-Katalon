@@ -1,4 +1,4 @@
-package com.wswadmin
+package com.consolidator
 
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
@@ -18,9 +18,5 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 import internal.GlobalVariable
 
-public class LoginPage {
-
-	@Keyword
-	def LoginConsolidator() {
-	}
+public class UpdateLogPage {
 }

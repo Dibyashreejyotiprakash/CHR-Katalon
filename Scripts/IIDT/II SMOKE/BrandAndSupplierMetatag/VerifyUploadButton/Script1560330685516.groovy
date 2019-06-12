@@ -54,14 +54,7 @@ WebUI.delay(3)
 
 WebUI.click(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/ItemTypeDropDownBulkPage'))
 
-WebUI.delay(3)
+WebUI.waitForElementVisible(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/FileUploadTab'), 300)
 
-CustomKeywords.'com.utilities.Interactions.UploadFile'(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/FileUploadTab'), 
-    'C:\\Users\\dibyashree.jyoti\\Desktop\\checkTemplate.txt')
-
-WebUI.waitForElementVisible(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/UploadBtn'), 300)
-
-WebUI.click(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/UploadBtn'))
-
-WebUI.closeBrowser()
+WebUI.verifyElementClickable(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/FileUploadTab'))
 

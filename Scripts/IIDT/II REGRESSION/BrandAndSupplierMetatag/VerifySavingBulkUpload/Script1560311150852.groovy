@@ -63,5 +63,29 @@ WebUI.waitForElementVisible(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/Uplo
 
 WebUI.click(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/UploadBtn'))
 
+WebUI.waitForElementVisible(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/ActionTypeRadioBtn'), 300)
+
+WebUI.click(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/ActionTypeRadioBtn'))
+
+WebUI.waitForElementVisible(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/ContinueBtn'), 300)
+
+WebUI.scrollToElement(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/ContinueBtn'), 0)
+
+WebUI.click(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/ContinueBtn'))
+
+WebUI.waitForPageLoad(300)
+
+WebUI.waitForElementVisible(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/AdminApprovalCheckbox'), 300)
+
+WebUI.click(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/AdminApprovalCheckbox'))
+
+WebUI.scrollToPosition(6000, 6000)
+
+WebUI.delay(5)
+
+WebUI.waitForElementVisible(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/SaveSelected'), 300)
+
+WebUI.click(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/SaveSelected'))
+
 WebUI.closeBrowser()
 

@@ -19,10 +19,14 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable
 
 public class LoginPage {
-	
+
 	@Keyword
-	def LoginUserSite()
-	{
+	def LoginUserSite(String Username, String Password) {
+
 		
+		WebUI.sendKeys("Object Repository/II-USERSITE/LoginPage/UserName", Username)
+		WebUI.sendKeys("Object Repository/II-USERSITE/LoginPage/Password", Password)
+		WebUI.click("Object Repository/II-USERSITE/LoginPage/LoginBtn")
+		WebUI.waitForPageLoad(300)
 	}
 }

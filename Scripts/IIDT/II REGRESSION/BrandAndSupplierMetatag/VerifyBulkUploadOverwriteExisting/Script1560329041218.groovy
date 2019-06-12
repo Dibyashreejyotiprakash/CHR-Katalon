@@ -63,5 +63,15 @@ WebUI.waitForElementVisible(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/Uplo
 
 WebUI.click(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/UploadBtn'))
 
+WebUI.waitForElementVisible(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/OverWriteExistingRadioBtn'), 300)
+
+WebUI.click(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/OverWriteExistingRadioBtn'))
+
+WebUI.waitForElementVisible(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/ContinueBtn'), 300)
+
+WebUI.click(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/ContinueBtn'))
+
+WebUI.waitForPageLoad(300)
+
 WebUI.closeBrowser()
 
