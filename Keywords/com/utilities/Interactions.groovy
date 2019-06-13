@@ -114,7 +114,7 @@ public class Interactions {
 				}
 				else if(BuName.equalsIgnoreCase("POSW")){
 					if (EnvironmentName.equalsIgnoreCase("UAT")) {
-						WebUI.navigateToUrl("http://csg.v5qa.brandmuscle.net")
+						WebUI.navigateToUrl("https://csg.v5qa.brandmuscle.net")
 					}
 					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
 						WebUI.navigateToUrl("https://csg.v5stage.brandmuscle.net")
