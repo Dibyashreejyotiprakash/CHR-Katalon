@@ -24,11 +24,9 @@ WebUI.waitForPageLoad(30)
 
 WebUI.waitForElementVisible(findTestObject('II-WSWADMIN/MainMenu/InstantImpactMenu'), 30)
 
-WebUI.delay(5)
+WebUI.delay(3)
 
 WebUI.mouseOver(findTestObject('II-WSWADMIN/MainMenu/InstantImpactMenu'))
-
-WebUI.delay(2)
 
 WebUI.waitForElementVisible(findTestObject('II-WSWADMIN/MainMenu/Meta Tagging Category-Item Maintenance'), 30)
 
@@ -50,7 +48,7 @@ WebUI.waitForElementPresent(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/sear
 
 WebUI.setText(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/searchCorporation'), '44 - Diageo')
 
-WebUI.delay(10)
+WebUI.delay(5)
 
 WebUI.sendKeys(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/searchCorporation'), Keys.chord(Keys.ENTER))
 
@@ -67,45 +65,7 @@ WebUI.waitForElementVisible(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/Uplo
 
 WebUI.click(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/UploadBtn'))
 
-WebUI.waitForElementVisible(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/ActionTypeRadioBtn'), 300)
+WebUI.waitForElementPresent(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/AddToExistingRadioBtn'), 10)
 
-WebUI.click(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/ActionTypeRadioBtn'))
-
-WebUI.waitForElementVisible(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/ContinueBtn'), 300)
-
-WebUI.scrollToElement(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/ContinueBtn'), 0)
-
-WebUI.click(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/ContinueBtn'))
-
-WebUI.waitForPageLoad(300)
-
-WebUI.click(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/AdminApprovalCheckbox'))
-
-WebUI.waitForElementVisible(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/SaveSelected'), 300)
-
-WebUI.scrollToElement(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/SaveSelected'), 0)
-
-WebUI.click(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/SaveSelected'))
-
-WebUI.closeBrowser()
-
-WebUI.openBrowser('')
-
-WebUI.maximizeWindow()
-
-WebUI.navigateToUrl('http://ii4.uat.brandmuscle.net/')
-
-WebUI.waitForPageLoad(300)
-
-WebUI.waitForElementPresent(findTestObject('II-USERSITE/LoginPage/UserName'), 20)
-
-WebUI.waitForElementPresent(findTestObject('II-USERSITE/LoginPage/Password'), 20)
-
-WebUI.setText(findTestObject('II-USERSITE/LoginPage/UserName'), 'diageoadmin@centiv.com')
-
-WebUI.setText(findTestObject('II-USERSITE/LoginPage/Password'), 'go2web')
-
-CustomKeywords.'com.iiusersites.ItemSearchPage.TemplateSearch'()
-
-WebUI.closeBrowser()
+WebUI.scrollToElement(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/AddToExistingRadioBtn'), 10)
 
