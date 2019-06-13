@@ -14,43 +14,43 @@
       <guid>3155e2ca-d8d0-459c-bbc0-29d796ca63c0</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/II SMOKE/BrandAndSupplierMetatag/AssociateMetatagToTemplate</testCaseId>
+      <testCaseId>Test Cases/IIDT/II SMOKE/MetataggingCategory-ItemMaintenance/AssociateMetatagToTemplate</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>d022d8e1-df4e-4d6d-b148-f5e9cd68e1b1</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/II SMOKE/BrandAndSupplierMetatag/ValidateCategoryMaintenancePage</testCaseId>
+      <testCaseId>Test Cases/IIDT/II SMOKE/MetataggingCategory-ItemMaintenance/ValidateCategoryMaintenancePage</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>804f9925-e73d-4eeb-9ab7-c693a9379041</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/II SMOKE/BrandAndSupplierMetatag/ValidateEditDeletePage</testCaseId>
+      <testCaseId>Test Cases/IIDT/II SMOKE/MetataggingCategory-ItemMaintenance/ValidateEditDeletePage</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>ca88d914-1f25-4dc7-9339-00285afdcdcd</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/II SMOKE/BrandAndSupplierMetatag/ValidateExternalItemCorpSettings</testCaseId>
+      <testCaseId>Test Cases/IIDT/II SMOKE/MetataggingCategory-ItemMaintenance/ValidateExternalItemCorpSettings</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>82d6bc62-ba4f-4c51-b472-ddde688896c0</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/II SMOKE/BrandAndSupplierMetatag/ValidateGlobalAddMetatagFields</testCaseId>
+      <testCaseId>Test Cases/IIDT/II SMOKE/MetataggingCategory-ItemMaintenance/ValidateGlobalAddMetatagFields</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>ed8f436e-efeb-4a6b-8b3e-69f1fb002d66</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/II SMOKE/BrandAndSupplierMetatag/ValidateGlobalElipssys</testCaseId>
+      <testCaseId>Test Cases/IIDT/II SMOKE/MetataggingCategory-ItemMaintenance/ValidateGlobalElipssys</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>f74315c7-0f14-4844-bd2b-9d4618221fd2</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/II SMOKE/BrandAndSupplierMetatag/ValidateGlobalMetaTagPage</testCaseId>
+      <testCaseId>Test Cases/IIDT/II SMOKE/MetataggingCategory-ItemMaintenance/ValidateGlobalMetaTagPage</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>f22bf3a5-ece9-4f86-a159-11ac0e371942</guid>
