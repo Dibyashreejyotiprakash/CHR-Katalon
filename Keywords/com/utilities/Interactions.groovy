@@ -8,7 +8,10 @@ import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
+import java.awt.Toolkit
+import java.awt.datatransfer.StringSelection
 import java.awt.event.ActionEvent as ActionEvent
+import java.awt.event.KeyEvent
 
 import org.openqa.selenium.WebDriver as WebDriver
 
@@ -40,14 +43,18 @@ import com.kms.katalon.core.webui.driver.DriverFactory as DriverFactory
 
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.webui.keyword.internal.WebUIAbstractKeyword
+import com.sun.media.sound.SoftReverb.Delay
 import com.thoughtworks.selenium.webdriven.commands.IsElementPresent
 
 import org.openqa.selenium.JavascriptExecutor as JavascriptExecutor
 
 import internal.GlobalVariable as GlobalVariable
 
+import org.junit.After
 import org.openqa.selenium.Alert
 import org.openqa.selenium.By as By
+
+import java.awt.Robot;
 
 public class Interactions {
 
@@ -114,7 +121,7 @@ public class Interactions {
 				}
 				else if(BuName.equalsIgnoreCase("POSW")){
 					if (EnvironmentName.equalsIgnoreCase("UAT")) {
-						WebUI.navigateToUrl("http://csg.v5qa.brandmuscle.net")
+						WebUI.navigateToUrl("https://csg.v5qa.brandmuscle.net")
 					}
 					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
 						WebUI.navigateToUrl("https://csg.v5stage.brandmuscle.net")
@@ -610,17 +617,35 @@ public class Interactions {
 
 
 
-	//------------------
+	//------------------WSW ADMIN-------------------------------------------------------//
 
+	@Keyword
+	def UploadFile(TestObject to,String filepath) {
+		WebUI.click(to)
+		StringSelection ss = new StringSelection(filepath);
+		WebUI.delay(10)
+		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
 
+		Robot robot = new Robot();
+		robot.keyPress(KeyEvent.VK_ENTER);
+		robot.keyRelease(KeyEvent.VK_ENTER);
+		WebUI.delay(1)
+		robot.keyPress(KeyEvent.VK_CONTROL);
+		robot.keyPress(KeyEvent.VK_V);
+		robot.keyRelease(KeyEvent.VK_V);
+		robot.keyRelease(KeyEvent.VK_CONTROL);
+		WebUI.delay(1)
+		robot.keyPress(KeyEvent.VK_ENTER);
+		robot.keyRelease(KeyEvent.VK_ENTER);
+	}
 
-
-
-
-
-
-
-
+	/*@Keyword
+	 def Upload()
+	 {
+	 String autoit_prj = "D:\\Bulk_Upload.exe"
+	 Runtime.getRuntime().exec(autoit_prj)
+	 }
+	 */
 
 
 
