@@ -58,7 +58,7 @@ WebUI.click(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/ItemTypeDropDownBulk
 
 WebUI.delay(3)
 
-CustomKeywords.'com.utilities.Interactions.UploadFile'(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/FileUploadTab'), 
+CustomKeywords.'com.utilities.DemooInteractions.UploadFile'(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/FileUploadTab'), 
     'C:\\Users\\dibyashree.jyoti\\Desktop\\checkTemplate.txt')
 
 WebUI.waitForElementVisible(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/UploadBtn'), 300)
@@ -85,7 +85,7 @@ WebUI.scrollToElement(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/SaveSelect
 
 WebUI.click(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/SaveSelected'))
 
-CustomKeywords.'com.utilities.Interactions.GetUrl'(GlobalVariable.bunameiiusersite, GlobalVariable.testtype, GlobalVariable.environment)
+CustomKeywords.'com.utilities.DemooInteractions.GetUrl'(GlobalVariable.bunameiiusersite, GlobalVariable.testtypesmoek, GlobalVariable.environment)
 
 CustomKeywords.'com.iiusersites.LoginPage.LoginUserSite'(GlobalVariable.iiusersiteusername, GlobalVariable.iiusersitepassword)
 

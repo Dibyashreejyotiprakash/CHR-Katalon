@@ -15,7 +15,7 @@ import internal.GlobalVariable as GlobalVariable
 
 WebUI.openBrowser('')
 
-CustomKeywords.'com.utilities.Interactions.GetUrl'('INSTANTIMPACTUSERSITE1', 'SMOKE', 'UAT1')
+CustomKeywords.'com.utilities.DemooInteractions.GetUrl'('INSTANTIMPACTUSERSITE1', 'SMOKE', 'UAT1')
 
 WebUI.waitForPageLoad(30)
 

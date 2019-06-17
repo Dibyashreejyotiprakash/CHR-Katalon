@@ -81,13 +81,13 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'uat'</initValue>
+      <initValue>'stage'</initValue>
       <name>environment</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
       <initValue>'smoke'</initValue>
-      <name>testtype</name>
+      <name>testtypesmoek</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
@@ -123,5 +123,10 @@
       <description></description>
       <initValue>'iiadmin'</initValue>
       <name>bunameiiadmin</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'regression'</initValue>
+      <name>testtypestage</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>

@@ -22,6 +22,5 @@ public class LoginPage {
 
 	@Keyword
 	def LoginPosw() {
-		
 	}
 }

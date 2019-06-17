@@ -15,7 +15,7 @@ import internal.GlobalVariable as GlobalVariable
 
 WebUI.openBrowser('Chrome')
 
-CustomKeywords.'com.utilities.Interactions.GetUrl'('POSW', 'SMOKE', 'UAT')
+CustomKeywords.'com.utilities.DemooInteractions.GetUrl'('POSW', 'SMOKE', 'UAT')
 
 WebUI.waitForPageLoad(30)
 

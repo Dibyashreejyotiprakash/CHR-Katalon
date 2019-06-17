@@ -1,65 +1,40 @@
 package com.utilities
 
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
-
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
-
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
-
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
-import java.awt.Toolkit
-import java.awt.datatransfer.StringSelection
-import java.awt.event.ActionEvent as ActionEvent
-import java.awt.event.KeyEvent
-
-import org.openqa.selenium.WebDriver as WebDriver
-
-import org.openqa.selenium.interactions.Actions as Actions
-import org.testng.Assert
-
-import com.gargoylesoftware.htmlunit.javascript.background.JavaScriptExecutor as JavaScriptExecutor
-
-import com.google.common.collect.FilteredEntryMultimap.Keys as Keys
-
 import com.kms.katalon.core.annotation.Keyword
-import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
-
+import com.kms.katalon.core.checkpoint.Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
-
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
-
-import com.kms.katalon.core.model.FailureHandling as FailureHandling
-
-import com.kms.katalon.core.testcase.TestCase as TestCase
-
-import com.kms.katalon.core.testdata.TestData as TestData
-
-import com.kms.katalon.core.testobject.TestObject as TestObject
-
+import com.kms.katalon.core.model.FailureHandling
+import com.kms.katalon.core.testcase.TestCase
+import com.kms.katalon.core.testdata.TestData
+import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
-import com.kms.katalon.core.webui.common.WebUiCommonHelper
-import com.kms.katalon.core.webui.driver.DriverFactory as DriverFactory
-
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
-import com.kms.katalon.core.webui.keyword.internal.WebUIAbstractKeyword
-import com.sun.media.sound.SoftReverb.Delay
-import com.thoughtworks.selenium.webdriven.commands.IsElementPresent
 
-import org.openqa.selenium.JavascriptExecutor as JavascriptExecutor
 
-import internal.GlobalVariable as GlobalVariable
-
-import org.junit.After
+import com.kms.katalon.core.webui.driver.DriverFactory
+import org.openqa.selenium.WebElement
+import org.openqa.selenium.interactions.Actions
+import org.openqa.selenium.support.ui.ExpectedCondition
+import org.openqa.selenium.support.ui.ExpectedConditions
+import org.openqa.selenium.support.ui.Select
+import org.openqa.selenium.support.ui.WebDriverWait
+import org.openqa.selenium.WebDriver
 import org.openqa.selenium.Alert
-import org.openqa.selenium.By as By
+import org.openqa.selenium.By
+import org.openqa.selenium.JavascriptExecutor
+import internal.GlobalVariable
 
-import java.awt.Robot;
+def class Interactions {
 
-public class Interactions {
-
-
-
+	WebDriver driver = DriverFactory.getWebDriver()
+	String pageLoadStatus = null;
+	JavascriptExecutor js = (JavascriptExecutor) driver;
 
 	@Keyword
 	def GetUrl(String BuName,String TestType, String EnvironmentName) {
@@ -305,349 +280,484 @@ public class Interactions {
 	}
 
 
-
 	@Keyword
-	def Wait() {
-		WebUI.delay(300)
-	}
-
-	@Keyword
-	def WaitVisible(TestObject object) {
-
-		WebUI.waitForElementVisible(findTestObject(object), 300)
-	}
-
-	@Keyword
-	def IsWaitVisible( TestObject object) {
-		Boolean  stillExists = true;
+	def  WaitTime(int seconds) throws InterruptedException {
 		try {
-			WebUI.waitForElementVisible(findTestObject(object), 300)
-			return true;
+			seconds = seconds * 1000;
 		}
-		catch(Exception e) {
+		catch (Exception e) {
+			seconds = 1000;
+		}
+		Thread.sleep(seconds);
+	}
 
-			return false;
+	@Keyword
+	def  WaitForPageToLoad() {
+
+		WebDriverWait wait = new WebDriverWait(driver, 300);
+		pageLoadStatus = (String)js.executeScript("return document.readyState");
+	}
+
+
+	@Keyword
+	def  GoToURL(String url) {
+		driver.navigate().to(url);
+	}
+
+	@Keyword
+	def  Back() {
+		driver.navigate().back();
+	}
+
+	@Keyword
+	def  Refresh() {
+		driver.navigate().refresh();
+	}
+
+
+	@Keyword
+	def  GetCurrentURL() {
+		return driver.getCurrentUrl();
+	}
+
+	@Keyword
+	public void  Type(By by, String value) {
+		WaitVisible(by)
+		driver.findElement(by).sendKeys(value);
+	}
+
+	@Keyword
+	def  Type(By by, String value, int waittimeinsecs) throws InterruptedException {
+		WaitVisible(by)
+		driver.findElement(by).sendKeys(value);
+	}
+
+	@Keyword
+	def  Clear(By by) {
+		WaitVisible(by)
+		driver.findElement(by).clear();
+	}
+
+
+	@Keyword
+	def  Clear(By by, int waittimeinsecs) {
+		WaitVisible(by)
+		driver.findElement(by).clear();
+	}
+
+	@Keyword
+	def  TypeClear(By by, String value,WebDriver driver) {
+		WaitVisible(by)
+		WebElement element = driver.findElement(by);
+		element.clear();
+		element.sendKeys(value);
+	}
+
+	@Keyword
+	def  ScrollBy(int scroll) {
+		js.executeScript("window.scrollBy(0,1000)");
+	}
+
+
+	@Keyword
+	def  ScrollToViewElement(By by) {
+		WaitVisible(by)
+		WebElement element = driver.findElement(by);
+		js.executeScript("arguments[0].scrollIntoView(true);", element);
+	}
+
+	@Keyword
+	//Scroll up to element to be visible
+	def  ScrollToViewElement(WebElement element)
+	{
+		WaitVisible(element)
+		js.executeScript("arguments[0].scrolSlIntoView(true);", element);
+	}
+
+	@Keyword
+	//Scroll upto element to be visible
+	def  ScrollToViewelement(By by)
+	{
+		WaitVisible(by)
+		js.executeScript("arguments[0].scrolSlIntoView(true);", by);
+	}
+
+	@Keyword
+	//Scroll to bottom of page
+	def  ScrollToBottomOfPage()
+	{
+		js.executeScript("window.scrollTo(0, document.body.clientHeight);");
+	}
+
+	@Keyword
+	//Scroll to top of page
+	def  ScrollToTopOgPage()
+	{
+		js.executeScript("window.scrollTo(0, 0)");
+	}
+
+
+	@Keyword
+	//Get single element
+	def WebElement GetElement(By by)
+	{
+		WaitVisible(by)
+		return driver.findElement(by);
+	}
+
+	@Keyword
+	//Get single element
+	def WebElement GetElement(By by, int waittimeinsecs)
+	{
+		WaitVisible(by)
+		return driver.findElement(by);
+	}
+
+	@Keyword
+	//Get Multiple elements
+	def List<WebElement> GetElements(By by)
+	{
+		WaitVisible(by)
+		return  driver.findElements(by);
+	}
+
+	@Keyword
+	//Check element is displayed or not
+	def boolean IsElementDisplayed(By by) throws Exception
+	{
+		try
+		{
+			WaitVisible(by)
+			boolean displayed = driver.findElement(by).isDisplayed();
+			return displayed;
+		}
+		catch(Exception e)
+		{
+			throw new Exception("ELEMENTNOTDISPLAYED");
 		}
 	}
 
 	@Keyword
-	def WaitWhileNotVisible(TestObject object) {
-		Boolean stillExists = true;
-		while (stillExists) {
-			try {
-				WaitVisible(object, 1);
+	// Element is enabled or not
+	def boolean IsElementEnabled(By by) throws Exception
+	{
+		try
+		{
+			WaitVisible(by)
+			boolean enabled = driver.findElement(by).isEnabled();
+			return enabled;
+		}
+		catch(Exception e)
+		{
+			throw new Exception("ELEMENTNOTENABLED");
+		}
+	}
+
+	@Keyword
+	//Element is selected or not
+	def boolean IsElementSelected(By by) throws Exception
+	{
+		try
+		{
+			WaitVisible(by)
+			boolean selected = driver.findElement(by).isSelected();
+			return selected;
+		}
+		catch(Exception e)
+		{
+			throw new Exception("ELEMENTNOTSELECTED");
+		}
+	}
+
+	@Keyword
+	def  WaitVisible(By by)
+	{
+		WaitVisible(by)
+		WebDriverWait wait = new WebDriverWait(driver, 300);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+	}
+
+
+
+	@Keyword
+	def  WaitVisible(By by,int timeinsec)
+	{
+		WaitVisible(by)
+		WebDriverWait wait = new WebDriverWait(driver, timeinsec);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+	}
+
+
+	@Keyword
+	def  WaitVisible(WebElement element)
+	{
+		WaitVisible(element)
+		WebDriverWait wait = new WebDriverWait(driver, 300);
+		wait.until(ExpectedConditions.visibilityOf(element));
+	}
+
+
+	@Keyword
+	def  WaitVisible(WebElement element,int timeinsec)
+	{
+		WaitVisible(element)
+		WebDriverWait wait = new WebDriverWait(driver, timeinsec);
+		wait.until(ExpectedConditions.visibilityOf(element));
+	}
+
+
+	@Keyword
+	def  WaitExist(By by)
+	{
+		WaitVisible(by)
+		WebDriverWait wait = new WebDriverWait(driver,300);
+		wait.until(ExpectedConditions.presenceOfElementLocated(by));
+	}
+
+
+	@Keyword
+	def  WaitExistsForMultipleElements(By by)
+	{
+		WaitVisible(by)
+		WebDriverWait wait = new WebDriverWait(driver,300);
+		wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(by));
+	}
+
+	@Keyword
+	def  WaitExistsForNestedElements(By by,By nestedlocator)
+	{
+		WaitVisible(by)
+		WebDriverWait wait = new WebDriverWait(driver,300);
+		wait.until(ExpectedConditions.presenceOfNestedElementLocatedBy(by, nestedlocator));
+	}
+
+
+	@Keyword
+	def  WaitExistsForNestedElements(WebElement element,By subelement)
+	{
+		WebDriverWait wait = new WebDriverWait(driver,300);
+		wait.until(ExpectedConditions.presenceOfNestedElementLocatedBy(subelement, subelement));
+	}
+
+
+	@Keyword
+	def  WaitTillNotVisible(By by,int timeinsec)
+	{
+		boolean stillExists = true;
+		while (stillExists)
+		{
+			try
+			{
+				WaitVisible(by,timeinsec);
 			}
-			catch(Exception e) {
+			catch(Exception e)
+			{
 				stillExists = false;
 			}
 		}
 	}
 
-	@Keyword
-	def WaitForPageToLoad() {
-
-		WebUI.waitForPageLoad(300);
-	}
-
 
 	@Keyword
-	def WaitForPageToLoad(int timeinsec) {
-
-		WebUI.waitForPageLoad(timeinsec);
-	}
-
-
-
-	@Keyword
-	def WaitUntilElementClickable(TestObject to, int timeoutinsec= 300) {
-		WebUI.waitForElementClickable(to);
-	}
-
-	@Keyword
-	def Type(TestObject to, int timeoutinsec = 300, String enterstringvalue){
-
-		WebUI.waitForElementVisible(to,300)
-		WebUI.sendKeys(to, enterstringvalue)
-	}
-
-	@Keyword
-	def ClearAndType(TestObject to,int timeoutinsec = 300, String enterstringvalue ){
-
-		WebUI.waitForElementVisible(to, 300)
-		WebUI.clearText(to)
-		WebUI.sendKeys(to, enterstringvalue)
-	}
-
-
-
-	@Keyword
-	def AcceptAlert() {
-		try {
-
-			WebUI.acceptAlert()
-			return true;
+	def WebElement WaitUntilElementClickable(WebElement element)
+	{
+		try
+		{
+			WebDriverWait wait = new WebDriverWait(driver,300);
+			return wait.until(ExpectedConditions.elementToBeClickable(element));
 		}
-		catch(Exception e) {
-
-			return false;
+		catch (NoSuchElementException e)
+		{
+			System.out.println("Element : '" + element + "' was not found in current context page.");
+			throw e;
 		}
 	}
 
 
 	@Keyword
-	def DismissAlert() {
-		try {
-			WebUI.dismissAlert()
-			return true;
+	def  WaitUntilElementClickable(By by)
+	{
+		try
+		{
+			WebDriverWait wait = new WebDriverWait(driver,300);
+			wait.until(ExpectedConditions.elementToBeClickable(by));
 		}
-		catch(Exception e) {
+		catch (NoSuchElementException e)
+		{
+			System.out.println("Element : '" + by + "' was not found in current context page.");
+			throw e;
+		}
+	}
 
+
+	@Keyword
+	def boolean WaitUntilStalenessOfElement(WebElement element, int timeinsec)
+	{
+		try
+		{
+			WebDriverWait wait = new WebDriverWait(driver,300);
+			return wait.until(ExpectedConditions.stalenessOf(element));
+		}
+		catch(NoSuchElementException e)
+		{
+			System.out.println("Element is still not attached to current DOM");
 			return false;
 		}
 	}
 
 	@Keyword
-	def GetAlertText() {
-		try {
-			WebUI.getAlertText()
-		}
-		catch(Exception e) {
-			return null
-		}
-	}
-
-	@Keyword
-	def IsChecked(TestObject to, int timeinsec=300) {
-		WaitVisible(to)
-		WebUI.verifyElementChecked(findTestObject)
-	}
-
-
-	@Keyword
-	def UnCheck(TestObject to, int timeinsec=300) {
-		WaitVisible(to)
-		if(WebUI.verifyElementChecked(to, 300)) {
-			WebUI.click(to)
-		}
-	}
-
-	@Keyword
-	def Click(TestObject to, int timeinsec= 300) {
-		WaitVisible(to)
-		WebUI.click(to)
-	}
-
-	@Keyword
-	def DoubleClick(TestObject to, int timeinsec=300) {
-		WaitVisible(to)
-		WebUI.doubleClick(to)
-	}
-
-	@Keyword
-	def ClickAndWaitForPageLoad(TestObject to, int timeinsec=300) {
-		WaitVisible(to)
-		WebUI.doubleClick(to)
-		WaitForPageToLoad()
-	}
-
-	@Keyword
-	def MouseHoverOnElement(TestObject to, int timeinsec=300) {
-		WaitVisible(to)
-		WebUI.mouseOver(to)
-	}
-
-	//Mouse hover on one element and click on another element
-	@Keyword
-	def MouseHoverAndClick(TestObject hoverelement,TestObject clickelement, int timeinsec=300)
+	/*Click*/
+	def  Click(By by)
 	{
-		WaitVisible(hoverelement)
-		WebUI.mouseOverOffset(hoverelement, 300, 300)
-		WaitVisible(clickelement)
-		WebUI.mouseOver(clickelement)
-		WebUI.click(clickelement)
+		WaitVisible(by)
+		driver.findElement(by).click();
 	}
 
-	//Mouse hover and click on same element
 	@Keyword
-	def MousehoverAndClick(TestObject to, int timeinsec=300)
+	def  ClickAndWait(By by,int timeinsec) throws InterruptedException
 	{
-		WaitVisible(to)
-		WebUI.mouseOver(to)
-		WebUI.click(to)
+		WaitTime(timeinsec);
+		driver.findElement(by).click();
 	}
 
 	@Keyword
-	def IsElementEnabled(TestObject to, int timeinsec=300)
+	def  DoubleClick(By by) throws InterruptedException
 	{
-		WaitVisible(to)
-		WebUI.verifyElementClickable(to)
+		WebElement element = driver.findElement(by);
+		Actions action = new Actions(driver);
+		action.moveToElement(element);
+		action.doubleClick();
+		action.build().perform();
+		WaitTime(4);
 	}
 
-
 	@Keyword
-	def  GetText(TestObject to, int waittimeinsec=300)
+	def  JsClick(WebElement element)
 	{
-		WaitVisible(to)
-		return WebUI.getText(to)
+		WebDriverWait wait = new WebDriverWait(driver,300);
+		js.executeScript( "arguments[0].click();", element );
 	}
 
-	@Keyword
-	def SwitchToChildWindow(String windowtitle)
-	{
-		WebUI.switchToWindowTitle(windowtitle)
-	}
 
 	@Keyword
-	def SwitchToChildWindowAndClose(String windowtitle)
+	/*Alert Handler*/
+	def boolean AcceptAlert()
 	{
 		try
 		{
-			WebUI.switchToWindowTitle(windowtitle)
-			WebUI.closeWindowTitle(windowtitle)
+			Alert alert = driver.switchTo().alert();
+			alert.accept();
+			System.out.println("Alert Was Present");
+			return true;
 		}
-		catch (Exception e)
+		catch(Exception e)
 		{
-			throw e;
+			System.out.println("No Alert Found");
+			return false;
 		}
 	}
 
 	@Keyword
-	def SwitchToChildWindowAndSwitchToDefault(String windowtitle)
+	def boolean DismissAlert()
 	{
 		try
 		{
-			WebUI.switchToWindowTitle(windowtitle)
-			WebUI.switchToDefaultContent()
+			Alert alert = driver.switchTo().alert();
+			alert.dismiss();
+			System.out.println("Alert Was Present");
+			return true;
 		}
-		catch (Exception e)
+		catch(Exception e)
 		{
-			throw e;
+			System.out.println("No Alert Found");
+			return false;
 		}
 	}
 
 	@Keyword
-	def GoToUrl(String url)
+	def String GetAlertText()
 	{
-		WebUI.getUrl()
+		try
+		{
+			Alert alert = driver.switchTo().alert();
+			String text = alert.getText();
+			System.out.println("Alert Was Present");
+			return text;
+		}
+		catch(Exception e)
+		{
+			System.out.println("No Alert Found");
+			return null;
+		}
 	}
 
 	@Keyword
-	def GetCurrentUrl()
+	def MouseHoverOnElement(By by)
 	{
-		return WebUI.getUrl()
+		WebElement elementToHover = driver.findElement(by);
+		Actions hover = new Actions(driver);
+		hover.moveToElement(by)
+		hover.perform();
 	}
 
+
 	@Keyword
-	def Back()
+	def MouseHoverAndClick(By by)
 	{
-		WebUI.back()
+		WaitVisible(by);
+		WebElement elementToHover = driver.findElement(by);
+		Actions hover = new Actions(driver);
+		hover.moveToElement(by).perform();
+		hover.click();
 	}
 
+
 	@Keyword
-	def Refresh()
+	def MouserHoverAndClick(By hoverby, By clickby)
 	{
-		WebUI.refresh()
+		WaitVisible(hoverby);
+		WebElement elementToHover = driver.findElement(hoverby);
+		Actions hover = new Actions(driver);
+		hover.moveToElement(elementToHover).perform();
+		WebElement elementToClick = driver.findElement(clickby);
+		hover.moveToElement(elementToClick).perform();
+		hover.click();
 	}
 
+
+
+
 	@Keyword
-	def Forword()
+	def SelectByText(By by, String text)
 	{
-		WebUI.forward()
+		WaitVisible(by);
+		WebElement elementToHover = driver.findElement(by);
+		Select select = new Select(elementToHover)
+		select.selectByVisibleText(text)
+
 	}
 
+
 	@Keyword
-	def ScrollToViewelement(TestObject to)
+	//Select By Value from Drop down
+	def SelectByValue(By by, String value)
 	{
-		WebUI.scrollToElement(to, 300)
+		WaitVisible(by);
+		WebElement elementToHover = driver.findElement(by);
+		Select select = new Select(elementToHover)
+		select.selectByVisibleText(value)
 	}
 
+
 	@Keyword
-	def ScrollToTop()
+	//Select by Index from drop down
+	def SelectByIndex(By by, int index)
 	{
-		WebUI.scrollToPosition(0, 0)
+		WaitVisible(by);
+		WebElement elementToHover = driver.findElement(by);
+		Select select = new Select(elementToHover)
+		select.selectByIndex(index)
 	}
-
-	@Keyword
-	def SelectByText(TestObject to,String text)
-	{
-		WebUI.selectOptionByLabel(to, text, false)
-	}
-
-	@Keyword
-	def SelectByIndex(TestObject to, int index)
-	{
-		WebUI.selectOptionByIndex(to, index)
-	}
-
-
-
-
-	//-----------------II- USER SITE-------------------------------------------//
-
-	// Login Page
-
-
-	// Verify Login
-	@Keyword
-	def IIUSerSiteLogin(String username, String password) {
-
-
-		WebUI.setText(findTestObject('Object Repository/II-USERSITE/LoginPage/UserName'), username)
-		WebUI.setText(findTestObject('Object Repository/II-USERSITE/LoginPage/Password'), password)
-		WebUI.click(findTestObject('Object Repository/II-USERSITE/LoginPage/LoginBtn'))
-		WaitForPageToLoad()
-	}
-
-	// Home Page
-
-	//Click on Pos on Demand
-	@Keyword
-	def ClickOnPosOnDemand(){
-
-		WaitVisible(findTestObject("Object Repository/II-USERSITE/Home Page/POSOnDemand"))
-
-		MouseHoverAndClick(findTestObject("Object Repository/II-USERSITE/Home Page/POSOnDemand"),findTestObject("Object Repository/II-USERSITE/Home Page/POSTemplates"))
-		WaitForPageToLoad()
-
-	}
-
-
-	//-------------------II- ADMIN-----------------------------------------------------//
-
-
-
-
-	//------------------WSW ADMIN-------------------------------------------------------//
-
-	@Keyword
-	def UploadFile(TestObject to,String filepath) {
-		WebUI.click(to)
-		StringSelection ss = new StringSelection(filepath);
-		WebUI.delay(10)
-		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
-
-		Robot robot = new Robot();
-		robot.keyPress(KeyEvent.VK_ENTER);
-		robot.keyRelease(KeyEvent.VK_ENTER);
-		WebUI.delay(1)
-		robot.keyPress(KeyEvent.VK_CONTROL);
-		robot.keyPress(KeyEvent.VK_V);
-		robot.keyRelease(KeyEvent.VK_V);
-		robot.keyRelease(KeyEvent.VK_CONTROL);
-		WebUI.delay(1)
-		robot.keyPress(KeyEvent.VK_ENTER);
-		robot.keyRelease(KeyEvent.VK_ENTER);
-	}
-
-	/*@Keyword
-	 def Upload()
-	 {
-	 String autoit_prj = "D:\\Bulk_Upload.exe"
-	 Runtime.getRuntime().exec(autoit_prj)
-	 }
-	 */
-
-
 
 
 }

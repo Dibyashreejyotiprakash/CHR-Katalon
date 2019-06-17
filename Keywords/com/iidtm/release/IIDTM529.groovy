@@ -1,7 +1,6 @@
-package com.consolidator
+package com.iidtm.release
 
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
-import com.kms.katalon.core.webui.driver.DriverFactory
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
@@ -16,28 +15,38 @@ import com.kms.katalon.core.testdata.TestData
 import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import com.utilities.DemooInteractions
+import com.utilities.Interactions
+import com.kms.katalon.core.webui.driver.DriverFactory
+
 
 import internal.GlobalVariable
 import org.openqa.selenium.WebDriver
+import org.openqa.selenium.WebElement
 import org.openqa.selenium.By
-import com.utilities.Interactions
+import org.openqa.selenium.support.ui.Select
+
+public class IIDTM529 {
 
 
-public class LoginPage {
-
-	WebDriver driver = DriverFactory.getWebDriver();
 	Interactions action = new Interactions();
+	DemooInteractions actions = new DemooInteractions();
+	WebDriver driver = DriverFactory.getWebDriver();
 
-	By username = By.id("MainContent_LoginCentiv_UserName");
-	By password = By.id("MainContent_LoginCentiv_Password");
-	By loginbtn = By.id("MainContent_LoginCentiv_btnLogin");
 
 	@Keyword
-	public void LoginConsolidator() {
-
-
-		action.Type(username, "chrtestuser@brandmuscle.com");
-		action.Type(password, "Ownlocal@123");
-		action.Click(loginbtn);
+	def II4Login() {
+		
+		driver.findElement(By.id("UserName")).sendKeys("demoQA@brandmuscle.com");
+		driver.findElement(By.id("Password")).sendKeys("go2web");
+		driver.findElement(By.id("btnLogin")).click();
+		WebElement corpelement = driver.findElement(By.id("ddlCorporation"));
+		WebElement distelement = driver.findElement(By.id("ddlDistributer"));
+		Select sc= new Select(corpelement);
+		sc.selectByIndex(1);
+		sc = new Select(distelement);
+		sc.selectByIndex(1);
+		//action.Type(null, "")
+	    
 	}
 }
