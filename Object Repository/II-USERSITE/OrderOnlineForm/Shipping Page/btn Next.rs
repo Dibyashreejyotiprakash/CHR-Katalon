@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//span[@id='ctl00_Body_btnNext']/span</value>
+         <value>//span[@id='ctl00_Body_btnNext']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

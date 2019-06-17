@@ -13,7 +13,7 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.openBrowser('Chrome')
+WebUI.openBrowser('')
 
 WebUI.maximizeWindow()
 
@@ -69,42 +69,100 @@ WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Item details Page/Access
 
 WebUI.waitForPageLoad(0)
 
-WebUI.waitForElementPresent(findTestObject('II-USERSITE/OrderOnlineForm/Accessories Page/input_Product Group'), 
+WebUI.waitForElementPresent(findTestObject('II-USERSITE/OrderOnlineForm/Accessories Page/txb JobLineName'), 0)
+
+WebUI.setText(findTestObject('II-USERSITE/OrderOnlineForm/Accessories Page/txb JobLineName'), 'test')
+
+WebUI.waitForElementVisible(findTestObject('II-USERSITE/OrderOnlineForm/Accessories Page/ddl Product Group'), 0)
+
+WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Accessories Page/ddl Product Group'))
+
+WebUI.waitForElementVisible(findTestObject('II-USERSITE/OrderOnlineForm/Accessories Page/ProductGroup_Light Box'), 0)
+
+WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Accessories Page/ProductGroup_Light Box'), FailureHandling.STOP_ON_FAILURE)
+
+WebUI.waitForElementVisible(findTestObject('II-USERSITE/OrderOnlineForm/Accessories Page/ddl Menu Size'), 30)
+
+WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Accessories Page/ddl Menu Size'))
+
+WebUI.waitForElementVisible(findTestObject('II-USERSITE/OrderOnlineForm/Accessories Page/MenuSize'), 0)
+
+WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Accessories Page/MenuSize'))
+
+WebUI.delay(10)
+
+WebUI.waitForElementVisible(findTestObject('II-USERSITE/OrderOnlineForm/Accessories Page/LabelMenuSize'), 30)
+
+WebUI.delay(5)
+
+WebUI.waitForElementClickable(findTestObject('II-USERSITE/OrderOnlineForm/Accessories Page/btnNext'), 0)
+
+WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Accessories Page/btnNext'))
+
+WebUI.scrollToElement(findTestObject('II-USERSITE/OrderOnlineForm/Page_Order Form - Search Results/Print Details 2 Page/btn AddNewNote'), 
     0)
 
-WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Accessories Page/ProductGroup_Acrylic Stand'), FailureHandling.STOP_ON_FAILURE)
+WebUI.waitForElementVisible(findTestObject('II-USERSITE/OrderOnlineForm/Page_Order Form - Search Results/Print Details 2 Page/btn AddNewNote'), 
+    0)
 
-WebUI.waitForElementVisible(findTestObject('II-USERSITE/OrderOnlineForm/Accessories Page/input_Product Group'), 
+WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Page_Order Form - Search Results/Print Details 2 Page/btn AddNewNote'))
+
+WebUI.waitForElementVisible(findTestObject('II-USERSITE/OrderOnlineForm/Page_Order Form - Search Results/Print Details 2 Page/txb AddNewNote'), 
+    0)
+
+WebUI.setText(findTestObject('II-USERSITE/OrderOnlineForm/Page_Order Form - Search Results/Print Details 2 Page/txb AddNewNote'), 
+    'test')
+
+WebUI.scrollToElement(findTestObject('II-USERSITE/OrderOnlineForm/Page_Order Form - Search Results/Print Details 2 Page/btnSave'), 
+    0)
+
+WebUI.waitForElementVisible(findTestObject('II-USERSITE/OrderOnlineForm/Page_Order Form - Search Results/Print Details 2 Page/btnSave'), 
+    0)
+
+WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Page_Order Form - Search Results/Print Details 2 Page/btnSave'))
+
+not_run: WebUI.delay(5)
+
+WebUI.scrollToElement(findTestObject('II-USERSITE/OrderOnlineForm/Accessories Finishing Details/btn Next'), 0)
+
+not_run: WebUI.waitForElementVisible(findTestObject('II-USERSITE/OrderOnlineForm/Page_Order Form - Search Results/Print Details 2 Page/btn Next'), 
     30)
 
-WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Accessories Page/input_Product Group'))
+WebUI.delay(5)
 
-WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Accessories Page/li_3-Sided Triangle'))
+WebUI.waitForElementPresent(findTestObject('II-USERSITE/OrderOnlineForm/Accessories Finishing Details/btn MyItems'), 30)
 
-WebUI.waitForElementClickable(findTestObject('II-USERSITE/OrderOnlineForm/Accessories Page/span_Menu Size'), 30)
+WebUI.waitForElementVisible(findTestObject('II-USERSITE/OrderOnlineForm/Accessories Finishing Details/btn Next'), 30)
 
-WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Accessories Page/Menu Size_4 x 6'))
+not_run: WebUI.waitForElementVisible(findTestObject('II-USERSITE/OrderOnlineForm/Accessories Finishing Details/btn Next'), 
+    0)
 
-WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Menu Books Details Page/btn Next'))
-
-WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Print Details 2 Page/btn AddNewNote'))
-
-WebUI.setText(findTestObject('II-USERSITE/OrderOnlineForm/Print Details 2 Page/txb AddNewNote'), 'test')
-
-WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Print Details 2 Page/btnSave'))
-
-WebUI.scrollToElement(findTestObject('II-USERSITE/OrderOnlineForm/Print Details 2 Page/btn Next'), 0)
-
-WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Print Details 2 Page/btn Next'))
+WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Page_Order Form - Search Results/Print Details 2 Page/btn Next'))
 
 WebUI.waitForPageLoad(0)
+
+WebUI.waitForElementVisible(findTestObject('II-USERSITE/OrderOnlineForm/Brand Mentions Page/btn_No Brand Mentions Click Here'), 
+    0)
 
 WebUI.waitForElementPresent(findTestObject('II-USERSITE/OrderOnlineForm/Brand Mentions Page/btn_No Brand Mentions Click Here'), 
     0)
 
 WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Brand Mentions Page/btn_No Brand Mentions Click Here'))
 
+WebUI.delay(5)
+
+WebUI.scrollToElement(findTestObject('II-USERSITE/OrderOnlineForm/Shipping Page/btn Next'), 0)
+
+WebUI.delay(5)
+
+WebUI.waitForElementClickable(findTestObject('II-USERSITE/OrderOnlineForm/Shipping Page/btn Next'), 0)
+
 WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Shipping Page/btn Next'))
+
+WebUI.waitForElementVisible(findTestObject('II-USERSITE/OrderOnlineForm/Item details Page/btn Continue to Order Summary'), 
+    0)
+
+WebUI.scrollToElement(findTestObject('II-USERSITE/OrderOnlineForm/Item details Page/btn Continue to Order Summary'), 0)
 
 WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Item details Page/btn Continue to Order Summary'))
 
