@@ -71,5 +71,3 @@ WebUI.waitForElementPresent(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/Repl
 
 WebUI.click(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/ReplaceFileBtn'))
 
-WebUI.delay(3)
-

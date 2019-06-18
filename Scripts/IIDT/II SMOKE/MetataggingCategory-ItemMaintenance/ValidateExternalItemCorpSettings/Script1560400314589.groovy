@@ -33,7 +33,7 @@ WebUI.waitForElementVisible(findTestObject('II-WSWADMIN/MainMenu/Meta Tagging Ca
 
 WebUI.mouseOver(findTestObject('II-WSWADMIN/MainMenu/Meta Tagging Category-Item Maintenance'))
 
-WebUI.waitForElementVisible(findTestObject('II-WSWADMIN/MainMenu/MetaTaggingCategoryMaintenance'), 30)
+WebUI.waitForElementPresent(findTestObject('II-WSWADMIN/MainMenu/MetaTaggingCategoryMaintenance'), 0)
 
 WebUI.click(findTestObject('II-WSWADMIN/MainMenu/MetaTaggingCategoryMaintenance'))
 
@@ -49,9 +49,9 @@ WebUI.delay(5)
 
 WebUI.click(findTestObject('II-WSWADMIN/ItemSearchTaggingPage/CorporationTextbox'))
 
-WebUI.sendKeys(findTestObject('II-WSWADMIN/ItemSearchTaggingPage/CorporationTextbox'), '276')
+WebUI.waitForElementPresent(findTestObject('II-WSWADMIN/ItemSearchTaggingPage/SelectCorp'), 300)
 
-WebUI.waitForElementPresent(findTestObject('II-WSWADMIN/ItemSearchTaggingPage/SelectCorp'), 20)
+WebUI.delay(5)
 
 WebUI.click(findTestObject('II-WSWADMIN/ItemSearchTaggingPage/SelectCorp'))
 

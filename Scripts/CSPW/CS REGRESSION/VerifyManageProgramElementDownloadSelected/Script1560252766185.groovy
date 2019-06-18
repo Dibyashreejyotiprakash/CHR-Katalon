@@ -15,37 +15,11 @@ import internal.GlobalVariable as GlobalVariable
 
 WebUI.openBrowser('')
 
-WebUI.acceptAlert()
-
 CustomKeywords.'com.utilities.Interactions.GetUrl'(GlobalVariable.bunameconsolidator, GlobalVariable.testtype, GlobalVariable.environment)
 
 WebUI.waitForPageLoad(30)
 
 WebUI.maximizeWindow()
 
-WebUI.waitForElementVisible(findTestObject('CONSOLIDATOR/LogInPage/LoginBtn'), 0)
-
-WebUI.acceptAlert()
-
-WebUI.acceptAlert()
-
-WebUI.acceptAlert()
-
-WebUI.acceptAlert()
-
-WebUI.acceptAlert()
-
-WebUI.acceptAlert()
-
-WebUI.acceptAlert()
-
-WebUI.acceptAlert()
-
-WebUI.acceptAlert()
-
-WebUI.acceptAlert()
-
-WebUI.acceptAlert()
-
-WebUI.acceptAlert()
+WebUI.waitForElementVisible(findTestObject('CONSOLIDATOR/LogInPage/LoginBtn'), 300)
 

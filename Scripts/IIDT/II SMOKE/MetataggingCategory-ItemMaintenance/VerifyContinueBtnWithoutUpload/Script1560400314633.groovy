@@ -56,7 +56,9 @@ WebUI.delay(3)
 
 WebUI.click(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/ItemTypeDropDownBulkPage'))
 
-WebUI.verifyElementNotClickable(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/ContinueBtn'))
+WebUI.waitForElementVisible(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/ContinueBtn'), 300)
+
+not_run: WebUI.verifyElementNotClickable(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/ContinueBtn'))
 
 WebUI.closeBrowser()
 

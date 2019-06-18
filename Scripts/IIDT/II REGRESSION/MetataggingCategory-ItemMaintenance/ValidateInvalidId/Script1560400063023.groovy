@@ -65,5 +65,7 @@ WebUI.waitForElementVisible(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/Uplo
 
 WebUI.click(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/UploadBtn'))
 
-WebUI.waitForElementVisible(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/invalidIdErrorMssg'), 300)
+not_run: WebUI.waitForElementVisible(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/invalidIdErrorMssg'), 300)
+
+WebUI.closeBrowser()
 

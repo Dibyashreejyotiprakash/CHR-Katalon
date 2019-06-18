@@ -67,27 +67,31 @@ WebUI.waitForPageLoad(0)
 
 WebUI.verifyElementPresent(findTestObject('II-USERSITE/OrderOnlineForm/Search Results Page/Searched DT Number'), 0)
 
-WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Search Results Page/Btn ExpandColumn'))
+WebUI.closeBrowser()
 
-WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Search Results Page/chkbx JobLineId'))
+not_run: WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Search Results Page/Btn ExpandColumn'))
 
-WebUI.scrollToElement(findTestObject('II-USERSITE/OrderOnlineForm/Search Results Page/btn Add Selected Item(s)'), 0)
+not_run: WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Search Results Page/chkbx JobLineId'))
 
-WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Search Results Page/btn Add Selected Item(s)'))
+not_run: WebUI.scrollToElement(findTestObject('II-USERSITE/OrderOnlineForm/Search Results Page/btn Add Selected Item(s)'), 
+    0)
 
-WebUI.waitForPageLoad(0)
+not_run: WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Search Results Page/btn Add Selected Item(s)'))
 
-WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Item details Page/btn Edit'))
+not_run: WebUI.waitForPageLoad(0)
 
-WebUI.waitForElementVisible(findTestObject('II-USERSITE/OrderOnlineForm/Print Details 2 Page/btn AddNewNote'), 0)
+not_run: WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Item details Page/btn Edit'))
 
-WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Print Details 2 Page/btn AddNewNote'))
+not_run: WebUI.waitForElementVisible(findTestObject('II-USERSITE/OrderOnlineForm/Print Details 2 Page/btn AddNewNote'), 
+    0)
 
-WebUI.setText(findTestObject('II-USERSITE/OrderOnlineForm/Print Details 2 Page/txb AddNewNote'), 'test')
+not_run: WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Print Details 2 Page/btn AddNewNote'))
 
-WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Print Details 2 Page/btnSave'))
+not_run: WebUI.setText(findTestObject('II-USERSITE/OrderOnlineForm/Print Details 2 Page/txb AddNewNote'), 'test')
 
-WebUI.scrollToElement(findTestObject('II-USERSITE/OrderOnlineForm/Print Details 2 Page/btn Next'), 0)
+not_run: WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Print Details 2 Page/btnSave'))
 
-WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Print Details 2 Page/btn Next'))
+not_run: WebUI.scrollToElement(findTestObject('II-USERSITE/OrderOnlineForm/Print Details 2 Page/btn Next'), 0)
+
+not_run: WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Print Details 2 Page/btn Next'))
 

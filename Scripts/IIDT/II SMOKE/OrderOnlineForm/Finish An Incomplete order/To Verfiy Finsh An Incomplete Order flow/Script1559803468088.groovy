@@ -51,5 +51,7 @@ WebUI.waitForElementClickable(findTestObject('II-USERSITE/OrderOnlineForm/Landin
 
 WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Landing Page/Finish An Incomplete Order'))
 
-WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/CreateANewCustomOrder/Page_Home Page/lnkLogout'))
+WebUI.scrollToElement(findTestObject('II-USERSITE/OrderOnlineForm/Home Page/lnk Logout'), 0)
+
+WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Home Page/lnk Logout'))
 
