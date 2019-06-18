@@ -70,87 +70,135 @@ WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Item details Page/Small 
 
 WebUI.waitForPageLoad(30)
 
-WebUI.scrollToElement(findTestObject('II-USERSITE/OrderOnlineForm/Page_Order Form - Print Details 1/img_Shelf Talker'), 
+WebUI.scrollToElement(findTestObject('II-USERSITE/OrderOnlineForm/Small Print Page_Order Form - Print Details 1/img_Shelf Talker'), 
     20)
 
-WebUI.waitForElementVisible(findTestObject('II-USERSITE/OrderOnlineForm/Page_Order Form - Print Details 1/img_Shelf Talker'), 
+WebUI.waitForElementVisible(findTestObject('II-USERSITE/OrderOnlineForm/Small Print Page_Order Form - Print Details 1/img_Shelf Talker'), 
     30)
 
-WebUI.waitForElementVisible(findTestObject('II-USERSITE/OrderOnlineForm/Print Details 1 Page/ddl Arrow'), 30)
+WebUI.delay(5)
 
-WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Print Details 1 Page/ddl Arrow'))
+WebUI.waitForElementVisible(findTestObject('II-USERSITE/OrderOnlineForm/Small Print Page_Order Form - Print Details 1/ddl Arrow'), 0)
 
-WebUI.waitForAlert(3, FailureHandling.STOP_ON_FAILURE)
+WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Small Print Page_Order Form - Print Details 1/ddl Arrow'))
 
-WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Page_Order Form - Print Details 1/Letter'))
+WebUI.waitForElementVisible(findTestObject('II-USERSITE/OrderOnlineForm/Small Print Page_Order Form - Print Details 1/All Item _ Letter'), 
+    0)
 
-WebUI.waitForAlert(2)
+WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Small Print Page_Order Form - Print Details 1/All Item _ Letter'))
 
-WebUI.waitForElementVisible(findTestObject('II-USERSITE/OrderOnlineForm/Print Details 1 Page/txb_Order Line Name'), 30)
+WebUI.delay(2)
 
-WebUI.setText(findTestObject('II-USERSITE/OrderOnlineForm/Print Details 1 Page/txb_Order Line Name'), 'DemoQA')
-
-WebUI.waitForAlert(2)
-
-WebUI.waitForElementVisible(findTestObject('II-USERSITE/OrderOnlineForm/Page_Order Form - Print Details 1/ddn Size'), 30)
-
-WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Page_Order Form - Print Details 1/ddn Size'))
-
-WebUI.waitForElementVisible(findTestObject('II-USERSITE/OrderOnlineForm/Page_Order Form - Print Details 1/SizeOption'), 
+WebUI.waitForElementVisible(findTestObject('II-USERSITE/OrderOnlineForm/Small Print Page_Order Form - Print Details 1/txb Job Line Name'), 
     30)
 
-WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Page_Order Form - Print Details 1/SizeOption'))
+WebUI.setText(findTestObject('II-USERSITE/OrderOnlineForm/Small Print Page_Order Form - Print Details 1/txb Job Line Name'), 'DemoQA')
 
-WebUI.waitForAlert(2)
+WebUI.delay(2)
 
-WebUI.scrollToElement(findTestObject('II-USERSITE/OrderOnlineForm/Print Details 1 Page/ddl Paper'), 0)
+WebUI.waitForElementVisible(findTestObject('II-USERSITE/OrderOnlineForm/Small Print Page_Order Form - Print Details 1/ddn Size'), 30)
 
-WebUI.waitForElementVisible(findTestObject('II-USERSITE/OrderOnlineForm/Print Details 1 Page/ddl Paper'), 30)
+WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Small Print Page_Order Form - Print Details 1/ddn Size'))
 
-WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Print Details 1 Page/ddl Paper'))
+WebUI.waitForElementVisible(findTestObject('II-USERSITE/OrderOnlineForm/Small Print Page_Order Form - Print Details 1/Size_8.5x11.000'), 
+    30)
 
-WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Page_Order Form - Print Details 1/li_10pt Card Stock'))
+WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Small Print Page_Order Form - Print Details 1/Size_8.5x11.000'))
 
-WebUI.waitForAlert(2)
+WebUI.delay(2)
 
-WebUI.scrollToElement(findTestObject('II-USERSITE/OrderOnlineForm/Print Details 1 Page/ddl Paper'), 0)
+WebUI.scrollToElement(findTestObject('II-USERSITE/OrderOnlineForm/Small Print Page_Order Form - Print Details 1/ddl Paper'), 30)
 
-WebUI.waitForElementVisible(findTestObject('II-USERSITE/OrderOnlineForm/Print Details 1 Page/ddl Paper'), 30)
+WebUI.delay(5)
 
-WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Print Details 1 Page/ddl Paper'))
+WebUI.waitForElementVisible(findTestObject('II-USERSITE/OrderOnlineForm/Small Print Page_Order Form - Print Details 1/ddl Paper'), 0)
 
-WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Page_Order Form - Print Details 1/li_10pt Card Stock'))
+WebUI.waitForElementVisible(findTestObject('II-USERSITE/OrderOnlineForm/Small Print Page_Order Form - Print Details 1/txb Paper'), 0)
 
-WebUI.waitForAlert(2)
+WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Small Print Page_Order Form - Print Details 1/txb Paper'))
 
-WebUI.scrollToElement(findTestObject('II-USERSITE/OrderOnlineForm/Print Details 1 Page/ddl Accessories'), 30)
+WebUI.waitForElementVisible(findTestObject('II-USERSITE/OrderOnlineForm/Small Print Page_Order Form - Print Details 1/Paper_Copy paper'), 
+    0)
 
-WebUI.waitForElementVisible(findTestObject('II-USERSITE/OrderOnlineForm/Print Details 1 Page/ddl Accessories'), 30)
+WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Small Print Page_Order Form - Print Details 1/Paper_Copy paper'))
 
-WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Print Details 1 Page/ddl Accessories'))
+WebUI.waitForAlert(5)
 
-WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Page_Order Form - Print Details 1/li_Easel Back'))
+WebUI.waitForElementVisible(findTestObject('II-USERSITE/OrderOnlineForm/Small Print Page_Order Form - Print Details 1/ddlColor'), 30)
 
-WebUI.waitForAlert(2)
+WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Small Print Page_Order Form - Print Details 1/ddlColor'))
 
-WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Print Details 2 Page/btn AddNewNote'))
+WebUI.waitForElementVisible(findTestObject('II-USERSITE/OrderOnlineForm/Small Print Page_Order Form - Print Details 1/Color-DoubleSided'), 
+    0)
 
-WebUI.setText(findTestObject('II-USERSITE/OrderOnlineForm/Print Details 2 Page/txb AddNewNote'), 'test')
+WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Small Print Page_Order Form - Print Details 1/Color-DoubleSided'))
 
-WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Print Details 2 Page/btnSave'))
+WebUI.delay(5)
 
-WebUI.scrollToElement(findTestObject('II-USERSITE/OrderOnlineForm/Print Details 2 Page/btn Next'), 0)
+WebUI.scrollToElement(findTestObject('II-USERSITE/OrderOnlineForm/Small Print Page_Order Form - Print Details 1/btn Next'), 30)
 
-WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Print Details 2 Page/btn Next'))
+WebUI.waitForElementVisible(findTestObject('II-USERSITE/OrderOnlineForm/Small Print Page_Order Form - Print Details 1/btn Next'), 0)
+
+WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Small Print Page_Order Form - Print Details 1/btn Next'))
+
+WebUI.waitForPageLoad(300)
+
+WebUI.scrollToElement(findTestObject('II-USERSITE/OrderOnlineForm/Page_Order Form - Search Results/Print Details 2 Page/btn AddNewNote'), 
+    0)
+
+WebUI.waitForElementVisible(findTestObject('II-USERSITE/OrderOnlineForm/Page_Order Form - Search Results/Print Details 2 Page/btn AddNewNote'), 
+    0)
+
+WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Page_Order Form - Search Results/Print Details 2 Page/btn AddNewNote'))
+
+WebUI.waitForElementVisible(findTestObject('II-USERSITE/OrderOnlineForm/Page_Order Form - Search Results/Print Details 2 Page/txb AddNewNote'), 
+    0)
+
+WebUI.setText(findTestObject('II-USERSITE/OrderOnlineForm/Page_Order Form - Search Results/Print Details 2 Page/txb AddNewNote'), 
+    'test')
+
+WebUI.scrollToElement(findTestObject('II-USERSITE/OrderOnlineForm/Page_Order Form - Search Results/Print Details 2 Page/btnSave'), 
+    0)
+
+WebUI.waitForElementVisible(findTestObject('II-USERSITE/OrderOnlineForm/Page_Order Form - Search Results/Print Details 2 Page/btnSave'), 
+    0)
+
+WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Page_Order Form - Search Results/Print Details 2 Page/btnSave'))
+
+WebUI.scrollToElement(findTestObject('II-USERSITE/OrderOnlineForm/Page_Order Form - Search Results/Print Details 2 Page/btn Next'), 
+    0)
+
+WebUI.delay(5)
+
+WebUI.waitForElementClickable(findTestObject('II-USERSITE/OrderOnlineForm/Page_Order Form - Search Results/Print Details 2 Page/btn Next'), 
+    30)
+
+WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Page_Order Form - Search Results/Print Details 2 Page/btn Next'))
 
 WebUI.waitForPageLoad(0)
+
+WebUI.waitForElementVisible(findTestObject('II-USERSITE/OrderOnlineForm/Brand Mentions Page/btn_No Brand Mentions Click Here'), 
+    0)
 
 WebUI.waitForElementPresent(findTestObject('II-USERSITE/OrderOnlineForm/Brand Mentions Page/btn_No Brand Mentions Click Here'), 
     0)
 
 WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Brand Mentions Page/btn_No Brand Mentions Click Here'))
 
+WebUI.delay(5)
+
+WebUI.scrollToElement(findTestObject('II-USERSITE/OrderOnlineForm/Shipping Page/btn Next'), 0)
+
+WebUI.delay(5)
+
+WebUI.waitForElementVisible(findTestObject('II-USERSITE/OrderOnlineForm/Shipping Page/btn Next'), 0)
+
 WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Shipping Page/btn Next'))
+
+WebUI.waitForElementVisible(findTestObject('II-USERSITE/OrderOnlineForm/Item details Page/btn Continue to Order Summary'), 
+    0)
+
+WebUI.scrollToElement(findTestObject('II-USERSITE/OrderOnlineForm/Item details Page/btn Continue to Order Summary'), 0)
 
 WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Item details Page/btn Continue to Order Summary'))
 
