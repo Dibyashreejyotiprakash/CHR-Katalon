@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//a[@id='ctl00_Body_grdJobs_ctl00_ctl10_lbtnSelect']/span</value>
+         <value>//a[@id='ctl00_Body_grdJobs_ctl00_ctl04_lbtnSelect']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
