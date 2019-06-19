@@ -81,18 +81,18 @@ not_run: WebUI.waitForPageLoad(0)
 
 not_run: WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Item details Page/btn Edit'))
 
-not_run: WebUI.waitForElementVisible(findTestObject('II-USERSITE/OrderOnlineForm/Page_Order Form - Search Results/Print Details 2 Page/btn AddNewNote'), 
+not_run: WebUI.waitForElementVisible(findTestObject('II-USERSITE/OrderOnlineForm/Print Details 2 Page/btn AddNewNote'), 
     0)
 
-not_run: WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Page_Order Form - Search Results/Print Details 2 Page/btn AddNewNote'))
+not_run: WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Print Details 2 Page/btn AddNewNote'))
 
-not_run: WebUI.setText(findTestObject('II-USERSITE/OrderOnlineForm/Page_Order Form - Search Results/Print Details 2 Page/txb AddNewNote'), 'test')
+not_run: WebUI.setText(findTestObject('II-USERSITE/OrderOnlineForm/Print Details 2 Page/txb AddNewNote'), 'test')
 
-not_run: WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Page_Order Form - Search Results/Print Details 2 Page/btnSave'))
+not_run: WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Print Details 2 Page/btnSave'))
 
-not_run: WebUI.scrollToElement(findTestObject('II-USERSITE/OrderOnlineForm/Page_Order Form - Search Results/Print Details 2 Page/btn Next'), 0)
+not_run: WebUI.scrollToElement(findTestObject('II-USERSITE/OrderOnlineForm/Print Details 2 Page/btn Next'), 0)
 
-not_run: WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Page_Order Form - Search Results/Print Details 2 Page/btn Next'))
+not_run: WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Print Details 2 Page/btn Next'))
 
 WebUI.closeBrowser()
 

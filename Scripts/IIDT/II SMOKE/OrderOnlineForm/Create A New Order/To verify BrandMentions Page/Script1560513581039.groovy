@@ -99,7 +99,7 @@ WebUI.waitForElementClickable(findTestObject('II-USERSITE/OrderOnlineForm/Access
 
 WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Accessories Page/btnNext'))
 
-WebUI.scrollToElement(findTestObject('II-USERSITE/OrderOnlineForm/Page_Order Form - Search Results/Print Details 2 Page/btn AddNewNote'), 0)
+WebUI.scrollToElement(findTestObject('II-USERSITE/OrderOnlineForm/Print Details 2 Page/btn AddNewNote'), 0)
 
 WebUI.closeBrowser()
 
