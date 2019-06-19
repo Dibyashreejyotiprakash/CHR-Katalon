@@ -23,11 +23,11 @@ WebUI.maximizeWindow()
 
 WebUI.waitForElementVisible(findTestObject('POSW/LoginPage/UserNameTxtBox'), 30)
 
-WebUI.setText(findTestObject('POSW/LoginPage/UserNameTxtBox'), GlobalVariable.posusername)
+WebUI.setText(findTestObject('POSW/LoginPage/UserNameTxtBox'), GlobalVariable.POSUserNameIL)
 
 WebUI.waitForElementVisible(findTestObject('POSW/LoginPage/PasswordTxtBox'), 30)
 
-WebUI.setText(findTestObject('POSW/LoginPage/PasswordTxtBox'), GlobalVariable.pospassword)
+WebUI.setText(findTestObject('POSW/LoginPage/PasswordTxtBox'), GlobalVariable.POSpasswordIL)
 
 WebUI.waitForElementVisible(findTestObject('POSW/LoginPage/LoginBtn'), 30)
 

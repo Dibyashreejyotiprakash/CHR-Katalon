@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>MenuWarehouse</name>
+   <name>CheckBoxActive</name>
    <tag></tag>
-   <elementGuidId>0b7394f9-8a1b-4c57-9753-03ca91036be8</elementGuidId>
+   <elementGuidId>d6006c37-087c-4c7e-af8b-bb060fff0c73</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//*[@id='mainMenu']/div/ul/li[2]/a/span</value>
+         <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//*[@id='myStatusDropdown']/label</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

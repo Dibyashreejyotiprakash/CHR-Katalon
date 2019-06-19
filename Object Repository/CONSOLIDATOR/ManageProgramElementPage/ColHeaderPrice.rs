@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>MenuWarehouse</name>
+   <name>ColHeaderPrice</name>
    <tag></tag>
-   <elementGuidId>0b7394f9-8a1b-4c57-9753-03ca91036be8</elementGuidId>
+   <elementGuidId>a120c8a0-9fbd-4743-8b60-0d41c9448d53</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//*[@id='mainMenu']/div/ul/li[2]/a/span</value>
+         <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//*[@id='allProgramElements']//following-sibling::thead/tr[1]/th[2]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

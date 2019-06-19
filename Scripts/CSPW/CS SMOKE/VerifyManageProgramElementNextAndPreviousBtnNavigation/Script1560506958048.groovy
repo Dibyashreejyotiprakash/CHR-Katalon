@@ -21,6 +21,8 @@ WebUI.navigateToUrl('https://admintool.v5qa.brandmuscle.net')
 
 WebUI.waitForPageLoad(30)
 
+WebUI.waitForElementVisible(findTestObject('CONSOLIDATOR/LogInPage/LoginBtn'), 0)
+
 WebUI.setText(findTestObject('CONSOLIDATOR/LogInPage/Username'), 'chrtestuser@brandmuscle.com')
 
 WebUI.setText(findTestObject('CONSOLIDATOR/LogInPage/Password'), 'Ownlocal@123')
@@ -51,19 +53,23 @@ WebUI.click(findTestObject('CONSOLIDATOR/ParentBusinessUnit/ParentBusinessUnitDr
 
 WebUI.click(findTestObject('CONSOLIDATOR/ParentBusinessUnit/ParentBusinessUnitName'))
 
+WebUI.waitForPageLoad(30)
+
 WebUI.click(findTestObject('CONSOLIDATOR/ParentBusinessUnit/SubmitBtn (1)'))
 
 WebUI.waitForPageLoad(30)
 
-WebUI.navigateToUrl('https://admintool.v5qa.brandmuscle.net/Admin/Consolidator/ConsolidatorManageProgramItem.aspx')
+WebUI.navigateToUrl('https://admintool.v5stage.brandmuscle.net/Admin/Consolidator/ConsolidatorManageBaseElement.aspx')
 
 WebUI.waitForPageLoad(30)
 
-WebUI.waitForElementVisible(findTestObject('CONSOLIDATOR/ManageProgramElementPage/headerManageProgramElements'), 0)
+WebUI.waitForElementVisible(findTestObject('CONSOLIDATOR/ManageElementsPage/MnageElementHeader'), 0)
 
-WebUI.waitForElementVisible(findTestObject('CONSOLIDATOR/ManageProgramElementPage/ddlAllStatus'), 0)
+WebUI.scrollToElement(findTestObject('CONSOLIDATOR/ManageProgramElementPage/NextButtonNavigation'), 0)
 
-WebUI.click(findTestObject('CONSOLIDATOR/ManageProgramElementPage/ddlAllStatus'), FailureHandling.STOP_ON_FAILURE)
+WebUI.verifyElementClickable(findTestObject('CONSOLIDATOR/ManageProgramElementPage/NextButtonNavigation'))
+
+WebUI.verifyElementClickable(findTestObject('CONSOLIDATOR/ManageProgramElementPage/PreviousButtonNavigation'))
 
 WebUI.closeBrowser()
 

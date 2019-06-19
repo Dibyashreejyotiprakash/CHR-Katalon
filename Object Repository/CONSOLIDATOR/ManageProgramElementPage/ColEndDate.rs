@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>MenuWarehouse</name>
+   <name>ColEndDate</name>
    <tag></tag>
-   <elementGuidId>0b7394f9-8a1b-4c57-9753-03ca91036be8</elementGuidId>
+   <elementGuidId>21f8e727-02a8-4506-80fa-b094aa460098</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//*[@id='mainMenu']/div/ul/li[2]/a/span</value>
+         <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//*[@id='allProgramsList']//following-sibling::thead/tr[2]/th[4]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

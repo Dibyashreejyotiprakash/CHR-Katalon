@@ -337,17 +337,13 @@ public class Interactions {
 	}
 
 	@Keyword
-	def WaitForPageToLoad() {
+	def WaitToPageToLoad() {
 
 		WebUI.waitForPageLoad(300);
 	}
 
 
-	@Keyword
-	def WaitForPageToLoad(int timeinsec) {
 
-		WebUI.waitForPageLoad(timeinsec);
-	}
 
 
 

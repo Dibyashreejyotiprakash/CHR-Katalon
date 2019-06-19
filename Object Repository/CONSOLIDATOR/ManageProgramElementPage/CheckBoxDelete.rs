@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>MenuWarehouse</name>
+   <name>CheckBoxDelete</name>
    <tag></tag>
-   <elementGuidId>0b7394f9-8a1b-4c57-9753-03ca91036be8</elementGuidId>
+   <elementGuidId>61047b47-7d7c-4239-89ab-7d30be01f003</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//*[@id='mainMenu']/div/ul/li[2]/a/span</value>
+         <key>CSS</key>
+         <value>#MainContent_MainContent_pnlGrd [role='dialog']:nth-of-type(4) .check</value>
       </entry>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
-   <selectorMethod>XPATH</selectorMethod>
+   <selectorMethod>CSS</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
 </WebElementEntity>

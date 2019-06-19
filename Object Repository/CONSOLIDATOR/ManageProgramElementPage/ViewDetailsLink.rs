@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>MenuWarehouse</name>
+   <name>ViewDetailsLink</name>
    <tag></tag>
-   <elementGuidId>0b7394f9-8a1b-4c57-9753-03ca91036be8</elementGuidId>
+   <elementGuidId>7ad9e8fc-a073-4704-9447-5a0bd734d128</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//*[@id='mainMenu']/div/ul/li[2]/a/span</value>
+         <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//*[@class='col-xs-12 left-padding full-width view-details']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

@@ -15,37 +15,31 @@ import internal.GlobalVariable as GlobalVariable
 
 WebUI.openBrowser('')
 
-WebUI.acceptAlert()
+CustomKeywords.'com.utilities.Interactions.GetUrl'(GlobalVariable.bunameposw, GlobalVariable.testtype, GlobalVariable.environment)
 
-CustomKeywords.'com.utilities.Interactions.GetUrl'(GlobalVariable.bunameconsolidator, GlobalVariable.testtype, GlobalVariable.environment)
-
-WebUI.waitForPageLoad(30)
+WebUI.waitForPageLoad(300)
 
 WebUI.maximizeWindow()
 
-WebUI.waitForElementVisible(findTestObject('CONSOLIDATOR/LogInPage/LoginBtn'), 0)
+WebUI.waitForElementVisible(findTestObject('POSW/LoginPage/LoginBtn'), 0)
 
-WebUI.acceptAlert()
+WebUI.setText(findTestObject('POSW/LoginPage/UserNameTxtBox'), GlobalVariable.POSUserNameNY)
 
-WebUI.acceptAlert()
+WebUI.setText(findTestObject('POSW/LoginPage/PasswordTxtBox'), GlobalVariable.POSPasswordNY)
 
-WebUI.acceptAlert()
+WebUI.click(findTestObject('POSW/LoginPage/LoginBtn'))
 
-WebUI.acceptAlert()
+WebUI.waitForPageLoad(300)
 
-WebUI.acceptAlert()
+WebUI.waitForPageLoad(300)
 
-WebUI.acceptAlert()
+WebUI.waitForElementVisible(findTestObject('POSW/LoginPage/btnOrderIDSearch'), 0)
 
-WebUI.acceptAlert()
+WebUI.click(findTestObject('POSW/DashboardPage/OrderPackListLink'))
 
-WebUI.acceptAlert()
+WebUI.waitForPageLoad(300)
 
-WebUI.acceptAlert()
+WebUI.delay(10)
 
-WebUI.acceptAlert()
-
-WebUI.acceptAlert()
-
-WebUI.acceptAlert()
+WebUI.closeBrowser()
 

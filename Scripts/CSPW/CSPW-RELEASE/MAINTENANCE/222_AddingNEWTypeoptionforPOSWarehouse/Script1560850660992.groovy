@@ -35,15 +35,37 @@ WebUI.waitForPageLoad(30)
 
 WebUI.waitForElementVisible(findTestObject('POSW/LoginPage/btnOrderIDSearch'), 0)
 
-WebUI.waitForElementVisible(findTestObject('POSW/DashboardPage/PendingShipmentOrdersSection'), 0)
+WebUI.waitForElementVisible(findTestObject('POSW/DashboardPage/MenuWarehouse'), 0)
 
-WebUI.scrollToElement(findTestObject('POSW/DashboardPage/ShipOrderFirstLink'), 0)
+WebUI.mouseOverOffset(findTestObject('POSW/DashboardPage/MenuWarehouse'), 0, 0)
 
-WebUI.click(findTestObject('POSW/DashboardPage/ShipOrderFirstLink'))
+WebUI.waitForElementVisible(findTestObject('POSW/DashboardPage/SubMenuItemSearch'), 0)
 
-WebUI.delay(10)
+WebUI.click(findTestObject('POSW/DashboardPage/SubMenuItemSearch'))
+
+WebUI.waitForElementVisible(findTestObject('POSW/ItemSearchPage/FirstItemName'), 300)
+
+WebUI.click(findTestObject('POSW/ItemSearchPage/FirstItemName'))
+
+WebUI.delay(5)
+
+WebUI.switchToWindowIndex(1)
+
+WebUI.waitForElementVisible(findTestObject('POSW/ItemSearchPage/btnDelete'), 0)
+
+WebUI.click(findTestObject('POSW/ItemSearchPage/btnDelete'))
 
 WebUI.acceptAlert()
+
+WebUI.waitForElementVisible(findTestObject('POSW/ItemSearchPage/DeletePopUp'), 0)
+
+WebUI.click(findTestObject('POSW/ItemSearchPage/TypeDropDown'))
+
+WebUI.delay(5)
+
+WebUI.verifyElementPresent(findTestObject('POSW/ItemSearchPage/DiscontinousOption'), 0)
+
+WebUI.click(findTestObject('POSW/ItemSearchPage/DiscontinousOption'))
 
 WebUI.closeBrowser()
 
