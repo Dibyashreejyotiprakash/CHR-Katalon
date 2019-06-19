@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>IIDTM-492</name>
+   <name>IIDTM-492 hc-1 Create a New Custom Order</name>
    <tag></tag>
    <comment></comment>
    <testCaseGuid>720ad7e6-817c-413c-91fe-ba60e62e62a1</testCaseGuid>
