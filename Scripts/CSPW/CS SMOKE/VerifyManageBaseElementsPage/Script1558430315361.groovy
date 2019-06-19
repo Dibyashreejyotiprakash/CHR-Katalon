@@ -15,7 +15,7 @@ import internal.GlobalVariable as GlobalVariable
 
 WebUI.openBrowser('')
 
-CustomKeywords.'com.utilities.DemooInteractions.GetUrl'(GlobalVariable.bunameconsolidator, GlobalVariable.testtypesmoek, GlobalVariable.testtypesmoek)
+CustomKeywords.'com.utilities.DemooInteractions.GetUrl'(GlobalVariable.bunameconsolidator, GlobalVariable.testtypesmoke, GlobalVariable.testtypesmoke)
 
 WebUI.waitForPageLoad(30)
 

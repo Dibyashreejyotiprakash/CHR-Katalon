@@ -21,11 +21,11 @@ WebUI.navigateToUrl('http://astha.nigam:Jobchange@123@wswadmin.uat.brandmuscle.n
 
 WebUI.waitForPageLoad(30)
 
-WebUI.waitForElementVisible(findTestObject('II-WSWADMIN/MainMenu/InstantImpactMenu'), 30)
+WebUI.waitForElementVisible(findTestObject('null'), 30)
 
 WebUI.delay(2)
 
-WebUI.mouseOver(findTestObject('II-WSWADMIN/MainMenu/InstantImpactMenu'))
+WebUI.mouseOver(findTestObject('null'))
 
 WebUI.waitForElementVisible(findTestObject('II-WSWADMIN/MainMenu/Meta Tagging Category-Item Maintenance'), 30)
 

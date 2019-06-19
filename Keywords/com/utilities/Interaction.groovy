@@ -30,14 +30,15 @@ import org.openqa.selenium.By
 import org.openqa.selenium.JavascriptExecutor
 import internal.GlobalVariable
 
-def class Interactions {
+public  class Interaction {
 
 	WebDriver driver = DriverFactory.getWebDriver()
 	String pageLoadStatus = null;
 	JavascriptExecutor js = (JavascriptExecutor) driver;
 
+
 	@Keyword
-	def GetUrl(String BuName,String TestType, String EnvironmentName) {
+	public void GetUrl(String BuName,String TestType, String EnvironmentName) {
 		try {
 
 			if(TestType.equalsIgnoreCase("SMOKE")) {
@@ -280,8 +281,8 @@ def class Interactions {
 	}
 
 
-	@Keyword
-	def  WaitTime(int seconds) throws InterruptedException {
+
+	public void  WaitTime(int seconds) throws InterruptedException {
 		try {
 			seconds = seconds * 1000;
 		}
@@ -291,139 +292,139 @@ def class Interactions {
 		Thread.sleep(seconds);
 	}
 
-	@Keyword
-	def  WaitForPageToLoad() {
+
+	public void  WaitForPageToLoad() {
 
 		WebDriverWait wait = new WebDriverWait(driver, 300);
 		pageLoadStatus = (String)js.executeScript("return document.readyState");
 	}
 
 
-	@Keyword
-	def  GoToURL(String url) {
+
+	public void  GoToURL(String url) {
 		driver.navigate().to(url);
 	}
 
-	@Keyword
-	def  Back() {
+
+	public void  Back() {
 		driver.navigate().back();
 	}
 
-	@Keyword
-	def  Refresh() {
+
+	public void  Refresh() {
 		driver.navigate().refresh();
 	}
 
 
-	@Keyword
-	def  GetCurrentURL() {
+
+	public String  GetCurrentURL() {
 		return driver.getCurrentUrl();
 	}
 
-	@Keyword
+
 	public void  Type(By by, String value) {
+		//WaitVisible(by)
+		driver.findElement(by).sendKeys(value);
+	}
+
+
+	public void  Type(By by, String value, int waittimeinsecs) throws InterruptedException {
 		WaitVisible(by)
 		driver.findElement(by).sendKeys(value);
 	}
 
-	@Keyword
-	def  Type(By by, String value, int waittimeinsecs) throws InterruptedException {
-		WaitVisible(by)
-		driver.findElement(by).sendKeys(value);
-	}
 
-	@Keyword
-	def  Clear(By by) {
+	public void  Clear(By by) {
 		WaitVisible(by)
 		driver.findElement(by).clear();
 	}
 
 
-	@Keyword
-	def  Clear(By by, int waittimeinsecs) {
+
+	public void  Clear(By by, int waittimeinsecs) {
 		WaitVisible(by)
 		driver.findElement(by).clear();
 	}
 
-	@Keyword
-	def  TypeClear(By by, String value,WebDriver driver) {
+
+	public void  TypeClear(By by, String value,WebDriver driver) {
 		WaitVisible(by)
 		WebElement element = driver.findElement(by);
 		element.clear();
 		element.sendKeys(value);
 	}
 
-	@Keyword
-	def  ScrollBy(int scroll) {
+
+	public void  ScrollBy(int scroll) {
 		js.executeScript("window.scrollBy(0,1000)");
 	}
 
 
-	@Keyword
-	def  ScrollToViewElement(By by) {
+
+	public void  ScrollToViewElement(By by) {
 		WaitVisible(by)
 		WebElement element = driver.findElement(by);
 		js.executeScript("arguments[0].scrollIntoView(true);", element);
 	}
 
-	@Keyword
+
 	//Scroll up to element to be visible
-	def  ScrollToViewElement(WebElement element)
+	public void  ScrollToViewElement(WebElement element)
 	{
 		WaitVisible(element)
 		js.executeScript("arguments[0].scrolSlIntoView(true);", element);
 	}
 
-	@Keyword
+
 	//Scroll upto element to be visible
-	def  ScrollToViewelement(By by)
+	public void  ScrollToViewelement(By by)
 	{
 		WaitVisible(by)
 		js.executeScript("arguments[0].scrolSlIntoView(true);", by);
 	}
 
-	@Keyword
+
 	//Scroll to bottom of page
-	def  ScrollToBottomOfPage()
+	public void  ScrollToBottomOfPage()
 	{
 		js.executeScript("window.scrollTo(0, document.body.clientHeight);");
 	}
 
-	@Keyword
+
 	//Scroll to top of page
-	def  ScrollToTopOgPage()
+	public void  ScrollToTopOgPage()
 	{
 		js.executeScript("window.scrollTo(0, 0)");
 	}
 
 
-	@Keyword
+
 	//Get single element
-	def WebElement GetElement(By by)
+	public  WebElement GetElement(By by)
 	{
 		WaitVisible(by)
 		return driver.findElement(by);
 	}
 
-	@Keyword
+
 	//Get single element
-	def WebElement GetElement(By by, int waittimeinsecs)
+	public  WebElement GetElement(By by, int waittimeinsecs)
 	{
 		WaitVisible(by)
 		return driver.findElement(by);
 	}
 
-	@Keyword
+
 	//Get Multiple elements
-	def List<WebElement> GetElements(By by)
+	public  List<WebElement> GetElements(By by)
 	{
 		WaitVisible(by)
 		return  driver.findElements(by);
 	}
 
-	@Keyword
+
 	//Check element is displayed or not
-	def boolean IsElementDisplayed(By by) throws Exception
+	public  boolean IsElementDisplayed(By by) throws Exception
 	{
 		try
 		{
@@ -437,9 +438,9 @@ def class Interactions {
 		}
 	}
 
-	@Keyword
+
 	// Element is enabled or not
-	def boolean IsElementEnabled(By by) throws Exception
+	public  boolean IsElementEnabled(By by) throws Exception
 	{
 		try
 		{
@@ -453,9 +454,9 @@ def class Interactions {
 		}
 	}
 
-	@Keyword
+
 	//Element is selected or not
-	def boolean IsElementSelected(By by) throws Exception
+	public  boolean IsElementSelected(By by) throws Exception
 	{
 		try
 		{
@@ -469,8 +470,8 @@ def class Interactions {
 		}
 	}
 
-	@Keyword
-	def  WaitVisible(By by)
+
+	public void  WaitVisible(By by)
 	{
 		WaitVisible(by)
 		WebDriverWait wait = new WebDriverWait(driver, 300);
@@ -479,8 +480,8 @@ def class Interactions {
 
 
 
-	@Keyword
-	def  WaitVisible(By by,int timeinsec)
+
+	public void  WaitVisible(By by,int timeinsec)
 	{
 		WaitVisible(by)
 		WebDriverWait wait = new WebDriverWait(driver, timeinsec);
@@ -488,8 +489,8 @@ def class Interactions {
 	}
 
 
-	@Keyword
-	def  WaitVisible(WebElement element)
+
+	public void  WaitVisible(WebElement element)
 	{
 		WaitVisible(element)
 		WebDriverWait wait = new WebDriverWait(driver, 300);
@@ -497,8 +498,8 @@ def class Interactions {
 	}
 
 
-	@Keyword
-	def  WaitVisible(WebElement element,int timeinsec)
+
+	public void  WaitVisible(WebElement element,int timeinsec)
 	{
 		WaitVisible(element)
 		WebDriverWait wait = new WebDriverWait(driver, timeinsec);
@@ -506,8 +507,8 @@ def class Interactions {
 	}
 
 
-	@Keyword
-	def  WaitExist(By by)
+
+	public void  WaitExist(By by)
 	{
 		WaitVisible(by)
 		WebDriverWait wait = new WebDriverWait(driver,300);
@@ -515,16 +516,16 @@ def class Interactions {
 	}
 
 
-	@Keyword
-	def  WaitExistsForMultipleElements(By by)
+
+	public void  WaitExistsForMultipleElements(By by)
 	{
 		WaitVisible(by)
 		WebDriverWait wait = new WebDriverWait(driver,300);
 		wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(by));
 	}
 
-	@Keyword
-	def  WaitExistsForNestedElements(By by,By nestedlocator)
+
+	public void  WaitExistsForNestedElements(By by,By nestedlocator)
 	{
 		WaitVisible(by)
 		WebDriverWait wait = new WebDriverWait(driver,300);
@@ -532,16 +533,16 @@ def class Interactions {
 	}
 
 
-	@Keyword
-	def  WaitExistsForNestedElements(WebElement element,By subelement)
+
+	public void  WaitExistsForNestedElements(WebElement element,By subelement)
 	{
 		WebDriverWait wait = new WebDriverWait(driver,300);
 		wait.until(ExpectedConditions.presenceOfNestedElementLocatedBy(subelement, subelement));
 	}
 
 
-	@Keyword
-	def  WaitTillNotVisible(By by,int timeinsec)
+
+	public void  WaitTillNotVisible(By by,int timeinsec)
 	{
 		boolean stillExists = true;
 		while (stillExists)
@@ -558,8 +559,8 @@ def class Interactions {
 	}
 
 
-	@Keyword
-	def WebElement WaitUntilElementClickable(WebElement element)
+
+	public  WebElement WaitUntilElementClickable(WebElement element)
 	{
 		try
 		{
@@ -574,8 +575,8 @@ def class Interactions {
 	}
 
 
-	@Keyword
-	def  WaitUntilElementClickable(By by)
+
+	public void  WaitUntilElementClickable(By by)
 	{
 		try
 		{
@@ -590,8 +591,8 @@ def class Interactions {
 	}
 
 
-	@Keyword
-	def boolean WaitUntilStalenessOfElement(WebElement element, int timeinsec)
+
+	public  boolean WaitUntilStalenessOfElement(WebElement element, int timeinsec)
 	{
 		try
 		{
@@ -605,23 +606,23 @@ def class Interactions {
 		}
 	}
 
-	@Keyword
+
 	/*Click*/
-	def  Click(By by)
+	public void  ClickTo(By by)
 	{
-		WaitVisible(by)
+		//WaitVisible(by)
 		driver.findElement(by).click();
 	}
 
-	@Keyword
-	def  ClickAndWait(By by,int timeinsec) throws InterruptedException
+
+	public void  ClickAndWait(By by,int timeinsec) throws InterruptedException
 	{
 		WaitTime(timeinsec);
 		driver.findElement(by).click();
 	}
 
-	@Keyword
-	def  DoubleClick(By by) throws InterruptedException
+
+	public void  DoubleClick(By by) throws InterruptedException
 	{
 		WebElement element = driver.findElement(by);
 		Actions action = new Actions(driver);
@@ -631,17 +632,17 @@ def class Interactions {
 		WaitTime(4);
 	}
 
-	@Keyword
-	def  JsClick(WebElement element)
+
+	public void  JsClick(WebElement element)
 	{
 		WebDriverWait wait = new WebDriverWait(driver,300);
 		js.executeScript( "arguments[0].click();", element );
 	}
 
 
-	@Keyword
+
 	/*Alert Handler*/
-	def boolean AcceptAlert()
+	public  boolean AcceptAlert()
 	{
 		try
 		{
@@ -657,8 +658,8 @@ def class Interactions {
 		}
 	}
 
-	@Keyword
-	def boolean DismissAlert()
+
+	public  boolean DismissAlert()
 	{
 		try
 		{
@@ -674,8 +675,8 @@ def class Interactions {
 		}
 	}
 
-	@Keyword
-	def String GetAlertText()
+
+	public  String GetAlertText()
 	{
 		try
 		{
@@ -691,8 +692,8 @@ def class Interactions {
 		}
 	}
 
-	@Keyword
-	def MouseHoverOnElement(By by)
+
+	public void MouseHoverOnElement(By by)
 	{
 		WebElement elementToHover = driver.findElement(by);
 		Actions hover = new Actions(driver);
@@ -701,8 +702,8 @@ def class Interactions {
 	}
 
 
-	@Keyword
-	def MouseHoverAndClick(By by)
+
+	public void MouseHoverAndClick(By by)
 	{
 		WaitVisible(by);
 		WebElement elementToHover = driver.findElement(by);
@@ -712,8 +713,8 @@ def class Interactions {
 	}
 
 
-	@Keyword
-	def MouserHoverAndClick(By hoverby, By clickby)
+
+	public void MouserHoverAndClick(By hoverby, By clickby)
 	{
 		WaitVisible(hoverby);
 		WebElement elementToHover = driver.findElement(hoverby);
@@ -727,8 +728,8 @@ def class Interactions {
 
 
 
-	@Keyword
-	def SelectByText(By by, String text)
+
+	public void SelectByText(By by, String text)
 	{
 		WaitVisible(by);
 		WebElement elementToHover = driver.findElement(by);
@@ -738,9 +739,9 @@ def class Interactions {
 	}
 
 
-	@Keyword
+
 	//Select By Value from Drop down
-	def SelectByValue(By by, String value)
+	public void SelectByValue(By by, String value)
 	{
 		WaitVisible(by);
 		WebElement elementToHover = driver.findElement(by);
@@ -749,9 +750,9 @@ def class Interactions {
 	}
 
 
-	@Keyword
+
 	//Select by Index from drop down
-	def SelectByIndex(By by, int index)
+	public void SelectByIndex(By by, int index)
 	{
 		WaitVisible(by);
 		WebElement elementToHover = driver.findElement(by);

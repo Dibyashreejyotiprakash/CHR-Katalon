@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>InstantImpactMenu</name>
+   <name>JobType</name>
    <tag></tag>
-   <elementGuidId>52a33c67-3637-466a-8046-b8709a3852d6</elementGuidId>
+   <elementGuidId>3347aa83-e8c2-41c9-ba58-776b09b6f224</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//span[text() = 'Instant Impact']</value>
+         <value>//*[@id='ctl00_Body_rcbJobType_Input']</value>
       </entry>
       <entry>
          <key>BASIC</key>

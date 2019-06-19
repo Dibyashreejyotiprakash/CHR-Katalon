@@ -6,7 +6,7 @@
    <defaultProfile>true</defaultProfile>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'http://ii4.uat.brandmuscle.net/'</initValue>
+      <initValue>'https://ii4.uat.brandmuscle.net/'</initValue>
       <name>iiusersiteurl</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -61,7 +61,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'http://wswadmin.uat.brandmuscle.net'</initValue>
+      <initValue>'http://dibyashree.jyoti:dibya@1234@wswadmin.uat.brandmuscle.net/'</initValue>
       <name>wswadminurl</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -81,13 +81,13 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'stage'</initValue>
+      <initValue>'uat'</initValue>
       <name>environment</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
       <initValue>'smoke'</initValue>
-      <name>testtypesmoek</name>
+      <name>testtypesmoke</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
@@ -127,6 +127,11 @@
    <GlobalVariableEntity>
       <description></description>
       <initValue>'regression'</initValue>
-      <name>testtypestage</name>
+      <name>testtyperegression</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'http://dibyashree.jyoti:dibya@1234@iiadmin.uat.brandmuscle.net/'</initValue>
+      <name>iiadminurl</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>

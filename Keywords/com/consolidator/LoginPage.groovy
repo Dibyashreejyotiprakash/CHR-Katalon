@@ -20,24 +20,27 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.By
-import com.utilities.Interactions
+import com.utilities.Interaction
 
 
 public class LoginPage {
 
 	WebDriver driver = DriverFactory.getWebDriver();
-	Interactions action = new Interactions();
+	Interaction action = new Interaction();
 
 	By username = By.id("MainContent_LoginCentiv_UserName");
 	By password = By.id("MainContent_LoginCentiv_Password");
 	By loginbtn = By.id("MainContent_LoginCentiv_btnLogin");
 
+
+
 	@Keyword
-	public void LoginConsolidator() {
+	def LoginConsolidator(String txtusername, String txtpassword) {
 
 
-		action.Type(username, "chrtestuser@brandmuscle.com");
-		action.Type(password, "Ownlocal@123");
-		action.Click(loginbtn);
+		action.Type(username, txtusername);
+		action.Type(password, txtpassword);
+		action.ClickTo(loginbtn);
+		action.WaitForPageToLoad();
 	}
 }

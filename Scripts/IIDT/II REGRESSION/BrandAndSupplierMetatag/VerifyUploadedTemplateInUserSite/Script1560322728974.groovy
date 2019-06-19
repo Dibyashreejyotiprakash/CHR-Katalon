@@ -22,11 +22,11 @@ WebUI.navigateToUrl('http://astha.nigam:Jobchange@123@wswadmin.uat.brandmuscle.n
 
 WebUI.waitForPageLoad(30)
 
-WebUI.waitForElementVisible(findTestObject('II-WSWADMIN/MainMenu/InstantImpactMenu'), 30)
+WebUI.waitForElementVisible(findTestObject('null'), 30)
 
 WebUI.delay(3)
 
-WebUI.mouseOver(findTestObject('II-WSWADMIN/MainMenu/InstantImpactMenu'))
+WebUI.mouseOver(findTestObject('null'))
 
 WebUI.waitForElementVisible(findTestObject('II-WSWADMIN/MainMenu/Meta Tagging Category-Item Maintenance'), 30)
 
@@ -85,9 +85,9 @@ WebUI.scrollToElement(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/SaveSelect
 
 WebUI.click(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/SaveSelected'))
 
-CustomKeywords.'com.utilities.DemooInteractions.GetUrl'(GlobalVariable.bunameiiusersite, GlobalVariable.testtypesmoek, GlobalVariable.environment)
+CustomKeywords.'com.utilities.DemooInteractions.GetUrl'(GlobalVariable.bunameiiusersite, GlobalVariable.testtypesmoke, GlobalVariable.environment)
 
-CustomKeywords.'com.iiusersites.LoginPage.LoginUserSite'(GlobalVariable.iiusersiteusername, GlobalVariable.iiusersitepassword)
+CustomKeywords.'com.iiusersites.LoginPage1.LoginUserSite'(GlobalVariable.iiusersiteusername, GlobalVariable.iiusersitepassword)
 
 CustomKeywords.'com.iiusersites.ItemSearchPage.TemplateSearch'()
 

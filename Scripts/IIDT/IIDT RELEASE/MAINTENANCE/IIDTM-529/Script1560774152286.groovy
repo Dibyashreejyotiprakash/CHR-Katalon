@@ -17,33 +17,37 @@ WebUI.openBrowser('')
 
 WebUI.navigateToUrl('http://ii4.uat.brandmuscle.net')
 
+WebUI.waitForPageLoad(300)
+
 WebUI.maximizeWindow()
 
-WebUI.setText(findTestObject('II-USERSITE/LoginPage/UserName'), GlobalVariable.iiusersiteusername)
+WebUI.setText(findTestObject('II-USERSITE/LoginPage/UserName'), 'demoQA@brandmuscle.com')
 
-WebUI.setText(findTestObject('II-USERSITE/LoginPage/Password'), GlobalVariable.iiusersitepassword)
-
-WebUI.click(findTestObject('II-USERSITE/LoginPage/LoginBtn'))
-
-WebUI.selectOptionByIndex(findTestObject('II-USERSITE/LoginPage/corpddn'), 2)
-
-WebUI.selectOptionByIndex(findTestObject('II-USERSITE/LoginPage/distddn'), 2)
+WebUI.setText(findTestObject('II-USERSITE/LoginPage/Password'), 'go2web')
 
 WebUI.click(findTestObject('II-USERSITE/LoginPage/LoginBtn'))
 
-WebUI.waitForPageLoad(300)
+WebUI.waitForElementVisible(findTestObject('II-USERSITE/LoginPage/corpddn'), 300)
+
+WebUI.selectOptionByIndex(findTestObject('II-USERSITE/LoginPage/corpddn'), 2, FailureHandling.STOP_ON_FAILURE)
+
+WebUI.waitForElementVisible(findTestObject('II-USERSITE/LoginPage/distddn'), 300)
+
+WebUI.selectOptionByIndex(findTestObject('II-USERSITE/LoginPage/distddn'), 1)
+
+WebUI.waitForElementVisible(findTestObject('II-USERSITE/LoginPage/LoginBtn'), 300)
+
+WebUI.click(findTestObject('II-USERSITE/LoginPage/LoginBtn'))
 
 WebUI.navigateToUrl('http://ii4.uat.brandmuscle.net/Search/ItemSearch.aspx?tid=1')
 
 WebUI.navigateToUrl('http://ii4.uat.brandmuscle.net/POS/ItemDetails.aspx?tid=130722')
 
-WebUI.waitForElementVisible(findTestObject('II-USERSITE/CreateDesignPage/OrdernowBtn'), 300)
-
 WebUI.scrollToElement(findTestObject('II-USERSITE/CreateDesignPage/OrdernowBtn'), 0)
 
 WebUI.click(findTestObject('II-USERSITE/CreateDesignPage/OrdernowBtn'))
 
-WebUI.waitForElementVisible(findTestObject('II-USERSITE/ProductSelectionPage/Quantity'), 300)
+WebUI.waitForPageLoad(300)
 
 WebUI.setText(findTestObject('II-USERSITE/ProductSelectionPage/Quantity'), '12')
 
@@ -51,7 +55,13 @@ WebUI.waitForElementVisible(findTestObject('II-USERSITE/ProductSelectionPage/NoB
 
 WebUI.click(findTestObject('II-USERSITE/ProductSelectionPage/NoBtn'))
 
-WebUI.waitForElementClickable(findTestObject('II-USERSITE/ProductSelectionPage/AddToKartBtn'), 300)
+WebUI.scrollToElement(findTestObject('II-USERSITE/ProductSelectionPage/AddToKartBtn'), 0)
 
 WebUI.waitForElementVisible(findTestObject('II-USERSITE/ProductSelectionPage/AddToKartBtn'), 300)
+
+WebUI.waitForElementClickable(findTestObject('II-USERSITE/ProductSelectionPage/AddToKartBtn'), 300)
+
+WebUI.click(findTestObject('II-USERSITE/ProductSelectionPage/AddToKartBtn'))
+
+WebUI.waitForPageLoad(300)
 

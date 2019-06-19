@@ -17,3 +17,37 @@ WebUI.openBrowser('')
 
 WebUI.navigateToUrl(GlobalVariable.wswadminurl)
 
+WebUI.waitForPageLoad(300)
+
+WebUI.maximizeWindow()
+
+WebUI.navigateToUrl('http://wswadmin.uat.brandmuscle.net/InstantImpact/Templates/TemplateFulfillment.aspx')
+
+WebUI.waitForPageLoad(300)
+
+WebUI.waitForPageLoad(0)
+
+WebUI.verifyElementPresent(findTestObject('II-WSWADMIN/TemplateFulfillmentPage/Header'), 0)
+
+WebUI.waitForElementVisible(findTestObject('II-WSWADMIN/TemplateFulfillmentPage/CorporationDDN'), 300)
+
+WebUI.click(findTestObject('II-WSWADMIN/TemplateFulfillmentPage/CorporationDDN'))
+
+WebUI.waitForElementVisible(findTestObject('II-WSWADMIN/TemplateFulfillmentPage/CorpName'), 300)
+
+WebUI.click(findTestObject('II-WSWADMIN/TemplateFulfillmentPage/CorpName'))
+
+WebUI.navigateToUrl('http://wswadmin.uat.brandmuscle.net/InstantImpact/Templates/MetatagConfiguration.aspx?cid=44&tid=7535&it=1&st=true')
+
+WebUI.waitForElementVisible(findTestObject('II-WSWADMIN/MetatagConfigurationPage/AdminApprovalCheckbox'), 300)
+
+WebUI.click(findTestObject('II-WSWADMIN/MetatagConfigurationPage/AdminApprovalCheckbox'))
+
+WebUI.scrollToPosition(1500, 1500)
+
+WebUI.waitForElementVisible(findTestObject('II-WSWADMIN/MetatagConfigurationPage/SaveSelectedBtn'), 300)
+
+WebUI.click(findTestObject('II-WSWADMIN/MetatagConfigurationPage/SaveSelectedBtn'))
+
+WebUI.waitForPageLoad(300)
+

@@ -21,11 +21,8 @@ import internal.GlobalVariable
 public class ItemSearchPage {
 
 
-		
-		@Keyword
-		def TemplateSearch()
-		{
-			
-		}
-	
+
+	@Keyword
+	def TemplateSearch() {
+	}
 }
