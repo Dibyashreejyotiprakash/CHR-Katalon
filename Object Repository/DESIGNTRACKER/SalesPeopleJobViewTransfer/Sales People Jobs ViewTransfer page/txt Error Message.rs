@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>txtSuccess</name>
+   <name>txt Error Message</name>
    <tag></tag>
    <elementGuidId>bf8c2c6f-3611-477e-8f47-2898b0988da4</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//div[@id='ctl00_ctl00_cphMain_spnMsg']/ul/li</value>
+         <value>//li[text() = 'This is an invalid selection.Please select two different users.']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

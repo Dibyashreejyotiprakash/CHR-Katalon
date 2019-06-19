@@ -17,11 +17,11 @@ WebUI.openBrowser('')
 
 WebUI.maximizeWindow()
 
-WebUI.navigateToUrl('http://designtracker.uat.brandmuscle.net')
+WebUI.navigateToUrl(GlobalVariable.dturl)
 
-WebUI.setText(findTestObject('DESIGNTRACKER/LoginPage/UserName'), 'Poojita.Mishra@brandmuscle.com')
+WebUI.setText(findTestObject('DESIGNTRACKER/LoginPage/UserName'), 'poojita.mishra@brandmsucle.com')
 
-WebUI.setText(findTestObject('DESIGNTRACKER/LoginPage/Password'), 'Pooji1@')
+WebUI.setText(findTestObject('DESIGNTRACKER/LoginPage/Password'), 'Sandeepujita1@')
 
 WebUI.click(findTestObject('DESIGNTRACKER/LoginPage/LoginBtn'))
 

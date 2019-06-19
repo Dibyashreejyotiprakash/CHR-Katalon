@@ -86,9 +86,9 @@ WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Item details Page/btn Ed
 
 WebUI.waitForPageLoad(0)
 
-WebUI.scrollToElement(findTestObject('II-USERSITE/OrderOnlineForm/Page_Order Form - Search Results/Print Details 2 Page/btn Next'), 0)
+WebUI.scrollToElement(findTestObject('II-USERSITE/OrderOnlineForm/Print Details 2 Page/btn Next'), 0)
 
-WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Page_Order Form - Search Results/Print Details 2 Page/btn Next'))
+WebUI.click(findTestObject('II-USERSITE/OrderOnlineForm/Print Details 2 Page/btn Next'))
 
 WebUI.waitForPageLoad(0)
 
