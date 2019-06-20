@@ -46,8 +46,34 @@ public class HomePage {
 	By siteadmin = By.xpath("//*[text()='SITE']")
 	By accounts = By.xpath("//*[text()='ACCOUNTS']")
 	By barnds = By.xpath("//*[text()='BRANDS']")
+	By campaign = By.xpath("//*[text()='CAMPAIGNS']")
+	By competitors  = By.xpath("//*[text()='COMPETITORS']")
+	By distributorbudgetmigration = By.xpath("//*[text()='DISTRIBUTOR BUDGET MIGRATION']")
+	By exceptionlistbrands = By.xpath("//*[text()='EXCEPTION LIST - BRANDS']")
+	By exceptionlistsalespeople = By.xpath("//*[text()='EXCEPTION LIST - SALES PEOPLE']")
+	By highrarchy = By.xpath("//*[text()='HIERARCHY']")
+	By jobclosing = By.xpath("//*[text()='JOB CLOSING']")
+	By joblinestratification = By.xpath("//*[text()='JOB LINE STRATIFICATION']")
+	By peeraccountnotify = By.xpath("//*[text()='PEER ACCOUNT NOTIFY']")
+	By applicationadmin = By.xpath("//*[text()='APPLICATION']")
+    By accounttype = By.xpath("//*[text()='ACCOUNT TYPE']")
+	By markettype = By.xpath("//*[text()='MARKET']")
+	By marketregion = By.xpath("//*[text()='MARKET REGION']")
+	By notetype = By.xpath("//*[text()='NOTE TYPE']")
+	By siteusers = By.xpath("//*[text()='SITE USERS']")
+	By stataustype = By.xpath("//*[text()='STATUS TYPES']")
+	By notificationgroups = By.xpath("//*[text()='NOTIFICATION GROUPS']")
+	By budgetnotify = By.xpath("//*[text()='BUDGET NOTIFY']")
+	By jobnotify = By.xpath("//*[text()='JOB NOTE NOTIFY']")
+	By jobstatusnotify = By.xpath("//*[text()='JOB STATUS NOTIFY']")
 	
-
+	By jobradiobtn = By.xpath("//*[text()='Job #']/preceding-sibling::input")
+	By confirmationradiobtn = By.xpath("//*[text()='Confirmation #']/preceding-sibling::input")
+	By searchtxtfield = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_txtJobKey']")
+	By corporationddn = By.id("ctl00_ctl00_cphMain_cphMain_CorpsAndMarkets_ddlCorporation")
+	By amrketddn = By.id("ctl00_ctl00_cphMain_cphMain_CorpsAndMarkets_ddlMarket")
+	
+    By searchallbtn = By.id("ctl00_ctl00_cphMain_cphMain_btnSearch")
 
 	@Keyword
 	public void VerifyHomePage() {
@@ -71,80 +97,65 @@ public class HomePage {
 			println ("Navigate to job search page failed due to "+ e)
 		}
 	}
-	
-	public void ClickOnNewJob()
-	{
-		try
-		{
+
+	public void ClickOnNewJob() {
+		try {
 			action.WaitVisible(jobsbtn);
 			action.MouseHoverOnElement(jobsbtn)
 			action.MouseHoverAndClick(newbtn)
 			action.WaitForPageToLoad()
-			
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			println ("Click On New Job failed due to "+ e)
 		}
 	}
-	
-	public void ClickOnJobsCheckIn()
-	{
+
+	public void ClickOnJobsCheckIn() {
 		try{
 			action.MouseHoverOnElement(shipreceivebtn)
 			action.MouseHoverAndClick(shipreceivebtn)
 			action.WaitForPageToLoad()
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			println ("Click On Jobs Check In failed due to "+ e)
 		}
 	}
-	
-	public void CLickOnProfitAndLoss()
-	{
-		try
-		{
+
+	public void CLickOnProfitAndLoss() {
+		try {
 			action.WaitVisible(reports)
 			action.MouseHoverOnElement(reports)
 			action.WaitVisible(jobsamebrand)
 			action.MouseHoverAndClick(jobsamebrand)
 			action.WaitForPageToLoad()
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			println ("CLick On Profit And Loss failed due to "+ e)
 		}
 	}
-	
-	public void ClickOnProfitLoss()
-	{
-		try
-		{
+
+	public void ClickOnProfitLoss() {
+		try {
 			action.WaitVisible(reports)
 			action.MouseHoverOnElement(reports)
 			action.WaitVisible(profitloss)
 			action.MouseHoverAndClick(profitloss)
 			action.WaitForPageToLoad()
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			println ("Click On ProfitLoss button failed due to "+ e)
 		}
 	}
-	
-	public void ClickOnStatusSummary()
-	{
-		try
-		{
+
+	public void ClickOnStatusSummary() {
+		try {
 			action.WaitVisible(reports)
 			action.MouseHoverOnElement(reports)
 			action.WaitVisible(gexorderstatus)
 			action.MouseHoverAndClick(gexorderstatus)
 			action.WaitForPageToLoad()
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			println ("Click On Status Summary failed due to "+ e)
 		}
 	}
