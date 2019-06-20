@@ -1,6 +1,7 @@
 package com.consolidator
 
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
+import com.kms.katalon.core.webui.driver.DriverFactory
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
@@ -17,10 +18,29 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 import internal.GlobalVariable
+import org.openqa.selenium.WebDriver
+import org.openqa.selenium.By
+import com.utilities.Interaction
+
 
 public class LoginPage {
 
+	WebDriver driver = DriverFactory.getWebDriver();
+	Interaction action = new Interaction();
+
+	By username = By.id("MainContent_LoginCentiv_UserName");
+	By password = By.id("MainContent_LoginCentiv_Password");
+	By loginbtn = By.id("MainContent_LoginCentiv_btnLogin");
+
+
+
 	@Keyword
-	def LoginConsolidator() {
+	def LoginConsolidator(String txtusername, String txtpassword) {
+
+
+		action.Type(username, txtusername);
+		action.Type(password, txtpassword);
+		action.ClickTo(loginbtn);
+		action.WaitForPageToLoad();
 	}
 }

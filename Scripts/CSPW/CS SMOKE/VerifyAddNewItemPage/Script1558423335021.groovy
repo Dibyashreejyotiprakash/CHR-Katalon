@@ -15,7 +15,7 @@ import internal.GlobalVariable as GlobalVariable
 
 WebUI.openBrowser('Chrome')
 
-CustomKeywords.'com.utilities.Interactions.GetUrl'('CONSOLIDATOR', GlobalVariable.testtype, GlobalVariable.environment)
+CustomKeywords.'com.utilities.DemooInteractions.GetUrl'('CONSOLIDATOR', GlobalVariable.testtypesmoke, GlobalVariable.environment)
 
 WebUI.waitForPageLoad(30)
 

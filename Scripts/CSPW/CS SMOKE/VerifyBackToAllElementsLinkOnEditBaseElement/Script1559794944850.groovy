@@ -17,7 +17,7 @@ WebUI.openBrowser('Chrome')
 
 WebUI.maximizeWindow()
 
-CustomKeywords.'com.utilities.Interactions.GetUrl'('CONSOLIDATOR', GlobalVariable.testtype, GlobalVariable.environment)
+CustomKeywords.'com.utilities.DemooInteractions.GetUrl'('CONSOLIDATOR', GlobalVariable.testtypesmoke, GlobalVariable.environment)
 
 WebUI.waitForPageLoad(30)
 

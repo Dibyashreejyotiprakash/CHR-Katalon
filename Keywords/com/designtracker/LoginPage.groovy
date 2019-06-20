@@ -18,9 +18,22 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 import internal.GlobalVariable
 
+
+import org.openqa.selenium.WebDriver
+import org.openqa.selenium.By
+import com.utilities.Interaction
+import com.kms.katalon.core.webui.driver.DriverFactory
+
 public class LoginPage {
 
+	WebDriver driver = DriverFactory.getWebDriver();
+	Interaction action = new Interaction();
+
+	By username = By.id("ctl00_cphMain_LoginCentiv_UserName");
+	By password = By.id("ctl00_cphMain_LoginCentiv_Password");
+	By loginbtn = By.id("ctl00_cphMain_LoginCentiv_LoginButton");
+
 	@Keyword
-	def LoginDesignTracker() {
+	def LoginToConslidator(String username,String password) {
 	}
 }

@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//div[@id='ctl00_RadMenu1']/ul/li/a/span</value>
+         <value>//*[text()='POS On Demand']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

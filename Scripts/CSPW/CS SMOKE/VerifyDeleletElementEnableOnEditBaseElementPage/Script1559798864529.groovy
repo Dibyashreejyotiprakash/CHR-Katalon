@@ -19,7 +19,7 @@ WebUI.maximizeWindow()
 
 WebUI.waitForPageLoad(30)
 
-CustomKeywords.'com.utilities.Interactions.GetUrl'('CONSOLIDATOR', GlobalVariable.testtype, GlobalVariable.environment)
+CustomKeywords.'com.utilities.DemooInteractions.GetUrl'('CONSOLIDATOR', GlobalVariable.testtypesmoke, GlobalVariable.environment)
 
 WebUI.setText(findTestObject('CONSOLIDATOR/LogInPage/Username'), GlobalVariable.consolusername)
 

@@ -6,7 +6,7 @@
    <defaultProfile>true</defaultProfile>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'http://ii4.uat.brandmuscle.net/'</initValue>
+      <initValue>'https://ii4.uat.brandmuscle.net/'</initValue>
       <name>iiusersiteurl</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -61,23 +61,23 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'http://wswadmin.uat.brandmuscle.net'</initValue>
+      <initValue>'http://dibyashree.jyoti:dibya@1234@wswadmin.uat.brandmuscle.net/'</initValue>
       <name>wswadminurl</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'https://csg.v5qa.brandmuscle.net'</initValue>
-      <name>posurlCSG</name>
+      <initValue>'http://csg.v5qa.brandmuscle.net'</initValue>
+      <name>posurl</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
       <initValue>'adminil@brandmuscle.com'</initValue>
-      <name>POSUserNameIL</name>
+      <name>posusername</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
       <initValue>'password'</initValue>
-      <name>POSpasswordIL</name>
+      <name>pospassword</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
@@ -87,7 +87,7 @@
    <GlobalVariableEntity>
       <description></description>
       <initValue>'smoke'</initValue>
-      <name>testtype</name>
+      <name>testtypesmoke</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
@@ -126,12 +126,12 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'adminny@brandmuscle.com'</initValue>
-      <name>POSUserNameNY</name>
+      <initValue>'regression'</initValue>
+      <name>testtyperegression</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'password'</initValue>
-      <name>POSPasswordNY</name>
+      <initValue>'http://dibyashree.jyoti:dibya@1234@iiadmin.uat.brandmuscle.net/'</initValue>
+      <name>iiadminurl</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>
