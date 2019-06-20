@@ -27,6 +27,7 @@ import org.openqa.selenium.support.ui.WebDriverWait
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.Alert
 import org.openqa.selenium.By
+import org.openqa.selenium.Keys
 import org.openqa.selenium.JavascriptExecutor
 import internal.GlobalVariable
 
@@ -473,7 +474,7 @@ public  class Interaction {
 
 	public void  WaitVisible(By by)
 	{
-		WaitVisible(by)
+
 		WebDriverWait wait = new WebDriverWait(driver, 300);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 	}
@@ -608,9 +609,9 @@ public  class Interaction {
 
 
 	/*Click*/
-	public void  ClickTo(By by)
+	public void  Click(By by)
 	{
-		//WaitVisible(by)
+		WaitVisible(by)
 		driver.findElement(by).click();
 	}
 
@@ -758,6 +759,16 @@ public  class Interaction {
 		WebElement elementToHover = driver.findElement(by);
 		Select select = new Select(elementToHover)
 		select.selectByIndex(index)
+	}
+
+	public void Enter(By by)
+	{
+		driver.findElement(by).sendKeys(Keys.ENTER);
+	}
+
+	public void GetText(By by)
+	{
+		driver.findElement(by).getText();
 	}
 
 

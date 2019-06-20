@@ -1,4 +1,4 @@
-package com.designtracker
+package com.iiusersites
 
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
@@ -15,31 +15,45 @@ import com.kms.katalon.core.testdata.TestData
 import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
-
+import com.utilities.Interaction
 import internal.GlobalVariable
-
+import org.openqa.selenium.By
 
 import org.openqa.selenium.WebDriver
-import org.openqa.selenium.By
-import com.utilities.Interaction
+
 import com.kms.katalon.core.webui.driver.DriverFactory
 
-public class LoginPage {
+class HomePage {
 
 	WebDriver driver = DriverFactory.getWebDriver();
 	Interaction action = new Interaction();
 
-	By username = By.id("ctl00_cphMain_LoginCentiv_UserName");
-	By password = By.id("ctl00_cphMain_LoginCentiv_Password");
-	By loginbtn = By.id("ctl00_cphMain_LoginCentiv_LoginButton");
+	By lstPrimaryMenu = By.xpath("//div[@id='ctl00_RadMenu1']/ul/li/a/span[1]")
+	By lstSubMenu = By.xpath("//div[@id='ctl00_RadMenu1']/ul/li/div/ul/li/a/span")
+	By imgPOSTemplates = By.xpath("//a[(@target='_self') and contains(text(),'POS Templates')]")
+	By lnkLougout = By.xpath("//*[@id='lbLogout']")
+	By lstMenu = By.xpath("//div[@id='ctl00_RadMenu1']/ul/li")
 
-	@Keyword
-	public void LoginToDesignTarcker(String txtusername,String txtpassword) {
 
-		action.Type(username, txtusername)
-		action.Type(password, txtpassword)
-		action.WaitVisible(loginbtn)
-		action.Click(loginbtn)
+	public boolean VerifyHomePage() {
+		try {
+			boolean IsHomePageVerify = false;
+			String expectedUrl = "http://ii4.uat.brandmuscle.net/";
+			String actualUrl = driver.getCurrentUrl()
+			if (actualUrl.equals(expectedUrl)) {
+				return IsHomePageVerify = true;
+			}
+			return IsHomePageVerify;
+		}
+		catch (Exception e) {
+			println ("VerifyHomePage method failed due to :"+ e);
+			throw e;
+		}
+	}
+
+	public void ClickOnPosTemplate() {
+		action.WaitVisible(imgPOSTemplates)
+		action.Click(imgPOSTemplates)
 		action.WaitForPageToLoad()
 	}
 }
