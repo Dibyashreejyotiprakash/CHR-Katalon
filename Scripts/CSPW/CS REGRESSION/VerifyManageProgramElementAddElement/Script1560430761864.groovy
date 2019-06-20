@@ -15,15 +15,17 @@ import internal.GlobalVariable as GlobalVariable
 
 WebUI.openBrowser('')
 
-WebUI.maximizeWindow()
-
-WebUI.navigateToUrl('https://admintool.v5qa.brandmuscle.net')
+CustomKeywords.'com.utilities.Interactions.GetUrl'(GlobalVariable.bunameconsolidator, GlobalVariable.testtype, GlobalVariable.environment)
 
 WebUI.waitForPageLoad(30)
 
-WebUI.setText(findTestObject('CONSOLIDATOR/LogInPage/Username'), 'chrtestuser@brandmuscle.com')
+WebUI.maximizeWindow()
 
-WebUI.setText(findTestObject('CONSOLIDATOR/LogInPage/Password'), 'Ownlocal@123')
+WebUI.waitForElementVisible(findTestObject('CONSOLIDATOR/LogInPage/LoginBtn'), 0)
+
+WebUI.setText(findTestObject('CONSOLIDATOR/LogInPage/Username'), GlobalVariable.consolusername)
+
+WebUI.setText(findTestObject('CONSOLIDATOR/LogInPage/Password'), GlobalVariable.conslopassword)
 
 WebUI.click(findTestObject('CONSOLIDATOR/LogInPage/LoginBtn'))
 
@@ -43,7 +45,7 @@ WebUI.waitForElementVisible(findTestObject('CONSOLIDATOR/UpdateLogPage/span_Cons
 
 WebUI.click(findTestObject('CONSOLIDATOR/UpdateLogPage/span_Consolidator'))
 
-WebUI.waitForPageLoad(30)
+WebUI.waitForPageLoad(300)
 
 WebUI.waitForElementVisible(findTestObject('CONSOLIDATOR/ParentBusinessUnit/ParentBusinessUnitDropDown'), 0)
 
@@ -53,17 +55,43 @@ WebUI.click(findTestObject('CONSOLIDATOR/ParentBusinessUnit/ParentBusinessUnitNa
 
 WebUI.click(findTestObject('CONSOLIDATOR/ParentBusinessUnit/SubmitBtn (1)'))
 
-WebUI.waitForPageLoad(30)
+WebUI.waitForPageLoad(300)
 
 WebUI.navigateToUrl('https://admintool.v5qa.brandmuscle.net/Admin/Consolidator/ConsolidatorManageProgramItem.aspx')
 
-WebUI.waitForPageLoad(30)
-
 WebUI.waitForElementVisible(findTestObject('CONSOLIDATOR/ManageProgramElementPage/headerManageProgramElements'), 0)
 
-WebUI.waitForElementVisible(findTestObject('CONSOLIDATOR/ManageProgramElementPage/ddlAllStatus'), 0)
+WebUI.click(findTestObject('CONSOLIDATOR/ManageProgramElementPage/FirstEditLinkProgram'))
 
-WebUI.click(findTestObject('CONSOLIDATOR/ManageProgramElementPage/ddlAllStatus'), FailureHandling.STOP_ON_FAILURE)
+WebUI.waitForPageLoad(300)
+
+WebUI.waitForElementVisible(findTestObject('CONSOLIDATOR/ManageProgramElementPage/btnAddNewElement'), 0)
+
+WebUI.click(findTestObject('CONSOLIDATOR/ManageProgramElementPage/btnAddNewElement'))
+
+WebUI.waitForPageLoad(300)
+
+WebUI.waitForElementVisible(findTestObject('CONSOLIDATOR/ManageProgramElementPage/txbSearchByElement'), 0)
+
+WebUI.setText(findTestObject('CONSOLIDATOR/ManageProgramElementPage/txbSearchByElement'), 'BOX10104')
+
+WebUI.waitForElementVisible(findTestObject('CONSOLIDATOR/ManageProgramElementPage/FirstElement'), 0)
+
+WebUI.click(findTestObject('CONSOLIDATOR/ManageProgramElementPage/FirstElement'))
+
+WebUI.waitForElementVisible(findTestObject('CONSOLIDATOR/ManageProgramElementPage/btnAddToProgram'), 0)
+
+WebUI.click(findTestObject('CONSOLIDATOR/ManageProgramElementPage/btnAddToProgram'))
+
+WebUI.waitForElementVisible(findTestObject('CONSOLIDATOR/ManageProgramElementPage/btnConfirmChanges'), 0)
+
+WebUI.click(findTestObject('CONSOLIDATOR/ManageProgramElementPage/btnConfirmChanges'))
+
+WebUI.click(findTestObject('CONSOLIDATOR/ManageProgramElementPage/BtnOK'))
+
+WebUI.waitForPageLoad(300)
+
+WebUI.waitForElementVisible(findTestObject('CONSOLIDATOR/ManageProgramElementPage/btnAddNewElement'), 0)
 
 WebUI.closeBrowser()
 

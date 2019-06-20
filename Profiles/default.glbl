@@ -67,17 +67,17 @@
    <GlobalVariableEntity>
       <description></description>
       <initValue>'https://csg.v5qa.brandmuscle.net'</initValue>
-      <name>posurl</name>
+      <name>posurlCSG</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
       <initValue>'adminil@brandmuscle.com'</initValue>
-      <name>posusername</name>
+      <name>POSUserNameIL</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
       <initValue>'password'</initValue>
-      <name>pospassword</name>
+      <name>POSpasswordIL</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
@@ -123,5 +123,15 @@
       <description></description>
       <initValue>'iiadmin'</initValue>
       <name>bunameiiadmin</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'adminny@brandmuscle.com'</initValue>
+      <name>POSUserNameNY</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'password'</initValue>
+      <name>POSPasswordNY</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>
