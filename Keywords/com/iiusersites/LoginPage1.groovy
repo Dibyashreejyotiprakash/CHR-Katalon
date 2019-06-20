@@ -21,12 +21,12 @@ import com.kms.katalon.core.webui.driver.DriverFactory
 import internal.GlobalVariable
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.By
-import com.utilities.Interactions
+
 
 public class LoginPage1 {
 
 	WebDriver driver = DriverFactory.getWebDriver();
-	Interactions action = new Interactions();
+	;
 
 	By username = By.id("UserName");
 	By password= By.id("Password");
@@ -34,8 +34,6 @@ public class LoginPage1 {
 
 	@Keyword
 	def ii4Login() {
-		action.Type(username, "diageoadmin@centiv.com");
-		action.Type(password, "go2web");
-		action.Click(loginbtn);
+		
 	}
 }

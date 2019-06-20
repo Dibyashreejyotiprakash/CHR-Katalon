@@ -473,7 +473,7 @@ public  class Interaction {
 
 	public void  WaitVisible(By by)
 	{
-		WaitVisible(by)
+		
 		WebDriverWait wait = new WebDriverWait(driver, 300);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 	}
@@ -608,9 +608,9 @@ public  class Interaction {
 
 
 	/*Click*/
-	public void  ClickTo(By by)
+	public void  Click(By by)
 	{
-		//WaitVisible(by)
+		WaitVisible(by)
 		driver.findElement(by).click();
 	}
 

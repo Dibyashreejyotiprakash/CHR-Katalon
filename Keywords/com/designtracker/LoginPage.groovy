@@ -34,6 +34,12 @@ public class LoginPage {
 	By loginbtn = By.id("ctl00_cphMain_LoginCentiv_LoginButton");
 
 	@Keyword
-	def LoginToConslidator(String username,String password) {
+	public void LoginToDesignTarcker(String txtusername,String txtpassword) {
+
+		action.Type(username, txtusername)
+		action.Type(password, txtpassword)
+		action.WaitVisible(loginbtn)
+		action.Click(loginbtn)
+		action.WaitForPageToLoad()
 	}
 }
