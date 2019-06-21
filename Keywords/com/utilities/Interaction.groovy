@@ -698,7 +698,7 @@ public  class Interaction {
 	{
 		WebElement elementToHover = driver.findElement(by);
 		Actions hover = new Actions(driver);
-		hover.moveToElement(by)
+		hover.moveToElement(elementToHover)
 		hover.perform();
 	}
 
@@ -709,8 +709,8 @@ public  class Interaction {
 		WaitVisible(by);
 		WebElement elementToHover = driver.findElement(by);
 		Actions hover = new Actions(driver);
-		hover.moveToElement(by).perform();
-		hover.click();
+		hover.moveToElement(elementToHover).click().perform();
+
 	}
 
 
@@ -722,8 +722,8 @@ public  class Interaction {
 		Actions hover = new Actions(driver);
 		hover.moveToElement(elementToHover).perform();
 		WebElement elementToClick = driver.findElement(clickby);
-		hover.moveToElement(elementToClick).perform();
-		hover.click();
+		hover.moveToElement(elementToClick).click().perform();
+
 	}
 
 
