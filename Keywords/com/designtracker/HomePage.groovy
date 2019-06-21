@@ -19,6 +19,7 @@ import com.utilities.Interaction
 
 import internal.GlobalVariable
 import org.openqa.selenium.WebDriver
+import org.testng.Assert
 import org.openqa.selenium.Alert
 import org.openqa.selenium.By
 import com.utilities.Interaction
@@ -29,6 +30,7 @@ public class HomePage {
 	Interaction action = new Interaction();
 	WebDriver driver = DriverFactory.getWebDriver()
 
+	By welcomeheader = By.xpath("//*[contains(text(),'Welcome')]")
 	By jobsbtn = By.xpath("//*[text()='JOBS']")
 	By newbtn = By.xpath("//*[text()='NEW']")
 	By searchbtn = By.xpath("//*[text()='SEARCH']")
@@ -56,7 +58,7 @@ public class HomePage {
 	By joblinestratification = By.xpath("//*[text()='JOB LINE STRATIFICATION']")
 	By peeraccountnotify = By.xpath("//*[text()='PEER ACCOUNT NOTIFY']")
 	By applicationadmin = By.xpath("//*[text()='APPLICATION']")
-    By accounttype = By.xpath("//*[text()='ACCOUNT TYPE']")
+	By accounttype = By.xpath("//*[text()='ACCOUNT TYPE']")
 	By markettype = By.xpath("//*[text()='MARKET']")
 	By marketregion = By.xpath("//*[text()='MARKET REGION']")
 	By notetype = By.xpath("//*[text()='NOTE TYPE']")
@@ -66,20 +68,22 @@ public class HomePage {
 	By budgetnotify = By.xpath("//*[text()='BUDGET NOTIFY']")
 	By jobnotify = By.xpath("//*[text()='JOB NOTE NOTIFY']")
 	By jobstatusnotify = By.xpath("//*[text()='JOB STATUS NOTIFY']")
-	
+
 	By jobradiobtn = By.xpath("//*[text()='Job #']/preceding-sibling::input")
 	By confirmationradiobtn = By.xpath("//*[text()='Confirmation #']/preceding-sibling::input")
 	By searchtxtfield = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_txtJobKey']")
 	By corporationddn = By.id("ctl00_ctl00_cphMain_cphMain_CorpsAndMarkets_ddlCorporation")
 	By amrketddn = By.id("ctl00_ctl00_cphMain_cphMain_CorpsAndMarkets_ddlMarket")
-	
-    By searchallbtn = By.id("ctl00_ctl00_cphMain_cphMain_btnSearch")
+
+	By searchallbtn = By.id("ctl00_ctl00_cphMain_cphMain_btnSearch")
 
 	@Keyword
 	public void VerifyHomePage() {
 		try {
-			String acthomepage = driver.getCurrentUrl()
-			println ("Url is "+ acthomepage)
+
+			action.WaitVisible(welcomeheader)
+			boolean statusofwelcomeheader = action.IsElementDisplayed(welcomeheader)
+			Assert.assertTrue(statusofwelcomeheader, "Status of Welcome header on Home Page")
 		}
 		catch(Exception e) {
 			println ("Verify Home Page failed due to "+ e)
@@ -92,12 +96,14 @@ public class HomePage {
 			action.WaitVisible(jobsbtn);
 			action.MouseHoverOnElement(jobsbtn);
 			action.MouseHoverAndClick(newbtn);
+			action.WaitForPageToLoad()
 		}
 		catch(Exception e) {
 			println ("Navigate to job search page failed due to "+ e)
 		}
 	}
 
+	@Keyword
 	public void ClickOnNewJob() {
 		try {
 			action.WaitVisible(jobsbtn);
@@ -110,6 +116,7 @@ public class HomePage {
 		}
 	}
 
+	@Keyword
 	public void ClickOnJobsCheckIn() {
 		try{
 			action.MouseHoverOnElement(shipreceivebtn)
@@ -121,6 +128,8 @@ public class HomePage {
 		}
 	}
 
+
+	@Keyword
 	public void CLickOnProfitAndLoss() {
 		try {
 			action.WaitVisible(reports)
@@ -134,6 +143,7 @@ public class HomePage {
 		}
 	}
 
+	@Keyword
 	public void ClickOnProfitLoss() {
 		try {
 			action.WaitVisible(reports)
@@ -147,6 +157,7 @@ public class HomePage {
 		}
 	}
 
+	@Keyword
 	public void ClickOnStatusSummary() {
 		try {
 			action.WaitVisible(reports)

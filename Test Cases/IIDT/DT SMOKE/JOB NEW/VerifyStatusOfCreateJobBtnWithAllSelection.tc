@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>VerifyNewJobsPage-Final</name>
+   <name>VerifyStatusOfCreateJobBtnWithAllSelection</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>ae747ece-2e32-4b7b-8128-f8d802662da0</testCaseGuid>
+   <testCaseGuid>89d3ce11-0cff-493c-bf37-66e880984b17</testCaseGuid>
 </TestCaseEntity>
