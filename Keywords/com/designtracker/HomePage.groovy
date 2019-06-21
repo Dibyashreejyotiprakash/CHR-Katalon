@@ -31,6 +31,7 @@ public class HomePage {
 	WebDriver driver = DriverFactory.getWebDriver()
 
 	By welcomeheader = By.xpath("//*[contains(text(),'Welcome')]")
+	By logoutlink = By.xpath("//*[text()='Logout']")
 	By jobsbtn = By.xpath("//*[text()='JOBS']")
 	By newbtn = By.xpath("//*[text()='NEW']")
 	By searchbtn = By.xpath("//*[text()='SEARCH']")
@@ -87,6 +88,20 @@ public class HomePage {
 		}
 		catch(Exception e) {
 			println ("Verify Home Page failed due to "+ e)
+		}
+	}
+	
+	@Keyword
+	public void DTLogOut()
+	{
+		try
+		{
+			action.Click(logoutlink)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e)
+		{
+			println ("DT LogOut failed due to "+ e)
 		}
 	}
 

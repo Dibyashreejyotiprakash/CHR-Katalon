@@ -46,7 +46,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'dibya@1234'</initValue>
+      <initValue>'chr@1234'</initValue>
       <name>dtpassowrd</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -56,7 +56,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'dibya@1234'</initValue>
+      <initValue>'chr@1234'</initValue>
       <name>wswpassword</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
