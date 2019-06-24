@@ -134,4 +134,14 @@
       <initValue>'http://dibyashree.jyoti:dibya@1234@iiadmin.uat.brandmuscle.net/'</initValue>
       <name>iiadminurl</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'diageoadmin@centiv.com'</initValue>
+      <name>diageousername</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'go2web'</initValue>
+      <name>diageopassword</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

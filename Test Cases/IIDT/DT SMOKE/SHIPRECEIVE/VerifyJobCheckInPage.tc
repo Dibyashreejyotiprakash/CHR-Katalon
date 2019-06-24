@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>VerifyDtLoginLogout</name>
+   <name>VerifyJobCheckInPage</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>d20f5d67-7c16-4b57-a15e-926cb47b8067</testCaseGuid>
+   <testCaseGuid>50949a7c-7cdc-4b73-a3ba-33d59f964346</testCaseGuid>
 </TestCaseEntity>

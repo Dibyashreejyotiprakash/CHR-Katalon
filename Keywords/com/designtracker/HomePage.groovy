@@ -48,7 +48,7 @@ public class HomePage {
 	By gexorderstatus = By.xpath("//*[text()='GEX ORDER STATUS']")
 	By siteadmin = By.xpath("//*[text()='SITE']")
 	By accounts = By.xpath("//*[text()='ACCOUNTS']")
-	By barnds = By.xpath("//*[text()='BRANDS']")
+	By brands = By.xpath("//*[text()='BRANDS']")
 	By campaign = By.xpath("//*[text()='CAMPAIGNS']")
 	By competitors  = By.xpath("//*[text()='COMPETITORS']")
 	By distributorbudgetmigration = By.xpath("//*[text()='DISTRIBUTOR BUDGET MIGRATION']")
@@ -90,17 +90,15 @@ public class HomePage {
 			println ("Verify Home Page failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
-	public void DTLogOut()
-	{
-		try
-		{
+	public void DTLogOut() {
+		try {
+			action.WaitVisible(logoutlink)
 			action.Click(logoutlink)
 			action.WaitForPageToLoad()
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			println ("DT LogOut failed due to "+ e)
 		}
 	}
@@ -110,7 +108,8 @@ public class HomePage {
 		try {
 			action.WaitVisible(jobsbtn);
 			action.MouseHoverOnElement(jobsbtn);
-			action.MouseHoverAndClick(newbtn);
+			action.WaitVisible(searchbtn)
+			action.MouseHoverAndClick(searchbtn);
 			action.WaitForPageToLoad()
 		}
 		catch(Exception e) {
@@ -135,7 +134,7 @@ public class HomePage {
 	public void ClickOnJobsCheckIn() {
 		try{
 			action.MouseHoverOnElement(shipreceivebtn)
-			action.MouseHoverAndClick(shipreceivebtn)
+			action.MouseHoverAndClick(jobcheckin)
 			action.WaitForPageToLoad()
 		}
 		catch(Exception e) {
@@ -183,6 +182,78 @@ public class HomePage {
 		}
 		catch(Exception e) {
 			println ("Click On Status Summary failed due to "+ e)
+		}
+	}
+
+	@Keyword
+	public void ClickOnAccounts() {
+		try {
+			action.WaitVisible(siteadmin)
+			action.MouseHoverOnElement(siteadmin)
+			action.WaitVisible(accounts)
+			action.MouseHoverAndClick(accounts)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("Click On accounts  failed due to "+ e)
+		}
+	}
+
+	@Keyword
+	public void ClickOnBrands(){
+		try {
+			action.WaitVisible(siteadmin)
+			action.MouseHoverOnElement(siteadmin)
+			action.WaitVisible(brands)
+			action.MouseHoverAndClick(brands)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("Click On Brands Summary failed due to "+ e)
+		}
+	}
+
+	@Keyword
+	public void ClickOnCampaign() {
+		try {
+			action.WaitVisible(siteadmin)
+			action.MouseHoverOnElement(siteadmin)
+			action.WaitVisible(campaign)
+			action.MouseHoverAndClick(campaign)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("Click On Campaign failed due to "+ e)
+		}
+	}
+
+
+
+	@Keyword
+	public void ClickOnAccountType() {
+		try {
+			action.WaitVisible(applicationadmin)
+			action.MouseHoverOnElement(applicationadmin)
+			action.WaitVisible(accounttype)
+			action.MouseHoverAndClick(accounttype)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("Click On Campaign failed due to "+ e)
+		}
+	}
+
+	@Keyword
+	public void ClickOnSiteUsers() {
+		try {
+			action.WaitVisible(applicationadmin)
+			action.MouseHoverOnElement(applicationadmin)
+			action.WaitVisible(siteusers)
+			action.MouseHoverAndClick(siteusers)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("Click On Campaign failed due to "+ e)
 		}
 	}
 }

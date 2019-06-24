@@ -55,13 +55,14 @@ class LoginPage {
 
 
 
-	//Login
-	public void Login(String email, String password)
+	//Login with Demo Corp-339
+	@Keyword
+	public void LoginToDemoCorp(String demoemail, String demopassword)
 	{
 		try
 		{
-			action.Type(loginUserName, email);
-			action.Type(loginPassword, password);
+			action.Type(loginUserName, demoemail);
+			action.Type(loginPassword, demopassword);
 			action.Click(loginButton);
 			action.WaitForPageToLoad();
 			action.SelectByText(ddlCorporation, "Demo Distributor (QA)");
@@ -71,108 +72,28 @@ class LoginPage {
 		}
 		catch (Exception e)
 		{
-			println("LoginToApplication failed due to: " + e);
+			println("Login To DemoCorp failed due to: " + e);
 			throw e;
 		}
 	}
 
 
-
-	//Logout from application
-	public void Logout()
+	@Keyword
+	public void LoginToDiageo(String username,String password)
 	{
 		try
 		{
-			try
-			{
-				//obj_InstantImpact.lnkLougout.ScrollToViewElement();
-				action.WaitTime(2);
-				action.Click(lnkLougout);
-				action.WaitTime(2);
-				println("Logout method executed");
-			}
-			catch(Exception e)
-			{
-				println("Validation failed due to " + e);
-				throw e;
-			}
+			action.Type(loginUserName, username);
+			action.Type(loginPassword, password);
+			action.Click(loginButton);
+			action.WaitForPageToLoad();
 		}
 		catch (Exception e)
 		{
-			println("Logout failed due to " + e);
+			println("Login To Diageo failed due to: " + e);
 			throw e;
 		}
 	}
 
-
-	//select corporation/Distributer
-	public void LoginWithDistributor()
-	{
-		try
-		{
-			try {
-				if (action.IsElementDisplayed(ddlCorporation))
-				{
-					action.SelectByText(ddlCorporation, "Demo Distributor (QA)");
-					if (action.IsElementDisplayed(ddlDistributor))
-					{
-						action.SelectByText(ddlDistributor, "Demo Dist. Market #1 (QA)");
-						action.Click(loginButton);
-						action.WaitForPageToLoad();
-					}
-					else
-					{
-						action.Click(loginButton);
-						println ("Disclaimer Page is not present");
-
-					}
-				}
-			}
-			catch (Exception e)
-			{
-				println ("Validation failed due to " + e);
-				throw e;
-			}
-
-		}
-		catch (Exception e)
-		{
-			println("Corp Selection failed due to " + e);
-			throw e;
-		}
-	}
-	//select corporation/supplier
-	public void LoginWithSupplier()
-	{
-		try
-		{
-			try
-			{
-				if (action.IsElementDisplayed(ddlCorporation))
-				{
-					action.SelectByText(ddlCorporation, "Demo Supplier (QA)");
-					action.Click(loginButton);
-				}
-				else
-				{
-					action.Click(loginButton);
-					action.WaitTime(2);
-					action.WaitForPageToLoad();
-				}
-
-			}
-			catch (Exception e)
-			{
-				println("Select Corp Supplier failed due to " + e);
-				Assert.fail();
-			}
-		}
-		catch (Exception e)
-		{
-			println("Validation failed due to " + e);
-			throw e;
-		}
-
-	}
 
 }
