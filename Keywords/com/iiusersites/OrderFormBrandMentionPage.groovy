@@ -16,31 +16,33 @@ import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
-import internal.GlobalVariable
-
 import com.utilities.Interaction
 import org.openqa.selenium.By
-
+import internal.GlobalVariable
 import org.openqa.selenium.WebDriver
-
+import org.testng.Assert
+import org.openqa.selenium.Alert
+import org.openqa.selenium.By
 import com.kms.katalon.core.webui.driver.DriverFactory
 
-public class ItemDetailsPage {
+public class OrderFormBrandMentionPage {
 
-	WebDriver driver = DriverFactory.getWebDriver();
+
 	Interaction action = new Interaction();
+	WebDriver driver = DriverFactory.getWebDriver()
 
-	By ordernowbtn = By.xpath("//*[@id='Body_btnOrderNow']")
+	By nobarndmentionbtn = By.id("ctl00_Body_btnNoBrands")
+	By nextbtn = By.id("ctl00_Body_btnNext")
+
 
 	@Keyword
-	public void ClickOnOrderNow() {
+	public void ClickOnNoBrandmentionAndClickonNextBtn() {
 		try {
-			action.WaitVisible(ordernowbtn)
-			action.Click(ordernowbtn)
+			action.Click(nobarndmentionbtn)
 			action.WaitForPageToLoad()
 		}
 		catch(Exception e) {
-			println ("Click On Order Now failed due to "+ e)
+			println ("Click On No Brandmention And Click on NextBtn failed due to "+ e)
 		}
 	}
 }

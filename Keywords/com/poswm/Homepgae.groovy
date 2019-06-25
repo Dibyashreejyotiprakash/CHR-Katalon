@@ -24,10 +24,10 @@ import org.openqa.selenium.By
 import com.kms.katalon.core.webui.driver.DriverFactory
 
 public class Homepgae {
-	
+
 	Interaction action = new Interaction();
 	WebDriver driver = DriverFactory.getWebDriver()
-	
+
 	By homebtn = By.xpath("//*[text()='Home']")
 	By ordersearchtxfield = By.id("ctl00_MainContent_rdOrderSearch_C_ucQuickOrderSearch_txtOrderID")
 	By warehousebtn = By.xpath("(//*[text()='Warehouse'])[1]")
@@ -44,48 +44,40 @@ public class Homepgae {
 	By reports = By.xpath("//*[text()='Reports']")
 	By helpandsupport = By.xpath("//*[text()='Help/Support']")
 	By firstvieworder = By.xpath("//*[@id='ctl00_MainContent_rdPendingApproval_C_rgPendingApprovalByItem_ctl00__0']/td[2]/a")
-    By removeitem = By.xpath("//*[@id='ctl00_MainContent_rdPendingApproval_C_rgPendingApprovalByItem_ctl00__0']/td[3]/a")	
+	By removeitem = By.xpath("//*[@id='ctl00_MainContent_rdPendingApproval_C_rgPendingApprovalByItem_ctl00__0']/td[3]/a")
 	By cancelorder = By.xpath("//*[@id='ctl00_MainContent_rdPendingApproval_C_rgPendingApprovalByItem_ctl00__0']/td[4]/a")
 	By pendingshipmentshiporder = By.xpath("//*[@id='ctl00_MainContent_rdPendingShipment_C_rgPendingShipment_ctl00']//tr[1]/td[3]")
-	
-	
+
+
 	@Keyword
-	public void ClickOnItemSearch()
-	{
+	public void ClickOnItemSearch() {
 		action.WaitVisible(warehousebtn)
 		action.MouseHoverOnElement(warehousebtn)
 		action.MouseHoverAndClick(itemsearchbtn)
 		action.WaitForPageToLoad()
 	}
-	
+
 	@Keyword
-	public void ClickOnNewItem()
-	{
+	public void ClickOnNewItem() {
 		action.WaitVisible(warehousebtn)
 		action.MouseHoverOnElement(warehousebtn)
 		action.MouseHoverAndClick(newitembtn)
 		action.WaitForPageToLoad()
 	}
-	
+
 	@Keyword
-	public void ClickOnNewOrder()
-	{
+	public void ClickOnNewOrder() {
 		action.WaitVisible(warehousebtn)
 		action.MouseHoverOnElement(warehousebtn)
 		action.MouseHoverAndClick(neworderbtn)
 		action.WaitForPageToLoad()
 	}
-	
+
 	@Keyword
-	public void ClicOnOrderSearch()
-	{
+	public void ClicOnOrderSearch() {
 		action.WaitVisible(warehousebtn)
 		action.MouseHoverOnElement(warehousebtn)
 		action.MouseHoverAndClick(ordersearchbtn)
 		action.WaitForPageToLoad()
 	}
-	
-	
-	
-	
 }

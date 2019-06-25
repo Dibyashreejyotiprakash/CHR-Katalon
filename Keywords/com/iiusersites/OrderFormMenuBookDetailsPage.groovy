@@ -16,31 +16,41 @@ import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
-import internal.GlobalVariable
-
 import com.utilities.Interaction
 import org.openqa.selenium.By
-
+import internal.GlobalVariable
 import org.openqa.selenium.WebDriver
-
+import org.testng.Assert
+import org.openqa.selenium.Alert
+import org.openqa.selenium.By
 import com.kms.katalon.core.webui.driver.DriverFactory
 
-public class ItemDetailsPage {
+public class OrderFormMenuBookDetailsPage {
 
-	WebDriver driver = DriverFactory.getWebDriver();
 	Interaction action = new Interaction();
+	WebDriver driver = DriverFactory.getWebDriver()
 
-	By ordernowbtn = By.xpath("//*[@id='Body_btnOrderNow']")
+	By joblinename = By.xpath("//*[@id='ctl00_Body_JobLineNameEditor']")
+	By productgroupddn = By.xpath("//*[@id='ctl00_Body_ProductGroupEditor_Arrow']")
+	By productgroupddnvalue = By.xpath("//*[text()='Graphic Express - Custom Book']")
+	By nextbtn = By.xpath("//*[@id='ctl00_Body_NextButton']")
+	By menusizeddn = By.xpath("//*[@id='ctl00_Body_GexDropDown01_ItemEditor_Arrow']")
+	By menusizeddnvalue = By.xpath("//*[text()='8.5 x 14']")
+
 
 	@Keyword
-	public void ClickOnOrderNow() {
+	public void EnterValuesToJobDetailspage() {
 		try {
-			action.WaitVisible(ordernowbtn)
-			action.Click(ordernowbtn)
+			action.Type(joblinename, "test")
+			action.Click(productgroupddn)
+	        action.WaitVisible(menusizeddnvalue)
+			
+			action.ScrollToBottomOfPage()
+			action.Click(nextbtn)
 			action.WaitForPageToLoad()
 		}
 		catch(Exception e) {
-			println ("Click On Order Now failed due to "+ e)
+			println ("Enter Values To Job Details page failed due to "+ e)
 		}
 	}
 }

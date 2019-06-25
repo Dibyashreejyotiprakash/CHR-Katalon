@@ -16,31 +16,19 @@ import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
-import internal.GlobalVariable
-
 import com.utilities.Interaction
 import org.openqa.selenium.By
-
+import internal.GlobalVariable
 import org.openqa.selenium.WebDriver
-
+import org.testng.Assert
+import org.openqa.selenium.Alert
 import com.kms.katalon.core.webui.driver.DriverFactory
 
-public class ItemDetailsPage {
+public class OrderFormorderSummaryPage {
 
-	WebDriver driver = DriverFactory.getWebDriver();
 	Interaction action = new Interaction();
+	WebDriver driver = DriverFactory.getWebDriver()
 
-	By ordernowbtn = By.xpath("//*[@id='Body_btnOrderNow']")
 
-	@Keyword
-	public void ClickOnOrderNow() {
-		try {
-			action.WaitVisible(ordernowbtn)
-			action.Click(ordernowbtn)
-			action.WaitForPageToLoad()
-		}
-		catch(Exception e) {
-			println ("Click On Order Now failed due to "+ e)
-		}
-	}
+	By completeorderbt = By.id("ctl00_Body_btnContinue")
 }

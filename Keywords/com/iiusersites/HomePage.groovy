@@ -33,7 +33,7 @@ class HomePage {
 	By imgPOSTemplates = By.xpath("//a[(@target='_self') and contains(text(),'POS Templates')]")
 	By logout = By.xpath("//*[@id='lbLogout']")
 	By lstMenu = By.xpath("//div[@id='ctl00_RadMenu1']/ul/li")
-	By orderform = By.xpath("(//a[text()='Order Form'])[2]")
+	By orderform = By.xpath("(//*[@href='/OnlineOrderForm/default.aspx'])[2]")
 	By accountlink = By.xpath("//*[text()='Account']")
 	By projects = By.xpath("//*[text()='Projects']")
 
@@ -62,12 +62,12 @@ class HomePage {
 		action.WaitVisible(imgPOSTemplates)
 		action.Click(imgPOSTemplates)
 		action.WaitForPageToLoad()
-		
 	}
 
 	@Keyword
 	public void ClickOnOrderForm() {
 		try {
+			action.ScrollToBottomOfPage()
 			action.WaitVisible(orderform)
 			action.Click(orderform)
 			action.WaitForPageToLoad()

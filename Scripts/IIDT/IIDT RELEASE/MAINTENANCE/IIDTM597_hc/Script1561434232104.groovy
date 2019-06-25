@@ -23,3 +23,13 @@ CustomKeywords.'com.iiusersites.LoginPage.LoginToDemoCorp'(GlobalVariable.iiuser
 
 CustomKeywords.'com.iiusersites.HomePage.ClickOnOrderForm'()
 
+CustomKeywords.'com.iiusersites.OrderFormDefaultPage.ClickonCreateNewCustomOrder'()
+
+CustomKeywords.'com.iiusersites.OrderFormorderHeaderPage.EnterValuesToFiledsInOrderPage'()
+
+CustomKeywords.'com.iiusersites.OrderForItemDetails1Page.ClickOnMenuBookBtn'()
+
+CustomKeywords.'com.iiusersites.OrderFormMenuBookDetailsPage.EnterValuesToJobDetailspage'()
+
+CustomKeywords.'com.iiusersites.OrderFormBrandMentionPage.ClickOnNoBrandmentionAndClickonNextBtn'()
+

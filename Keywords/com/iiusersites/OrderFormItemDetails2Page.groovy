@@ -16,31 +16,41 @@ import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
-import internal.GlobalVariable
-
 import com.utilities.Interaction
 import org.openqa.selenium.By
-
+import internal.GlobalVariable
 import org.openqa.selenium.WebDriver
-
+import org.testng.Assert
+import org.openqa.selenium.Alert
+import org.openqa.selenium.By
 import com.kms.katalon.core.webui.driver.DriverFactory
 
-public class ItemDetailsPage {
+public class OrderFormItemDetails2Page {
 
-	WebDriver driver = DriverFactory.getWebDriver();
 	Interaction action = new Interaction();
+	WebDriver driver = DriverFactory.getWebDriver()
 
-	By ordernowbtn = By.xpath("//*[@id='Body_btnOrderNow']")
+	By addnewnotebtn = By.id("ctl00_Body_JobLineNotes1_grdNotes_ctl00_ctl02_ctl00_AddNewRecordButton")
+	By addnewnotetextbox = By.id("ctl00_Body_JobLineNotes1_grdNotes_ctl00_ctl02_ctl02_txtNotesTextArea")
+	By savebtn = By.id("ctl00_Body_JobLineNotes1_grdNotes_ctl00_ctl02_ctl02_btnUpdate_input")
+	By previoubtn = By.id("ctl00_Body_btnPrevious")
+	By myitemsbtn = By.id("ctl00_Body_btnItems")
+	By nextbtn = By.id("ctl00_Body_btnNext")
 
 	@Keyword
-	public void ClickOnOrderNow() {
+	public void AddNewNoteAndClickOnNextBtn() {
 		try {
-			action.WaitVisible(ordernowbtn)
-			action.Click(ordernowbtn)
-			action.WaitForPageToLoad()
+
+			action.ScrollToViewelement(addnewnotebtn)
+			action.Click(addnewnotebtn)
+			action.Type(addnewnotetextbox, "test")
+			action.WaitVisible(savebtn)
+			action.Click(savebtn)
+			action.ScrollToBottomOfPage()
+			action.Click(nextbtn)
 		}
 		catch(Exception e) {
-			println ("Click On Order Now failed due to "+ e)
+			println ("Add New Note And Click On NextBtn failed due to "+ e)
 		}
 	}
 }

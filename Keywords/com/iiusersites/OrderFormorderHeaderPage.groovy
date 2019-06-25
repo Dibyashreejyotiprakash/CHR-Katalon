@@ -16,31 +16,42 @@ import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
-import internal.GlobalVariable
-
 import com.utilities.Interaction
 import org.openqa.selenium.By
-
+import internal.GlobalVariable
 import org.openqa.selenium.WebDriver
-
+import org.testng.Assert
+import org.openqa.selenium.Alert
+import org.openqa.selenium.By
 import com.kms.katalon.core.webui.driver.DriverFactory
 
-public class ItemDetailsPage {
+public class OrderFormorderHeaderPage {
 
-	WebDriver driver = DriverFactory.getWebDriver();
 	Interaction action = new Interaction();
+	WebDriver driver = DriverFactory.getWebDriver()
 
-	By ordernowbtn = By.xpath("//*[@id='Body_btnOrderNow']")
+	By newaccountname = By.xpath("//*[@id='ctl00_Body_rtbNewAccountName']")
+	By jobtypeddn = By.xpath("//*[@id='ctl00_Body_rcbJobType_Arrow']")
+	By jobtypeddnvalue = By.xpath("//*[text()='Accessories Only']")
+	By continuetoitemsbtn = By.xpath("//*[@id='ctl00_Body_btnContinue']")
+
 
 	@Keyword
-	public void ClickOnOrderNow() {
+	public void EnterValuesToFiledsInOrderPage() {
 		try {
-			action.WaitVisible(ordernowbtn)
-			action.Click(ordernowbtn)
+			action.WaitVisible(newaccountname)
+			action.ScrollToViewElement(newaccountname)
+			action.Type(newaccountname, "test")
+			action.WaitVisible(jobtypeddn)
+			action.Click(jobtypeddn)
+			action.Click(jobtypeddnvalue)
+			action.WaitVisible(continuetoitemsbtn)
+			action.ScrollToBottomOfPage()
+			action.Click(continuetoitemsbtn)
 			action.WaitForPageToLoad()
 		}
 		catch(Exception e) {
-			println ("Click On Order Now failed due to "+ e)
+			println ("Enter Values To Fileds In Order Page failed due to "+ e)
 		}
 	}
 }
