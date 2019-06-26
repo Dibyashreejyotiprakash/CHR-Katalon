@@ -71,7 +71,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'adminil@brandmuscle.com'</initValue>
+      <initValue>'adminny@brandmuscle.com'</initValue>
       <name>posusername</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -81,7 +81,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'uat'</initValue>
+      <initValue>'staging'</initValue>
       <name>environment</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -101,7 +101,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'posw'</initValue>
+      <initValue>'POSW'</initValue>
       <name>bunameposw</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>

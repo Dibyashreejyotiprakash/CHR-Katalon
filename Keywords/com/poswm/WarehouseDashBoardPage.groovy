@@ -23,24 +23,10 @@ import org.openqa.selenium.Alert
 import org.openqa.selenium.By
 import com.kms.katalon.core.webui.driver.DriverFactory
 
-public class LoginPage {
 
+
+public class WarehouseDashBoardPage {
+	
 	Interaction action = new Interaction();
 	WebDriver driver = DriverFactory.getWebDriver()
-
-	By username = By.id("MainContent_LoginCentiv_UserName")
-	By password = By.id("MainContent_LoginCentiv_Password")
-	By loginbtn = By.id("MainContent_LoginCentiv_btnLogin")
-	By forgotpassword = By.id("MainContent_LoginCentiv_lbForgotPassword")
-
-	@Keyword
-	public void PoswLogin(String posusername,String pospassword) {
-		action.WaitVisible(username)
-		action.Type(username, posusername)
-		action.WaitVisible(password)
-		action.Type(password, pospassword)
-		action.WaitVisible(loginbtn)
-		action.Click(loginbtn)
-		action.WaitForPageToLoad()
-	}
 }

@@ -214,12 +214,37 @@ public  class Interaction {
 				else if (BuName.equalsIgnoreCase("INSTANTIMPACTUSERSITE")) {
 
 					if (EnvironmentName.equalsIgnoreCase("UAT")) {
+						WebUI.navigateToUrl("https://ii4.uat.brandmuscle.net")
 					}
 					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
+						WebUI.navigateToUrl("https://ii4.v5stage.brandmuscle.net")
 					}
 					else if (EnvironmentName.equalsIgnoreCase("DEV")) {
+						WebUI.navigateToUrl("http://ii4.dev.brandmuscle.net")
+					}
+					else{
+						println ("Environment is not correct")
+						WebUI.closeBrowser()
 					}
 				}
+				
+				else if (BuName.equalsIgnoreCase("POSW")) {
+					
+						if (EnvironmentName.equalsIgnoreCase("UAT")) {
+						WebUI.navigateToUrl("https://csg.v5stage.brandmuscle.net")
+					}
+					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
+						WebUI.navigateToUrl("https://csg.v5stage.brandmuscle.net")
+					}
+					else if (EnvironmentName.equalsIgnoreCase("DEV")) {
+						WebUI.navigateToUrl("https://csg.v5dev.brandmuscle.net")
+					}
+					else{
+						println ("Environment is not correct")
+						WebUI.closeBrowser()
+					}
+				}
+					
 
 				else if (BuName.equalsIgnoreCase("PROOFGALLERY")) {
 

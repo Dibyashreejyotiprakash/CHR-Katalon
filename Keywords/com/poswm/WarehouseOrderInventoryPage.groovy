@@ -5,6 +5,8 @@ import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
+import org.openqa.selenium.WebDriver
+
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.checkpoint.Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
@@ -16,6 +18,8 @@ import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.utilities.Interaction
+
+import com.utilities.Interaction
 import internal.GlobalVariable
 import org.openqa.selenium.WebDriver
 import org.testng.Assert
@@ -23,24 +27,22 @@ import org.openqa.selenium.Alert
 import org.openqa.selenium.By
 import com.kms.katalon.core.webui.driver.DriverFactory
 
-public class LoginPage {
+
+public class WarehouseOrderInventoryPage {
 
 	Interaction action = new Interaction();
 	WebDriver driver = DriverFactory.getWebDriver()
 
-	By username = By.id("MainContent_LoginCentiv_UserName")
-	By password = By.id("MainContent_LoginCentiv_Password")
-	By loginbtn = By.id("MainContent_LoginCentiv_btnLogin")
-	By forgotpassword = By.id("MainContent_LoginCentiv_lbForgotPassword")
+	By addnewitembtn = By.cssSelector(".RadMenu_Office2010Silver .rmFirst .rmText")
+	By supplierfiletr = By.xpath("")
+	
 
 	@Keyword
-	public void PoswLogin(String posusername,String pospassword) {
-		action.WaitVisible(username)
-		action.Type(username, posusername)
-		action.WaitVisible(password)
-		action.Type(password, pospassword)
-		action.WaitVisible(loginbtn)
-		action.Click(loginbtn)
-		action.WaitForPageToLoad()
+	public void VerifyOrderInventoryPage() {
+		action.WaitVisible(addnewitembtn)
+		boolean statusofaddnewitembtn = action.IsElementDisplayed(addnewitembtn)
+		Assert.assertTrue(statusofaddnewitembtn)
+		boolean statusofenablecreateneworderbtn = action.IsElementEnabled(addnewitembtn)
+		Assert.assertTrue(statusofenablecreateneworderbtn)
 	}
 }

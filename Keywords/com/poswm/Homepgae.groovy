@@ -48,6 +48,14 @@ public class Homepgae {
 	By cancelorder = By.xpath("//*[@id='ctl00_MainContent_rdPendingApproval_C_rgPendingApprovalByItem_ctl00__0']/td[4]/a")
 	By pendingshipmentshiporder = By.xpath("//*[@id='ctl00_MainContent_rdPendingShipment_C_rgPendingShipment_ctl00']//tr[1]/td[3]")
 
+	By logoutlink = By.xpath("//*[text()='Logout']")
+
+	@Keyword
+	public void PosLogout() {
+		action.Click(logoutlink)
+		action.WaitForPageToLoad()
+	}
+
 
 	@Keyword
 	public void ClickOnItemSearch() {
