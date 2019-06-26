@@ -94,102 +94,29 @@ class ItemSearchPage {
 	By inputSortBy = By.id("ctl00_Body_rcbSort_Input")
 	By chkbxVariabletype = By.id("ctl00_Body_rptFilterGroups_ctrl4_cblFilterList_1")
 
+	By template = By.xpath("(//*[@href='/POS/ItemDetails.aspx?tid=130722'])[1]")
 
 	WebDriver driver = DriverFactory.getWebDriver();
 	Interaction action = new Interaction();
 
 
 
-	//Click on POS On Demand Button
-	public void ClickOnPosOnDemand()
-	{
+	@Keyword
+	public void ClickOnTemplate(){
 		try
 		{
-			action.ScrollToViewElement(Postemplate);
-			action.WaitVisible(Postemplate, 30);
-			action.Click(Postemplate);
+			
+			action.WaitVisible(template)
+			action.Click(template)
+			action.WaitForPageToLoad()
 		}
-		catch (Exception e)
+		catch(Exception e)
 		{
-			println("ClickOnPosOnDemand failed due to : " + e);
-			throw e;
+			println ("Click On Template failed due to "+ e)
 		}
 	}
 
 
-
-	//Search Items
-	public void SearchItem(String keyword)
-	{
-
-		try
-		{
-			if (action.IsElementDisplayed(btnBack))
-			{
-				action.WaitVisible(btnBack);
-				action.Click(btnBack);
-			}
-			action.WaitVisible(txbSearch);
-			action.Clear(txbSearch);
-			action.WaitForPageToLoad();
-			action.Type(txbSearch, keyword);
-			action.Type(txbSearch, Keys.ENTER);
-			action.WaitTillNotVisible(imgLoading);
-			action.WaitForPageToLoad(60);
-		}
-		catch (Exception e)
-		{
-			println("Template NOT Found " + e);
-			throw e;
-		}
-	}
-
-
-	public void ClickOnCreateYourDesignButton()
-	{
-		try
-		{
-			if (action.IsElementDisplayed(btnCreateYourDesign))
-			{
-				action.WaitVisible(btnCreateYourDesign, 300);
-				action.ScrollToViewElement(btnCreateYourDesign);
-				action.Click(btnCreateYourDesign);
-				action.WaitForPageToLoad();
-				action.WaitVisible(btnPreviewChanges);
-
-			}
-		}
-		catch (Exception e)
-		{
-			println("ClickOnCreateYourDesignButton method failed due to " + e);
-			throw e;
-		}
-	}
-
-	//Click on Back
-	public boolean VerifyAndClickOnBack()
-	{
-		try
-		{
-			boolean isBackBtnPresent = false;
-			if (action.IsElementDisplayed(Back))
-			{
-				isBackBtnPresent = true;
-			}
-			action.ScrollToViewElement(Back);
-			action.WaitVisible(Back);
-			action.Click(Back);
-			action.WaitVisible(SearchButton);
-			return isBackBtnPresent;
-
-
-		}
-		catch (Exception e)
-		{
-			println("Click on back failed due to : " + e);
-			throw e;
-		}
-	}
 
 
 }
