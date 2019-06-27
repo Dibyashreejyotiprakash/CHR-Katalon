@@ -31,10 +31,15 @@ class HomePage {
 	By lstPrimaryMenu = By.xpath("//div[@id='ctl00_RadMenu1']/ul/li/a/span[1]")
 	By lstSubMenu = By.xpath("//div[@id='ctl00_RadMenu1']/ul/li/div/ul/li/a/span")
 	By imgPOSTemplates = By.xpath("//a[(@target='_self') and contains(text(),'POS Templates')]")
-	By lnkLougout = By.xpath("//*[@id='lbLogout']")
+	By logout = By.xpath("//*[@id='lbLogout']")
 	By lstMenu = By.xpath("//div[@id='ctl00_RadMenu1']/ul/li")
+	By orderform = By.xpath("(//*[@href='/OnlineOrderForm/default.aspx'])[2]")
+	By accountlink = By.xpath("//*[text()='Account']")
+	By projects = By.xpath("//*[text()='Projects']")
 
 
+
+	@Keyword
 	public boolean VerifyHomePage() {
 		try {
 			boolean IsHomePageVerify = false;
@@ -51,9 +56,51 @@ class HomePage {
 		}
 	}
 
+	@Keyword
 	public void ClickOnPosTemplate() {
+		action.ScrollToBottomOfPage()
 		action.WaitVisible(imgPOSTemplates)
 		action.Click(imgPOSTemplates)
 		action.WaitForPageToLoad()
+	}
+
+	@Keyword
+	public void ClickOnOrderForm() {
+		try {
+			action.ScrollToBottomOfPage()
+			action.WaitVisible(orderform)
+			action.Click(orderform)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("Click On OrderForm failed due to :"+ e);
+			throw e;
+		}
+	}
+
+	@Keyword
+	public void ClickOnAccount() {
+		try {
+			action.WaitVisible(logout)
+			action.Click(logout)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("Click On Account failed due to :"+ e);
+			throw e;
+		}
+	}
+
+	@Keyword
+	public void ClickOnProjects() {
+		try {
+			action.WaitVisible(projects)
+			action.Click(projects)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("Click On Projects failed due to :"+ e);
+			throw e;
+		}
 	}
 }
