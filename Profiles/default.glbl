@@ -61,7 +61,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'http://dibyashree.jyoti:dibya@1234@wswadmin.uat.brandmuscle.net/'</initValue>
+      <initValue>'http://dibyashree.jyoti:chr@1234@wswadmin.uat.brandmuscle.net'</initValue>
       <name>wswadminurl</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -81,7 +81,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'staging'</initValue>
+      <initValue>'uat'</initValue>
       <name>environment</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -131,7 +131,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'http://dibyashree.jyoti:dibya@1234@iiadmin.uat.brandmuscle.net/'</initValue>
+      <initValue>'http://dibyashree.jyoti:chr@1234@iiadmin.uat.brandmuscle.net/'</initValue>
       <name>iiadminurl</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
