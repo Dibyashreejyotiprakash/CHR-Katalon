@@ -137,16 +137,16 @@ public  class Interaction {
 				else if (BuName.equalsIgnoreCase("WSWADMIN")) {
 
 					if (EnvironmentName.equalsIgnoreCase("UAT")) {
-						WebUI.navigateToUrl("http://wswadmin.uat.brandmuscle.net/")
+						WebUI.navigateToUrl("http://dibyashree.jyoti:chr@1234@wswadmin.uat.brandmuscle.net/")
 					}
 					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
-						WebUI.navigateToUrl("http://wswadmin.stage.brandmuscle.net")
+						WebUI.navigateToUrl("http://dibyashree.jyoti:chr@1234@wswadmin.stage.brandmuscle.net/")
 					}
 					else if (EnvironmentName.equalsIgnoreCase("PROD")) {
-						WebUI.navigateToUrl("http://wswadmin.brandmuscle.net/")
+						WebUI.navigateToUrl("http://dibyashree.jyoti:chr@1234@wswadmin.brandmuscle.net/")
 					}
 					else if (EnvironmentName.equalsIgnoreCase("DEV")) {
-						WebUI.navigateToUrl("http://wswadmin.dev.brandmuscle.net/")
+						WebUI.navigateToUrl("http://dibyashree.jyoti:chr@1234@wswadmin.dev.brandmuscle.net/")
 					}
 					else{
 						println ("Environment is not correct")
@@ -227,10 +227,10 @@ public  class Interaction {
 						WebUI.closeBrowser()
 					}
 				}
-				
+
 				else if (BuName.equalsIgnoreCase("POSW")) {
-					
-						if (EnvironmentName.equalsIgnoreCase("UAT")) {
+
+					if (EnvironmentName.equalsIgnoreCase("UAT")) {
 						WebUI.navigateToUrl("https://csg.v5stage.brandmuscle.net")
 					}
 					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
@@ -244,7 +244,7 @@ public  class Interaction {
 						WebUI.closeBrowser()
 					}
 				}
-					
+
 
 				else if (BuName.equalsIgnoreCase("PROOFGALLERY")) {
 
@@ -261,13 +261,13 @@ public  class Interaction {
 				else if (BuName.equalsIgnoreCase("WSWADMIN")) {
 
 					if (EnvironmentName.equalsIgnoreCase("UAT")) {
-						WebUI.navigateToUrl("http://wswadmin.uat.brandmuscle.net")
+						WebUI.navigateToUrl("http://dibyashree.jyoti:chr@1234@wswadmin.uat.brandmuscle.net/")
 					}
 					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
-						WebUI.navigateToUrl("http://wswadmin.stage.brandmuscle.net")
+						WebUI.navigateToUrl("http://dibyashree.jyoti:chr@1234@wswadmin.stage.brandmuscle.net/")
 					}
 					else if (EnvironmentName.equalsIgnoreCase("DEV")) {
-						WebUI.navigateToUrl("http://wswadmin.dev.brandmuscle.net")
+						WebUI.navigateToUrl("http://dibyashree.jyoti:chr@1234@wswadmin.dev.brandmuscle.net/")
 					}
 				}
 				else if (BuName.equalsIgnoreCase("IIADMIN")) {
