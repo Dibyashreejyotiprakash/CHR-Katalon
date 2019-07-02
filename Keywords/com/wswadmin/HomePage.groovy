@@ -63,8 +63,8 @@ public class HomePage {
 	public void NavigateToCategoryMaintenancePage() {
 		action.WaitVisible(instantimpact)
 		action.MouseHoverOnElement(instantimpact)
-		action.WaitVisible(metataggingcategoryitemmaintenance)
-		action.MouseHoverOnElement(metataggingcategoryitemmaintenance)
+		action.WaitVisible(metatagingitemmaintenance)
+		action.MouseHoverOnElement(metatagingitemmaintenance)
 		action.WaitVisible(metatagingcategorymaintenance)
 		action.MouseHoverAndClick(metatagingcategorymaintenance)
 		action.WaitForPageToLoad()
@@ -74,8 +74,8 @@ public class HomePage {
 	public void NavigateToCategoryItemMaintenancePage() {
 		action.WaitVisible(instantimpact)
 		action.MouseHoverOnElement(instantimpact)
-		action.WaitVisible(metataggingcategoryitemmaintenance)
-		action.MouseHoverOnElement(metataggingcategoryitemmaintenance)
+		action.WaitVisible(metatagingitemmaintenance)
+		action.MouseHoverOnElement(metatagingitemmaintenance)
 		action.WaitVisible(metataggingcategoryitemmaintenance)
 		action.MouseHoverAndClick(metataggingcategoryitemmaintenance)
 		action.WaitForPageToLoad()

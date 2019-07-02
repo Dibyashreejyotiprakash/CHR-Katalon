@@ -28,16 +28,15 @@ import org.openqa.selenium.Keys
 
 public class CategoryItemMaintenancePage {
 
-   
-	
+
+
 	WebDriver driver = DriverFactory.getWebDriver();
 	Interaction action = new Interaction();
-	
+
 	By metatagingcategoryitemlable = By.xpath("(//*[text()='Meta Tagging Category Item Maintenance'])[2]")
-	
+
 	@Keyword
-	public void VerifyCategoryItemMaintenancePage()
-	{
+	public void VerifyCategoryItemMaintenancePage() {
 		action.WaitVisible(metatagingcategoryitemlable)
 		boolean statusofmetataglabel = action.IsElementDisplayed(metatagingcategoryitemlable)
 		Assert.assertTrue(statusofmetataglabel)
