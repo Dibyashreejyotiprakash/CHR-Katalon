@@ -23,7 +23,7 @@ WebUI.waitForPageLoad(300)
 
 CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.posusername, GlobalVariable.pospassword)
 
-CustomKeywords.'com.poswm.Homepgae.ClickOnNewOrder'()
+CustomKeywords.'com.poswm.Homepage.ClickOnNewOrder'()
 
 CustomKeywords.'com.poswm.NewOrderPage.ClickOnOrderIdBtn'()
 

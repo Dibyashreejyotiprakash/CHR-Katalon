@@ -145,8 +145,7 @@ public class NewOrderPage {
 	}
 
 	@Keyword
-	public void VerifySubmitButton()
-	{
+	public void VerifySubmitButton() {
 		action.ScrollToBottomOfPage()
 		action.WaitVisible(submitorder)
 		boolean statusofsubmitodrerbtn = action.IsElementDisplayed(submitorder)
@@ -154,14 +153,14 @@ public class NewOrderPage {
 		boolean statusofenablesubmitodrerbtn = action.IsElementEnabled(submitorder)
 		Assert.assertTrue(statusofenablesubmitodrerbtn)
 	}
-	
+
 	@Keyword
 	public void ClickOnSubmitOrder() {
 
 		action.Click(submitorder)
 	}
-	
-	
+
+
 
 	@Keyword
 	public void VerifyOrderConfirmationMSg() {
@@ -169,15 +168,13 @@ public class NewOrderPage {
 		boolean orderconfirmationmsg = action.IsElementDisplayed(ordersuccessfullmsg)
 		Assert.assertTrue(orderconfirmationmsg)
 	}
-	
+
 	@Keyword
-	public void VerifyCancelButton()
-	{
+	public void VerifyCancelButton() {
 		action.WaitVisible(cancelodrerbtn)
 		boolean statusofpresenceofcancelorderbtn = action.IsElementDisplayed(cancelodrerbtn)
 		Assert.assertTrue(statusofpresenceofcancelorderbtn)
 		boolean statusofenabilityofcancelorderbtn = action.IsElementDisplayed(cancelodrerbtn)
 		Assert.assertTrue(statusofenabilityofcancelorderbtn)
 	}
-	
 }

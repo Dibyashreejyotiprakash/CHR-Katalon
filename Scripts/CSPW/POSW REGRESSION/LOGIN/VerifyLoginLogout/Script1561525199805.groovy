@@ -23,5 +23,5 @@ WebUI.waitForPageLoad(300)
 
 CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.posusername, GlobalVariable.pospassword)
 
-CustomKeywords.'com.poswm.Homepgae.PosLogout'()
+CustomKeywords.'com.poswm.Homepage.PosLogout'()
 
