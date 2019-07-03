@@ -13,3 +13,19 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
+WebUI.openBrowser('')
+
+WebUI.maximizeWindow()
+
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamewswadmin, GlobalVariable.testtyperegression, GlobalVariable.environment)
+
+CustomKeywords.'com.wswadmin.HomePage.NavigateToCategoryMaintenancePage'()
+
+CustomKeywords.'com.wswadmin.CategoriesMaintenancePage.VerifyInstantImpactCategoryMaintenancePage'()
+
+CustomKeywords.'com.wswadmin.CategoriesMaintenancePage.ClickOnCreateExternalItemType'()
+
+CustomKeywords.'com.wswadmin.CategoriesMaintenancePage.VerifyCreateNewCategory'()
+
+WebUI.closeBrowser()
+
