@@ -37,6 +37,7 @@ public class HomePage {
 	By metatagingitemmaintenance = By.xpath("//*[text()='Meta Tagging Category/Item Maintenance']")
 	By itemsearchtagging = By.xpath("//*[text()='Item Search Tagging']")
 	By metaTaggingEditDelete  = By.xpath("(//span[contains(text(),'Meta Tagging Edit/Delete')])[1]")
+	By metaTaggingCategoryMaintenancePage  = By.xpath("//ul[@class = 'rmVertical rmGroup rmLevel2']//span[contains(text(),'Meta Tagging Category Maintenance')]")
 
 	@Keyword
 	def NavigateToItemSearchPage() {
@@ -57,5 +58,15 @@ public class HomePage {
 		action.MouseHoverOnElement(metatagingitemmaintenance)
 		action.WaitVisible(metaTaggingEditDelete)
 		action.Click(metaTaggingEditDelete)
+	}
+
+	@Keyword
+	def NavigateToCategoryMaintenancePage() {
+		action.WaitVisible(instantimpact)
+		action.Click(instantimpact)
+		action.WaitVisible(metatagingitemmaintenance)
+		action.MouseHoverOnElement(metatagingitemmaintenance)
+		action.WaitVisible(metaTaggingCategoryMaintenancePage)
+		action.Click(metaTaggingCategoryMaintenancePage)
 	}
 }
