@@ -35,7 +35,29 @@ public class WarehouseOrderInventoryPage {
 
 	By addnewitembtn = By.cssSelector(".RadMenu_Office2010Silver .rmFirst .rmText")
 	By supplierfiletr = By.xpath("")
-	
+	By menuWarehouse = By.xpath("//*[@id='mainMenu']/div/ul/li[2]/a/span")
+	By subMenuNewItem = By.xpath("//*[text()='New Item']")
+	By itemInformationDivision = By.xpath("//*[@id='ctl00_MainContent_radWizardBar']")
+	By subMenuItemSearch = By.xpath("//*[text()='Item Search']")
+	By subMenuNewOrder = By.xpath("//*[text()='New Order']")
+	//By subMenuOrderSearch = By.xpath("//*[text()='Order Search']")
+	By subMenuOrderSearch = By.xpath("//*[text()='Order Search']")
+	By subMenuAdministration = By.xpath("//*[text()='Administration']")
+	By subMenuReports = By.xpath("//*[text()='Reports']")
+	By werehouseSubMenuList = By.xpath("//*[@class='rmVertical rmGroup rmLevel1 menu']")
+	By divAddNewItem = By.xpath("//*[@id='ctl00_MainContent_rmItemCommands']")
+
+
+
+
+
+
+
+
+
+
+
+
 
 	@Keyword
 	public void VerifyOrderInventoryPage() {
@@ -45,4 +67,85 @@ public class WarehouseOrderInventoryPage {
 		boolean statusofenablecreateneworderbtn = action.IsElementEnabled(addnewitembtn)
 		Assert.assertTrue(statusofenablecreateneworderbtn)
 	}
+
+	@Keyword
+	public void VerifyItemSearchPage() {
+		String expectedUATUrl = "https://csg.v5qa.brandmuscle.net/Warehouse/WarehouseItemInventory.aspx" ;
+		String expectedSTAGEUrl = "https://csg.v5stage.brandmuscle.net/Warehouse/WarehouseItemInventory.aspx" ;
+		String expectedPRODUrl = "https://csg.brandmuscle.net/Warehouse/WarehouseItemInventory.aspx" ;
+
+		action.MouseHoverOnElement(menuWarehouse)
+		action.WaitVisible(werehouseSubMenuList)
+		action.WaitTime(2)
+
+		action.Click(subMenuItemSearch)
+		action.WaitForPageToLoad()
+		action.WaitVisible(divAddNewItem)
+
+		String env = GlobalVariable.environment
+		String actualUrl = action.GetCurrentURL();
+		if(env.equalsIgnoreCase("uat")) {
+			Assert.assertEquals(expectedUATUrl, actualUrl)
+		}
+		else if(env.equalsIgnoreCase("stage")) {
+			Assert.assertEquals(expectedSTAGEUrl, actualUrl)
+		}
+		else if(env.equalsIgnoreCase("prod")) {
+			Assert.assertEquals(expectedPRODUrl, actualUrl)
+		}
+		else
+		{
+			Assert.fail();
+		}
+	}
+
+	@Keyword
+	public void SelectMenuAndSubMenu(String Menuname , String SubMenuName)
+	{
+		if(Menuname.equalsIgnoreCase("warehouse")
+		{
+
+			action.MouseHoverOnElement(menuWarehouse)
+			action.WaitVisible(werehouseSubMenuList)
+			action.WaitTime(2)
+
+			if(SubMenuName.equalsIgnoreCase("Item Search")
+			{
+				action.Click(subMenuItemSearch)
+				action.WaitForPageToLoad()
+				action.WaitVisible(divAddNewItem)
+
+			}
+
+		}
+
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

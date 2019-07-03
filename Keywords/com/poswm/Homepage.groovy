@@ -23,7 +23,7 @@ import org.openqa.selenium.Alert
 import org.openqa.selenium.By
 import com.kms.katalon.core.webui.driver.DriverFactory
 
-public class Homepgae {
+public class Homepage {
 
 	Interaction action = new Interaction();
 	WebDriver driver = DriverFactory.getWebDriver()
@@ -47,6 +47,20 @@ public class Homepgae {
 	By removeitem = By.xpath("//*[@id='ctl00_MainContent_rdPendingApproval_C_rgPendingApprovalByItem_ctl00__0']/td[3]/a")
 	By cancelorder = By.xpath("//*[@id='ctl00_MainContent_rdPendingApproval_C_rgPendingApprovalByItem_ctl00__0']/td[4]/a")
 	By pendingshipmentshiporder = By.xpath("//*[@id='ctl00_MainContent_rdPendingShipment_C_rgPendingShipment_ctl00']//tr[1]/td[3]")
+	By subMenuitemProperties = By.xpath("//*[@class='rmVertical rmGroup rmLevel1 menu']/li[5]//following-sibling::div/ul/li[1]")
+	By lavelItemProperty = By.xpath("//*[@id='MainContent_lblTypes']")
+	By menuWarehouse = By.xpath("//*[@id='mainMenu']/div/ul/li[2]/a/span")
+	By subMenuWareHouse = By.xpath("//*[@class='rmVertical rmGroup rmLevel1 menu']/li[5]//following-sibling::div/ul/li[2]")
+	By subMenuWarehouseUsers = By.xpath("//*[@class='rmVertical rmGroup rmLevel1 menu']/li[5]//following-sibling::div/ul/li[3]")
+	By subMenuWarehouseSpendLimits = By.xpath("//*[@class='rmVertical rmGroup rmLevel1 menu']/li[5]//following-sibling::div/ul/li[4]")
+	By subMenuWelcomeMessage = By.xpath("//*[@class='rmVertical rmGroup rmLevel1 menu']/li[5]//following-sibling::div/ul/li[5]")
+	By subMenuUserItemApprovalTransfer = By.xpath("//*[@class='rmVertical rmGroup rmLevel1 menu']/li[5]//following-sibling::div/ul/li[6]")
+	By subMenuMenuLinkBrand = By.xpath("//*[@class='rmVertical rmGroup rmLevel1 menu']/li[5]//following-sibling::div/ul/li[7]")
+	By labelWareHouseAdmin = By.xpath("//*[@id='MainContent_pnlSites']")
+	By linkAddNewUser = By.xpath("//*[@id='ctl00_MainContent_rdGridWarehouseUsers_ctl00_ctl02_ctl00_InitInsertButton']")
+	By linkAddNewCompliance = By.xpath("//*[@id='ctl00_MainContent_rgExistingBudgets_ctl00_ctl02_ctl00_InitInsertButton']")
+	By btnSaveDashBoardMessage = By.xpath("//*[@id='MainContent_MainContent_btnSubmit']")
+	By labelTransferFrom = By.xpath("//*[@id='MainContent_lblApproverUser']")
 
 	By logoutlink = By.xpath("//*[text()='Logout']")
 
@@ -54,6 +68,12 @@ public class Homepgae {
 	public void PosLogout() {
 		action.Click(logoutlink)
 		action.WaitForPageToLoad()
+	}
+
+	@Keyword
+	public void HoverOnWareHouseMenu() {
+		action.MouseHoverOnElement(menuWarehouse);
+		action.WaitTime(3);
 	}
 
 
@@ -87,5 +107,66 @@ public class Homepgae {
 		action.MouseHoverOnElement(warehousebtn)
 		action.MouseHoverAndClick(ordersearchbtn)
 		action.WaitForPageToLoad()
+	}
+
+
+	@Keyword
+	public void ClickOnItemProperties() {
+		action.MouseHoverOnElement(adminbtn)
+		action.WaitVisible(subMenuitemProperties)
+		action.Click(subMenuitemProperties)
+		action.WaitVisible(lavelItemProperty)
+	}
+
+	@Keyword
+	public void ClickOnWarehouse() {
+		action.MouseHoverOnElement(adminbtn)
+		action.WaitVisible(subMenuWareHouse)
+		action.Click(subMenuWareHouse)
+		action.WaitForPageToLoad();
+		action.WaitVisible(labelWareHouseAdmin)
+	}
+
+	@Keyword
+	public void ClickOnWarehouseUser() {
+		action.MouseHoverOnElement(adminbtn)
+		action.WaitVisible(subMenuWarehouseUsers)
+		action.Click(subMenuWarehouseUsers)
+		action.WaitForPageToLoad();
+		action.WaitVisible(linkAddNewUser)
+	}
+
+	@Keyword
+	public void ClickOnWarehouseSpendLimits() {
+		action.MouseHoverOnElement(adminbtn)
+		action.WaitVisible(subMenuWarehouseSpendLimits)
+		action.Click(subMenuWarehouseSpendLimits)
+		action.WaitForPageToLoad();
+		action.WaitVisible(linkAddNewCompliance)
+	}
+	@Keyword
+	public void ClickOnWelcomeMessage() {
+		action.MouseHoverOnElement(adminbtn)
+		action.WaitVisible(subMenuWelcomeMessage)
+		action.Click(subMenuWelcomeMessage)
+		action.WaitForPageToLoad();
+		action.WaitVisible(btnSaveDashBoardMessage)
+	}
+	@Keyword
+	public void ClickOnUserItemApprovalTransfer() {
+		action.MouseHoverOnElement(adminbtn)
+		action.WaitVisible(subMenuUserItemApprovalTransfer)
+		action.Click(subMenuUserItemApprovalTransfer)
+		action.WaitForPageToLoad();
+		action.WaitVisible(labelTransferFrom)
+	}
+
+	@Keyword
+	public void ClickOnMenuLinkBrand() {
+		action.MouseHoverOnElement(adminbtn)
+		action.WaitVisible(subMenuMenuLinkBrand)
+		action.Click(subMenuMenuLinkBrand)
+		action.WaitForPageToLoad();
+		action.WaitTime(5)
 	}
 }

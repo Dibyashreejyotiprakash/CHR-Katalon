@@ -227,10 +227,10 @@ public  class Interaction {
 						WebUI.closeBrowser()
 					}
 				}
-				
+
 				else if (BuName.equalsIgnoreCase("POSW")) {
-					
-						if (EnvironmentName.equalsIgnoreCase("UAT")) {
+
+					if (EnvironmentName.equalsIgnoreCase("UAT")) {
 						WebUI.navigateToUrl("https://csg.v5stage.brandmuscle.net")
 					}
 					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
@@ -244,7 +244,7 @@ public  class Interaction {
 						WebUI.closeBrowser()
 					}
 				}
-					
+
 
 				else if (BuName.equalsIgnoreCase("PROOFGALLERY")) {
 

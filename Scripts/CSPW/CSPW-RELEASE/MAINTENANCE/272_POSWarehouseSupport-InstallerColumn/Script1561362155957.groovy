@@ -17,15 +17,15 @@ WebUI.openBrowser('')
 
 WebUI.maximizeWindow()
 
-CustomKeywords.'com.posw.LoginPage.LaunchURL'()
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameposw, GlobalVariable.testtyperegression, GlobalVariable.environment)
 
-CustomKeywords.'com.posw.LoginPage.EnterCredential'('adminny@brandmuscle.com', 'password')
+CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.posusername, GlobalVariable.pospassword)
 
-CustomKeywords.'com.posw.LoginPage.ClickOnLoginButton'()
+CustomKeywords.'com.poswm.Homepage.ClickOnNewItem'()
 
-CustomKeywords.'com.posw.WareHouseDashBoard.NavigateToMenu'()
+CustomKeywords.'com.poswm.WarehouseItem.FillItemInformationSection'()
 
-CustomKeywords.'com.posw.WarehouseNewItem.FillItemInfo'()
+CustomKeywords.'com.poswm.WarehouseItem.FillImageSection'()
 
-CustomKeywords.'com.posw.WarehouseNewItem.FileUpload'()
+CustomKeywords.'com.poswm.WarehouseItem.FillBrandSection'()
 

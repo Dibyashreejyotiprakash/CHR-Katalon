@@ -65,9 +65,12 @@ public class WarehouseNewItem {
 	//By nextButton = By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_btnNext']")
 	By nextButton = By.xpath("//input[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_btnNext']")
 	By divisionImage = By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i1_i0_ucItemImage_pnlItemImage']")
-	By btnSelect = By.xpath("//*[@value='Select']")
+	//By btnSelect = By.xpath("//*[@value='Select']")
+	//By btnSelect = By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i1_i0_ucItemImage_radImageUploadfakeInput0']")
 
+	//By btnSelect = By.xpath("//*[@class='ruFileWrap ruStyled']//following-sibling::input[@class='ruButton ruBrowse']")
 
+	By btnSelect = By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i1_i0_ucItemImage_radImageUploadfakeInput0']/following-sibling::input[1]")
 
 
 
@@ -140,7 +143,9 @@ public class WarehouseNewItem {
 			action.Click(nextButton)
 			action.WaitTime(15)
 
+
 			action.WaitVisible(divisionImage)
+			action.ScrollToViewElement(btnSelect)
 			action.Click(btnSelect)
 		}
 		catch(Exception e) {
@@ -155,12 +160,23 @@ public class WarehouseNewItem {
 		try
 		{
 			StringSelection strSel = new StringSelection("C:\\Users\\chandan.kumar\\Desktop\\african-sunset.jpg");
-			Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard().setContents(strSel, null);
+			/*Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard().setContents(strSel, null);
+			 Robot robot = new Robot();
+			 robot.keyPress(KeyEvent.VK_CONTROL);
+			 robot.keyPress(KeyEvent.VK_V);
+			 robot.keyRelease(KeyEvent.VK_CONTROL);
+			 action.WaitTime(30);
+			 robot.keyPress(KeyEvent.VK_ENTER);
+			 robot.keyRelease(KeyEvent.VK_ENTER);*/
+
+			Toolkit.getDefaultToolkit().getSystemClipboard().setContents(strSel, null);
 			Robot robot = new Robot();
+			robot.keyPress(KeyEvent.VK_ENTER);
+			robot.keyRelease(KeyEvent.VK_ENTER);
 			robot.keyPress(KeyEvent.VK_CONTROL);
 			robot.keyPress(KeyEvent.VK_V);
+			robot.keyRelease(KeyEvent.VK_V);
 			robot.keyRelease(KeyEvent.VK_CONTROL);
-			action.WaitTime(30);
 			robot.keyPress(KeyEvent.VK_ENTER);
 			robot.keyRelease(KeyEvent.VK_ENTER);
 
