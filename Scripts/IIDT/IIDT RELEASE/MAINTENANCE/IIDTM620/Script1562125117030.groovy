@@ -21,5 +21,9 @@ CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamewswadmin,
 
 WebUI.waitForPageLoad(300)
 
-CustomKeywords.'com.wswadmin.HomePage.NavigateToItemSearchPage'()
+CustomKeywords.'com.wswadmin.HomePage.NavigateToCategoryMaintenancePage'()
+
+CustomKeywords.'com.wswadmin.CategoryMaintenancePage.validateSupplierForNonMigrated'()
+
+WebUI.closeBrowser()
 
