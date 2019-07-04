@@ -30,6 +30,7 @@ import org.openqa.selenium.By
 import org.openqa.selenium.Keys
 import org.openqa.selenium.JavascriptExecutor
 import internal.GlobalVariable
+import java.time.LocalTime
 
 public  class Interaction {
 
@@ -802,6 +803,14 @@ public  class Interaction {
 	public void GetText(By by)
 	{
 		driver.findElement(by).getText();
+	}
+
+	public String GenerateRandonString(String text)
+	{
+		LocalTime currenttime = LocalTime.now();
+		String newcategoryname = text + currenttime
+
+		return newcategoryname
 	}
 
 

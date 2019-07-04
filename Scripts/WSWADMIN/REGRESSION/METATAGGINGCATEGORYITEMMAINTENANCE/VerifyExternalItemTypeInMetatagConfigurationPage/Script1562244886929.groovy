@@ -27,5 +27,11 @@ CustomKeywords.'com.wswadmin.CategoryItemMaintenancePage.CreateNewExternalType'(
 
 CustomKeywords.'com.wswadmin.CategoryItemMaintenancePage.VerifyAddExternalItemTypeMsg'()
 
+CustomKeywords.'com.wswadmin.HomePage.NavigateToItemSearchPage'()
+
+CustomKeywords.'com.wswadmin.ItemSearchpage.NavigateToTemplateConfigurationPage'()
+
+CustomKeywords.'com.wswadmin.MetatagConfigurationPage.VerifyMetaTag'()
+
 WebUI.closeBrowser()
 
