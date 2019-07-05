@@ -42,6 +42,7 @@ public class ItemSearchpage {
 	By selectcorp1 = By.xpath("//em[contains(text(),'276')]")
 	By suppliercategory = By.xpath("(//span[contains(text(),'Supplier')])[3]")
 	By suppliermetatagcount = By.xpath("//input[@id='65']")
+	By corporationddnvalue = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_rcbCorp_DropDown']//li[279]")
 
 
 
@@ -81,14 +82,31 @@ public class ItemSearchpage {
 		action.Click(firstselectdata)
 		action.WaitVisible(corporationname)
 	}
-	
+
 	@Keyword
 	public void validateSupplierCategory(){
 		action.WaitVisible(suppliercategory)
-		action.IsElementDisplayed(suppliercategory)		
+		action.IsElementDisplayed(suppliercategory)
 	}
-	
-	
+
+	@Keyword
+	public void NavigateToTemplateConfigurationPage() {
+		try {
+			action.Click(corporationtextbox)
+			action.Type(corporationtextbox, "339")
+			action.Click(corporationddnvalue)
+			WebUI.delay(2)
+			action.Click(itemtypetextbox)
+			action.Click(selectitemtemplate)
+			action.Click(firstselectdata)
+			action.WaitVisible(corporationname)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("Navigate To Template Configuration Page failed due to "+ e)
+			throw e
+		}
+	}
 }
 
 

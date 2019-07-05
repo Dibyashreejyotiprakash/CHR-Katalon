@@ -21,11 +21,7 @@ CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamewswadmin,
 
 CustomKeywords.'com.wswadmin.HomePage.NavigateToCategoryItemMaintenancePage'()
 
-CustomKeywords.'com.wswadmin.CategoryItemMaintenancePage.VerifyCategoryItemMaintenancePage'()
-
-CustomKeywords.'com.wswadmin.CategoryItemMaintenancePage.CreateNewExternalType'()
-
-CustomKeywords.'com.wswadmin.CategoryItemMaintenancePage.VerifyAddExternalItemTypeMsg'()
+CustomKeywords.'com.wswadmin.CategoryItemMaintenancePage.VerifyAllFileds'()
 
 WebUI.closeBrowser()
 
