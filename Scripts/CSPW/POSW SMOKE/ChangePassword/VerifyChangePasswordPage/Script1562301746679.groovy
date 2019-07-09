@@ -21,11 +21,7 @@ CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameposw, Glo
 
 CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.posusername, GlobalVariable.pospassword)
 
-CustomKeywords.'com.poswm.Homepage.HoverOnWareHouseMenu'()
+CustomKeywords.'com.poswm.Homepage.ClickOnChangePasswordMenu'()
 
-CustomKeywords.'com.poswm.Homepage.ClickOnNewItem'()
-
-CustomKeywords.'com.poswm.WarehouseOrders.VerifyNewItemPage'()
-
-WebUI.closeBrowser()
+CustomKeywords.'com.poswm.ChangePassword.VerifyChangePasswordPage'()
 

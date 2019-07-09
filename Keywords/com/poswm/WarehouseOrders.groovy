@@ -50,13 +50,7 @@ public class WarehouseOrders {
 		String expectedSTAGEUrl ="https://csg.v5stage.brandmuscle.net/Warehouse/WarehouseItem.aspx"
 		String expectedPRODUrl = "https://csg.v5prod.brandmuscle.net/Warehouse/WarehouseItem.aspx";
 
-		action.MouseHoverOnElement(menuWarehouse)
-		action.WaitVisible(werehouseSubMenuList)
-		action.WaitTime(2)
-
-		action.Click(subMenuNewItem)
-		action.WaitForPageToLoad()
-		//action.WaitVisible(plusIcon)
+		
 
 		String env = GlobalVariable.environment
 		String actualUrl = action.GetCurrentURL();

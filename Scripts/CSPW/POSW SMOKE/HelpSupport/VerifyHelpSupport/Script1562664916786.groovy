@@ -23,9 +23,7 @@ CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.posusername, Globa
 
 CustomKeywords.'com.poswm.Homepage.HoverOnWareHouseMenu'()
 
-CustomKeywords.'com.poswm.Homepage.ClickOnNewItem'()
-
-CustomKeywords.'com.poswm.WarehouseOrders.VerifyNewItemPage'()
+CustomKeywords.'com.poswm.Homepage.VerifyHelpSupport'()
 
 WebUI.closeBrowser()
 

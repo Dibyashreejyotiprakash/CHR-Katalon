@@ -21,11 +21,9 @@ CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameposw, Glo
 
 CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.posusername, GlobalVariable.pospassword)
 
-CustomKeywords.'com.poswm.Homepage.HoverOnWareHouseMenu'()
+CustomKeywords.'com.poswm.WarehouseDashBoardPage.ClickAndVerifyReportBatchesLink'()
 
-CustomKeywords.'com.poswm.Homepage.ClickOnNewItem'()
-
-CustomKeywords.'com.poswm.WarehouseOrders.VerifyNewItemPage'()
+CustomKeywords.'com.poswm.WarehouseDashBoardPage.VerifyReportBatchesPage'()
 
 WebUI.closeBrowser()
 
