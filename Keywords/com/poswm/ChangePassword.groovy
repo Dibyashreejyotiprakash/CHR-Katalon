@@ -5,8 +5,6 @@ import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
-import org.openqa.selenium.WebDriver
-
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.checkpoint.Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
@@ -18,58 +16,53 @@ import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.utilities.Interaction
-
-import com.utilities.Interaction
 import internal.GlobalVariable
 import org.openqa.selenium.WebDriver
 import org.testng.Assert
 import org.openqa.selenium.Alert
 import org.openqa.selenium.By
 import com.kms.katalon.core.webui.driver.DriverFactory
-import internal.GlobalVariable
 
-public class Reporting {
+public class ChangePassword {
+
 
 	Interaction action = new Interaction();
 	WebDriver driver = DriverFactory.getWebDriver()
 
-	By subMenuReports = By.xpath("//*[text()='Reports']")
-	By werehouseSubMenuList = By.xpath("//*[@class='rmVertical rmGroup rmLevel1 menu']")
-	By menuWarehouse = By.xpath("//*[@id='mainMenu']/div/ul/li[2]/a/span")
-	By divPOSWReports = By.xpath("//*[@id='reportlabelsholderDiv']")
-
-
-
-
+	By levelChangePassword = By.xpath("//*[@id='MainContent_lblChangePassword']")
 
 
 
 
 	@Keyword
-	public void VerifyReportsPage() {
-		String expectedUATUrl = "https://csg.v5qa.brandmuscle.net/Reporting/Dashboard.aspx";
-		String expectedSTAGEUrl ="https://csg.v5stage.brandmuscle.net/Reporting/Dashboard.aspx"
-		String expectedPRODUrl = "https://csg.brandmuscle.net/Reporting/Dashboard.aspx";
+	public void VerifyChangePasswordPage() {
 
-		//		action.MouseHoverOnElement(menuWarehouse)
-		//		action.WaitVisible(werehouseSubMenuList)
-		//		action.WaitTime(2)
-		//
-		//		action.Click(subMenuReports)
-		action.WaitForPageToLoad()
-		action.WaitVisible(divPOSWReports)
+		String expectedUATUrl = "https://csg.v5qa.brandmuscle.net/MyAccount/ChangePassword.aspx";
+		String expectedSTAGEUrl ="https://csg.v5stage.brandmuscle.net/MyAccount/ChangePassword.aspx"
+		String expectedPRODUrl = "https://csg.brandmuscle.net/MyAccount/ChangePassword.aspx";
+		String expectedHeader = "Change Password"
+
+
 
 		String env = GlobalVariable.environment
 		String actualUrl = action.GetCurrentURL()
 
 		if(env.equalsIgnoreCase("uat")) {
 			Assert.assertEquals(expectedUATUrl, actualUrl)
+			//String actualHeaderChangePass = action.GetText(levelChangePassword)
+			boolean status= action.IsElementDisplayed(levelChangePassword)
+			Assert.assertTrue(status)
+
 		}
 		else if(env.equalsIgnoreCase("stage")) {
 			Assert.assertEquals(expectedSTAGEUrl, actualUrl)
+			boolean status= action.IsElementDisplayed(levelChangePassword)
+			Assert.assertTrue(status)
 		}
 		else if(env.equalsIgnoreCase("prod")) {
 			Assert.assertEquals(expectedPRODUrl, actualUrl)
+			boolean status= action.IsElementDisplayed(levelChangePassword)
+			Assert.assertTrue(status)
 		}
 		else {
 			println (Assert.fail())

@@ -46,9 +46,20 @@ public class WarehouseOrderInventoryPage {
 	By subMenuReports = By.xpath("//*[text()='Reports']")
 	By werehouseSubMenuList = By.xpath("//*[@class='rmVertical rmGroup rmLevel1 menu']")
 	By divAddNewItem = By.xpath("//*[@id='ctl00_MainContent_rmItemCommands']")
-
-
-
+	By linkAddNewItem = By.xpath("//*[@id='ctl00_MainContent_rmItemCommands']/ul/li[1]")
+	By linkMicrosoftExcel = By.xpath("//*[@id='ctl00_MainContent_rmItemCommands']/ul/li[4]")
+	By linkAdobeAcrobat = By.xpath("//*[@id='ctl00_MainContent_rmItemCommands']/ul/li[5]")
+	By linkAdobeAcrobatFull = By.xpath("//*[@id='ctl00_MainContent_rmItemCommands']/ul/li[6]")
+	By linkBrands = By.xpath("//*[text()='Brands']")
+	By linkSupplier = By.xpath("//*[text()='Supplier']")
+	By linkDemographic = By.xpath("//*[text()='Demographic']")
+	By linkPremiseType = By.xpath("//*[text()='Premise Type']")
+	By linkProductType = By.xpath("(//*[text()='Product Type'])[1]")
+	By linkSalesDivision = By.xpath("//*[text()='Sales Division']")
+	By linkSeasonalType = By.xpath("//*[text()='Seasonal Type']")
+	By linkWarehouse = By.xpath("(//*[text()='Warehouse'])[3]")
+	By linkWarehouseLocation = By.xpath("//*[text()='Warehouse Location']")
+	By linkOtherFilters = By.xpath("//*[text()='Other Filters']")
 
 
 

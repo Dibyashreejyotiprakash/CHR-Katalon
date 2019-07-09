@@ -19,5 +19,13 @@ WebUI.maximizeWindow()
 
 CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameposw, GlobalVariable.testtypesmoke, GlobalVariable.environment)
 
-CustomKeywords.'com.consolidator.LoginPage.LoginConsolidator'('', '')
+CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.posusername, GlobalVariable.pospassword)
+
+CustomKeywords.'com.poswm.Homepage.HoverOnWareHouseMenu'()
+
+CustomKeywords.'com.poswm.Homepage.ClickOnWelcomeMessage'()
+
+CustomKeywords.'com.poswm.DashboardMessage.VerifyWelcomeMessagePage'()
+
+WebUI.closeBrowser()
 

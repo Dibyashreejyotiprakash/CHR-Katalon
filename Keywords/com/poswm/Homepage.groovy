@@ -61,6 +61,13 @@ public class Homepage {
 	By linkAddNewCompliance = By.xpath("//*[@id='ctl00_MainContent_rgExistingBudgets_ctl00_ctl02_ctl00_InitInsertButton']")
 	By btnSaveDashBoardMessage = By.xpath("//*[@id='MainContent_MainContent_btnSubmit']")
 	By labelTransferFrom = By.xpath("//*[@id='MainContent_lblApproverUser']")
+	By menuChangePassword = By.xpath("//*[text()='Change Password']")
+	By levelChangePassword = By.xpath("//*[@id='MainContent_lblChangePassword']")
+	By posWarehouseReport = By.xpath("//*[@id='lbReport']")
+    By helpSupportBtn = By.xpath("//*[text()='Help/Support']")
+
+
+
 
 	By logoutlink = By.xpath("//*[text()='Logout']")
 
@@ -78,11 +85,24 @@ public class Homepage {
 
 
 	@Keyword
+	public void ClickOnReports() {
+		action.WaitVisible(warehousebtn)
+		action.MouseHoverOnElement(warehousebtn)
+		action.MouseHoverAndClick(reports)
+		action.WaitForPageToLoad()
+		action.WaitTime(5);
+	}
+
+
+
+
+	@Keyword
 	public void ClickOnItemSearch() {
 		action.WaitVisible(warehousebtn)
 		action.MouseHoverOnElement(warehousebtn)
 		action.MouseHoverAndClick(itemsearchbtn)
 		action.WaitForPageToLoad()
+		action.WaitTime(5);
 	}
 
 	@Keyword
@@ -91,6 +111,7 @@ public class Homepage {
 		action.MouseHoverOnElement(warehousebtn)
 		action.MouseHoverAndClick(newitembtn)
 		action.WaitForPageToLoad()
+		action.WaitTime(3)
 	}
 
 	@Keyword
@@ -169,4 +190,35 @@ public class Homepage {
 		action.WaitForPageToLoad();
 		action.WaitTime(5)
 	}
+
+	@Keyword
+	public void ClickOnChangePasswordMenu() {
+		action.Click(menuChangePassword)
+		action.WaitForPageToLoad();
+		action.WaitVisible(levelChangePassword)
+		action.WaitTime(5)
+	}
+	
+	@Keyword
+	public void VerifyHelpSupport(){
+		boolean statusHelpSupportBtn = action.IsElementEnabled(helpSupportBtn)
+		Assert.assertTrue(statusHelpSupportBtn)
+		println ("Help/Support button is enable")
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
