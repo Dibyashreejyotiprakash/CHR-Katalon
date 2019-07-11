@@ -35,6 +35,7 @@ public class HomePage {
 
 	By metataggingcategoryitemmaintenance = By.xpath("//*[text()='Meta Tagging Category Item Maintenance']")
 	By metatagingcategorymaintenance = By.xpath("//*[text()='Meta Tagging Category Maintenance']")
+	By globalmetataggingpage = By.xpath("(//span[contains(text(),'Global Meta Tagging Maintenance')])[1]")
 
 
 
@@ -80,4 +81,17 @@ public class HomePage {
 		action.MouseHoverAndClick(metataggingcategoryitemmaintenance)
 		action.WaitForPageToLoad()
 	}
+	
+	@Keyword
+	public void NavigateToGlobalMetaTaggigPage() {
+		action.WaitVisible(instantimpact)
+		action.MouseHoverOnElement(instantimpact)
+		action.WaitVisible(metatagingitemmaintenance)
+		action.MouseHoverOnElement(metatagingitemmaintenance)
+		action.WaitVisible(globalmetataggingpage)
+		action.MouseHoverAndClick(globalmetataggingpage)
+		action.WaitForPageToLoad()
+	}
+	
+	
 }
