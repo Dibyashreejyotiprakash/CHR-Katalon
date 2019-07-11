@@ -144,4 +144,19 @@
       <initValue>'go2web'</initValue>
       <name>diageopassword</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'testadmin1@brandmuscle.com'</initValue>
+      <name>ii3username</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'go2web'</initValue>
+      <name>ii3password</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'ii3'</initValue>
+      <name>bunameii3</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

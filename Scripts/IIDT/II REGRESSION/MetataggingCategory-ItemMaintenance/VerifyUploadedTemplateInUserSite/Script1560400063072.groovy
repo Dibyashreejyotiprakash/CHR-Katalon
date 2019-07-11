@@ -105,7 +105,7 @@ WebUI.setText(findTestObject('II-USERSITE/LoginPage/UserName'), 'diageoadmin@cen
 
 WebUI.setText(findTestObject('II-USERSITE/LoginPage/Password'), 'go2web')
 
-CustomKeywords.'com.iiusersites.ItemSearchPage.TemplateSearch'()
+CustomKeywords.'com.ii4usersites.ItemSearchPage.TemplateSearch'()
 
 WebUI.closeBrowser()
 

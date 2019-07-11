@@ -63,6 +63,24 @@ public  class Interaction {
 						WebUI.closeBrowser()
 					}
 				}
+				if(TestType.equalsIgnoreCase("SMOKE")) {
+					if (BuName.equalsIgnoreCase("ii3")) {
+	
+						if (EnvironmentName.equalsIgnoreCase("UAT")) {
+							WebUI.navigateToUrl("http://ii3.uat.brandmuscle.net/")
+						}
+						else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
+							WebUI.navigateToUrl("http://ii3.stage.brandmuscle.net/")
+						}
+						else if (EnvironmentName.equalsIgnoreCase("PROD")) {
+							WebUI.navigateToUrl("http://rel3.instantimpact.com")
+						}		
+						else{
+							println ("Environment is not correct")
+							WebUI.closeBrowser()
+						}
+					}
+				}
 				else if (BuName.equalsIgnoreCase("DESIGNTRACKER")) {
 
 					if (EnvironmentName.equalsIgnoreCase("UAT")) {

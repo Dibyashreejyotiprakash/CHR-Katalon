@@ -19,17 +19,17 @@ WebUI.maximizeWindow()
 
 CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameiiusersite, GlobalVariable.testtypesmoke, GlobalVariable.environment)
 
-CustomKeywords.'com.iiusersites.LoginPage.LoginToDemoCorp'(GlobalVariable.iiusersiteusername, GlobalVariable.iiusersitepassword)
+CustomKeywords.'com.ii4usersites.LoginPage.LoginToDemoCorp'(GlobalVariable.iiusersiteusername, GlobalVariable.iiusersitepassword)
 
-CustomKeywords.'com.iiusersites.HomePage.ClickOnOrderForm'()
+CustomKeywords.'com.ii4usersites.HomePage.ClickOnOrderForm'()
 
-CustomKeywords.'com.iiusersites.OrderFormDefaultPage.ClickonCreateNewCustomOrder'()
+CustomKeywords.'com.ii4usersites.OrderFormDefaultPage.ClickonCreateNewCustomOrder'()
 
-CustomKeywords.'com.iiusersites.OrderFormorderHeaderPage.EnterValuesToFiledsInOrderPage'()
+CustomKeywords.'com.ii4usersites.OrderFormorderHeaderPage.EnterValuesToFiledsInOrderPage'()
 
-CustomKeywords.'com.iiusersites.OrderForItemDetails1Page.ClickOnMenuBookBtn'()
+CustomKeywords.'com.ii4usersites.OrderForItemDetails1Page.ClickOnMenuBookBtn'()
 
-CustomKeywords.'com.iiusersites.OrderFormMenuBookDetailsPage.EnterValuesToJobDetailspage'()
+CustomKeywords.'com.ii4usersites.OrderFormMenuBookDetailsPage.EnterValuesToJobDetailspage'()
 
-CustomKeywords.'com.iiusersites.OrderFormBrandMentionPage.ClickOnNoBrandmentionAndClickonNextBtn'()
+CustomKeywords.'com.ii4usersites.OrderFormBrandMentionPage.ClickOnNoBrandmentionAndClickonNextBtn'()
 

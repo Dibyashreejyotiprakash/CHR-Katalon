@@ -19,7 +19,7 @@ WebUI.maximizeWindow()
 
 CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameiiusersite, GlobalVariable.testtypesmoke, GlobalVariable.environment)
 
-CustomKeywords.'com.iiusersites.LoginPage.LoginToDemoCorp'(GlobalVariable.iiusersiteusername, GlobalVariable.iiusersitepassword)
+CustomKeywords.'com.ii4usersites.LoginPage.LoginToDemoCorp'(GlobalVariable.iiusersiteusername, GlobalVariable.iiusersitepassword)
 
-CustomKeywords.'com.iiusersites.HomePage.ClickOnOrderForm'()
+CustomKeywords.'com.ii4usersites.HomePage.ClickOnOrderForm'()
 

@@ -31,16 +31,18 @@ public class LoginPage {
 	By username = By.id("MainContent_LoginCentiv_UserName");
 	By password = By.id("MainContent_LoginCentiv_Password");
 	By loginbtn = By.id("MainContent_LoginCentiv_btnLogin");
-
+	By buselectionddn = By.id("MainContent_ddlBusinessUnit")
 
 
 	@Keyword
-	def LoginConsolidator(String txtusername, String txtpassword) {
+	public void LoginConsolidator(String txtusername, String txtpassword) {
 
 
 		action.Type(username, txtusername);
 		action.Type(password, txtpassword);
-		action.ClickTo(loginbtn);
+		action.Click(loginbtn);
+		action.WaitForPageToLoad();
+		action.SelectByText(buselectionddn, "Admin Tool")
 		action.WaitForPageToLoad();
 	}
 }
