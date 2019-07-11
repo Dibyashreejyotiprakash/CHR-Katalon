@@ -116,10 +116,9 @@ public class CategoryItemMaintenancePage {
 			throw e
 		}
 	}
-	
+
 	@Keyword
-	public void VerifySaveBtnErrorMessageWitoutAnySelection()
-	{
+	public void VerifySaveBtnErrorMessageWitoutAnySelection() {
 		try {
 			action.Click(savebtn)
 			boolean statusoferrormsg = action.IsElementDisplayed(savebtnerrormsgwithoutanyselection)
