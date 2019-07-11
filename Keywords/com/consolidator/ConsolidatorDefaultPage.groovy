@@ -57,4 +57,32 @@ public class ConsolidatorDefaultPage {
 			throw e;
 		}
 	}
+	
+	@Keyword
+	public void ClickOnManageBaseElement()
+	{
+		try {
+			String env = GlobalVariable.environment
+			if (env.equalsIgnoreCase("UAT")) {
+				action.GoToURL("https://admintool.v5qa.brandmuscle.net/Admin/Consolidator/ConsolidatorManageBaseElement.aspx");
+				action.WaitForPageToLoad();
+			}
+			else if (env.equalsIgnoreCase("STAGING")) {
+				action.GoToURL("https://admintool.v5stage.brandmuscle.net/Admin/Consolidator/ConsolidatorManageBaseElement.aspx");
+				action.WaitForPageToLoad();
+			}
+			else if (env.equalsIgnoreCase("DEV")) {
+				action.GoToURL("https://admintool.v5dev.brandmuscle.net/Admin/Consolidator/ConsolidatorManageBaseElement.aspx");
+				action.WaitForPageToLoad();
+			}
+			else if (env.equalsIgnoreCase("PROD")) {
+				action.GoToURL("https://admintool.brandmuscle.net/Admin/Consolidator/ConsolidatorManageBaseElement.aspx");
+				action.WaitForPageToLoad();
+			}
+		}
+		catch (Exception e) {
+			println ("Click On Manage Address failed due to " + e);
+			throw e;
+		}
+	}
 }
