@@ -1,7 +1,6 @@
-package com.consolidator
+package com.ii3usersite
 
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
-import com.kms.katalon.core.webui.driver.DriverFactory
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
@@ -16,33 +15,31 @@ import com.kms.katalon.core.testdata.TestData
 import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
-
-import internal.GlobalVariable
-import org.openqa.selenium.WebDriver
-import org.openqa.selenium.By
 import com.utilities.Interaction
+import org.openqa.selenium.By
+import org.openqa.selenium.WebDriver
+import org.testng.Assert
+import org.openqa.selenium.Alert
+import com.kms.katalon.core.webui.driver.DriverFactory
+import internal.GlobalVariable
 
-
-public class LoginPage {
-
-	WebDriver driver = DriverFactory.getWebDriver();
+public class ii3OrderFormBrandMentionPage {
+	
 	Interaction action = new Interaction();
+	WebDriver driver = DriverFactory.getWebDriver()
 
-	By username = By.id("MainContent_LoginCentiv_UserName");
-	By password = By.id("MainContent_LoginCentiv_Password");
-	By loginbtn = By.id("MainContent_LoginCentiv_btnLogin");
-	By buselectionddn = By.id("MainContent_ddlBusinessUnit")
+	By nobarndmentionbtn = By.id("ctl00_Body_btnNoBrands")
+	By nextbtn = By.id("ctl00_Body_btnNext")
 
 
 	@Keyword
-	public void LoginConsolidator(String txtusername, String txtpassword) {
-
-
-		action.Type(username, txtusername);
-		action.Type(password, txtpassword);
-		action.Click(loginbtn);
-		action.WaitForPageToLoad();
-		action.SelectByText(buselectionddn, "Admin Tool")
-		action.WaitForPageToLoad();
+	public void ClickOnNoBrandmentionAndClickonNextBtn() {
+		try {
+			action.Click(nobarndmentionbtn)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("Click On No Brandmention And Click on NextBtn failed due to "+ e)
+		}
 	}
 }

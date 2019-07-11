@@ -17,68 +17,43 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.utilities.Interaction
 import org.openqa.selenium.By
-import org.openqa.selenium.Keys
+import internal.GlobalVariable
 import org.openqa.selenium.WebDriver
 import org.testng.Assert
 import org.openqa.selenium.Alert
 import com.kms.katalon.core.webui.driver.DriverFactory
-import internal.GlobalVariable
 
-public class UpdateLogPage {
+
+public class ConsolidatorDefaultPage {
+
 
 	WebDriver driver = DriverFactory.getWebDriver();
 	Interaction action = new Interaction();
 
-	By ModulesTab = By.xpath("//*[@class='rmLink rmRootLink']/span[contains(text(),'Modules')]")
-
-	By ConsolidatorTab =  By.xpath("//*[@href='../Consolidator/Default.aspx']")
-
-	By parentbusniessunit = By.xpath("//*[text()='Select Business Unit']")
-
-	By logoutlink = By.xpath("//*[text()='Logout']")
-
 
 	@Keyword
-	public void ClickOnConsolidatorTab() {
+	public void ClickOnManagePrograms() {
 		try {
 			String env = GlobalVariable.environment
 			if (env.equalsIgnoreCase("UAT")) {
-				action.GoToURL("https://admintool.v5qa.brandmuscle.net/Admin/Consolidator/Default.aspx");
+				action.GoToURL("https://admintool.v5qa.brandmuscle.net/Admin/Consolidator/ConsolidatorManageProgramItem.aspx");
 				action.WaitForPageToLoad();
 			}
 			else if (env.equalsIgnoreCase("STAGING")) {
-				action.GoToURL("https://admintool.v5stage.brandmuscle.net/Admin/Consolidator/Default.aspx");
+				action.GoToURL("https://admintool.v5stage.brandmuscle.net/Admin/Consolidator/ConsolidatorManageProgramItem.aspx");
 				action.WaitForPageToLoad();
 			}
 			else if (env.equalsIgnoreCase("DEV")) {
-				action.GoToURL("https://admintool.v5dev.brandmuscle.net/Admin/Consolidator/Default.aspx");
+				action.GoToURL("https://admintool.v5dev.brandmuscle.net/Admin/Consolidator/ConsolidatorManageProgramItem.aspx");
 				action.WaitForPageToLoad();
 			}
 			else if (env.equalsIgnoreCase("PROD")) {
-				action.GoToURL("https://admintool.brandmuscle.net/Admin/Consolidator/Default.aspx");
+				action.GoToURL("https://admintool.brandmuscle.net/Admin/Consolidator/ConsolidatorManageProgramItem.aspx");
 				action.WaitForPageToLoad();
 			}
 		}
-		catch(Exception e) {
-			println ("Click On Consolidator Tab failed due to " + e);
-			throw e;
-		}
-	}
-
-	@Keyword
-	public void ClickOnParentBusinessUnit() {
-		action.Click(parentbusniessunit)
-		action.WaitForPageToLoad()
-	}
-
-	@Keyword
-	public void ClickOnLogout() {
-		try {
-			action.Click(logoutlink)
-			action.WaitForPageToLoad()
-		}
-		catch(Exception e) {
-			println ("Click On Logout failed due to " + e);
+		catch (Exception e) {
+			println ("Click On Manage Address failed due to " + e);
 			throw e;
 		}
 	}

@@ -17,19 +17,25 @@ WebUI.openBrowser('')
 
 WebUI.maximizeWindow()
 
-CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameiiusersite, GlobalVariable.testtypesmoke, GlobalVariable.environment)
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameconsolidator, GlobalVariable.testtypesmoke, GlobalVariable.environment)
 
-CustomKeywords.'com.ii4usersites.LoginPage.LoginToDemoCorp'(GlobalVariable.iiusersiteusername, GlobalVariable.iiusersitepassword)
+CustomKeywords.'com.consolidator.LoginPage.LoginConsolidator'(GlobalVariable.consolusername, GlobalVariable.conslopassword)
 
-CustomKeywords.'com.ii4usersites.HomePage.ClickOnOrderForm'()
+CustomKeywords.'com.consolidator.UpdateLogPage.ClickOnParentBusinessUnit'()
 
-CustomKeywords.'com.ii4usersites.OrderFormDefaultPage.ClickonCreateNewCustomOrder'()
+CustomKeywords.'com.consolidator.ParentBusinessUnitPage.SelectParentBusinessUnit'()
 
-CustomKeywords.'com.ii4usersites.OrderFormorderHeaderPage.EnterValuesToFiledsInOrderPage'()
+CustomKeywords.'com.consolidator.UpdateLogPage.ClickOnConsolidatorTab'()
 
-CustomKeywords.'com.ii4usersites.OrderForItemDetails1Page.ClickOnMenuBookBtn'()
+CustomKeywords.'com.consolidator.ConsolidatorDefaultPage.ClickOnManagePrograms'()
 
-CustomKeywords.'com.ii4usersites.OrderFormMenuBookDetailsPage.EnterValuesToJobDetailspage'()
+CustomKeywords.'com.consolidator.ManageProgramElementPage.VerifyManageProgramElements'()
 
-CustomKeywords.'com.ii4usersites.OrderFormBrandMentionPage.ClickOnNoBrandmentionAndClickonNextBtn'()
+CustomKeywords.'com.consolidator.ManageProgramElementPage.NavigateToConsolidatorEditProgramItemPage'()
+
+CustomKeywords.'com.consolidator.ConsolidatorEditProgramPage.VerifyEditLink'()
+
+CustomKeywords.'com.consolidator.ConsolidatorEditProgramPage.VerifyViewDetailsLink'()
+
+WebUI.closeBrowser()
 

@@ -87,9 +87,9 @@ WebUI.click(findTestObject('II-WSWADMIN/BulkMetaTaggingPage/SaveSelected'))
 
 CustomKeywords.'com.utilities.DemooInteractions.GetUrl'(GlobalVariable.bunameiiusersite, GlobalVariable.testtypesmoke, GlobalVariable.environment)
 
-CustomKeywords.'com.iiusersites.LoginPage.LoginUserSite'(GlobalVariable.iiusersiteusername, GlobalVariable.iiusersitepassword)
+CustomKeywords.'com.ii4usersites.LoginPage.LoginUserSite'(GlobalVariable.iiusersiteusername, GlobalVariable.iiusersitepassword)
 
-CustomKeywords.'com.iiusersites.ItemSearchPage.TemplateSearch'()
+CustomKeywords.'com.ii4usersites.ItemSearchPage.TemplateSearch'()
 
 WebUI.closeBrowser()
 

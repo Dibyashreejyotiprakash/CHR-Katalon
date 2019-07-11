@@ -17,19 +17,11 @@ WebUI.openBrowser('')
 
 WebUI.maximizeWindow()
 
-CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameiiusersite, GlobalVariable.testtypesmoke, GlobalVariable.environment)
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameii3, GlobalVariable.testtypesmoke, GlobalVariable.environment)
 
-CustomKeywords.'com.ii4usersites.LoginPage.LoginToDemoCorp'(GlobalVariable.iiusersiteusername, GlobalVariable.iiusersitepassword)
+CustomKeywords.'com.ii3usersite.ii3LoginPage.LoginToii3'(GlobalVariable.ii3username, GlobalVariable.ii3password)
 
-CustomKeywords.'com.ii4usersites.HomePage.ClickOnOrderForm'()
+CustomKeywords.'com.ii3usersite.ii3HomePage.ClickOnOnlineOrderForm'()
 
-CustomKeywords.'com.ii4usersites.OrderFormDefaultPage.ClickonCreateNewCustomOrder'()
-
-CustomKeywords.'com.ii4usersites.OrderFormorderHeaderPage.EnterValuesToFiledsInOrderPage'()
-
-CustomKeywords.'com.ii4usersites.OrderForItemDetails1Page.ClickOnMenuBookBtn'()
-
-CustomKeywords.'com.ii4usersites.OrderFormMenuBookDetailsPage.EnterValuesToJobDetailspage'()
-
-CustomKeywords.'com.ii4usersites.OrderFormBrandMentionPage.ClickOnNoBrandmentionAndClickonNextBtn'()
+WebUI.closeBrowser()
 

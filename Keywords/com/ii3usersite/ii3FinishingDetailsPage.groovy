@@ -1,7 +1,6 @@
-package com.consolidator
+package com.ii3usersite
 
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
-import com.kms.katalon.core.webui.driver.DriverFactory
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
@@ -16,33 +15,31 @@ import com.kms.katalon.core.testdata.TestData
 import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
-
-import internal.GlobalVariable
-import org.openqa.selenium.WebDriver
-import org.openqa.selenium.By
 import com.utilities.Interaction
+import org.openqa.selenium.By
+import org.openqa.selenium.WebDriver
+import org.testng.Assert
+import org.openqa.selenium.Alert
+import com.kms.katalon.core.webui.driver.DriverFactory
+import internal.GlobalVariable
 
-
-public class LoginPage {
-
-	WebDriver driver = DriverFactory.getWebDriver();
+public class ii3FinishingDetailsPage {
+	
 	Interaction action = new Interaction();
+	WebDriver driver = DriverFactory.getWebDriver()
 
-	By username = By.id("MainContent_LoginCentiv_UserName");
-	By password = By.id("MainContent_LoginCentiv_Password");
-	By loginbtn = By.id("MainContent_LoginCentiv_btnLogin");
-	By buselectionddn = By.id("MainContent_ddlBusinessUnit")
-
+	By addnewnotebtn = By.xpath("//*[@id='ctl00_Body_JobLineNotes1_grdNotes_ctl00_ctl02_ctl00_AddNewRecordButton']")
+	By addnewtextarea = By.xpath("//*[@id='ctl00_Body_JobLineNotes1_grdNotes_ctl00_ctl02_ctl02_txtNotesTextArea']")
+	By sabebtn = By.xpath("//*[@id='ctl00_Body_JobLineNotes1_grdNotes_ctl00_ctl02_ctl02_btnUpdate_input']")
+	By nextbtn = By.xpath("//*[@id='ctl00_Body_BrandMentionsButton']")
 
 	@Keyword
-	public void LoginConsolidator(String txtusername, String txtpassword) {
-
-
-		action.Type(username, txtusername);
-		action.Type(password, txtpassword);
-		action.Click(loginbtn);
-		action.WaitForPageToLoad();
-		action.SelectByText(buselectionddn, "Admin Tool")
-		action.WaitForPageToLoad();
+	public void AddNewNote() {
+		action.Click(addnewnotebtn)
+		action.Type(addnewtextarea, "Test")
+		action.Click(sabebtn)
+		action.ScrollToBottomOfPage()
+		action.Click(nextbtn)
+		action.WaitForPageToLoad()
 	}
 }

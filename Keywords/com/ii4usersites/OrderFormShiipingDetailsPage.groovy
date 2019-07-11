@@ -1,7 +1,6 @@
-package com.consolidator
+package com.ii4usersites
 
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
-import com.kms.katalon.core.webui.driver.DriverFactory
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
@@ -17,32 +16,31 @@ import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
+import com.utilities.Interaction
+import org.openqa.selenium.By
 import internal.GlobalVariable
 import org.openqa.selenium.WebDriver
+import org.testng.Assert
+import org.openqa.selenium.Alert
 import org.openqa.selenium.By
-import com.utilities.Interaction
+import com.kms.katalon.core.webui.driver.DriverFactory
 
+public class OrderFormShiipingDetailsPage {
 
-public class LoginPage {
-
-	WebDriver driver = DriverFactory.getWebDriver();
 	Interaction action = new Interaction();
+	WebDriver driver = DriverFactory.getWebDriver()
 
-	By username = By.id("MainContent_LoginCentiv_UserName");
-	By password = By.id("MainContent_LoginCentiv_Password");
-	By loginbtn = By.id("MainContent_LoginCentiv_btnLogin");
-	By buselectionddn = By.id("MainContent_ddlBusinessUnit")
+	By nextbtn = By.xpath("//*[text()='Next']")
+	By myitemsbtn = By.xpath("//*[text()='My Items']")
+	By previousbtn = By.xpath("//*[text()='Previous']")
 
-
-	@Keyword
-	public void LoginConsolidator(String txtusername, String txtpassword) {
-
-
-		action.Type(username, txtusername);
-		action.Type(password, txtpassword);
-		action.Click(loginbtn);
-		action.WaitForPageToLoad();
-		action.SelectByText(buselectionddn, "Admin Tool")
-		action.WaitForPageToLoad();
+	public void ClickOnNextBtn() {
+		try {
+			action.Click(nextbtn)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("Click On Next Btn failed due to "+ e)
+		}
 	}
 }
