@@ -24,24 +24,30 @@ import com.kms.katalon.core.webui.driver.DriverFactory
 import internal.GlobalVariable
 
 public class ii3HomePage {
-	
-	
+
+
 	Interaction action = new Interaction();
 	WebDriver driver = DriverFactory.getWebDriver()
-	
+
 	By orderformbtn = By.xpath("//*[text()='Online Order Form']")
 	By logoutlink = By.xpath("//*[text()='Log Out']")
+	By homebutton = By.xpath("//*[text()='Home']")
 	
 	@Keyword
-	public void Logoutii3()
+	public void VerifyHomePage()
 	{
+		boolean statusofhomebtn = action.IsElementDisplayed(homebutton)
+		Assert.assertTrue(statusofhomebtn)
+	}
+
+	@Keyword
+	public void Logoutii3() {
 		action.Click(logoutlink)
 		action.WaitForPageToLoad()
 	}
-	
+
 	@Keyword
-	public void ClickOnOnlineOrderForm()
-	{
+	public void ClickOnOnlineOrderForm() {
 		action.Click(orderformbtn)
 		action.WaitForPageToLoad()
 	}

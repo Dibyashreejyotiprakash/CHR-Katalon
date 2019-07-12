@@ -29,13 +29,14 @@ public class FinishingDetailsPage {
 	Interaction action = new Interaction();
 	WebDriver driver = DriverFactory.getWebDriver()
 
-	By addnewnotebtn = By.xpath("//*[@id='ctl00_Body_JobLineNotes1_grdNotes_ctl00_ctl02_ctl00_AddNewRecordButton']")
+	By addnewnotebtn = By.xpath("//*[@id='ctl00_Body_JobLineNotes1_grdNotes_ctl00_ctl02_ctl00_InitInsertButton']")
 	By addnewtextarea = By.xpath("//*[@id='ctl00_Body_JobLineNotes1_grdNotes_ctl00_ctl02_ctl02_txtNotesTextArea']")
 	By sabebtn = By.xpath("//*[@id='ctl00_Body_JobLineNotes1_grdNotes_ctl00_ctl02_ctl02_btnUpdate_input']")
 	By nextbtn = By.xpath("//*[@id='ctl00_Body_BrandMentionsButton']")
 
 	@Keyword
 	public void AddNewNote() {
+		action.ScrollToViewelement(addnewnotebtn)
 		action.Click(addnewnotebtn)
 		action.Type(addnewtextarea, "Test")
 		action.Click(sabebtn)

@@ -37,6 +37,7 @@ public class HomePage {
 	By metatagingcategorymaintenance = By.xpath("//*[text()='Meta Tagging Category Maintenance']")
 	By globalmetataggingpage = By.xpath("(//span[contains(text(),'Global Meta Tagging Maintenance')])[1]")
 
+	By resuorcemessagebtn = By.xpath("//*[@href='/InstantImpact/ResourceMessage/ResourceMessage.aspx']")
 
 
 	@Keyword
@@ -81,7 +82,7 @@ public class HomePage {
 		action.MouseHoverAndClick(metataggingcategoryitemmaintenance)
 		action.WaitForPageToLoad()
 	}
-	
+
 	@Keyword
 	public void NavigateToGlobalMetaTaggigPage() {
 		action.WaitVisible(instantimpact)
@@ -93,5 +94,11 @@ public class HomePage {
 		action.WaitForPageToLoad()
 	}
 	
-	
+	@Keyword
+	public void NavigateToResourceMessagePage()
+	{
+		action.WaitVisible(instantimpact)
+		action.MouseHoverOnElement(instantimpact)
+		action.MouseHoverAndClick(resuorcemessagebtn)
+	}
 }

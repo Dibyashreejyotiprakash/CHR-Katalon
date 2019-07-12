@@ -29,13 +29,29 @@ public class OrderFormDefaultPage {
 	Interaction action = new Interaction();
 	WebDriver driver = DriverFactory.getWebDriver()
 
-	By ceratenew = By.xpath("//*[@id='Body_NewOrderButton']")
+	By createnewbtn = By.xpath("//*[@id='Body_NewOrderButton']")
 	By clone = By.xpath("Body_JobSearchButton")
+	By finishincompletebtn = By.xpath("//*[@href='OrderHistory.aspx']")
+
+
+	@Keyword
+	public void VerifyCreateCloneFinsihIncompleteButton() {
+		try {
+			boolean statusofcreatebutton = action.IsElementDisplayed(createnewbtn)
+			Assert.assertTrue(statusofcreatebutton)
+
+			boolean statusofclonebutton = action.IsElementDisplayed(clone)
+			Assert.assertTrue(statusofclonebutton)
+		}
+		catch(Exception e) {
+			println ("Verify Create Clone Finsih Incomplete Button failed due to "+ e)
+		}
+	}
 
 	@Keyword
 	public void ClickonCreateNewCustomOrder() {
 		try {
-			action.Click(ceratenew)
+			action.Click(createnewbtn)
 			action.WaitForPageToLoad()
 		}
 		catch(Exception e) {
@@ -53,12 +69,24 @@ public class OrderFormDefaultPage {
 			println ("Click on  Clone Order failed due to "+ e)
 		}
 	}
+	
+	@Keyword
+	public void ClickOnFinishInCompleteButton()
+	{
+		try {
+			action.Click(finishincompletebtn)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("Click On Finish InComplete Button failed due to "+ e)
+		}
+	}
 
 	@Keyword
 	public void VerifyCreateNewOrderButton() {
 		try {
 
-			boolean statusofcreatenewdesignbtn = action.IsElementDisplayed(ceratenew)
+			boolean statusofcreatenewdesignbtn = action.IsElementDisplayed(createnewbtn)
 			Assert.assertTrue(statusofcreatenewdesignbtn)
 		}
 		catch(Exception e) {

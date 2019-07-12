@@ -55,6 +55,13 @@ class HomePage {
 			throw e;
 		}
 	}
+	
+	@Keyword
+	public void LogOutII4()
+	{
+		action.Click(logout)
+		action.WaitForPageToLoad()
+	}
 
 	@Keyword
 	public void ClickOnPosTemplate() {

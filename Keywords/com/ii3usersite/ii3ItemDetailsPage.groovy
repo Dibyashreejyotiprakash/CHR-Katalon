@@ -24,11 +24,16 @@ import com.kms.katalon.core.webui.driver.DriverFactory
 import internal.GlobalVariable
 
 public class ii3ItemDetailsPage {
-	
+
 	WebDriver driver = DriverFactory.getWebDriver();
 	Interaction action = new Interaction();
 
 	By ordernowbtn = By.xpath("//*[@id='Body_btnOrderNow']")
+	By jobdetailslable = By.xpath("//*[text()='Job Details']")
+
+
+
+
 
 	@Keyword
 	public void ClickOnOrderNow() {

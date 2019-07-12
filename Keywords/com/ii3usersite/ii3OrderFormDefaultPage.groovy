@@ -24,17 +24,43 @@ import com.kms.katalon.core.webui.driver.DriverFactory
 import internal.GlobalVariable
 
 public class ii3OrderFormDefaultPage {
-	
+
 	Interaction action = new Interaction();
 	WebDriver driver = DriverFactory.getWebDriver()
 
-	By ceratenew = By.xpath("//*[@id='Body_NewOrderButton']")
-	By clone = By.xpath("Body_JobSearchButton")
+	By createnewbtn = By.xpath("//*[@id='ContentMain_MainPlaceHolder_NewOrderButton']")
+	By clonebtn = By.xpath("//*[@id='ContentMain_MainPlaceHolder_JobSearchButton']")
+	By customodrerformlabel = By.xpath("//*[text()='Custom Order Form']")
+
+	@Keyword
+	public void VerifyOLOFPage() {
+		try {
+			boolean statusofcustomodrerlabel = action.IsElementDisplayed(customodrerformlabel)
+			Assert.assertTrue(statusofcustomodrerlabel)
+		}
+		catch(Exception e) {
+			println ("Verify OLOF Home Page failed due to "+ e)
+		}
+	}
+
+	@Keyword
+	public void VerifyCreateCloneFinsihIncompleteButton() {
+		try {
+			boolean statusofcreatebutton = action.IsElementDisplayed(createnewbtn)
+			Assert.assertTrue(statusofcreatebutton)
+
+			boolean statusofclonebutton = action.IsElementDisplayed(clone)
+			Assert.assertTrue(statusofclonebutton)
+		}
+		catch(Exception e) {
+			println ("Verify Create Clone Finsih Incomplete Button failed due to "+ e)
+		}
+	}
 
 	@Keyword
 	public void ClickonCreateNewCustomOrder() {
 		try {
-			action.Click(ceratenew)
+			action.Click(createnewbtn)
 			action.WaitForPageToLoad()
 		}
 		catch(Exception e) {
@@ -57,12 +83,11 @@ public class ii3OrderFormDefaultPage {
 	public void VerifyCreateNewOrderButton() {
 		try {
 
-			boolean statusofcreatenewdesignbtn = action.IsElementDisplayed(ceratenew)
+			boolean statusofcreatenewdesignbtn = action.IsElementDisplayed(createnewbtn)
 			Assert.assertTrue(statusofcreatenewdesignbtn)
 		}
 		catch(Exception e) {
 			println ("Click on Create New CustomOrder failed due to "+ e)
 		}
 	}
-	
 }

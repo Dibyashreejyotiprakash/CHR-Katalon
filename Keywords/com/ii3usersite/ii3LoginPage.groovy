@@ -24,19 +24,18 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable
 
 public class ii3LoginPage {
-	
+
 	Interaction action = new Interaction();
 	WebDriver driver = DriverFactory.getWebDriver()
-	
+
 	By username = By.id("UserName")
 	By password = By.id("ContentMain_LoginControl_Password")
 	By loginbtn = By.id("ContentMain_LoginControl_LoginButton")
 	By corporationddn = By.id("ContentMain_LoginControl_ddlCorporation")
 	By distrddn = By.id("ContentMain_LoginControl_ddlDistributor")
-	
+
 	@Keyword
-	public void LoginToii3(String txtusername, String txtpassword)
-	{
+	public void LoginToii3(String txtusername, String txtpassword) {
 		action.Type(username, txtusername)
 		action.Type(password, txtpassword)
 		action.Click(loginbtn)
@@ -45,5 +44,4 @@ public class ii3LoginPage {
 		action.SelectByText(distrddn,"Glazer's TX")
 		action.WaitForPageToLoad()
 	}
-	
 }
