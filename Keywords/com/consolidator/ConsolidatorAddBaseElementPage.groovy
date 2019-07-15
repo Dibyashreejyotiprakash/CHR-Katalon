@@ -44,7 +44,7 @@ public class ConsolidatorAddBaseElementPage {
 	public void VerifyBackButton() {
 		boolean statusofbackbutton = action.IsElementDisplayed(backbtn)
 		Assert.assertTrue(statusofbackbutton)
-		
+
 		boolean statusofenablitybackbutton = action.IsElementEnabled(backbtn)
 		Assert.assertTrue(statusofenablitybackbutton)
 	}

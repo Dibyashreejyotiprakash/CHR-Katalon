@@ -15,37 +15,25 @@ import com.kms.katalon.core.testdata.TestData
 import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
-
 import com.utilities.Interaction
 import org.openqa.selenium.By
-import internal.GlobalVariable
 import org.openqa.selenium.WebDriver
 import org.testng.Assert
 import org.openqa.selenium.Alert
-import org.openqa.selenium.By
-import com.kms.katalon.core.webui.driver.DriverFactory
+import com.kms.katalon.core.webui.driver.DriverFactory	
+import internal.GlobalVariable
 
-public class OrderFormShiipingDetailsPage {
-
+public class CloneJobSearchPage {
+	
 	Interaction action = new Interaction();
 	WebDriver driver = DriverFactory.getWebDriver()
-
-	By nextbtn = By.xpath("//*[@id='ctl00_Body_btnNext']")
-	By myitemsbtn = By.xpath("//*[text()='My Items']")
-	By previousbtn = By.xpath("//*[text()='Previous']")
-
-	@Keyword
-	public void ClickOnNextBtn() {
-		try {
-			/*action.WaitUntilElementClickable(nextbtn)
-			 action.Click(nextbtn)
-			 action.WaitForPageToLoad()*/
-
-			 WebUI.navigateToUrl("http://ii4.uat.brandmuscle.net/OnlineOrderForm/ItemDetails.aspx")
-			 action.WaitForPageToLoad()
-		}
-		catch(Exception e) {
-			println ("Click On Next Btn failed due to "+ e)
-		}
-	}
+	
+	By searchbydtnumber = By.xpath("//*[@id='ctl00_Body_txtDtNumber']")
+	By keywordsearch = By.xpath("//*[@id='ctl00_Body_txtKeywordSearch']")
+	By accountname = By.xpath("//*[@id='Body_txtAccount']")
+	By accountnumber = By.xpath("//*[@id='ctl00_Body_txtAccountNumber']")
+	By clearbtn = By.xpath("//*[@id='ctl00_Body_btnClearSelection_input']")
+	By formcalenderdate = By.xpath("")
+	
+	
 }

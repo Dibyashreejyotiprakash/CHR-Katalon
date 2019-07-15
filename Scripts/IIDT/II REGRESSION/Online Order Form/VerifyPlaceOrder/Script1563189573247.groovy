@@ -33,5 +33,13 @@ CustomKeywords.'com.ii4usersites.OrderFormMenuBookDetailsPage.EnterValuesToJobDe
 
 CustomKeywords.'com.ii4usersites.OrderFormItemDetails2Page.AddNewNoteAndClickOnNextBtn'()
 
+CustomKeywords.'com.ii4usersites.OrderFormBrandMentionPage.ClickOnNoBrandmentionAndClickonNextBtn'()
+
+CustomKeywords.'com.ii4usersites.OrderFormShiipingDetailsPage.ClickOnNextBtn'()
+
+CustomKeywords.'com.ii4usersites.OrderFormItemDetails1Page.ClickOnNextBtn'()
+
+CustomKeywords.'com.ii4usersites.OrderFormOrderSumaryPage.PlaceOrder'()
+
 WebUI.closeBrowser()
 

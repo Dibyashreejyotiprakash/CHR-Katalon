@@ -33,6 +33,7 @@ public class OrderFormItemDetails1Page {
 	By largeformatbtn = By.xpath("//*[@href='Print/PrintDetails1.aspx?type=2']")
 	By menubook = By.xpath("//*[@href='BooksAccessories/Details.aspx?type=3']")
 	By accesories = By.xpath("//*[@href='BooksAccessories/Details.aspx?type=4']")
+	By  nextbtn = By.xpath("//*[@id='ctl00_Body_btnContinue']")
 
 	@Keyword
 	public void ClickOnSmallPrintBtn() {
@@ -72,6 +73,19 @@ public class OrderFormItemDetails1Page {
 		}
 		catch(Exception e) {
 			println ("Click On Accesories Btn failed due to "+ e)
+		}
+	}
+	
+	@Keyword
+	public void ClickOnNextBtn()
+	{
+		try {
+			action.WaitUntilElementClickable(nextbtn)
+			action.Click(nextbtn)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("Click On Next Btn failed due to "+ e)
 		}
 	}
 }

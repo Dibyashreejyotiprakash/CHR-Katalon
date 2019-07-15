@@ -31,14 +31,18 @@ public class OrderFormBrandMentionPage {
 	Interaction action = new Interaction();
 	WebDriver driver = DriverFactory.getWebDriver()
 
-	By nobarndmentionbtn = By.id("ctl00_Body_btnNoBrands")
-	By nextbtn = By.id("ctl00_Body_btnNext")
+	By nobarndmentionbtn = By.xpath("//*[@id='ctl00_Body_btnNoBrands']")
+	By nextbtn = By.xpath("//*[@id='ctl00_Body_btnNext']")
 
 
 	@Keyword
 	public void ClickOnNoBrandmentionAndClickonNextBtn() {
 		try {
+			action.WaitUntilElementClickable(nobarndmentionbtn)
 			action.Click(nobarndmentionbtn)
+			action.ScrollToBottomOfPage()
+			action.WaitUntilElementClickable(nextbtn)
+			action.Click(nextbtn)
 			action.WaitForPageToLoad()
 		}
 		catch(Exception e) {

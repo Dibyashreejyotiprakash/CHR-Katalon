@@ -22,30 +22,22 @@ import internal.GlobalVariable
 import org.openqa.selenium.WebDriver
 import org.testng.Assert
 import org.openqa.selenium.Alert
-import org.openqa.selenium.By
 import com.kms.katalon.core.webui.driver.DriverFactory
 
-public class OrderFormShiipingDetailsPage {
+public class OrderFormOrderSumaryPage {
 
 	Interaction action = new Interaction();
 	WebDriver driver = DriverFactory.getWebDriver()
 
-	By nextbtn = By.xpath("//*[@id='ctl00_Body_btnNext']")
-	By myitemsbtn = By.xpath("//*[text()='My Items']")
-	By previousbtn = By.xpath("//*[text()='Previous']")
 
+	By completeorderbtn = By.xpath("//*[@id='ctl00_Body_btnContinue']")
+	
 	@Keyword
-	public void ClickOnNextBtn() {
-		try {
-			/*action.WaitUntilElementClickable(nextbtn)
-			 action.Click(nextbtn)
-			 action.WaitForPageToLoad()*/
-
-			 WebUI.navigateToUrl("http://ii4.uat.brandmuscle.net/OnlineOrderForm/ItemDetails.aspx")
-			 action.WaitForPageToLoad()
-		}
-		catch(Exception e) {
-			println ("Click On Next Btn failed due to "+ e)
-		}
+	public void PlaceOrder()
+	{
+		action.ScrollToBottomOfPage()
+		action.WaitUntilElementClickable(completeorderbtn)
+		action.Click(completeorderbtn)
+		action.WaitForPageToLoad()
 	}
 }

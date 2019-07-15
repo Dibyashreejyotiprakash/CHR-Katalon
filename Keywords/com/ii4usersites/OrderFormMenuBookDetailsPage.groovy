@@ -44,23 +44,26 @@ public class OrderFormMenuBookDetailsPage {
 			action.Type(joblinename, "test")
 			action.Click(productgroupddn)
 			action.Click(productgroupddnvalue)
-			
-			String currentenvironment = GlobalVariable.environment
-			
-			if(currentenvironment.equalsIgnoreCase("uat"))
+			boolean statusofnextbtn = action.IsElementDisplayed(nextbtn)
+		    WebUI.delay(10)
+			if(statusofnextbtn == true)
 			{
+				action.WaitUntilElementClickable(nextbtn)
+				println ("***********************DEMOOOOO*********************")
+				action.Click(nextbtn)
+				println ("***********************DEMOOOOO*********************")
+			}
+			
+			/*String currentenvironment = GlobalVariable.environment
+
+			if(currentenvironment.equalsIgnoreCase("uat")) {
 				WebUI.navigateToUrl("http://ii4.uat.brandmuscle.net/OnlineOrderForm/BooksAccessories/FinishingDetails.aspx?id=68353&type=3")
 				action.WaitForPageToLoad()
 			}
-			else if(currentenvironment.equalsIgnoreCase("stage"))
-			{
+			else if(currentenvironment.equalsIgnoreCase("stage")) {
 				WebUI.navigateToUrl("https://ii4.v5stage.brandmuscle.net/OnlineOrderForm/BooksAccessories/FinishingDetails.aspx?id=64687&type=3")
 				action.WaitForPageToLoad()
-			}
-			
-			
-			
-			
+			}*/
 		}
 		catch(Exception e) {
 			println ("Enter Values To Job Details page failed due to "+ e)
