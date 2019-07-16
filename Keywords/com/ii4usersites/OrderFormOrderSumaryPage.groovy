@@ -31,12 +31,13 @@ public class OrderFormOrderSumaryPage {
 
 
 	By completeorderbtn = By.xpath("//*[@id='ctl00_Body_btnContinue']")
-	
+
 	@Keyword
-	public void PlaceOrder()
-	{
+	public void PlaceOrder() {
 		action.ScrollToBottomOfPage()
+		WebUI.delay(10)
 		action.WaitUntilElementClickable(completeorderbtn)
+		WebUI.delay(10)
 		action.Click(completeorderbtn)
 		action.WaitForPageToLoad()
 	}

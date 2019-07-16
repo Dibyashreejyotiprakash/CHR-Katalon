@@ -55,10 +55,9 @@ class HomePage {
 			throw e;
 		}
 	}
-	
+
 	@Keyword
-	public void LogOutII4()
-	{
+	public void LogOutII4() {
 		action.Click(logout)
 		action.WaitForPageToLoad()
 	}

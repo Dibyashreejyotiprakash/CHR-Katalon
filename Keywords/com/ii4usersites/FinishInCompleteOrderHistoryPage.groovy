@@ -17,84 +17,81 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.utilities.Interaction
 import org.openqa.selenium.By
-import internal.GlobalVariable
 import org.openqa.selenium.WebDriver
 import org.testng.Assert
 import org.openqa.selenium.Alert
-import org.openqa.selenium.By
 import com.kms.katalon.core.webui.driver.DriverFactory
 
-public class OrderFormItemDetails1Page {
+import internal.GlobalVariable
+
+public class FinishInCompleteOrderHistoryPage {
 
 	Interaction action = new Interaction();
 	WebDriver driver = DriverFactory.getWebDriver()
 
-	By smallprintbtn = By.xpath("//*[@href='Print/PrintDetails1.aspx?type=1']")
-	By largeformatbtn = By.xpath("//*[@href='Print/PrintDetails1.aspx?type=2']")
-	By menubook = By.xpath("//*[@href='BooksAccessories/Details.aspx?type=3']")
-	By accesories = By.xpath("//*[@href='BooksAccessories/Details.aspx?type=4']")
-	By  nextbtn = By.xpath("//*[@id='ctl00_Body_btnContinue']")
-	By orderform = By.xpath("//*[@href='default.aspx']")
-	By brandmusclelogo = By.xpath("//*[@id='imgCorporationLogo']")
-	By logout = By.xpath("//*[@id='lbLogout']")
+
+	By headerlabel = By.xpath("//*[text()='Select Job you would like to Complete']")
+	By filteroptionsaccordion = By.xpath("//*[@class='accordion-toggle collapsed']")
+	By firsteditbtn = By.xpath("//*[@id='ctl00_Body_grdJobs_ctl00_ctl04_lbtnSelect']")
+	By deletebtn = By.xpath("//*[@id='ctl00_Body_grdJobs_ctl00_ctl04_lbtnDelete']")
+
 
 	@Keyword
-	public void ClickOnSmallPrintBtn() {
+	public void VerifyFinishInComplete() {
 		try {
-			action.Click(smallprintbtn)
+			boolean statusofheaderlabel = action.IsElementDisplayed(headerlabel)
+			Assert.assertTrue(statusofheaderlabel)
 		}
 		catch(Exception e) {
-			println ("Click On Small Print Btn failed due to "+ e)
+			println ("Verify Finish InComplete failed due to "+ e)
+		}
+	}
+
+	@Keyword
+	public void VerifyDeleteLink() {
+		try {
+			boolean statusofdeletelink = action.IsElementEnabled(deletebtn)
+			Assert.assertTrue(statusofdeletelink)
+		}
+		catch(Exception e) {
+			println ("Verify Delete Link failed due to "+ e)
+		}
+	}
+
+	@Keyword
+	public void DeleteLink() {
+		try {
+			action.Click(deletebtn)
+			action.AcceptAlert()
+		}
+		catch(Exception e) {
+			println ("Verify Delete Link failed due to "+ e)
 		}
 	}
 
 
 	@Keyword
-	public void ClickOnLargePrintBtn() {
+	public void VerifyEditLink() {
 		try {
-			action.Click(largeformatbtn)
+			boolean statusoffirsteditlink = action.IsElementEnabled(firsteditbtn)
+			Assert.assertTrue(statusoffirsteditlink)
 		}
 		catch(Exception e) {
-			println ("Click On Large Print Btn failed due to "+ e)
+			println ("Verify Edit Link failed due to "+ e)
 		}
 	}
-
+	
 	@Keyword
-	public void ClickOnMenuBookBtn() {
+	public void Edit() {
 		try {
-			action.Click(menubook)
-		}
-		catch(Exception e) {
-			println ("Click On Menu Book Btn failed due to "+ e)
-		}
-	}
-
-	@Keyword
-	public void ClickOnAccesoriesBtn() {
-		try {
-			action.Click(accesories)
-		}
-		catch(Exception e) {
-			println ("Click On Accesories Btn failed due to "+ e)
-		}
-	}
-
-	@Keyword
-	public void ClickOnNextBtn() {
-		try {
-			action.WaitUntilElementClickable(nextbtn)
-			action.Click(nextbtn)
+			boolean statusoffirsteditlink = action.IsElementEnabled(firsteditbtn)
+			Assert.assertTrue(statusoffirsteditlink)
+			action.Click(firsteditbtn)
 			action.WaitForPageToLoad()
-			WebUI.delay(10)
 		}
 		catch(Exception e) {
-			println ("Click On Next Btn failed due to "+ e)
+			println ("Verify Edit Link failed due to "+ e)
 		}
 	}
-
-	@Keyword
-	public void LogOutII4() {
-		action.Click(logout)
-		action.WaitForPageToLoad()
-	}
+	
 }

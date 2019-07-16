@@ -54,4 +54,29 @@ public class OrderFormOrderHederPage {
 			println ("Enter Values To Fileds In Order Page failed due to "+ e)
 		}
 	}
+
+
+	@Keyword
+	public String EnterValuesToFiledsInOrderPageForIncopmleteOrder() {
+		String accountname = null;
+		try {
+			action.WaitVisible(newaccountname)
+			action.ScrollToViewElement(newaccountname)
+			accountname = action.GenerateRandonString("Test")
+			println ("*****************************"+accountname+"**********************")
+			action.Type(newaccountname, accountname)
+			action.WaitVisible(jobtypeddn)
+			action.Click(jobtypeddn)
+			action.Click(jobtypeddnvalue)
+			action.WaitVisible(continuetoitemsbtn)
+			action.ScrollToBottomOfPage()
+			action.Click(continuetoitemsbtn)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("Enter Values To Fileds In Order Page failed due to "+ e)
+		}
+
+		return accountname
+	}
 }

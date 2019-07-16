@@ -37,12 +37,11 @@ public class OrderFormShiipingDetailsPage {
 	@Keyword
 	public void ClickOnNextBtn() {
 		try {
-			/*action.WaitUntilElementClickable(nextbtn)
-			 action.Click(nextbtn)
-			 action.WaitForPageToLoad()*/
-
-			 WebUI.navigateToUrl("http://ii4.uat.brandmuscle.net/OnlineOrderForm/ItemDetails.aspx")
-			 action.WaitForPageToLoad()
+			action.Refresh()
+			action.WaitUntilElementClickable(nextbtn)
+			WebUI.delay(10)
+			action.Click(nextbtn)
+			action.WaitForPageToLoad()
 		}
 		catch(Exception e) {
 			println ("Click On Next Btn failed due to "+ e)

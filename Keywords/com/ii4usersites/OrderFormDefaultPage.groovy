@@ -30,7 +30,7 @@ public class OrderFormDefaultPage {
 	WebDriver driver = DriverFactory.getWebDriver()
 
 	By createnewbtn = By.xpath("//*[@id='Body_NewOrderButton']")
-	By clone = By.xpath("Body_JobSearchButton")
+	By clone = By.xpath("//*[@id='Body_JobSearchButton']")
 	By finishincompletebtn = By.xpath("//*[@href='OrderHistory.aspx']")
 
 
@@ -69,10 +69,9 @@ public class OrderFormDefaultPage {
 			println ("Click on  Clone Order failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
-	public void ClickOnFinishInCompleteButton()
-	{
+	public void ClickOnFinishInCompleteButton() {
 		try {
 			action.Click(finishincompletebtn)
 			action.WaitForPageToLoad()

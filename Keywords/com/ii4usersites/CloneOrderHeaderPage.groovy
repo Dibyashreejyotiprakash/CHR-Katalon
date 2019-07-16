@@ -24,34 +24,32 @@ import com.kms.katalon.core.webui.driver.DriverFactory
 import internal.GlobalVariable
 
 public class CloneOrderHeaderPage {
-	
+
 	Interaction action = new Interaction();
 	WebDriver driver = DriverFactory.getWebDriver()
-	
+
 	By newaccountname = By.xpath("//*[@id='ctl00_Body_rtbNewAccountName']")
-	 By jobtypeddn = By.xpath("//*[@id='ctl00_Body_rcbJobType_Arrow']")
-	 By jobtypeddnvalue = By.xpath("//*[text()='Accessories Only']")
-	 By continuetoitemsbtn = By.xpath("//*[@id='ctl00_Body_btnContinue']")
- 
- 
-	 @Keyword
-	 public void EnterValuesToFiledsInOrderPage() {
-		 try {
-			 action.WaitVisible(newaccountname)
-			 action.ScrollToViewElement(newaccountname)
-			 action.Type(newaccountname, "test")
-			 action.WaitVisible(jobtypeddn)
-			 action.Click(jobtypeddn)
-			 action.Click(jobtypeddnvalue)
-			 action.WaitVisible(continuetoitemsbtn)
-			 action.ScrollToBottomOfPage()
-			 action.Click(continuetoitemsbtn)
-			 action.WaitForPageToLoad()
-		 }
-		 catch(Exception e) {
-			 println ("Enter Values To Fileds In Order Page failed due to "+ e)
-		 }
-	 }
-	
-	
+	By jobtypeddn = By.xpath("//*[@id='ctl00_Body_rcbJobType_Arrow']")
+	By jobtypeddnvalue = By.xpath("//*[text()='Accessories Only']")
+	By continuetoitemsbtn = By.xpath("//*[@id='ctl00_Body_btnContinue']")
+
+
+	@Keyword
+	public void EnterValuesToFiledsInOrderHeaderPage() {
+		try {
+			action.WaitVisible(newaccountname)
+			action.ScrollToViewElement(newaccountname)
+			action.Type(newaccountname, "test")
+			action.WaitVisible(jobtypeddn)
+			action.Click(jobtypeddn)
+			action.Click(jobtypeddnvalue)
+			action.WaitVisible(continuetoitemsbtn)
+			action.ScrollToBottomOfPage()
+			action.Click(continuetoitemsbtn)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("Enter Values To Fileds In Order Page failed due to "+ e)
+		}
+	}
 }

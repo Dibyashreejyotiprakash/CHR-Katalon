@@ -159,4 +159,9 @@
       <initValue>'ii3'</initValue>
       <name>bunameii3</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'2421293'</initValue>
+      <name>dtjobidforcloning</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>
