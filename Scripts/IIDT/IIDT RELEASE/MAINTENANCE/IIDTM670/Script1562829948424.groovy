@@ -17,13 +17,25 @@ WebUI.openBrowser('')
 
 WebUI.maximizeWindow()
 
+WebUI.waitForPageLoad(300)
+
 CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamewswadmin, GlobalVariable.testtyperegression, GlobalVariable.environment)
 
-CustomKeywords.'com.wswadmin.HomePage.NavigateToCategoryMaintenancePage'()
+CustomKeywords.'com.wswadmin.HomePage.NavigateToItemSearchPage'()
 
-CustomKeywords.'com.wswadmin.CategoriesMaintenancePage.ClickOnCreateExternalItemCorpSettting'()
+CustomKeywords.'com.wswadmin.ItemSearchpage.SelectCompleteTemplate'()
 
-CustomKeywords.'com.wswadmin.CategoriesMaintenancePage.VerifyAddNewCorpSettingBtn'()
+CustomKeywords.'com.wswadmin.ItemSearchpage.OpenBrandNameExpandedWindow'()
+
+CustomKeywords.'com.wswadmin.ItemSearchpage.ValidateSpecialCharacterMetatag'()
+
+CustomKeywords.'com.wswadmin.HomePage.NavigateToGlobalMetaTaggigPage'()
+
+CustomKeywords.'com.wswadmin.GlobalMetataggingMaintenancePage.selectCategory'()
+
+CustomKeywords.'com.wswadmin.GlobalMetataggingMaintenancePage.addSpecialCharacterGlobalMetatag'()
+
+CustomKeywords.'com.wswadmin.GlobalMetataggingMaintenancePage.ValidateDeleteSpecialCharacterGlobalMetatag'()
 
 WebUI.closeBrowser()
 

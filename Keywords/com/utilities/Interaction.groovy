@@ -65,7 +65,7 @@ public  class Interaction {
 				}
 				if(TestType.equalsIgnoreCase("SMOKE")) {
 					if (BuName.equalsIgnoreCase("ii3")) {
-	
+
 						if (EnvironmentName.equalsIgnoreCase("UAT")) {
 							WebUI.navigateToUrl("http://ii3.uat.brandmuscle.net/")
 						}
@@ -74,7 +74,7 @@ public  class Interaction {
 						}
 						else if (EnvironmentName.equalsIgnoreCase("PROD")) {
 							WebUI.navigateToUrl("http://rel3.instantimpact.com")
-						}		
+						}
 						else{
 							println ("Environment is not correct")
 							WebUI.closeBrowser()

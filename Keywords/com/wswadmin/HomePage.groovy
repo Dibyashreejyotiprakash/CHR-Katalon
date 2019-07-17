@@ -81,7 +81,7 @@ public class HomePage {
 		action.MouseHoverAndClick(metataggingcategoryitemmaintenance)
 		action.WaitForPageToLoad()
 	}
-	
+
 	@Keyword
 	public void NavigateToGlobalMetaTaggigPage() {
 		action.WaitVisible(instantimpact)
@@ -92,6 +92,4 @@ public class HomePage {
 		action.MouseHoverAndClick(globalmetataggingpage)
 		action.WaitForPageToLoad()
 	}
-	
-	
 }
