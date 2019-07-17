@@ -24,19 +24,19 @@ import com.kms.katalon.core.webui.driver.DriverFactory
 import internal.GlobalVariable
 
 public class ii3OrderFormPrintDetails1Page {
-	
+
 	Interaction action = new Interaction();
 	WebDriver driver = DriverFactory.getWebDriver()
 
-	By allitemsddn = By.xpath("//*[@id='ctl00_Body_ddlItems_Arrow']")
+	By allitemsddn = By.xpath("//*[@id='ctl00_ctl00_ContentMain_MainPlaceHolder_ddlItems_Arrow']")
 	By allitemsvalue = By.xpath("//*[text()='Case Tucker']")
-	By sizeddn = By.xpath("//*[@id='ctl00_Body_ddlSize_Arrow']")
+	By sizeddn = By.xpath("//*[@id='ctl00_ctl00_ContentMain_MainPlaceHolder_ddlSize_Arrow']")
 	By sizevalue = By.xpath("//*[text()='10.000 X 15.000']")
-	By paperddn = By.xpath("//*[@id='ctl00_Body_ddlMedia_Input']")
+	By paperddn = By.xpath("//*[@id='ctl00_ctl00_ContentMain_MainPlaceHolder_ddlMedia_Arrow']")
 	By paperddnvalue = By.xpath("//*[text()='10pt Card Stock']")
-	By accesoriesddn = By.id("ctl00_Body_ddlAccessory_Input")
+	By accesoriesddn = By.xpath("//*[@id='ctl00_ctl00_ContentMain_MainPlaceHolder_ddlAccessory_Arrow']")
 	By accesoriesddnvalue = By.xpath("//*[text()='Scored']")
-	By nextbtn = By.xpath("//*[text()='Next']")
+	By nextbtn = By.xpath("//*[@id='ctl00_ctl00_ContentMain_MainPlaceHolder_btnNext']")
 	By myitemsbtn = By.xpath("//*[text()='My Items']")
 	By previousbtn = By.xpath("//*[text()='Previous']")
 	By allitemslabel = By.xpath("//*[text()='All Items']")
@@ -47,23 +47,33 @@ public class ii3OrderFormPrintDetails1Page {
 			WebUI.scrollToPosition(500, 500)
 			action.WaitVisible(allitemsddn)
 			action.Click(allitemsddn)
+			WebUI.delay(2)
 			action.WaitVisible(allitemsvalue)
 			action.Click(allitemsvalue)
+			WebUI.delay(2)
 			action.Click(sizeddn)
+			WebUI.delay(2)
 			action.Click(sizeddn)
+			WebUI.delay(2)
 			action.WaitVisible(sizevalue)
+			WebUI.delay(2)
 			action.Click(sizevalue)
+			WebUI.delay(2)
 			action.Click(paperddn)
+			WebUI.delay(2)
 			action.Click(paperddnvalue)
+			WebUI.delay(2)
 			action.ScrollToBottomOfPage()
 			action.Click(accesoriesddn)
+			WebUI.delay(2)
 			action.Click(accesoriesddnvalue)
+			WebUI.delay(2)
 			action.Click(nextbtn)
+			WebUI.delay(2)
 			action.WaitForPageToLoad()
 		}
 		catch(Exception e) {
 			println ("Enter All Vaues In Print Details1 Page failed due to "+ e)
 		}
 	}
-	
 }

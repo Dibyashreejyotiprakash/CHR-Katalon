@@ -33,7 +33,7 @@ public class OrderFormMenuBookDetailsPage {
 	By joblinename = By.xpath("//*[@id='ctl00_Body_JobLineNameEditor']")
 	By productgroupddn = By.xpath("//*[@id='ctl00_Body_ProductGroupEditor_Arrow']")
 	By productgroupddnvalue = By.xpath("//*[@id='ctl00_Body_ProductGroupEditor_DropDown']//li[2]")
-	By nextbtn = By.cssSelector("[class='col-sm-4 col-sm-offset-4'] [tabindex]")
+	By nextbtn = By.xpath("//*[@id='ctl00_Body_NextButton']")
 	By menusizeddn = By.xpath("//*[@id='ctl00_Body_GexDropDown01_ItemEditor_Arrow']")
 	By menusizeddnvalue = By.xpath("//*[text()='8.5 x 14']")
 
@@ -44,8 +44,26 @@ public class OrderFormMenuBookDetailsPage {
 			action.Type(joblinename, "test")
 			action.Click(productgroupddn)
 			action.Click(productgroupddnvalue)
-			action.Click(nextbtn)
-			action.WaitForPageToLoad()
+			boolean statusofnextbtn = action.IsElementDisplayed(nextbtn)
+		    WebUI.delay(10)
+			if(statusofnextbtn == true)
+			{
+				action.WaitUntilElementClickable(nextbtn)
+				println ("***********************DEMOOOOO*********************")
+				action.Click(nextbtn)
+				println ("***********************DEMOOOOO*********************")
+			}
+			
+			/*String currentenvironment = GlobalVariable.environment
+
+			if(currentenvironment.equalsIgnoreCase("uat")) {
+				WebUI.navigateToUrl("http://ii4.uat.brandmuscle.net/OnlineOrderForm/BooksAccessories/FinishingDetails.aspx?id=68353&type=3")
+				action.WaitForPageToLoad()
+			}
+			else if(currentenvironment.equalsIgnoreCase("stage")) {
+				WebUI.navigateToUrl("https://ii4.v5stage.brandmuscle.net/OnlineOrderForm/BooksAccessories/FinishingDetails.aspx?id=64687&type=3")
+				action.WaitForPageToLoad()
+			}*/
 		}
 		catch(Exception e) {
 			println ("Enter Values To Job Details page failed due to "+ e)

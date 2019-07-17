@@ -30,12 +30,16 @@ public class OrderFormShiipingDetailsPage {
 	Interaction action = new Interaction();
 	WebDriver driver = DriverFactory.getWebDriver()
 
-	By nextbtn = By.xpath("//*[text()='Next']")
+	By nextbtn = By.xpath("//*[@id='ctl00_Body_btnNext']")
 	By myitemsbtn = By.xpath("//*[text()='My Items']")
 	By previousbtn = By.xpath("//*[text()='Previous']")
 
+	@Keyword
 	public void ClickOnNextBtn() {
 		try {
+			action.Refresh()
+			action.WaitUntilElementClickable(nextbtn)
+			WebUI.delay(10)
 			action.Click(nextbtn)
 			action.WaitForPageToLoad()
 		}

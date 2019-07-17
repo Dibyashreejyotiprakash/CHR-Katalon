@@ -29,26 +29,25 @@ import com.kms.katalon.core.webui.driver.DriverFactory
 
 import internal.GlobalVariable
 
-public class UserTransfer
- {
-	 
-	 
-	 
-	 
-	 Interaction action = new Interaction();
-	 WebDriver driver = DriverFactory.getWebDriver()
-	 
-	 
-	 
-	 
-	 
-	 @Keyword
-	 public void VerifyUserItemApprovalTransferPage() {
-		 String expectedUATUrl = "https://csg.v5qa.brandmuscle.net/Warehouse/Admin/UserTransfer.aspx";
-		 String expectedSTAGEUrl ="https://csg.v5stgae.brandmuscle.net/Warehouse/Admin/UserTransfer.aspx"
-		 String expectedPRODUrl = "https://csg.brandmuscle.net/Warehouse/Admin/UserTransfer.aspx";
- 
-		 String env = GlobalVariable.environment
+public class UserTransfer {
+
+
+
+
+	Interaction action = new Interaction();
+	WebDriver driver = DriverFactory.getWebDriver()
+
+
+
+
+
+	@Keyword
+	public void VerifyUserItemApprovalTransferPage() {
+		String expectedUATUrl = "https://csg.v5qa.brandmuscle.net/Warehouse/Admin/UserTransfer.aspx";
+		String expectedSTAGEUrl ="https://csg.v5stgae.brandmuscle.net/Warehouse/Admin/UserTransfer.aspx"
+		String expectedPRODUrl = "https://csg.brandmuscle.net/Warehouse/Admin/UserTransfer.aspx";
+
+		String env = GlobalVariable.environment
 		String actualUrl = action.GetCurrentURL()
 
 		if(env.equalsIgnoreCase("uat")) {
@@ -63,29 +62,5 @@ public class UserTransfer
 		else {
 			println (Assert.fail())
 		}
-	 }
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
- 
+	}
 }

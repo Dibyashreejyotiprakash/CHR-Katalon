@@ -22,29 +22,42 @@ import org.testng.Assert
 import org.openqa.selenium.Alert
 import com.kms.katalon.core.webui.driver.DriverFactory
 import internal.GlobalVariable
-
+import org.openqa.selenium.WebElement
 public class ii3OrderFormorderHeaderPage {
-	
+
 	Interaction action = new Interaction();
 	WebDriver driver = DriverFactory.getWebDriver()
 
-	By newaccountname = By.xpath("//*[@id='ctl00_Body_rtbNewAccountName']")
-	By jobtypeddn = By.xpath("//*[@id='ctl00_Body_rcbJobType_Arrow']")
-	By jobtypeddnvalue = By.xpath("//*[text()='Accessories Only']")
-	By continuetoitemsbtn = By.xpath("//*[@id='ctl00_Body_btnContinue']")
+	By newaccountname = By.xpath("//*[@id='ctl00_ctl00_ContentMain_MainPlaceHolder_rtbNewAccountName']")
+	By jobnotetxtbox = By.xpath("//*[@id='ctl00_ctl00_ContentMain_MainPlaceHolder_rtbBillingNotes']")
+	By continuetoitemsbtn = By.xpath("//*[@id='ctl00_ctl00_ContentMain_MainPlaceHolder_btnContinue']")
+	By jobdetailslable = By.xpath("//*[text()='Job Details']")
+    By allvaliddates = By.xpath("//*[@id='ctl00_ctl00_ContentMain_MainPlaceHolder_rdcJobCalendar']//tr/td/a/span[1]")
 
+	@Keyword
+	public void VerifyOrderHeaderPage() {
+		try {
+			boolean statusofjobdetailslabale = action.IsElementDisplayed(jobdetailslable)
+			Assert.assertTrue(statusofjobdetailslabale)
+		}
+		catch(Exception e) {
+			println ("Click On Order Now failed due to "+ e)
+		}
+	}
 
 	@Keyword
 	public void EnterValuesToFiledsInOrderPage() {
 		try {
-			action.WaitVisible(newaccountname)
-			action.ScrollToViewElement(newaccountname)
-			action.Type(newaccountname, "test")
-			action.WaitVisible(jobtypeddn)
-			action.Click(jobtypeddn)
-			action.Click(jobtypeddnvalue)
-			action.WaitVisible(continuetoitemsbtn)
+			action.Type(newaccountname, "Test")
 			action.ScrollToBottomOfPage()
+			
+			List<WebElement> alldates = action.GetElements(allvaliddates)
+			for(int i=0;i<= alldates.size();i++)
+			{
+				alldates.get(i).click()
+				break
+			}
+			
 			action.Click(continuetoitemsbtn)
 			action.WaitForPageToLoad()
 		}
@@ -52,5 +65,4 @@ public class ii3OrderFormorderHeaderPage {
 			println ("Enter Values To Fileds In Order Page failed due to "+ e)
 		}
 	}
-	
 }

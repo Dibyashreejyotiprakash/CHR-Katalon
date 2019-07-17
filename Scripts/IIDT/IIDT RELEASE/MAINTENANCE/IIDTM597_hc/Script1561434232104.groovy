@@ -25,9 +25,9 @@ CustomKeywords.'com.ii4usersites.HomePage.ClickOnOrderForm'()
 
 CustomKeywords.'com.ii4usersites.OrderFormDefaultPage.ClickonCreateNewCustomOrder'()
 
-CustomKeywords.'com.ii4usersites.OrderFormorderHeaderPage.EnterValuesToFiledsInOrderPage'()
+CustomKeywords.'com.ii4usersites.OrderFormOrderHederPage.EnterValuesToFiledsInOrderPage'()
 
-CustomKeywords.'com.ii4usersites.OrderForItemDetails1Page.ClickOnMenuBookBtn'()
+CustomKeywords.'com.ii4usersites.OrderFormItemDetails1Page.ClickOnMenuBookBtn'()
 
 CustomKeywords.'com.ii4usersites.OrderFormMenuBookDetailsPage.EnterValuesToJobDetailspage'()
 

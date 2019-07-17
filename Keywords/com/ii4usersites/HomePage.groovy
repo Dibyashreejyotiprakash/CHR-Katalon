@@ -57,6 +57,12 @@ class HomePage {
 	}
 
 	@Keyword
+	public void LogOutII4() {
+		action.Click(logout)
+		action.WaitForPageToLoad()
+	}
+
+	@Keyword
 	public void ClickOnPosTemplate() {
 		action.ScrollToBottomOfPage()
 		action.WaitVisible(imgPOSTemplates)
