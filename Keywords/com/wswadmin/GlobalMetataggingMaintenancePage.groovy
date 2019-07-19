@@ -138,28 +138,24 @@ public class GlobalMetataggingMaintenancePage {
 			Assert.fail("addSpecialCharacterGlobalMetatag "+e)
 		}
 	}
-	
+
 	@Keyword
 	public void ValidateDeleteSpecialCharacterGlobalMetatag(){
 
-		try 
-		{
-          WebUI.delay(8)
-		  action.Click(globalsearchbox)
-		  action.Type(globalsearchbox,"Te@t")
-		  WebUI.delay(5)
-		  action.WaitVisible(specialcharactermetatag)
-		  action.Click(specialmetatagelipssys)
-		  action.Click(deleteoption)
-		  action.Click(confirmdeletecheckbox)
-		  action.Click(confirmdeletebtn)
-		  action.WaitVisible(deletesuccessmssg)
-			
+		try {
+			WebUI.delay(8)
+			action.Click(globalsearchbox)
+			action.Type(globalsearchbox,"Te@t")
+			WebUI.delay(5)
+			action.WaitVisible(specialcharactermetatag)
+			action.Click(specialmetatagelipssys)
+			action.Click(deleteoption)
+			action.Click(confirmdeletecheckbox)
+			action.Click(confirmdeletebtn)
+			action.WaitVisible(deletesuccessmssg)
 		}
 		catch(Exception e) {
 			Assert.fail("ValidateDeleteSpecialCharacterGlobalMetatag "+e)
 		}
 	}
-	
-	
 }
