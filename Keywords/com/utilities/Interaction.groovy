@@ -1,5 +1,7 @@
 package com.utilities
 
+import org.testng.Assert
+
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
@@ -157,7 +159,9 @@ public  class Interaction {
 				else if (BuName.equalsIgnoreCase("WSWADMIN")) {
 
 					if (EnvironmentName.equalsIgnoreCase("UAT")) {
+						println("Inside WSW UAT Environment")
 						WebUI.navigateToUrl("http://dibyashree.jyoti:chr@1234@wswadmin.uat.brandmuscle.net")
+						println("Executed  WSW UAT Environment")
 					}
 					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
 						WebUI.navigateToUrl("http://dibyashree.jyoti:chr@1234@wswadmin.stage.brandmuscle.net")
@@ -170,6 +174,7 @@ public  class Interaction {
 					}
 					else{
 						println ("Environment is not correct")
+						throw new Exception("WSW Environment is not correct")
 						WebUI.closeBrowser()
 					}
 				}
@@ -281,6 +286,7 @@ public  class Interaction {
 					else{
 						println ("Environment is not correct")
 						WebUI.closeBrowser()
+						throw new Exception("Environment is not correct")
 					}
 				}
 
@@ -301,6 +307,7 @@ public  class Interaction {
 
 					if (EnvironmentName.equalsIgnoreCase("UAT")) {
 						WebUI.navigateToUrl("http://dibyashree.jyoti:chr@1234@wswadmin.uat.brandmuscle.net")
+						println("WSW admin URL executed")
 					}
 					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
 						WebUI.navigateToUrl("http://dibyashree.jyoti:chr@1234@wswadmin.stage.brandmuscle.net")
@@ -310,6 +317,7 @@ public  class Interaction {
 					}
 					else{
 						println ("Environment is not correct")
+						throw new Exception("Environment is not correct")
 						WebUI.closeBrowser()
 					}
 				}
@@ -326,6 +334,7 @@ public  class Interaction {
 					}
 					else{
 						println ("Environment is not correct")
+						throw new Exception("Environment is not correct")
 						WebUI.closeBrowser()
 					}
 				}
@@ -345,11 +354,14 @@ public  class Interaction {
 			else{
 				println ("Test type is not correct")
 				WebUI.closeBrowser()
+				throw new Exception("Test type is not correct")
 			}
 		}
 
 		catch (Exception e) {
 			println ("GetUrl failed due to " + e);
+			Assert.fail("GetUrl failed due to"+e)
+			
 		}
 	}
 
