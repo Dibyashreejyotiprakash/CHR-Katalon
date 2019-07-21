@@ -80,7 +80,7 @@ public class FinishInCompleteOrderHistoryPage {
 			println ("Verify Edit Link failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
 	public void Edit() {
 		try {
@@ -93,5 +93,4 @@ public class FinishInCompleteOrderHistoryPage {
 			println ("Verify Edit Link failed due to "+ e)
 		}
 	}
-	
 }
