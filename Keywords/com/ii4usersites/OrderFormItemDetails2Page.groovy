@@ -44,7 +44,7 @@ public class OrderFormItemDetails2Page {
 	By previousbtn = By.id("ctl00_Body_btnPrevious")
 	By myitemsbtn = By.id("ctl00_Body_btnItems")
 	By nextbtn = By.xpath("//*[@id='ctl00_Body_BrandMentionsButton']")
-	
+
 
 	@Keyword
 	public void AddNewNoteAndClickOnNextBtn() {

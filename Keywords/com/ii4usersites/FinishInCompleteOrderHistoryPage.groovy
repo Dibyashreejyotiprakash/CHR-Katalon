@@ -37,6 +37,11 @@ public class FinishInCompleteOrderHistoryPage {
 	By deletebtn = By.xpath("//*[@id='ctl00_Body_grdJobs_ctl00_ctl04_lbtnDelete']")
 	By backToOOFHomeBtn = By.xpath("//*[text()='Back to Online Order Form Home']")
 	By numberOfIncompleteItems  = By.xpath("//strong[1]")
+	By filterOptionsLink = By.xpath("//a[@href='#FilterPanel']")
+	By orderTypeLabel = By.xpath("//label[text()='Order Type']")
+	By clearBtn = By.xpath("//input[@value = 'Clear']")
+	By filterBtn = By.xpath("//input[@value = 'Filter']")
+	
 
 
 	@Keyword
@@ -106,14 +111,14 @@ public class FinishInCompleteOrderHistoryPage {
 			action.WaitForPageToLoad()
 			//Assert.assertTrue(statusoffinishanIncompletedOrder)
 			Assert.assertTrue(action.IsElementDisplayed(ofdp.finishincompletebtn))
-            println(ofdp.finishincompletebtn) 
+			println(ofdp.finishincompletebtn)
 			action.WaitForPageToLoad()
 		}
 		catch(Exception e) {
 			println ("Verify Edit Link failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
 	public int GetNumberOfItemsBeforeDelete() {
 		try {
@@ -125,7 +130,7 @@ public class FinishInCompleteOrderHistoryPage {
 			println ("Verify Edit Link failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
 	public void VerifyNumberOfItemsAfterDelete(int i) {
 		try {
@@ -133,6 +138,21 @@ public class FinishInCompleteOrderHistoryPage {
 			action.WaitVisible(numberOfIncompleteItems)
 			println(action.GetText(numberOfIncompleteItems))
 			Assert.assertEquals(i-1, Integer.parseInt(action.GetText(numberOfIncompleteItems)))
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("Verify Edit Link failed due to "+ e)
+		}
+	}
+	
+	@Keyword
+	public void VerifyFilterOptions() {
+		try {
+			action.WaitForPageToLoad()
+			action.Click(filterOptionsLink)
+			action.WaitVisible(orderTypeLabel)
+			Assert.assertEquals(true, action.IsElementDisplayed(filterBtn))
+			Assert.assertEquals(true, action.IsElementDisplayed(clearBtn))
 			action.WaitForPageToLoad()
 		}
 		catch(Exception e) {
