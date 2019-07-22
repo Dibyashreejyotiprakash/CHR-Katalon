@@ -28,12 +28,15 @@ public class FinishInCompleteOrderHistoryPage {
 
 	Interaction action = new Interaction();
 	WebDriver driver = DriverFactory.getWebDriver()
+	OrderFormDefaultPage ofdp = new OrderFormDefaultPage();
 
 
 	By headerlabel = By.xpath("//*[text()='Select Job you would like to Complete']")
 	By filteroptionsaccordion = By.xpath("//*[@class='accordion-toggle collapsed']")
 	By firsteditbtn = By.xpath("//*[@id='ctl00_Body_grdJobs_ctl00_ctl04_lbtnSelect']")
 	By deletebtn = By.xpath("//*[@id='ctl00_Body_grdJobs_ctl00_ctl04_lbtnDelete']")
+	By backToOOFHomeBtn = By.xpath("//*[text()='Back to Online Order Form Home']")
+	By numberOfIncompleteItems  = By.xpath("//strong[1]")
 
 
 	@Keyword
@@ -87,6 +90,49 @@ public class FinishInCompleteOrderHistoryPage {
 			boolean statusoffirsteditlink = action.IsElementEnabled(firsteditbtn)
 			Assert.assertTrue(statusoffirsteditlink)
 			action.Click(firsteditbtn)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("Verify Edit Link failed due to "+ e)
+		}
+	}
+
+	@Keyword
+	public void VerifyBackToOOFHome() {
+		try {
+
+			//boolean statusoffinishanIncompletedOrder = action.IsElementDisplayed(ofdp.finishincompletebtn)
+			action.Click(backToOOFHomeBtn)
+			action.WaitForPageToLoad()
+			//Assert.assertTrue(statusoffinishanIncompletedOrder)
+			Assert.assertTrue(action.IsElementDisplayed(ofdp.finishincompletebtn))
+            println(ofdp.finishincompletebtn) 
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("Verify Edit Link failed due to "+ e)
+		}
+	}
+	
+	@Keyword
+	public int GetNumberOfItemsBeforeDelete() {
+		try {
+			action.WaitVisible(numberOfIncompleteItems)
+			println(action.GetText(numberOfIncompleteItems))
+			return Integer.parseInt(action.GetText(numberOfIncompleteItems))
+		}
+		catch(Exception e) {
+			println ("Verify Edit Link failed due to "+ e)
+		}
+	}
+	
+	@Keyword
+	public void VerifyNumberOfItemsAfterDelete(int i) {
+		try {
+			WebUI.delay(5)
+			action.WaitVisible(numberOfIncompleteItems)
+			println(action.GetText(numberOfIncompleteItems))
+			Assert.assertEquals(i-1, Integer.parseInt(action.GetText(numberOfIncompleteItems)))
 			action.WaitForPageToLoad()
 		}
 		catch(Exception e) {

@@ -361,7 +361,6 @@ public  class Interaction {
 		catch (Exception e) {
 			println ("GetUrl failed due to " + e);
 			Assert.fail("GetUrl failed due to"+e)
-			
 		}
 	}
 
@@ -850,7 +849,7 @@ public  class Interaction {
 		driver.findElement(by).sendKeys(Keys.ENTER);
 	}
 
-	public void GetText(By by)
+	public String GetText(By by)
 	{
 		driver.findElement(by).getText();
 	}
