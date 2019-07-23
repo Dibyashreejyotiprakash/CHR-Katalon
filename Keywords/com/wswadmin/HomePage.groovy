@@ -39,6 +39,25 @@ public class HomePage {
 
 	By resuorcemessagebtn = By.xpath("//*[@href='/InstantImpact/ResourceMessage/ResourceMessage.aspx']")
 
+	By fulfillmentbtn = By.xpath("//*[text()='Fulfillment']")
+	By fulfillmentsearchbtn = By.xpath("//*[text()='Fulfillment Search']")
+	By createfulfillmentitem = By.xpath("//*[text()='Create Fulfillment Item']")
+	By fulfillmentproductunit = By.xpath("//*[text()='Fulfillment Product Unit']")
+	By createfulfillmentproductunit = By.xpath("//*[text()='Create Fulfillment Product Unit']")
+	By associtaeitemstoproductunit = By.xpath("//*[text()='Associate Items to Product Unit']")
+	By reports = By.xpath("//*[@href='/Fulfillment/Reports.aspx']")
+	By colormaintenance = By.xpath("//*[text()='Color Maintenance']")
+	By color = By.xpath("//*[@href='/Fulfillment/ColorMaintenance/FulfillmentColor.aspx']")
+	By colortocorporation = By.xpath("//*[@href='/Fulfillment/ColorMaintenance/FulfillmentColorToCorp.aspx']")
+	By sizemaintenance = By.xpath("//*[text()='Size Maintenance']")
+	By size = By.xpath("//*[@href='/Fulfillment/SizeMaintenance/FulfillmentSize.aspx']")
+	By sizetocorporation = By.xpath("//*[@href='/Fulfillment/SizeMaintenance/FulfillmentSizeToCorp.aspx']")
+	By corpdistmaintenance = By.xpath("//*[text()='Corp/Dist Maintenance']")
+	By fulfillmentcorpdistadmin = By.xpath("//*[@href='/Fulfillment/CorpDistributerQuantityPreOrder.aspx']")
+	By fuifillmentcorpmaintenance = By.xpath("//*[@href='/Fulfillment/FulfillmentCorp.aspx']")
+
+	By redbullsticthlab = By.xpath("//*[text()='Red Bull/Stitch Labs']")
+
 
 	@Keyword
 	def NavigateToItemSearchPage() {
@@ -93,12 +112,19 @@ public class HomePage {
 		action.MouseHoverAndClick(globalmetataggingpage)
 		action.WaitForPageToLoad()
 	}
-	
+
 	@Keyword
-	public void NavigateToResourceMessagePage()
-	{
+	public void NavigateToResourceMessagePage() {
 		action.WaitVisible(instantimpact)
 		action.MouseHoverOnElement(instantimpact)
 		action.MouseHoverAndClick(resuorcemessagebtn)
+	}
+
+	@Keyword
+	public void ClickOnFulfillmentCorpDistAdmin() {
+		action.MouseHoverOnElement(fulfillmentbtn)
+		action.MouseHoverOnElement(corpdistmaintenance)
+		action.MouseHoverAndClick(fulfillmentcorpdistadmin)
+		action.WaitForPageToLoad()
 	}
 }

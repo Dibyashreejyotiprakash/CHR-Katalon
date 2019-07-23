@@ -17,13 +17,31 @@ WebUI.openBrowser('')
 
 WebUI.maximizeWindow()
 
-CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamewswadmin, GlobalVariable.testtypesmoke, GlobalVariable.environment)
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamewswadmin, GlobalVariable.testtyperegression, GlobalVariable.environment)
 
 CustomKeywords.'com.wswadmin.HomePage.NavigateToResourceMessagePage'()
 
-CustomKeywords.'com.wswadmin.ResourceMessage.VerifyResouceMessagePopup'()
+CustomKeywords.'com.wswadmin.ResourceMessage.VerifyResourceMessagePage'()
 
-CustomKeywords.'com.wswadmin.ResourceMessage.VerifyAllFiledsInPopupMessage'()
+CustomKeywords.'com.wswadmin.ResourceMessage.VerifyResourceMessagePopupForProfile'()
+
+CustomKeywords.'com.wswadmin.ResourceMessage.OverrideGlobalResourceTextForProfile'()
+
+CustomKeywords.'com.wswadmin.ResourceMessage.VerifyDeleteResourceMessageProjects'()
 
 WebUI.closeBrowser()
+
+WebUI.openBrowser('')
+
+WebUI.maximizeWindow()
+
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameiiusersite, GlobalVariable.testtyperegression, GlobalVariable.environment)
+
+CustomKeywords.'com.ii4usersites.LoginPage.LoginToDemoCorp'(GlobalVariable.iiusersiteusername, GlobalVariable.iiusersitepassword)
+
+CustomKeywords.'com.ii4usersites.HomePage.VerifyHomePage'()
+
+CustomKeywords.'com.ii4usersites.HomePage.ClickOnAccount'()
+
+CustomKeywords.'com.ii4usersites.AccountPage.VerifyAddressListResourceMsg'()
 

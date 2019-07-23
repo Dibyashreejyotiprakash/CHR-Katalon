@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>VerifyResouceMessagePopUp</name>
+   <name>VerifyModifyResourceMessageForAddressList</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>e54f986b-7aa6-4197-8104-b4debf707c74</testCaseGuid>
+   <testCaseGuid>9325dad6-bd6d-4d5f-b9fa-7828308f58a9</testCaseGuid>
 </TestCaseEntity>

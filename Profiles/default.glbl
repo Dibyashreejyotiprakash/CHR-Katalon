@@ -164,4 +164,64 @@
       <initValue>'2421293'</initValue>
       <name>dtjobidforcloning</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'AccountTest'</initValue>
+      <name>resourcemsgaccount</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'ReportsTest'</initValue>
+      <name>resourcemsgreports</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'AddressBookTest'</initValue>
+      <name>resourcemsgaddressbook</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'AddressListTest'</initValue>
+      <name>resourcemsgaddressList</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'LogoLockerTest'</initValue>
+      <name>resourcemsglogolocker</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'ProjectsTest'</initValue>
+      <name>resourcemsgprojects</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'ProfileTest'</initValue>
+      <name>resorcemsgprofile</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'Account'</initValue>
+      <name>globalmsgaccounts</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'Reports'</initValue>
+      <name>globalmsgreport</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'Address Book'</initValue>
+      <name>globalmsgaddressbook</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'Address Lists'</initValue>
+      <name>globalmsgaddresslist</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'Profile'</initValue>
+      <name>globalmsgprofile</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>VerifyDeleteProfileLabelInII4UserSites</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>c6b54e25-0cc3-41aa-99fa-a24a010df0d0</testCaseGuid>
+</TestCaseEntity>

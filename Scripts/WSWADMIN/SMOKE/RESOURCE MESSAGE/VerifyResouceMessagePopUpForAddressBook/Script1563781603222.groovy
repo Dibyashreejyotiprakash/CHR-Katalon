@@ -17,9 +17,15 @@ WebUI.openBrowser('')
 
 WebUI.maximizeWindow()
 
-CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamewswadmin, GlobalVariable.testtyperegression, GlobalVariable.environment)
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamewswadmin, GlobalVariable.testtypesmoke, GlobalVariable.environment)
 
 CustomKeywords.'com.wswadmin.HomePage.NavigateToResourceMessagePage'()
+
+CustomKeywords.'com.wswadmin.ResourceMessage.VerifyResourceMessagePage'()
+
+CustomKeywords.'com.wswadmin.ResourceMessage.VerifyAllFieldsForResourceMessagePage'()
+
+CustomKeywords.'com.wswadmin.ResourceMessage.VerifyResourceMessagePopupForAddressBook'()
 
 WebUI.closeBrowser()
 

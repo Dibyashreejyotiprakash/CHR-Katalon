@@ -21,5 +21,29 @@ CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamewswadmin,
 
 CustomKeywords.'com.wswadmin.HomePage.NavigateToResourceMessagePage'()
 
+CustomKeywords.'com.wswadmin.ResourceMessage.VerifyResourceMessagePage'()
+
+CustomKeywords.'com.wswadmin.ResourceMessage.VerifyResourceMessagePopupForProfile'()
+
+CustomKeywords.'com.wswadmin.ResourceMessage.OverrideGlobalResourceTextForProfile'()
+
+CustomKeywords.'com.wswadmin.ResourceMessage.VerifyDeleteResourceMessageProfile'()
+
 WebUI.closeBrowser()
+
+WebUI.delay(10)
+
+WebUI.openBrowser('')
+
+WebUI.maximizeWindow()
+
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameiiusersite, GlobalVariable.testtyperegression, GlobalVariable.environment)
+
+CustomKeywords.'com.ii4usersites.LoginPage.LoginToDemoCorp'(GlobalVariable.iiusersiteusername, GlobalVariable.iiusersitepassword)
+
+CustomKeywords.'com.ii4usersites.HomePage.VerifyHomePage'()
+
+CustomKeywords.'com.ii4usersites.HomePage.ClickOnAccount'()
+
+CustomKeywords.'com.ii4usersites.AccountPage.VerifyDeleteProfileGlobalMsg'()
 
