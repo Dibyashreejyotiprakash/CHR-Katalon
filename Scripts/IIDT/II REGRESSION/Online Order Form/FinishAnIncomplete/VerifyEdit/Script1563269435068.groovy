@@ -23,11 +23,26 @@ CustomKeywords.'com.ii4usersites.LoginPage.LoginToDemoCorp'(GlobalVariable.iiuse
 
 CustomKeywords.'com.ii4usersites.HomePage.ClickOnOrderForm'()
 
+CustomKeywords.'com.ii4usersites.OrderFormDefaultPage.ClickonCreateNewCustomOrder'()
+
+CustomKeywords.'com.ii4usersites.OrderFormOrderHederPage.EnterValuesToFiledsInOrderPageForIncopmleteOrder'()
+
+WebUI.delay(10)
+
+CustomKeywords.'com.ii4usersites.OrderFormItemDetails1Page.LogOutII4'()
+
+CustomKeywords.'com.ii4usersites.LoginPage.LoginToDemoCorp'(GlobalVariable.iiusersiteusername, GlobalVariable.iiusersitepassword)
+
+CustomKeywords.'com.ii4usersites.HomePage.ClickOnOrderForm'()
+
 CustomKeywords.'com.ii4usersites.OrderFormDefaultPage.ClickOnFinishInCompleteButton'()
 
 CustomKeywords.'com.ii4usersites.FinishInCompleteOrderHistoryPage.VerifyDeleteLink'()
 
 CustomKeywords.'com.ii4usersites.FinishInCompleteOrderHistoryPage.Edit'()
+
+//Call method to verify after editing incomplete order
+CustomKeywords.'com.ii4usersites.OrderFormItemDetails1Page.VerifySmallLargeMenuFormat'()
 
 WebUI.closeBrowser()
 

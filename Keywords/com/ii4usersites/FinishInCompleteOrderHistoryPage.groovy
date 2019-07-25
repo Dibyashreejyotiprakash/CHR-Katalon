@@ -28,12 +28,20 @@ public class FinishInCompleteOrderHistoryPage {
 
 	Interaction action = new Interaction();
 	WebDriver driver = DriverFactory.getWebDriver()
+	OrderFormDefaultPage ofdp = new OrderFormDefaultPage();
 
 
 	By headerlabel = By.xpath("//*[text()='Select Job you would like to Complete']")
 	By filteroptionsaccordion = By.xpath("//*[@class='accordion-toggle collapsed']")
 	By firsteditbtn = By.xpath("//*[@id='ctl00_Body_grdJobs_ctl00_ctl04_lbtnSelect']")
 	By deletebtn = By.xpath("//*[@id='ctl00_Body_grdJobs_ctl00_ctl04_lbtnDelete']")
+	By backToOOFHomeBtn = By.xpath("//*[text()='Back to Online Order Form Home']")
+	By numberOfIncompleteItems  = By.xpath("//strong[1]")
+	By filterOptionsLink = By.xpath("//a[@href='#FilterPanel']")
+	By orderTypeLabel = By.xpath("//label[text()='Order Type']")
+	By clearBtn = By.xpath("//input[@value = 'Clear']")
+	By filterBtn = By.xpath("//input[@value = 'Filter']")
+	
 
 
 	@Keyword
@@ -80,7 +88,7 @@ public class FinishInCompleteOrderHistoryPage {
 			println ("Verify Edit Link failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
 	public void Edit() {
 		try {
@@ -93,5 +101,62 @@ public class FinishInCompleteOrderHistoryPage {
 			println ("Verify Edit Link failed due to "+ e)
 		}
 	}
+
+	@Keyword
+	public void VerifyBackToOOFHome() {
+		try {
+
+			//boolean statusoffinishanIncompletedOrder = action.IsElementDisplayed(ofdp.finishincompletebtn)
+			action.Click(backToOOFHomeBtn)
+			action.WaitForPageToLoad()
+			//Assert.assertTrue(statusoffinishanIncompletedOrder)
+			Assert.assertTrue(action.IsElementDisplayed(ofdp.finishincompletebtn))
+			println(ofdp.finishincompletebtn)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("Verify Edit Link failed due to "+ e)
+		}
+	}
+
+	@Keyword
+	public int GetNumberOfItemsBeforeDelete() {
+		try {
+			action.WaitVisible(numberOfIncompleteItems)
+			println(action.GetText(numberOfIncompleteItems))
+			return Integer.parseInt(action.GetText(numberOfIncompleteItems))
+		}
+		catch(Exception e) {
+			println ("Verify Edit Link failed due to "+ e)
+		}
+	}
+
+	@Keyword
+	public void VerifyNumberOfItemsAfterDelete(int i) {
+		try {
+			WebUI.delay(5)
+			action.WaitVisible(numberOfIncompleteItems)
+			println(action.GetText(numberOfIncompleteItems))
+			Assert.assertEquals(i-1, Integer.parseInt(action.GetText(numberOfIncompleteItems)))
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("Verify Edit Link failed due to "+ e)
+		}
+	}
 	
+	@Keyword
+	public void VerifyFilterOptions() {
+		try {
+			action.WaitForPageToLoad()
+			action.Click(filterOptionsLink)
+			action.WaitVisible(orderTypeLabel)
+			Assert.assertEquals(true, action.IsElementDisplayed(filterBtn))
+			Assert.assertEquals(true, action.IsElementDisplayed(clearBtn))
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("Verify Edit Link failed due to "+ e)
+		}
+	}
 }

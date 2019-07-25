@@ -25,15 +25,8 @@ CustomKeywords.'com.ii4usersites.HomePage.ClickOnOrderForm'()
 
 CustomKeywords.'com.ii4usersites.OrderFormDefaultPage.ClickOnFinishInCompleteButton'()
 
-CustomKeywords.'com.ii4usersites.FinishInCompleteOrderHistoryPage.VerifyDeleteLink'()
-
-int itemCount = CustomKeywords. 'com.ii4usersites.FinishInCompleteOrderHistoryPage.GetNumberOfItemsBeforeDelete'()
-println(itemCount)
-
-CustomKeywords.'com.ii4usersites.FinishInCompleteOrderHistoryPage.DeleteLink'()
-
-//Need to add method to verify steps after delete
-CustomKeywords.'com.ii4usersites.FinishInCompleteOrderHistoryPage.VerifyNumberOfItemsAfterDelete'(itemCount)
+CustomKeywords.'com.ii4usersites.FinishInCompleteOrderHistoryPage.VerifyFilterOptions'()
 
 WebUI.closeBrowser()
+
 

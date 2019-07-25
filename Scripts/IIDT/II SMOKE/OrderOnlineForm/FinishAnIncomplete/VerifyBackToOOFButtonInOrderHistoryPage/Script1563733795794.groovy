@@ -17,7 +17,7 @@ WebUI.openBrowser('')
 
 WebUI.maximizeWindow()
 
-CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameiiusersite, GlobalVariable.testtyperegression, GlobalVariable.environment)
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameiiusersite, GlobalVariable.testtypesmoke, GlobalVariable.environment)
 
 CustomKeywords.'com.ii4usersites.LoginPage.LoginToDemoCorp'(GlobalVariable.iiusersiteusername, GlobalVariable.iiusersitepassword)
 
@@ -25,15 +25,6 @@ CustomKeywords.'com.ii4usersites.HomePage.ClickOnOrderForm'()
 
 CustomKeywords.'com.ii4usersites.OrderFormDefaultPage.ClickOnFinishInCompleteButton'()
 
-CustomKeywords.'com.ii4usersites.FinishInCompleteOrderHistoryPage.VerifyDeleteLink'()
-
-int itemCount = CustomKeywords. 'com.ii4usersites.FinishInCompleteOrderHistoryPage.GetNumberOfItemsBeforeDelete'()
-println(itemCount)
-
-CustomKeywords.'com.ii4usersites.FinishInCompleteOrderHistoryPage.DeleteLink'()
-
-//Need to add method to verify steps after delete
-CustomKeywords.'com.ii4usersites.FinishInCompleteOrderHistoryPage.VerifyNumberOfItemsAfterDelete'(itemCount)
+CustomKeywords.'com.ii4usersites.FinishInCompleteOrderHistoryPage.VerifyBackToOOFHome'()
 
 WebUI.closeBrowser()
-

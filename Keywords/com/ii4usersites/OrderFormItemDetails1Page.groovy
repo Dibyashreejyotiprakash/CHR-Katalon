@@ -97,4 +97,17 @@ public class OrderFormItemDetails1Page {
 		action.Click(logout)
 		action.WaitForPageToLoad()
 	}
+	
+	@Keyword
+	public void VerifySmallLargeMenuFormat() {
+		try {
+			action.WaitForPageToLoad()
+			Assert.assertEquals(true,action.IsElementDisplayed(smallprintbtn))
+			Assert.assertEquals(true,action.IsElementDisplayed(largeformatbtn))
+			Assert.assertEquals(true,action.IsElementDisplayed(menubook))
+		}
+		catch(Exception e) {
+			println ("Click On Small Print Btn failed due to "+ e)
+		}
+	}
 }
