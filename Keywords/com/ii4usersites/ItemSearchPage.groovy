@@ -95,6 +95,7 @@ class ItemSearchPage {
 	By chkbxVariabletype = By.id("ctl00_Body_rptFilterGroups_ctrl4_cblFilterList_1")
 
 	By template = By.xpath("(//*[@href='/POS/ItemDetails.aspx?tid=130722'])[1]")
+	By variabletemplate = By.xpath("(//*[@href='/POS/ItemDetails.aspx?tid=130719'])[1]")
 
 	WebDriver driver = DriverFactory.getWebDriver();
 	Interaction action = new Interaction();
@@ -105,7 +106,7 @@ class ItemSearchPage {
 	public void ClickOnTemplate(){
 		try
 		{
-			
+
 			action.WaitVisible(template)
 			action.Click(template)
 			action.WaitForPageToLoad()
@@ -113,6 +114,22 @@ class ItemSearchPage {
 		catch(Exception e)
 		{
 			println ("Click On Template failed due to "+ e)
+		}
+	}
+
+	
+	@Keyword
+	public void ClickOnVariableTemplate(){
+		try
+		{
+
+			action.WaitVisible(variabletemplate)
+			action.Click(variabletemplate)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e)
+		{
+			println ("ClickOnVariableTemplate failed due to "+ e)
 		}
 	}
 
