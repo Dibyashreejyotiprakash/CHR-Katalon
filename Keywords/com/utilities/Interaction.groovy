@@ -361,7 +361,6 @@ public  class Interaction {
 		catch (Exception e) {
 			println ("GetUrl failed due to " + e);
 			Assert.fail("GetUrl failed due to"+e)
-			
 		}
 	}
 
@@ -523,6 +522,20 @@ public  class Interaction {
 		}
 	}
 
+	public  boolean IsDisplayed(By by) 
+	{
+		try
+		{
+			//WaitVisible(by)
+			boolean displayed = driver.findElement(by).isDisplayed();
+			return displayed;
+		}
+		catch(Exception e)
+		{
+			//throw new Exception("ELEMENTNOTDISPLAYED");
+			println("Not Displayed")
+		}
+	}
 
 	// Element is enabled or not
 	public  boolean IsElementEnabled(By by) throws Exception
@@ -850,9 +863,9 @@ public  class Interaction {
 		driver.findElement(by).sendKeys(Keys.ENTER);
 	}
 
-	public void GetText(By by)
+	public String GetText(By by)
 	{
-		driver.findElement(by).getText();
+		return driver.findElement(by).getText();
 	}
 
 	public String GenerateRandonString(String text)
