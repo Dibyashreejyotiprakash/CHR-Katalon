@@ -43,8 +43,8 @@ public class OrderFormItemDetails2Page {
 	By savebtn = By.xpath("//*[@id='ctl00_Body_JobLineNotes1_grdNotes_ctl00_ctl02_ctl02_btnUpdate_input']")
 	By previousbtn = By.id("ctl00_Body_btnPrevious")
 	By myitemsbtn = By.id("ctl00_Body_btnItems")
-	By nextbtn = By.xpath("//*[@id='ctl00_Body_BrandMentionsButton']")
-	
+	By nextbtn = By.xpath("//*[@id='ctl00_Body_btnNext']")
+
 
 	@Keyword
 	public void AddNewNoteAndClickOnNextBtn() {
@@ -61,6 +61,7 @@ public class OrderFormItemDetails2Page {
 			action.Click(savebtn)
 			WebUI.delay(10)
 			action.WaitUntilElementClickable(nextbtn)
+			WebUI.delay(10)
 			action.Click(nextbtn)
 			action.WaitForPageToLoad()
 		}

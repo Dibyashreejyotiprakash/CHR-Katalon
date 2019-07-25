@@ -727,19 +727,16 @@ public  class Interaction {
 
 
 	/*Alert Handler*/
-	public  boolean AcceptAlert()
+	public  void AcceptAlert()
 	{
 		try
 		{
 			Alert alert = driver.switchTo().alert();
 			alert.accept();
-			System.out.println("Alert Was Present");
-			return true;
 		}
 		catch(Exception e)
 		{
-			System.out.println("No Alert Found");
-			return false;
+			println (e)
 		}
 	}
 
@@ -850,9 +847,9 @@ public  class Interaction {
 		driver.findElement(by).sendKeys(Keys.ENTER);
 	}
 
-	public void GetText(By by)
+	public String GetText(By by)
 	{
-		driver.findElement(by).getText();
+		return driver.findElement(by).getText();
 	}
 
 	public String GenerateRandonString(String text)

@@ -1,4 +1,4 @@
-package com.ii4usersites
+package com.wswadmin
 
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
@@ -15,44 +15,19 @@ import com.kms.katalon.core.testdata.TestData
 import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
-
 import com.utilities.Interaction
 import org.openqa.selenium.By
-import internal.GlobalVariable
 import org.openqa.selenium.WebDriver
 import org.testng.Assert
 import org.openqa.selenium.Alert
-import org.openqa.selenium.By
 import com.kms.katalon.core.webui.driver.DriverFactory
+import internal.GlobalVariable
 
-public class OrderFormMenuBookDetailsPage {
-
+public class FufillmentCorpDistAdminPage {
+	
 	Interaction action = new Interaction();
 	WebDriver driver = DriverFactory.getWebDriver()
+	
+	
 
-	By joblinename = By.xpath("//*[@id='ctl00_Body_JobLineNameEditor']")
-	By productgroupddn = By.xpath("//*[@id='ctl00_Body_ProductGroupEditor_Arrow']")
-	By productgroupddnvalue = By.xpath("//*[@id='ctl00_Body_ProductGroupEditor_DropDown']//li[2]")
-	By nextbtn = By.xpath("//*[@id='ctl00_Body_NextButton']")
-	By menusizeddn = By.xpath("//*[@id='ctl00_Body_GexDropDown01_ItemEditor_Arrow']")
-	By menusizeddnvalue = By.xpath("//*[text()='8.5 x 14']")
-
-
-	@Keyword
-	public void EnterValuesToJobDetailspage() {
-		try {
-			action.Type(joblinename, "test")
-			action.Click(productgroupddn)
-			action.Click(productgroupddnvalue)
-			boolean statusofnextbtn = action.IsElementDisplayed(nextbtn)
-			WebUI.delay(10)
-			if(statusofnextbtn == true) {
-				action.WaitUntilElementClickable(nextbtn)
-				action.Click(nextbtn)
-			}
-		}
-		catch(Exception e) {
-			println ("Enter Values To Job Details page failed due to "+ e)
-		}
-	}
 }

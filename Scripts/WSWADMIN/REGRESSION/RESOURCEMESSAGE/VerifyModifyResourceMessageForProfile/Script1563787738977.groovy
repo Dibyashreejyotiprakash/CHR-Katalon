@@ -21,5 +21,11 @@ CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamewswadmin,
 
 CustomKeywords.'com.wswadmin.HomePage.NavigateToResourceMessagePage'()
 
+CustomKeywords.'com.wswadmin.ResourceMessage.VerifyResourceMessagePage'()
+
+CustomKeywords.'com.wswadmin.ResourceMessage.VerifyResourceMessagePopupForProfile'()
+
+CustomKeywords.'com.wswadmin.ResourceMessage.OverrideGlobalResourceTextForProfile'()
+
 WebUI.closeBrowser()
 

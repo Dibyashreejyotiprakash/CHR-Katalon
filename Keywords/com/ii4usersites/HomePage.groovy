@@ -87,8 +87,8 @@ class HomePage {
 	@Keyword
 	public void ClickOnAccount() {
 		try {
-			action.WaitVisible(logout)
-			action.Click(logout)
+			action.WaitVisible(accountlink)
+			action.Click(accountlink)
 			action.WaitForPageToLoad()
 		}
 		catch(Exception e) {
