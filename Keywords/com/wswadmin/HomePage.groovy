@@ -4,7 +4,6 @@ import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
-
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.checkpoint.Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
@@ -27,18 +26,15 @@ public class HomePage {
 	WebDriver driver = DriverFactory.getWebDriver()
 	Interaction action = new Interaction()
 
-
 	By instantimpact = By.xpath("//*[text()='Instant Impact']")
 	By metatagingitemmaintenance = By.xpath("//*[text()='Meta Tagging Category/Item Maintenance']")
 	By itemsearchtagging = By.xpath("//*[text()='Item Search Tagging']")
 	By metaTaggingEditDelete  = By.xpath("(//span[contains(text(),'Meta Tagging Edit/Delete')])[1]")
-
 	By metataggingcategoryitemmaintenance = By.xpath("//*[text()='Meta Tagging Category Item Maintenance']")
 	By metatagingcategorymaintenance = By.xpath("//*[text()='Meta Tagging Category Maintenance']")
 	By globalmetataggingpage = By.xpath("(//span[contains(text(),'Global Meta Tagging Maintenance')])[1]")
-
+	By itempartquantitymaintenance = By.xpath("(//span[contains(text(),'Item/Part Quantity Maintenance')])[1]")
 	By resuorcemessagebtn = By.xpath("//*[@href='/InstantImpact/ResourceMessage/ResourceMessage.aspx']")
-
 	By fulfillmentbtn = By.xpath("//*[text()='Fulfillment']")
 	By fulfillmentsearchbtn = By.xpath("//*[text()='Fulfillment Search']")
 	By createfulfillmentitem = By.xpath("//*[text()='Create Fulfillment Item']")
@@ -55,9 +51,7 @@ public class HomePage {
 	By corpdistmaintenance = By.xpath("//*[text()='Corp/Dist Maintenance']")
 	By fulfillmentcorpdistadmin = By.xpath("//*[@href='/Fulfillment/CorpDistributerQuantityPreOrder.aspx']")
 	By fuifillmentcorpmaintenance = By.xpath("//*[@href='/Fulfillment/FulfillmentCorp.aspx']")
-
 	By redbullsticthlab = By.xpath("//*[text()='Red Bull/Stitch Labs']")
-
 
 	@Keyword
 	def NavigateToItemSearchPage() {
@@ -68,7 +62,6 @@ public class HomePage {
 		action.WaitVisible(itemsearchtagging)
 		action.Click(itemsearchtagging)
 	}
-
 
 	@Keyword
 	def NavigateToMetatagEditDeletePage() {
@@ -125,6 +118,16 @@ public class HomePage {
 		action.MouseHoverOnElement(fulfillmentbtn)
 		action.MouseHoverOnElement(corpdistmaintenance)
 		action.MouseHoverAndClick(fulfillmentcorpdistadmin)
+		action.WaitForPageToLoad()
+	}
+
+	@Keyword
+	public void NavigateToItemPartQntyMaintenance() {
+		action.WaitVisible(instantimpact)
+		action.MouseHoverOnElement(instantimpact)
+		WebUI.delay(3)
+		action.WaitVisible(itempartquantitymaintenance)
+		action.Click(itempartquantitymaintenance)
 		action.WaitForPageToLoad()
 	}
 }
