@@ -18,6 +18,7 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.utilities.Interaction
 import org.openqa.selenium.By
 import org.openqa.selenium.WebDriver
+import org.openqa.selenium.WebElement
 import org.testng.Assert
 import org.openqa.selenium.Alert
 import com.kms.katalon.core.webui.driver.DriverFactory
@@ -41,8 +42,12 @@ public class FinishInCompleteOrderHistoryPage {
 	By orderTypeLabel = By.xpath("//label[text()='Order Type']")
 	By clearBtn = By.xpath("//input[@value = 'Clear']")
 	By filterBtn = By.xpath("//input[@value = 'Filter']")
-	
-
+	By accountfiterddnbtn = By.xpath("//*[@id='ctl00_Body_ddlAccount_Arrow']")
+	By accountddnvalue = By.xpath("//*[@id='ctl00_Body_ddlAccount_DropDown']//li[text()='Test']")
+    By accountype = By.xpath("//*[@id='ctl00_Body_grdJobs']//tr/td[4]")
+	By ordertypeddn = By.xpath("//*[@id='ctl00_Body_ddlOrderType_Arrow']")
+	By odrertypeddnvalue = By.xpath("//*[@id='ctl00_Body_ddlOrderType_DropDown']//li[text()='Accessories Only']")
+    By ordertype = By.xpath("//*[@id='ctl00_Body_grdJobs']//tr/td[3]")
 
 	@Keyword
 	public void VerifyFinishInComplete() {
@@ -144,7 +149,7 @@ public class FinishInCompleteOrderHistoryPage {
 			println ("Verify Edit Link failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
 	public void VerifyFilterOptions() {
 		try {
@@ -157,6 +162,85 @@ public class FinishInCompleteOrderHistoryPage {
 		}
 		catch(Exception e) {
 			println ("Verify Edit Link failed due to "+ e)
+		}
+	}
+	
+	@Keyword
+	public void VerifyAccountFiletr()
+	{
+		try {
+			action.WaitUntilElementClickable(filterOptionsLink)
+			action.Click(filterOptionsLink)
+			action.WaitUntilElementClickable(accountfiterddnbtn)
+			action.Click(accountfiterddnbtn)
+			action.Click(accountddnvalue)
+			action.Click(filterBtn)
+			WebUI.delay(5)
+			List<WebElement> allaccountname = action.GetElements(accountype)
+			for(int i=0;i< allaccountname;i++)
+			{
+				if((allaccountname.get(i).getText()).equalsIgnoreCase("test"))
+				{
+					println ("Account type filter verified")
+				}
+				else
+				{
+					Assert.fail()
+				}
+			}
+			
+		}
+		catch(Exception e) {
+			println ("Verify Account Filter failed due to "+ e)
+		}
+	}
+	
+	@Keyword
+	public void VerifyOrderTypeFiletr()
+	{
+		try {
+			action.WaitUntilElementClickable(filterOptionsLink)
+			action.Click(filterOptionsLink)
+			action.WaitUntilElementClickable(ordertypeddn)
+			action.Click(ordertypeddn)
+			action.Click(odrertypeddnvalue)
+			action.Click(filterBtn)
+			WebUI.delay(5)
+			List<WebElement> allordertype = action.GetElements(ordertype)
+			for(int i=0;i< allordertype;i++)
+			{
+				if((allordertype.get(i).getText()).equalsIgnoreCase("Accessories Only"))
+				{
+					println ("Order Type filter verified")
+				}
+				else
+				{
+					Assert.fail()
+				}
+			}
+			
+		}
+		catch(Exception e) {
+			println ("Verify Account Filter failed due to "+ e)
+		}
+	}
+	
+	@Keyword
+	public void VerifyClearButton()
+	{
+		try {
+			action.WaitUntilElementClickable(filterOptionsLink)
+			action.Click(filterOptionsLink)
+			action.WaitUntilElementClickable(ordertypeddn)
+			action.Click(ordertypeddn)
+			action.Click(odrertypeddnvalue)
+			action.Click(filterBtn)
+			WebUI.delay(5)
+			action.Click(clearBtn)
+			
+		}
+		catch(Exception e) {
+			println ("Verify Account Filter failed due to "+ e)
 		}
 	}
 }
