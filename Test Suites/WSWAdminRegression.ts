@@ -14,61 +14,61 @@
       <guid>4333e882-1e2f-4dc9-adae-c85514035731</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/WSWADMIN/REGRESSION/MetataggingCategory-ItemMaintenance/UploadFileOnBulkPage</testCaseId>
+      <testCaseId>Test Cases/WSWADMIN/REGRESSION/MetataggingBulkUpload/UploadFileOnBulkPage</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>762a20af-8f2a-4366-99e3-586a6365ced4</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/WSWADMIN/REGRESSION/MetataggingCategory-ItemMaintenance/ValidateDefaultSelection</testCaseId>
+      <testCaseId>Test Cases/WSWADMIN/REGRESSION/ItemSearchTagging/ValidateDefaultSelection</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>aad264ea-77d6-4a20-8636-f06254e94e02</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/WSWADMIN/REGRESSION/MetataggingCategory-ItemMaintenance/ValidateInvalidFileFormat</testCaseId>
+      <testCaseId>Test Cases/WSWADMIN/REGRESSION/MetataggingBulkUpload/ValidateInvalidFileFormat</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>880ccccb-e9a5-43c7-b3dc-3ac2ae0425cb</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/WSWADMIN/REGRESSION/MetataggingCategory-ItemMaintenance/ValidateInvalidId</testCaseId>
+      <testCaseId>Test Cases/WSWADMIN/REGRESSION/MetataggingBulkUpload/ValidateInvalidId</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>bdd4122e-b4f5-4a41-b9d6-f39fc133fb0a</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/WSWADMIN/REGRESSION/MetataggingCategory-ItemMaintenance/ValidateItemtypeOptions</testCaseId>
+      <testCaseId>Test Cases/WSWADMIN/REGRESSION/ItemSearchTagging/ValidateItemtypeOptions</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>3df00691-0c53-41c8-9f13-2f6372f54d54</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/WSWADMIN/REGRESSION/MetataggingCategory-ItemMaintenance/ValidateReplaceFile</testCaseId>
+      <testCaseId>Test Cases/WSWADMIN/REGRESSION/MetataggingBulkUpload/ValidateReplaceFile</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>c633eb85-b2b9-4693-baef-f0f4bdd731c9</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/WSWADMIN/REGRESSION/MetataggingCategory-ItemMaintenance/VerifyBulkUploadAddSelectedForExisting</testCaseId>
+      <testCaseId>Test Cases/WSWADMIN/REGRESSION/MetataggingBulkUpload/VerifyBulkUploadAddSelectedForExisting</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>453b168f-7fce-46e1-8f22-383813a23a14</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/WSWADMIN/REGRESSION/MetataggingCategory-ItemMaintenance/VerifyBulkUploadOverwriteExisting</testCaseId>
+      <testCaseId>Test Cases/WSWADMIN/REGRESSION/MetataggingBulkUpload/VerifyBulkUploadOverwriteExisting</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>8a81a28f-ab3d-43a6-8a31-db4f85d5a90b</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/WSWADMIN/REGRESSION/MetataggingCategory-ItemMaintenance/VerifySavingBulkUpload</testCaseId>
+      <testCaseId>Test Cases/WSWADMIN/REGRESSION/MetataggingBulkUpload/VerifySavingBulkUpload</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>27a055d0-79e6-47ba-a749-4eed203301d8</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/WSWADMIN/REGRESSION/MetataggingCategory-ItemMaintenance/VerifyUploadedTemplateInUserSite</testCaseId>
+      <testCaseId>Test Cases/WSWADMIN/REGRESSION/MetataggingBulkUpload/VerifyUploadedTemplateInUserSite</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>d9f743c8-d684-4e16-80c3-93be633c92d0</guid>

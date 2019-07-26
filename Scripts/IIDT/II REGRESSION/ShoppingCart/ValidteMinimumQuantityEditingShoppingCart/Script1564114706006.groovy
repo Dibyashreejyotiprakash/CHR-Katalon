@@ -31,8 +31,6 @@ WebUI.openBrowser('')
 
 WebUI.maximizeWindow()
 
-WebUI.waitForPageLoad(300)
-
 CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameiiusersite, GlobalVariable.testtypesmoke, GlobalVariable.environment)
 
 CustomKeywords.'com.ii4usersites.LoginPage.LoginToDemoCorp'('demoQA@brandmuscle.com', 'go2web')
@@ -49,9 +47,9 @@ CustomKeywords.'com.ii4usersites.ItemDetailsPage.Checkout'()
 
 CustomKeywords.'com.ii4usersites.ItemDetailsPage.ValidateMinimumQuantity'()
 
-CustomKeywords.'com.ii4usersites.ItemDetailsPage.ValidateMinimumQuantityWithMultipleLineItem'()
+CustomKeywords.'com.ii4usersites.ItemDetailsPage.EditShoppingCartQty'()
 
-CustomKeywords.'com.ii4usersites.ItemDetailsPage.SelectItemType'()
+CustomKeywords.'com.ii4usersites.ItemDetailsPage.Checkout'()
 
 CustomKeywords.'com.ii4usersites.ItemDetailsPage.Checkout'()
 

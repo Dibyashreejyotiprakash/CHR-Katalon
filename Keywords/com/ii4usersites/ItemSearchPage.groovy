@@ -117,7 +117,7 @@ class ItemSearchPage {
 		}
 	}
 
-	
+
 	@Keyword
 	public void ClickOnVariableTemplate(){
 		try

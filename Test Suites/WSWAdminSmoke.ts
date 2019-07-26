@@ -14,67 +14,67 @@
       <guid>992daef2-4566-44ec-bdbf-34740d603c1e</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/WSWADMIN/SMOKE/MetataggingCategory-ItemMaintenance/AssociateMetatagToTemplate</testCaseId>
+      <testCaseId>Test Cases/WSWADMIN/SMOKE/MetaTaggingBulkImportTool/AssociateMetatagToTemplate</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>a94864e6-f9b2-4c95-b709-0e5c49722da9</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/WSWADMIN/SMOKE/MetataggingCategory-ItemMaintenance/ValidateBulkUploadPage</testCaseId>
+      <testCaseId>Test Cases/WSWADMIN/SMOKE/MetaTaggingBulkImportTool/ValidateBulkUploadPage</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>5f0b688e-b051-4ce5-a4c7-5fc833380a55</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/WSWADMIN/SMOKE/MetataggingCategory-ItemMaintenance/ValidateCategoryMaintenancePage</testCaseId>
+      <testCaseId>Test Cases/WSWADMIN/SMOKE/ItemSearchTagging/ValidateCategoryMaintenancePage</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>2d75d8e3-9e43-4190-9daa-ec5a8c7edaa6</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/WSWADMIN/SMOKE/MetataggingCategory-ItemMaintenance/ValidateEditDeletePage</testCaseId>
+      <testCaseId>Test Cases/WSWADMIN/SMOKE/ItemSearchTagging/ValidateEditDeletePage</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>a8b0cfc1-c83c-4d8c-80be-9f3750d5efd9</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/WSWADMIN/SMOKE/MetataggingCategory-ItemMaintenance/ValidateExternalItemCorpSettings</testCaseId>
+      <testCaseId>Test Cases/WSWADMIN/SMOKE/ItemSearchTagging/ValidateExternalItemCorpSettings</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>dce3681e-41db-4601-8f90-27530ba769bd</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/WSWADMIN/SMOKE/MetataggingCategory-ItemMaintenance/ValidateGlobalAddMetatagFields</testCaseId>
+      <testCaseId>Test Cases/WSWADMIN/SMOKE/GlobalMetataggingmaintenance/ValidateGlobalAddMetatagFields</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>8650fe61-6f8d-4e98-84e1-3163300a15c1</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/WSWADMIN/SMOKE/MetataggingCategory-ItemMaintenance/ValidateGlobalElipssys</testCaseId>
+      <testCaseId>Test Cases/WSWADMIN/SMOKE/GlobalMetataggingmaintenance/ValidateGlobalElipssys</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>e9803e53-f7df-481d-b496-83f776f521ce</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/WSWADMIN/SMOKE/MetataggingCategory-ItemMaintenance/ValidateGlobalMetaTagPage</testCaseId>
+      <testCaseId>Test Cases/WSWADMIN/SMOKE/GlobalMetataggingmaintenance/ValidateGlobalMetaTagPage</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>a294db82-b148-4721-aac4-00bc65549bbf</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/WSWADMIN/SMOKE/MetataggingCategory-ItemMaintenance/VerifyContinueBtnWithoutUpload</testCaseId>
+      <testCaseId>Test Cases/WSWADMIN/SMOKE/MetaTaggingBulkImportTool/VerifyContinueBtnWithoutUpload</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>5af1ec7d-a4e3-4c12-b3ba-95bac4313487</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/WSWADMIN/SMOKE/MetataggingCategory-ItemMaintenance/VerifyContinueBtnWithUpload</testCaseId>
+      <testCaseId>Test Cases/WSWADMIN/SMOKE/MetaTaggingBulkImportTool/VerifyContinueBtnWithUpload</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>21c3a50f-755a-436c-83ce-e55c50893d7c</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/WSWADMIN/SMOKE/MetataggingCategory-ItemMaintenance/VerifyUploadButton</testCaseId>
+      <testCaseId>Test Cases/WSWADMIN/SMOKE/MetaTaggingBulkImportTool/VerifyUploadButton</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>8c6933c0-562d-47f6-b084-3b4da9a7fb73</guid>
