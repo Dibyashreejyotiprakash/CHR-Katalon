@@ -522,7 +522,7 @@ public  class Interaction {
 		}
 	}
 
-	public  boolean IsDisplayed(By by) 
+	public  boolean IsDisplayed(By by)
 	{
 		try
 		{

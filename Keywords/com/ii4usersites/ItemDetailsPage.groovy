@@ -45,6 +45,7 @@ public class ItemDetailsPage {
 	By selectitemtype = By.xpath("//li[contains(text(),'Window Cling - Perforated')]")
 	By dimensiondropdown = By.xpath("//input[@id='ctl00_Body_ddlDimension1_Input']")
 	By selectdimension = By.xpath("//li[contains(text(),'12 X 18')]")
+	By selectnewdimension = By.xpath("//li[contains(text(),'18 X 27')]")
 	By quantity = By.xpath("//input[@id='ctl00_Body_qtyText1']")
 	By addtocartbtn = By.xpath("//input[@id='Body_btnAddToCart']")
 	By qntyrequiredmssg = By.xpath("//span[text() = 'Quantity is required']")
@@ -59,6 +60,7 @@ public class ItemDetailsPage {
 	By shoppingCartEmptytext = By.xpath("//h4[contains(text(),'Your shopping cart is empty')]")
 	By productselectionnobtn = By.xpath("//input[@id='Body_btnNo1']")
 	By paymentpagetext = By.xpath("//h1[contains(text(),'Enter Payment and Billing Details')]")
+	By shoppingcartqty = By.xpath("//input[@id='ctl00_Body_shopCartItemsListView_ctrl0_qtyNumTextBox']")
 
 
 
@@ -132,8 +134,35 @@ public class ItemDetailsPage {
 
 
 	@Keyword
+	public void SelectNewItemType() {
+		try {
+			action.Click(itemtypedropdown)
+			action.Click(selectitemtype)
+			action.Click(dimensiondropdown)
+			action.Click(selectnewdimension)
+			action.WaitVisible(quantity)
+			action.Click(addtocartbtn)
+			action.IsElementDisplayed(qntyrequiredmssg)
+			action.Click(quantity)
+			action.Type(quantity, "10")
+			action.WaitUntilElementClickable(productselectionnobtn)
+			action.Click(productselectionnobtn)
+			WebUI.delay(5)
+			action.WaitUntilElementClickable(addtocartbtn)
+			action.Click(addtocartbtn)
+		}
+		catch(Exception e) {
+			println("SelectItemType Failed")
+			Assert.fail("SelectItemType Failed due to "+e)
+		}
+	}
+
+
+
+	@Keyword
 	public void Checkout() {
 		try {
+			WebUI.delay(3)
 			action.WaitUntilElementClickable(continuetocheckoutbtn)
 			action.Click(continuetocheckoutbtn)
 		}
@@ -194,4 +223,22 @@ public class ItemDetailsPage {
 			Assert.fail("CheckPaymentPage failed due to "+e)
 		}
 	}
+
+	@Keyword
+	public void EditShoppingCartQty() {
+		try
+		{
+			WebUI.delay(3)
+			action.Click(shoppingcartqty)
+			action.Clear(shoppingcartqty)
+			action.Type(shoppingcartqty, "15")
+			
+			
+		}
+		catch(Exception e) {
+			println("EditShoppingCartQty Failed")
+			Assert.fail("EditShoppingCartQty failed due to "+e)
+		}
+	}
+	
 }

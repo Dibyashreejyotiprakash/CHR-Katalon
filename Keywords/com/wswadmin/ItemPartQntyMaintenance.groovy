@@ -37,6 +37,7 @@ public class ItemPartQntyMaintenance {
 	By product1 = By.xpath("//li[text()='CLV04']")
 	By minqnty = By.xpath("//input[@id='ctl00_cphMain_RadGridResource_ctl00_ctl02_ctl03_txtMinQty']")
 	By addbtn = By.xpath("//input[@id='ctl00_cphMain_RadGridResource_ctl00_ctl02_ctl03_btnSave_input']")
+	By product2 = By.xpath("//li[text()='CLV05']")
 
 	@Keyword
 	public void ValidatePart(){
@@ -46,49 +47,51 @@ public class ItemPartQntyMaintenance {
 			boolean grid_status = action.IsDisplayed(norecords)
 			println("Grid Status "+grid_status)
 
-			if(!grid_status) 
-			{
+			if(!grid_status) {
 				List<WebElement> part_List = action.GetElements(itemList)
 
 				println("No. of Elements "+part_List.size())
-				
+
 				List<String> part_name = new ArrayList<String>()
 
-				for (int i=0;i<part_List.size();i++)
-				 {
+				for (int i=0;i<part_List.size();i++) {
 					part_name.add(part_List[i].getText())
 					println(part_name[i])
 				}
 
 
 
-				if(part_name.contains("CLV04")) 
-				{
-					
+				if(part_name.contains("CLV04")) {
 				}
-				else
-				{
-					
+				else {
+
 					println("Inner else")
 					action.Click(additempart)
 					action.Click(itempartdropdown)
-					action.Type(itempartdropdown, "CLV04")
+					action.Type(itempartdropdown, "CLV")
+					WebUI.delay(3)
 					action.WaitVisible(product1)
+					action.WaitUntilElementClickable(product1)
 					action.Click(product1)
+					WebUI.delay(3)
+					action.WaitUntilElementClickable(minqnty)
 					action.Click(minqnty)
 					action.Type(minqnty, "10")
 					WebUI.delay(2)
 					action.Click(addbtn)
 				}
 			}
-			else 
-			{
+			else {
 				println("Outer else")
 				action.Click(additempart)
 				action.Click(itempartdropdown)
-				action.Type(itempartdropdown, "CLV04")
+				action.Type(itempartdropdown, "CLV")
+				WebUI.delay(5)
 				action.WaitVisible(product1)
+				action.WaitUntilElementClickable(product1)
 				action.Click(product1)
+				WebUI.delay(3)
+				action.WaitUntilElementClickable(minqnty)
 				action.Click(minqnty)
 				action.Type(minqnty, "10")
 				WebUI.delay(2)
@@ -98,6 +101,72 @@ public class ItemPartQntyMaintenance {
 		catch(Exception e) {
 			println("ValidatePart failed due to "+e)
 			Assert.fail("ValidatePart failed due to")
+		}
+	}
+
+
+	@Keyword
+	public void ValidateAnotherPart(){
+
+		try {
+			WebUI.delay(10)
+			boolean grid_status = action.IsDisplayed(norecords)
+			println("Grid Status "+grid_status)
+
+			if(!grid_status) {
+				List<WebElement> part_List = action.GetElements(itemList)
+
+				println("No. of Elements "+part_List.size())
+
+				List<String> part_name = new ArrayList<String>()
+
+				for (int i=0;i<part_List.size();i++) {
+					part_name.add(part_List[i].getText())
+					println(part_name[i])
+				}
+
+
+
+				if(part_name.contains("CLV05")) {
+				}
+				else {
+
+					println("Inner else")
+					action.Click(additempart)
+					action.Click(itempartdropdown)
+					action.Type(itempartdropdown, "CLV")
+					WebUI.delay(3)
+					action.WaitVisible(product2)
+					action.WaitUntilElementClickable(product2)
+					action.Click(product2)
+					WebUI.delay(3)
+					action.WaitUntilElementClickable(minqnty)
+					action.Click(minqnty)
+					action.Type(minqnty, "10")
+					WebUI.delay(2)
+					action.Click(addbtn)
+				}
+			}
+			else {
+				println("Outer else")
+				action.Click(additempart)
+				action.Click(itempartdropdown)
+				action.Type(itempartdropdown, "CLV")
+				WebUI.delay(5)
+				action.WaitVisible(product2)
+				action.WaitUntilElementClickable(product2)
+				action.Click(product2)
+				WebUI.delay(3)
+				action.WaitUntilElementClickable(minqnty)
+				action.Click(minqnty)
+				action.Type(minqnty, "7")
+				WebUI.delay(2)
+				action.Click(addbtn)
+			}
+		}
+		catch(Exception e) {
+			println("ValidateAnotherPart failed due to "+e)
+			Assert.fail("ValidateAnotherPart failed due to")
 		}
 	}
 }
