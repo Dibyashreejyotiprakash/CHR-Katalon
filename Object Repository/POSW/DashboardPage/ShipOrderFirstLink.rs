@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>ShipOrderFirstLink</name>
+   <tag></tag>
+   <elementGuidId>1a0f9906-7cdb-4b61-b1aa-607f908273b3</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//*[@id='ctl00_MainContent_rdPendingShipment_C_rgPendingShipment_ctl00']//following-sibling::tbody/tr[1]/td[3]</value>
+      </entry>
+      <entry>
+         <key>BASIC</key>
+         <value></value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+</WebElementEntity>

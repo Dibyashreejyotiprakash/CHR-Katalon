@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>VerifyModifyResourceMessageForAddressBook</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>d4af5d83-0842-422f-a2d9-91e092e002c2</testCaseGuid>
+</TestCaseEntity>

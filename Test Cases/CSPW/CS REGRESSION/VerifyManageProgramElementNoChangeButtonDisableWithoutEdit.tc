@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>VerifyManageProgramElementNoChangeButtonDisableWithoutEdit</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>abb97fb4-2138-41ae-9c65-2102b27b8aad</testCaseGuid>
+</TestCaseEntity>
