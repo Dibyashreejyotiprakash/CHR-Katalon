@@ -19,7 +19,7 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords
 import com.utilities.Interaction
 
-import internal.GlobalVariable
+//import internal.GlobalVariable
 
 import MobileBuiltInKeywords as Mobile
 import WSBuiltInKeywords as WS

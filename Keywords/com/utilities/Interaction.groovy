@@ -31,7 +31,7 @@ import org.openqa.selenium.Alert
 import org.openqa.selenium.By
 import org.openqa.selenium.Keys
 import org.openqa.selenium.JavascriptExecutor
-import internal.GlobalVariable
+//import internal.GlobalVariable
 import java.time.LocalTime
 
 public  class Interaction {

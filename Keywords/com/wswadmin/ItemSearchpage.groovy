@@ -22,7 +22,7 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.utilities.Interaction
 import com.kms.katalon.core.webui.driver.DriverFactory as DriverFactory
 
-import internal.GlobalVariable
+//import internal.GlobalVariable
 
 public class ItemSearchpage {
 
@@ -111,13 +111,11 @@ public class ItemSearchpage {
 			Assert.fail("Navigate To Template Configuration Page failed due to "+ e)
 		}
 	}
-	
-	
+
+
 	@Keyword
-	public void SelectCompleteTemplate()
-	{
-		try
-		{
+	public void SelectCompleteTemplate() {
+		try {
 			action.Click(corporationtextbox)
 			action.Type(corporationtextbox, "300")
 			action.Click(selectcorp)
@@ -129,55 +127,41 @@ public class ItemSearchpage {
 			action.Click(firstselectdata)
 			action.WaitVisible(corporationname)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("SelectCompleteTemplate failed due to "+ e)
 		}
-		
 	}
-	
-	
+
+
 	@Keyword
-	public void OpenBrandNameExpandedWindow()
-	{
-		try
-		{
+	public void OpenBrandNameExpandedWindow() {
+		try {
 			action.WaitVisible(brandnamecategory)
-		WebUI.delay(5)
-		action.ScrollToViewElement(brandnamemetatagcount)
-		action.WaitVisible(brandnamemetatagcount)
-		action.Click(brandnamemetatagcount)
-		action.WaitVisible(expandedmetatagcross)
-		
+			WebUI.delay(5)
+			action.ScrollToViewElement(brandnamemetatagcount)
+			action.WaitVisible(brandnamemetatagcount)
+			action.Click(brandnamemetatagcount)
+			action.WaitVisible(expandedmetatagcross)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("OpenBrandNameExpandedWindow failed due to "+ e)
 		}
-		
 	}
-	
+
 	@Keyword
-	public void ValidateSpecialCharacterMetatag()
-	{
-		try
-		{
+	public void ValidateSpecialCharacterMetatag() {
+		try {
 			action.Click(expandedmetatagsearch)
 			action.Type(expandedmetatagsearch, "?")
 			action.WaitVisible(noresultfoundtxt)
 			action.Click(expandedmetatagcross)
 			action.WaitVisible(corporationname)
 			action.ScrollToViewElement(corporationname)
-		
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("ValidateSpecialCharacterMetatag failed due to "+ e)
 		}
-		
 	}
-	
-	
 }
 
 

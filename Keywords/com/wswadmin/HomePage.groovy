@@ -15,7 +15,7 @@ import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.utilities.Interaction
-import internal.GlobalVariable
+//import internal.GlobalVariable
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.interactions.Actions
 import org.openqa.selenium.By
@@ -54,9 +54,10 @@ public class HomePage {
 	By redbullsticthlab = By.xpath("//*[text()='Red Bull/Stitch Labs']")
 
 	@Keyword
-	def NavigateToItemSearchPage() {
+	public void NavigateToItemSearchPage() {
 		action.WaitVisible(instantimpact)
 		action.Click(instantimpact)
+		WebUI.delay(3)
 		action.WaitVisible(metatagingitemmaintenance)
 		action.MouseHoverOnElement(metatagingitemmaintenance)
 		action.WaitVisible(itemsearchtagging)
@@ -64,9 +65,10 @@ public class HomePage {
 	}
 
 	@Keyword
-	def NavigateToMetatagEditDeletePage() {
+	public void  NavigateToMetatagEditDeletePage() {
 		action.WaitVisible(instantimpact)
 		action.Click(instantimpact)
+		WebUI.delay(3)
 		action.WaitVisible(metatagingitemmaintenance)
 		action.MouseHoverOnElement(metatagingitemmaintenance)
 		action.WaitVisible(metaTaggingEditDelete)
@@ -77,6 +79,7 @@ public class HomePage {
 	public void NavigateToCategoryMaintenancePage() {
 		action.WaitVisible(instantimpact)
 		action.MouseHoverOnElement(instantimpact)
+		WebUI.delay(3)
 		action.WaitVisible(metatagingitemmaintenance)
 		action.MouseHoverOnElement(metatagingitemmaintenance)
 		action.WaitVisible(metatagingcategorymaintenance)
@@ -86,8 +89,13 @@ public class HomePage {
 
 	@Keyword
 	public void NavigateToCategoryItemMaintenancePage() {
+		println("Inside NavigateToCategoryItemMaintenancePage ")
+		WebUI.delay(10)
 		action.WaitVisible(instantimpact)
-		action.MouseHoverOnElement(instantimpact)
+		//action.MouseHoverOnElement(instantimpact)
+		action.Click(instantimpact)
+		WebUI.delay(3)
+		println("Clicked InstantImpact")
 		action.WaitVisible(metatagingitemmaintenance)
 		action.MouseHoverOnElement(metatagingitemmaintenance)
 		action.WaitVisible(metataggingcategoryitemmaintenance)
