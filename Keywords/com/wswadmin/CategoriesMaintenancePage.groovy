@@ -16,7 +16,7 @@ import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import java.time.LocalTime
-import internal.GlobalVariable
+//import internal.GlobalVariable
 import java.security.Timestamp
 import com.utilities.Interaction
 import org.openqa.selenium.By

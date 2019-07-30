@@ -22,7 +22,7 @@ import com.utilities.Interaction
 import org.testng.Assert
 import com.kms.katalon.core.webui.driver.DriverFactory as DriverFactory
 
-import internal.GlobalVariable
+//import internal.GlobalVariable
 import java.time.LocalTime
 import java.security.Timestamp
 
