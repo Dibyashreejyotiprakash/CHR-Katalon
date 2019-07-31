@@ -14,24 +14,24 @@
       <guid>2fa79eb2-ec78-4b93-ab7d-f5f306834cd5</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/DT REGRESSION/JOB NEW/VerifyCreateJobs</testCaseId>
+      <testCaseId>Test Cases/IIDT/DT REGRESSION/JOBS/JOB NEW/VerifyCreateJobs</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>f45a2983-ef91-4890-83a9-a0877b3f32fb</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/DT REGRESSION/JOB NEW/VerifyJobNumber</testCaseId>
+      <testCaseId>Test Cases/IIDT/DT REGRESSION/JOBS/JOB NEW/VerifyJobNumber</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>9f0c4529-b915-41e4-a8a8-e3e9f9ff959e</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/DT REGRESSION/JOB SEARCH/VerifySearchJobDetails</testCaseId>
+      <testCaseId>Test Cases/IIDT/DT REGRESSION/JOBS/JOB SEARCH/VerifySearchJobDetails</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>f048282f-10cd-4ff8-b3ac-7cb1ace829eb</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/DT REGRESSION/JOB SEARCH/VerifySearchJobs</testCaseId>
+      <testCaseId>Test Cases/IIDT/DT REGRESSION/JOBS/JOB SEARCH/VerifySearchJobs</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>
