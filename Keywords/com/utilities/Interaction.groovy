@@ -591,7 +591,7 @@ public  class Interaction {
 	public void  WaitVisible(WebElement element)
 	{
 		WaitVisible(element)
-		WebDriverWait wait = new WebDriverWait(driver,20);
+		WebDriverWait wait = new WebDriverWait(driver,300);
 		wait.until(ExpectedConditions.visibilityOf(element));
 	}
 

@@ -95,7 +95,8 @@ public class HomePage {
 		{
 			println("Inside NavigateToCategoryItemMaintenancePage ")
 			WebUI.delay(10)
-			action.IsElementDisplayed(Heading)
+
+			//action.IsElementDisplayed(Heading)
 			println("VERIFIED HEADING")
 			//action.WaitVisible(instantimpact)
 			//action.MouseHoverOnElement(instantimpact)
