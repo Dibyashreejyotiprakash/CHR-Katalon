@@ -11,9 +11,9 @@
    <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
    <testSuiteGuid>ff55139f-f247-43e2-8b93-36a89dfece18</testSuiteGuid>
    <testCaseLink>
-      <guid>4d074b8b-4cae-46e7-9d1b-9e8411e1b0aa</guid>
+      <guid>9bd79b3a-f037-4a8e-bff4-37333af93e83</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/WSWADMIN/SMOKE/ItemSearchTagging/ValidateCategoryMaintenancePage</testCaseId>
+      <testCaseId>Test Cases/IIDT/II SMOKE/OrderOnlineForm/CreateNewOrder/VerifyAddNewNote</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>
