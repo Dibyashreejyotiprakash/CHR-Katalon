@@ -19,13 +19,13 @@ WebUI.maximizeWindow()
 
 WebUI.navigateToUrl('http://astha.nigam:Zindagi@123@wswadmin.uat.brandmuscle.net/')
 
-WebUI.waitForPageLoad(30)
+WebUI.waitForPageLoad(300)
 
-WebUI.waitForElementVisible(findTestObject('II-WSWADMIN/MainMenu/InstantImpactTab'), 30)
+WebUI.waitForElementVisible(findTestObject('II-WSWADMIN/MainMenu/InstantImpactTab'), 300)
 
 WebUI.delay(2)
 
-WebUI.mouseOver(findTestObject('II-WSWADMIN/MainMenu/InstantImpactTab'))
+WebUI.click(findTestObject('II-WSWADMIN/MainMenu/InstantImpactTab'))
 
 WebUI.delay(2)
 

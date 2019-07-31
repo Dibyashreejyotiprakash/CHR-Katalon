@@ -6,12 +6,11 @@
    <elementGuidId>a4f8380e-6a4c-40f3-a570-d2dc9b6292db</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//*[text()='Instant Impact']</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//span[contains(text(),'Instant Impact')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
