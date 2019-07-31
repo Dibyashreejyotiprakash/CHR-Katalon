@@ -226,19 +226,15 @@ public class ItemDetailsPage {
 
 	@Keyword
 	public void EditShoppingCartQty() {
-		try
-		{
+		try {
 			WebUI.delay(3)
 			action.Click(shoppingcartqty)
 			action.Clear(shoppingcartqty)
 			action.Type(shoppingcartqty, "15")
-			
-			
 		}
 		catch(Exception e) {
 			println("EditShoppingCartQty Failed")
 			Assert.fail("EditShoppingCartQty failed due to "+e)
 		}
 	}
-	
 }
