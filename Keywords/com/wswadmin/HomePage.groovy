@@ -20,6 +20,7 @@ import org.openqa.selenium.WebDriver
 import org.openqa.selenium.interactions.Actions
 import org.openqa.selenium.By
 import com.kms.katalon.core.webui.driver.DriverFactory as DriverFactory
+import org.testng.Assert
 
 public class HomePage {
 
@@ -52,6 +53,7 @@ public class HomePage {
 	By fulfillmentcorpdistadmin = By.xpath("//*[@href='/Fulfillment/CorpDistributerQuantityPreOrder.aspx']")
 	By fuifillmentcorpmaintenance = By.xpath("//*[@href='/Fulfillment/FulfillmentCorp.aspx']")
 	By redbullsticthlab = By.xpath("//*[text()='Red Bull/Stitch Labs']")
+	By Heading = By.xpath("//h1[Contains(text(),'Brandmuscle Admin Tool')]")
 
 	@Keyword
 	public void NavigateToItemSearchPage() {
@@ -89,18 +91,28 @@ public class HomePage {
 
 	@Keyword
 	public void NavigateToCategoryItemMaintenancePage() {
-		println("Inside NavigateToCategoryItemMaintenancePage ")
-		WebUI.delay(10)
-		action.WaitVisible(instantimpact)
-		//action.MouseHoverOnElement(instantimpact)
-		action.Click(instantimpact)
-		WebUI.delay(3)
-		println("Clicked InstantImpact")
-		action.WaitVisible(metatagingitemmaintenance)
-		action.MouseHoverOnElement(metatagingitemmaintenance)
-		action.WaitVisible(metataggingcategoryitemmaintenance)
-		action.MouseHoverAndClick(metataggingcategoryitemmaintenance)
-		action.WaitForPageToLoad()
+		try
+		{
+			println("Inside NavigateToCategoryItemMaintenancePage ")
+			WebUI.delay(10)
+			action.IsElementDisplayed(Heading)
+			println("VERIFIED HEADING")
+			//action.WaitVisible(instantimpact)
+			//action.MouseHoverOnElement(instantimpact)
+			action.Click(instantimpact)
+			WebUI.delay(3)
+			println("Clicked InstantImpact")
+			action.WaitVisible(metatagingitemmaintenance)
+			action.MouseHoverOnElement(metatagingitemmaintenance)
+			action.WaitVisible(metataggingcategoryitemmaintenance)
+			action.MouseHoverAndClick(metataggingcategoryitemmaintenance)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e)
+		{
+			WebUI.takeScreenshot()
+			Assert.fail("NavigateToCategoryItemMaintenancePage Failed due to" +e)
+		}
 	}
 
 	@Keyword
