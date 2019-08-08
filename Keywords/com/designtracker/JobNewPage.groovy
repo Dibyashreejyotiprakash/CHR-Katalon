@@ -136,23 +136,16 @@ public class JobNewPage {
 	public void VerifyCreateNewJobs() {
 		try {
 			action.WaitVisible(corporationddn)
-			action.SelectByText(corporationddn, "Athens")
-
-			action.WaitVisible(marketddn)
-			action.SelectByText(marketddn, "Athens ")
-
-			action.WaitVisible(salespersonddn)
-			action.SelectByText(salespersonddn, "BUCHANAN, MICKEY (mbuchanana@athensdistributing.com)")
-
-			action.WaitVisible(accountddn)
-			action.SelectByText(accountddn, "Angels (NEW ANGELS)")
-
-			action.WaitVisible(jobtypeddn)
+			action.SelectByText(corporationddn, "Demo Distributor (QA)")
+			WebUI.delay(5)
+			action.SelectByText(marketddn, "Demo Dist. 1 QA")
+			WebUI.delay(5)
+			action.SelectByText(salespersonddn, "TESTADMIN, TESTADMIN (demoqa@brandmuscle.com)")
+			WebUI.delay(5)
+			action.SelectByIndex(accountddn, 1)
 			action.SelectByText(jobtypeddn, "Print Only")
-
-			action.WaitVisible(createjobbtn)
+			WebUI.delay(5)
 			action.Click(createjobbtn)
-
 			action.WaitForPageToLoad()
 		}
 		catch(Exception e) {

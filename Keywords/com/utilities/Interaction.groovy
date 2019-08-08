@@ -832,6 +832,21 @@ public  class Interaction {
 		select.selectByVisibleText(text)
 
 	}
+	
+	public List<WebElement> GetAllOptions(By by)
+	{
+		WaitVisible(by)
+		WebElement elementToHover = driver.findElement(by)
+		Select select = new Select(elementToHover)
+		return select.getAllSelectedOptions()
+	}
+	
+	public String GetselectedText(By by)
+	{
+		Select select = new Select(driver.findElement(by))
+		WebElement option = select.getFirstSelectedOption()
+		return  option.getText()	
+	}
 
 
 

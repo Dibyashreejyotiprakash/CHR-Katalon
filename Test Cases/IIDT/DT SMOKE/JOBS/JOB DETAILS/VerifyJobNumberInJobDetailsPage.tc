@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>VerifyJobNumberInJobDetailsPage</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>c030e50f-2a30-4e73-a6a2-3d5adecedcaa</testCaseGuid>
+</TestCaseEntity>
