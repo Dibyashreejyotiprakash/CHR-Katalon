@@ -56,6 +56,8 @@ public class HomePage {
 	By exceptionlistsalespeople = By.xpath("//*[text()='EXCEPTION LIST - SALES PEOPLE']")
 	By highrarchy = By.xpath("//*[text()='HIERARCHY']")
 	By jobclosing = By.xpath("//*[text()='JOB CLOSING']")
+	By jobTypes = By.xpath("//*[text()='JOB TYPES']")
+	By suppliers = By.xpath("//*[text()='SUPPLIERS']")
 	By joblinestratification = By.xpath("//*[text()='JOB LINE STRATIFICATION']")
 	By peeraccountnotify = By.xpath("//*[text()='PEER ACCOUNT NOTIFY']")
 	By applicationadmin = By.xpath("//*[text()='APPLICATION']")
@@ -69,7 +71,6 @@ public class HomePage {
 	By budgetnotify = By.xpath("//*[text()='BUDGET NOTIFY']")
 	By jobnotify = By.xpath("//*[text()='JOB NOTE NOTIFY']")
 	By jobstatusnotify = By.xpath("//*[text()='JOB STATUS NOTIFY']")
-
 	By jobradiobtn = By.xpath("//*[text()='Job #']/preceding-sibling::input")
 	By confirmationradiobtn = By.xpath("//*[text()='Confirmation #']/preceding-sibling::input")
 	By searchtxtfield = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_txtJobKey']")
@@ -256,4 +257,89 @@ public class HomePage {
 			println ("Click On Campaign failed due to "+ e)
 		}
 	}
+	
+	@Keyword
+	public void ClickOnExceptionlistsalespeople() {
+		try {
+			action.WaitVisible(siteadmin)
+			action.MouseHoverOnElement(siteadmin)
+			action.WaitVisible(exceptionlistsalespeople)
+			action.MouseHoverAndClick(exceptionlistsalespeople)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("Click On exceptionlistsalespeople failed due to "+ e)
+		}
+	}
+	
+	@Keyword
+	public void ClickOnhighrarchy() {
+		try {
+			action.WaitVisible(siteadmin)
+			action.MouseHoverOnElement(siteadmin)
+			action.WaitVisible(highrarchy)
+			action.MouseHoverAndClick(highrarchy)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("Click On highrarchy failed due to "+ e)
+		}
+	}
+	
+	@Keyword
+	public void ClickOnjobclosing() {
+		try {
+			action.WaitVisible(siteadmin)
+			action.MouseHoverOnElement(siteadmin)
+			action.WaitVisible(jobclosing)
+			action.MouseHoverAndClick(highrarchy)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("Click On highrarchy failed due to "+ e)
+		}
+	}
+	
+	@Keyword
+	public void ClickOnjoblinestratification() {
+		try {
+			action.WaitVisible(siteadmin)
+			action.MouseHoverOnElement(siteadmin)
+			action.WaitVisible(joblinestratification)
+			action.MouseHoverAndClick(joblinestratification)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("Click On joblinestratification failed due to "+ e)
+		}
+	}
+	
+	@Keyword
+	public void ClickOnjobTypes() {
+		try {
+			action.WaitVisible(siteadmin)
+			action.MouseHoverOnElement(siteadmin)
+			action.WaitVisible(jobTypes)
+			action.MouseHoverAndClick(jobTypes)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("Click On jobTypes failed due to "+ e)
+		}
+	}
+	
+	@Keyword
+	public void ClickOnsuppliers() {
+		try {
+			action.WaitVisible(siteadmin)
+			action.MouseHoverOnElement(siteadmin)
+			action.WaitVisible(suppliers)
+			action.MouseHoverAndClick(suppliers)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("Click On exceptionlistsalespeople failed due to "+ e)
+		}
+	}
+		
 }
