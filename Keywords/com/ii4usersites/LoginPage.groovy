@@ -96,4 +96,27 @@ class LoginPage {
 	}
 
 
+	@Keyword
+	public void LoginToInstantImpactDist(String demoemail, String demopassword)
+	{
+		try
+		{
+			action.Type(loginUserName, demoemail);
+			action.Type(loginPassword, demopassword);
+			action.Click(loginButton);
+			action.WaitForPageToLoad();
+			action.SelectByText(ddlCorporation, "Instant Impact 4.0 Demo Corp (Dist.)");
+			WebUI.delay(3)
+			action.SelectByText(ddlDistributor, "Chicago Beverage Systems");
+			action.Click(loginButton);
+
+		}
+		catch (Exception e)
+		{
+			println("Login To DemoCorp failed due to: " + e);
+			throw e;
+		}
+	}
+
+
 }

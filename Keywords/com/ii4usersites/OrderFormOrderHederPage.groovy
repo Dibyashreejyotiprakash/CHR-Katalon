@@ -34,6 +34,8 @@ public class OrderFormOrderHederPage {
 	By jobtypeddn = By.xpath("//*[@id='ctl00_Body_rcbJobType_Arrow']")
 	By jobtypeddnvalue = By.xpath("//*[text()='Accessories Only']")
 	By continuetoitemsbtn = By.xpath("//*[@id='ctl00_Body_btnContinue']")
+	By accountname = By.xpath("//input[@id='Body_txtAccount']")
+	By accountnametobevalidated = By.xpath("(//li[contains(text(),'QATest2019')])[1]")
 
 
 	@Keyword
@@ -78,5 +80,20 @@ public class OrderFormOrderHederPage {
 		}
 
 		return accountname
+	}
+
+
+	@Keyword
+	public void ValidateAccountNameAddedInDT() {
+		try {
+			action.WaitVisible(accountname)
+			action.Click(accountname)
+			action.Type(accountname, "QATest2019")
+			WebUI.delay(2)
+			action.IsElementDisplayed(accountnametobevalidated)
+		}
+		catch(Exception e) {
+			Assert.fail("ValidateAccountNameAddedInDT failed "+e)
+		}
 	}
 }

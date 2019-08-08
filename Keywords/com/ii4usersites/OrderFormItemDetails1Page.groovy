@@ -97,7 +97,7 @@ public class OrderFormItemDetails1Page {
 		action.Click(logout)
 		action.WaitForPageToLoad()
 	}
-	
+
 	@Keyword
 	public void VerifySmallLargeMenuFormat() {
 		try {
