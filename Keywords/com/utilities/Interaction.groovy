@@ -870,6 +870,17 @@ public  class Interaction {
 		select.selectByIndex(index)
 	}
 
+	//Get all options
+	public List<WebElement> GetAllOption(By by)
+	{
+		WaitVisible(by);
+		WebElement elementToHover = driver.findElement(by);
+		Select select = new Select(elementToHover)
+		List <WebElement> options = select.getOptions()
+
+		return options
+	}
+
 	public void Enter(By by)
 	{
 		driver.findElement(by).sendKeys(Keys.ENTER);
