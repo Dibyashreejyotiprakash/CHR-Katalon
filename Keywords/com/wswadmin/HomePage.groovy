@@ -53,7 +53,8 @@ public class HomePage {
 	By fulfillmentcorpdistadmin = By.xpath("//*[@href='/Fulfillment/CorpDistributerQuantityPreOrder.aspx']")
 	By fuifillmentcorpmaintenance = By.xpath("//*[@href='/Fulfillment/FulfillmentCorp.aspx']")
 	By redbullsticthlab = By.xpath("//*[text()='Red Bull/Stitch Labs']")
-	By Heading = By.xpath("//h1[Contains(text(),'Brandmuscle Admin Tool')]")
+	By Heading = By.xpath("//h1[Contains(text(),'Brandmuscle Admin Tool')]")	
+	By bannedphrasesbtn = By.xpath("//*[@href='/InstantImpact/BannedWords/BannedPhrases.aspx']")
 
 	@Keyword
 	public void NavigateToItemSearchPage() {
@@ -149,6 +150,17 @@ public class HomePage {
 		WebUI.delay(3)
 		action.WaitVisible(itempartquantitymaintenance)
 		action.Click(itempartquantitymaintenance)
+		action.WaitForPageToLoad()
+	}
+	
+	
+	@Keyword
+	public void NavigateToBannedPhrases() {
+		action.WaitVisible(instantimpact)
+		action.MouseHoverOnElement(instantimpact)
+		WebUI.delay(3)
+		action.WaitVisible(bannedphrasesbtn)
+		action.Click(bannedphrasesbtn)
 		action.WaitForPageToLoad()
 	}
 }
