@@ -226,19 +226,33 @@ public class ItemDetailsPage {
 
 	@Keyword
 	public void EditShoppingCartQty() {
-		try
-		{
+		try {
 			WebUI.delay(3)
 			action.Click(shoppingcartqty)
 			action.Clear(shoppingcartqty)
 			action.Type(shoppingcartqty, "15")
-			
-			
 		}
 		catch(Exception e) {
 			println("EditShoppingCartQty Failed")
 			Assert.fail("EditShoppingCartQty failed due to "+e)
 		}
 	}
-	
+
+	@Keyword
+	public void EntervaluesToProductionSelectionPage() {
+		try {
+			action.Type(quantity, "10")
+			action.ScrollToBottomOfPage()
+			WebUI.delay(10)
+			action.WaitUntilElementClickable(nobtn)
+			action.Click(nobtn)
+			WebUI.delay(10)
+			action.WaitUntilElementClickable(addtocartbtn)
+			action.Click(addtocartbtn)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println("Enter values To Production Selection Page failed due to "+ e)
+		}
+	}
 }

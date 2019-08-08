@@ -44,10 +44,10 @@ public class FinishInCompleteOrderHistoryPage {
 	By filterBtn = By.xpath("//input[@value = 'Filter']")
 	By accountfiterddnbtn = By.xpath("//*[@id='ctl00_Body_ddlAccount_Arrow']")
 	By accountddnvalue = By.xpath("//*[@id='ctl00_Body_ddlAccount_DropDown']//li[text()='Test']")
-    By accountype = By.xpath("//*[@id='ctl00_Body_grdJobs']//tr/td[4]")
+	By accountype = By.xpath("//*[@id='ctl00_Body_grdJobs']//tr/td[4]")
 	By ordertypeddn = By.xpath("//*[@id='ctl00_Body_ddlOrderType_Arrow']")
 	By odrertypeddnvalue = By.xpath("//*[@id='ctl00_Body_ddlOrderType_DropDown']//li[text()='Accessories Only']")
-    By ordertype = By.xpath("//*[@id='ctl00_Body_grdJobs']//tr/td[3]")
+	By ordertype = By.xpath("//*[@id='ctl00_Body_grdJobs']//tr/td[3]")
 
 	@Keyword
 	public void VerifyFinishInComplete() {
@@ -164,10 +164,9 @@ public class FinishInCompleteOrderHistoryPage {
 			println ("Verify Edit Link failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
-	public void VerifyAccountFiletr()
-	{
+	public void VerifyAccountFiletr() {
 		try {
 			action.WaitUntilElementClickable(filterOptionsLink)
 			action.Click(filterOptionsLink)
@@ -177,27 +176,22 @@ public class FinishInCompleteOrderHistoryPage {
 			action.Click(filterBtn)
 			WebUI.delay(5)
 			List<WebElement> allaccountname = action.GetElements(accountype)
-			for(int i=0;i< allaccountname;i++)
-			{
-				if((allaccountname.get(i).getText()).equalsIgnoreCase("test"))
-				{
+			for(int i=0;i< allaccountname;i++) {
+				if((allaccountname.get(i).getText()).equalsIgnoreCase("test")) {
 					println ("Account type filter verified")
 				}
-				else
-				{
+				else {
 					Assert.fail()
 				}
 			}
-			
 		}
 		catch(Exception e) {
 			println ("Verify Account Filter failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
-	public void VerifyOrderTypeFiletr()
-	{
+	public void VerifyOrderTypeFiletr() {
 		try {
 			action.WaitUntilElementClickable(filterOptionsLink)
 			action.Click(filterOptionsLink)
@@ -207,27 +201,22 @@ public class FinishInCompleteOrderHistoryPage {
 			action.Click(filterBtn)
 			WebUI.delay(5)
 			List<WebElement> allordertype = action.GetElements(ordertype)
-			for(int i=0;i< allordertype;i++)
-			{
-				if((allordertype.get(i).getText()).equalsIgnoreCase("Accessories Only"))
-				{
+			for(int i=0;i< allordertype;i++) {
+				if((allordertype.get(i).getText()).equalsIgnoreCase("Accessories Only")) {
 					println ("Order Type filter verified")
 				}
-				else
-				{
+				else {
 					Assert.fail()
 				}
 			}
-			
 		}
 		catch(Exception e) {
 			println ("Verify Account Filter failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
-	public void VerifyClearButton()
-	{
+	public void VerifyClearButton() {
 		try {
 			action.WaitUntilElementClickable(filterOptionsLink)
 			action.Click(filterOptionsLink)
@@ -237,7 +226,6 @@ public class FinishInCompleteOrderHistoryPage {
 			action.Click(filterBtn)
 			WebUI.delay(5)
 			action.Click(clearBtn)
-			
 		}
 		catch(Exception e) {
 			println ("Verify Account Filter failed due to "+ e)

@@ -96,6 +96,7 @@ class ItemSearchPage {
 
 	By template = By.xpath("(//*[@href='/POS/ItemDetails.aspx?tid=130722'])[1]")
 	By variabletemplate = By.xpath("(//*[@href='/POS/ItemDetails.aspx?tid=130719'])[1]")
+	By ordernowbtn = By.xpath("//*[@id='Body_btnOrderNow']")
 
 	WebDriver driver = DriverFactory.getWebDriver();
 	Interaction action = new Interaction();
@@ -106,7 +107,6 @@ class ItemSearchPage {
 	public void ClickOnTemplate(){
 		try
 		{
-
 			action.WaitVisible(template)
 			action.Click(template)
 			action.WaitForPageToLoad()
@@ -132,6 +132,23 @@ class ItemSearchPage {
 			println ("ClickOnVariableTemplate failed due to "+ e)
 		}
 	}
+	
+	
+	
+	@Keyword
+	public void ClickOnOrderNowButton(){
+		try
+		{
+
+			action.Click(ordernowbtn)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e)
+		{
+			println ("ClickOnVariableTemplate failed due to "+ e)
+		}
+	}
+	
 
 
 
