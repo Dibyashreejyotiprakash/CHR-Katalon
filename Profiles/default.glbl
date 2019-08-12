@@ -81,7 +81,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'UAT'</initValue>
+      <initValue>'PROD'</initValue>
       <name>environment</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>

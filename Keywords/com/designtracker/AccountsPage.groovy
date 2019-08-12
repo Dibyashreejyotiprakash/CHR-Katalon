@@ -24,9 +24,9 @@ import org.testng.Assert
 
 
 public class AccountsPage
- {
-	
+{
+
 	WebDriver driver = DriverFactory.getWebDriver()
 	Interaction action = new Interaction()
-	
+
 }
