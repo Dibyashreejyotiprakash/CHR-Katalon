@@ -84,6 +84,10 @@ public class HomePage {
 
 	By searchallbtn = By.id("ctl00_ctl00_cphMain_cphMain_btnSearch")
 
+	By appadmin = By.xpath("//*[@title='Application Administration']")
+
+
+
 	@Keyword
 	public void VerifyHomePage() {
 		try {
