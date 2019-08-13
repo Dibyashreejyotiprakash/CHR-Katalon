@@ -344,4 +344,29 @@ public class HomePage {
 			println ("Verify existing job search failed due to "+ e)
 		}
 	}
+
+
+	@Keyword
+	public void ClickOnCompetitors() {
+		try {
+			action.MouseHoverOnElement(siteadmin)
+			action.Click(competitors)
+		}
+		catch(Exception e) {
+			println ("Click On Competitors failed due to "+ e)
+		}
+	}
+
+	@Keyword
+	public void ClickOnExcptionListSalesPeople() {
+		try {
+			action.MouseHoverOnElement(siteadmin)
+			WebUI.delay(5)
+			action.Click(exceptionlistsalespeople)
+			WebUI.delay(5)
+		}
+		catch(Exception e) {
+			println ("Click on exception list sales people failed due to "+ e)
+		}
+	}
 }
