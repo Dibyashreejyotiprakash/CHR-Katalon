@@ -337,6 +337,8 @@ public class HomePage {
 	@Keyword
 	public void ClickOnJobDaignostic(){
 		try{
+			action.ScrollToTopOgPage()
+			action.MouseHoverOnElement(reports)
 			action.WaitVisible(jobdiagnostic)
 			action.Click(jobdiagnostic)
 			action.WaitForPageToLoad(300)

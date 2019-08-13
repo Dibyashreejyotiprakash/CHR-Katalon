@@ -26,36 +26,58 @@ import org.openqa.selenium.By
 import com.utilities.Interaction
 import com.kms.katalon.core.webui.driver.DriverFactory
 
-public class JobActivityTracking {
+public class JobDiagnostic {
+
 
 	Interaction action = new Interaction();
 	WebDriver driver = DriverFactory.getWebDriver()
 
 
+
+
+
+
 	By txtJobID = By.xpath("//*[@id='txtJobId']")
 	By btnViewReport = By.xpath("//*[@id='btnSubmit']")
-	By DivisionReport = By.xpath("//*[@class='Ad4f47955be9d4a669b1f713acaca6e6567']/tbody")
-	By headerJobActivityTracking = By.xpath("//*[text()='Job Activity Tracking']")
-	By colDesignID = By.xpath("//*[text()='Design ID']")
-	By colActivity = By.xpath("//*[text()='Activity']")
-	By colDateOccured = By.xpath("//*[text()='Date Occurred']")
-	By colAgentName = By.xpath("//*[text()='Agent Name']")
-	By reportColumns = By.xpath("//*[@class='A871a6f9c976a49079b0041b71197852067']/tbody/tr[2]/td/div")
+	By headerJobDiagnostic = By.xpath("//*[text()='Job Diagnostic']")
+	By colItem = By.xpath("//*[text()='Item']")
+	By colValue = By.xpath("//*[text()='Value']")
 
 
 
-	@Keyword
-	public void EnterJobID(String jobid) {
 
-		try {
-			action.WaitVisible(txtJobID)
-			action.Type(txtJobID,jobid)
-			println ("Job Id is "+jobid )
-		}
-		catch(Exception e) {
-			println ("EnterJobID method failed due to :"+ e)
-		}
-	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 	@Keyword//Clicking on View report button
@@ -89,46 +111,34 @@ public class JobActivityTracking {
 
 
 	@Keyword //Verifying job activity tracking page
-	public boolean VerifyJobActivityTrackingPage(){
+	public boolean VerifyJobDiagnosticPage(){
 
 		try{
 
-			String expectedPageHeader = "Job Activity Tracking"
+			String expectedPageHeader = "Job Diagnostic"
 			WebUI.delay(10)
-			String actualheader = action.GetText(headerJobActivityTracking)
+			String actualheader = action.GetText(headerJobDiagnostic)
 			Assert.assertEquals(expectedPageHeader, actualheader)
 		}
 		catch(Exception e){
-			println("VerifyJobActivityTrackingPage method failed due to :" + e)
+			println("VerifyJobDiagnosticPage method failed due to :" + e)
 		}
 	}
 
 	@Keyword //Verifying Reports columns
-	public void VerifyJobActivityTrackingReportColumns(){
+	public void VerifyJobDiagnosticReportColumns(){
 		try{
 
-			String ExpectedFirstCol = "Design ID"
-			String ExpectedSecondCol = "Activity"
-			String ExpectedThirdCol = "Date Occurred"
-			String ExpectedFourthCol = "Agent Name"
+			String ExpectedFirstCol = "Item"
+			String ExpectedSecondCol = "Value"
 
-			String designCol = action.GetText(colDesignID)
-			String activityCol = action.GetText(colActivity)
-			String dateOccuredCol = action.GetText(colDateOccured)
-			String agentNameCol = action.GetText(colAgentName)
+			String itemCol = action.GetText(colItem)
+			String valueCol = action.GetText(colValue)
 
-			Assert.assertEquals(ExpectedFirstCol, designCol)
-			println("First Column Name----->"+ designCol)
-			Assert.assertEquals(ExpectedSecondCol, activityCol)
-			println("Second Column Name----->"+ activityCol)
-			Assert.assertEquals(ExpectedThirdCol, dateOccuredCol)
-			println("Third Column Name----->"+ dateOccuredCol)
-			Assert.assertEquals(ExpectedFourthCol, agentNameCol)
-			println("First Column Name----->"+ agentNameCol)
-
-
-
-
+			Assert.assertEquals(ExpectedFirstCol, itemCol)
+			println("First Column Name----->"+ itemCol)
+			Assert.assertEquals(ExpectedSecondCol, valueCol)
+			println("Second Column Name----->"+ valueCol)
 
 		}
 		catch(Exception e){
@@ -139,8 +149,11 @@ public class JobActivityTracking {
 
 
 
-	@Keyword
-	public void CloseAllBrowser() {
-		action.CloseAllBrowser()
-	}
+
+
+
+
+
+
+
 }
