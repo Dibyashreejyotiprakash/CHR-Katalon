@@ -37,6 +37,7 @@ public class JobNewPage {
 	By accountddn = By.id("ctl00_ctl00_cphMain_cphMain_fvNewJob_CorpsAndMarkets_ddlAccount")
 	By jobtypeddn = By.id("ctl00_ctl00_cphMain_cphMain_fvNewJob_CorpsAndMarkets_ddlJobType")
 	By createjobbtn = By.id("ctl00_ctl00_cphMain_cphMain_fvNewJob_btnCreateJob")
+	By jobid = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_lvJobs_ctrl0_lblJobIDOutput']")
 
 
 
@@ -133,7 +134,8 @@ public class JobNewPage {
 
 
 	@Keyword
-	public void VerifyCreateNewJobs() {
+	public String VerifyCreateNewJobs() {
+		String jobid= null
 		try {
 			action.WaitVisible(corporationddn)
 			action.SelectByText(corporationddn, "Demo Distributor (QA)")
@@ -147,6 +149,9 @@ public class JobNewPage {
 			WebUI.delay(5)
 			action.Click(createjobbtn)
 			action.WaitForPageToLoad()
+			WebUI.delay(10)
+			action.GetText(jobid)
+			return jobid
 		}
 		catch(Exception e) {
 			println ("Verify Create New Jobs Failed due to "+ e)
