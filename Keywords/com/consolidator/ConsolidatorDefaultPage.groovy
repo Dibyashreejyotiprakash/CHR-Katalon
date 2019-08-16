@@ -57,10 +57,9 @@ public class ConsolidatorDefaultPage {
 			throw e;
 		}
 	}
-	
+
 	@Keyword
-	public void ClickOnManageBaseElement()
-	{
+	public void ClickOnManageBaseElement() {
 		try {
 			String env = GlobalVariable.environment
 			if (env.equalsIgnoreCase("UAT")) {

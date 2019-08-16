@@ -26,12 +26,12 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'chrtestuser@brandmuscle.com'</initValue>
+      <initValue>'varsha.dodderi@brandmuscle.com'</initValue>
       <name>consolusername</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'Ownlocal@123'</initValue>
+      <initValue>'NYwC6CJg'</initValue>
       <name>conslopassword</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -81,7 +81,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'PROD'</initValue>
+      <initValue>'UAT'</initValue>
       <name>environment</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>

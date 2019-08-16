@@ -36,6 +36,7 @@ CustomKeywords.'com.consolidator.ManageProgramElementPage.NavigateToConsolidator
 CustomKeywords.'com.consolidator.ConsolidatorEditProgramPage.VerifyEditLink'()
 
 CustomKeywords.'com.consolidator.ConsolidatorEditProgramPage.VerifyViewDetailsLink'()
+CustomKeywords.'com.consolidator.LoginPage.LogoutFromV5AdminTool'()
 
 WebUI.closeBrowser()
 

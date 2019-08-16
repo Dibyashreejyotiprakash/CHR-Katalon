@@ -25,7 +25,7 @@ import com.kms.katalon.core.webui.driver.DriverFactory
 
 
 public class ConsolidatorAddNewItemPage {
-	
+
 	Interaction action = new Interaction();
 	WebDriver driver = DriverFactory.getWebDriver()
 

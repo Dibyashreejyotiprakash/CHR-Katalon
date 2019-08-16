@@ -44,6 +44,7 @@ public class ConsolidatorEditProgramPage {
 			if(isenabale == true) {
 				action.Click(addnewelementbtn)
 				action.WaitForPageToLoad()
+				WebUI.delay(10)
 			}
 		}
 	}
@@ -58,6 +59,7 @@ public class ConsolidatorEditProgramPage {
 				Assert.assertTrue(statusofenablebacklink)
 				action.Click(backbtn)
 				action.WaitForPageToLoad()
+				WebUI.delay(5)
 			}
 		}
 		catch(Exception e) {
@@ -78,6 +80,7 @@ public class ConsolidatorEditProgramPage {
 			if(statusenablelink == true) {
 				action.Click(firsteditlink)
 				action.WaitForPageToLoad()
+				WebUI.delay(5)
 			}
 		}
 		catch(Exception e) {

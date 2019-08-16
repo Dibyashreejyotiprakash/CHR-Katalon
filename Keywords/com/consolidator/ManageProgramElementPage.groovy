@@ -82,6 +82,7 @@ public class ManageProgramElementPage {
 				if(statusofenablefirsteditlink == true) {
 					action.Click(firsteditlink)
 					action.WaitForPageToLoad()
+					WebUI.delay(5)
 				}
 			}
 		}
