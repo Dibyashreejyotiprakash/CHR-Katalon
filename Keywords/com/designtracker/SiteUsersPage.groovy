@@ -25,19 +25,17 @@ import com.kms.katalon.core.webui.driver.DriverFactory
 
 
 public class SiteUsersPage {
-	
-	
+
+
 	Interaction action = new Interaction();
 	WebDriver driver = DriverFactory.getWebDriver()
-	
+
 	By siteusersheader = By.id("ctl00_ctl00_cphMain_cphMain_chAccountType_lblSectionHeader")
-	
+
 	@Keyword
-	public void VerifySiteUsersPage()
-	{
+	public void VerifySiteUsersPage() {
 		action.WaitVisible(siteusersheader)
 		boolean statusofsiteuserheader = action.IsElementDisplayed(siteusersheader)
 		Assert.assertTrue(statusofsiteuserheader)
 	}
-	
 }

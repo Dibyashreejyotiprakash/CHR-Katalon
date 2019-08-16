@@ -94,4 +94,16 @@
       <isRun>true</isRun>
       <testCaseId>Test Cases/IIDT/DT SMOKE/SITEADMIN/SITEUSERS/VerifySiteUsersPage</testCaseId>
    </testCaseLink>
+   <testCaseLink>
+      <guid>24b334c7-cf13-4674-afda-971a5de36e71</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/IIDT/DT SMOKE/SITEADMIN/ExceptionListSalesPerson/VerifyExpListSalesPersonPage</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>317e32cb-751c-4af7-9982-21ee79eb2f28</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/IIDT/DT SMOKE/SITEADMIN/JobClosing/VerifyJobClosingPage</testCaseId>
+   </testCaseLink>
 </TestSuiteEntity>

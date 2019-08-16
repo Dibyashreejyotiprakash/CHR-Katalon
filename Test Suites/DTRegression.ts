@@ -34,4 +34,52 @@
       <isRun>true</isRun>
       <testCaseId>Test Cases/IIDT/DT REGRESSION/JOBS/JOB SEARCH/VerifySearchJobs</testCaseId>
    </testCaseLink>
+   <testCaseLink>
+      <guid>a1cf56b0-3cfa-45bc-b223-6c1d172b5667</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/IIDT/DT REGRESSION/SITEADMIN/ExceptionListSalesPerson/VerifyDeletingSalesPerson</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>cee99827-6848-4851-a486-8202cc83c83a</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/IIDT/DT REGRESSION/SITEADMIN/ExceptionListSalesPerson/VerifyErrorOnCreatingDupSalesPeople</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>252cef07-4b38-4df3-a0c9-a0dabb8843d2</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/IIDT/DT REGRESSION/SITEADMIN/ExceptionListSalesPerson/VerifyInsertExpListSalesPerson</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>8df7485a-5205-4bfb-ad56-c8db4f9b8ed4</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/IIDT/DT REGRESSION/SITEADMIN/ExceptionListSalesPerson/VerifyInsertExpListwithTwoSalesPerson</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>2c8af077-b86b-441f-8b7c-165dd1a2f616</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/IIDT/DT REGRESSION/SITEADMIN/JobClosing/VerifyClosingAJobAfterValidate</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>1b1ad30a-b65e-47ef-8fbc-774c6eedbcfd</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/IIDT/DT REGRESSION/SITEADMIN/JobClosing/VerifyClosingTwoJobsAfterValidate</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>761743f0-aa3c-4d64-a4aa-a735c4817189</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/IIDT/DT REGRESSION/SITEADMIN/JobClosing/VerifyErrorOnClosingInvalidJob</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>b911dd21-468a-438d-8842-bd6b2ac65040</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/IIDT/DT REGRESSION/SITEADMIN/JobClosing/VerifyJobNotEligibleForCloseWithoutReleaseForProd</testCaseId>
+   </testCaseLink>
 </TestSuiteEntity>
