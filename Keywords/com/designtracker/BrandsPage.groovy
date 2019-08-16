@@ -64,7 +64,13 @@ public class BrandsPage {
 	By updatebrandbtn = By.id("ctl00_ctl00_cphMain_cphMain_rptUpdateBrands_ctl02_btnUpdateBrands")
 	By updatechargebackrate = By.id("ctl00_ctl00_cphMain_cphMain_rptUpdateBrands_ctl01_txtChargeBackRate")
 	By updatebrandnamefield = By.xpath("//input[@id='ctl00_ctl00_cphMain_cphMain_txtBrandSearchText']")
-
+	By chargeBackBySupplier = By.xpath("//a[@id='ctl00_ctl00_cphMain_cphMain_lbtnChargeBackBySupplier']")
+	By progressIndicator = By.xpath("//div[@id='ctl00_ctl00_cphProgressIndicator_pnlProgressIndicator']/div[2]")
+	By retiredCheckbox = By.xpath("//input[@id='ctl00_ctl00_cphMain_cphMain_rptUpdateBrands_ctl01_ckRetired']")
+	By brandupdatemessage = By.xpath("//li[contains(text(),'Brands have been updated')]")
+	By chargebackapplybtn = By.xpath(".//*[@id='ctl00_ctl00_cphMain_cphMain_fvChargeBackBySupplier_btnChargeBackBySupplier']")
+	By showretiredcheckbox = By.xpath("//input[@id='ctl00_ctl00_cphMain_cphMain_ckRetired']")
+	 
 
 	@Keyword
 	public void VerifyBrandsPage() {
@@ -194,68 +200,230 @@ public class BrandsPage {
 	}
 
 	@Keyword
-	
-	public void EditExistingBrand()
-	{
-	   try
-	   {
-		   LocalDateTime dateTime = LocalDateTime.now()
-		   
-		   action.WaitVisible(newbrand)
-		   action.Click(newbrand)
-		   WebUI.delay(3)
-		   action.WaitVisible(corpddn)
-		   action.SelectByText(corpddn, "Instant Impact 4.0 Demo Corp (Dist.)")
-		   WebUI.delay(2)
-		   action.SelectByText(marketddn, "Chicago Beverage Systems")
-		   WebUI.delay(2)
-		   action.SelectByText(supplierddn, "MILLER COORS BREWING COMPANY")
-		   WebUI.delay(3)
-		   String brand_name = "Brand"+dateTime
-		   action.Type(brandname,brand_name)
-		   WebUI.delay(3)
-		   action.Type(brandchargebackrate, "4.56")
-		   
-		   String brand_id = "23"+ dateTime
-		   
-		   action.Type(clientbrandid, brand_id)
-		   action.Click(addbrandbtn)
-		   action.WaitVisible(successmssg)
-		   
-		   action.Click(postupdate)
-		   WebUI.delay(2)
-		   action.SelectByText(postupdatecorpddn,"Instant Impact 4.0 Demo Corp (Dist.)")
-		   WebUI.delay(2)
-		   action.SelectByText(postupdatemarketddn, "Chicago Beverage Systems")
-		   WebUI.delay(2)
-		   action.WaitVisible(postupdatereleasetoprodbtn)
-		   action.Click(postupdatereleasetoprodbtn)
-	
-		   
-		   action.IsDisplayed(updateexistingbrand)
-		   action.Click(updateexistingbrand)
-		   WebUI.delay(3)
-		   action.IsElementDisplayed(corpddn)
-		   action.SelectByText(corpddn, "Instant Impact 4.0 Demo Corp (Dist.)")
-		   WebUI.delay(2)
-		   action.IsElementDisplayed(marketddn)
-		   action.SelectByText(marketddn, "Chicago Beverage Systems")
-		   WebUI.delay(2)
-		   action.SelectByText(supplierddn, "MILLER COORS BREWING COMPANY")
-		   WebUI.delay(2)
-		   action.Type(updatebrandnamefield,brand_name)
-		   action.Click(searchbtn)
-		   action.WaitVisible(searchresult)
-		   action.SelectByText(searchresult, brand_name)
-		   action.Click(editselectedbrand)
-		   action.WaitVisible(updatebrandbtn)
-		   
-	   }	
-	   catch(Exception e)
-	   {
-		   println ("EditExistingBrand Failed due to "+ e)
-		   Assert.fail("EditExistingBrand Failed")
-	   }
-	 		
+
+	public void EditExistingBrand() {
+		try {
+			LocalDateTime dateTime = LocalDateTime.now()
+
+			action.WaitVisible(newbrand)
+			action.Click(newbrand)
+			action.WaitVisible(progressIndicator)
+			WebUI.delay(20)
+			action.WaitVisible(corpddn)
+			action.SelectByText(corpddn, "Instant Impact 4.0 Demo Corp (Dist.)")
+			action.WaitVisible(progressIndicator)
+			WebUI.delay(2)
+			action.SelectByText(marketddn, "Chicago Beverage Systems")
+			action.WaitVisible(progressIndicator)
+			WebUI.delay(2)
+			action.SelectByText(supplierddn, "MILLER COORS BREWING COMPANY")
+			action.WaitVisible(progressIndicator)
+			WebUI.delay(4)
+			String brand_name = "Brand"+dateTime
+			action.Type(brandname,brand_name)
+			WebUI.delay(3)
+			action.Type(brandchargebackrate, "4.56")
+
+			String brand_id = "23"+ dateTime
+
+			action.Type(clientbrandid, brand_id)
+			action.Click(addbrandbtn)
+			action.WaitVisible(successmssg)
+
+			action.Click(postupdate)
+			WebUI.delay(2)
+			action.SelectByText(postupdatecorpddn,"Instant Impact 4.0 Demo Corp (Dist.)")
+			WebUI.delay(2)
+			action.SelectByText(postupdatemarketddn, "Chicago Beverage Systems")
+			WebUI.delay(2)
+			action.WaitVisible(postupdatereleasetoprodbtn)
+			action.Click(postupdatereleasetoprodbtn)
+			WebUI.delay(2)
+
+			action.IsDisplayed(updateexistingbrand)
+			action.Click(updateexistingbrand)
+			WebUI.delay(3)
+			action.IsElementDisplayed(corpddn)
+			action.SelectByText(corpddn, "Instant Impact 4.0 Demo Corp (Dist.)")
+			WebUI.delay(2)
+			action.IsElementDisplayed(marketddn)
+			action.SelectByText(marketddn, "Chicago Beverage Systems")
+			WebUI.delay(2)
+			action.SelectByText(supplierddn, "MILLER COORS BREWING COMPANY")
+			WebUI.delay(2)
+			action.Type(updatebrandnamefield,brand_name)
+			action.Click(searchbtn)
+			action.WaitVisible(searchresult)
+			action.SelectByText(searchresult, brand_name)
+			action.Click(editselectedbrand)
+			action.WaitVisible(updatebrandbtn)
+		}
+		catch(Exception e) {
+			println ("EditExistingBrand Failed due to "+ e)
+			Assert.fail("EditExistingBrand Failed")
+		}
 	}
+
+	@Keyword
+	public void CheckPostUpdate() {
+		try {
+			LocalDateTime dateTime = LocalDateTime.now()
+
+			action.WaitVisible(newbrand)
+			action.Click(newbrand)
+			WebUI.delay(3)
+			action.WaitVisible(corpddn)
+			action.SelectByText(corpddn, "Instant Impact 4.0 Demo Corp (Dist.)")
+			WebUI.delay(2)
+			action.SelectByText(marketddn, "Chicago Beverage Systems")
+			WebUI.delay(2)
+			action.SelectByText(supplierddn, "MILLER COORS BREWING COMPANY")
+			WebUI.delay(3)
+			String brand_name = "Brand"+dateTime
+			action.Type(brandname,brand_name)
+			WebUI.delay(3)
+			action.Type(brandchargebackrate, "4.56")
+
+			String brand_id = "23"+ dateTime
+
+			action.Type(clientbrandid, brand_id)
+			action.Click(addbrandbtn)
+			action.WaitVisible(successmssg)
+
+			action.Click(postupdate)
+			WebUI.delay(2)
+			action.SelectByText(postupdatecorpddn,"Instant Impact 4.0 Demo Corp (Dist.)")
+			WebUI.delay(2)
+			action.SelectByText(postupdatemarketddn, "Chicago Beverage Systems")
+			WebUI.delay(2)
+			action.WaitVisible(postupdatereleasetoprodbtn)
+			action.Click(postupdatereleasetoprodbtn)
+			WebUI.delay(4)
+		}
+		catch(Exception e) {
+			Assert.fail("ValidatePostUpdate failed due to "+e)
+		}
+	}
+
+	@Keyword
+	public void ValidateChargeBack() {
+		try {
+			action.Click(chargeBackBySupplier)
+			WebUI.delay(3)
+			action.Click(corpddn)
+			action.SelectByText(corpddn, "Instant Impact 4.0 Demo Corp (Dist.)")
+			action.WaitVisible(progressIndicator)
+			WebUI.delay(1)
+			action.SelectByText(marketddn, "Chicago Beverage Systems")
+			action.WaitVisible(progressIndicator)
+			WebUI.delay(1)
+			action.SelectByText(supplierddn, "MILLER COORS BREWING COMPANY")
+			action.WaitVisible(progressIndicator)
+			WebUI.delay(1)
+		}
+		catch(Exception e) {
+			Assert.fail("ValidateChargeBack failed due to "+e)
+		}
+	}
+
+	@Keyword
+	public void ValidateRetireBrand() {
+		try {
+			EditExistingBrand()
+			action.WaitVisible(retiredCheckbox)
+			action.Click(retiredCheckbox)
+			action.Click(updatebrandbtn)
+			action.WaitVisible(brandupdatemessage)
+		}
+		catch(Exception e) {
+			Assert.fail("ValidateRetireBrand failed due to "+e)
+		}
+	}
+
+	@Keyword
+	public void ValidateAddBrandMandatoryField() {
+		try {
+			action.WaitVisible(newbrand)
+			action.Click(newbrand)
+			action.WaitVisible(progressIndicator)
+			WebUI.delay(20)
+			action.WaitVisible(addbrandbtn)
+			action.Click(addbrandbtn)
+			action.IsElementDisplayed(corprequiredmssg)
+			action.IsElementDisplayed(supplierrequiredmssg)
+			action.IsElementDisplayed(marketrequiredmssg)
+			action.IsElementDisplayed(brandnamerequiredmssg)
+			action.IsDisplayed(chargebackrequiredmssg)
+			action.IsDisplayed(brandidrequiredmssg)
+		}
+		catch(Exception e) {
+			Assert.fail("ValidateAddBrandMandatoryField failed due to "+e)
+		}
+	}
+
+	@Keyword
+	public void ValidateUpdateExistingMandatoryField() {
+		try {
+			action.WaitVisible(newbrand)
+			action.WaitVisible(updateexistingbrand)
+			action.WaitVisible(searchbtn)
+			action.Click(searchbtn)
+			action.IsElementDisplayed(corprequiredmssg)
+			action.IsElementDisplayed(marketrequiredmssg)
+		}
+		catch(Exception e) {
+			Assert.fail("ValidateAddBrandMandatoryField failed due to "+e)
+		}
+	}
+
+	@Keyword
+	public void ValidateChargeBackBySupplierMandatoryField()
+	 {
+		try {
+			action.WaitVisible(newbrand)
+			action.WaitVisible(setchargebackbysupplier)
+			action.Click(setchargebackbysupplier)
+			action.WaitVisible(chargebackapplybtn)
+			action.Click(chargebackapplybtn)
+			action.IsElementDisplayed(corprequiredmssg)
+			action.IsElementDisplayed(marketrequiredmssg)
+			action.IsDisplayed(supplierrequiredmssg)
+			action.IsDisplayed(chargebackrequiredmssg)
+			
+		}
+		catch(Exception e) {
+			Assert.fail("ValidateAddBrandMandatoryField failed due to "+e)
+		}
+	}
+	 
+	 @Keyword
+	 public void ValidateShowRetireBrands()
+	 {
+		 try
+		 {
+			 action.IsDisplayed(updateexistingbrand)
+			// action.Click(updateexistingbrand)
+ 
+			 action.IsElementDisplayed(corpddn)
+			 action.SelectByText(corpddn, "Instant Impact 4.0 Demo Corp (Dist.)")
+			 action.WaitVisible(progressIndicator)
+			 WebUI.delay(10)
+			 action.IsElementDisplayed(marketddn)
+			 action.SelectByText(marketddn, "Chicago Beverage Systems")
+			 action.WaitVisible(progressIndicator)
+			 WebUI.delay(1)
+			 action.SelectByText(supplierddn, "MILLER COORS BREWING COMPANY")
+			 action.WaitVisible(progressIndicator)
+			 WebUI.delay(2)
+			 action.Type(updatebrandnamefield, "Brand")
+			 action.Click(showretiredcheckbox)
+			 WebUI.delay(1)
+			 action.Click(searchbtn)
+			 //action.WaitVisible(searchresult)
+		 }
+		 catch(Exception e)
+		 {
+			 Assert.fail("ValidateShowRetireBrands failed due to "+e)
+		 }
+	 }
 }

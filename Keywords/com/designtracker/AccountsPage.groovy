@@ -480,6 +480,7 @@ public class AccountsPage
 			action.WaitVisible(deletesalespersonbtn)
 			action.Click(deletesalespersonbtn)
 			action.WaitVisible(deletesuccessmssg)
+			action.IsElementDisplayed(deletesuccessmssg)
 
 
 		}

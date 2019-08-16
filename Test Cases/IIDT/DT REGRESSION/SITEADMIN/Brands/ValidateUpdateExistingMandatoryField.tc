@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>ValidateUpdateExistingMandatoryField</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>cd6cc682-f109-4e15-a343-467817cd02eb</testCaseGuid>
+</TestCaseEntity>
