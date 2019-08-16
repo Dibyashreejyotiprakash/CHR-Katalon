@@ -21,6 +21,7 @@ import internal.GlobalVariable
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
 import org.testng.Assert
+import org.eclipse.core.runtime.AssertionFailedException
 import org.openqa.selenium.Alert
 import org.openqa.selenium.By
 import com.utilities.Interaction
@@ -35,6 +36,7 @@ public class HomePage {
 	By logoutlink = By.xpath("//*[text()='Logout']")
 	By jobsbtn = By.xpath("//*[text()='JOBS']")
 	By newbtn = By.xpath("//*[text()='NEW']")
+	By searchbtn = By.xpath("//*[text()='SEARCH']")
 	By shipreceivebtn = By.xpath("//*[text()='SHIP/RECEIVE']")
 	By jobcheckin = By.xpath("//*[text()='JOB CHECK-IN']")
 	By reports = By.xpath("//*[text()='REPORTS']")
@@ -56,6 +58,8 @@ public class HomePage {
 	By exceptionlistsalespeople = By.xpath("//*[text()='EXCEPTION LIST - SALES PEOPLE']")
 	By highrarchy = By.xpath("//*[text()='HIERARCHY']")
 	By jobclosing = By.xpath("//*[text()='JOB CLOSING']")
+	By jobTypes = By.xpath("//*[text()='JOB TYPES']")
+	By suppliers = By.xpath("//*[text()='SUPPLIERS']")
 	By joblinestratification = By.xpath("//*[text()='JOB LINE STRATIFICATION']")
 	By peeraccountnotify = By.xpath("//*[text()='PEER ACCOUNT NOTIFY']")
 	By applicationadmin = By.xpath("//*[text()='APPLICATION']")
@@ -69,12 +73,10 @@ public class HomePage {
 	By budgetnotify = By.xpath("//*[text()='BUDGET NOTIFY']")
 	By jobnotify = By.xpath("//*[text()='JOB NOTE NOTIFY']")
 	By jobstatusnotify = By.xpath("//*[text()='JOB STATUS NOTIFY']")
-
 	By jobradiobtn = By.xpath("//*[text()='Job #']/preceding-sibling::input")
 	By confirmationradiobtn = By.xpath("//*[text()='Confirmation #']/preceding-sibling::input")
 	By searchtxtfield = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_txtJobKey']")
 	By amrketddn = By.id("ctl00_ctl00_cphMain_cphMain_CorpsAndMarkets_ddlMarket")
-
 	By corporationddn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_CorpsAndMarkets_ddlCorporation']")
 	By searchbtn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_btnSearch']")
 	By viewallcheckedbtn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_btnViewAllChecked']")
@@ -338,6 +340,92 @@ public class HomePage {
 		}
 		catch(Exception e) {
 			println ("Verify existing job search failed due to "+ e)
+		}
+	}
+
+	@Keyword
+	public void ClickOnExceptionlistsalespeople() {
+		try {
+			action.WaitVisible(siteadmin)
+			action.MouseHoverOnElement(siteadmin)
+			//action.WaitVisible(exceptionlistsalespeople)
+			WebUI.delay(3)
+			action.Click(exceptionlistsalespeople)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("Click On exceptionlistsalespeople failed due to "+ e)
+		}
+	}
+
+	@Keyword
+	public void ClickOnhighrarchy() {
+		try {
+			action.WaitVisible(siteadmin)
+			action.MouseHoverOnElement(siteadmin)
+			action.WaitVisible(highrarchy)
+			action.MouseHoverAndClick(highrarchy)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("Click On highrarchy failed due to "+ e)
+		}
+	}
+
+	@Keyword
+	public void ClickOnjobclosing() {
+		try {
+			action.WaitVisible(siteadmin)
+			action.MouseHoverOnElement(siteadmin)
+			//action.WaitVisible(jobclosing)
+			WebUI.delay(3)
+			action.Click(jobclosing)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("Click On highrarchy failed due to "+ e)
+		}
+	}
+
+	@Keyword
+	public void ClickOnjoblinestratification() {
+		try {
+			action.WaitVisible(siteadmin)
+			action.MouseHoverOnElement(siteadmin)
+			action.WaitVisible(joblinestratification)
+			action.MouseHoverAndClick(joblinestratification)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("Click On joblinestratification failed due to "+ e)
+		}
+	}
+
+	@Keyword
+	public void ClickOnjobTypes() {
+		try {
+			action.WaitVisible(siteadmin)
+			action.MouseHoverOnElement(siteadmin)
+			action.WaitVisible(jobTypes)
+			action.MouseHoverAndClick(jobTypes)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("Click On jobTypes failed due to "+ e)
+		}
+	}
+
+	@Keyword
+	public void ClickOnsuppliers() {
+		try {
+			action.WaitVisible(siteadmin)
+			action.MouseHoverOnElement(siteadmin)
+			action.WaitVisible(suppliers)
+			action.MouseHoverAndClick(suppliers)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("Click On exceptionlistsalespeople failed due to "+ e)
 		}
 	}
 }

@@ -431,7 +431,7 @@ public  class Interaction {
 	}
 
 
-	public void  TypeClear(By by, String value,WebDriver driver) {
+	public void  TypeClear(By by, String value) {
 		WaitVisible(by)
 		WebElement element = driver.findElement(by);
 		element.clear();
@@ -571,7 +571,6 @@ public  class Interaction {
 
 	public void  WaitVisible(By by)
 	{
-
 		WebDriverWait wait = new WebDriverWait(driver, 300);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 	}
@@ -590,7 +589,6 @@ public  class Interaction {
 
 	public void  WaitVisible(WebElement element)
 	{
-		WaitVisible(element)
 		WebDriverWait wait = new WebDriverWait(driver,300);
 		wait.until(ExpectedConditions.visibilityOf(element));
 	}
@@ -630,15 +628,11 @@ public  class Interaction {
 		wait.until(ExpectedConditions.presenceOfNestedElementLocatedBy(by, nestedlocator));
 	}
 
-
-
 	public void  WaitExistsForNestedElements(WebElement element,By subelement)
 	{
 		WebDriverWait wait = new WebDriverWait(driver,300);
 		wait.until(ExpectedConditions.presenceOfNestedElementLocatedBy(subelement, subelement));
 	}
-
-
 
 	public void  WaitTillNotVisible(By by,int timeinsec)
 	{
@@ -656,8 +650,6 @@ public  class Interaction {
 		}
 	}
 
-
-
 	public  WebElement WaitUntilElementClickable(WebElement element)
 	{
 		try
@@ -671,8 +663,6 @@ public  class Interaction {
 			throw e;
 		}
 	}
-
-
 
 	public void  WaitUntilElementClickable(By by)
 	{
@@ -688,8 +678,6 @@ public  class Interaction {
 		}
 	}
 
-
-
 	public  boolean WaitUntilStalenessOfElement(WebElement element, int timeinsec)
 	{
 		try
@@ -704,7 +692,6 @@ public  class Interaction {
 		}
 	}
 
-
 	/*Click*/
 	public void  Click(By by)
 	{
@@ -712,13 +699,11 @@ public  class Interaction {
 		driver.findElement(by).click();
 	}
 
-
 	public void  ClickAndWait(By by,int timeinsec) throws InterruptedException
 	{
 		WaitTime(timeinsec);
 		driver.findElement(by).click();
 	}
-
 
 	public void  DoubleClick(By by) throws InterruptedException
 	{
@@ -730,14 +715,11 @@ public  class Interaction {
 		WaitTime(4);
 	}
 
-
 	public void  JsClick(WebElement element)
 	{
 		WebDriverWait wait = new WebDriverWait(driver,300);
 		js.executeScript( "arguments[0].click();", element );
 	}
-
-
 
 	/*Alert Handler*/
 	public  void AcceptAlert()
@@ -752,7 +734,6 @@ public  class Interaction {
 			println (e)
 		}
 	}
-
 
 	public  boolean DismissAlert()
 	{
@@ -770,7 +751,6 @@ public  class Interaction {
 		}
 	}
 
-
 	public  String GetAlertText()
 	{
 		try
@@ -787,7 +767,6 @@ public  class Interaction {
 		}
 	}
 
-
 	public void MouseHoverOnElement(By by)
 	{
 		WebElement elementToHover = driver.findElement(by);
@@ -795,8 +774,6 @@ public  class Interaction {
 		hover.moveToElement(elementToHover)
 		hover.perform();
 	}
-
-
 
 	public void MouseHoverAndClick(By by)
 	{
@@ -806,8 +783,6 @@ public  class Interaction {
 		hover.moveToElement(elementToHover).click().perform();
 
 	}
-
-
 
 	public void MouserHoverAndClick(By hoverby, By clickby)
 	{
@@ -819,10 +794,6 @@ public  class Interaction {
 		hover.moveToElement(elementToClick).click().perform();
 
 	}
-
-
-
-
 
 	public void SelectByText(By by, String text)
 	{
