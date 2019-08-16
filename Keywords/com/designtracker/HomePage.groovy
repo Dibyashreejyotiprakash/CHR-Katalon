@@ -19,6 +19,7 @@ import com.utilities.Interaction
 
 import internal.GlobalVariable
 import org.openqa.selenium.WebDriver
+import org.openqa.selenium.WebElement
 import org.testng.Assert
 import org.eclipse.core.runtime.AssertionFailedException
 import org.openqa.selenium.Alert
@@ -75,8 +76,13 @@ public class HomePage {
 	By jobradiobtn = By.xpath("//*[text()='Job #']/preceding-sibling::input")
 	By confirmationradiobtn = By.xpath("//*[text()='Confirmation #']/preceding-sibling::input")
 	By searchtxtfield = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_txtJobKey']")
-	By corporationddn = By.id("ctl00_ctl00_cphMain_cphMain_CorpsAndMarkets_ddlCorporation")
 	By amrketddn = By.id("ctl00_ctl00_cphMain_cphMain_CorpsAndMarkets_ddlMarket")
+	By corporationddn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_CorpsAndMarkets_ddlCorporation']")
+	By searchbtn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_btnSearch']")
+	By viewallcheckedbtn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_btnViewAllChecked']")
+	By resetbtn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_btnReset']")
+	By jobresultgrid = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_gvSearchResults_ctl00']")
+	By searchjobresults = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_gvSearchResults_ctl00']//tbody/tr/td[2]")
 
 	By searchallbtn = By.id("ctl00_ctl00_cphMain_cphMain_btnSearch")
 
@@ -256,6 +262,84 @@ public class HomePage {
 		}
 		catch(Exception e) {
 			println ("Click On Campaign failed due to "+ e)
+		}
+	}
+
+	@Keyword
+	public void VerifyResetButton() {
+		try {
+			action.WaitVisible(corporationddn)
+			action.SelectByText(corporationddn, "Demo Distributor (QA)")
+			action.ScrollToViewelement(searchbtn)
+			action.WaitUntilElementClickable(searchbtn)
+			action.Click(searchbtn)
+			WebUI.delay(10)
+			action.WaitUntilElementClickable(resetbtn)
+			action.Click(resetbtn)
+			action.WaitVisible(corporationddn)
+			String selectedvalue = action.GetselectedText(corporationddn)
+			Assert.assertEquals(selectedvalue,"Please select a Corporation" )
+		}
+		catch(Exception e) {
+		}
+	}
+
+
+	@Keyword
+	public void VerifyExistingJobSearch() {
+		try {
+			action.WaitVisible(corporationddn)
+			action.SelectByText(corporationddn, "Demo Distributor (QA)")
+			WebUI.delay(5)
+			action.ScrollToBottomOfPage()
+			action.WaitUntilElementClickable(searchbtn)
+			action.Click(searchbtn)
+
+			boolean statusofjobsearchresult = action.IsElementDisplayed(searchjobresults)
+			Assert.assertTrue(statusofjobsearchresult)
+
+			List<WebElement> alljobs = action.GetElements(searchjobresults)
+			for(int i=0;i< alljobs.size();i++) {
+				alljobs.get(i).click()
+				action.WaitForPageToLoad()
+				break
+			}
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("Verify existing job search failed due to "+ e)
+		}
+	}
+
+
+
+	@Keyword
+	public void VerifyNewlyCreatedJobSearchInDT(String jobnumber) {
+		try {
+			action.Click(confirmationradiobtn)
+			action.WaitVisible(searchtxtfield)
+			action.Type(searchallbtn, jobnumber)
+			action.WaitVisible(corporationddn)
+			action.SelectByText(corporationddn, "Demo Distributor (QA)")
+			WebUI.delay(5)
+			action.ScrollToBottomOfPage()
+			action.WaitUntilElementClickable(searchbtn)
+			action.Click(searchbtn)
+
+			boolean statusofjobsearchresult = action.IsElementDisplayed(searchjobresults)
+			Assert.assertTrue(statusofjobsearchresult)
+
+			List<WebElement> alljobs = action.GetElements(searchjobresults)
+			for(int i=0;i< alljobs.size();i++) {
+				alljobs.get(i).click()
+				action.WaitForPageToLoad()
+				break
+			}
+			action.WaitForPageToLoad()
+			WebUI.delay(5)
+		}
+		catch(Exception e) {
+			println ("Verify existing job search failed due to "+ e)
 		}
 	}
 
