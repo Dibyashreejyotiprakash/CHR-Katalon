@@ -26,5 +26,5 @@ CustomKeywords.'com.designtracker.LoginPage.LoginToDesignTarcker'('dibyashree.jy
 
 CustomKeywords.'com.designtracker.HomePage.ClickOnBrands'()
 
-CustomKeywords.'com.designtracker.BrandsPage.CheckPostUpdate'()
+CustomKeywords.'com.designtracker.BrandsPage.ValidateAddBrandMandatoryField'()
 
