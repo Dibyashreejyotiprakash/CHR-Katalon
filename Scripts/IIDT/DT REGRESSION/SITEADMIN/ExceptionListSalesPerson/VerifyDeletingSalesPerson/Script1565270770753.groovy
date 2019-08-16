@@ -1,5 +1,4 @@
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
-
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
@@ -27,7 +26,7 @@ CustomKeywords.'com.designtracker.LoginPage.LoginToDesignTarcker'(GlobalVariable
 
 CustomKeywords.'com.designtracker.HomePage.ClickOnExceptionlistsalespeople'()
 
-CustomKeywords.'com.designtracker.ExceptionListSalesPeoplePage.VerifyAllDropDown'()
+CustomKeywords.'com.designtracker.ExceptionListSalesPeoplePage.VerifyDeleteSalesPerson'()
 
 WebUI.closeBrowser()
 

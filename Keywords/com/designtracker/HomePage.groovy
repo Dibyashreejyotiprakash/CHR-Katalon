@@ -20,6 +20,7 @@ import com.utilities.Interaction
 import internal.GlobalVariable
 import org.openqa.selenium.WebDriver
 import org.testng.Assert
+import org.eclipse.core.runtime.AssertionFailedException
 import org.openqa.selenium.Alert
 import org.openqa.selenium.By
 import com.utilities.Interaction
@@ -257,21 +258,22 @@ public class HomePage {
 			println ("Click On Campaign failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
 	public void ClickOnExceptionlistsalespeople() {
 		try {
 			action.WaitVisible(siteadmin)
 			action.MouseHoverOnElement(siteadmin)
-			action.WaitVisible(exceptionlistsalespeople)
-			action.MouseHoverAndClick(exceptionlistsalespeople)
+			//action.WaitVisible(exceptionlistsalespeople)
+			WebUI.delay(3)
+			action.Click(exceptionlistsalespeople)
 			action.WaitForPageToLoad()
 		}
 		catch(Exception e) {
 			println ("Click On exceptionlistsalespeople failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
 	public void ClickOnhighrarchy() {
 		try {
@@ -285,21 +287,22 @@ public class HomePage {
 			println ("Click On highrarchy failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
 	public void ClickOnjobclosing() {
 		try {
 			action.WaitVisible(siteadmin)
 			action.MouseHoverOnElement(siteadmin)
-			action.WaitVisible(jobclosing)
-			action.MouseHoverAndClick(highrarchy)
+			//action.WaitVisible(jobclosing)
+			WebUI.delay(3)
+			action.Click(jobclosing)
 			action.WaitForPageToLoad()
 		}
 		catch(Exception e) {
 			println ("Click On highrarchy failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
 	public void ClickOnjoblinestratification() {
 		try {
@@ -313,7 +316,7 @@ public class HomePage {
 			println ("Click On joblinestratification failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
 	public void ClickOnjobTypes() {
 		try {
@@ -327,7 +330,7 @@ public class HomePage {
 			println ("Click On jobTypes failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
 	public void ClickOnsuppliers() {
 		try {
@@ -341,5 +344,4 @@ public class HomePage {
 			println ("Click On exceptionlistsalespeople failed due to "+ e)
 		}
 	}
-		
 }

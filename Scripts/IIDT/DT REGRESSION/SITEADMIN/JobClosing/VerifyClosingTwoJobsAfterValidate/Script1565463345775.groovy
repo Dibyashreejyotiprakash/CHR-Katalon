@@ -1,5 +1,4 @@
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
-
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
@@ -25,9 +24,18 @@ WebUI.waitForPageLoad(300)
 
 CustomKeywords.'com.designtracker.LoginPage.LoginToDesignTarcker'(GlobalVariable.dtusername, GlobalVariable.dtpassowrd)
 
-CustomKeywords.'com.designtracker.HomePage.ClickOnExceptionlistsalespeople'()
+CustomKeywords.'com.designtracker.HomePage.ClickOnNewJob'()
 
-CustomKeywords.'com.designtracker.ExceptionListSalesPeoplePage.VerifyAllDropDown'()
+String jobId1 = CustomKeywords.'com.designtracker.JobNewPage.VerifyCreateNewJobs1'()
+println("++++++++++++++"+ jobId1);
+
+CustomKeywords.'com.designtracker.HomePage.ClickOnNewJob'()
+
+String jobId2 = CustomKeywords.'com.designtracker.JobNewPage.VerifyCreateNewJobs1'()
+println("++++++++++++++"+ jobId2);
+
+CustomKeywords.'com.designtracker.HomePage.ClickOnjobclosing'()
+
+CustomKeywords.'com.designtracker.BatchJobClosingPage.VerifyClosingTwoJobs'(jobId1,jobId2)
 
 WebUI.closeBrowser()
-

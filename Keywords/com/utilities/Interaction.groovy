@@ -431,7 +431,7 @@ public  class Interaction {
 	}
 
 
-	public void  TypeClear(By by, String value,WebDriver driver) {
+	public void  TypeClear(By by, String value) {
 		WaitVisible(by)
 		WebElement element = driver.findElement(by);
 		element.clear();
@@ -571,8 +571,8 @@ public  class Interaction {
 
 	public void  WaitVisible(By by)
 	{
-
-		WebDriverWait wait = new WebDriverWait(driver, 300);
+		//WaitVisible(by)
+		WebDriverWait wait = new WebDriverWait(driver, 60);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 	}
 
@@ -590,8 +590,8 @@ public  class Interaction {
 
 	public void  WaitVisible(WebElement element)
 	{
-		WaitVisible(element)
-		WebDriverWait wait = new WebDriverWait(driver,20);
+		//WaitVisible(element)
+		WebDriverWait wait = new WebDriverWait(driver,60);
 		wait.until(ExpectedConditions.visibilityOf(element));
 	}
 

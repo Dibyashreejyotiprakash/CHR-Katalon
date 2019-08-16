@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>VerifyJobClosingPage</name>
+   <name>VerifyClosingTwoJobsAfterValidate</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>0c7fe86a-52e7-45e0-acb2-9e4f1b48e801</testCaseGuid>
+   <testCaseGuid>12f5ddb4-2dad-4d5e-a2e5-52d8830ae0a8</testCaseGuid>
 </TestCaseEntity>

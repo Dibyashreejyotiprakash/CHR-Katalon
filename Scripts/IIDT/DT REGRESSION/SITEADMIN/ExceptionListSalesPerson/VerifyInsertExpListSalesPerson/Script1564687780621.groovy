@@ -24,6 +24,8 @@ WebUI.waitForPageLoad(300)
 
 CustomKeywords.'com.designtracker.LoginPage.LoginToDesignTarcker'(GlobalVariable.dtusername, GlobalVariable.dtpassowrd)
 
+CustomKeywords.'com.designtracker.HomePage.ClickOnExceptionlistsalespeople'()
+
 CustomKeywords.'com.designtracker.ExceptionListSalesPeoplePage.VerifyInsertSalesPerson'()
 
 WebUI.closeBrowser()
