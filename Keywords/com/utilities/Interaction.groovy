@@ -29,6 +29,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions
 import org.openqa.selenium.support.ui.Select
 import org.openqa.selenium.support.ui.WebDriverWait
 import org.openqa.selenium.WebDriver
+import org.apache.commons.lang.RandomStringUtils
 import org.openqa.selenium.Alert
 import org.openqa.selenium.By
 import org.openqa.selenium.Keys
@@ -890,5 +891,19 @@ public  class Interaction {
 		return newcategoryname
 	}
 
+	public String GenerateRandomAplphabaticString(int stringlength)
+	{
+		return RandomStringUtils.randomAlphabetic(stringlength)
+	}
+
+	public String GenerateRandomAplphabaNeumericString(int stringlength)
+	{
+		return RandomStringUtils.randomAlphanumeric(stringlength)
+	}
+
+	public String GenerateRandomNumericString(int stringlength)
+	{
+		return RandomStringUtils.randomNumeric(stringlength)
+	}
 
 }

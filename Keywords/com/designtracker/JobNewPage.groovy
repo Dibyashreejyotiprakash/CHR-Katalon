@@ -20,6 +20,8 @@ import internal.GlobalVariable
 import com.utilities.Interaction
 import org.openqa.selenium.By
 import org.openqa.selenium.WebDriver
+import org.openqa.selenium.WebElement
+import org.openqa.selenium.support.ui.Select
 import org.testng.Assert
 
 import com.kms.katalon.core.webui.driver.DriverFactory
@@ -157,7 +159,27 @@ public class JobNewPage {
 			println ("Verify Create New Jobs Failed due to "+ e)
 		}
 	}
+
+	@Keyword
+	public void VerifyCreatedNewJobType(String jobtype) {
+
+			action.SelectByText(corporationddn, "Instant Impact 4.0 Demo Corp (Dist.)")
+			WebUI.delay(10)
+			action.SelectByText(marketddn, "Chicago Beverage Systems")
+			WebUI.delay(5)
+			action.SelectByText(salespersonddn, "ADMIN1, TEST (testadmin1@brandmuscle.com)")
+			WebUI.delay(5)
+			action.SelectByIndex(accountddn, 1)
+			WebUI.delay(5)
+			WebElement wb = driver.findElement(By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_fvNewJob_CorpsAndMarkets_ddlJobType']"))
+			Select sc = new Select(wb);
+				action.SelectByText(jobtypeddn, jobtype)
+				action.Click(createjobbtn)
+		
+	}
+
 }
+
 
 
 

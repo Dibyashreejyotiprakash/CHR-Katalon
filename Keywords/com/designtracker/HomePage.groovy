@@ -86,6 +86,10 @@ public class HomePage {
 
 	By appadmin = By.xpath("//*[@title='Application Administration']")
 
+	By jobtypes = By.xpath("//*[text()='JOB TYPES']")
+	By suppliers = By.xpath("//*[text()='SUPPLIERS']")
+
+
 
 
 	@Keyword
@@ -367,6 +371,33 @@ public class HomePage {
 		}
 		catch(Exception e) {
 			println ("Click on exception list sales people failed due to "+ e)
+		}
+	}
+
+	@Keyword
+	public void ClickOnJobTypes() {
+		try {
+			action.MouseHoverOnElement(siteadmin)
+			WebUI.delay(5)
+			action.Click(jobtypes)
+			WebUI.delay(5)
+		}
+		catch(Exception e) {
+			println ("Click on Job Types failed due to "+ e)
+		}
+	}
+
+
+	@Keyword
+	public void ClickOnSuppliers() {
+		try {
+			action.MouseHoverOnElement(siteadmin)
+			WebUI.delay(5)
+			action.Click(suppliers)
+			WebUI.delay(5)
+		}
+		catch(Exception e) {
+			println ("Click on Suppliers failed due to "+ e)
 		}
 	}
 }

@@ -26,18 +26,10 @@ CustomKeywords.'com.designtracker.LoginPage.LoginToDesignTarcker'(GlobalVariable
 
 CustomKeywords.'com.designtracker.HomePage.VerifyHomePage'()
 
-CustomKeywords.'com.designtracker.HomePage.ClickOnNewJob'()
+CustomKeywords.'com.designtracker.HomePage.ClickOnJobTypes'()
 
-CustomKeywords.'com.designtracker.JobNewPage.VerifyNewJobPage'()
+CustomKeywords.'com.designtracker.JobTypes.VerifyJobTypePage'()
 
-CustomKeywords.'com.designtracker.JobNewPage.VerifyCreateNewJobs'()
+CustomKeywords.'com.designtracker.JobTypes.CreateNewJobType'()
 
-WebUI.delay(10)
-
-CustomKeywords.'com.designtracker.JobDetailsPage.ClickOnDetailsBtn'()
-
-CustomKeywords.'com.designtracker.JobDetailsPage.VerifyJobDetailsPage'()
-
-CustomKeywords.'com.designtracker.JobDetailsPage.VerifyJobNameAndJobTicketNoteAreMandatory'()
-
-
+WebUI.closeBrowser()
