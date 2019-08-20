@@ -36,7 +36,7 @@ public class HomePage {
 	By logoutlink = By.xpath("//*[text()='Logout']")
 	By jobsbtn = By.xpath("//*[text()='JOBS']")
 	By newbtn = By.xpath("//*[text()='NEW']")
-	By searchbtn = By.xpath("//*[text()='SEARCH']")
+	By searchbtnmenu = By.xpath("//*[text()='SEARCH']")
 	By shipreceivebtn = By.xpath("//*[text()='SHIP/RECEIVE']")
 	By jobcheckin = By.xpath("//*[text()='JOB CHECK-IN']")
 	By reports = By.xpath("//*[text()='REPORTS']")
@@ -85,6 +85,21 @@ public class HomePage {
 	By searchjobresults = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_gvSearchResults_ctl00']//tbody/tr/td[2]")
 
 	By searchallbtn = By.id("ctl00_ctl00_cphMain_cphMain_btnSearch")
+	By jobActivityTracking = By.xpath("//*[text()='JOB ACTIVITY TRACKING']")
+	By jobDiagnostic = By.xpath("//*[text()='JOB DIAGNOSTIC']")
+	By jobEfficiency = By.xpath("//*[text()='JOB EFFICIENCY']")
+	By jobStatus = By.xpath("//*[text()='JOB STATUS']")
+	By jobSSameBrands = By.xpath("//*[text()='JOBS SAME BRANDS']")
+	By profitLoss = By.xpath("//*[text()='PROFIT LOSS']")
+	By statusSummary = By.xpath("//*[text()='STATUS SUMMARY']")
+	By gexOrderStatus = By.xpath("//*[text()='GEX ORDER STATUS']")
+
+	By ddlCorporation = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_CorpsAndMarkets_ddlCorporation']")
+	By ddlMarcket = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_CorpsAndMarkets_ddlMarket']")
+	By jobSearchButton = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_btnSearch']")
+	By SearchJobResultDiv = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_gvSearchResults_ctl00']//following-sibling::tbody")
+	By jobIds = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_gvSearchResults_ctl00']//following-sibling::tbody/tr/td[5]")
+
 
 	@Keyword
 	public void VerifyHomePage() {
@@ -180,20 +195,6 @@ public class HomePage {
 	}
 
 	@Keyword
-	public void ClickOnStatusSummary() {
-		try {
-			action.WaitVisible(reports)
-			action.MouseHoverOnElement(reports)
-			action.WaitVisible(gexorderstatus)
-			action.MouseHoverAndClick(gexorderstatus)
-			action.WaitForPageToLoad()
-		}
-		catch(Exception e) {
-			println ("Click On Status Summary failed due to "+ e)
-		}
-	}
-
-	@Keyword
 	public void ClickOnAccounts() {
 		try {
 			action.WaitVisible(siteadmin)
@@ -266,6 +267,223 @@ public class HomePage {
 	}
 
 	@Keyword
+	public boolean VerifyREPORTSTab() {
+		try {
+			boolean status = action.IsElementDisplayed(reports)
+			return status;
+		}
+		catch(Exception e) {
+			println ("VerifyREPORTSTab method failed due to :" + e)
+		}
+	}
+
+	@Keyword
+	public void MouseHoverOnREPORTS(){
+		try{
+			action.WaitVisible(reports)
+			action.MouseHoverOnElement(reports)
+			action.WaitVisible(jobactivitytracking)
+		}
+		catch(Exception e) {
+			println ("MouseHoverOnREPORTS method failed due to :" + e)
+		}
+	}
+
+	@Keyword
+	public void ClickOnJobActivityTracking(){
+		try{
+			action.ScrollToTopOgPage()
+			action.MouseHoverOnElement(reports)
+			action.WaitVisible(jobActivityTracking)
+			action.Click(jobactivitytracking)
+			action.WaitForPageToLoad(300)
+			WebUI.delay(6)
+		}
+		catch(Exception e)
+		{
+			println ("ClickOnJobActivityTracking method failed due to :" + e)
+		}
+	}
+
+	@Keyword
+	public void ClickOnJobDaignostic(){
+		try{
+			action.ScrollToTopOgPage()
+			action.MouseHoverOnElement(reports)
+			action.WaitVisible(jobdiagnostic)
+			action.Click(jobdiagnostic)
+			action.WaitForPageToLoad(300)
+			WebUI.delay(6)
+		}
+		catch(Exception e)
+		{
+			println ("ClickOnJobDaignostic method failed due to :" + e)
+		}
+	}
+
+	@Keyword
+	public void ClickOnJobEfficiency(){
+		try{
+			action.WaitVisible(jobEfficiency)
+			action.Click(jobEfficiency)
+			action.WaitForPageToLoad(300)
+			WebUI.delay(6)
+		}
+		catch(Exception e)
+		{
+			println ("ClickOnJobEfficiency method failed due to :" + e)
+		}
+	}
+
+	@Keyword
+	public void ClickOnJobStatus(){
+		try{
+			action.WaitVisible(jobstatus)
+			action.Click(jobstatus)
+			action.WaitForPageToLoad(300)
+			WebUI.delay(6)
+		}
+		catch(Exception e)
+		{
+			println ("ClickOnJobStatus method failed due to :" + e)
+		}
+	}
+
+
+	@Keyword
+	public void ClickOnJobsSameBrands(){
+		try{
+			action.WaitVisible(jobsamebrand)
+			action.Click(jobsamebrand)
+			action.WaitForPageToLoad(300)
+			WebUI.delay(6)
+		}
+		catch(Exception e)
+		{
+			println ("ClickOnJobsSameBrands method failed due to :" + e)
+		}
+	}
+
+	@Keyword
+	public void ClickOnProfirLoss(){
+		try{
+			action.WaitVisible(profitLoss)
+			action.Click(profitLoss)
+			action.WaitForPageToLoad(300)
+			WebUI.delay(6)
+		}
+		catch(Exception e)
+		{
+			println ("ClickOnProfirLoss method failed due to :" + e)
+		}
+	}
+
+	@Keyword
+	public void ClickOnStatusSummary(){
+		try{
+			action.WaitVisible(statussummary)
+			action.Click(statussummary)
+			action.WaitForPageToLoad(300)
+			WebUI.delay(6)
+		}
+		catch(Exception e)
+		{
+			println ("ClickOnStatusSummary method failed due to :" + e)
+		}
+	}
+
+	@Keyword
+	public void ClickOnGEXOrderStatus(){
+		try{
+			action.WaitVisible(gexorderstatus)
+			action.Click(gexorderstatus)
+			action.WaitForPageToLoad(300)
+			WebUI.delay(6)
+		}
+		catch(Exception e)
+		{
+			println ("ClickOnGEXOrderStatus method failed due to :" + e)
+		}
+	}
+
+	//window handling
+	@Keyword
+	public void WindowHandle(){
+		try{
+			Set<String> set =  driver.getWindowHandles();
+			Iterator<String> it = set.iterator();
+			while(it.hasNext())
+			{
+				String parentwidowid = it.next()
+				println ("Parent Window id is"+ parentwidowid)
+
+				String childwindowid = it.next()
+				println ("Child Window id is"+ childwindowid)
+
+				driver.switchTo().window(childwindowid)
+			}
+
+
+		}
+		catch(Exception e){
+			println ("WindowHandle method failed due to :"+ e)
+
+		}
+	}
+
+
+	//Select Corporation and market
+	@Keyword
+	public void SelectCorporationAndMarcket(){
+		try{
+			action.WaitVisible(ddlCorporation)
+			action.Click(ddlCorporation)
+			action.SelectByText(ddlCorporation, "Instant Impact 4.0 Demo Corp (Dist.)")
+			//action.SelectByIndex(ddlCorporation, 300)
+			WebUI.delay(5)
+			action.Click(ddlMarcket)
+			action.SelectByText(ddlMarcket, "Chicago Beverage Systems")
+			//action.SelectByIndex(ddlMarcket, 296)
+			WebUI.delay(5)
+			action.ScrollToViewElement(jobSearchButton)
+			action.Click(jobSearchButton)
+			action.WaitVisible(SearchJobResultDiv)
+			//WebUI.delay(5)
+		}
+		catch(Exception e){
+			println("SelectCorporationAndMarcket method failed due to "+ e)
+
+		}
+	}
+
+	//Select first job id
+	@Keyword
+	public String SelectFirstJobID(){
+		try{
+			String getjobid = null;
+			List<WebElement> lst =	action.GetElements(jobIds)
+
+			for(int i=0; i<=lst.size();i++){
+
+				String jobID = lst[i].getText()
+				println("-------------------->>>>>>>>" +jobID)
+				getjobid = jobID;
+				break;
+
+
+
+
+
+			}
+			return getjobid
+		}
+		catch(Exception e){
+			println("SelectFirstJobID failed due to :"+ e)
+
+		}
+	}
+
+	@Keyword
 	public void VerifyResetButton() {
 		try {
 			action.WaitVisible(corporationddn)
@@ -310,8 +528,6 @@ public class HomePage {
 			println ("Verify existing job search failed due to "+ e)
 		}
 	}
-
-
 
 	@Keyword
 	public void VerifyNewlyCreatedJobSearchInDT(String jobnumber) {
