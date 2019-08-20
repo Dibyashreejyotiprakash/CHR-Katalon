@@ -151,6 +151,32 @@ public class JobNewPage {
 			WebUI.delay(5)
 			action.Click(createjobbtn)
 			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("Verify Create New Jobs Failed due to "+ e)
+		}
+	}
+
+	//This method will create job and will return job id
+	@Keyword
+	public String VerifyCreateNewJobs1() {
+		String jobIdValue = null
+		try {
+			action.WaitVisible(corporationddn)
+			action.SelectByText(corporationddn, "Demo Distributor (QA)")
+			WebUI.delay(5)
+			action.SelectByText(marketddn, "Demo Dist. 1 QA")
+			WebUI.delay(5)
+			action.SelectByText(salespersonddn, "TESTADMIN, TESTADMIN (demoqa@brandmuscle.com)")
+			WebUI.delay(5)
+			action.SelectByIndex(accountddn, 1)
+			action.SelectByText(jobtypeddn, "Print Only")
+			WebUI.delay(5)
+			action.Click(createjobbtn)
+			action.WaitForPageToLoad()
+			WebUI.delay(10)
+			jobIdValue = action.GetText(jobid)
+			return jobIdValue
 			WebUI.delay(10)
 			action.GetText(jobid)
 			return jobid
