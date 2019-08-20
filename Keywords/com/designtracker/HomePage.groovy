@@ -657,4 +657,17 @@ public class HomePage {
 			println ("Click on Suppliers failed due to "+ e)
 		}
 	}
+
+	@Keyword
+	public void ClickOnExceptionlistBrands() {
+		try {
+			action.MouseHoverOnElement(siteadmin)
+			WebUI.delay(3)
+			action.Click(exceptionlistbrands)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("Click On exceptionlistbrands failed due to "+ e)
+		}
+	}
 }
