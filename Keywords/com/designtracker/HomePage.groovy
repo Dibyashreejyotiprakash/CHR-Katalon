@@ -36,7 +36,7 @@ public class HomePage {
 	By logoutlink = By.xpath("//*[text()='Logout']")
 	By jobsbtn = By.xpath("//*[text()='JOBS']")
 	By newbtn = By.xpath("//*[text()='NEW']")
-	By searchbtn = By.xpath("//*[text()='SEARCH']")
+	By searchbtnmenu = By.xpath("//*[text()='SEARCH']")
 	By shipreceivebtn = By.xpath("//*[text()='SHIP/RECEIVE']")
 	By jobcheckin = By.xpath("//*[text()='JOB CHECK-IN']")
 	By reports = By.xpath("//*[text()='REPORTS']")
@@ -426,6 +426,19 @@ public class HomePage {
 		}
 		catch(Exception e) {
 			println ("Click On exceptionlistsalespeople failed due to "+ e)
+		}
+	}
+
+	@Keyword
+	public void ClickOnExceptionlistBrands() {
+		try {
+			action.MouseHoverOnElement(siteadmin)
+			WebUI.delay(3)
+			action.Click(exceptionlistbrands)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("Click On exceptionlistbrands failed due to "+ e)
 		}
 	}
 }
