@@ -40,13 +40,15 @@ public class JobDetailsPage {
 	By expandalllink = By.id("ctl00_ctl00_cphMain_cphMain_lvJobs_ctrl0_JobLine_lbtnExpandAll")
 	By colapsealllink = By.id("ctl00_ctl00_cphMain_cphMain_lvJobs_ctrl0_JobLine_lbtnCollapseAll")
 	By jobnametxtbox = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_lvJobs_ctrl0_txtJobName']")
-	By jbticketnote = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_lvJobs_ctrl0_txtJobTicketNote']")
+	By jobticketnote = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_lvJobs_ctrl0_txtJobTicketNote']")
 	By jobstatus = By.xpath("//*[id='ctl00_ctl00_cphMain_cphMain_lvJobs_ctrl0_ddlJobStatus']")
 	By pricinginfolink = By.xpath("//*[text()='Pricing Information']")
 	By noteinfolink = By.xpath("//*[text()='Note Information']")
 	By intrenalnoteinfo = By.xpath("//*[@href='JobDetail.aspx#internalnote']")
 	By joblineinforlink = By.xpath("//*[@href='JobDetail.aspx#jobline']")
 	By emailsalespersonlink = By.xpath("//*[text()='//*[text()='Email SalesPerson']']")
+
+	By assigneddesignerddn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_lvJobs_ctrl0_ddlDesigners']")
 
 	By corporationddn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_CorpsAndMarkets_ddlCorporation']")
 	By searchbtn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_btnSearch']")
@@ -184,34 +186,41 @@ public class JobDetailsPage {
 			println ("Verify Status Of Newly Created Job failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
-	public void VerifyJobNameAndJobTicketNoteAreMandatory()
-	{
-		try
-		{
+	public void VerifyJobNameAndJobTicketNoteAreMandatory() {
+		try {
 			action.Click(savejobinfobtn)
 			WebUI.delay(5)
-				boolean statusofjobsavemsg = action.IsDisplayed(sccessfullupdatemsg)
-				if(statusofjobsavemsg == false)
-				{
-					action.Type(jobnametxtbox, "Test Job Name")
-					WebUI.delay(3)
-					action.Type(jbticketnote, "Test Ticket Note")
-					WebUI.delay(3)
-					action.Click(savejobinfobtn)
-					WebUI.delay(5)
-					boolean statusofmsg = action.IsElementDisplayed(sccessfullupdatemsg)
-					Assert.assertTrue(statusofmsg)
-				}
-				else
-				{
-					Assert.fail()
-				}
+			boolean statusofjobsavemsg = action.IsDisplayed(sccessfullupdatemsg)
+			if(statusofjobsavemsg == false) {
+				action.Type(jobnametxtbox, "Test Job Name")
+				WebUI.delay(3)
+				action.Type(jobticketnote, "Test Ticket Note")
+				WebUI.delay(3)
+				action.Click(savejobinfobtn)
+				WebUI.delay(5)
+				boolean statusofmsg = action.IsElementDisplayed(sccessfullupdatemsg)
+				Assert.assertTrue(statusofmsg)
+			}
+			else {
+				Assert.fail()
+			}
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			println ("Verify Job Name And Job Ticket Note Are Mandatory failed due to "+ e)
 		}
+	}
+
+	@Keyword
+	public void AddJobNameJobTicketNameAndAssignDesigner() {
+		action.Type(jobnametxtbox, "Test Job Name")
+		action.Type(jobticketnote, "Test Job Ticket Note")
+		action.SelectByText(designerddn, "JYOTI, DIBYASHREE")
+		WebUI.delay(10)
+		String getselectedoption = action.GetselectedText(designerddn)
+		action.ScrollToBottomOfPage()
+		action.WaitUntilElementClickable(savejobinfobtn)
+		action.Click(savejobinfobtn)
 	}
 }

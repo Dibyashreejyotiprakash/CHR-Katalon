@@ -224,4 +224,9 @@
       <initValue>'Profile'</initValue>
       <name>globalmsgprofile</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'TestBannedWord'</initValue>
+      <name>bannedword</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

@@ -7,6 +7,8 @@ import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
+import com.kms.katalon.core.annotation.AfterTestCase
+import com.kms.katalon.core.annotation.BeforeTestCase
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.checkpoint.Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
@@ -27,6 +29,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions
 import org.openqa.selenium.support.ui.Select
 import org.openqa.selenium.support.ui.WebDriverWait
 import org.openqa.selenium.WebDriver
+import org.apache.commons.lang.RandomStringUtils
 import org.openqa.selenium.Alert
 import org.openqa.selenium.By
 import org.openqa.selenium.Keys
@@ -819,7 +822,7 @@ public  class Interaction {
 		select.selectByVisibleText(text)
 
 	}
-	
+
 	public List<WebElement> GetAllOptions(By by)
 	{
 		WaitVisible(by)
@@ -827,12 +830,12 @@ public  class Interaction {
 		Select select = new Select(elementToHover)
 		return select.getAllSelectedOptions()
 	}
-	
+
 	public String GetselectedText(By by)
 	{
 		Select select = new Select(driver.findElement(by))
 		WebElement option = select.getFirstSelectedOption()
-		return  option.getText()	
+		return  option.getText()
 	}
 
 
@@ -886,5 +889,19 @@ public  class Interaction {
 		return newcategoryname
 	}
 
+	public String GenerateRandomAplphabaticString(int stringlength)
+	{
+		return RandomStringUtils.randomAlphabetic(stringlength)
+	}
+
+	public String GenerateRandomAplphabaNeumericString(int stringlength)
+	{
+		return RandomStringUtils.randomAlphanumeric(stringlength)
+	}
+
+	public String GenerateRandomNumericString(int stringlength)
+	{
+		return RandomStringUtils.randomNumeric(stringlength)
+	}
 
 }
