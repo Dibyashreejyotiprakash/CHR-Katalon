@@ -17,22 +17,15 @@ WebUI.openBrowser('')
 
 WebUI.maximizeWindow()
 
-CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameconsolidator, GlobalVariable.testtypesmoke, GlobalVariable.environment)
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamedesigntracker, GlobalVariable.testtypesmoke, GlobalVariable.environment)
 
-CustomKeywords.'com.consolidator.LoginPage.LoginConsolidator'(GlobalVariable.consolusername, GlobalVariable.conslopassword)
+WebUI.waitForPageLoad(300)
 
-CustomKeywords.'com.consolidator.UpdateLogPage.ClickOnParentBusinessUnit'()
+CustomKeywords.'com.designtracker.LoginPage.LoginToDesignTarcker'(GlobalVariable.dtusername, GlobalVariable.dtpassowrd)
 
-CustomKeywords.'com.consolidator.ParentBusinessUnitPage.SelectParentBusinessUnit'()
+WebUI.waitForPageLoad(0)
 
-CustomKeywords.'com.consolidator.UpdateLogPage.ClickOnConsolidatorTab'()
-
-CustomKeywords.'com.consolidator.ConsolidatorDefaultPage.ClickOnManagePrograms'()
-
-CustomKeywords.'com.consolidator.ManageProgramElementPage.VerifyManageProgramElements'()
-
-CustomKeywords.'com.consolidator.ManageProgramElementPage.VerifyAllCoulumns'()
-CustomKeywords.'com.consolidator.LoginPage.LogoutFromV5AdminTool'()
+CustomKeywords.'com.designtracker.HomePage.VerifyREPORTSTab'()
 
 WebUI.closeBrowser()
 

@@ -17,22 +17,31 @@ WebUI.openBrowser('')
 
 WebUI.maximizeWindow()
 
-CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameconsolidator, GlobalVariable.testtypesmoke, GlobalVariable.environment)
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamedesigntracker, GlobalVariable.testtypesmoke, GlobalVariable.environment)
 
-CustomKeywords.'com.consolidator.LoginPage.LoginConsolidator'(GlobalVariable.consolusername, GlobalVariable.conslopassword)
+WebUI.waitForPageLoad(300)
 
-CustomKeywords.'com.consolidator.UpdateLogPage.ClickOnParentBusinessUnit'()
+CustomKeywords.'com.designtracker.LoginPage.LoginToDesignTarcker'(GlobalVariable.dtusername, GlobalVariable.dtpassowrd)
 
-CustomKeywords.'com.consolidator.ParentBusinessUnitPage.SelectParentBusinessUnit'()
+WebUI.waitForPageLoad(0)
 
-CustomKeywords.'com.consolidator.UpdateLogPage.ClickOnConsolidatorTab'()
+CustomKeywords.'com.designtracker.HomePage.VerifyREPORTSTab'()
 
-CustomKeywords.'com.consolidator.ConsolidatorDefaultPage.ClickOnManagePrograms'()
+CustomKeywords.'com.designtracker.HomePage.SelectCorporationAndMarcket'()
 
-CustomKeywords.'com.consolidator.ManageProgramElementPage.VerifyManageProgramElements'()
+ String JobID =   CustomKeywords.'com.designtracker.HomePage.SelectFirstJobID'()
 
-CustomKeywords.'com.consolidator.ManageProgramElementPage.VerifyAllCoulumns'()
-CustomKeywords.'com.consolidator.LoginPage.LogoutFromV5AdminTool'()
+CustomKeywords.'com.designtracker.HomePage.ClickOnJobDaignostic'()
 
-WebUI.closeBrowser()
+WebUI.delay(5)
+
+CustomKeywords.'com.designtracker.HomePage.WindowHandle'()
+
+CustomKeywords.'com.designtracker.JobActivityTracking.EnterJobID'(JobID)
+
+CustomKeywords.'com.designtracker.JobDiagnostic.ClickOnViewReportBtn'()
+
+CustomKeywords.'com.designtracker.JobDiagnostic.VerifyJobDiagnosticPage'()
+
+CustomKeywords.'com.designtracker.JobActivityTracking.CloseAllBrowser'()
 

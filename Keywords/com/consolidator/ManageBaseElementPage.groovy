@@ -49,16 +49,16 @@ public class ManageBaseElementPage {
 		boolean statusofvisibility = action.IsElementDisplayed(addnewitembtn)
 		Assert.assertTrue(statusofvisibility)
 	}
-	
+
 	@Keyword
 	public void ClickAddNewElementButton() {
 		boolean statusofvisibility = action.IsElementDisplayed(addnewitembtn)
 		Assert.assertTrue(statusofvisibility)
-		
-		if(statusofvisibility == true)
-		{
+
+		if(statusofvisibility == true) {
 			action.Click(addnewitembtn)
 			action.WaitForPageToLoad()
+			WebUI.delay(10)
 		}
 	}
 
@@ -89,6 +89,7 @@ public class ManageBaseElementPage {
 		if(statusoffirsteditlink == true) {
 			action.Click(firsteditbtn)
 			action.WaitForPageToLoad()
+			WebUI.delay(5)
 		}
 	}
 }

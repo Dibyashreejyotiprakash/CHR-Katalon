@@ -384,6 +384,10 @@ public  class Interaction {
 	}
 
 
+	public void CloseAllBrowser()
+	{
+		driver.quit()
+	}
 
 	public void  GoToURL(String url) {
 		driver.navigate().to(url);
@@ -437,6 +441,18 @@ public  class Interaction {
 		element.clear();
 		element.sendKeys(value);
 	}
+
+
+	//clear text field and type value
+	public void TypeAndClear(By by, String value){
+		WaitVisible(by)
+		WebElement element = driver.findElement(by);
+		element.clear();
+		element.sendKeys(value);
+
+	}
+
+
 
 
 	public void  ScrollBy(int scroll) {
