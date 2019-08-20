@@ -93,13 +93,14 @@ public class HomePage {
 	By profitLoss = By.xpath("//*[text()='PROFIT LOSS']")
 	By statusSummary = By.xpath("//*[text()='STATUS SUMMARY']")
 	By gexOrderStatus = By.xpath("//*[text()='GEX ORDER STATUS']")
-
 	By ddlCorporation = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_CorpsAndMarkets_ddlCorporation']")
 	By ddlMarcket = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_CorpsAndMarkets_ddlMarket']")
 	By jobSearchButton = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_btnSearch']")
 	By SearchJobResultDiv = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_gvSearchResults_ctl00']//following-sibling::tbody")
 	By jobIds = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_gvSearchResults_ctl00']//following-sibling::tbody/tr/td[5]")
-
+	By appadmin = By.xpath("//*[@title='Application Administration']")
+	By jobtypes = By.xpath("//*[text()='JOB TYPES']")
+	By suppliers = By.xpath("//*[text()='SUPPLIERS']")
 
 	@Keyword
 	public void VerifyHomePage() {
@@ -617,31 +618,43 @@ public class HomePage {
 		}
 	}
 
+
 	@Keyword
-	public void ClickOnjobTypes() {
+	public void ClickOnCompetitors() {
 		try {
-			action.WaitVisible(siteadmin)
 			action.MouseHoverOnElement(siteadmin)
-			action.WaitVisible(jobTypes)
-			action.MouseHoverAndClick(jobTypes)
-			action.WaitForPageToLoad()
+			action.Click(competitors)
 		}
 		catch(Exception e) {
-			println ("Click On jobTypes failed due to "+ e)
+			println ("Click On Competitors failed due to "+ e)
 		}
 	}
 
+
 	@Keyword
-	public void ClickOnsuppliers() {
+	public void ClickOnJobTypes() {
 		try {
-			action.WaitVisible(siteadmin)
 			action.MouseHoverOnElement(siteadmin)
-			action.WaitVisible(suppliers)
-			action.MouseHoverAndClick(suppliers)
-			action.WaitForPageToLoad()
+			WebUI.delay(5)
+			action.Click(jobtypes)
+			WebUI.delay(5)
 		}
 		catch(Exception e) {
-			println ("Click On exceptionlistsalespeople failed due to "+ e)
+			println ("Click on Job Types failed due to "+ e)
+		}
+	}
+
+
+	@Keyword
+	public void ClickOnSuppliers() {
+		try {
+			action.MouseHoverOnElement(siteadmin)
+			WebUI.delay(5)
+			action.Click(suppliers)
+			WebUI.delay(5)
+		}
+		catch(Exception e) {
+			println ("Click on Suppliers failed due to "+ e)
 		}
 	}
 }

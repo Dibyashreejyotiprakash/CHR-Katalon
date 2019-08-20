@@ -31,11 +31,27 @@ public class SiteUsersPage {
 	WebDriver driver = DriverFactory.getWebDriver()
 
 	By siteusersheader = By.id("ctl00_ctl00_cphMain_cphMain_chAccountType_lblSectionHeader")
+	By userddn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_ddlUsers']")
+	By includecheck = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_chkActiveUsers']")
+	By activecheckbox = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_acrdnPnlUserProfileManagement_content_chkActive']")
+	By updateusersbtn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_acrdnPnlUserProfileManagement_content_UpdateBtn']")
 
 	@Keyword
 	public void VerifySiteUsersPage() {
 		action.WaitVisible(siteusersheader)
 		boolean statusofsiteuserheader = action.IsElementDisplayed(siteusersheader)
 		Assert.assertTrue(statusofsiteuserheader)
+	}
+
+	@Keyword
+	public void MakeUserActive() {
+		boolean usercheckbox = action.IsElementSelected(includecheck)
+		Assert.assertTrue(usercheckbox)
+		action.Click(includecheck)
+		action.SelectByText(userddn, "dibyashree.jyoti@brandmuscle.com")
+		boolean activecheckboxstatus = action.IsElementSelected(activecheckbox)
+		if(activecheckboxstatus == true) {
+			action.ScrollToBottomOfPage()
+		}
 	}
 }

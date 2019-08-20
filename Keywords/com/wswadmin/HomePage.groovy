@@ -36,12 +36,17 @@ public class HomePage {
 	By globalmetataggingpage = By.xpath("(//span[contains(text(),'Global Meta Tagging Maintenance')])[1]")
 	By itempartquantitymaintenance = By.xpath("(//span[contains(text(),'Item/Part Quantity Maintenance')])[1]")
 	By resuorcemessagebtn = By.xpath("//*[@href='/InstantImpact/ResourceMessage/ResourceMessage.aspx']")
+	
+	
 	By fulfillmentbtn = By.xpath("//*[text()='Fulfillment']")
+	By lowstocknotification = By.xpath("//*[@href='/Fulfillment/LowstockNotification.aspx']")
 	By fulfillmentsearchbtn = By.xpath("//*[text()='Fulfillment Search']")
 	By createfulfillmentitem = By.xpath("//*[text()='Create Fulfillment Item']")
 	By fulfillmentproductunit = By.xpath("//*[text()='Fulfillment Product Unit']")
 	By createfulfillmentproductunit = By.xpath("//*[text()='Create Fulfillment Product Unit']")
 	By associtaeitemstoproductunit = By.xpath("//*[text()='Associate Items to Product Unit']")
+	
+	
 	By reports = By.xpath("//*[@href='/Fulfillment/Reports.aspx']")
 	By colormaintenance = By.xpath("//*[text()='Color Maintenance']")
 	By color = By.xpath("//*[@href='/Fulfillment/ColorMaintenance/FulfillmentColor.aspx']")
@@ -55,6 +60,7 @@ public class HomePage {
 	By redbullsticthlab = By.xpath("//*[text()='Red Bull/Stitch Labs']")
 	By Heading = By.xpath("//h1[Contains(text(),'Brandmuscle Admin Tool')]")	
 	By bannedphrasesbtn = By.xpath("//*[@href='/InstantImpact/BannedWords/BannedPhrases.aspx']")
+
 
 	@Keyword
 	public void NavigateToItemSearchPage() {
@@ -152,8 +158,8 @@ public class HomePage {
 		action.Click(itempartquantitymaintenance)
 		action.WaitForPageToLoad()
 	}
-	
-	
+
+
 	@Keyword
 	public void NavigateToBannedPhrases() {
 		action.WaitVisible(instantimpact)
@@ -162,5 +168,14 @@ public class HomePage {
 		action.WaitVisible(bannedphrasesbtn)
 		action.Click(bannedphrasesbtn)
 		action.WaitForPageToLoad()
+	}
+	
+	@Keyword
+	public void NavigateToLowStockNotificationPage()
+	{
+		action.MouseHoverOnElement(fulfillmentbtn)
+		action.Click(lowstocknotification)
+		action.WaitForPageToLoad()
+		WebUI.delay(10)
 	}
 }
