@@ -100,7 +100,6 @@ public class HomePage {
 	By jobIds = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_gvSearchResults_ctl00']//following-sibling::tbody/tr/td[5]")
 	By appadmin = By.xpath("//*[@title='Application Administration']")
 	By jobtypes = By.xpath("//*[text()='JOB TYPES']")
-	By suppliers = By.xpath("//*[text()='SUPPLIERS']")
 
 	@Keyword
 	public void VerifyHomePage() {
@@ -300,8 +299,7 @@ public class HomePage {
 			action.WaitForPageToLoad(300)
 			WebUI.delay(6)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			println ("ClickOnJobActivityTracking method failed due to :" + e)
 		}
 	}
@@ -316,8 +314,7 @@ public class HomePage {
 			action.WaitForPageToLoad(300)
 			WebUI.delay(6)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			println ("ClickOnJobDaignostic method failed due to :" + e)
 		}
 	}
@@ -330,8 +327,7 @@ public class HomePage {
 			action.WaitForPageToLoad(300)
 			WebUI.delay(6)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			println ("ClickOnJobEfficiency method failed due to :" + e)
 		}
 	}
@@ -344,8 +340,7 @@ public class HomePage {
 			action.WaitForPageToLoad(300)
 			WebUI.delay(6)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			println ("ClickOnJobStatus method failed due to :" + e)
 		}
 	}
@@ -359,8 +354,7 @@ public class HomePage {
 			action.WaitForPageToLoad(300)
 			WebUI.delay(6)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			println ("ClickOnJobsSameBrands method failed due to :" + e)
 		}
 	}
@@ -373,8 +367,7 @@ public class HomePage {
 			action.WaitForPageToLoad(300)
 			WebUI.delay(6)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			println ("ClickOnProfirLoss method failed due to :" + e)
 		}
 	}
@@ -387,8 +380,7 @@ public class HomePage {
 			action.WaitForPageToLoad(300)
 			WebUI.delay(6)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			println ("ClickOnStatusSummary method failed due to :" + e)
 		}
 	}
@@ -401,8 +393,7 @@ public class HomePage {
 			action.WaitForPageToLoad(300)
 			WebUI.delay(6)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			println ("ClickOnGEXOrderStatus method failed due to :" + e)
 		}
 	}
