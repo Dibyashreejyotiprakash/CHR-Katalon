@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>VerifyJobStatusReportsAllColumns</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>54cba3c6-8dc6-4904-9c55-29d21f7afdca</testCaseGuid>
+</TestCaseEntity>

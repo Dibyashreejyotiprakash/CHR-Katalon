@@ -353,6 +353,8 @@ public class HomePage {
 	@Keyword
 	public void ClickOnJobEfficiency(){
 		try{
+			action.ScrollToTopOgPage()
+			action.MouseHoverOnElement(reports)
 			action.WaitVisible(jobEfficiency)
 			action.Click(jobEfficiency)
 			action.WaitForPageToLoad(300)
@@ -367,6 +369,8 @@ public class HomePage {
 	@Keyword
 	public void ClickOnJobStatus(){
 		try{
+			action.ScrollToTopOgPage()
+			action.MouseHoverOnElement(reports)
 			action.WaitVisible(jobstatus)
 			action.Click(jobstatus)
 			action.WaitForPageToLoad(300)

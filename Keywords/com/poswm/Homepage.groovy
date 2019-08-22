@@ -64,7 +64,7 @@ public class Homepage {
 	By menuChangePassword = By.xpath("//*[text()='Change Password']")
 	By levelChangePassword = By.xpath("//*[@id='MainContent_lblChangePassword']")
 	By posWarehouseReport = By.xpath("//*[@id='lbReport']")
-    By helpSupportBtn = By.xpath("//*[text()='Help/Support']")
+	By helpSupportBtn = By.xpath("//*[text()='Help/Support']")
 
 
 
@@ -198,27 +198,11 @@ public class Homepage {
 		action.WaitVisible(levelChangePassword)
 		action.WaitTime(5)
 	}
-	
+
 	@Keyword
 	public void VerifyHelpSupport(){
 		boolean statusHelpSupportBtn = action.IsElementEnabled(helpSupportBtn)
 		Assert.assertTrue(statusHelpSupportBtn)
 		println ("Help/Support button is enable")
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }
