@@ -30,22 +30,18 @@ CustomKeywords.'com.designtracker.HomePage.VerifyREPORTSTab'()
 CustomKeywords.'com.designtracker.HomePage.SelectCorporationAndMarcket'()
 
  String JobID =   CustomKeywords.'com.designtracker.HomePage.SelectFirstJobID'()
- 
- println ("Job id is "+ JobID)
 
-CustomKeywords.'com.designtracker.HomePage.ClickOnJobDaignostic'()
+CustomKeywords.'com.designtracker.HomePage.ClickOnJobEfficiency'()
 
 WebUI.delay(5)
 
 CustomKeywords.'com.designtracker.HomePage.WindowHandle'()
 
-CustomKeywords.'com.designtracker.JobDiagnostic.EnterJobID'(JobID)
+CustomKeywords.'com.designtracker.JobEfficiency.EnterJobID'(JobID)
 
-CustomKeywords.'com.designtracker.JobDiagnostic.ClickOnViewReportBtn'()
+CustomKeywords.'com.designtracker.JobEfficiency.ClickOnViewReportBtn'()
 
-CustomKeywords.'com.designtracker.JobDiagnostic.VerifyJobDiagnosticReportColumns'()
-
-
+CustomKeywords.'com.designtracker.JobEfficiency.VerifyJobEfficiencyPage'()
 
 CustomKeywords.'com.designtracker.JobActivityTracking.CloseAllBrowser'()
 

@@ -26,7 +26,9 @@ import org.openqa.selenium.By
 import com.utilities.Interaction
 import com.kms.katalon.core.webui.driver.DriverFactory
 
-public class JobDiagnostic {
+public class JobEfficiency {
+
+
 
 
 	Interaction action = new Interaction();
@@ -37,35 +39,18 @@ public class JobDiagnostic {
 
 
 
+
 	By txtJobID = By.xpath("//*[@id='txtJobId']")
 	By btnViewReport = By.xpath("//*[@id='btnSubmit']")
-	By headerJobDiagnostic = By.xpath("//*[text()='Job Diagnostic']")
-	By colItem = By.xpath("//*[text()='Item']")
-	By colValue = By.xpath("//*[text()='Value']")
+	By headerJobEfficiency = By.xpath("//*[text()='Job Efficiency']")
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	By jobId = By.xpath("//*[text()='Job Id:']")
+	By salesPerson = By.xpath("//*[text()='Sales Person:']")
+	By accountName = By.xpath("//*[text()='Account Name:']")
+	By dateCreated = By.xpath("//*[text()='Date Created:']")
+	By dueDate = By.xpath("//*[text()='Due Date:']")
+	By coordinator = By.xpath("//*[text()='Coordinator:']")
+	By designer = By.xpath("//*[text()='Designer:']")
 
 
 
@@ -91,16 +76,13 @@ public class JobDiagnostic {
 	}
 
 
-
-
-
 	@Keyword//Clicking on View report button
 	public void ClickOnViewReportBtn() {
 		try{
 			action.WaitVisible(btnViewReport)
 			action.Click(btnViewReport)
 			action.WaitForPageToLoad()
-			//action.WaitVisible(DivisionReport)
+			action.WaitVisible(headerJobEfficiency)
 			WebUI.delay(10)
 		}
 		catch(Exception e){
@@ -125,40 +107,72 @@ public class JobDiagnostic {
 
 
 	@Keyword //Verifying job activity tracking page
-	public boolean VerifyJobDiagnosticPage(){
+	public boolean VerifyJobEfficiencyPage(){
 
 		try{
 
-			String expectedPageHeader = "Job Diagnostic"
+			String expectedPageHeader = "Job Efficiency"
 			WebUI.delay(10)
-			String actualheader = action.GetText(headerJobDiagnostic)
+			String actualheader = action.GetText(headerJobEfficiency)
 			Assert.assertEquals(expectedPageHeader, actualheader)
 		}
 		catch(Exception e){
-			println("VerifyJobDiagnosticPage method failed due to :" + e)
+			println("VerifyJobEfficiencyPage method failed due to :" + e)
 		}
 	}
 
 	@Keyword //Verifying Reports columns
-	public void VerifyJobDiagnosticReportColumns(){
+	public void VerifyJobEfficiencyReportFields(){
 		try{
 
-			String ExpectedFirstCol = "Item"
-			String ExpectedSecondCol = "Value"
+			String ExpectedFirstField = "Job Id:"
+			String ExpectedSecondField = "Sales Person:"
+			String ExpectedThirdField = "Account Name:"
+			String ExpectedFourthField = "Date Created:"
+			String ExpectedFifthField = "Due Date:"
+			String ExpectedSixthField = "Coordinator:"
+			String ExpectedSeventhField = "Designer:"
 
-			String itemCol = action.GetText(colItem)
-			String valueCol = action.GetText(colValue)
+			String jobId = action.GetText(jobId)
+			String salespersion = action.GetText(salesPerson)
+			String accountname = action.GetText(accountName)
+			String datecreated = action.GetText(dateCreated)
+			String duedate = action.GetText(dueDate)
+			String coordinator = action.GetText(coordinator)
+			String designer = action.GetText(designer)
 
-			Assert.assertEquals(ExpectedFirstCol, itemCol)
-			println("First Column Name----->"+ itemCol)
-			Assert.assertEquals(ExpectedSecondCol, valueCol)
-			println("Second Column Name----->"+ valueCol)
+			Assert.assertEquals(ExpectedFirstField, jobId)
+			println("First Field Name----->"+ jobId)
+
+			Assert.assertEquals(ExpectedSecondField, salespersion)
+			println("Second Field Name----->"+ salespersion)
+
+			Assert.assertEquals(ExpectedThirdField, accountname)
+			println("Third Field Name----->"+ accountname)
+
+			Assert.assertEquals(ExpectedFourthField, datecreated)
+			println("Fourth Field Name----->"+ datecreated)
+
+			Assert.assertEquals(ExpectedFifthField, duedate)
+			println("Fifth Field Name----->"+ duedate)
+
+			Assert.assertEquals(ExpectedSixthField, coordinator)
+			println("Sixth Field Name----->"+ coordinator)
+
+			Assert.assertEquals(ExpectedSeventhField, designer)
+			println("Seventh Field Name----->"+ designer)
 
 		}
 		catch(Exception e){
 			println("VerifyJobActivityTrackingReportColumns method failed due to :" + e)
 		}
 	}
+
+
+
+
+
+
 
 
 

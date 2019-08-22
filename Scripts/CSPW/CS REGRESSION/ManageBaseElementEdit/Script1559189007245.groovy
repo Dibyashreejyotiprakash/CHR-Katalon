@@ -21,9 +21,9 @@ WebUI.navigateToUrl('https://admintool.v5qa.brandmuscle.net')
 
 WebUI.waitForPageLoad(30)
 
-WebUI.setText(findTestObject('CONSOLIDATOR/LogInPage/Username'), 'chrtestuser@brandmuscle.com')
+WebUI.setText(findTestObject('CONSOLIDATOR/LogInPage/Username'), 'varsha.dodderi@brandmuscle.com')
 
-WebUI.setText(findTestObject('CONSOLIDATOR/LogInPage/Password'), 'Ownlocal@123')
+WebUI.setText(findTestObject('CONSOLIDATOR/LogInPage/Password'), 'NYwC6CJg')
 
 WebUI.click(findTestObject('CONSOLIDATOR/LogInPage/LoginBtn'))
 
