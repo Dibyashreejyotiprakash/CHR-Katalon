@@ -490,54 +490,54 @@ public class AccountsPage
 
 		}
 	}
-	
-	
+
+
 	@Keyword
 	public void AssociateAllSalesPerson()
 	{
 		try
 		{
 			LocalDateTime dateTime = LocalDateTime.now()
-			
-						action.WaitVisible(siteadmintab)
-						action.MouseHoverOnElement(siteadmintab)
-						WebUI.delay(3)
-						action.WaitVisible(accounts)
-						action.Click(accounts)
-						action.WaitVisible(insertbtn)
-						action.SelectByText(corpDropDown, "Instant Impact 4.0 Demo Corp (Dist.)")
-						WebUI.delay(2)
-						action.SelectByText(marketDropDown, "Chicago Beverage Systems")
-						WebUI.delay(2)
-						String acc_name = "QATest"+dateTime
-						action.Type(description, acc_name)
-						WebUI.delay(2)
-						action.Type(city,"Cleveland")
-						action.Type(state, "OH")
-						action.Type(zip, "44114")
-						action.Type(phonenumber, "976-767-6768")
-						String id = "123"+dateTime
-						WebUI.delay(2)
-						action.Type(clientaccountid,id)
-						WebUI.delay(2)
-						action.Click(insertbtn)
-						WebUI.delay(1)
-						action.IsElementDisplayed(newrecordmssg)
-						action.WaitVisible(addsalespersonbtn)
-						WebUI.delay(2)
-						action.Click(allsalespeoplebtn)
-						WebUI.delay(2)
-						Robot r = new Robot();
-                        r.keyPress(KeyEvent.VK_ENTER);
-                        r.keyRelease(KeyEvent.VK_ENTER);
-						WebUI.delay(2)
-						action.IsElementDisplayed(allsalespeoplesuccessmssg)
+
+			action.WaitVisible(siteadmintab)
+			action.MouseHoverOnElement(siteadmintab)
+			WebUI.delay(3)
+			action.WaitVisible(accounts)
+			action.Click(accounts)
+			action.WaitVisible(insertbtn)
+			action.SelectByText(corpDropDown, "Instant Impact 4.0 Demo Corp (Dist.)")
+			WebUI.delay(2)
+			action.SelectByText(marketDropDown, "Chicago Beverage Systems")
+			WebUI.delay(2)
+			String acc_name = "QATest"+dateTime
+			action.Type(description, acc_name)
+			WebUI.delay(2)
+			action.Type(city,"Cleveland")
+			action.Type(state, "OH")
+			action.Type(zip, "44114")
+			action.Type(phonenumber, "976-767-6768")
+			String id = "123"+dateTime
+			WebUI.delay(2)
+			action.Type(clientaccountid,id)
+			WebUI.delay(2)
+			action.Click(insertbtn)
+			WebUI.delay(1)
+			action.IsElementDisplayed(newrecordmssg)
+			action.WaitVisible(addsalespersonbtn)
+			WebUI.delay(2)
+			action.Click(allsalespeoplebtn)
+			WebUI.delay(2)
+			Robot r = new Robot();
+			r.keyPress(KeyEvent.VK_ENTER);
+			r.keyRelease(KeyEvent.VK_ENTER);
+			WebUI.delay(2)
+			action.IsElementDisplayed(allsalespeoplesuccessmssg)
 		}
 		catch(Exception e)
 		{
 			Assert.fail("AssociateAllSalesPerson Failed due to "+e)
 		}
 	}
-	
+
 
 }

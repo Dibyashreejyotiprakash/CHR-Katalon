@@ -70,7 +70,7 @@ public class BrandsPage {
 	By brandupdatemessage = By.xpath("//li[contains(text(),'Brands have been updated')]")
 	By chargebackapplybtn = By.xpath(".//*[@id='ctl00_ctl00_cphMain_cphMain_fvChargeBackBySupplier_btnChargeBackBySupplier']")
 	By showretiredcheckbox = By.xpath("//input[@id='ctl00_ctl00_cphMain_cphMain_ckRetired']")
-	 
+
 
 	@Keyword
 	public void VerifyBrandsPage() {
@@ -377,8 +377,7 @@ public class BrandsPage {
 	}
 
 	@Keyword
-	public void ValidateChargeBackBySupplierMandatoryField()
-	 {
+	public void ValidateChargeBackBySupplierMandatoryField() {
 		try {
 			action.WaitVisible(newbrand)
 			action.WaitVisible(setchargebackbysupplier)
@@ -389,41 +388,37 @@ public class BrandsPage {
 			action.IsElementDisplayed(marketrequiredmssg)
 			action.IsDisplayed(supplierrequiredmssg)
 			action.IsDisplayed(chargebackrequiredmssg)
-			
 		}
 		catch(Exception e) {
 			Assert.fail("ValidateAddBrandMandatoryField failed due to "+e)
 		}
 	}
-	 
-	 @Keyword
-	 public void ValidateShowRetireBrands()
-	 {
-		 try
-		 {
-			 action.IsDisplayed(updateexistingbrand)
+
+	@Keyword
+	public void ValidateShowRetireBrands() {
+		try {
+			action.IsDisplayed(updateexistingbrand)
 			// action.Click(updateexistingbrand)
- 
-			 action.IsElementDisplayed(corpddn)
-			 action.SelectByText(corpddn, "Instant Impact 4.0 Demo Corp (Dist.)")
-			 action.WaitVisible(progressIndicator)
-			 WebUI.delay(10)
-			 action.IsElementDisplayed(marketddn)
-			 action.SelectByText(marketddn, "Chicago Beverage Systems")
-			 action.WaitVisible(progressIndicator)
-			 WebUI.delay(1)
-			 action.SelectByText(supplierddn, "MILLER COORS BREWING COMPANY")
-			 action.WaitVisible(progressIndicator)
-			 WebUI.delay(2)
-			 action.Type(updatebrandnamefield, "Brand")
-			 action.Click(showretiredcheckbox)
-			 WebUI.delay(1)
-			 action.Click(searchbtn)
-			 //action.WaitVisible(searchresult)
-		 }
-		 catch(Exception e)
-		 {
-			 Assert.fail("ValidateShowRetireBrands failed due to "+e)
-		 }
-	 }
+
+			action.IsElementDisplayed(corpddn)
+			action.SelectByText(corpddn, "Instant Impact 4.0 Demo Corp (Dist.)")
+			action.WaitVisible(progressIndicator)
+			WebUI.delay(10)
+			action.IsElementDisplayed(marketddn)
+			action.SelectByText(marketddn, "Chicago Beverage Systems")
+			action.WaitVisible(progressIndicator)
+			WebUI.delay(1)
+			action.SelectByText(supplierddn, "MILLER COORS BREWING COMPANY")
+			action.WaitVisible(progressIndicator)
+			WebUI.delay(2)
+			action.Type(updatebrandnamefield, "Brand")
+			action.Click(showretiredcheckbox)
+			WebUI.delay(1)
+			action.Click(searchbtn)
+			//action.WaitVisible(searchresult)
+		}
+		catch(Exception e) {
+			Assert.fail("ValidateShowRetireBrands failed due to "+e)
+		}
+	}
 }

@@ -59,7 +59,7 @@ public class HomePage {
 	By highrarchy = By.xpath("//*[text()='HIERARCHY']")
 	By jobclosing = By.xpath("//*[text()='JOB CLOSING']")
 	By jobTypes = By.xpath("//*[text()='JOB TYPES']")
-	By suppliers = By.xpath("//*[text()='SUPPLIERS']")
+	//By suppliers = By.xpath("//*[text()='SUPPLIERS']")
 	By joblinestratification = By.xpath("//*[text()='JOB LINE STRATIFICATION']")
 	By peeraccountnotify = By.xpath("//*[text()='PEER ACCOUNT NOTIFY']")
 	By applicationadmin = By.xpath("//*[text()='APPLICATION']")

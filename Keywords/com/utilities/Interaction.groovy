@@ -864,12 +864,25 @@ public  class Interaction {
 	public List<WebElement> GetAllOption(By by)
 	{
 		WaitVisible(by);
-		WebElement elementToHover = driver.findElement(by);
+		WebElement elementToHover = driver.findElement(by)
 		Select select = new Select(elementToHover)
 		List <WebElement> options = select.getOptions()
 
 		return options
 	}
+	
+	//Get attribut of webelement
+	
+	public String Attribute(By by, String attri)
+	{
+		WaitVisible(by);
+		WebElement element = driver.findElement(by);
+		String value = element.getAttribute(attri)
+		
+		return value
+		
+	}
+	
 
 	public void Enter(By by)
 	{
