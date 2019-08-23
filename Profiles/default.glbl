@@ -81,7 +81,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'uat'</initValue>
+      <initValue>'prod'</initValue>
       <name>environment</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -228,5 +228,10 @@
       <description></description>
       <initValue>'TestBannedWord'</initValue>
       <name>bannedword</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'approvals'</initValue>
+      <name>bunameapprovals</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>

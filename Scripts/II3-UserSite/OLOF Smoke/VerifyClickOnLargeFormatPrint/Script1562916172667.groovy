@@ -17,7 +17,7 @@ WebUI.openBrowser('')
 
 WebUI.maximizeWindow()
 
-CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameii3, GlobalVariable.testtypesmoke, GlobalVariable.environment)
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameapprovalsii3, GlobalVariable.testtypesmoke, GlobalVariable.environment)
 
 CustomKeywords.'com.ii3usersite.ii3LoginPage.LoginToii3'(GlobalVariable.ii3username, GlobalVariable.ii3password)
 

@@ -189,19 +189,45 @@ public class JobNewPage {
 	@Keyword
 	public void VerifyCreatedNewJobType(String jobtype) {
 
+		action.SelectByText(corporationddn, "Instant Impact 4.0 Demo Corp (Dist.)")
+		WebUI.delay(10)
+		action.SelectByText(marketddn, "Chicago Beverage Systems")
+		WebUI.delay(5)
+		action.SelectByText(salespersonddn, "ADMIN1, TEST (testadmin1@brandmuscle.com)")
+		WebUI.delay(5)
+		action.SelectByIndex(accountddn, 1)
+		WebUI.delay(5)
+		WebElement wb = driver.findElement(By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_fvNewJob_CorpsAndMarkets_ddlJobType']"))
+		Select sc = new Select(wb);
+		action.SelectByText(jobtypeddn, jobtype)
+		action.Click(createjobbtn)
+
+	}
+
+	@Keyword
+	public String CreateNewJob()
+	{
+		try
+		{
 			action.SelectByText(corporationddn, "Instant Impact 4.0 Demo Corp (Dist.)")
 			WebUI.delay(10)
 			action.SelectByText(marketddn, "Chicago Beverage Systems")
-			WebUI.delay(5)
+			WebUI.delay(10)
 			action.SelectByText(salespersonddn, "ADMIN1, TEST (testadmin1@brandmuscle.com)")
-			WebUI.delay(5)
+			WebUI.delay(10)
 			action.SelectByIndex(accountddn, 1)
-			WebUI.delay(5)
-			WebElement wb = driver.findElement(By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_fvNewJob_CorpsAndMarkets_ddlJobType']"))
-			Select sc = new Select(wb);
-				action.SelectByText(jobtypeddn, jobtype)
-				action.Click(createjobbtn)
-		
+			WebUI.delay(10)
+			action.SelectByText(jobtypeddn, "Books/Accessories Only")
+			WebUI.delay(10)
+			action.Click(createjobbtn)
+			WebUI.delay(1000)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e)
+		{
+			println ("Create a new job failed due to "+ e)
+			Assert.fail()
+		}
 	}
 
 }

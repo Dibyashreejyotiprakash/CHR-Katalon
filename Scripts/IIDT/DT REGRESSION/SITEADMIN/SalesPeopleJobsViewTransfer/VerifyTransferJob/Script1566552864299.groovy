@@ -2,6 +2,9 @@ import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+
+import org.junit.After
+
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
@@ -17,8 +20,7 @@ WebUI.openBrowser('')
 
 WebUI.maximizeWindow()
 
-CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamedesigntracker, GlobalVariable.testtyperegression,
-	GlobalVariable.environment)
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamedesigntracker, GlobalVariable.testtypesmoke, GlobalVariable.environment)
 
 WebUI.waitForPageLoad(300)
 
@@ -26,10 +28,30 @@ CustomKeywords.'com.designtracker.LoginPage.LoginToDesignTarcker'(GlobalVariable
 
 CustomKeywords.'com.designtracker.HomePage.VerifyHomePage'()
 
-CustomKeywords.'com.designtracker.HomePage.ClickOnSuppliers'()
+CustomKeywords.'com.designtracker.HomePage.ClickOnNewJob'()
 
-CustomKeywords.'com.designtracker.SuppliersPage.VerifySuppliersPage'()
+CustomKeywords.'com.designtracker.JobNewPage.CreateNewJob'()
 
-CustomKeywords.'com.designtracker.SuppliersPage.AddNewSuppliers'()
+String jobid = CustomKeywords.'com.designtracker.JobDetailsPage.GetJobId'()
+
+println ("Job Id is "+ jobid)
+
+CustomKeywords.'com.designtracker.HomePage.ClickOnSalesPeopleViewTransferButton'()
+
+CustomKeywords.'com.designtracker.SalesPeopleJobsViewOrTransferPage.VerifyViewTransferPage'()
+
+CustomKeywords.'com.designtracker.SalesPeopleJobsViewOrTransferPage.VerifyAddNewBtnAfterSelectingUser'()
+
+WebUI.closeBrowser()
+
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameapprovals, GlobalVariable.testtypesmoke, GlobalVariable.environment)
+
+WebUI.waitForPageLoad(300)
+
+CustomKeywords.'com.approvals.LoginPage.VerifyApprovalLoginPage'()
+
+CustomKeywords.'com.approvals.HomePage.VerifyApprovalsHomePage'()
+
+CustomKeywords.'com.approvals.HomePage.VerifySearchDTJob'(jobid)
 
 WebUI.closeBrowser()

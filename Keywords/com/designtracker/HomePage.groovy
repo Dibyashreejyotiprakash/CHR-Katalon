@@ -100,6 +100,7 @@ public class HomePage {
 	By jobIds = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_gvSearchResults_ctl00']//following-sibling::tbody/tr/td[5]")
 	By appadmin = By.xpath("//*[@title='Application Administration']")
 	By jobtypes = By.xpath("//*[text()='JOB TYPES']")
+	By salespeopleviewtransferjob = By.xpath("//*[text()='SALES PEOPLE JOBS VIEW/TRANSFER']")
 
 	@Keyword
 	public void VerifyHomePage() {
@@ -659,6 +660,20 @@ public class HomePage {
 		}
 		catch(Exception e) {
 			println ("Click On exceptionlistbrands failed due to "+ e)
+		}
+	}
+
+	@Keyword
+	public void ClickOnSalesPeopleViewTransferButton()
+	{
+		try {
+			action.MouseHoverOnElement(siteadmin)
+			WebUI.delay(3)
+			action.Click(salespeopleviewtransferjob)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("Click On Sales People View Transfer Button failed due to "+ e)
 		}
 	}
 }

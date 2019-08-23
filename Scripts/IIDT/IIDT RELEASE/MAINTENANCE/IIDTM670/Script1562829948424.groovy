@@ -19,7 +19,7 @@ WebUI.maximizeWindow()
 
 WebUI.waitForPageLoad(300)
 
-CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamewswadmin, GlobalVariable.testtyperegression, GlobalVariable.environment)
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameapprovalswswadmin, GlobalVariable.testtyperegression, GlobalVariable.environment)
 
 CustomKeywords.'com.wswadmin.HomePage.NavigateToItemSearchPage'()
 

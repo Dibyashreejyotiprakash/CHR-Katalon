@@ -19,7 +19,7 @@ WebUI.maximizeWindow()
 
 WebUI.waitForPageLoad(300)
 
-CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamedesigntracker, GlobalVariable.testtyperegression, 
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameapprovalsdesigntracker, GlobalVariable.testtyperegression, 
     GlobalVariable.environment)
 
 CustomKeywords.'com.designtracker.LoginPage.LoginToDesignTarcker'('dibyashree.jyoti@brandmuscle.com', 'chr@1234')

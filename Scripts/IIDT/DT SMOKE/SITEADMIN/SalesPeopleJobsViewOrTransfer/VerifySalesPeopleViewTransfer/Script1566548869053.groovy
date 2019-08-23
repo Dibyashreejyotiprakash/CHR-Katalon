@@ -17,7 +17,7 @@ WebUI.openBrowser('')
 
 WebUI.maximizeWindow()
 
-CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamedesigntracker, GlobalVariable.testtyperegression,
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameapprovalsdesigntracker, GlobalVariable.testtypesmoke,
 	GlobalVariable.environment)
 
 WebUI.waitForPageLoad(300)
@@ -26,14 +26,8 @@ CustomKeywords.'com.designtracker.LoginPage.LoginToDesignTarcker'(GlobalVariable
 
 CustomKeywords.'com.designtracker.HomePage.VerifyHomePage'()
 
-CustomKeywords.'com.designtracker.HomePage.ClickOnJobTypes'()
+CustomKeywords.'com.designtracker.HomePage.ClickOnSalesPeopleViewTransferButton'()
 
-CustomKeywords.'com.designtracker.JobTypes.VerifyJobTypePage'()
-
-String newlycreatedjobtype = CustomKeywords.'com.designtracker.JobTypes.CreateNewJobType'()
-
-CustomKeywords.'com.designtracker.HomePage.ClickOnNewJob'()
-
-CustomKeywords.'com.designtracker.JobNewPage.VerifyCreatedNewJobType'(newlycreatedjobtype)
+CustomKeywords.'com.designtracker.SalesPeopleJobsViewOrTransferPage.VerifyViewTransferPage'()
 
 WebUI.closeBrowser()

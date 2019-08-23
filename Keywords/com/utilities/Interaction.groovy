@@ -202,15 +202,19 @@ public  class Interaction {
 				}
 
 
-				else if (BuName.equalsIgnoreCase("PROOFGALLERY")) {
+				else if (BuName.equalsIgnoreCase("APPROVALS")) {
 
 					if (EnvironmentName.equalsIgnoreCase("UAT")) {
+						WebUI.navigateToUrl("http://approvals.uat.brandmuscle.net/")
 					}
 					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
+						WebUI.navigateToUrl("http://approvals.stage.brandmuscle.net/")
 					}
 					else if (EnvironmentName.equalsIgnoreCase("PROD")) {
+						WebUI.navigateToUrl("http://approvals.brandmuscle.net/")
 					}
 					else if (EnvironmentName.equalsIgnoreCase("DEV")) {
+						WebUI.navigateToUrl("http://approvals.dev.brandmuscle.net/")
 					}
 					else{
 						println ("Environment is not correct")
@@ -294,16 +298,20 @@ public  class Interaction {
 				}
 
 
-				else if (BuName.equalsIgnoreCase("PROOFGALLERY")) {
+				else if (BuName.equalsIgnoreCase("APPROVALS")) {
 
 					if (EnvironmentName.equalsIgnoreCase("UAT")) {
-						WebUI.navigateToUrl("http://proofs.uat.brandmuscle.net/")
+						WebUI.navigateToUrl("http://approvals.uat.brandmuscle.net/")
 					}
 					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
-						WebUI.navigateToUrl("http://proofs.stage.brandmuscle.net/")
+						WebUI.navigateToUrl("http://approvals.stage.brandmuscle.net/")
 					}
 					else if (EnvironmentName.equalsIgnoreCase("DEV")) {
-						WebUI.navigateToUrl("http://proofs.dev.brandmuscle.net/")
+						WebUI.navigateToUrl("http://approvals.dev.brandmuscle.net/")
+					}
+					else{
+						println ("Environment is not correct")
+						WebUI.closeBrowser()
 					}
 				}
 				else if (BuName.equalsIgnoreCase("WSWADMIN")) {
