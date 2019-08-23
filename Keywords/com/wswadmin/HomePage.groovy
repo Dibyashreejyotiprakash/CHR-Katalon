@@ -36,8 +36,8 @@ public class HomePage {
 	By globalmetataggingpage = By.xpath("(//span[contains(text(),'Global Meta Tagging Maintenance')])[1]")
 	By itempartquantitymaintenance = By.xpath("(//span[contains(text(),'Item/Part Quantity Maintenance')])[1]")
 	By resuorcemessagebtn = By.xpath("//*[@href='/InstantImpact/ResourceMessage/ResourceMessage.aspx']")
-	
-	
+
+
 	By fulfillmentbtn = By.xpath("//*[text()='Fulfillment']")
 	By lowstocknotification = By.xpath("//*[@href='/Fulfillment/LowstockNotification.aspx']")
 	By fulfillmentsearchbtn = By.xpath("//*[text()='Fulfillment Search']")
@@ -45,8 +45,8 @@ public class HomePage {
 	By fulfillmentproductunit = By.xpath("//*[text()='Fulfillment Product Unit']")
 	By createfulfillmentproductunit = By.xpath("//*[text()='Create Fulfillment Product Unit']")
 	By associtaeitemstoproductunit = By.xpath("//*[text()='Associate Items to Product Unit']")
-	
-	
+
+
 	By reports = By.xpath("//*[@href='/Fulfillment/Reports.aspx']")
 	By colormaintenance = By.xpath("//*[text()='Color Maintenance']")
 	By color = By.xpath("//*[@href='/Fulfillment/ColorMaintenance/FulfillmentColor.aspx']")
@@ -58,8 +58,10 @@ public class HomePage {
 	By fulfillmentcorpdistadmin = By.xpath("//*[@href='/Fulfillment/CorpDistributerQuantityPreOrder.aspx']")
 	By fuifillmentcorpmaintenance = By.xpath("//*[@href='/Fulfillment/FulfillmentCorp.aspx']")
 	By redbullsticthlab = By.xpath("//*[text()='Red Bull/Stitch Labs']")
-	By Heading = By.xpath("//h1[Contains(text(),'Brandmuscle Admin Tool')]")	
+	By Heading = By.xpath("//h1[Contains(text(),'Brandmuscle Admin Tool')]")
 	By bannedphrasesbtn = By.xpath("//*[@href='/InstantImpact/BannedWords/BannedPhrases.aspx']")
+	By itemgatinggroupmanagement = By.xpath("//span[contains(text(),'Item Gating Group Management')]")
+	By standarditemgating = By.xpath("//span[contains(text(),'Standard Item Gating')]")
 
 
 	@Keyword
@@ -169,7 +171,7 @@ public class HomePage {
 		action.Click(bannedphrasesbtn)
 		action.WaitForPageToLoad()
 	}
-	
+
 	@Keyword
 	public void NavigateToLowStockNotificationPage()
 	{
@@ -178,4 +180,19 @@ public class HomePage {
 		action.WaitForPageToLoad()
 		WebUI.delay(10)
 	}
+
+	@Keyword
+	public void NavigateToItemGatingGroupManagement()
+	{
+		action.WaitVisible(instantimpact)
+		action.MouseHoverOnElement(instantimpact)
+		WebUI.delay(3)
+		action.MouseHoverOnElement(itemgatinggroupmanagement)
+		WebUI.delay(3)
+		action.WaitVisible(standarditemgating)
+		action.Click(standarditemgating)
+		action.WaitForPageToLoad()
+
+	}
+
 }

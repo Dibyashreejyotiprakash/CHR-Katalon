@@ -59,7 +59,7 @@ public class HomePage {
 	By highrarchy = By.xpath("//*[text()='HIERARCHY']")
 	By jobclosing = By.xpath("//*[text()='JOB CLOSING']")
 	By jobTypes = By.xpath("//*[text()='JOB TYPES']")
-	By suppliers = By.xpath("//*[text()='SUPPLIERS']")
+	//By suppliers = By.xpath("//*[text()='SUPPLIERS']")
 	By joblinestratification = By.xpath("//*[text()='JOB LINE STRATIFICATION']")
 	By peeraccountnotify = By.xpath("//*[text()='PEER ACCOUNT NOTIFY']")
 	By applicationadmin = By.xpath("//*[text()='APPLICATION']")
@@ -300,8 +300,7 @@ public class HomePage {
 			action.WaitForPageToLoad(300)
 			WebUI.delay(6)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			println ("ClickOnJobActivityTracking method failed due to :" + e)
 		}
 	}
@@ -316,8 +315,7 @@ public class HomePage {
 			action.WaitForPageToLoad(300)
 			WebUI.delay(6)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			println ("ClickOnJobDaignostic method failed due to :" + e)
 		}
 	}
@@ -330,8 +328,7 @@ public class HomePage {
 			action.WaitForPageToLoad(300)
 			WebUI.delay(6)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			println ("ClickOnJobEfficiency method failed due to :" + e)
 		}
 	}
@@ -344,8 +341,7 @@ public class HomePage {
 			action.WaitForPageToLoad(300)
 			WebUI.delay(6)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			println ("ClickOnJobStatus method failed due to :" + e)
 		}
 	}
@@ -359,8 +355,7 @@ public class HomePage {
 			action.WaitForPageToLoad(300)
 			WebUI.delay(6)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			println ("ClickOnJobsSameBrands method failed due to :" + e)
 		}
 	}
@@ -373,8 +368,7 @@ public class HomePage {
 			action.WaitForPageToLoad(300)
 			WebUI.delay(6)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			println ("ClickOnProfirLoss method failed due to :" + e)
 		}
 	}
@@ -387,8 +381,7 @@ public class HomePage {
 			action.WaitForPageToLoad(300)
 			WebUI.delay(6)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			println ("ClickOnStatusSummary method failed due to :" + e)
 		}
 	}
@@ -401,8 +394,7 @@ public class HomePage {
 			action.WaitForPageToLoad(300)
 			WebUI.delay(6)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			println ("ClickOnGEXOrderStatus method failed due to :" + e)
 		}
 	}
