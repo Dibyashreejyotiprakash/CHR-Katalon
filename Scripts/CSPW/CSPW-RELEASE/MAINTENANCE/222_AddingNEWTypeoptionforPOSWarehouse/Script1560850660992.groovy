@@ -15,7 +15,7 @@ import internal.GlobalVariable as GlobalVariable
 
 WebUI.openBrowser('')
 
-CustomKeywords.'com.utilities.Interactions.GetUrl'(GlobalVariable.bunameposw, GlobalVariable.testtype, GlobalVariable.environment)
+CustomKeywords.'com.utilities.Interactions.GetUrl'(GlobalVariable.bunameapprovals, GlobalVariable.testtyperegression, GlobalVariable.environment)
 
 WebUI.waitForPageLoad(30)
 

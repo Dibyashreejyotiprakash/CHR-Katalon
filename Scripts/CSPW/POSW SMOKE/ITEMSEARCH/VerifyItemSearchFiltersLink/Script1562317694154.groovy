@@ -29,5 +29,5 @@ CustomKeywords.'com.poswm.Homepage.ClickOnItemSearch'()
 
 CustomKeywords.'com.poswm.WarehouseItemInventory.VerifyAllFiltersLink'()
 
-WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE)
+WebUI.closeBrowser()
 

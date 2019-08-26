@@ -65,6 +65,7 @@ public class JobDetailsPage {
 
 	By jobdetailsbtn = By.xpath("//*[text()='DETAILS']")
 
+	By jobid = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_lvJobs_ctrl0_lblJobIDOutput']")
 
 	@Keyword
 	public void ClickOnDetailsBtn() {
@@ -222,5 +223,18 @@ public class JobDetailsPage {
 		action.ScrollToBottomOfPage()
 		action.WaitUntilElementClickable(savejobinfobtn)
 		action.Click(savejobinfobtn)
+	}
+
+	@Keyword
+	public String GetJobId() {
+		String jobidlabel =null;
+		try {
+			jobidlabel = action.GetText(jobid)
+		}
+		catch(Exception e) {
+			println ("Get Job Id failed due to "+ e)
+			Assert.fail()
+		}
+		return jobidlabel;
 	}
 }

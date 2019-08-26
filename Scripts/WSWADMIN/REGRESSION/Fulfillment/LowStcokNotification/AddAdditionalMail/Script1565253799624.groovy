@@ -25,3 +25,5 @@ CustomKeywords.'com.wswadmin.LowStockNotificationPage.VerifyLowNotificationPage'
 
 CustomKeywords.'com.wswadmin.LowStockNotificationPage.AddAditionalMail'()
 
+WebUI.closeBrowser()
+

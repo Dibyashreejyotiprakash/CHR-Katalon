@@ -17,7 +17,7 @@ WebUI.openBrowser('')
 
 WebUI.maximizeWindow()
 
-CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameiiusersite, GlobalVariable.testtypesmoke, GlobalVariable.environment)
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamedesigntracker, GlobalVariable.testtypesmoke, GlobalVariable.environment)
 
 CustomKeywords.'com.ii4usersites.LoginPage.LoginToDemoCorp'(GlobalVariable.iiusersiteusername, GlobalVariable.iiusersitepassword)
 
@@ -64,8 +64,6 @@ CustomKeywords.'com.designtracker.LoginPage.LoginToDesignTarcker'(GlobalVariable
 CustomKeywords.'com.designtracker.HomePage.VerifyNewlyCreatedJobSearchInDT'(confirmationno)
 
 CustomKeywords.'com.designtracker.JobDetailsPage.VerifyJobDetailsPage'()
-
-CustomKeywords.com.designtracker.JobDeta
 
 WebUI.closeBrowser()
 

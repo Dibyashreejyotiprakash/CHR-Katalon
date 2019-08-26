@@ -21,3 +21,4 @@ CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamewswadmin,
 
 CustomKeywords.'com.wswadmin.HomePage.NavigateToBannedPhrases'()
 
+WebUI.closeBrowser()
