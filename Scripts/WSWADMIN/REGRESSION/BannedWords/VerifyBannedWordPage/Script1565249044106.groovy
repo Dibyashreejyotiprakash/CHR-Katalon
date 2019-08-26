@@ -17,7 +17,8 @@ WebUI.openBrowser('')
 
 WebUI.maximizeWindow()
 
-CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameapprovalswswadmin, GlobalVariable.testtypesmoke, GlobalVariable.environment)
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamewswadmin, GlobalVariable.testtypesmoke, GlobalVariable.environment)
 
 CustomKeywords.'com.wswadmin.HomePage.NavigateToBannedPhrases'()
 
+WebUI.closeBrowser()

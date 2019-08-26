@@ -17,7 +17,7 @@ WebUI.openBrowser('')
 
 WebUI.maximizeWindow()
 
-CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameapprovalsconsolidator, GlobalVariable.testtypesmoke, GlobalVariable.environment)
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameconsolidator, GlobalVariable.testtypesmoke, GlobalVariable.environment)
 
 CustomKeywords.'com.consolidator.LoginPage.LoginConsolidator'(GlobalVariable.consolusername, GlobalVariable.conslopassword)
 

@@ -17,11 +17,13 @@ WebUI.openBrowser('')
 
 WebUI.maximizeWindow()
 
-CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameapprovalsposw, GlobalVariable.testtypesmoke, GlobalVariable.environment)
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameposw, GlobalVariable.testtypesmoke, GlobalVariable.environment)
 
 WebUI.waitForPageLoad(30)
 
 CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.posusername, GlobalVariable.pospassword)
 
 CustomKeywords.'com.poswm.WarehouseOrderInventoryPage.VerifyItemSearchPage'()
+
+WebUI.closeBrowser()
 

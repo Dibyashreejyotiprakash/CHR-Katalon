@@ -19,7 +19,7 @@ WebUI.maximizeWindow()
 
 WebUI.waitForPageLoad(300)
 
-CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameapprovalsdesigntracker, GlobalVariable.testtyperegression, 
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamedesigntracker, GlobalVariable.testtyperegression, 
     GlobalVariable.environment)
 
 CustomKeywords.'com.designtracker.LoginPage.LoginToDesignTarcker'('dibyashree.jyoti@brandmuscle.com', 'chr@1234')
@@ -34,7 +34,7 @@ WebUI.maximizeWindow()
 
 WebUI.waitForPageLoad(300)
 
-CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameapprovalsiiusersite, GlobalVariable.testtypesmoke, GlobalVariable.environment)
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameiiusersite, GlobalVariable.testtypesmoke, GlobalVariable.environment)
 
 CustomKeywords.'com.ii4usersites.LoginPage.LoginToInstantImpactDist'('testadmin1@brandmuscle.com', 'go2web')
 

@@ -22,7 +22,7 @@
    <GlobalVariableEntity>
       <description></description>
       <initValue>'https://admintool.v5qa.brandmuscle.net'</initValue>
-      <name>consolidatorurl</name>
+      <name>consolidatorurlUAT</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
@@ -81,7 +81,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'prod'</initValue>
+      <initValue>'uat'</initValue>
       <name>environment</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -231,7 +231,122 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'approvals'</initValue>
+      <initValue>'http://admintool.v5stage.brandmuscle.net'</initValue>
+      <name>consolidatorurlSTAGE</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://admintool.brandmuscle.net'</initValue>
+      <name>consolidatorurlPROD</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'http://ii3.uat.brandmuscle.net/'</initValue>
+      <name>ii3UAT</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'http://ii3.stage.brandmuscle.net/'</initValue>
+      <name>ii3STAGE</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'http://rel3.instantimpact.com/'</initValue>
+      <name>ii3PROD</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'http://designtracker.uat.brandmuscle.net/'</initValue>
+      <name>dtUAT</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'http://designtracker.stage.brandmuscle.net'</initValue>
+      <name>dtSTAGE</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'http://designtracker.brandmuscle.net'</initValue>
+      <name>dtPROD</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://csg.v5qa.brandmuscle.net/'</initValue>
+      <name>poswUAT</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://csg.v5stage.brandmuscle.net'</initValue>
+      <name>poswSTAGE</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://bbg.brandmuscle.net'</initValue>
+      <name>poswPROD</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'http://rel4.uat.instantimpact.com/'</initValue>
+      <name>ii4UAT</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'http://rel4.stage.instantimpact.com/'</initValue>
+      <name>ii4STAGE</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'http://rel4.instantimpact.com/'</initValue>
+      <name>ii4PROD</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'http://dibyashree.jyoti:chr@1234@wswadmin.uat.brandmuscle.net'</initValue>
+      <name>wswadminUAT</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'http://dibyashree.jyoti:chr@1234@wswadmin.stage.brandmuscle.net'</initValue>
+      <name>wswadminSATGE</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'http://dibyashree.jyoti:chr@1234@wswadmin.brandmuscle.net'</initValue>
+      <name>wswadminPROD</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'http://dibyashree.jyoti:chr@1234@iiadmin.uat.brandmuscle.net/'</initValue>
+      <name>iiadminUAT</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'http://dibyashree.jyoti:chr@1234@iiadmin.stage.brandmuscle.net/'</initValue>
+      <name>iiadminSTAGE</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://iiadmin.brandmuscle.net'</initValue>
+      <name>iiadminPROD</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'http://approvals.uat.brandmuscle.net'</initValue>
+      <name>dtapprovalUAT</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://approvals.stage.brandmuscle.net'</initValue>
+      <name>dtapprovalSTAGE</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'http://approvals.brandmuscle.net'</initValue>
+      <name>dtapprovalsPROD</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'APPROVALS'</initValue>
       <name>bunameapprovals</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>

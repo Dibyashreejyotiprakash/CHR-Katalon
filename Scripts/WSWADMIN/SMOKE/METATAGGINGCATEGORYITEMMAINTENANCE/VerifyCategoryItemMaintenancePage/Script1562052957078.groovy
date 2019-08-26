@@ -19,7 +19,7 @@ WebUI.setViewPortSize(1024, 768)
 
 WebUI.maximizeWindow()
 
-CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameapprovalswswadmin, GlobalVariable.testtypesmoke, GlobalVariable.environment)
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamewswadmin, GlobalVariable.testtypesmoke, GlobalVariable.environment)
 
 CustomKeywords.'com.wswadmin.HomePage.NavigateToCategoryItemMaintenancePage'()
 

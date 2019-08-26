@@ -17,11 +17,13 @@ WebUI.openBrowser('')
 
 WebUI.maximizeWindow()
 
-CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameapprovalswswadmin, GlobalVariable.testtyperegression, GlobalVariable.environment)
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamewswadmin, GlobalVariable.testtyperegression, GlobalVariable.environment)
 
 CustomKeywords.'com.wswadmin.HomePage.NavigateToLowStockNotificationPage'()
 
 CustomKeywords.'com.wswadmin.LowStockNotificationPage.VerifyLowNotificationPage'()
 
 CustomKeywords.'com.wswadmin.LowStockNotificationPage.AddAditionalMail'()
+
+WebUI.closeBrowser()
 

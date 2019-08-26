@@ -20,6 +20,7 @@ import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
+import internal.GlobalVariable
 
 import com.kms.katalon.core.webui.driver.DriverFactory
 import org.openqa.selenium.WebElement
@@ -52,16 +53,13 @@ public  class Interaction {
 				if (BuName.equalsIgnoreCase("CONSOLIDATOR")) {
 
 					if (EnvironmentName.equalsIgnoreCase("UAT")) {
-						WebUI.navigateToUrl("https://admintool.v5qa.brandmuscle.net")
+						WebUI.navigateToUrl(GlobalVariable.consolidatorurlUAT)
 					}
 					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
-						WebUI.navigateToUrl("https://admintool.v5stage.brandmuscle.net")
+						WebUI.navigateToUrl(GlobalVariable.consolidatorurlSTAGE)
 					}
 					else if (EnvironmentName.equalsIgnoreCase("PROD")) {
-						WebUI.navigateToUrl("https://admintool.brandmuscle.net")
-					}
-					else if (EnvironmentName.equalsIgnoreCase("DEV")) {
-						WebUI.navigateToUrl("https://admintool.v5dev.brandmuscle.net")
+						WebUI.navigateToUrl(GlobalVariable.consolidatorurlPROD)
 					}
 					else{
 						println ("Environment is not correct")
@@ -71,16 +69,13 @@ public  class Interaction {
 				else if (BuName.equalsIgnoreCase("ii3")) {
 
 					if (EnvironmentName.equalsIgnoreCase("UAT")) {
-						WebUI.navigateToUrl("http://ii3.uat.brandmuscle.net")
+						WebUI.navigateToUrl(GlobalVariable.ii3UAT)
 					}
 					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
-						WebUI.navigateToUrl("https://ii3.stage.brandmuscle.net")
+						WebUI.navigateToUrl(GlobalVariable.ii3STAGE)
 					}
 					else if (EnvironmentName.equalsIgnoreCase("PROD")) {
-						WebUI.navigateToUrl("http://rel3.instantimpact.com")
-					}
-					else if (EnvironmentName.equalsIgnoreCase("DEV")) {
-						WebUI.navigateToUrl("https://ii3.dev.brandmuscle.net")
+						WebUI.navigateToUrl(GlobalVariable.ii3PROD)
 					}
 					else{
 						println ("Environment is not correct")
@@ -90,31 +85,13 @@ public  class Interaction {
 				else if (BuName.equalsIgnoreCase("DESIGNTRACKER")) {
 
 					if (EnvironmentName.equalsIgnoreCase("UAT")) {
-						WebUI.navigateToUrl("http://designtracker.uat.brandmuscle.net/")
+						WebUI.navigateToUrl(GlobalVariable.dtUAT)
 					}
 					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
-						WebUI.navigateToUrl("http://designtracker.stage.brandmuscle.net/")
+						WebUI.navigateToUrl(GlobalVariable.dtSTAGE)
 					}
 					else if (EnvironmentName.equalsIgnoreCase("PROD")) {
-						WebUI.navigateToUrl("http://designtracker.brandmuscle.net/")
-					}
-					else if (EnvironmentName.equalsIgnoreCase("DEV")) {
-						WebUI.navigateToUrl("http://designtracker.dev.brandmuscle.net/")
-					}
-					else{
-						println ("Environment is not correct")
-						WebUI.closeBrowser()
-					}
-				}
-				else if (BuName.equalsIgnoreCase("DESIGNTRACKERAPPROVALPORTAL")) {
-
-					if (EnvironmentName.equalsIgnoreCase("UAT")) {
-					}
-					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
-					}
-					else if (EnvironmentName.equalsIgnoreCase("PROD")) {
-					}
-					else if (EnvironmentName.equalsIgnoreCase("DEV")) {
+						WebUI.navigateToUrl(GlobalVariable.dtPROD)
 					}
 					else{
 						println ("Environment is not correct")
@@ -123,57 +100,47 @@ public  class Interaction {
 				}
 				else if(BuName.equalsIgnoreCase("POSW")){
 					if (EnvironmentName.equalsIgnoreCase("UAT")) {
-						WebUI.navigateToUrl("http://csg.v5qa.brandmuscle.net")
+						WebUI.navigateToUrl(GlobalVariable.poswUAT)
 					}
 					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
-						WebUI.navigateToUrl("https://csg.v5stage.brandmuscle.net")
+						WebUI.navigateToUrl(GlobalVariable.poswSTAGE)
 					}
 					else if (EnvironmentName.equalsIgnoreCase("PROD")) {
 						WebUI.navigateToUrl("http://csg.brandmuscle.net")
 					}
-					else if (EnvironmentName.equalsIgnoreCase("DEV")) {
-						WebUI.navigateToUrl("https://csg.v5dev.brandmuscle.net")
-					}
 					else{
 						println ("Environment is not correct")
 						WebUI.closeBrowser()
 					}
 				}
-
 				else if (BuName.equalsIgnoreCase("INSTANTIMPACTUSERSITE")) {
 
 					if (EnvironmentName.equalsIgnoreCase("UAT")) {
-						WebUI.navigateToUrl("http://ii4.uat.brandmuscle.net/")
+						WebUI.navigateToUrl(GlobalVariable.ii4UAT)
 					}
 					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
-						WebUI.navigateToUrl("https://ii4.v5stage.brandmuscle.net/")
+						WebUI.navigateToUrl(GlobalVariable.ii4STAGE)
 					}
 					else if (EnvironmentName.equalsIgnoreCase("PROD")) {
-						WebUI.navigateToUrl("http://rel4.instantimpact.com")
-					}
-					else if (EnvironmentName.equalsIgnoreCase("DEV")) {
-						WebUI.navigateToUrl("http://ii4.dev.brandmuscle.net/")
+						WebUI.navigateToUrl(GlobalVariable.ii4PROD)
 					}
 					else{
 						println ("Environment is not correct")
+						throw new Exception("WSW Environment is not correct")
 						WebUI.closeBrowser()
 					}
 				}
-				else if (BuName.equalsIgnoreCase("WSWADMIN")) {
-
-					if (EnvironmentName.equalsIgnoreCase("UAT")) {
-						println("Inside WSW UAT Environment")
-						WebUI.navigateToUrl("http://dibyashree.jyoti:chr@1234@wswadmin.uat.brandmuscle.net")
-						println("Executed  WSW UAT Environment")
+				else if (BuName.equalsIgnoreCase("WSWADMIN"))
+				{
+					if (EnvironmentName.equalsIgnoreCase("UAT"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.wswadminUAT)
 					}
 					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
-						WebUI.navigateToUrl("http://dibyashree.jyoti:chr@1234@wswadmin.stage.brandmuscle.net")
+						WebUI.navigateToUrl(GlobalVariable.wswadminSATGE)
 					}
 					else if (EnvironmentName.equalsIgnoreCase("PROD")) {
-						WebUI.navigateToUrl("http://dibyashree.jyoti:chr@1234@wswadmin.brandmuscle.net")
-					}
-					else if (EnvironmentName.equalsIgnoreCase("DEV")) {
-						WebUI.navigateToUrl("http://dibyashree.jyoti:chr@1234@wswadmin.dev.brandmuscle.net")
+						WebUI.navigateToUrl(GlobalVariable.wswadminPROD)
 					}
 					else{
 						println ("Environment is not correct")
@@ -184,16 +151,13 @@ public  class Interaction {
 				else if (BuName.equalsIgnoreCase("IIADMIN")) {
 
 					if (EnvironmentName.equalsIgnoreCase("UAT")) {
-						WebUI.navigateToUrl("http://dibyashree.jyoti:chr@1234@iiadmin.uat.brandmuscle.net/")
+						WebUI.navigateToUrl(GlobalVariable.iiadminUAT)
 					}
 					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
-						WebUI.navigateToUrl("http://dibyashree.jyoti:chr@1234@iiadmin.stage.brandmuscle.net//")
+						WebUI.navigateToUrl(GlobalVariable.iiadminSTAGE)
 					}
 					else if (EnvironmentName.equalsIgnoreCase("PROD")) {
-						WebUI.navigateToUrl("http://dibyashree.jyoti:chr@1234@iiadmin.brandmuscle.net/")
-					}
-					else if (EnvironmentName.equalsIgnoreCase("DEV")) {
-						WebUI.navigateToUrl("http://dibyashree.jyoti:chr@1234@iiadmin.dev.brandmuscle.net/")
+						WebUI.navigateToUrl(GlobalVariable.iiadminPROD)
 					}
 					else{
 						println ("Environment is not correct")
@@ -205,17 +169,15 @@ public  class Interaction {
 				else if (BuName.equalsIgnoreCase("APPROVALS")) {
 
 					if (EnvironmentName.equalsIgnoreCase("UAT")) {
-						WebUI.navigateToUrl("http://approvals.uat.brandmuscle.net/")
+						WebUI.navigateToUrl(GlobalVariable.dtapprovalUAT)
 					}
 					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
-						WebUI.navigateToUrl("http://approvals.stage.brandmuscle.net/")
+						WebUI.navigateToUrl(GlobalVariable.dtapprovalSTAGE)
 					}
 					else if (EnvironmentName.equalsIgnoreCase("PROD")) {
-						WebUI.navigateToUrl("http://approvals.brandmuscle.net/")
+						WebUI.navigateToUrl(GlobalVariable.dtapprovalsPROD)
 					}
-					else if (EnvironmentName.equalsIgnoreCase("DEV")) {
-						WebUI.navigateToUrl("http://approvals.dev.brandmuscle.net/")
-					}
+
 					else{
 						println ("Environment is not correct")
 						WebUI.closeBrowser()
@@ -232,10 +194,10 @@ public  class Interaction {
 				if (BuName.equalsIgnoreCase("CONSOLIDATOR")) {
 
 					if (EnvironmentName.equalsIgnoreCase("UAT")) {
+						WebUI.navigateToUrl(GlobalVariable.consolidatorurlUAT)
 					}
 					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
-					}
-					else if (EnvironmentName.equalsIgnoreCase("DEV")) {
+						WebUI.navigateToUrl(GlobalVariable.consolidatorurlSTAGE)
 					}
 					else{
 						println ("Environment is not correct")
@@ -245,50 +207,23 @@ public  class Interaction {
 				else if (BuName.equalsIgnoreCase("INSTANTIMPACTUSERSITE")) {
 
 					if (EnvironmentName.equalsIgnoreCase("UAT")) {
-						WebUI.navigateToUrl("http://ii4.uat.brandmuscle.net/")
+						WebUI.navigateToUrl(GlobalVariable.ii4UAT)
 					}
 					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
-						WebUI.navigateToUrl("https://ii4.v5stage.brandmuscle.net/")
-					}
-					else if (EnvironmentName.equalsIgnoreCase("PROD")) {
-						WebUI.navigateToUrl("http://rel4.instantimpact.com")
-					}
-					else if (EnvironmentName.equalsIgnoreCase("DEV")) {
-						WebUI.navigateToUrl("http://ii4.dev.brandmuscle.net/")
+						WebUI.navigateToUrl(GlobalVariable.ii4STAGE)
 					}
 					else{
 						println ("Environment is not correct")
 						WebUI.closeBrowser()
 					}
 				}
-
-				else if (BuName.equalsIgnoreCase("INSTANTIMPACTUSERSITE")) {
-
-					if (EnvironmentName.equalsIgnoreCase("UAT")) {
-						WebUI.navigateToUrl("https://ii4.uat.brandmuscle.net")
-					}
-					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
-						WebUI.navigateToUrl("https://ii4.v5stage.brandmuscle.net")
-					}
-					else if (EnvironmentName.equalsIgnoreCase("DEV")) {
-						WebUI.navigateToUrl("http://ii4.dev.brandmuscle.net")
-					}
-					else{
-						println ("Environment is not correct")
-						WebUI.closeBrowser()
-					}
-				}
-
 				else if (BuName.equalsIgnoreCase("POSW")) {
 
 					if (EnvironmentName.equalsIgnoreCase("UAT")) {
-						WebUI.navigateToUrl("https://csg.v5stage.brandmuscle.net")
+						WebUI.navigateToUrl(GlobalVariable.poswUAT)
 					}
 					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
-						WebUI.navigateToUrl("https://csg.v5stage.brandmuscle.net")
-					}
-					else if (EnvironmentName.equalsIgnoreCase("DEV")) {
-						WebUI.navigateToUrl("https://csg.v5dev.brandmuscle.net")
+						WebUI.navigateToUrl(GlobalVariable.poswSTAGE)
 					}
 					else{
 						println ("Environment is not correct")
@@ -301,13 +236,10 @@ public  class Interaction {
 				else if (BuName.equalsIgnoreCase("APPROVALS")) {
 
 					if (EnvironmentName.equalsIgnoreCase("UAT")) {
-						WebUI.navigateToUrl("http://approvals.uat.brandmuscle.net/")
+						WebUI.navigateToUrl(GlobalVariable.dtapprovalUAT)
 					}
 					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
-						WebUI.navigateToUrl("http://approvals.stage.brandmuscle.net/")
-					}
-					else if (EnvironmentName.equalsIgnoreCase("DEV")) {
-						WebUI.navigateToUrl("http://approvals.dev.brandmuscle.net/")
+						WebUI.navigateToUrl(GlobalVariable.dtapprovalSTAGE)
 					}
 					else{
 						println ("Environment is not correct")
@@ -316,15 +248,12 @@ public  class Interaction {
 				}
 				else if (BuName.equalsIgnoreCase("WSWADMIN")) {
 
-					if (EnvironmentName.equalsIgnoreCase("UAT")) {
-						WebUI.navigateToUrl("http://dibyashree.jyoti:chr@1234@wswadmin.uat.brandmuscle.net")
-						println("WSW admin URL executed")
+					if (EnvironmentName.equalsIgnoreCase("UAT"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.wswadminUAT)
 					}
 					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
-						WebUI.navigateToUrl("http://dibyashree.jyoti:chr@1234@wswadmin.stage.brandmuscle.net")
-					}
-					else if (EnvironmentName.equalsIgnoreCase("DEV")) {
-						WebUI.navigateToUrl("http://dibyashree.jyoti:chr@1234@wswadmin.dev.brandmuscle.net")
+						WebUI.navigateToUrl(GlobalVariable.wswadminSATGE)
 					}
 					else{
 						println ("Environment is not correct")
@@ -335,13 +264,10 @@ public  class Interaction {
 				else if (BuName.equalsIgnoreCase("IIADMIN")) {
 
 					if (EnvironmentName.equalsIgnoreCase("UAT")) {
-						WebUI.navigateToUrl("http://dibyashree.jyoti:chr@1234@iiadmin.uat.brandmuscle.net/")
+						WebUI.navigateToUrl(GlobalVariable.iiadminUAT)
 					}
 					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
-						WebUI.navigateToUrl("http://dibyashree.jyoti:chr@1234@iiadmin.stage.brandmuscle.net//")
-					}
-					else if (EnvironmentName.equalsIgnoreCase("DEV")) {
-						WebUI.navigateToUrl("http://dibyashree.jyoti:chr@1234@iiadmin.dev.brandmuscle.net/")
+						WebUI.navigateToUrl(GlobalVariable.iiadminSTAGE)
 					}
 					else{
 						println ("Environment is not correct")
@@ -350,16 +276,13 @@ public  class Interaction {
 					}
 				}
 				else if (BuName.equalsIgnoreCase("DESIGNTRACKER")) {
-
 					if (EnvironmentName.equalsIgnoreCase("UAT")) {
-						WebUI.navigateToUrl("http://designtracker.uat.brandmuscle.net/")
+						WebUI.navigateToUrl(GlobalVariable.dtUAT)
 					}
 					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
-						WebUI.navigateToUrl("http://designtracker.stage.brandmuscle.net/")
+						WebUI.navigateToUrl(GlobalVariable.dtSTAGE)
 					}
-					else if (EnvironmentName.equalsIgnoreCase("DEV")) {
-						WebUI.navigateToUrl("http://designtracker.dev.brandmuscle.net/")
-					}
+
 				}
 			}
 			else{

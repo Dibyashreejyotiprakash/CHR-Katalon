@@ -113,12 +113,6 @@
       <testCaseId>Test Cases/IIDT/II REGRESSION/Online Order Form/Create New Order/VerifySmallFormatOrder</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>b7796232-7e72-4488-87bb-10f400f6d8eb</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/II REGRESSION/Online Order Form/FinishAnIncomplete/VerifyClearbuttonforFilterOption</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
       <guid>db3e2eb7-4f88-482c-b0ac-b7a38b91f59c</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
@@ -129,12 +123,6 @@
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/IIDT/II REGRESSION/Online Order Form/FinishAnIncomplete/VerifyEdit</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>a18b44d0-11a1-4ca6-98a5-fedb5e916553</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/II REGRESSION/Online Order Form/FinishAnIncomplete/VerifyFilterButtonforFilterOption</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>af06120a-40c3-47a4-978a-acfd0b3bb068</guid>
