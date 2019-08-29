@@ -53,7 +53,8 @@ public class HomePage {
 	By brands = By.xpath("//*[text()='BRANDS']")
 	By campaign = By.xpath("//*[text()='CAMPAIGNS']")
 	By competitors  = By.xpath("//*[text()='COMPETITORS']")
-	By distributorbudgetmigration = By.xpath("//*[text()='DISTRIBUTOR BUDGET MIGRATION']")
+	By distributorbudgetmigration = By.xpath("//span[contains(text(),'DISTRIBUTOR BUDGET MIGRATION')]")
+	By supplierBrandManagers = By.xpath("//span[contains(text(),'SUPPLIER BRAND MANAGER')]")
 	By exceptionlistbrands = By.xpath("//*[text()='EXCEPTION LIST - BRANDS']")
 	By exceptionlistsalespeople = By.xpath("//*[text()='EXCEPTION LIST - SALES PEOPLE']")
 	By highrarchy = By.xpath("//*[text()='HIERARCHY']")
@@ -678,6 +679,34 @@ public class HomePage {
 		}
 		catch(Exception e) {
 			println ("Click On Sales People View Transfer Button failed due to "+ e)
+		}
+	}
+
+	@Keyword
+	public void ClickOnDistrBudgetMigration()
+	{
+		try {
+			action.MouseHoverOnElement(siteadmin)
+			WebUI.delay(3)
+			action.Click(distributorbudgetmigration)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("ClickOnDistrBudgetMigration failed due to "+ e)
+		}
+	}
+
+	@Keyword
+	public void ClickOnSupplierBrandManagers()
+	{
+		try {
+			action.MouseHoverOnElement(siteadmin)
+			WebUI.delay(3)
+			action.Click(supplierBrandManagers)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("ClickOnSupplierBrandManagers failed due to "+ e)
 		}
 	}
 }
