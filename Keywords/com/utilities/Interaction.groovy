@@ -870,19 +870,19 @@ public  class Interaction {
 
 		return options
 	}
-	
+
 	//Get attribut of webelement
-	
+
 	public String Attribute(By by, String attri)
 	{
 		WaitVisible(by);
 		WebElement element = driver.findElement(by);
 		String value = element.getAttribute(attri)
-		
+
 		return value
-		
+
 	}
-	
+
 
 	public void Enter(By by)
 	{

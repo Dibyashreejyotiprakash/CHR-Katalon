@@ -101,6 +101,7 @@ public class HomePage {
 	By appadmin = By.xpath("//*[@title='Application Administration']")
 	By jobtypes = By.xpath("//*[text()='JOB TYPES']")
 	By suppliers = By.xpath("//*[text()='SUPPLIERS']")
+	By salespeople = By.xpath("//*[text()='SALES PEOPLE']")
 
 	@Keyword
 	public void VerifyHomePage() {
@@ -662,4 +663,19 @@ public class HomePage {
 			println ("Click On exceptionlistbrands failed due to "+ e)
 		}
 	}
+
+
+	@Keyword
+	public void ClickOnSalesPeople() {
+		try {
+			action.MouseHoverOnElement(siteadmin)
+			WebUI.delay(3)
+			action.Click(salespeople)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("Click On ClickOnSalesPeople failed due to "+ e)
+		}
+	}
+
 }

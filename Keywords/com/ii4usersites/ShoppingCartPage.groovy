@@ -525,7 +525,7 @@ class ShoppingCartPage {
 			throw e;
 		}
 	}
-	
+
 
 	//click on CrossIcon
 	public void ClickOnCrossIconToRemoveItem()
@@ -548,15 +548,15 @@ class ShoppingCartPage {
 			throw e;
 		}
 	}
-	
+
 	@Keyword
 	public void ClickOnCheckOutBtn()
 	{
 
 		try
 		{
-           action.Click(btnContinueToCheckout)
-		   action.WaitForPageToLoad()
+			action.Click(btnContinueToCheckout)
+			action.WaitForPageToLoad()
 		}
 		catch (Exception e)
 		{

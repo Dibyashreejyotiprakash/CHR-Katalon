@@ -36,6 +36,7 @@ public class HierarchyPage {
 	By testusercheckbox = By.xpath("//label[contains(text(),'test123@brandmuscle.com')]//preceding-sibling::input")
 	By progressIndicator = By.xpath("//div[@id='ctl00_ctl00_cphProgressIndicator_pnlProgressIndicator']/div[2]")
 	By testusersuppcheckbox = By.xpath("//label[contains(text(),'test321@brandmuscle.com')]//preceding-sibling::input")
+	By testemail = By.xpath("(//span[contains(text(),'test')])[1]")
 
 	@Keyword
 	public void ValidateHierarchyPageFields() {
@@ -98,12 +99,10 @@ public class HierarchyPage {
 			String val = action.Attribute(testusersuppcheckbox, "checked")
 			println("Checkbox value is "+val)
 
-			if (val == "true")
-			{
+			if (val == "true") {
 				println("inside if")
 			}
-			else
-			{
+			else {
 				action.Click(testusercheckbox)
 				WebUI.delay(5)
 				println("inside else")
@@ -113,6 +112,29 @@ public class HierarchyPage {
 		catch(Exception e) {
 			Assert.fail("AssociateUser Failed Due to "+e)
 		}
+	}
+	
+	
+	@Keyword
+	public void ValidateNewAddedSalesPersonInHierarchyPage()
+	{
+		try
+		{
+			action.WaitVisible(corpName)
+			action.SelectByText(corpName, "Instant Impact 4.0 Demo Corp (Dist.)")
+			action.WaitVisible(progressIndicator)
+			WebUI.delay(2)
+			action.SelectByText(market, "Chicago Beverage Systems")
+			action.WaitVisible(progressIndicator)
+			WebUI.delay(2)
+			action.Click(chicago_market_hierarchy)
+			action.IsElementDisplayed(testemail)
+		}
+		catch(Exception e)
+		{
+			Assert.fail("ValidateNewAddedSalesPersonInHierarchyPage Failed Due to "+e)
+		}
+		
 	}
 }
 
