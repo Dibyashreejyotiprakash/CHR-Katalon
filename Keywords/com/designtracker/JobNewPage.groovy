@@ -220,7 +220,7 @@ public class JobNewPage {
 			action.SelectByText(jobtypeddn, "Books/Accessories Only")
 			WebUI.delay(10)
 			action.Click(createjobbtn)
-			WebUI.delay(1000)
+			WebUI.delay(10)
 			action.WaitForPageToLoad()
 		}
 		catch(Exception e)

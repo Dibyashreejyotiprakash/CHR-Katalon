@@ -17,6 +17,7 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 import internal.GlobalVariable
+
 import com.utilities.Interaction
 import org.openqa.selenium.By
 import org.openqa.selenium.WebDriver
@@ -36,7 +37,7 @@ public class JobDetailsPage {
 	By generalinfopanel = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_lvJobs_ctrl0_chGeneralInformation_lblSectionHeader']")
 	By savejobbtn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_lvJobs_ctrl0_btnJobSave']")
 	By joblineinfo = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_lvJobs_ctrl0_chJobLineInformation_lblSectionHeader']")
-	By addpartlink = By.xpath("//*[@href='PartSearch.aspx']")
+	By addpartlink = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_lvJobs_ctrl0_JobLine_htmlAnchorPartSearch']")
 	By expandalllink = By.id("ctl00_ctl00_cphMain_cphMain_lvJobs_ctrl0_JobLine_lbtnExpandAll")
 	By colapsealllink = By.id("ctl00_ctl00_cphMain_cphMain_lvJobs_ctrl0_JobLine_lbtnCollapseAll")
 	By jobnametxtbox = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_lvJobs_ctrl0_txtJobName']")
@@ -63,9 +64,28 @@ public class JobDetailsPage {
 
 	By jobstatusddn = By.id("ctl00_ctl00_cphMain_cphMain_lvJobs_ctrl0_ddlJobStatus")
 
+	By jobid = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_lvJobs_ctrl0_lblJobIDOutput']")
+
+	By printformatddn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_ddlPrintFormat']")
+
+	By quantity = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_txtQuantity']")
+
+	By partsearchbtn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_btnSearch']")
+
+	By part = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_pnlParts']//option[1]")
+
+	By insertbtn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_btnAddToJob']")
+
 	By jobdetailsbtn = By.xpath("//*[text()='DETAILS']")
 
-	By jobid = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_lvJobs_ctrl0_lblJobIDOutput']")
+	By insertimagebtn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_lvJobs_ctrl0_JobLine_rptrJobLines_ctl00_gvImages_ctl01_lnkUpload']")
+	By noproofnecessaryddn = By.xpath("//*[@id='ddlNoProof']")
+	By resonvalue = By.xpath("//*[text()='Accessories Only']")
+	By savebtn = By.xpath("//*[@id='btnNoProof_input']s")
+	By postbtn = By.xpath("//*[text()='POST']")
+	By jobbtn = By.xpath("//*[text()=''JOB]")
+
+
 
 	@Keyword
 	public void ClickOnDetailsBtn() {
@@ -216,10 +236,11 @@ public class JobDetailsPage {
 	@Keyword
 	public void AddJobNameJobTicketNameAndAssignDesigner() {
 		action.Type(jobnametxtbox, "Test Job Name")
+		WebUI.delay(5)
 		action.Type(jobticketnote, "Test Job Ticket Note")
-		action.SelectByText(designerddn, "JYOTI, DIBYASHREE")
+		WebUI.delay(5)
+		action.SelectByText(designerddn, "ABERLE, JASON")
 		WebUI.delay(10)
-		String getselectedoption = action.GetselectedText(designerddn)
 		action.ScrollToBottomOfPage()
 		action.WaitUntilElementClickable(savejobinfobtn)
 		action.Click(savejobinfobtn)
@@ -236,5 +257,90 @@ public class JobDetailsPage {
 			Assert.fail()
 		}
 		return jobidlabel;
+	}
+
+	@Keyword
+	public void AddPartAndBackToJobDetailsPage() {
+		try {
+			action.Click(addpartlink)
+			WebUI.delay(10)
+			action.WaitForPageToLoad()
+			action.SelectByIndex(printformatddn, 4)
+			action.Type(quantity, "123")
+			action.Click(partsearchbtn)
+			WebUI.delay(10)
+			action.Click(part)
+			action.Click(insertbtn)
+			WebUI.delay(10)
+			action.Click(jobdetailsbtn)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("Add Part failed due to "+ e)
+			Assert.fail()
+		}
+	}
+
+	@Keyword
+	public void InsertImage() {
+		try {
+			action.ScrollToViewelement(jobdetailsbtn)
+			WebUI.delay(10)
+			Set<String> windowids = driver.getWindowHandles()
+
+			Iterator<String> it = windowids.iterator()
+
+			while (it.hasNext()) {
+				String parentwindowid = it.next()
+				println ("Parent window id is "+ it.next())
+				String childwindowid = it.next()
+				println ("Child window id is "+ it.next())
+				driver.switchTo().window(childwindowid)
+				action.Click(insertimagebtn)
+				action.Click(noproofnecessaryddn)
+				action.Click(resonvalue)
+				action.Click(savebtn)
+				WebUI.closeBrowser()
+				driver.switchTo().defaultContent()
+			}
+		}
+		catch(Exception e) {
+			println ("Insert Job Failed due to "+ e)
+			Assert.fail()
+		}
+	}
+
+
+	@Keyword
+	public void ChangeStatusForPostingJob() {
+		try {
+			action.SelectByText(jobstatusddn, "Pending Design Approval")
+			action.Click(savejobinfobtn)
+			action.SelectByText(jobstatusddn, "Approved for Production")
+			action.Click(savejobinfobtn)
+			action.SelectByText(jobstatusddn, "Pending Manager Approval")
+			action.Click(savejobinfobtn)
+			action.SelectByText(jobstatusddn, "Manager Approved")
+			action.Click(savejobinfobtn)
+			action.SelectByText(jobstatusddn, "Release for Production")
+			action.Click(savejobinfobtn)
+			WebUI.delay(10)
+		}
+		catch(Exception e) {
+			println ("Change Status For Posting Job Failed due to "+ e)
+			Assert.fail()
+		}
+	}
+
+	@Keyword
+	public void ClickOnPostJob() {
+		try {
+			action.MouseHoverOnElement(postbtn)
+			action.Click(jobbtn)
+		}
+		catch(Exception e) {
+			println ("Click on post job failed due to "+ e)
+			Assert.fail()
+		}
 	}
 }
