@@ -24,6 +24,12 @@ WebUI.waitForPageLoad(300)
 
 CustomKeywords.'com.designtracker.LoginPage.LoginToDesignTarcker'(GlobalVariable.dtusername, GlobalVariable.dtpassowrd)
 
+//CustomKeywords.'com.designtracker.HomePage.ClickOnBrands'()
+
+//CustomKeywords.'com.designtracker.BrandsPage.AddNewBrand'()
+
+//CustomKeywords.'com.designtracker.BrandsPage.PostUpdate'()
+
 CustomKeywords.'com.designtracker.HomePage.ClickOnExceptionlistBrands'()
 
 CustomKeywords.'com.designtracker.ExceptionListBrandsPage.VerifyInsertBrandInExceptionList'()
