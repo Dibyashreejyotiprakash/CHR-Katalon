@@ -41,7 +41,6 @@ import com.kms.katalon.core.util.KeywordUtil
 
 import com.kms.katalon.core.webui.exception.WebElementNotFoundException
 import com.utilities.Interaction
-
 import org.testng.Assert
 
 
@@ -69,29 +68,29 @@ class ExceptionListBrandsPage {
 			WebUI.delay(2)
 			boolean statusofcorpddn  =     action.IsElementDisplayed(corporationddn)
 			Assert.assertTrue(statusofcorpddn, "Corporation dropdown visible")
-			action.SelectByText(corporationddn, "Demo Distributor (QA)")
+			action.SelectByText(corporationddn, "Instant Impact 4.0 Demo Corp (Dist.)")
 
 			WebUI.delay(10)
 			boolean statusofmarketddn  =     action.IsElementDisplayed(corporationddn)
 			Assert.assertTrue(statusofmarketddn, "Market dropdown visible")
-			action.SelectByText(marketddn, "Demo Dist. 1 QA")
+			action.SelectByText(marketddn, "Chicago Beverage Systems")
 		}
 		catch(Exception e) {
 			println ("Verify All DropDown Failed due to "+ e)
-			Assert.fail()
+			Assert.fail(e)
 		}
 	}
 
 	@Keyword
 	public void VerifyInsertBrandInExceptionList() {
 		try {
-			action.SelectByText(corporationddn, "Demo Distributor (QA)")
+			action.SelectByText(corporationddn, "Instant Impact 4.0 Demo Corp (Dist.)")
 
 			WebUI.delay(10)
-			action.SelectByText(marketddn, "Demo Dist. 1 QA")
+			action.SelectByText(marketddn, "Chicago Beverage Systems")
 
 			WebUI.delay(10)
-			action.SelectByText(marketSupplierddn, "Demo Dist. 1 QA")
+			action.SelectByText(marketSupplierddn, "MILLER COORS BREWING COMPANY")
 
 			WebUI.delay(10)
 			action.SelectByText(brandsddn, "TestBrand")
@@ -111,20 +110,20 @@ class ExceptionListBrandsPage {
 		}
 		catch(Exception e) {
 			println ("Verify InsertBrand Failed due to "+ e)
-			Assert.fail()
+			Assert.fail(e)
 		}
 	}
 
 	@Keyword
 	public void VerifyDeleteBrandFromExceptionList() {
 		try {
-			action.SelectByText(corporationddn, "Demo Distributor (QA)")
+			action.SelectByText(corporationddn, "Instant Impact 4.0 Demo Corp (Dist.)")
 
 			WebUI.delay(10)
-			action.SelectByText(marketddn, "Demo Dist. 1 QA")
+			action.SelectByText(marketddn, "Chicago Beverage Systems")
 
 			WebUI.delay(10)
-			action.SelectByText(marketSupplierddn, "Demo Dist. 1 QA")
+			action.SelectByText(marketSupplierddn, "MILLER COORS BREWING COMPANY")
 
 			WebUI.delay(10)
 			action.SelectByText(brandsddn, "TestBrand")
@@ -148,20 +147,20 @@ class ExceptionListBrandsPage {
 		}
 		catch(Exception e) {
 			println ("Verify DeleteBrands Failed due to "+ e)
-			Assert.fail()
+			Assert.fail(e)
 		}
 	}
 
 	@Keyword
 	public void VerifyErrorOnInsertingDuplicateBrand() {
 		try {
-			action.SelectByText(corporationddn, "Demo Distributor (QA)")
+			action.SelectByText(corporationddn, "Instant Impact 4.0 Demo Corp (Dist.)")
 
 			WebUI.delay(10)
-			action.SelectByText(marketddn, "Demo Dist. 1 QA")
+			action.SelectByText(marketddn, "Chicago Beverage Systems")
 
 			WebUI.delay(10)
-			action.SelectByText(marketSupplierddn, "Demo Dist. 1 QA")
+			action.SelectByText(marketSupplierddn, "MILLER COORS BREWING COMPANY")
 
 			WebUI.delay(10)
 			action.SelectByText(brandsddn, "TestBrand")
@@ -192,20 +191,20 @@ class ExceptionListBrandsPage {
 		}
 		catch(Exception e) {
 			println ("Verify ErrorOnInsertingDuplicateBrands Failed due to "+ e)
-			Assert.fail()
+			Assert.fail(e)
 		}
 	}
 
 	@Keyword
 	public void VerifyInsertingTwoBrandsInList() {
 		try {
-			action.SelectByText(corporationddn, "Demo Distributor (QA)")
+			action.SelectByText(corporationddn, "Instant Impact 4.0 Demo Corp (Dist.)")
 
 			WebUI.delay(10)
-			action.SelectByText(marketddn, "Demo Dist. 1 QA")
+			action.SelectByText(marketddn, "Chicago Beverage Systems")
 
 			WebUI.delay(10)
-			action.SelectByText(marketSupplierddn, "Demo Dist. 1 QA")
+			action.SelectByText(marketSupplierddn, "MILLER COORS BREWING COMPANY")
 
 			WebUI.delay(10)
 			action.SelectByText(brandsddn, "TestBrand")
@@ -239,7 +238,7 @@ class ExceptionListBrandsPage {
 		}
 		catch(Exception e) {
 			println ("Verify InsertingTwoBrandsInList Failed due to "+ e)
-			Assert.fail()
+			Assert.fail(e)
 		}
 	}
 }
