@@ -72,7 +72,6 @@ class ExceptionListSalesPeoplePage {
 			boolean statusofmarketddn  =     action.IsElementDisplayed(corporationddn)
 			Assert.assertTrue(statusofmarketddn, "Market dropdown visible")
 			action.SelectByText(marketddn, "Demo Dist. 1 QA")
-			
 		}
 		catch(Exception e) {
 			println ("Verify All DropDown Failed due to "+ e)
@@ -91,7 +90,7 @@ class ExceptionListSalesPeoplePage {
 
 			WebUI.delay(3)
 			action.WaitVisible(salespersonddn)
-			action.SelectByText(salespersonddn, "TESTADMIN, TESTADMIN (demoqa@brandmuscle.com)")
+			action.SelectByText(salespersonddn, "ADMIN, ADMIN (demoqa@brandmuscle.com)")
 
 			WebUI.delay(3)
 			action.WaitVisible(insertSelSalesPerBtn)
@@ -128,7 +127,7 @@ class ExceptionListSalesPeoplePage {
 
 			WebUI.delay(3)
 			action.WaitVisible(salespersonddn)
-			action.SelectByText(salespersonddn, "TESTADMIN, TESTADMIN (demoqa@brandmuscle.com)")
+			action.SelectByText(salespersonddn, "ADMIN, ADMIN (demoqa@brandmuscle.com)")
 
 			WebUI.delay(3)
 			action.WaitVisible(insertSelSalesPerBtn)
@@ -170,7 +169,7 @@ class ExceptionListSalesPeoplePage {
 
 			WebUI.delay(3)
 			action.WaitVisible(salespersonddn)
-			action.SelectByText(salespersonddn, "TESTADMIN, TESTADMIN (demoqa@brandmuscle.com)")
+			action.SelectByText(salespersonddn, "ADMIN, ADMIN (demoqa@brandmuscle.com)")
 
 			WebUI.delay(3)
 			action.WaitVisible(insertSelSalesPerBtn)
@@ -183,7 +182,7 @@ class ExceptionListSalesPeoplePage {
 
 			WebUI.delay(3)
 			action.WaitVisible(salespersonddn)
-			action.SelectByText(salespersonddn, "TESTADMIN, TESTADMIN (demoqa@brandmuscle.com)")
+			action.SelectByText(salespersonddn, "ADMIN, ADMIN (demoqa@brandmuscle.com)")
 
 			WebUI.delay(3)
 			action.WaitVisible(insertSelSalesPerBtn)
@@ -201,7 +200,6 @@ class ExceptionListSalesPeoplePage {
 			WebUI.delay(3)
 			action.WaitVisible(delSelSalesPerBtn)
 			action.Click(delSelSalesPerBtn)
-
 		}
 		catch(Exception e) {
 			println ("Verify ErrorOnInsertingDuplicateSalesPerson Failed due to "+ e)

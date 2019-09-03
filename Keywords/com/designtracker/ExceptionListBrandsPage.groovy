@@ -92,7 +92,7 @@ class ExceptionListBrandsPage {
 
 			WebUI.delay(10)
 			action.SelectByText(marketSupplierddn, "Demo Dist. 1 QA")
-			
+
 			WebUI.delay(10)
 			action.SelectByText(brandsddn, "TestBrand")
 
@@ -125,7 +125,7 @@ class ExceptionListBrandsPage {
 
 			WebUI.delay(10)
 			action.SelectByText(marketSupplierddn, "Demo Dist. 1 QA")
-			
+
 			WebUI.delay(10)
 			action.SelectByText(brandsddn, "TestBrand")
 
@@ -162,7 +162,7 @@ class ExceptionListBrandsPage {
 
 			WebUI.delay(10)
 			action.SelectByText(marketSupplierddn, "Demo Dist. 1 QA")
-			
+
 			WebUI.delay(10)
 			action.SelectByText(brandsddn, "TestBrand")
 
@@ -179,7 +179,7 @@ class ExceptionListBrandsPage {
 			WebUI.delay(5)
 			boolean statusofErrorMsgOnInsertingDuplidate  =     action.IsElementDisplayed(ErrorMsgOnInsertingDuplidateBrand)
 			Assert.assertTrue(statusofErrorMsgOnInsertingDuplidate, "Error msg for inserting duplicate is visible")
-		
+
 			WebUI.delay(5)
 			action.Click(checkBoxToBrand)
 
@@ -195,7 +195,7 @@ class ExceptionListBrandsPage {
 			Assert.fail()
 		}
 	}
-	
+
 	@Keyword
 	public void VerifyInsertingTwoBrandsInList() {
 		try {
@@ -206,7 +206,7 @@ class ExceptionListBrandsPage {
 
 			WebUI.delay(10)
 			action.SelectByText(marketSupplierddn, "Demo Dist. 1 QA")
-			
+
 			WebUI.delay(10)
 			action.SelectByText(brandsddn, "TestBrand")
 
@@ -216,7 +216,7 @@ class ExceptionListBrandsPage {
 			WebUI.delay(5)
 			boolean statusofSuccessMsg  =     action.IsElementDisplayed(successInsertMsg)
 			Assert.assertTrue(statusofSuccessMsg, "Success msg for insert is visible")
-			
+
 			WebUI.delay(5)
 			action.SelectByText(brandsddn, "TestBrand1")
 
@@ -226,7 +226,7 @@ class ExceptionListBrandsPage {
 			WebUI.delay(5)
 			boolean statusofSuccessMsgOnAddingBrand2  =     action.IsElementDisplayed(successInsertMsg)
 			Assert.assertTrue(statusofSuccessMsgOnAddingBrand2, "Success msg for insert is visible")
-		
+
 			WebUI.delay(5)
 			action.Click(checkBoxToSelAllBrandName)
 
@@ -242,5 +242,4 @@ class ExceptionListBrandsPage {
 			Assert.fail()
 		}
 	}
-
 }
