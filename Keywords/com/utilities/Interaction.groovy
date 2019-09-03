@@ -342,7 +342,6 @@ public  class Interaction {
 		return driver.getCurrentUrl();
 	}
 
-
 	public void  Type(By by, String value) {
 		//WaitVisible(by)
 		driver.findElement(by).sendKeys(value);
@@ -522,10 +521,8 @@ public  class Interaction {
 	{
 		WebDriverWait wait = new WebDriverWait(driver, 300);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+		WebUI.delay(7)
 	}
-
-
-
 
 	public void  WaitVisible(By by,int timeinsec)
 	{

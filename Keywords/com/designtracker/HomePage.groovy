@@ -167,35 +167,6 @@ public class HomePage {
 		}
 	}
 
-
-	@Keyword
-	public void CLickOnProfitAndLoss() {
-		try {
-			action.WaitVisible(reports)
-			action.MouseHoverOnElement(reports)
-			action.WaitVisible(jobsamebrand)
-			action.MouseHoverAndClick(jobsamebrand)
-			action.WaitForPageToLoad()
-		}
-		catch(Exception e) {
-			println ("CLick On Profit And Loss failed due to "+ e)
-		}
-	}
-
-	@Keyword
-	public void ClickOnProfitLoss() {
-		try {
-			action.WaitVisible(reports)
-			action.MouseHoverOnElement(reports)
-			action.WaitVisible(profitloss)
-			action.MouseHoverAndClick(profitloss)
-			action.WaitForPageToLoad()
-		}
-		catch(Exception e) {
-			println ("Click On ProfitLoss button failed due to "+ e)
-		}
-	}
-
 	@Keyword
 	public void ClickOnAccounts() {
 		try {
@@ -355,6 +326,8 @@ public class HomePage {
 	@Keyword
 	public void ClickOnJobsSameBrands(){
 		try{
+			action.ScrollToTopOgPage()
+			action.MouseHoverOnElement(reports)
 			action.WaitVisible(jobsamebrand)
 			action.Click(jobsamebrand)
 			action.WaitForPageToLoad(300)
@@ -366,8 +339,10 @@ public class HomePage {
 	}
 
 	@Keyword
-	public void ClickOnProfirLoss(){
+	public void ClickOnProfitLoss(){
 		try{
+			action.ScrollToTopOgPage()
+			action.MouseHoverOnElement(reports)
 			action.WaitVisible(profitLoss)
 			action.Click(profitLoss)
 			action.WaitForPageToLoad(300)
@@ -381,6 +356,8 @@ public class HomePage {
 	@Keyword
 	public void ClickOnStatusSummary(){
 		try{
+			action.ScrollToTopOgPage()
+			action.MouseHoverOnElement(reports)
 			action.WaitVisible(statussummary)
 			action.Click(statussummary)
 			action.WaitForPageToLoad(300)
