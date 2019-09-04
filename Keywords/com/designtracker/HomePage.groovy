@@ -53,7 +53,8 @@ public class HomePage {
 	By brands = By.xpath("//*[text()='BRANDS']")
 	By campaign = By.xpath("//*[text()='CAMPAIGNS']")
 	By competitors  = By.xpath("//*[text()='COMPETITORS']")
-	By distributorbudgetmigration = By.xpath("//*[text()='DISTRIBUTOR BUDGET MIGRATION']")
+	By distributorbudgetmigration = By.xpath("//span[contains(text(),'DISTRIBUTOR BUDGET MIGRATION')]")
+	By supplierBrandManagers = By.xpath("//span[contains(text(),'SUPPLIER BRAND MANAGER')]")
 	By exceptionlistbrands = By.xpath("//*[text()='EXCEPTION LIST - BRANDS']")
 	By exceptionlistsalespeople = By.xpath("//*[text()='EXCEPTION LIST - SALES PEOPLE']")
 	By highrarchy = By.xpath("//*[text()='HIERARCHY']")
@@ -100,6 +101,7 @@ public class HomePage {
 	By jobIds = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_gvSearchResults_ctl00']//following-sibling::tbody/tr/td[5]")
 	By appadmin = By.xpath("//*[@title='Application Administration']")
 	By jobtypes = By.xpath("//*[text()='JOB TYPES']")
+	By salespeopleviewtransferjob = By.xpath("//*[text()='SALES PEOPLE JOBS VIEW/TRANSFER']")
 	By suppliers = By.xpath("//*[text()='SUPPLIERS']")
 	By salespeople = By.xpath("//*[text()='SALES PEOPLE']")
 
@@ -164,35 +166,6 @@ public class HomePage {
 		}
 		catch(Exception e) {
 			println ("Click On Jobs Check In failed due to "+ e)
-		}
-	}
-
-
-	@Keyword
-	public void CLickOnProfitAndLoss() {
-		try {
-			action.WaitVisible(reports)
-			action.MouseHoverOnElement(reports)
-			action.WaitVisible(jobsamebrand)
-			action.MouseHoverAndClick(jobsamebrand)
-			action.WaitForPageToLoad()
-		}
-		catch(Exception e) {
-			println ("CLick On Profit And Loss failed due to "+ e)
-		}
-	}
-
-	@Keyword
-	public void ClickOnProfitLoss() {
-		try {
-			action.WaitVisible(reports)
-			action.MouseHoverOnElement(reports)
-			action.WaitVisible(profitloss)
-			action.MouseHoverAndClick(profitloss)
-			action.WaitForPageToLoad()
-		}
-		catch(Exception e) {
-			println ("Click On ProfitLoss button failed due to "+ e)
 		}
 	}
 
@@ -324,6 +297,8 @@ public class HomePage {
 	@Keyword
 	public void ClickOnJobEfficiency(){
 		try{
+			action.ScrollToTopOgPage()
+			action.MouseHoverOnElement(reports)
 			action.WaitVisible(jobEfficiency)
 			action.Click(jobEfficiency)
 			action.WaitForPageToLoad(300)
@@ -337,6 +312,8 @@ public class HomePage {
 	@Keyword
 	public void ClickOnJobStatus(){
 		try{
+			action.ScrollToTopOgPage()
+			action.MouseHoverOnElement(reports)
 			action.WaitVisible(jobstatus)
 			action.Click(jobstatus)
 			action.WaitForPageToLoad(300)
@@ -351,6 +328,8 @@ public class HomePage {
 	@Keyword
 	public void ClickOnJobsSameBrands(){
 		try{
+			action.ScrollToTopOgPage()
+			action.MouseHoverOnElement(reports)
 			action.WaitVisible(jobsamebrand)
 			action.Click(jobsamebrand)
 			action.WaitForPageToLoad(300)
@@ -362,8 +341,10 @@ public class HomePage {
 	}
 
 	@Keyword
-	public void ClickOnProfirLoss(){
+	public void ClickOnProfitLoss(){
 		try{
+			action.ScrollToTopOgPage()
+			action.MouseHoverOnElement(reports)
 			action.WaitVisible(profitLoss)
 			action.Click(profitLoss)
 			action.WaitForPageToLoad(300)
@@ -377,6 +358,8 @@ public class HomePage {
 	@Keyword
 	public void ClickOnStatusSummary(){
 		try{
+			action.ScrollToTopOgPage()
+			action.MouseHoverOnElement(reports)
 			action.WaitVisible(statussummary)
 			action.Click(statussummary)
 			action.WaitForPageToLoad(300)
@@ -665,6 +648,48 @@ public class HomePage {
 		}
 	}
 
+	@Keyword
+	public void ClickOnSalesPeopleViewTransferButton()
+	{
+		try {
+			action.MouseHoverOnElement(siteadmin)
+			WebUI.delay(3)
+			action.Click(salespeopleviewtransferjob)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("Click On Sales People View Transfer Button failed due to "+ e)
+		}
+	}
+
+	@Keyword
+	public void ClickOnDistrBudgetMigration()
+	{
+		try {
+			action.MouseHoverOnElement(siteadmin)
+			WebUI.delay(3)
+			action.Click(distributorbudgetmigration)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("ClickOnDistrBudgetMigration failed due to "+ e)
+		}
+	}
+
+	@Keyword
+	public void ClickOnSupplierBrandManagers()
+	{
+		try {
+			action.MouseHoverOnElement(siteadmin)
+			WebUI.delay(3)
+			action.Click(supplierBrandManagers)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("ClickOnSupplierBrandManagers failed due to "+ e)
+		}
+	}
+
 
 	@Keyword
 	public void ClickOnSalesPeople() {
@@ -678,5 +703,4 @@ public class HomePage {
 			println ("Click On ClickOnSalesPeople failed due to "+ e)
 		}
 	}
-
 }
