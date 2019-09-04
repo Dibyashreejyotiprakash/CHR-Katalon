@@ -97,6 +97,7 @@ public  class Interaction {
 						WebUI.closeBrowser()
 					}
 				}
+
 				else if(BuName.equalsIgnoreCase("POSW")){
 					if (EnvironmentName.equalsIgnoreCase("UAT")) {
 						WebUI.navigateToUrl(GlobalVariable.poswUAT)
@@ -277,6 +278,7 @@ public  class Interaction {
 				else if (BuName.equalsIgnoreCase("DESIGNTRACKER")) {
 					if (EnvironmentName.equalsIgnoreCase("UAT")) {
 						WebUI.navigateToUrl(GlobalVariable.dtUAT)
+						WebUI.delay(3)
 					}
 					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
 						WebUI.navigateToUrl(GlobalVariable.dtSTAGE)

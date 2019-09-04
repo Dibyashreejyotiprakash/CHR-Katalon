@@ -102,6 +102,8 @@ public class HomePage {
 	By appadmin = By.xpath("//*[@title='Application Administration']")
 	By jobtypes = By.xpath("//*[text()='JOB TYPES']")
 	By salespeopleviewtransferjob = By.xpath("//*[text()='SALES PEOPLE JOBS VIEW/TRANSFER']")
+	By suppliers = By.xpath("//*[text()='SUPPLIERS']")
+	By salespeople = By.xpath("//*[text()='SALES PEOPLE']")
 
 	@Keyword
 	public void VerifyHomePage() {
@@ -584,6 +586,7 @@ public class HomePage {
 			action.WaitVisible(siteadmin)
 			action.MouseHoverOnElement(siteadmin)
 			action.WaitVisible(joblinestratification)
+			WebUI.delay(3)
 			action.MouseHoverAndClick(joblinestratification)
 			action.WaitForPageToLoad()
 		}
@@ -684,6 +687,20 @@ public class HomePage {
 		}
 		catch(Exception e) {
 			println ("ClickOnSupplierBrandManagers failed due to "+ e)
+		}
+	}
+
+
+	@Keyword
+	public void ClickOnSalesPeople() {
+		try {
+			action.MouseHoverOnElement(siteadmin)
+			WebUI.delay(3)
+			action.Click(salespeople)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("Click On ClickOnSalesPeople failed due to "+ e)
 		}
 	}
 }
