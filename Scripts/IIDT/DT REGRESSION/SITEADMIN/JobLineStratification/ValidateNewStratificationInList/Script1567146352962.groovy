@@ -22,11 +22,9 @@ WebUI.waitForPageLoad(300)
 CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamedesigntracker, GlobalVariable.testtyperegression, 
     GlobalVariable.environment)
 
-CustomKeywords.'com.designtracker.LoginPage.LoginToDesignTarcker'(GlobalVariable.dtusername, GlobalVariable.dtpassowrd)
+CustomKeywords.'com.designtracker.LoginPage.LoginToDesignTarcker'('dibyashree.jyoti@brandmuscle.com', 'chr@1234')
 
-CustomKeywords.'com.designtracker.HomePage.ClickOnSalesPeople'()
+CustomKeywords.'com.designtracker.HomePage.ClickOnjoblinestratification'()
 
-CustomKeywords.'com.designtracker.SalesPeople.AddNewSalesPeople'()
-
-CustomKeywords.'com.designtracker.SalesPeople.updateUser'()
+CustomKeywords.'com.designtracker.JobLineStratification.ValidateInList'()
 

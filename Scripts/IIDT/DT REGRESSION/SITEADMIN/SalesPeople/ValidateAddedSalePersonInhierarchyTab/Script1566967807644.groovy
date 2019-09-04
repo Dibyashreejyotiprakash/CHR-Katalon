@@ -28,5 +28,7 @@ CustomKeywords.'com.designtracker.HomePage.ClickOnSalesPeople'()
 
 CustomKeywords.'com.designtracker.SalesPeople.AddNewSalesPeople'()
 
-CustomKeywords.'com.designtracker.SalesPeople.updateUser'()
+CustomKeywords.'com.designtracker.HomePage.ClickOnhighrarchy'()
+
+CustomKeywords.'com.designtracker.HierarchyPage.ValidateNewAddedSalesPersonInHierarchyPage'()
 
