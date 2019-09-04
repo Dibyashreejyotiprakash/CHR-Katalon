@@ -603,6 +603,7 @@ public class HomePage {
 			action.WaitVisible(siteadmin)
 			action.MouseHoverOnElement(siteadmin)
 			action.WaitVisible(joblinestratification)
+			WebUI.delay(3)
 			action.MouseHoverAndClick(joblinestratification)
 			action.WaitForPageToLoad()
 		}

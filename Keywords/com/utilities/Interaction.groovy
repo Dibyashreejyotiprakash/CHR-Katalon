@@ -109,6 +109,7 @@ public  class Interaction {
 				else if (BuName.equalsIgnoreCase("DESIGNTRACKERAPPROVALPORTAL")) {
 
 					if (EnvironmentName.equalsIgnoreCase("UAT")) {
+						WebUI.navigateToUrl("http://designtracker.uat.brandmuscle.net")
 					}
 					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
 					}
@@ -344,6 +345,7 @@ public  class Interaction {
 				else if (BuName.equalsIgnoreCase("DESIGNTRACKER")) {
 
 					if (EnvironmentName.equalsIgnoreCase("UAT")) {
+						WebUI.delay(3)
 						WebUI.navigateToUrl("http://designtracker.uat.brandmuscle.net/")
 					}
 					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {

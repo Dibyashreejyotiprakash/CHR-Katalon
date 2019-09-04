@@ -159,7 +159,7 @@ public class BrandsPage {
 
 			action.IsDisplayed(updateexistingbrand)
 			action.Click(updateexistingbrand)
-			WebUI.delay(6)
+			WebUI.delay(8)
 			action.IsElementDisplayed(corpddn)
 			action.IsElementDisplayed(marketddn)
 			action.IsElementDisplayed(supplierddn)
