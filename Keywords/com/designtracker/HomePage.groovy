@@ -641,7 +641,7 @@ public class HomePage {
 			action.MouseHoverOnElement(siteadmin)
 			WebUI.delay(3)
 			action.Click(exceptionlistbrands)
-			action.WaitForPageToLoad()
+			//action.WaitForPageToLoad()
 		}
 		catch(Exception e) {
 			println ("Click On exceptionlistbrands failed due to "+ e)

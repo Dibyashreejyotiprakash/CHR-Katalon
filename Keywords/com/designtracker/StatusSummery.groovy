@@ -32,7 +32,7 @@ public class StatusSummery {
 
 
 	By corporationddn = By.xpath("//select[@id='CorpsAndMarkets_ddlCorporation']")
-    By marketddn = By.xpath("//select[@id='CorpsAndMarkets_ddlMarket']")
+	By marketddn = By.xpath("//select[@id='CorpsAndMarkets_ddlMarket']")
 	By statusddn = By.xpath("//select[@id='CorpsAndMarkets_ddlJobStatus']")
 	By btnViewReport = By.xpath("//*[@id='btnSubmit']")
 	By colMarketName = By.xpath("//div[text()='Market Name']")
@@ -43,22 +43,22 @@ public class StatusSummery {
 
 		try{
 			action.SelectByText(corporationddn, "Demo Distributor (QA)")
-			
+
 			WebUI.delay(7)
 			action.SelectByText(marketddn, "Demo Dist. 1 QA")
-			
+
 			WebUI.delay(7)
 			action.SelectByText(statusddn, "Created")
-			
+
 			WebUI.delay(7)
 			action.Click(btnViewReport)
-			
-			WebUI.delay(7)
+
+			WebUI.delay(10)
 			Assert.assertTrue(action.IsDisplayed(colMarketName),"colMarketName Column is visible")
 			Assert.assertTrue(action.IsDisplayed(colJobId), "colJobId Column is visible")
 		}
 		catch(Exception e){
-			println("VerifyStatusSummeryPage failed due to :" + e)
+			Assert.fail("VerifyStatusSummeryPage failed due to :" + e)
 		}
 	}
 

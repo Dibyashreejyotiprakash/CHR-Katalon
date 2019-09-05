@@ -138,12 +138,12 @@ public class JobStatusInformation {
 
 		try{
 
-			String expectedPageURL = "http://designtracker.brandmuscle.net/Reports/JobStatusInformation.aspx"
+			String expectedPageURL = "https://designtracker.brandmuscle.net/Reports/JobStatusInformation.aspx"
 			WebUI.delay(10)
 			String actualPageURL = action.GetCurrentURL();
 			println("------------------>>>>>>>>>>>>>>>" + actualPageURL)
 			//String actualheader = action.GetText(headerJobActivityTracking)
-			Assert.assertEquals(expectedPageURL, actualPageURL)
+			Assert.assertEquals(actualPageURL,expectedPageURL)
 		}
 		catch(Exception e){
 			println("VerifyJobStatusPage method failed due to :" + e)
@@ -223,14 +223,14 @@ public class JobStatusInformation {
 			String eighteenCol = "City"
 			String ninteenCol = "State"
 			String twentyCol = "Zip"
-			
-			
-			
+
+
+
 			String statusName = action.GetText(statusName)
 			String datesubmitted = action.GetText(dateSubmitted)
 			String jobLineName = action.GetText(colJobLineName)
 			String part = action.GetText(colPart)
-			
+
 			String qty = action.GetText(colQTY)
 			String so = action.GetText(colSO)
 			String po = action.GetText(colPO)
@@ -247,76 +247,76 @@ public class JobStatusInformation {
 			String city = action.GetText(colCity)
 			String state = action.GetText(colState)
 			String zip = action.GetText(colZip)
-			
-			
-			
+
+
+
 			Assert.assertEquals(firstCol, statusName)
 			println("First Column Name----->"+ statusName)
-			
+
 			Assert.assertEquals(secondCol, datesubmitted)
 			println("First Column Name----->"+ datesubmitted)
-			
+
 			Assert.assertEquals(thirdCol, jobLineName)
 			println("Third Column Name----->"+ jobLineName)
-			
+
 			Assert.assertEquals(fourthCol, part)
 			println("Fourth Column Name----->"+ part)
-			
+
 			Assert.assertEquals(fifthCol, qty)
 			println("Fifth Column Name----->"+ qty)
-			
+
 			Assert.assertEquals(sixthCol, so)
 			println("Sixth Column Name----->"+ so)
-			
+
 			Assert.assertEquals(seventhCol, po)
 			println("Seventh Column Name----->"+ po)
-			
+
 			Assert.assertEquals(eightCol, webID)
 			println("Eighth Column Name----->"+ webID)
-			
+
 			Assert.assertEquals(ninthCol, printlocation)
 			println("Ninth Column Name----->"+ printlocation)
-			
+
 			Assert.assertEquals(tenthCol, overpackid)
 			println("Tenth Column Name----->"+ overpackid)
-			
+
 			Assert.assertEquals(eleventhCol, comments)
 			println("Eleventh Column Name----->"+ comments)
-			
+
 			Assert.assertEquals(twelfthCol, shipstatus)
 			println("Twelfth Column Name----->"+ shipstatus)
-			
+
 			Assert.assertEquals(thirteenCol, shipdate)
 			println("Thirteen Column Name----->"+ shipdate)
-			
+
 			Assert.assertEquals(fourteenCol, trackingNumber)
 			println("Fourteen Column Name----->"+ trackingNumber)
-			
+
 			Assert.assertEquals(fifteenCol, addrLine1)
 			println("Fifteen Column Name----->"+ addrLine1)
-			
+
 			Assert.assertEquals(sistheenCol, addrLine2)
 			println("Sistheen Column Name----->"+ addrLine2)
-			
+
 			Assert.assertEquals(seventeenCol, addrLine3)
 			println("Seventeen Column Name----->"+ addrLine3)
-			
+
 			Assert.assertEquals(eighteenCol, city)
 			println("Eighteen Column Name----->"+ city)
-			
+
 			Assert.assertEquals(ninteenCol, state)
 			println("Ninteen Column Name----->"+ state)
-			
+
 			Assert.assertEquals(twentyCol, zip)
 			println("Twenty Column Name----->"+ zip)
-			
-			
-			
-			
-			
-			
-			
-			
+
+
+
+
+
+
+
+
 
 		}
 		catch(Exception e)

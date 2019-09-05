@@ -29,6 +29,8 @@ import org.openqa.selenium.support.ui.ExpectedCondition
 import org.openqa.selenium.support.ui.ExpectedConditions
 import org.openqa.selenium.support.ui.Select
 import org.openqa.selenium.support.ui.WebDriverWait
+import org.openqa.selenium.support.ui.Wait
+import org.openqa.selenium.support.ui.FluentWait
 import org.openqa.selenium.WebDriver
 import org.apache.commons.lang.RandomStringUtils
 import org.openqa.selenium.Alert
@@ -43,88 +45,116 @@ public  class Interaction {
 	WebDriver driver = DriverFactory.getWebDriver()
 	String pageLoadStatus = null;
 	JavascriptExecutor js = (JavascriptExecutor) driver;
+	//WebElement ele;
 
 
 	@Keyword
 	public void GetUrl(String BuName,String TestType, String EnvironmentName) {
 		try {
-			if(TestType.equalsIgnoreCase("SMOKE")) {
-				if (BuName.equalsIgnoreCase("CONSOLIDATOR")) {
+			if(TestType.equalsIgnoreCase("SMOKE"))
+			{
+				if (BuName.equalsIgnoreCase("CONSOLIDATOR"))
+				{
 
-					if (EnvironmentName.equalsIgnoreCase("UAT")) {
+					if (EnvironmentName.equalsIgnoreCase("UAT"))
+					{
 						WebUI.navigateToUrl(GlobalVariable.consolidatorurlUAT)
 					}
-					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
+					else if (EnvironmentName.equalsIgnoreCase("STAGING"))
+					{
 						WebUI.navigateToUrl(GlobalVariable.consolidatorurlSTAGE)
 					}
-					else if (EnvironmentName.equalsIgnoreCase("PROD")) {
+					else if (EnvironmentName.equalsIgnoreCase("PROD"))
+					{
 						WebUI.navigateToUrl(GlobalVariable.consolidatorurlPROD)
 					}
-					else{
+					else
+					{
 						println ("Environment is not correct")
 						WebUI.closeBrowser()
 					}
 				}
-				else if (BuName.equalsIgnoreCase("ii3")) {
+				else if (BuName.equalsIgnoreCase("ii3"))
+				{
 
-					if (EnvironmentName.equalsIgnoreCase("UAT")) {
+					if (EnvironmentName.equalsIgnoreCase("UAT"))
+					{
 						WebUI.navigateToUrl(GlobalVariable.ii3UAT)
 					}
-					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
+					else if (EnvironmentName.equalsIgnoreCase("STAGING"))
+					{
 						WebUI.navigateToUrl(GlobalVariable.ii3STAGE)
 					}
-					else if (EnvironmentName.equalsIgnoreCase("PROD")) {
+					else if (EnvironmentName.equalsIgnoreCase("PROD"))
+					{
 						WebUI.navigateToUrl(GlobalVariable.ii3PROD)
 					}
-					else{
+					else
+					{
 						println ("Environment is not correct")
 						WebUI.closeBrowser()
 					}
 				}
-				else if (BuName.equalsIgnoreCase("DESIGNTRACKER")) {
+				else if (BuName.equalsIgnoreCase("DESIGNTRACKER"))
+				{
 
-					if (EnvironmentName.equalsIgnoreCase("UAT")) {
+					if (EnvironmentName.equalsIgnoreCase("UAT"))
+					{
 						WebUI.navigateToUrl(GlobalVariable.dtUAT)
 					}
-					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
+					else if (EnvironmentName.equalsIgnoreCase("STAGING"))
+					{
 						WebUI.navigateToUrl(GlobalVariable.dtSTAGE)
 					}
-					else if (EnvironmentName.equalsIgnoreCase("PROD")) {
+					else if (EnvironmentName.equalsIgnoreCase("PROD"))
+					{
 						WebUI.navigateToUrl(GlobalVariable.dtPROD)
 					}
-					else{
+					else
+					{
 						println ("Environment is not correct")
 						WebUI.closeBrowser()
 					}
 				}
 
-				else if(BuName.equalsIgnoreCase("POSW")){
-					if (EnvironmentName.equalsIgnoreCase("UAT")) {
+				else if(BuName.equalsIgnoreCase("POSW"))
+				{
+
+					if (EnvironmentName.equalsIgnoreCase("UAT"))
+					{
 						WebUI.navigateToUrl(GlobalVariable.poswUAT)
 					}
-					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
+					else if (EnvironmentName.equalsIgnoreCase("STAGING"))
+					{
 						WebUI.navigateToUrl(GlobalVariable.poswSTAGE)
 					}
-					else if (EnvironmentName.equalsIgnoreCase("PROD")) {
-						WebUI.navigateToUrl("http://csg.brandmuscle.net")
+					else if (EnvironmentName.equalsIgnoreCase("PROD"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.poswPROD)
 					}
-					else{
+					else
+					{
 						println ("Environment is not correct")
 						WebUI.closeBrowser()
 					}
 				}
-				else if (BuName.equalsIgnoreCase("INSTANTIMPACTUSERSITE")) {
+				else if (BuName.equalsIgnoreCase("INSTANTIMPACTUSERSITE"))
+				{
 
-					if (EnvironmentName.equalsIgnoreCase("UAT")) {
+					if (EnvironmentName.equalsIgnoreCase("UAT"))
+					{
 						WebUI.navigateToUrl(GlobalVariable.ii4UAT)
 					}
-					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
+					else if (EnvironmentName.equalsIgnoreCase("STAGING"))
+					{
 						WebUI.navigateToUrl(GlobalVariable.ii4STAGE)
 					}
-					else if (EnvironmentName.equalsIgnoreCase("PROD")) {
+					else if (EnvironmentName.equalsIgnoreCase("PROD"))
+					{
 						WebUI.navigateToUrl(GlobalVariable.ii4PROD)
 					}
-					else{
+					else
+					{
 						println ("Environment is not correct")
 						throw new Exception("WSW Environment is not correct")
 						WebUI.closeBrowser()
@@ -136,165 +166,212 @@ public  class Interaction {
 					{
 						WebUI.navigateToUrl(GlobalVariable.wswadminUAT)
 					}
-					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
+					else if (EnvironmentName.equalsIgnoreCase("STAGING"))
+					{
 						WebUI.navigateToUrl(GlobalVariable.wswadminSATGE)
 					}
-					else if (EnvironmentName.equalsIgnoreCase("PROD")) {
+					else if (EnvironmentName.equalsIgnoreCase("PROD"))
+					{
 						WebUI.navigateToUrl(GlobalVariable.wswadminPROD)
 					}
-					else{
+					else
+					{
 						println ("Environment is not correct")
 						throw new Exception("WSW Environment is not correct")
 						WebUI.closeBrowser()
 					}
 				}
-				else if (BuName.equalsIgnoreCase("IIADMIN")) {
+				else if (BuName.equalsIgnoreCase("IIADMIN"))
+				{
 
-					if (EnvironmentName.equalsIgnoreCase("UAT")) {
+					if (EnvironmentName.equalsIgnoreCase("UAT"))
+					{
 						WebUI.navigateToUrl(GlobalVariable.iiadminUAT)
 					}
-					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
+					else if (EnvironmentName.equalsIgnoreCase("STAGING"))
+					{
 						WebUI.navigateToUrl(GlobalVariable.iiadminSTAGE)
 					}
-					else if (EnvironmentName.equalsIgnoreCase("PROD")) {
+					else if (EnvironmentName.equalsIgnoreCase("PROD"))
+					{
 						WebUI.navigateToUrl(GlobalVariable.iiadminPROD)
 					}
-					else{
+					else
+					{
 						println ("Environment is not correct")
 						WebUI.closeBrowser()
 					}
 				}
+				else if (BuName.equalsIgnoreCase("APPROVALS"))
+				{
 
-
-				else if (BuName.equalsIgnoreCase("APPROVALS")) {
-
-					if (EnvironmentName.equalsIgnoreCase("UAT")) {
+					if (EnvironmentName.equalsIgnoreCase("UAT"))
+					{
 						WebUI.navigateToUrl(GlobalVariable.dtapprovalUAT)
 					}
-					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
+					else if (EnvironmentName.equalsIgnoreCase("STAGING"))
+					{
 						WebUI.navigateToUrl(GlobalVariable.dtapprovalSTAGE)
 					}
-					else if (EnvironmentName.equalsIgnoreCase("PROD")) {
+					else if (EnvironmentName.equalsIgnoreCase("PROD"))
+					{
 						WebUI.navigateToUrl(GlobalVariable.dtapprovalsPROD)
 					}
-
-					else{
+					else
+					{
 						println ("Environment is not correct")
 						WebUI.closeBrowser()
 					}
 				}
-				else{
+				else
+				{
 
 					WebUI.closeBrowser()
 					println ("Bu is not correct")
 				}
 			}
 
-			else if(TestType.equalsIgnoreCase("REGRESSION")) {
-				if (BuName.equalsIgnoreCase("CONSOLIDATOR")) {
+			else if(TestType.equalsIgnoreCase("REGRESSION"))
+			{
+				if (BuName.equalsIgnoreCase("CONSOLIDATOR"))
+				{
 
-					if (EnvironmentName.equalsIgnoreCase("UAT")) {
+					if (EnvironmentName.equalsIgnoreCase("UAT"))
+					{
 						WebUI.navigateToUrl(GlobalVariable.consolidatorurlUAT)
 					}
-					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
+					else if (EnvironmentName.equalsIgnoreCase("STAGING"))
+					{
 						WebUI.navigateToUrl(GlobalVariable.consolidatorurlSTAGE)
 					}
-					else{
+					else
+					{
 						println ("Environment is not correct")
 						WebUI.closeBrowser()
 					}
 				}
-				else if (BuName.equalsIgnoreCase("INSTANTIMPACTUSERSITE")) {
+				else if (BuName.equalsIgnoreCase("INSTANTIMPACTUSERSITE"))
+				{
 
-					if (EnvironmentName.equalsIgnoreCase("UAT")) {
+					if (EnvironmentName.equalsIgnoreCase("UAT"))
+					{
 						WebUI.navigateToUrl(GlobalVariable.ii4UAT)
 					}
-					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
+					else if (EnvironmentName.equalsIgnoreCase("STAGING"))
+					{
 						WebUI.navigateToUrl(GlobalVariable.ii4STAGE)
 					}
-					else{
+					else
+					{
 						println ("Environment is not correct")
 						WebUI.closeBrowser()
 					}
 				}
-				else if (BuName.equalsIgnoreCase("POSW")) {
+				else if (BuName.equalsIgnoreCase("POSW"))
+				{
 
-					if (EnvironmentName.equalsIgnoreCase("UAT")) {
+					if (EnvironmentName.equalsIgnoreCase("UAT"))
+					{
 						WebUI.navigateToUrl(GlobalVariable.poswUAT)
 					}
-					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
+					else if (EnvironmentName.equalsIgnoreCase("STAGING"))
+					{
 						WebUI.navigateToUrl(GlobalVariable.poswSTAGE)
 					}
-					else{
+					else
+					{
 						println ("Environment is not correct")
 						WebUI.closeBrowser()
 						throw new Exception("Environment is not correct")
 					}
 				}
 
+				else if (BuName.equalsIgnoreCase("APPROVALS"))
+				{
 
-				else if (BuName.equalsIgnoreCase("APPROVALS")) {
-
-					if (EnvironmentName.equalsIgnoreCase("UAT")) {
+					if (EnvironmentName.equalsIgnoreCase("UAT"))
+					{
 						WebUI.navigateToUrl(GlobalVariable.dtapprovalUAT)
 					}
-					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
+					else if (EnvironmentName.equalsIgnoreCase("STAGING"))
+					{
 						WebUI.navigateToUrl(GlobalVariable.dtapprovalSTAGE)
 					}
-					else{
+					else
+					{
 						println ("Environment is not correct")
 						WebUI.closeBrowser()
 					}
 				}
-				else if (BuName.equalsIgnoreCase("WSWADMIN")) {
+				else if (BuName.equalsIgnoreCase("WSWADMIN"))
+				{
 
 					if (EnvironmentName.equalsIgnoreCase("UAT"))
 					{
 						WebUI.navigateToUrl(GlobalVariable.wswadminUAT)
 					}
-					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
+					else if (EnvironmentName.equalsIgnoreCase("STAGING"))
+					{
 						WebUI.navigateToUrl(GlobalVariable.wswadminSATGE)
 					}
-					else{
+					else
+					{
 						println ("Environment is not correct")
 						throw new Exception("Environment is not correct")
 						WebUI.closeBrowser()
 					}
 				}
-				else if (BuName.equalsIgnoreCase("IIADMIN")) {
+				else if (BuName.equalsIgnoreCase("IIADMIN"))
+				{
 
-					if (EnvironmentName.equalsIgnoreCase("UAT")) {
+					if (EnvironmentName.equalsIgnoreCase("UAT"))
+					{
 						WebUI.navigateToUrl(GlobalVariable.iiadminUAT)
 					}
-					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
+					else if (EnvironmentName.equalsIgnoreCase("STAGING"))
+					{
 						WebUI.navigateToUrl(GlobalVariable.iiadminSTAGE)
 					}
-					else{
+					else
+					{
 						println ("Environment is not correct")
 						throw new Exception("Environment is not correct")
 						WebUI.closeBrowser()
 					}
 				}
-				else if (BuName.equalsIgnoreCase("DESIGNTRACKER")) {
-					if (EnvironmentName.equalsIgnoreCase("UAT")) {
+				else if (BuName.equalsIgnoreCase("DESIGNTRACKER"))
+				{
+					if (EnvironmentName.equalsIgnoreCase("UAT"))
+					{
 						WebUI.navigateToUrl(GlobalVariable.dtUAT)
 						WebUI.delay(3)
 					}
 					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
 						WebUI.navigateToUrl(GlobalVariable.dtSTAGE)
 					}
-
+					else
+					{
+						println ("Environment is not correct")
+						throw new Exception("Environment is not correct")
+						WebUI.closeBrowser()
+					}
+				}
+				else
+				{
+					println ("BU is not correct")
+					throw new Exception("BU is not correct")
+					WebUI.closeBrowser()
 				}
 			}
-			else{
+			else
+			{
 				println ("Test type is not correct")
-				WebUI.closeBrowser()
 				throw new Exception("Test type is not correct")
+				WebUI.closeBrowser()
 			}
 		}
 
 		catch (Exception e) {
-			println ("GetUrl failed due to " + e);
 			Assert.fail("GetUrl failed due to"+e)
 		}
 	}
@@ -476,7 +553,7 @@ public  class Interaction {
 	{
 		try
 		{
-			//WaitVisible(by)
+			WaitVisible(by)
 			boolean displayed = driver.findElement(by).isDisplayed();
 			return displayed;
 		}
@@ -521,19 +598,37 @@ public  class Interaction {
 
 	public void  WaitVisible(By by)
 	{
-		WebDriverWait wait = new WebDriverWait(driver, 300);
+		WebDriverWait wait = new WebDriverWait(driver, 300)
 		wait.until(ExpectedConditions.visibilityOfElementLocated(by));
-		WebUI.delay(7)
+
+		//TRY with fluent wait
+		/*Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+		 .withTimeout(300, SECONDS)
+		 .pollingEvery(5, SECONDS)
+		 .ignoring(NoSuchElementException.class);
+		 WebElement foo = wait.until(ExpectedConditions.visibilityOfElementLocated(WebDriver)
+		 {
+		 WebElement apply(WebDriver driver) {
+		 return driver.findElement(By);
+		 }
+		 }
+		 );*/
+
+	}
+	
+	public void  WaitVisibleDup(By by)
+	{
+		WebDriverWait wait = new WebDriverWait(driver, 300)
+		wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+		WebUI.delay(8)
 	}
 
 	public void  WaitVisible(By by,int timeinsec)
 	{
-		WaitVisible(by)
+		//WaitVisible(by)
 		WebDriverWait wait = new WebDriverWait(driver, timeinsec);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 	}
-
-
 
 	public void  WaitVisible(WebElement element)
 	{
@@ -800,7 +895,7 @@ public  class Interaction {
 		return options
 	}
 
-	//Get attribut of webelement
+	//Get attribute of webelement
 
 	public String Attribute(By by, String attri)
 	{

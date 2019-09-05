@@ -84,15 +84,16 @@ class ExceptionListBrandsPage {
 	@Keyword
 	public void VerifyInsertBrandInExceptionList() {
 		try {
-			action.SelectByText(corporationddn, "Instant Impact 4.0 Demo Corp (Dist.)")
+			action.SelectByText(corporationddn, "Demo Distributor (QA)")
 
-			WebUI.delay(10)
-			action.SelectByText(marketddn, "Chicago Beverage Systems")
+			//WebUI.delay(7)
+			action.WaitVisible(marketddn)
+			action.SelectByText(marketddn, "Demo Dist. 1 QA")
 
-			WebUI.delay(10)
-			action.SelectByText(marketSupplierddn, "MILLER COORS BREWING COMPANY")
+			WebUI.delay(7)
+			action.SelectByText(marketSupplierddn, "Demo Dist. 1 QA")
 
-			WebUI.delay(10)
+			WebUI.delay(7)
 			action.SelectByText(brandsddn, "TestBrand")
 
 			WebUI.delay(5)
@@ -117,13 +118,13 @@ class ExceptionListBrandsPage {
 	@Keyword
 	public void VerifyDeleteBrandFromExceptionList() {
 		try {
-			action.SelectByText(corporationddn, "Instant Impact 4.0 Demo Corp (Dist.)")
+			action.SelectByText(corporationddn, "Demo Distributor (QA)")
 
-			WebUI.delay(10)
-			action.SelectByText(marketddn, "Chicago Beverage Systems")
+			WebUI.delay(7)
+			action.SelectByText(marketddn, "Demo Dist. 1 QA")
 
-			WebUI.delay(10)
-			action.SelectByText(marketSupplierddn, "MILLER COORS BREWING COMPANY")
+			WebUI.delay(7)
+			action.SelectByText(marketSupplierddn, "Demo Dist. 1 QA")
 
 			WebUI.delay(10)
 			action.SelectByText(brandsddn, "TestBrand")
@@ -154,14 +155,13 @@ class ExceptionListBrandsPage {
 	@Keyword
 	public void VerifyErrorOnInsertingDuplicateBrand() {
 		try {
-			action.SelectByText(corporationddn, "Instant Impact 4.0 Demo Corp (Dist.)")
+			action.SelectByText(corporationddn, "Demo Distributor (QA)")
 
-			WebUI.delay(10)
-			action.SelectByText(marketddn, "Chicago Beverage Systems")
+			WebUI.delay(7)
+			action.SelectByText(marketddn, "Demo Dist. 1 QA")
 
-			WebUI.delay(10)
-			action.SelectByText(marketSupplierddn, "MILLER COORS BREWING COMPANY")
-
+			WebUI.delay(7)
+			action.SelectByText(marketSupplierddn, "Demo Dist. 1 QA")
 			WebUI.delay(10)
 			action.SelectByText(brandsddn, "TestBrand")
 
@@ -198,13 +198,13 @@ class ExceptionListBrandsPage {
 	@Keyword
 	public void VerifyInsertingTwoBrandsInList() {
 		try {
-			action.SelectByText(corporationddn, "Instant Impact 4.0 Demo Corp (Dist.)")
+			action.SelectByText(corporationddn, "Demo Distributor (QA)")
 
-			WebUI.delay(10)
-			action.SelectByText(marketddn, "Chicago Beverage Systems")
+			WebUI.delay(7)
+			action.SelectByText(marketddn, "Demo Dist. 1 QA")
 
-			WebUI.delay(10)
-			action.SelectByText(marketSupplierddn, "MILLER COORS BREWING COMPANY")
+			WebUI.delay(7)
+			action.SelectByText(marketSupplierddn, "Demo Dist. 1 QA")
 
 			WebUI.delay(10)
 			action.SelectByText(brandsddn, "TestBrand")
