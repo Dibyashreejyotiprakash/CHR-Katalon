@@ -23,8 +23,6 @@ WebUI.waitForPageLoad(300)
 
 CustomKeywords.'com.designtracker.LoginPage.LoginToDesignTarcker'(GlobalVariable.dtusername, GlobalVariable.dtpassowrd)
 
-WebUI.waitForPageLoad(0)
-
 CustomKeywords.'com.designtracker.HomePage.VerifyREPORTSTab'()
 
 CustomKeywords.'com.designtracker.HomePage.SelectCorporationAndMarcket'()
