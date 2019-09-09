@@ -703,4 +703,18 @@ public class HomePage {
 			println ("Click On ClickOnSalesPeople failed due to "+ e)
 		}
 	}
+	
+	@Keyword
+	public void ClickOnOLOFII4Configuration()
+	{
+		try
+		{
+			
+		}
+		catch(Exception e)
+		{
+			println ("Click On OLOF II4 Configuration failed due to "+ e)
+			Assert.fail()
+		}
+	} 
 }

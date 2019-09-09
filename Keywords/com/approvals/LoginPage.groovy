@@ -33,6 +33,11 @@ public class LoginPage {
 	By submitbtn = By.xpath("//*[@id='ctl00_cphBody_loginPortal_LoginButton']")
 	By forgotlink = By.xpath("//*[@id='ctl00_cphBody_loginPortal_lbtnForgotPassword']")
 
+	By accountddn = By.xpath("//*[@id='ddlAvailableMarkets']")
+	By accountvalue = By.xpath("//*[@id='ddlAvailableMarkets_DropDown']//li[text()='Chicago Beverage Systems']")
+	By accountlogintbtn = By.xpath("//*[@id='ctl00_cphBody_btnMarketSelected']")
+
+
 	@Keyword
 	public void VerifyApprovalLoginPage() {
 		try {
@@ -41,7 +46,7 @@ public class LoginPage {
 				println ("Page Verified")
 			}
 			else {
-				Assert.fail()
+				throw new Exception("Verify Approval Login Page ")
 			}
 		}
 		catch(Exception e) {
@@ -67,6 +72,26 @@ public class LoginPage {
 		}
 		catch(Exception e) {
 			println ("Verify Approval login page failed due to "+ e)
+			Assert.fail()
+		}
+	}
+
+	@Keyword
+	public void ApprovalLogin(String un, String pwd) {
+		try {
+			action.Type(username,un )
+			action.Type(password, pwd)
+			action.Click(submitbtn)
+			action.WaitForPageToLoad()
+
+			action.Click(accountddn)
+			WebUI.delay(3)
+			action.Click(accountvalue)
+			action.Click(accountlogintbtn)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("Approval login page failed due to "+ e)
 			Assert.fail()
 		}
 	}

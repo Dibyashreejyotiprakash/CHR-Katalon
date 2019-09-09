@@ -43,6 +43,11 @@ public class HomePage {
 	By dtsearchtextbox = By.xpath("//*[@id='ctl00_cphBody_txtDtSearch']")
 	By accounttextbox = By.xpath("//*[@id='ctl00_cphBody_txtAccount']")
 	By accountname = By.xpath("//*[@id='ctl00_cphBody_txtAccountName']")
+	
+	By searchjoblink = By.xpath("//*[@id='ctl00_tab1']")
+	By reportslink = By.xpath("//*[@id='ctl00_tab2']")
+	By myaccountlink = By.xpath("//*[@id='ctl00_cphLoginStatus_lvPassword_tab4']")
+	By changepwd = By.xpath("//*[@id='ctl00_cphLoginStatus_lvPassword_tab5']")
 
 	@Keyword
 	public void VerifyApprovalsHomePage() {
@@ -52,13 +57,16 @@ public class HomePage {
 				println ("Page is verified")
 			}
 			else {
-				Assert.fail()
+				throw new Exception("Verify Approval Home Page ")
 			}
 		}
 		catch(Exception e) {
 			println ("Home page verified failed due to "+ e)
+			Assert.fail()
 		}
 	}
+	
+	
 
 	@Keyword
 	public void VerifySearchDTJob(String dtnumber) {
@@ -68,6 +76,69 @@ public class HomePage {
 		}
 		catch(Exception e) {
 			println ("Verify Search DT Job failed due to "+ e)
+			Assert.fail()
+		}
+	}
+	
+	@Keyword
+	public void ApprovalLogout()
+	{
+		try
+		{
+			action.Click(logout)
+			action.WaitForPageToLoad()
+			
+			String actualurl = action.GetCurrentURL()
+			if(actualurl.contains("login.aspx")) {
+				println ("Login Page is verified")
+			}
+			else {
+				throw new Exception("Verify Approval Logout Page failed")
+			}
+		}
+		catch(Exception e)
+		{
+			println ("Approval logout failed due to "+ e)
+			Assert.fail()
+		}
+	}
+	
+	@Keyword
+	public void VerifyAllLinksInHomePage()
+	{
+		try {
+			boolean statusofsearchjoblink = action.IsDisplayed(searchjob)
+			Assert.assertTrue(searchjoblink)
+			
+			boolean statusofreportslink = action.IsElementDisplayed(reportslink)
+			Assert.assertTrue(statusofreportslink)
+			
+			boolean statusofmyaccount = action.IsElementDisplayed(myaccountlink)
+			Assert.assertTrue(statusofmyaccount)
+			
+			boolean stausoflogout = action.IsElementDisplayed(logout)
+			Assert.assertTrue(stausoflogout)
+			
+		}
+		catch(Exception e) {
+			println ("Verify All Fields In Home Page failed due to "+ e)
+			Assert.fail()
+		}
+	}
+	
+	@Keyword
+	public void ClickOnChangePassword()
+	{
+		try
+		{
+			action.MouseHoverOnElement(myaccountlink)
+			action.Click(changepwd)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e)
+		{
+			println ("Click On Change Password failed due to "+ e)
+			Assert.fail()
 		}
 	}
 }

@@ -136,16 +136,6 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'diageoadmin@centiv.com'</initValue>
-      <name>diageousername</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description></description>
-      <initValue>'go2web'</initValue>
-      <name>diageopassword</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description></description>
       <initValue>'testadmin1@brandmuscle.com'</initValue>
       <name>ii3username</name>
    </GlobalVariableEntity>
@@ -301,17 +291,17 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'http://dibyashree.jyoti:chr@1234@wswadmin.uat.brandmuscle.net'</initValue>
+      <initValue>'http://wswadmin.uat.brandmuscle.net'</initValue>
       <name>wswadminUAT</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'http://dibyashree.jyoti:chr@1234@wswadmin.stage.brandmuscle.net'</initValue>
+      <initValue>'https://wswadmin.stage.brandmuscle.net/'</initValue>
       <name>wswadminSATGE</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'http://dibyashree.jyoti:chr@1234@wswadmin.brandmuscle.net'</initValue>
+      <initValue>'https://wswadmin.brandmuscle.net'</initValue>
       <name>wswadminPROD</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -348,5 +338,45 @@
       <description></description>
       <initValue>'APPROVALS'</initValue>
       <name>bunameapprovals</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'testadmin1@brandmuscle.com'</initValue>
+      <name>approvalusername</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'go2web'</initValue>
+      <name>approvalpassword</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'http://rel4.dev.instantimpact.com'</initValue>
+      <name>ii4DEV</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'http://wswadmin.dev.brandmuscle.net'</initValue>
+      <name>wswadminDEV</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'http://iiadmin.dev.brandmuscle.net'</initValue>
+      <name>iiadminDEV</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'http://designtracker.dev.brandmuscle.net'</initValue>
+      <name>dtDEV</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'http://ii3.dev.brandmuscle.net/'</initValue>
+      <name>ii3DEV</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'http://approvals.dev.brandmuscle.net/'</initValue>
+      <name>dtapprovalsDEV</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>

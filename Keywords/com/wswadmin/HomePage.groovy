@@ -62,6 +62,8 @@ public class HomePage {
 	By bannedphrasesbtn = By.xpath("//*[@href='/InstantImpact/BannedWords/BannedPhrases.aspx']")
 	By itemgatinggroupmanagement = By.xpath("//span[contains(text(),'Item Gating Group Management')]")
 	By standarditemgating = By.xpath("//span[contains(text(),'Standard Item Gating')]")
+	By olof = By.xpath("//*[text()='Online Order Form']")
+	By olofii4configuration = By.xpath("//*[text()='II4 Configuration']")
 
 
 	@Keyword
@@ -195,4 +197,22 @@ public class HomePage {
 
 	}
 
+	@Keyword
+	public void ClickOnOLOFII4Configuration()
+	{
+		try
+		{
+			action.WaitVisible(instantimpact)
+			action.MouseHoverOnElement(instantimpact)
+			WebUI.delay(3)
+			action.MouseHoverOnElement(olof)
+			action.Click(olofii4configuration)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e)
+		{
+			println ("Click On OLOF II4 Configuration failed due to "+ e)
+			Assert.fail()
+		}
+	}
 }
