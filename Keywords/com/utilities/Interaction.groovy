@@ -928,4 +928,17 @@ public  class Interaction {
 		return RandomStringUtils.randomNumeric(stringlength)
 	}
 
+	public void VerifyCurrentPage(String expectedurl)
+	{
+		String actualurl = driver.currentUrl
+		if(actualurl.contains(expectedurl))
+		{
+			println ("Page verified")
+		}
+		else
+		{
+			throw new Exception("Page is not verified")
+		}
+	}
+
 }

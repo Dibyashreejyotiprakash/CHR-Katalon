@@ -37,6 +37,14 @@ public class II4ConfigurationPage {
 	By cloneorderyesbtn = By.xpath("//*[@id='collapseOne']/div/div[2]/div[2]//span[1]/span[1]")
 	By finishincompletebtn = By.xpath("//*[@id='collapseOne']/div/div[3]/div[2]//span[1]/span[1]")
 	By savebtn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_btnSave_input']")
+	By printdetailslabel = By.xpath("//*[text()='PRINT DETAILS']")
+	By printdetailssection = By.xpath("//*[@id='collapseFour']")
+	By ioyesbtn = By.xpath("//*[@id='collapseFour']/div/div[5]/div[2]/div/span[1]/span[1]")
+	By ioberviagetext = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_rtbIoCodeLbl']")
+	By glyesbtn = By.xpath("//*[@id='collapseFour']/div/div[6]/div[2]/div/span[1]/span[1]")
+	By glberviagetext = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_rtbGLCodeLbl']")
+	By poyesbtn = By.xpath("//*[@id='collapseFour']/div/div[7]/div[2]/div/span[1]/span[1]")
+	By poberviagetext = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_rtbPONumberLbl']")
 
 
 
@@ -123,8 +131,8 @@ public class II4ConfigurationPage {
 			Assert.fail()
 		}
 	}
-	
-	
+
+
 	@Keyword
 	public void VerifyCloneVisibility() {
 		try {
@@ -133,10 +141,12 @@ public class II4ConfigurationPage {
 			if(statusofcloneorderbtn == true) {
 				action.ScrollToBottomOfPage()
 				WebUI.delay(10)
+				action.ScrollToBottomOfPage()
 				action.Click(savebtn)
 			}
 			else{
 				action.Click(cloneorderyesbtn)
+				action.ScrollToBottomOfPage()
 				action.Click(savebtn)
 			}
 		}
@@ -145,8 +155,8 @@ public class II4ConfigurationPage {
 			Assert.fail()
 		}
 	}
-	
-	
+
+
 	@Keyword
 	public void VerifyFinishInCompleteVisibility() {
 		try {
@@ -155,15 +165,145 @@ public class II4ConfigurationPage {
 			if(statusoffinishincompleteorderbtn == true) {
 				action.ScrollToBottomOfPage()
 				WebUI.delay(10)
+				action.ScrollToBottomOfPage()
 				action.Click(savebtn)
 			}
 			else{
 				action.Click(finishincompletebtn)
+				action.ScrollToBottomOfPage()
 				action.Click(savebtn)
 			}
 		}
 		catch(Exception e) {
 			println ("Verify Finish Incomplete Visibility failed due to "+ e)
+			Assert.fail()
+		}
+	}
+
+	@Keyword
+	public void VerifyPrintDetailsSection() {
+		try {
+			boolean statusofprintdetailssection = action.IsElementDisplayed(printdetailssection)
+			Assert.assertTrue(statusofprintdetailssection)
+		}
+		catch(Exception e) {
+			println ("Verify Print Details Section failed due to "+ e)
+			Assert.fail()
+		}
+	}
+
+	@Keyword
+	public void UpdateIOVisibilty() {
+		try {
+			boolean statusofioyesbtn = action.IsElementSelected(ioyesbtn)
+			println ("Status of io button  due to ----------"+ statusofioyesbtn)
+			if(statusofioyesbtn == true) {
+				action.ScrollToBottomOfPage()
+				WebUI.delay(10)
+				action.ScrollToBottomOfPage()
+				action.Click(savebtn)
+			}
+			else{
+				action.Click(ioyesbtn)
+				action.ScrollToBottomOfPage()
+				action.Click(savebtn)
+			}
+		}
+		catch(Exception e) {
+			println ("Verify IO Visibilty failed due to "+ e)
+			Assert.fail()
+		}
+	}
+
+
+	@Keyword
+	public void UpdateGLVisibilty() {
+		try {
+			boolean statusofglyesbtn = action.IsElementSelected(glyesbtn)
+			println ("Status of gl failed due to ----------"+ statusofglyesbtn)
+			if(statusofglyesbtn == true) {
+				action.ScrollToBottomOfPage()
+				WebUI.delay(10)
+				action.ScrollToBottomOfPage()
+				action.Click(savebtn)
+			}
+			else{
+				action.Click(glyesbtn)
+				action.ScrollToBottomOfPage()
+				action.Click(savebtn)
+			}
+		}
+		catch(Exception e) {
+			println ("Verify GL Visibilty failed due to "+ e)
+			Assert.fail()
+		}
+	}
+
+
+	@Keyword
+	public void UpdatePOVisibilty() {
+		try {
+			boolean statusofpoyesbtn = action.IsElementSelected(poyesbtn)
+			println ("Status of gl failed due to ----------"+ statusofpoyesbtn)
+			if(statusofpoyesbtn == true) {
+				action.ScrollToBottomOfPage()
+				WebUI.delay(10)
+				action.ScrollToBottomOfPage()
+				action.Click(savebtn)
+			}
+			else{
+				action.Click(poyesbtn)
+				action.ScrollToBottomOfPage()
+				action.Click(savebtn)
+			}
+		}
+		catch(Exception e) {
+			println ("Verify PO Visibilty failed due to "+ e)
+			Assert.fail()
+		}
+	}
+	
+	@Keyword
+	public void UpdateIOBerviageText()
+	{
+		try{
+			action.Type(ioberviagetext, "IO berviage updated for testing")
+			action.ScrollToBottomOfPage()
+			action.Click(savebtn)
+		}
+		catch(Exception e)
+		{
+			println ("Update IO Berviage Text failed due to "+ e)
+			Assert.fail()
+		}
+	}
+	
+	@Keyword
+	public void UpdateGLBerviageText()
+	{
+		try{
+			action.Type(glberviagetext, "GL berviage updated for testing")
+			action.ScrollToBottomOfPage()
+			action.Click(savebtn)
+		}
+		catch(Exception e)
+		{
+			println ("Update GL Berviage Text failed due to "+ e)
+			Assert.fail()
+		}
+	}
+	
+	@Keyword
+	public void UpdatePOBerviageText()
+	{
+		try{
+			action.Type(poberviagetext, "PO berviage updated for testing")
+			action.ScrollToBottomOfPage()
+			action.Click(savebtn)
+		}
+		catch(Exception e)
+		{
+			println ("Update PO Berviage Text failed due to "+ e)
 			Assert.fail()
 		}
 	}

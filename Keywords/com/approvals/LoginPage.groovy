@@ -87,8 +87,10 @@ public class LoginPage {
 			action.Click(accountddn)
 			WebUI.delay(3)
 			action.Click(accountvalue)
+			WebUI.delay(3)
 			action.Click(accountlogintbtn)
 			action.WaitForPageToLoad()
+			WebUI.delay(10)
 		}
 		catch(Exception e) {
 			println ("Approval login page failed due to "+ e)

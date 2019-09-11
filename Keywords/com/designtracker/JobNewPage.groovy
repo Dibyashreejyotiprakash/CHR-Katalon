@@ -207,6 +207,7 @@ public class JobNewPage {
 	@Keyword
 	public String CreateNewJob()
 	{
+		String jobIdValue = null
 		try
 		{
 			action.SelectByText(corporationddn, "Instant Impact 4.0 Demo Corp (Dist.)")
@@ -222,6 +223,13 @@ public class JobNewPage {
 			action.Click(createjobbtn)
 			WebUI.delay(10)
 			action.WaitForPageToLoad()
+			action.WaitForPageToLoad()
+			WebUI.delay(10)
+			jobIdValue = action.GetText(jobid)
+			return jobIdValue
+			WebUI.delay(10)
+			action.GetText(jobid)
+			return jobid
 		}
 		catch(Exception e)
 		{
