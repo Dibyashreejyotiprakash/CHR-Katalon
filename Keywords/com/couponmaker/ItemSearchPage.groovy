@@ -53,8 +53,26 @@ class ItemSearchPage {
 	public void SelectCouponType() {
 		try{
 			action.Click(itemtypeddn)
+			WebUI.delay(10)
 			action.Click(itetypeddnvalue)
 			WebUI.delay(10)
+		}
+		catch(Exception e) {
+			println ("Select Coupon Type failed due to "+ e)
+			Assert.fail()
+		}
+	}
+	
+	@Keyword
+	public void VerifyCouponSearchResults()
+	{
+		try{
+			action.ScrollToBottomOfPage()
+			WebUI.delay(5)
+			boolean statusofcoupontemplateaftersearch = action.IsElementDisplayed(templateaftersearch)
+			Assert.assertTrue(statusofcoupontemplateaftersearch)
+			action.Click(templateaftersearch)
+			action.WaitForPageToLoad()
 		}
 		catch(Exception e) {
 			println ("Select Coupon Type failed due to "+ e)
@@ -65,7 +83,7 @@ class ItemSearchPage {
 	@Keyword
 	public void SearchTemplate() {
 		try{
-			action.Type(searchtextbox, "130727")
+			action.Type(searchtextbox, "125747")
 			action.Click(searchbtn)
 			WebUI.delay(10)
 			action.Click(templateaftersearch)

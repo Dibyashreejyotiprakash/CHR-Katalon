@@ -61,15 +61,16 @@ public class LoginPage {
 	}
 
 	@Keyword
-	public void LoginToDemoCorp(String demoemail, String demopassword) {
+	public void LoginToCouponDemoCorp() {
 		try {
-			action.Type(loginUserName, demoemail);
-			action.Type(loginPassword, demopassword);
+			action.Type(loginUserName, "testadmin1@brandmuscle.com");
+			action.Type(loginPassword, "go2web");
 			action.Click(loginButton);
 			action.WaitForPageToLoad();
-			action.SelectByText(ddlCorporation, "Demo Supplier (QA)");
+			action.SelectByText(ddlCorporation, "Instant Impact 4.0 Demo Corp (Supp.)");
 			action.Click(loginButton);
 			WebUI.delay(15)
+			action.WaitForPageToLoad()
 		}
 		catch (Exception e) {
 			println("Login To DemoCorp failed due to: " + e);

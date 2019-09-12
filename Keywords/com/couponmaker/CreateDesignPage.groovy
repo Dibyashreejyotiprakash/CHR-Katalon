@@ -38,6 +38,14 @@ public class CreateDesignPage {
 	By startdatevalue = By.xpath("//*[@id='ctl00_Body_coupons_Dates_userControl_txtStartDate_calendar_Top']//tr//td[text()='18']")
 	By enddatebtn = By.xpath("//*[@id='ctl00_Body_coupons_Dates_userControl_txtExpirationDate_popupButton']")
 	By enddatevalue = By.xpath("//*[@id='ctl00_Body_coupons_Dates_userControl_txtExpirationDate_calendar_Top']//tr//td[text()='18']")
+	By previewchanges = By.xpath("//*[@id='Body_coupons_btnRender']")
+	By buynowbtn = By.xpath("//*[@id='btnBuyNow']")
+	By nobtn = By.xpath("//*[@class='btn GenericRedButton']/span[text()='No']")
+	By yesbtn = By.xpath("//*[@class='btn GenericRedButton']//span[text()='Yes']")
+	By savedesignnametextbox = By.xpath("//*[@id='ctl00_Body_coupons_rwSaveDesignModal_C_txtDesignName']")
+	By savebutton = By.xpath("//*[@id='ctl00_Body_coupons_rwSaveDesignModal_C_btnDesignSave']")
+	By cancelbtn = By.xpath("//*[@id='Body_coupons_btnCancel']")
+
 
 
 	@Keyword
@@ -52,21 +60,184 @@ public class CreateDesignPage {
 	}
 
 	@Keyword
-	public void Enterallvaliddata() {
+	public void VerifyAllFieldsInCreateDesignPage() {
+		try{
+			boolean statusofitemtyperadiobtn = action.IsElementEnabled(itemtyperadiobtn)
+			Assert.assertTrue(statusofitemtyperadiobtn)
+
+			if(statusofitemtyperadiobtn == true) {
+				action.Click(itemtyperadiobtn)
+				WebUI.delay(5)
+
+				boolean statusofofferbtn = action.IsElementEnabled(offerbtn)
+				Assert.assertTrue(statusofofferbtn)
+
+				if(statusofofferbtn == true) {
+					action.Click(offerbtn)
+					WebUI.delay(5)
+
+					boolean statusofdatesbtn = action.IsElementEnabled(datesbtn)
+					Assert.assertTrue(statusofdatesbtn)
+
+					if(statusofdatesbtn == true) {
+						action.Click(datesbtn)
+						WebUI.delay(5)
+
+						boolean statusofstatesbtn = action.IsElementEnabled(statesbtn)
+						Assert.assertTrue(statusofstatesbtn)
+
+						if(statusofstatesbtn == true) {
+							action.Click(statesbtn)
+							WebUI.delay(5)
+
+							boolean statusofreviewandorder = action.IsElementEnabled(reviewandorderbtn)
+							Assert.assertTrue(statusofreviewandorder)
+
+							action.Click(reviewandorderbtn)
+							WebUI.delay(5)
+
+							boolean statusofbuynowbtn = action.IsElementEnabled(buynowbtn)
+							Assert.assertFalse(buynowbtn)
+
+							if(statusofbuynowbtn == false) {
+								action.Click(previewchanges)
+								WebUI.delay(10)
+								boolean statusofbuynowbtnafterpreview = action.IsElementEnabled(buynowbtn)
+								Assert.assertTrue(buynowbtn)
+
+								if(statusofbuynowbtnafterpreview == true) {
+									println ("All fields are verified")
+								}
+								else{
+									throw new Exception("Buy Now button is not enabled")
+								}
+							}
+						}
+					}
+				}
+			}
+			else {
+				throw new Exception("Item Type Button is not enabled")
+			}
+		}
+		catch(Exception e) {
+			println ("Verify All Fields In Create Design Page failed due to "+ e)
+			Assert.fail()
+		}
+	}
+
+
+
+	@Keyword
+	public void EnterallvaliddataAndClickOnBuyNowBtn() {
 		try {
 			action.Click(offerbtn)
 			action.Click(crossmerchandisebtn)
 			action.Click(datesbtn)
 			WebUI.delay(5)
 			action.Click(startdatebtn)
+			WebUI.delay(5)
 			action.Click(startdatevalue)
 			WebUI.click(20)
 			action.Click(enddatebtn)
+			WebUI.delay(5)
 			action.Click(enddatevalue)
+			WebUI.delay(5)
 			action.Click(statesbtn)
+			WebUI.delay(5)
+			action.Click(reviewandorderbtn)
+			WebUI.delay(5)
+			action.Click(previewchanges)
+			WebUI.delay(20)
+			action.ScrollToBottomOfPage()
+			WebUI.delay(5)
+			action.Click(buynowbtn)
 		}
 		catch(Exception e) {
 			println ("Verify Create Design page failed due to "+ e)
+			Assert.fail()
+		}
+	}
+	
+	@Keyword
+	public void VerifyPreviewAndCancelBtn()
+	{
+		try{
+			boolean statusofperviewbtn = action.IsElementDisplayed(previewchanges)
+			Assert.assertTrue(statusofperviewbtn)
+			
+			boolean statusofcancelbtn = action.IsElementDisplayed(cancelbtn)
+			Assert.assertTrue(statusofcancelbtn)
+		}
+		catch(Exception e)
+		{
+			println ("Verify Preview And Cancel Btn failed due to "+ e)
+			Assert.fail()
+		}
+	}
+	
+	@Keyword
+	public void ClickOnCancelBtnAndVerifyShoppingCartPage()
+	{
+		try{
+			boolean statusofcancelbtn = action.IsElementDisplayed(cancelbtn)
+			Assert.assertTrue(statusofcancelbtn)
+			
+			if(statusofcancelbtn == true)
+			{
+				action.Click(cancelbtn)
+				WebUI.delay(10)
+				action.Click(nobtn)
+				WebUI.delay(10)
+				action.VerifyCurrentPage("ShoppingCart.aspx")
+			}
+			else{
+				throw new Exception("Cancel Btn disabled")
+			}
+		}
+		catch(Exception e)
+		{
+			println ("Click On Cancel Btn failed due to "+ e)
+			Assert.fail()
+		}
+	}
+
+	@Keyword
+	public void ClickOnNoBtn() {
+		try{
+			action.Click(nobtn)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("Click On No Btn failed due to "+ e)
+			Assert.fail()
+		}
+	}
+
+	@Keyword
+	public String ClickYesAndSaveCouponTemplate() {
+		String couponname = null
+		try{
+			action.Click(yesbtn)
+			WebUI.delay(10)
+			couponname = action.GenerateRandomAplphabaNeumericString(7)
+			action.Type(savebutton, couponname)
+			return couponname
+		}
+		catch(Exception e) {
+			println ("Click Yes And Save Coupon Template failed due to "+ e)
+			Assert.fail()
+		}
+	}
+
+	@Keyword
+	public void ClickOnBuyNowBtn() {
+		try{
+			action.Click(buynowbtn)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("Click On But now Btn failed due to "+ e)
 			Assert.fail()
 		}
 	}

@@ -28,16 +28,55 @@ public class HomePage {
 	WebDriver driver = DriverFactory.getWebDriver();
 	Interaction action = new Interaction();
 
-	By imgPOSTemplates = By.xpath("//a[(@target='_self') and contains(text(),'POS Templates')]")
+	By posondemand = By.xpath("//*[text()='POS On Demand']")
+	By postemplate = By.xpath("//*[text()='POS Templates']")
+	By logoutlink = By.xpath("//*[@id='lbLogout']")
+	By postemplateicon = By.xpath("//a[(@target='_self') and contains(text(),'POS Templates')]")
+	By projectslink = By.xpath("//*[@id='projectsPageLink']")
+	By accountslink = By.xpath("//*[@href='/Account/MyAccountPage.aspx']")
+	By helplink = By.xpath("//*[@id='HelpPageLink']")
 
 
 	@Keyword
-	public void VerifyLoginPage() {
+	public void VerifyHomePage() {
 		try{
+			action.VerifyCurrentPage("Default.aspx")
+		}
+		catch(Exception e) {
+			println ("Verify Home page failed due to "+ e)
+			Assert.fail()
+		}
+	}
+
+	@Keyword
+	public void Logout() {
+		try{
+			action.Click(logoutlink)
+			action.WaitForPageToLoad()
 			action.VerifyCurrentPage("Login.aspx")
 		}
 		catch(Exception e) {
-			println ("Verify Login page failed due to "+ e)
+			println ("Logout failed due to "+ e)
+			Assert.fail()
+		}
+	}
+	
+	
+	@Keyword
+	public void VerifyAllAvailableLinks()
+	{
+		try{
+			boolean statusofaccountlink = action.IsElementDisplayed(accountslink)
+			Assert.assertTrue(statusofaccountlink)
+			
+			boolean statusofprojectslink = action.IsElementDisplayed(projectslink)
+			Assert.assertTrue(statusofprojectslink)
+			
+			boolean statusofhelplink = action.IsElementDisplayed(helplink)
+			Assert.assertTrue(statusofhelplink)
+		}
+		catch(Exception e) {
+			println ("Verify All Available Links failed due to "+ e)
 			Assert.fail()
 		}
 	}
@@ -46,9 +85,38 @@ public class HomePage {
 	@Keyword
 	public void ClickOnPosTemplate() {
 		try{
+			action.ScrollToBottomOfPage()
+			WebUI.delay(5)
+			action.Click(postemplateicon)
+			action.WaitForPageToLoad()
 		}
 		catch(Exception e) {
 			println ("Click On Pos Template failed due to "+ e)
+			Assert.fail()
+		}
+	}
+
+	@Keyword
+	public void ClickOnProjectsLink() {
+		try{
+			action.Click(projectslink)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("Click On projects link failed due to "+ e)
+			Assert.fail()
+		}
+	}
+
+
+	@Keyword
+	public void ClickOnCouponMakerButton() {
+		try{
+			action.Click(projectslink)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("Click On Coupon Maker Button failed due to "+ e)
 			Assert.fail()
 		}
 	}

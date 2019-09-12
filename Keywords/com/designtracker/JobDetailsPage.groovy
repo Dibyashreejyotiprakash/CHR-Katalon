@@ -92,6 +92,7 @@ public class JobDetailsPage {
 		try {
 			action.WaitUntilElementClickable(jobdetailsbtn)
 			action.Click(jobdetailsbtn)
+			action.WaitForPageToLoad()
 		}
 		catch(Exception e) {
 			println ("Click On DetailsPage failed due to "+ e)
@@ -277,6 +278,39 @@ public class JobDetailsPage {
 		}
 		catch(Exception e) {
 			println ("Add Part failed due to "+ e)
+			Assert.fail()
+		}
+	}
+	
+	@Keyword
+	public void AddMultiplePartsToJobs()
+	{
+		try{
+			action.Click(addpartlink)
+			WebUI.delay(10)
+			action.WaitForPageToLoad()
+			action.SelectByIndex(printformatddn, 4)
+			WebUI.delay(10)
+			action.Type(quantity, "123")
+			WebUI.delay(10)
+			action.Click(partsearchbtn)
+			WebUI.delay(10)
+			action.Click(part)
+			WebUI.delay(10)
+			action.Click(insertbtn)
+			action.SelectByIndex(printformatddn, 4)
+			WebUI.delay(10)
+			action.Type(quantity, "123")
+			WebUI.delay(10)
+			action.Click(partsearchbtn)
+			WebUI.delay(10)
+			action.Click(part)
+			WebUI.delay(10)
+			action.Click(insertbtn)
+		}
+		catch(Exception e)
+		{
+			println ("Add Multiple parts failed due to "+ e)
 			Assert.fail()
 		}
 	}
