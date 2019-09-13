@@ -21,17 +21,15 @@ CustomKeywords.'com.couponmaker.LoginPage.VerifyLoginPage'()
 
 CustomKeywords.'com.couponmaker.LoginPage.LoginToCouponDemoCorp'()
 
-CustomKeywords.'com.couponmaker.HomePage.VerifyHomePage'()
-
 CustomKeywords.'com.couponmaker.HomePage.ClickOnPosTemplate'()
 
 CustomKeywords.'com.couponmaker.ItemSearchPage.VerifyItemSearchPage'()
 
 CustomKeywords.'com.couponmaker.ItemSearchPage.SelectCouponType'()
 
-CustomKeywords.'com.couponmaker.ItemSearchPage.SelectCouponType'()
+CustomKeywords.'com.couponmaker.ItemSearchPage.SearchCouponTemplateAndNavigateToItemDetailsPage'()
 
-CustomKeywords.'com.couponmaker.ItemSearchPage.VerifyCouponSearchResults'()
+CustomKeywords.'com.couponmaker.ItemSearchPage.ClickOnCreateDesignpage'()
 
 CustomKeywords.'com.couponmaker.CreateDesignPage.VerifyCreateDesignPage'()
 
@@ -54,3 +52,25 @@ CustomKeywords.'com.couponmaker.CheckOutPage.AddDtAccountAndClickonContinueToRev
 CustomKeywords.'com.couponmaker.ReviewPage.VerifyReviewPage'()
 
 CustomKeywords.'com.couponmaker.ReviewPage.ClickOnPlaceOrderBtn'()
+
+CustomKeywords.'com.couponmaker.ConfirmationPage.VerifyConfirmationPage'()
+
+String confirmationnumber = CustomKeywords.'com.couponmaker.ConfirmationPage.GetConfirmationNumber'()
+
+WebUI.closeBrowser()
+
+WebUI.openBrowser('')
+
+WebUI.maximizeWindow()
+
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamedesigntracker, GlobalVariable.testtypesmoke, GlobalVariable.environment)
+
+WebUI.waitForPageLoad(300)
+
+CustomKeywords.'com.designtracker.LoginPage.LoginToDesignTarcker'(GlobalVariable.dtusername, GlobalVariable.dtpassowrd)
+
+CustomKeywords.'com.designtracker.HomePage.VerifyHomePage'()
+
+CustomKeywords.'com.designtracker.HomePage.ClickOnJobSearch'()
+
+CustomKeywords.'com.designtracker.HomePage.VerifyCreatedJobInDTSearchPage'(confirmationnumber)

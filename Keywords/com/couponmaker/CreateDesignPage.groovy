@@ -28,16 +28,17 @@ public class CreateDesignPage {
 	Interaction action = new Interaction();
 
 	By itemtyperadiobtn = By.xpath("//*[@id='Body_coupons_CouponType_userControl_rblCouponTypes_1']")
-	By offerbtn = By.xpath("//*[@id='ctl00_Body_coupons_RadTabStripCustomize']/div/ul/li[text()='Offer']")
-	By crossmerchandisebtn = By.xpath("//*[@id='ctl00_Body_coupons_RadTabStripCustomize']/div/ul/li[text()='Cross Merchandise']")
-	By datesbtn = By.xpath("//*[@id='ctl00_Body_coupons_RadTabStripCustomize']/div/ul/li[text()='Dates']")
-	By statesbtn = By.xpath("//*[@id='ctl00_Body_coupons_RadTabStripCustomize']/div/ul/li[text()='States']")
+	By coupontyperadiobtn = By.xpath("//*[@id='Body_coupons_CouponType_userControl_rblCouponTypes_0']")
+	By offerbtn = By.xpath("//*[text()='Offer']")
+	By crossmerchandisebtn = By.xpath("//*[text()='Cross Merchandise']")
+	By datesbtn = By.xpath("//*[text()='Dates']")
+	By statesbtn = By.xpath("//*[text()='States']")
 	By selectallcheckbox = By.xpath("//*[@id='cblSelectAll']")
 	By reviewandorderbtn = By.xpath("//*[@id='ctl00_Body_coupons_RadTabStripCustomize']/div/ul/li[text()='Review and Order']")
 	By startdatebtn = By.xpath("//*[@id='ctl00_Body_coupons_Dates_userControl_txtStartDate_popupButton']")
-	By startdatevalue = By.xpath("//*[@id='ctl00_Body_coupons_Dates_userControl_txtStartDate_calendar_Top']//tr//td[text()='18']")
+	By startdatevalue = By.xpath("//*[@id='ctl00_Body_coupons_Dates_userControl_txtStartDate_calendar']//tr//td/a[text()='18']")
 	By enddatebtn = By.xpath("//*[@id='ctl00_Body_coupons_Dates_userControl_txtExpirationDate_popupButton']")
-	By enddatevalue = By.xpath("//*[@id='ctl00_Body_coupons_Dates_userControl_txtExpirationDate_calendar_Top']//tr//td[text()='18']")
+	By enddatevalue = By.xpath("//*[@id='ctl00_Body_coupons_Dates_userControl_txtExpirationDate_calendar_Top']//tr//td/a[text()='18']")
 	By previewchanges = By.xpath("//*[@id='Body_coupons_btnRender']")
 	By buynowbtn = By.xpath("//*[@id='btnBuyNow']")
 	By nobtn = By.xpath("//*[@class='btn GenericRedButton']/span[text()='No']")
@@ -131,12 +132,16 @@ public class CreateDesignPage {
 	@Keyword
 	public void EnterallvaliddataAndClickOnBuyNowBtn() {
 		try {
+			action.Click(coupontyperadiobtn)
+			WebUI.delay(3)
 			action.Click(offerbtn)
+			WebUI.delay(3)
 			action.Click(crossmerchandisebtn)
+			WebUI.delay(3)
 			action.Click(datesbtn)
 			WebUI.delay(5)
 			action.Click(startdatebtn)
-			WebUI.delay(5)
+			WebUI.delay(15)
 			action.Click(startdatevalue)
 			WebUI.click(20)
 			action.Click(enddatebtn)
@@ -158,33 +163,29 @@ public class CreateDesignPage {
 			Assert.fail()
 		}
 	}
-	
+
 	@Keyword
-	public void VerifyPreviewAndCancelBtn()
-	{
+	public void VerifyPreviewAndCancelBtn() {
 		try{
 			boolean statusofperviewbtn = action.IsElementDisplayed(previewchanges)
 			Assert.assertTrue(statusofperviewbtn)
-			
+
 			boolean statusofcancelbtn = action.IsElementDisplayed(cancelbtn)
 			Assert.assertTrue(statusofcancelbtn)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			println ("Verify Preview And Cancel Btn failed due to "+ e)
 			Assert.fail()
 		}
 	}
-	
+
 	@Keyword
-	public void ClickOnCancelBtnAndVerifyShoppingCartPage()
-	{
+	public void ClickOnCancelBtnAndVerifyShoppingCartPage() {
 		try{
 			boolean statusofcancelbtn = action.IsElementDisplayed(cancelbtn)
 			Assert.assertTrue(statusofcancelbtn)
-			
-			if(statusofcancelbtn == true)
-			{
+
+			if(statusofcancelbtn == true) {
 				action.Click(cancelbtn)
 				WebUI.delay(10)
 				action.Click(nobtn)
@@ -195,8 +196,7 @@ public class CreateDesignPage {
 				throw new Exception("Cancel Btn disabled")
 			}
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			println ("Click On Cancel Btn failed due to "+ e)
 			Assert.fail()
 		}

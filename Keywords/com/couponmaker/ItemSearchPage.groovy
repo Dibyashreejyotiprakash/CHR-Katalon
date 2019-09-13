@@ -28,11 +28,13 @@ class ItemSearchPage {
 
 
 	By itemtypeddn = By.xpath("//*[@id='ctl00_Body_rcbSearchItemTypes_Input']")
-	By itetypeddnvalue = By.xpath("//*[text()='Coupon']")
+	By coupontypetypeddnvalue = By.xpath("//*[text()='Coupon']")
+	By templatetypeddnvalue = By.xpath("//*[text()='Template']")
 	By searchtextbox = By.xpath("//*[@id='Body_txtSearch']")
 	By searchbtn = By.xpath("//*[@id='ctl00_Body_btnSearch']")
 	By templateaftersearch = By.xpath("//*[@id='ctl00_Body_rlvSearchResults_ctrl0_imgThumbnail']")
 	By createdesignbtn = By.xpath("//*[@id='Body_btnProductDesign']")
+	By noresultsfoundtext = By.xpath("//*[@id='Body_lblItemCount']")
 
 	WebDriver driver = DriverFactory.getWebDriver();
 	Interaction action = new Interaction();
@@ -54,7 +56,7 @@ class ItemSearchPage {
 		try{
 			action.Click(itemtypeddn)
 			WebUI.delay(10)
-			action.Click(itetypeddnvalue)
+			action.Click(coupontypetypeddnvalue)
 			WebUI.delay(10)
 		}
 		catch(Exception e) {
@@ -62,10 +64,9 @@ class ItemSearchPage {
 			Assert.fail()
 		}
 	}
-	
+
 	@Keyword
-	public void VerifyCouponSearchResults()
-	{
+	public void VerifyCouponSearchResults() {
 		try{
 			action.ScrollToBottomOfPage()
 			WebUI.delay(5)
@@ -76,6 +77,103 @@ class ItemSearchPage {
 		}
 		catch(Exception e) {
 			println ("Select Coupon Type failed due to "+ e)
+			Assert.fail()
+		}
+	}
+
+	@Keyword
+	public void SearchCouponTemplate() {
+		try{
+			action.Type(searchtextbox, "125747")
+			action.Click(searchbtn)
+			WebUI.delay(10)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("Search Coupon Template failed due to "+ e)
+			Assert.fail()
+		}
+	}
+	
+	@Keyword
+	public void SearchCouponTemplateAndNavigateToItemDetailsPage()
+	{
+		try{
+			action.Type(searchtextbox, "125747")
+			action.Click(searchbtn)
+			WebUI.delay(10)
+			action.ScrollToBottomOfPage()
+			action.Click(templateaftersearch)
+		}
+		catch(Exception e) {
+			println ("Search Coupon Template And Navigate To Item Details Page failed due to "+ e)
+			Assert.fail()
+		}
+	}
+
+
+
+
+	@Keyword
+	public void VerifyCouponSearchResultsIncouponSection() {
+		try{
+			action.ScrollToBottomOfPage()
+			WebUI.delay(5)
+			boolean statusofcoupontemplateaftersearch = action.IsElementDisplayed(templateaftersearch)
+			Assert.assertTrue(statusofcoupontemplateaftersearch)
+		}
+		catch(Exception e) {
+			println ("Select Coupon Type failed due to "+ e)
+			Assert.fail()
+		}
+	}
+
+	@Keyword
+	public void SelectTemplateType() {
+		try{
+			action.ScrollToTopOgPage()
+			WebUI.delay(10)
+			action.Click(itemtypeddn)
+			WebUI.delay(10)
+			action.Click(templatetypeddnvalue)
+			WebUI.delay(10)
+		}
+		catch(Exception e) {
+			println ("Select Template Type failed due to "+ e)
+			Assert.fail()
+		}
+	}
+
+	@Keyword
+	public void SearchPosTemplate() {
+		try{
+			action.Clear(searchtextbox)
+			action.Type(searchtextbox, "125747")
+			action.Click(searchbtn)
+			WebUI.delay(10)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("Search Template failed due to "+ e)
+			Assert.fail()
+		}
+	}
+
+
+	@Keyword
+	public void VerifyCouponSearchResultsInPosSection() {
+		try{
+			boolean statusofnoresultsfoundtext = action.IsElementDisplayed(noresultsfoundtext)
+			Assert.assertTrue(statusofnoresultsfoundtext)
+			if(statusofnoresultsfoundtext == true) {
+				println ("Coupon template is not found in Pos section")
+			}
+			else{
+				throw new Exception("Failed search")
+			}
+		}
+		catch(Exception e) {
+			println ("Verify Coupon Search Results In Pos Section failed due to "+ e)
 			Assert.fail()
 		}
 	}
@@ -94,6 +192,8 @@ class ItemSearchPage {
 			Assert.fail()
 		}
 	}
+
+
 
 	@Keyword
 	public void ClickOnCreateDesignpage() {

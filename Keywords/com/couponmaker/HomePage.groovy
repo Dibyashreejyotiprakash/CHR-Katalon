@@ -60,18 +60,17 @@ public class HomePage {
 			Assert.fail()
 		}
 	}
-	
-	
+
+
 	@Keyword
-	public void VerifyAllAvailableLinks()
-	{
+	public void VerifyAllAvailableLinks() {
 		try{
 			boolean statusofaccountlink = action.IsElementDisplayed(accountslink)
 			Assert.assertTrue(statusofaccountlink)
-			
+
 			boolean statusofprojectslink = action.IsElementDisplayed(projectslink)
 			Assert.assertTrue(statusofprojectslink)
-			
+
 			boolean statusofhelplink = action.IsElementDisplayed(helplink)
 			Assert.assertTrue(statusofhelplink)
 		}

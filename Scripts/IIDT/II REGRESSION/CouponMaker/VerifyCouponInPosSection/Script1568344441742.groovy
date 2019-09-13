@@ -1,5 +1,4 @@
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
-
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
@@ -14,14 +13,11 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-
 CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameiiusersite, GlobalVariable.testtypesmoke, GlobalVariable.environment)
 
 CustomKeywords.'com.couponmaker.LoginPage.VerifyLoginPage'()
 
 CustomKeywords.'com.couponmaker.LoginPage.LoginToCouponDemoCorp'()
-
-CustomKeywords.'com.couponmaker.HomePage.VerifyHomePage'()
 
 CustomKeywords.'com.couponmaker.HomePage.ClickOnPosTemplate'()
 
@@ -29,9 +25,12 @@ CustomKeywords.'com.couponmaker.ItemSearchPage.VerifyItemSearchPage'()
 
 CustomKeywords.'com.couponmaker.ItemSearchPage.SelectCouponType'()
 
-CustomKeywords.'com.couponmaker.ItemSearchPage.VerifyCouponSearchResults'()
+CustomKeywords.'com.couponmaker.ItemSearchPage.SearchCouponTemplate'()
 
-CustomKeywords.'com.couponmaker.ItemSearchPage.ClickOnCreateDesignpage'()
+CustomKeywords.'com.couponmaker.ItemSearchPage.VerifyCouponSearchResultsIncouponSection'()
 
-CustomKeywords.'com.couponmaker.CreateDesignPage.VerifyCreateDesignPage'()
+CustomKeywords.'com.couponmaker.ItemSearchPage.SelectTemplateType'()
 
+CustomKeywords.'com.couponmaker.ItemSearchPage.SearchPosTemplate'()
+
+CustomKeywords.'com.couponmaker.ItemSearchPage.VerifyCouponSearchResultsInPosSection'()
