@@ -17,16 +17,12 @@ WebUI.openBrowser('')
 
 WebUI.maximizeWindow()
 
-CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamedesigntracker, GlobalVariable.testtyperegression, 
-    GlobalVariable.environment)
-
 WebUI.waitForPageLoad(300)
 
-CustomKeywords.'com.designtracker.LoginPage.LoginToDesignTarcker'(GlobalVariable.dtusername, GlobalVariable.dtpassowrd)
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameapprovalswswadmin, GlobalVariable.testtyperegression, 
+    GlobalVariable.environment)
 
-CustomKeywords.'com.designtracker.HomePage.ClickOnSupplierBrandManagers'()
+CustomKeywords.'com.wswadmin.HomePage.NavigateToQuoteItemSearch'()
 
-CustomKeywords.'com.designtracker.SupplierBrandManagersPage.VerifyAddingMultipleSupplierBrandManagers'()
-
-WebUI.closeBrowser()
+CustomKeywords.'com.wswadmin.QuoteItemSearch.ValidateTimeout'()
 

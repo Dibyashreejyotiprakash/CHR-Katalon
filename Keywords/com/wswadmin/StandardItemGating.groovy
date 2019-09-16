@@ -56,11 +56,11 @@ public class StandardItemGating
 			action.Click(corpddn)
 			WebUI.delay(2)
 			action.Click(distributorcorpval)
-			WebUI.delay(2)
+			WebUI.delay(4)
 			action.Click(distributorddn)
 			WebUI.delay(2)
 			action.Click(distributorval)
-			WebUI.delay(2)
+			WebUI.delay(4)
 			action.Click(groupddn)
 			WebUI.delay(2)
 			action.Click(distributorgroupval)
@@ -75,7 +75,7 @@ public class StandardItemGating
 		}
 
 	}
-	
+
 	@Keyword
 	public void ValidateUserOnWswAdminForSupplier()
 	{
@@ -103,6 +103,6 @@ public class StandardItemGating
 
 	}
 
-	
+
 
 }

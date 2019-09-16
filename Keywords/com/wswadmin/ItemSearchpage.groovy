@@ -21,6 +21,7 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.utilities.Interaction
 import com.kms.katalon.core.webui.driver.DriverFactory as DriverFactory
+import org.openqa.selenium.WebElement
 
 //import internal.GlobalVariable
 
@@ -47,6 +48,12 @@ public class ItemSearchpage {
 	By noresultfoundtxt = By.xpath("//div[@id='programlistContent']/div[1]")
 	By expandedmetatagcross = By.xpath("(//img[@alt = 'X'])[2]")
 	By completestatus = By.xpath("//li[contains(text(),'Complete')]")
+	By alphaW = By.xpath("//a[@id='aAlpha_W']")
+	By checkboxlist = By.xpath("//input[@checked='']")
+	By applyselection = By.xpath("//button[@id='btnUpdate']")
+	By selectmetatag = By.xpath("//label[contains(text(),'Wakefield')]")
+	By savebtn = By.xpath("//input[@id='cphMain_cphMain_btnSave']")
+
 
 
 
@@ -55,10 +62,12 @@ public class ItemSearchpage {
 
 		action.Click(corporationtextbox)
 		action.Type(corporationtextbox, "300")
-		action.Click(selectcorp1)
-		WebUI.delay(10)
+		action.Click(selectcorp)
+		WebUI.delay(15)
 		action.Click(itemtypetextbox)
+		WebUI.delay(2)
 		action.Click(selectitemtemplate)
+		WebUI.delay(2)
 		action.Click(firstselectdata)
 		action.WaitVisible(corporationname)
 	}
@@ -162,6 +171,52 @@ public class ItemSearchpage {
 			Assert.fail("ValidateSpecialCharacterMetatag failed due to "+ e)
 		}
 	}
+
+	@Keyword
+	public void ValidateMetatagUnselectionOnExpandedScreen()
+	{
+		try
+		{
+			action.WaitVisible(brandnamemetatagcount)
+			action.Click(brandnamemetatagcount)
+
+			List<WebElement> e = action.GetElements(checkboxlist)
+
+			if(e.size()>0)
+			{
+				for(int i=0;i< e.size(); i++)
+				{
+					action.Click(e[i])
+
+				}
+
+				action.Click(applyselection)
+			}
+			else
+			{
+				action.Click(alphaW)
+				action.WaitVisible(selectmetatag)
+				action.Click(selectmetatag)
+				action.Click(applyselection)
+				action.WaitVisible(brandnamecategory)
+				action.WaitVisible(brandnamemetatagcount)
+				action.Click(brandnamemetatagcount)
+				action.WaitVisible(expandedmetatagcross)
+				action.Click(alphaW)
+				action.Click(selectmetatag)
+				action.Click(applyselection)
+				action.WaitVisible(savebtn)
+				action.Click(savebtn)
+			}
+
+		}
+		catch(Exception e)
+		{
+			Assert.fail("ValidateMetatagUnselectionOnExpandedScreen failed due to "+ e)
+		}
+	}
+
+
 }
 
 

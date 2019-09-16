@@ -17,16 +17,30 @@ WebUI.openBrowser('')
 
 WebUI.maximizeWindow()
 
+WebUI.waitForPageLoad(300)
+
 CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamedesigntracker, GlobalVariable.testtyperegression, 
     GlobalVariable.environment)
 
-WebUI.waitForPageLoad(300)
+CustomKeywords.'com.designtracker.LoginPage.LoginToDesignTarcker'('dibyashree.jyoti@brandmuscle.com', 'chr@1234')
 
-CustomKeywords.'com.designtracker.LoginPage.LoginToDesignTarcker'(GlobalVariable.dtusername, GlobalVariable.dtpassowrd)
+CustomKeywords.'com.designtracker.HomePage.ClickOnhighrarchy'()
 
-CustomKeywords.'com.designtracker.HomePage.ClickOnSupplierBrandManagers'()
-
-CustomKeywords.'com.designtracker.SupplierBrandManagersPage.VerifyAddingMultipleSupplierBrandManagers'()
+CustomKeywords.'com.designtracker.HierarchyPage.AssociateUser'()
 
 WebUI.closeBrowser()
+
+WebUI.openBrowser('')
+
+WebUI.maximizeWindow()
+
+WebUI.waitForPageLoad(300)
+
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamewswadmin, GlobalVariable.testtyperegression, GlobalVariable.environment)
+
+CustomKeywords.'com.wswadmin.LoginPage.WSWlogin'(GlobalVariable.wswadminusername,GlobalVariable.wswpassword)
+
+CustomKeywords.'com.wswadmin.HomePage.NavigateToItemGatingGroupManagement'()
+
+CustomKeywords.'com.wswadmin.StandardItemGating.ValidateUserOnWswAdminForDistributor'()
 

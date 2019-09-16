@@ -615,7 +615,7 @@ public  class Interaction {
 		 );*/
 
 	}
-	
+
 	public void  WaitVisibleDup(By by)
 	{
 		WebDriverWait wait = new WebDriverWait(driver, 300)

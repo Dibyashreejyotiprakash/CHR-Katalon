@@ -113,13 +113,11 @@ public class HierarchyPage {
 			Assert.fail("AssociateUser Failed Due to "+e)
 		}
 	}
-	
-	
+
+
 	@Keyword
-	public void ValidateNewAddedSalesPersonInHierarchyPage()
-	{
-		try
-		{
+	public void ValidateNewAddedSalesPersonInHierarchyPage() {
+		try {
 			action.WaitVisible(corpName)
 			action.SelectByText(corpName, "Instant Impact 4.0 Demo Corp (Dist.)")
 			action.WaitVisible(progressIndicator)
@@ -130,11 +128,9 @@ public class HierarchyPage {
 			action.Click(chicago_market_hierarchy)
 			action.IsElementDisplayed(testemail)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("ValidateNewAddedSalesPersonInHierarchyPage Failed Due to "+e)
 		}
-		
 	}
 }
 
