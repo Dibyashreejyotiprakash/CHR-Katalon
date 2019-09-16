@@ -40,27 +40,12 @@ public class DashboardMessage {
 
 	@Keyword
 	public void VerifyWelcomeMessagePage() {
-
-		String expectedUATUrl = "https://csg.v5qa.brandmuscle.net/Warehouse/Admin/DashboardMessage.aspx";
-		String expectedSTAGEUrl ="https://csg.v5qa.brandmuscle.net/Warehouse/Admin/DashboardMessage.aspx"
-		String expectedPRODUrl = "https://csg.v5qa.brandmuscle.net/Warehouse/Admin/DashboardMessage.aspx";
-
-
-
-		String env = GlobalVariable.environment
-		String actualUrl = action.GetCurrentURL()
-
-		if(env.equalsIgnoreCase("uat")) {
-			Assert.assertEquals(expectedUATUrl, actualUrl)
+		try{
+			action.VerifyCurrentPage("DashboardMessage.aspx")
 		}
-		else if(env.equalsIgnoreCase("stage")) {
-			Assert.assertEquals(expectedSTAGEUrl, actualUrl)
-		}
-		else if(env.equalsIgnoreCase("prod")) {
-			Assert.assertEquals(expectedPRODUrl, actualUrl)
-		}
-		else {
-			println (Assert.fail())
+		catch(Exception e) {
+			println ("Verify Welcome message failed due to "+ e)
+			Assert.fail()
 		}
 	}
 }

@@ -37,30 +37,19 @@ public class UserTransfer {
 	Interaction action = new Interaction();
 	WebDriver driver = DriverFactory.getWebDriver()
 
-
-
-
-
 	@Keyword
 	public void VerifyUserItemApprovalTransferPage() {
 		String expectedUATUrl = "https://csg.v5qa.brandmuscle.net/Warehouse/Admin/UserTransfer.aspx";
 		String expectedSTAGEUrl ="https://csg.v5stgae.brandmuscle.net/Warehouse/Admin/UserTransfer.aspx"
 		String expectedPRODUrl = "https://csg.brandmuscle.net/Warehouse/Admin/UserTransfer.aspx";
 
-		String env = GlobalVariable.environment
-		String actualUrl = action.GetCurrentURL()
-
-		if(env.equalsIgnoreCase("uat")) {
-			Assert.assertEquals(expectedUATUrl, actualUrl)
+		try{
+			action.VerifyCurrentPage("UserTransfer.aspx")
 		}
-		else if(env.equalsIgnoreCase("stage")) {
-			Assert.assertEquals(expectedSTAGEUrl, actualUrl)
-		}
-		else if(env.equalsIgnoreCase("prod")) {
-			Assert.assertEquals(expectedPRODUrl, actualUrl)
-		}
-		else {
-			println (Assert.fail())
+		catch(Exception e)
+		{
+			println ("Verify User Item Approval Transfer Page failed due to "+ e)
+			Assert.fail()
 		}
 	}
 }

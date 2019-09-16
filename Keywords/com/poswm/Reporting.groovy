@@ -39,40 +39,15 @@ public class Reporting {
 	By divPOSWReports = By.xpath("//*[@id='reportlabelsholderDiv']")
 
 
-
-
-
-
-
-
 	@Keyword
 	public void VerifyReportsPage() {
-		String expectedUATUrl = "https://csg.v5qa.brandmuscle.net/Reporting/Dashboard.aspx";
-		String expectedSTAGEUrl ="https://csg.v5stage.brandmuscle.net/Reporting/Dashboard.aspx"
-		String expectedPRODUrl = "https://csg.brandmuscle.net/Reporting/Dashboard.aspx";
-
-		//		action.MouseHoverOnElement(menuWarehouse)
-		//		action.WaitVisible(werehouseSubMenuList)
-		//		action.WaitTime(2)
-		//
-		//		action.Click(subMenuReports)
-		action.WaitForPageToLoad()
-		action.WaitVisible(divPOSWReports)
-
-		String env = GlobalVariable.environment
-		String actualUrl = action.GetCurrentURL()
-
-		if(env.equalsIgnoreCase("uat")) {
-			Assert.assertEquals(expectedUATUrl, actualUrl)
+		try{
+			action.VerifyCurrentPage("Dashboard.aspx")
 		}
-		else if(env.equalsIgnoreCase("stage")) {
-			Assert.assertEquals(expectedSTAGEUrl, actualUrl)
-		}
-		else if(env.equalsIgnoreCase("prod")) {
-			Assert.assertEquals(expectedPRODUrl, actualUrl)
-		}
-		else {
-			println (Assert.fail())
+		catch(Exception e)
+		{
+			println ("Verify Reports Page failed ue to "+ e)
+			Assert.fail()
 		}
 	}
 }

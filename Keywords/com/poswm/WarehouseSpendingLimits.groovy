@@ -34,33 +34,15 @@ public class WarehouseSpendingLimits {
 	Interaction action = new Interaction();
 	WebDriver driver = DriverFactory.getWebDriver()
 
-
-
-
-
 	@Keyword
 	public void VerifyWarehouseSpendLimitPage() {
-
-		String expectedUATUrl = "https://csg.v5qa.brandmuscle.net/Warehouse/Admin/WarehouseSpendingLimits.aspx";
-		String expectedSTAGEUrl ="https://csg.v5stage.brandmuscle.net/Warehouse/Admin/WarehouseSpendingLimits.aspx"
-		String expectedPRODUrl = "https://csg.brandmuscle.net/Warehouse/Admin/WarehouseSpendingLimits.aspx";
-
-
-
-		String env = GlobalVariable.environment
-		String actualUrl = action.GetCurrentURL()
-
-		if(env.equalsIgnoreCase("uat")) {
-			Assert.assertEquals(expectedUATUrl, actualUrl)
-		}
-		else if(env.equalsIgnoreCase("stage")) {
-			Assert.assertEquals(expectedSTAGEUrl, actualUrl)
-		}
-		else if(env.equalsIgnoreCase("prod")) {
-			Assert.assertEquals(expectedPRODUrl, actualUrl)
-		}
-		else {
-			println (Assert.fail())
-		}
+			try{
+				action.VerifyCurrentPage("WarehouseSpendingLimits.aspx")
+			}
+			catch(Exception e)
+			{
+				println ("Verify Ware house Spend Limit Page failed due to "+ e)
+				Assert.fail()
+			}
 	}
 }

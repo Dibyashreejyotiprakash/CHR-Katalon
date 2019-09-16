@@ -37,27 +37,13 @@ public class TypesAdmin {
 
 	@Keyword
 	public void VerifyItemPropertiesPage() {
-
-		String expectedUATUrl = "https://csg.v5qa.brandmuscle.net/Warehouse/Admin/TypesAdmin.aspx";
-		String expectedSTAGEUrl ="https://csg.v5stage.brandmuscle.net/Warehouse/Admin/TypesAdmin.aspx"
-		String expectedPRODUrl = "https://csg.brandmuscle.net/Warehouse/Admin/TypesAdmin.aspx";
-
-
-
-		String env = GlobalVariable.environment
-		String actualUrl = action.GetCurrentURL()
-
-		if(env.equalsIgnoreCase("uat")) {
-			Assert.assertEquals(expectedUATUrl, actualUrl)
+		try{
+			action.VerifyCurrentPage("TypesAdmin.aspx")
 		}
-		else if(env.equalsIgnoreCase("stage")) {
-			Assert.assertEquals(expectedSTAGEUrl, actualUrl)
-		}
-		else if(env.equalsIgnoreCase("prod")) {
-			Assert.assertEquals(expectedPRODUrl, actualUrl)
-		}
-		else {
-			println (Assert.fail())
+		catch(Exception e)
+		{
+			println ("Verify Item Properties Page failed ue to "+ e)
+			Assert.fail()
 		}
 	}
 }

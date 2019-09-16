@@ -380,6 +380,8 @@ public  class Interaction {
 
 		WebDriverWait wait = new WebDriverWait(driver, 300);
 		pageLoadStatus = (String)js.executeScript("return document.readyState");
+		
+		WebUI.delay(10)
 	}
 
 
@@ -566,7 +568,6 @@ public  class Interaction {
 		}
 	}
 
-
 	//Element is selected or not
 	public  boolean IsElementSelected(By by) throws Exception
 	{
@@ -587,6 +588,8 @@ public  class Interaction {
 	{
 		WebDriverWait wait = new WebDriverWait(driver, 300)
 		wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+
+		WebUI.delay(8)
 
 		//TRY with fluent wait
 		/*Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)

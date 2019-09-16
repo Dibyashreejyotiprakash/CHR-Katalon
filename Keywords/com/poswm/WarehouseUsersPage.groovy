@@ -39,26 +39,13 @@ public class WarehouseUsersPage {
 	@Keyword
 	public void VerifyWarehouseUsersPage() {
 
-		String expectedUATUrl = "https://csg.v5qa.brandmuscle.net/Warehouse/Admin/WarehouseUsers.aspx";
-		String expectedSTAGEUrl ="https://csg.v5stage.brandmuscle.net/Warehouse/Admin/WarehouseUsers.aspx"
-		String expectedPRODUrl = "https://csg.brandmuscle.net/Warehouse/Admin/WarehouseUsers.aspx";
-
-
-
-		String env = GlobalVariable.environment
-		String actualUrl = action.GetCurrentURL()
-
-		if(env.equalsIgnoreCase("uat")) {
-			Assert.assertEquals(expectedUATUrl, actualUrl)
+		try{
+			action.VerifyCurrentPage("WarehouseUsers.aspx")
 		}
-		else if(env.equalsIgnoreCase("stage")) {
-			Assert.assertEquals(expectedSTAGEUrl, actualUrl)
-		}
-		else if(env.equalsIgnoreCase("prod")) {
-			Assert.assertEquals(expectedPRODUrl, actualUrl)
-		}
-		else {
-			println (Assert.fail())
+		catch(Exception e)
+		{
+			println ("Verify Ware House Users page failed due to "+ e)
+			Assert.fail()
 		}
 	}
 }
