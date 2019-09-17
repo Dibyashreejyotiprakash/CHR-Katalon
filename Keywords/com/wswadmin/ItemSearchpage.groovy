@@ -53,6 +53,8 @@ public class ItemSearchpage {
 	By applyselection = By.xpath("//button[@id='btnUpdate']")
 	By selectmetatag = By.xpath("//label[contains(text(),'Wakefield')]")
 	By savebtn = By.xpath("//input[@id='cphMain_cphMain_btnSave']")
+	
+	
 
 
 

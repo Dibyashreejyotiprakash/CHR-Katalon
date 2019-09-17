@@ -48,7 +48,7 @@ public class EditItemsPage {
 	By insertbtn = By.xpath("//input[@id='ctl00_Body_fvLogos_InsertButton']")
 	By logolistbtn = By.xpath("//input[@id='ctl00_Body_fvLogos_btnListLogos']")
 	By addlogosuccessmssg = By.xpath("//span[contains(text(),'New Record Created')]")
-	By pagetobeclicked = By.xpath("(//span[text() = '2'])[1]")
+	By pagetobeclicked = By.xpath("(//a[text() = '2'])[1]")
 	By logodeletebtn = By.xpath("//td[contains(text(),'Test101')]//following-sibling::td[5]/a")
 	By deletesuccessmssg = By.xpath("//span[contains(text(),'Record Deleted')]")
 	By alldistributorchkbox = By.xpath("//input[@id='ctl00_Body_fvLogos_chkAllDistr']")
@@ -82,16 +82,16 @@ public class EditItemsPage {
 			action.WaitVisible(addlogosuccessmssg)
 			action.Click(logolistbtn)
 			WebUI.delay(15)
-			
+
 			action.Click(pagetobeclicked)
-			
-			
+
+
 			action.Click(logodeletebtn)
 			WebUI.delay(2)
 			Robot robot = new Robot();
-            robot.keyPress(KeyEvent.VK_ENTER);
-            robot.keyRelease(KeyEvent.VK_ENTER);
-            
+			robot.keyPress(KeyEvent.VK_ENTER);
+			robot.keyRelease(KeyEvent.VK_ENTER);
+
 			WebUI.delay(5)
 			action.WaitVisible(deletesuccessmssg)
 			action.Click(addnewlogo)
@@ -102,23 +102,24 @@ public class EditItemsPage {
 			action.Click(browsefilebtn)
 			WebUI.delay(3)
 			uploadfile()
+			WebUI.delay(3)
 			action.Click(insertbtn)
 			action.WaitVisible(addlogosuccessmssg)
 			action.Click(logolistbtn)
 			WebUI.delay(10)
 			action.Click(pagetobeclicked)
-			
-			
+
+
 			action.Click(logodeletebtn)
 			WebUI.delay(2)
 			//Robot robot = new Robot();
 			robot.keyPress(KeyEvent.VK_ENTER);
 			robot.keyRelease(KeyEvent.VK_ENTER);
-			
+
 			WebUI.delay(5)
 			action.WaitVisible(deletesuccessmssg)
-			
-			
+
+
 		}
 		catch(Exception e) {
 			Assert.fail("AddLogoForDistributor failed due to "+e)
