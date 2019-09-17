@@ -349,4 +349,14 @@
       <initValue>'APPROVALS'</initValue>
       <name>bunameapprovals</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'dibyashree.jyoti@brandmuscle.com'</initValue>
+      <name>iiadminusername</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'chr@1234'</initValue>
+      <name>iiadminpassword</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

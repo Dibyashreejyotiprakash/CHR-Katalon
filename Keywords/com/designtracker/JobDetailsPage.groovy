@@ -84,7 +84,18 @@ public class JobDetailsPage {
 	By savebtn = By.xpath("//*[@id='btnNoProof_input']s")
 	By postbtn = By.xpath("//*[text()='POST']")
 	By jobbtn = By.xpath("//*[text()=''JOB]")
-
+	By pricingTab = By.xpath("//span[contains(text(),'PRICING')]")
+	By budgetddn = By.xpath("//input[@id='ctl00_ctl00_cphMain_cphMain_gvBrands_ctl02_ddlBrandBudget_Input']")
+	By budgetname = By.xpath("//li[text()='TestBudget1']")
+	By saveBrandsBtn = By.xpath("//input[@id='ctl00_ctl00_cphMain_cphMain_btnSaveBrandCB']")
+	By succMsgBudgetSaving = By.xpath("//li[contains(text(),'Budget data has been updated successfully.')]")
+	By brandMentionTab = By.xpath("//span[contains(text(),'BRAND MENTIONS')]")
+	By jobSearchString = By.xpath("//input[@id='ctl00_ctl00_cphMain_cphMain_lvMain_ctrl0_txtSearch']")
+	By jobSearchBtn = By.xpath("//input[@id='ctl00_ctl00_cphMain_cphMain_lvMain_ctrl0_btnSearch']")
+	//By availableBrandsddn = By.xpath("//select[@id='ctl00_ctl00_cphMain_cphMain_lvMain_ctrl0_lbxAvailableBrands']")
+	By availableBrandsddn = By.xpath("//div[@id='ctl00_ctl00_cphMain_cphMain_lvMain_ctrl0_upWrapper']//option[1]")
+	By addBrandBtn = By.xpath("//input[@id='ctl00_ctl00_cphMain_cphMain_lvMain_ctrl0_btnAdd']")
+	By saveToAllJobLinesBtn = By.xpath("//input[@id='ctl00_ctl00_cphMain_cphMain_lvMain_ctrl0_btnSaveToAllParts']")
 
 
 	@Keyword
@@ -262,10 +273,12 @@ public class JobDetailsPage {
 	@Keyword
 	public void AddPartAndBackToJobDetailsPage() {
 		try {
+			action.ScrollToBottomOfPage()
+			WebUI.delay(7)
 			action.Click(addpartlink)
 			WebUI.delay(10)
 			action.WaitForPageToLoad()
-			action.SelectByIndex(printformatddn, 4)
+			action.SelectByIndex(printformatddn, 3)
 			action.Type(quantity, "123")
 			action.Click(partsearchbtn)
 			WebUI.delay(10)
@@ -341,6 +354,40 @@ public class JobDetailsPage {
 		catch(Exception e) {
 			println ("Click on post job failed due to "+ e)
 			Assert.fail()
+		}
+	}
+
+	@Keyword
+	public void AssignBudgetAndSaveBrands() {
+		try {
+			action.WaitVisibleDup(brandMentionTab)
+			action.Click(brandMentionTab)
+			action.WaitVisibleDup(jobSearchString)
+			action.Type(jobSearchString,"a")
+			action.WaitVisibleDup(jobSearchBtn)
+			action.Click(jobSearchBtn)
+			action.WaitVisibleDup(availableBrandsddn)
+			//action.SelectByText(availableBrandsddn, "TestBrand")
+			action.Click(availableBrandsddn)
+			action.WaitVisibleDup(addBrandBtn)
+			action.Click(addBrandBtn)
+			action.WaitVisibleDup(saveToAllJobLinesBtn)
+			action.Click(saveToAllJobLinesBtn)
+			action.WaitVisibleDup(pricingTab)
+			action.Click(pricingTab)
+			action.ScrollToBottomOfPage()
+			action.WaitVisibleDup(budgetddn)
+			action.Click(budgetddn)
+			action.WaitVisibleDup(budgetname)
+			action.Click(budgetname)
+			//action.SelectByText(budgetddn, "TestBudget1")
+			action.WaitVisibleDup(saveBrandsBtn)
+			action.Click(saveBrandsBtn)
+			action.WaitVisibleDup(succMsgBudgetSaving)
+			action.Click(succMsgBudgetSaving)
+		}
+		catch(Exception e) {
+			Assert.fail("AssignBudgetAndSaveBrands is failing because of :"+e)
 		}
 	}
 }

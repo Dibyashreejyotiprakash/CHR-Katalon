@@ -20,6 +20,7 @@ import internal.GlobalVariable
 import org.openqa.selenium.By
 
 import org.openqa.selenium.WebDriver
+import org.testng.Assert
 
 import com.kms.katalon.core.webui.driver.DriverFactory
 
@@ -28,16 +29,17 @@ class HomePage {
 	WebDriver driver = DriverFactory.getWebDriver();
 	Interaction action = new Interaction();
 
-	By lstPrimaryMenu = By.xpath("//div[@id='ctl00_RadMenu1']/ul/li/a/span[1]")
+	//By lstPrimaryMenu = By.xpath("//div[@id='ctl00_RadMenu1']/ul/li/a/span[1]")
+	By lstPrimaryMenu = By.xpath("//li[@class='rmItem rmFirst']//span[@class='rmToggle']")
 	By lstSubMenu = By.xpath("//div[@id='ctl00_RadMenu1']/ul/li/div/ul/li/a/span")
+	By menuPOSTemplates = By.xpath("//span[contains(text(),'POS Templates')]")
 	By imgPOSTemplates = By.xpath("//a[(@target='_self') and contains(text(),'POS Templates')]")
 	By logout = By.xpath("//*[@id='lbLogout']")
 	By lstMenu = By.xpath("//div[@id='ctl00_RadMenu1']/ul/li")
 	By orderform = By.xpath("(//*[@href='/OnlineOrderForm/default.aspx'])[2]")
 	By accountlink = By.xpath("//*[text()='Account']")
 	By projects = By.xpath("//*[text()='Projects']")
-
-
+	By helpMenu = By.xpath("//li[@class='rmItem rmLast']//span[@class='rmToggle']")
 
 	@Keyword
 	public boolean VerifyHomePage() {
@@ -106,6 +108,31 @@ class HomePage {
 		}
 		catch(Exception e) {
 			println ("Click On Projects failed due to :"+ e);
+			throw e;
+		}
+	}
+
+	@Keyword
+	public void validateFreezeMenuForTicket() {
+		try {
+			Assert.assertTrue(action.IsElementDisplayed(lstPrimaryMenu), "POS on demand is visible")
+			action.ScrollToBottomOfPage()
+			Assert.assertTrue(action.IsElementDisplayed(orderform),"orderform is visible")
+			action.ScrollToTopOgPage()
+			Assert.assertTrue(action.IsElementDisplayed(helpMenu),"helpMenu is visible")
+			//action.MouseHoverOnElement(lstPrimaryMenu)
+			action.WaitVisible(lstPrimaryMenu)
+			action.Click(lstPrimaryMenu)
+			action.WaitVisible(imgPOSTemplates)
+			//action.Click(imgPOSTemplates)
+			action.MouseHoverAndClick(imgPOSTemplates)
+			action.ScrollToBottomOfPage()
+			Assert.assertTrue(action.IsElementDisplayed(lstPrimaryMenu), "POS on demand is visible")
+			action.ScrollToTopOgPage()
+			Assert.assertTrue(action.IsElementDisplayed(orderform),"orderform is visible")
+		}
+		catch(Exception e) {
+			Assert.fail("validateFreezeMenuForTicket failed due to :"+e)
 			throw e;
 		}
 	}

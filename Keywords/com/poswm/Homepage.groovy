@@ -48,14 +48,14 @@ public class Homepage {
 	By cancelorder = By.xpath("//*[@id='ctl00_MainContent_rdPendingApproval_C_rgPendingApprovalByItem_ctl00__0']/td[4]/a")
 	By pendingshipmentshiporder = By.xpath("//*[@id='ctl00_MainContent_rdPendingShipment_C_rgPendingShipment_ctl00']//tr[1]/td[3]")
 	By subMenuitemProperties = By.xpath("//*[@class='rmVertical rmGroup rmLevel1 menu']/li[5]//following-sibling::div/ul/li[1]")
-	By lavelItemProperty = By.xpath("//*[@id='MainContent_lblTypes']")
+	By lavelItemProperty = By.xpath("//*[text()='Item Properties']")
 	By menuWarehouse = By.xpath("//*[@id='mainMenu']/div/ul/li[2]/a/span")
 	By subMenuWareHouse = By.xpath("//*[@class='rmVertical rmGroup rmLevel1 menu']/li[5]//following-sibling::div/ul/li[2]")
 	By subMenuWarehouseUsers = By.xpath("//*[@class='rmVertical rmGroup rmLevel1 menu']/li[5]//following-sibling::div/ul/li[3]")
 	By subMenuWarehouseSpendLimits = By.xpath("//*[@class='rmVertical rmGroup rmLevel1 menu']/li[5]//following-sibling::div/ul/li[4]")
 	By subMenuWelcomeMessage = By.xpath("//*[@class='rmVertical rmGroup rmLevel1 menu']/li[5]//following-sibling::div/ul/li[5]")
-	By subMenuUserItemApprovalTransfer = By.xpath("//*[@class='rmVertical rmGroup rmLevel1 menu']/li[5]//following-sibling::div/ul/li[6]")
-	By subMenuMenuLinkBrand = By.xpath("//*[@class='rmVertical rmGroup rmLevel1 menu']/li[5]//following-sibling::div/ul/li[7]")
+	By subMenuUserItemApprovalTransfer = By.xpath("//*[text()='User Item Approval Transfer']")
+	By subMenuMenuLinkBrand = By.xpath("//*[text()='MenuLink_Brand']")
 	By labelWareHouseAdmin = By.xpath("//*[@id='MainContent_pnlSites']")
 	By linkAddNewUser = By.xpath("//*[@id='ctl00_MainContent_rdGridWarehouseUsers_ctl00_ctl02_ctl00_InitInsertButton']")
 	By linkAddNewCompliance = By.xpath("//*[@id='ctl00_MainContent_rgExistingBudgets_ctl00_ctl02_ctl00_InitInsertButton']")
@@ -168,10 +168,10 @@ public class Homepage {
 	@Keyword
 	public void ClickOnWelcomeMessage() {
 		action.MouseHoverOnElement(adminbtn)
-		action.WaitVisible(subMenuWelcomeMessage)
-		action.Click(subMenuWelcomeMessage)
+		//action.WaitVisible(subMenuWelcomeMessage)
+		action.Click(welcomemsg)
 		action.WaitForPageToLoad();
-		action.WaitVisible(btnSaveDashBoardMessage)
+		//action.WaitVisible(btnSaveDashBoardMessage)
 	}
 	@Keyword
 	public void ClickOnUserItemApprovalTransfer() {

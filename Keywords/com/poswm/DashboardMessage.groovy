@@ -48,15 +48,20 @@ public class DashboardMessage {
 
 
 		String env = GlobalVariable.environment
+		WebUI.delay(5)
 		String actualUrl = action.GetCurrentURL()
+		WebUI.delay(5)
 
 		if(env.equalsIgnoreCase("uat")) {
+			WebUI.delay(5)
 			Assert.assertEquals(expectedUATUrl, actualUrl)
 		}
-		else if(env.equalsIgnoreCase("stage")) {
+		else if(env.equalsIgnoreCase("staging")) {
+			WebUI.delay(5)
 			Assert.assertEquals(expectedSTAGEUrl, actualUrl)
 		}
 		else if(env.equalsIgnoreCase("prod")) {
+			WebUI.delay(5)
 			Assert.assertEquals(expectedPRODUrl, actualUrl)
 		}
 		else {
