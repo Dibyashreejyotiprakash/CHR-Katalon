@@ -23,5 +23,5 @@ CustomKeywords.'com.poswm.Homepage.ClickOnItemSearch'()
 
 CustomKeywords.'com.poswm.WarehouseItemInventory.VerifyWareHouseInventoryPage'()
 
-CustomKeywords.'com.poswm.WarehouseItemInventory.SearchItem'()
+CustomKeywords.'com.poswm.WarehouseItemInventory.FilterByBrands'()
 

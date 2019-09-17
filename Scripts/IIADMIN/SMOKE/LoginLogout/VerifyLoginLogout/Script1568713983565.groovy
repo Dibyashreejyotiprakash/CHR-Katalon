@@ -11,17 +11,12 @@ import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import com.sun.org.apache.xpath.internal.compiler.Keywords
+
 import internal.GlobalVariable as GlobalVariable
 
-CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameposw, GlobalVariable.testtyperegression, GlobalVariable.environment)
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameiiadmin, GlobalVariable.testtypesmoke, GlobalVariable.environment)
 
-WebUI.waitForPageLoad(300)
+CustomKeywords.'com.iiadmin.LoginPage.VerifyLoginPage'()
 
-CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.posusername, GlobalVariable.pospassword)
-
-CustomKeywords.'com.poswm.Homepage.ClickOnItemSearch'()
-
-CustomKeywords.'com.poswm.WarehouseItemInventory.VerifyWareHouseInventoryPage'()
-
-CustomKeywords.'com.poswm.WarehouseItemInventory.SearchItem'()
-
+CustomKeywords.'com.iiadmin.LoginPage.LoginToIIAdmin'(GlobalVariable.iiadminusername, GlobalVariable.iiadminpassword)

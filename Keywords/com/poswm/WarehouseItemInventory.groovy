@@ -58,7 +58,7 @@ public class WarehouseItemInventory {
 	By allsuppliersnameingrid = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00']//tr//td[12]")
 	By brandfilter = By.xpath("//*[@id='ctl00_MainContent_rpbSearch_i1_i0_rlbBrands_i2']")
 	By allbrandsnameingrid = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00']//tr//td[13]")
-	By allitemname = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00']//tr//td[11]")
+	By allitemname = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00']//tr//td[11]/a")
 	By itemsearchtextbox = By.xpath("//*[@id='ctl00_MainContent_rsbItemSearch_Input']")
 	By itemsearchbtn = By.xpath("//*[@id='ctl00_MainContent_rsbItemSearch_Input']/following-sibling::button")
 	By searchiteminventorybtn = By.xpath("//*[@id='MainContent_btnBackToSearch']")
@@ -68,7 +68,7 @@ public class WarehouseItemInventory {
 	By deletebtn = By.xpath("//*[@id='ctl00_MainContent_rwDeleteItemSettings_C_btnDeleteItemAndResetQuantities_input']")
 	By otherfilterddn = By.xpath("//*[text()='Other Filters']")
 	By deletedcheckbox = By.xpath("//*[@id='ctl00_MainContent_rpbSearch_i10_i0_rlbOtherFilters_i2']//input")
-
+	By clearallfilterbtn = By.xpath("//*[text()='Clear All Filters']")
 
 	@Keyword
 	public void VerifyWareHouseInventoryPage()
@@ -172,10 +172,27 @@ public class WarehouseItemInventory {
 	}
 
 	@Keyword
+	public void VerifyClearAllFilterButton()
+	{
+		try{
+			action.Click(supplierfilter)
+			WebUI.delay(20)
+			boolean statusofclearallfilterbtn = action.IsElementDisplayed(clearallfilterbtn)
+			Assert.assertTrue(statusofclearallfilterbtn)
+			action.Click(clearallfilterbtn)
+		}
+		catch(Exception e)
+		{
+			println ("Verify Clear All Filter Button failed due to "+ e)
+			Assert.fail()
+		}
+	}
+
+	@Keyword
 	public void FilterBySuppliers()
 	{
 		try{
-			action.Click(linkSupplier)
+			//action.Click(linkSupplier)
 			WebUI.delay(10)
 			action.Click(supplierfilter)
 			WebUI.delay(20)
@@ -212,7 +229,7 @@ public class WarehouseItemInventory {
 	public void FilterByBrands()
 	{
 		try{
-			action.Click(linkBrands)
+			//action.Click(linkBrands)
 			WebUI.delay(10)
 			action.Click(brandfilter)
 			WebUI.delay(20)
@@ -274,9 +291,11 @@ public class WarehouseItemInventory {
 	{
 		try{
 			List<WebElement> allitemnames = action.GetElements(allitemname)
-			if(allitemnames.size()>0)
+			int totalitems = allitemnames.size()
+			println ("Number of ietms -----------"+ totalitems)
+			if(totalitems>0)
 			{
-				for(int i=0;i< allitemnames.size();i++)
+				for(int i=0;i< totalitems;i++)
 				{
 					allitemnames.get(i).click()
 					break
@@ -322,14 +341,14 @@ public class WarehouseItemInventory {
 			Assert.fail()
 		}
 	}
-	
+
 	@Keyword
 	public String DeleteItem()
 	{
-		
+
 		try{
 			String selecteditemname = null
-			
+
 			List<WebElement> allitemnames = action.GetElements(allitemname)
 			if(allitemnames.size()>0)
 			{
@@ -356,7 +375,7 @@ public class WarehouseItemInventory {
 				}
 				return selecteditemname
 			}
-			
+
 
 		}
 		catch(Exception e)
@@ -365,7 +384,7 @@ public class WarehouseItemInventory {
 			Assert.fail()
 		}
 	}
-	
+
 	@Keyword
 	public void VerifyDeletedItem(String deleteditemname)
 	{
@@ -387,7 +406,7 @@ public class WarehouseItemInventory {
 					else{
 						throw new Exception("Not found")
 					}
-					
+
 				}
 			}
 			else{
@@ -399,5 +418,5 @@ public class WarehouseItemInventory {
 			println ("Verify Deleted Item failed due to "+ e)
 			Assert.fail()
 		}
-	} 
+	}
 }

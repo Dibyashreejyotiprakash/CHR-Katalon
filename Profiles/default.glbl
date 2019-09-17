@@ -46,7 +46,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'chr@1234'</initValue>
+      <initValue>'atlas@1234'</initValue>
       <name>dtpassowrd</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -56,7 +56,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'chr@1234'</initValue>
+      <initValue>'atlas@1234'</initValue>
       <name>wswpassword</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -81,7 +81,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'staging'</initValue>
+      <initValue>'uat'</initValue>
       <name>environment</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -306,12 +306,12 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'http://dibyashree.jyoti:chr@1234@iiadmin.uat.brandmuscle.net/'</initValue>
+      <initValue>'http://iiadmin.uat.brandmuscle.net'</initValue>
       <name>iiadminUAT</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'http://dibyashree.jyoti:chr@1234@iiadmin.stage.brandmuscle.net/'</initValue>
+      <initValue>'https://iiadmin.stage.brandmuscle.net'</initValue>
       <name>iiadminSTAGE</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -378,5 +378,15 @@
       <description></description>
       <initValue>'http://approvals.dev.brandmuscle.net/'</initValue>
       <name>dtapprovalsDEV</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'dibyashree.jyoti@brandmuscle.com'</initValue>
+      <name>iiadminusername</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'atlas@1234'</initValue>
+      <name>iiadminpassword</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>

@@ -13,15 +13,20 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameposw, GlobalVariable.testtyperegression, GlobalVariable.environment)
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameiiadmin, GlobalVariable.testtypesmoke, GlobalVariable.environment)
 
-WebUI.waitForPageLoad(300)
+CustomKeywords.'com.iiadmin.LoginPage.VerifyLoginPage'()
 
-CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.posusername, GlobalVariable.pospassword)
+CustomKeywords.'com.iiadmin.LoginPage.LoginToIIAdmin'(GlobalVariable.iiadminusername, GlobalVariable.iiadminpassword)
 
-CustomKeywords.'com.poswm.Homepage.ClickOnItemSearch'()
+CustomKeywords.'com.iiadmin.HomePage.VerifyHomePage'()
 
-CustomKeywords.'com.poswm.WarehouseItemInventory.VerifyWareHouseInventoryPage'()
+CustomKeywords.'com.iiadmin.HomePage.ClickOnShippinAgents'()
 
-CustomKeywords.'com.poswm.WarehouseItemInventory.SearchItem'()
+CustomKeywords.'com.iiadmin.ShippingAgentsPage.VerifyShippingAgentsPage'()
 
+CustomKeywords.'com.iiadmin.ShippingAgentsPage.SelectShippingAgent'()
+
+CustomKeywords.'com.iiadmin.ShippingAgentsPage.VerifyShippingRulesExistOrNot'()
+
+CustomKeywords.'com.iiadmin.ShippingAgentsPage.CreateNewShippingRule'()

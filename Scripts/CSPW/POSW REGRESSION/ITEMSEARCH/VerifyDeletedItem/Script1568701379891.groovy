@@ -21,7 +21,15 @@ CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.posusername, Globa
 
 CustomKeywords.'com.poswm.Homepage.ClickOnItemSearch'()
 
+WebUI.delay(10)
+
 CustomKeywords.'com.poswm.WarehouseItemInventory.VerifyWareHouseInventoryPage'()
 
-CustomKeywords.'com.poswm.WarehouseItemInventory.SearchItem'()
+WebUI.delay(10)
+
+CustomKeywords.'com.poswm.WarehouseItemInventory.SelctOneItemSwichToWareHouseItemPageVerifyWareHouseItemDetails'()
+
+WebUI.delay(10)
+
+CustomKeywords.'com.poswm.WarehouseItemInventory.VerifyAllFieldsInWareHouseitemDetailsPage'()
 

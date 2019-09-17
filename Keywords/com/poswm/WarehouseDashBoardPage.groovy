@@ -102,22 +102,22 @@ public class WarehouseDashBoardPage {
 			action.WaitTime(2)
 			boolean statusPendinShipDiv = action.IsElementDisplayed(myOrderDivision)
 			if(statusPendinShipDiv == true) {
-	
+
 				//			action.Click(pendinApprovalExpandBtn)
 				//			action.WaitVisible(pendinShipmentExpandBtn)
 				action.ScrollToViewElement(myOrderDivision)
-	
+
 				if(action.IsElementDisplayed(myOrderFirstRow)){
 					boolean statusmyOrderViewOrderLink = action.IsElementEnabled(myOrderViewOrderLink)
 					boolean statusmyOrderCancelOrderLink = action.IsElementEnabled(myOrderCancelOrderLink)
-	
+
 					Assert.assertTrue(statusmyOrderViewOrderLink)
 					println("View Order link is enable")
 					Assert.assertTrue(statusmyOrderCancelOrderLink)
 					println("Cancel Order link is enable")
-	
+
 				}
-	
+
 			}
 		}
 		catch(Exception e)
@@ -138,25 +138,25 @@ public class WarehouseDashBoardPage {
 			action.WaitTime(2)
 			boolean statusPendinShipDiv = action.IsElementDisplayed(MyDraftOrdersDivision)
 			if(statusPendinShipDiv == true) {
-	
+
 				//			action.Click(pendinApprovalExpandBtn)
 				//			action.WaitVisible(pendinShipmentExpandBtn)
 				action.ScrollToViewElement(MyDraftOrdersDivision)
-	
+
 				if(action.IsElementDisplayed(myDraftOrderFirstRow)){
 					boolean statusmyDraftOrderViewOrderLink = action.IsElementEnabled(myDraftOrderViewOrderLink)
 					boolean statusmyDraftOrderCancelOrderLink = action.IsElementEnabled(myDraftOrderCancelOrderLink)
-	
+
 					Assert.assertTrue(statusmyDraftOrderViewOrderLink)
 					println("View Order link is enable")
 					Assert.assertTrue(statusmyDraftOrderCancelOrderLink)
 					println("Cancel Order link is enable")
-	
+
 				}
 				else{
 					throw new Exception ("Failed")
 				}
-	
+
 			}
 		}
 		catch(Exception e)
@@ -173,20 +173,20 @@ public class WarehouseDashBoardPage {
 	public void VerifyPendingShipmentOrdersDivision(){
 
 		try{
-			
+
 			action.WaitTime(2)
 			boolean statusPendinShipDiv = action.IsElementDisplayed(pendingShipmentOrdersDiv)
 			if(statusPendinShipDiv == true) {
-	
+
 				//			action.Click(pendinApprovalExpandBtn)
 				//			action.WaitVisible(pendinShipmentExpandBtn)
-	
+
 				action.ScrollToViewElement(pendingShipmentOrdersDiv)
 				if(action.IsElementDisplayed(FirstRowpendingShipmentOrders)){
 					boolean statusViewOrder = action.IsElementEnabled(pendinShipmentViewOrderLink)
 					boolean statusShipOrder = action.IsElementEnabled(pendingShipmentShipOrderLink)
 					boolean statusCancelOrder = action.IsElementEnabled(pendingShipmentCancelOrderLink)
-	
+
 					Assert.assertTrue(statusViewOrder)
 					println("View Order link is enable")
 					Assert.assertTrue(statusShipOrder)
@@ -194,12 +194,12 @@ public class WarehouseDashBoardPage {
 					Assert.assertTrue(statusCancelOrder)
 					println("Cancel Order link is enable")
 					//action.Click(pendinApprovalExpandBtn)
-	
+
 				}
 				else{
 					throw new Exception ("Failed")
 				}
-	
+
 			}
 		}
 		catch(Exception e)
@@ -221,7 +221,7 @@ public class WarehouseDashBoardPage {
 					boolean statusViewOrder = action.IsElementEnabled(viewOrderLink)
 					boolean removeItemLink = action.IsElementEnabled(removeItemLink)
 					boolean cancelOrder = action.IsElementEnabled(cancelOrder)
-	
+
 					Assert.assertTrue(statusCheckBox)
 					println("Check Box is enable")
 					Assert.assertTrue(statusViewOrder)
@@ -231,9 +231,9 @@ public class WarehouseDashBoardPage {
 					Assert.assertTrue(cancelOrder)
 					println("Cancel Order link is enable")
 					action.Click(pendinApprovalExpandBtn)
-	
+
 				}
-	
+
 			}
 		}
 		catch(Exception e)
@@ -269,14 +269,14 @@ public class WarehouseDashBoardPage {
 
 	@Keyword
 	public void VerifyWareHouseOrderPage() {
-			try{
-				action.VerifyCurrentPage("WarehouseOrders.aspx")
-			}
-			catch(Exception e)
-			{
-				println ("Verify Ware House Order Page failed due to "+ e)
-				Assert.fail()
-			}
+		try{
+			action.VerifyCurrentPage("WarehouseOrders.aspx")
+		}
+		catch(Exception e)
+		{
+			println ("Verify Ware House Order Page failed due to "+ e)
+			Assert.fail()
+		}
 	}
 
 	@Keyword
@@ -566,7 +566,7 @@ public class WarehouseDashBoardPage {
 		}
 	}
 
-	
+
 
 
 

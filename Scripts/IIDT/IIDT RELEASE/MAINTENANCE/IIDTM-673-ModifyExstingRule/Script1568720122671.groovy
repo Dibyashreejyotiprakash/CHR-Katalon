@@ -13,5 +13,20 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.verifyElementChecked(findTestObject(null), 0)
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameiiadmin, GlobalVariable.testtypesmoke, GlobalVariable.environment)
 
+CustomKeywords.'com.iiadmin.LoginPage.VerifyLoginPage'()
+
+CustomKeywords.'com.iiadmin.LoginPage.LoginToIIAdmin'(GlobalVariable.iiadminusername, GlobalVariable.iiadminpassword)
+
+CustomKeywords.'com.iiadmin.HomePage.VerifyHomePage'()
+
+CustomKeywords.'com.iiadmin.HomePage.ClickOnShippinAgents'()
+
+CustomKeywords.'com.iiadmin.ShippingAgentsPage.VerifyShippingAgentsPage'()
+
+CustomKeywords.'com.iiadmin.ShippingAgentsPage.SelectShippingAgent'()
+
+CustomKeywords.'com.iiadmin.ShippingAgentsPage.VerifyShippingRulesExistOrNot'()
+
+CustomKeywords.'com.iiadmin.ShippingAgentsPage.ModifyExistingRuleAndVerify'()
