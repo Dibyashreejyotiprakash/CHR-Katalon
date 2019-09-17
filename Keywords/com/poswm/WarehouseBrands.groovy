@@ -29,14 +29,14 @@ import com.kms.katalon.core.webui.driver.DriverFactory
 import internal.GlobalVariable
 
 public class WarehouseBrands {
-	
-	
+
+
 	Interaction action = new Interaction();
 	WebDriver driver = DriverFactory.getWebDriver()
-	
-	
-	
-	
+
+
+
+
 	@Keyword
 	public void VerifyMenuLinkBrandPage() {
 
@@ -45,47 +45,13 @@ public class WarehouseBrands {
 		String expectedPRODUrl = "https://csg.brandmuscle.net/Warehouse/Admin/WarehouseBrands.aspx";
 
 
-
-		String env = GlobalVariable.environment
-		String actualUrl = action.GetCurrentURL()
-
-		if(env.equalsIgnoreCase("uat")) {
-			Assert.assertEquals(expectedUATUrl, actualUrl)
+		try{
+			action.VerifyCurrentPage("WarehouseBrands.aspx")
 		}
-		else if(env.equalsIgnoreCase("stage")) {
-			Assert.assertEquals(expectedSTAGEUrl, actualUrl)
-		}
-		else if(env.equalsIgnoreCase("prod")) {
-			Assert.assertEquals(expectedPRODUrl, actualUrl)
-		}
-		else {
-			println (Assert.fail())
+		catch(Exception e)
+		{
+			println ("Verify Menu Link Brand Page failed due to "+ e)
+			Assert.fail()
 		}
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }

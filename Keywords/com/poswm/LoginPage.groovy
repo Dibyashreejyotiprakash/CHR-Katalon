@@ -34,13 +34,30 @@ public class LoginPage {
 	By forgotpassword = By.id("MainContent_LoginCentiv_lbForgotPassword")
 
 	@Keyword
+	public void VerifyPoswLoginPage() {
+		try{
+			action.VerifyCurrentPage("Login.aspx")
+		}
+		catch(Exception e) {
+			println ("Verify Posw Login Page failed due to "+ e)
+			Assert.fail()
+		}
+	}
+
+	@Keyword
 	public void PoswLogin(String posusername,String pospassword) {
-		action.WaitVisible(username)
-		action.Type(username, posusername)
-		action.WaitVisible(password)
-		action.Type(password, pospassword)
-		action.WaitVisible(loginbtn)
-		action.Click(loginbtn)
-		action.WaitForPageToLoad()
+		try{
+			action.WaitVisible(username)
+			action.Type(username, posusername)
+			action.WaitVisible(password)
+			action.Type(password, pospassword)
+			action.WaitVisible(loginbtn)
+			action.Click(loginbtn)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("Posw login failed ue to "+ e)
+			Assert.fail()
+		}
 	}
 }

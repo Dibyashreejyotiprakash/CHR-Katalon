@@ -94,33 +94,36 @@ public class WarehouseDashBoardPage {
 	By myOrderCancelOrderLink = By.xpath(" //*[@id='ctl00_MainContent_rdMyOrders_C_rgMyOrders_ctl00']//following-sibling::tbody/tr[1]/td[2]")
 
 
-
-
-
-
 	@Keyword
 	public void VerifyMyOrdersDivision(){
 
 
-		action.WaitTime(2)
-		boolean statusPendinShipDiv = action.IsElementDisplayed(myOrderDivision)
-		if(statusPendinShipDiv == true) {
+		try{
+			action.WaitTime(2)
+			boolean statusPendinShipDiv = action.IsElementDisplayed(myOrderDivision)
+			if(statusPendinShipDiv == true) {
 
-			//			action.Click(pendinApprovalExpandBtn)
-			//			action.WaitVisible(pendinShipmentExpandBtn)
-			action.ScrollToViewElement(myOrderDivision)
+				//			action.Click(pendinApprovalExpandBtn)
+				//			action.WaitVisible(pendinShipmentExpandBtn)
+				action.ScrollToViewElement(myOrderDivision)
 
-			if(action.IsElementDisplayed(myOrderFirstRow)){
-				boolean statusmyOrderViewOrderLink = action.IsElementEnabled(myOrderViewOrderLink)
-				boolean statusmyOrderCancelOrderLink = action.IsElementEnabled(myOrderCancelOrderLink)
+				if(action.IsElementDisplayed(myOrderFirstRow)){
+					boolean statusmyOrderViewOrderLink = action.IsElementEnabled(myOrderViewOrderLink)
+					boolean statusmyOrderCancelOrderLink = action.IsElementEnabled(myOrderCancelOrderLink)
 
-				Assert.assertTrue(statusmyOrderViewOrderLink)
-				println("View Order link is enable")
-				Assert.assertTrue(statusmyOrderCancelOrderLink)
-				println("Cancel Order link is enable")
+					Assert.assertTrue(statusmyOrderViewOrderLink)
+					println("View Order link is enable")
+					Assert.assertTrue(statusmyOrderCancelOrderLink)
+					println("Cancel Order link is enable")
+
+				}
 
 			}
-
+		}
+		catch(Exception e)
+		{
+			println ("Verify My Orders Division failed due to "+ e)
+			Assert.fail()
 		}
 	}
 
@@ -131,25 +134,35 @@ public class WarehouseDashBoardPage {
 	public void VerifyMyDraftOrdersDivision(){
 
 
-		action.WaitTime(2)
-		boolean statusPendinShipDiv = action.IsElementDisplayed(MyDraftOrdersDivision)
-		if(statusPendinShipDiv == true) {
+		try{
+			action.WaitTime(2)
+			boolean statusPendinShipDiv = action.IsElementDisplayed(MyDraftOrdersDivision)
+			if(statusPendinShipDiv == true) {
 
-			//			action.Click(pendinApprovalExpandBtn)
-			//			action.WaitVisible(pendinShipmentExpandBtn)
-			action.ScrollToViewElement(MyDraftOrdersDivision)
+				//			action.Click(pendinApprovalExpandBtn)
+				//			action.WaitVisible(pendinShipmentExpandBtn)
+				action.ScrollToViewElement(MyDraftOrdersDivision)
 
-			if(action.IsElementDisplayed(myDraftOrderFirstRow)){
-				boolean statusmyDraftOrderViewOrderLink = action.IsElementEnabled(myDraftOrderViewOrderLink)
-				boolean statusmyDraftOrderCancelOrderLink = action.IsElementEnabled(myDraftOrderCancelOrderLink)
+				if(action.IsElementDisplayed(myDraftOrderFirstRow)){
+					boolean statusmyDraftOrderViewOrderLink = action.IsElementEnabled(myDraftOrderViewOrderLink)
+					boolean statusmyDraftOrderCancelOrderLink = action.IsElementEnabled(myDraftOrderCancelOrderLink)
 
-				Assert.assertTrue(statusmyDraftOrderViewOrderLink)
-				println("View Order link is enable")
-				Assert.assertTrue(statusmyDraftOrderCancelOrderLink)
-				println("Cancel Order link is enable")
+					Assert.assertTrue(statusmyDraftOrderViewOrderLink)
+					println("View Order link is enable")
+					Assert.assertTrue(statusmyDraftOrderCancelOrderLink)
+					println("Cancel Order link is enable")
+
+				}
+				else{
+					throw new Exception ("Failed")
+				}
 
 			}
-
+		}
+		catch(Exception e)
+		{
+			println ("Verify My Draft Orders Division failed ue to "+ e)
+			Assert.fail()
 		}
 	}
 
@@ -159,82 +172,76 @@ public class WarehouseDashBoardPage {
 	@Keyword
 	public void VerifyPendingShipmentOrdersDivision(){
 
-		action.WaitTime(2)
-		boolean statusPendinShipDiv = action.IsElementDisplayed(pendingShipmentOrdersDiv)
-		if(statusPendinShipDiv == true) {
+		try{
 
-			//			action.Click(pendinApprovalExpandBtn)
-			//			action.WaitVisible(pendinShipmentExpandBtn)
+			action.WaitTime(2)
+			boolean statusPendinShipDiv = action.IsElementDisplayed(pendingShipmentOrdersDiv)
+			if(statusPendinShipDiv == true) {
 
-			action.ScrollToViewElement(pendingShipmentOrdersDiv)
-			if(action.IsElementDisplayed(FirstRowpendingShipmentOrders)){
-				boolean statusViewOrder = action.IsElementEnabled(pendinShipmentViewOrderLink)
-				boolean statusShipOrder = action.IsElementEnabled(pendingShipmentShipOrderLink)
-				boolean statusCancelOrder = action.IsElementEnabled(pendingShipmentCancelOrderLink)
+				//			action.Click(pendinApprovalExpandBtn)
+				//			action.WaitVisible(pendinShipmentExpandBtn)
 
-				Assert.assertTrue(statusViewOrder)
-				println("View Order link is enable")
-				Assert.assertTrue(statusShipOrder)
-				println("Ship Order link is enable")
-				Assert.assertTrue(statusCancelOrder)
-				println("Cancel Order link is enable")
-				//action.Click(pendinApprovalExpandBtn)
+				action.ScrollToViewElement(pendingShipmentOrdersDiv)
+				if(action.IsElementDisplayed(FirstRowpendingShipmentOrders)){
+					boolean statusViewOrder = action.IsElementEnabled(pendinShipmentViewOrderLink)
+					boolean statusShipOrder = action.IsElementEnabled(pendingShipmentShipOrderLink)
+					boolean statusCancelOrder = action.IsElementEnabled(pendingShipmentCancelOrderLink)
+
+					Assert.assertTrue(statusViewOrder)
+					println("View Order link is enable")
+					Assert.assertTrue(statusShipOrder)
+					println("Ship Order link is enable")
+					Assert.assertTrue(statusCancelOrder)
+					println("Cancel Order link is enable")
+					//action.Click(pendinApprovalExpandBtn)
+
+				}
+				else{
+					throw new Exception ("Failed")
+				}
 
 			}
-
+		}
+		catch(Exception e)
+		{
+			println ("Verify Pending Shipment Orders Division failed due to "+ e)
+			Assert.fail()
 		}
 	}
 
 
 	@Keyword
 	public void VerifyPendingApprovalOrdersDivision(){
-		boolean statusPendinAppDiv = action.IsElementDisplayed(pendingApprovalOrdersDiv)
-		if(statusPendinAppDiv == true) {
-			//action.Click(pendinApprovalExpandBtn)
-			if(action.IsElementDisplayed(pendinAppFirstRow)){
-				boolean statusCheckBox = action.IsElementEnabled(firstRowCheckBox)
-				boolean statusViewOrder = action.IsElementEnabled(viewOrderLink)
-				boolean removeItemLink = action.IsElementEnabled(removeItemLink)
-				boolean cancelOrder = action.IsElementEnabled(cancelOrder)
+		try{
+			boolean statusPendinAppDiv = action.IsElementDisplayed(pendingApprovalOrdersDiv)
+			if(statusPendinAppDiv == true) {
+				//action.Click(pendinApprovalExpandBtn)
+				if(action.IsElementDisplayed(pendinAppFirstRow)){
+					boolean statusCheckBox = action.IsElementEnabled(firstRowCheckBox)
+					boolean statusViewOrder = action.IsElementEnabled(viewOrderLink)
+					boolean removeItemLink = action.IsElementEnabled(removeItemLink)
+					boolean cancelOrder = action.IsElementEnabled(cancelOrder)
 
-				Assert.assertTrue(statusCheckBox)
-				println("Check Box is enable")
-				Assert.assertTrue(statusViewOrder)
-				println("View Order link is enable")
-				Assert.assertTrue(removeItemLink)
-				println("Remove Item link is enable")
-				Assert.assertTrue(cancelOrder)
-				println("Cancel Order link is enable")
-				action.Click(pendinApprovalExpandBtn)
+					Assert.assertTrue(statusCheckBox)
+					println("Check Box is enable")
+					Assert.assertTrue(statusViewOrder)
+					println("View Order link is enable")
+					Assert.assertTrue(removeItemLink)
+					println("Remove Item link is enable")
+					Assert.assertTrue(cancelOrder)
+					println("Cancel Order link is enable")
+					action.Click(pendinApprovalExpandBtn)
+
+				}
 
 			}
-
+		}
+		catch(Exception e)
+		{
+			println ("Verify Pending Approval Orders Division failed due to "+ e)
+			Assert.fail()
 		}
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -243,38 +250,32 @@ public class WarehouseDashBoardPage {
 
 	@Keyword
 	public void ClickAndVerifyWareHouseOrderLink() {
-		action.WaitVisible(wareHouseOrder)
-		boolean statuswareHouseOrderLink = action.IsElementEnabled(wareHouseOrder)
-		if(statuswareHouseOrderLink == true){
-			action.Click(wareHouseOrder)
-			action.WaitForPageToLoad()
-			action.WaitVisible(plusIcon)
-			println ("WareHouseOrderLink is enable");
+		try{
+			action.WaitVisible(wareHouseOrder)
+			boolean statuswareHouseOrderLink = action.IsElementEnabled(wareHouseOrder)
+			if(statuswareHouseOrderLink == true){
+				action.Click(wareHouseOrder)
+				action.WaitForPageToLoad()
+				action.WaitVisible(plusIcon)
+				println ("WareHouseOrderLink is enable");
+			}
+		}
+		catch(Exception e)
+		{
+			println ("Click And Verify Ware House Order Link failed due to "+ e)
+			Assert.fail()
 		}
 	}
 
 	@Keyword
 	public void VerifyWareHouseOrderPage() {
-		String expectedUATUrl = "https://csg.v5qa.brandmuscle.net/Warehouse/WarehouseOrders.aspx";
-		String expectedSTAGEUrl ="https://csg.v5stage.brandmuscle.net/Warehouse/WarehouseOrders.aspx"
-		String expectedPRODUrl = "https://csg.brandmuscle.net/Warehouse/WarehouseOrders.aspx";
-
-
-
-		String env = GlobalVariable.environment
-		String actualUrl = action.GetCurrentURL()
-
-		if(env.equalsIgnoreCase("uat")) {
-			Assert.assertEquals(expectedUATUrl, actualUrl)
+		try{
+			action.VerifyCurrentPage("WarehouseOrders.aspx")
 		}
-		else if(env.equalsIgnoreCase("stage")) {
-			Assert.assertEquals(expectedSTAGEUrl, actualUrl)
-		}
-		else if(env.equalsIgnoreCase("prod")) {
-			Assert.assertEquals(expectedPRODUrl, actualUrl)
-		}
-		else {
-			println (Assert.fail())
+		catch(Exception e)
+		{
+			println ("Verify Ware House Order Page failed due to "+ e)
+			Assert.fail()
 		}
 	}
 
@@ -292,26 +293,13 @@ public class WarehouseDashBoardPage {
 
 	@Keyword
 	public void VerifyWareHouseOrderInventoryPage() {
-		String expectedUATUrl = "https://csg.v5qa.brandmuscle.net/Warehouse/WarehouseOrderInventory.aspx";
-		String expectedSTAGEUrl ="https://csg.v5stage.brandmuscle.net/Warehouse/WarehouseOrderInventory.aspx"
-		String expectedPRODUrl = "https://csg.brandmuscle.net/Warehouse/WarehouseOrderInventory.aspx";
-
-
-
-		String env = GlobalVariable.environment
-		String actualUrl = action.GetCurrentURL()
-
-		if(env.equalsIgnoreCase("uat")) {
-			Assert.assertEquals(expectedUATUrl, actualUrl)
+		try{
+			action.VerifyCurrentPage("WarehouseOrderInventory.aspx")
 		}
-		else if(env.equalsIgnoreCase("stage")) {
-			Assert.assertEquals(expectedSTAGEUrl, actualUrl)
-		}
-		else if(env.equalsIgnoreCase("prod")) {
-			Assert.assertEquals(expectedPRODUrl, actualUrl)
-		}
-		else {
-			println (Assert.fail())
+		catch(Exception e)
+		{
+			println ("Verify Ware House Order Inventory Page failed due to "+ e)
+			Assert.fail()
 		}
 	}
 
@@ -329,26 +317,13 @@ public class WarehouseDashBoardPage {
 
 	@Keyword
 	public void VerifyDraftOrdersPage() {
-		String expectedUATUrl = "https://csg.v5qa.brandmuscle.net/Warehouse/WarehouseOrderInventory.aspx?status=Created";
-		String expectedSTAGEUrl ="https://csg.v5stage.brandmuscle.net/Warehouse/WarehouseOrderInventory.aspx?status=Created"
-		String expectedPRODUrl = "https://csg.brandmuscle.net/Warehouse/WarehouseOrderInventory.aspx?status=Created";
-
-
-
-		String env = GlobalVariable.environment
-		String actualUrl = action.GetCurrentURL()
-
-		if(env.equalsIgnoreCase("uat")) {
-			Assert.assertEquals(expectedUATUrl, actualUrl)
+		try{
+			action.VerifyCurrentPage("WarehouseOrderInventory.aspx?status=Created")
 		}
-		else if(env.equalsIgnoreCase("stage")) {
-			Assert.assertEquals(expectedSTAGEUrl, actualUrl)
-		}
-		else if(env.equalsIgnoreCase("prod")) {
-			Assert.assertEquals(expectedPRODUrl, actualUrl)
-		}
-		else {
-			println (Assert.fail())
+		catch(Exception e)
+		{
+			println ("Verify Draft Order failed due to "+ e)
+			Assert.fail()
 		}
 	}
 
@@ -357,13 +332,23 @@ public class WarehouseDashBoardPage {
 
 	@Keyword
 	public void ClickAndVerifyCompletedOrdersLink() {
-		action.WaitVisible(completedOrder)
-		boolean statuswareHouseOrderLink = action.IsElementEnabled(completedOrder)
-		if(statuswareHouseOrderLink == true){
-			action.Click(completedOrder)
-			action.WaitForPageToLoad()
-			action.WaitVisible(plusIcon)  //need to change xpath
-			println ("completed Order link is enable");
+		try{
+			action.WaitVisible(completedOrder)
+			boolean statuswareHouseOrderLink = action.IsElementEnabled(completedOrder)
+			if(statuswareHouseOrderLink == true){
+				action.Click(completedOrder)
+				action.WaitForPageToLoad()
+				action.WaitVisible(plusIcon)  //need to change xpath
+				println ("completed Order link is enable");
+			}
+			else{
+				throw new Exception("Failed ")
+			}
+		}
+		catch(Exception e)
+		{
+			println ("Click And Verify Completed Orders Link failed due to "+e)
+			Assert.fail()
 		}
 	}
 
@@ -559,26 +544,13 @@ public class WarehouseDashBoardPage {
 
 	@Keyword
 	public void VerifyReportBatchesPage() {
-		//		String expectedUATUrl = "https://csg.v5qa.brandmuscle.net/Warehouse/WarehouseOrders.aspx";
-		//		String expectedSTAGEUrl ="https://csg.v5stage.brandmuscle.net/Warehouse/WarehouseOrders.aspx"
-		//		String expectedPRODUrl = "https://csg.brandmuscle.net/Warehouse/WarehouseOrders.aspx";
-
-
-
-		String env = GlobalVariable.environment
-		String actualUrl = action.GetCurrentURL()
-
-		if(env.equalsIgnoreCase("uat")) {
-			Assert.assertEquals(expectedUATUrl, actualUrl)
+		try{
+			action.VerifyCurrentPage("WarehouseOrders.aspx")
 		}
-		else if(env.equalsIgnoreCase("stage")) {
-			Assert.assertEquals(expectedSTAGEUrl, actualUrl)
-		}
-		else if(env.equalsIgnoreCase("prod")) {
-			Assert.assertEquals(expectedPRODUrl, actualUrl)
-		}
-		else {
-			println (Assert.fail())
+		catch(Exception e)
+		{
+			println ("Verify Report Batches Page failed due to "+ e)
+			Assert.fail()
 		}
 	}
 
@@ -594,30 +566,7 @@ public class WarehouseDashBoardPage {
 		}
 	}
 
-	@Keyword
-	public void VerifyVerifyUserGuidePage() {
-		//		String expectedUATUrl = "https://csg.v5qa.brandmuscle.net/Warehouse/WarehouseOrders.aspx";
-		//		String expectedSTAGEUrl ="https://csg.v5stage.brandmuscle.net/Warehouse/WarehouseOrders.aspx"
-		//		String expectedPRODUrl = "https://csg.brandmuscle.net/Warehouse/WarehouseOrders.aspx";
 
-
-
-		String env = GlobalVariable.environment
-		String actualUrl = action.GetCurrentURL()
-
-		if(env.equalsIgnoreCase("uat")) {
-			Assert.assertEquals(expectedUATUrl, actualUrl)
-		}
-		else if(env.equalsIgnoreCase("stage")) {
-			Assert.assertEquals(expectedSTAGEUrl, actualUrl)
-		}
-		else if(env.equalsIgnoreCase("prod")) {
-			Assert.assertEquals(expectedPRODUrl, actualUrl)
-		}
-		else {
-			println (Assert.fail())
-		}
-	}
 
 
 
