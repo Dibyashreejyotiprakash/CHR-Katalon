@@ -17,16 +17,13 @@ WebUI.openBrowser('')
 
 WebUI.maximizeWindow()
 
-CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamedesigntracker, GlobalVariable.testtyperegression, 
-    GlobalVariable.environment)
-
 WebUI.waitForPageLoad(300)
 
-CustomKeywords.'com.designtracker.LoginPage.LoginToDesignTarcker'(GlobalVariable.dtusername, GlobalVariable.dtpassowrd)
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameiiadmin, GlobalVariable.testtyperegression, GlobalVariable.environment)
 
-CustomKeywords.'com.designtracker.HomePage.ClickOnSupplierBrandManagers'()
+CustomKeywords.'com.iiadmin.LoginAndHomePage.LoginToIiadmin'(GlobalVariable.iiadminusername, GlobalVariable.iiadminpassword)
 
-CustomKeywords.'com.designtracker.SupplierBrandManagersPage.VerifyAddingMultipleSupplierBrandManagers'()
+CustomKeywords.'com.iiadmin.EditItemsPage.NavigateToCorp300'()
 
-WebUI.closeBrowser()
+CustomKeywords.'com.iiadmin.EditItemsPage.AddLogoForDistributor'()
 

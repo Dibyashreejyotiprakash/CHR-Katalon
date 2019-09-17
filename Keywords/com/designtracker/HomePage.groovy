@@ -557,6 +557,7 @@ public class HomePage {
 			action.WaitVisible(siteadmin)
 			action.MouseHoverOnElement(siteadmin)
 			action.WaitVisible(highrarchy)
+			WebUI.delay(3)
 			action.MouseHoverAndClick(highrarchy)
 			action.WaitForPageToLoad()
 		}
