@@ -17,26 +17,15 @@ WebUI.openBrowser('')
 
 WebUI.maximizeWindow()
 
-CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamedesigntracker, GlobalVariable.testtyperegression,
-	GlobalVariable.environment)
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameiiusersite, GlobalVariable.testtyperegression, GlobalVariable.environment)
 
-WebUI.waitForPageLoad(300)
+CustomKeywords.'com.ii4usersites.LoginPage.LoginToDemoCorp'(GlobalVariable.iiusersiteusername, GlobalVariable.iiusersitepassword)
 
-CustomKeywords.'com.designtracker.LoginPage.LoginToDesignTarcker'(GlobalVariable.dtusername, GlobalVariable.dtpassowrd)
+CustomKeywords.'com.ii4usersites.HomePage.validateFreezeMenuForTicket'()
 
-CustomKeywords.'com.designtracker.HomePage.ClickOnNewJob'()
+//CustomKeywords.'com.ii4usersites.OrderFormDefaultPage.ClickonCreateNewCustomOrder'()
 
-//Create a job
-String jobId = CustomKeywords.'com.designtracker.JobNewPage.VerifyCreateNewJobs1'()
-
-//CustomKeywords.'com.utilities.Interaction.ScrollToViewelement'()
-
-CustomKeywords.'com.designtracker.JobDetailsPage.AddPartAndBackToJobDetailsPage'()
-
-CustomKeywords.'com.designtracker.JobDetailsPage.AssignBudgetAndSaveBrands'()
-
-CustomKeywords.'com.designtracker.HomePage.ClickOnDistrBudgetMigration'()
-
-CustomKeywords.'com.designtracker.DistributorBudgetMigrationPage.VerifyBudgetMigrationForOneJob'()
+CustomKeywords.'com.ii4usersites.HomePage.LogOutII4'()
 
 WebUI.closeBrowser()
+

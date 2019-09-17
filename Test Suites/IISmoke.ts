@@ -13,31 +13,31 @@
    <testCaseLink>
       <guid>ae1bb56f-def9-4796-8e55-5fb08c01deaf</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/IIDT/II SMOKE/LOGIN/LoginLogout</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>af7f1360-7a76-44a8-af34-9fac44362a4e</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/IIDT/II SMOKE/OrderOnlineForm/ClonePreviousDTOrder/VerifyCreateNewCustomOrderButton</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>3064e63c-6d83-4b2d-8b99-4a1c85bc4fca</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/IIDT/II SMOKE/OrderOnlineForm/ClonePreviousDTOrder/VerifyDetailsPageAndNavigationToFinishDetailsPage</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>5b6f590f-944c-430d-a4a8-20b0163bec0f</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/IIDT/II SMOKE/OrderOnlineForm/ClonePreviousDTOrder/VerifyDetailsPageAndNavigationToFinishDetailsPageAndVerifyJobSearchPage</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>e54e3e5f-13e6-4c44-92ca-84b1fcc89bb9</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/IIDT/II SMOKE/OrderOnlineForm/ClonePreviousDTOrder/VerifyDTJobSearchInCloneJobSearchPage</testCaseId>
    </testCaseLink>
    <testCaseLink>
@@ -151,73 +151,73 @@
    <testCaseLink>
       <guid>77196637-9b2a-4bea-a807-570a1d611095</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/II3-UserSite/OLOF Smoke/VerifyAllButtonsInItemDetails1Page</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>3f0a7db9-6256-4836-82ea-f8d476a88167</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/II3-UserSite/OLOF Smoke/VerifyClickAccesoriesButton</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>b887ee32-1ce4-42dc-a396-0570196d8598</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/II3-UserSite/OLOF Smoke/VerifyClickMenuBooksButton</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>2215149d-86e2-49d7-b26a-173778392d72</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/II3-UserSite/OLOF Smoke/VerifyClickOnLargeFormatPrint</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>51b39f80-096e-4624-b922-947d9221dc7a</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/II3-UserSite/OLOF Smoke/VerifyClickOnSmallFormatButton</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>7c8a26da-5875-4ecc-91ed-14d17c77269c</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/II3-UserSite/OLOF Smoke/VerifyHomePage</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>7f675591-9471-4826-a7bc-ede14a8154a6</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/II3-UserSite/OLOF Smoke/VerifyLogiLogout</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>40a11585-f2b8-4c3f-a0b6-16fa548c6a76</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/II3-UserSite/OLOF Smoke/VerifyNavigationToItemDetailsPage</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>6388503a-df27-4da4-8b8f-6321711e455c</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/II3-UserSite/OLOF Smoke/VerifyNavigationToPrintDetails2Page</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>66c65776-c93c-4061-82eb-0214f9a94da3</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/II3-UserSite/OLOF Smoke/VerifyOLOFAllThreeButtons</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>9cdcc23a-0ece-4eac-800c-ba19ddc267f9</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/II3-UserSite/OLOF Smoke/VerifyOLOFHomePage</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>a1b74609-c6c3-4275-b7bf-9236fb93b8ea</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/II3-UserSite/OLOF Smoke/VerifyOLOFOrderHeaderPage</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>

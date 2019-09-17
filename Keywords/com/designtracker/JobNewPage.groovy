@@ -151,6 +151,10 @@ public class JobNewPage {
 			WebUI.delay(5)
 			action.Click(createjobbtn)
 			action.WaitForPageToLoad()
+			action.WaitForPageToLoad()
+			WebUI.delay(10)
+			//jobIdValue = action.GetText(jobid)
+			//return jobIdValue
 		}
 		catch(Exception e) {
 			println ("Verify Create New Jobs Failed due to "+ e)
@@ -164,25 +168,32 @@ public class JobNewPage {
 		try {
 			action.WaitVisible(corporationddn)
 			action.SelectByText(corporationddn, "Demo Distributor (QA)")
-			WebUI.delay(5)
+			WebUI.delay(7)
 			action.SelectByText(marketddn, "Demo Dist. 1 QA")
-			WebUI.delay(5)
-			action.SelectByText(salespersonddn, "TESTADMIN, TESTADMIN (demoqa@brandmuscle.com)")
-			WebUI.delay(5)
+			WebUI.delay(7)
+			action.SelectByText(salespersonddn, "ADMIN, ADMIN (demoqa@brandmuscle.com)")
+			WebUI.delay(7)
 			action.SelectByIndex(accountddn, 1)
+			WebUI.delay(7)
 			action.SelectByText(jobtypeddn, "Print Only")
-			WebUI.delay(5)
+			WebUI.delay(7)
 			action.Click(createjobbtn)
 			action.WaitForPageToLoad()
 			WebUI.delay(10)
 			jobIdValue = action.GetText(jobid)
+			println("******"+jobIdValue)
+			//action.WaitForPageToLoad()
+			//WebUI.delay(5)
 			return jobIdValue
-			WebUI.delay(10)
+			/*WebUI.delay(10)
 			action.GetText(jobid)
-			return jobid
+			action.WaitForPageToLoad()
+			WebUI.delay(5)
+			return jobid*/
 		}
 		catch(Exception e) {
-			println ("Verify Create New Jobs Failed due to "+ e)
+			//println ("Verify Create New Jobs Failed due to "+ e)
+			Assert.fail("Verify Create New Jobs Failed due to "+ e)
 		}
 	}
 

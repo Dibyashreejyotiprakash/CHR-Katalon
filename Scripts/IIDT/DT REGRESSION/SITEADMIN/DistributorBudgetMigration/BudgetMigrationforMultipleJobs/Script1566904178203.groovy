@@ -24,6 +24,24 @@ WebUI.waitForPageLoad(300)
 
 CustomKeywords.'com.designtracker.LoginPage.LoginToDesignTarcker'(GlobalVariable.dtusername, GlobalVariable.dtpassowrd)
 
+CustomKeywords.'com.designtracker.HomePage.ClickOnNewJob'()
+
+//Create a job
+String jobId = CustomKeywords.'com.designtracker.JobNewPage.VerifyCreateNewJobs1'()
+
+CustomKeywords.'com.designtracker.jobDetailsPage.AddPartAndBackToJobDetailsPage'()
+
+CustomKeywords.'com.designtracker.jobDetailsPage.AssignBudgetAndSaveBrands'()
+
+CustomKeywords.'com.designtracker.HomePage.ClickOnNewJob'()
+
+//Create a job
+String jobId = CustomKeywords.'com.designtracker.JobNewPage.VerifyCreateNewJobs1'()
+
+CustomKeywords.'com.designtracker.jobDetailsPage.AddPartAndBackToJobDetailsPage'()
+
+CustomKeywords.'com.designtracker.jobDetailsPage.AssignBudgetAndSaveBrands'()
+
 CustomKeywords.'com.designtracker.HomePage.ClickOnDistrBudgetMigration'()
 
 CustomKeywords.'com.designtracker.DistributorBudgetMigrationPage.VerifyBudgetMigrationForMultipleJobs'()

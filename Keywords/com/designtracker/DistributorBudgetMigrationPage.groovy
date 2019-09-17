@@ -37,7 +37,7 @@ public class DistributorBudgetMigrationPage {
 	By checkBoxFirstJobId = By.xpath("//input[@id='ctl00_ctl00_cphMain_cphMain_gvBudgetJobs_ctl02_chkSelectedJob']")
 	By checkBoxAllJobId = By.xpath("//input[@id='ctl00_ctl00_cphMain_cphMain_gvBudgetJobs_ctl01_chkDeleteAllHeader']")
 	By submitBtn = By.xpath("//input[@id='ctl00_ctl00_cphMain_cphMain_btnBatchSubmit']")
-	By successSubmitMsg = By.xpath("//li[contains(text(),'The selected brand has been saved successfully.')]")
+	By successSubmitMsg = By.xpath("//li[contains(text(),'Budgets migration has completed successfully.')]")
 	By FailedSubmitMsg = By.xpath("//li[contains(text(),'could not be migrated.')]")
 
 
@@ -63,61 +63,59 @@ public class DistributorBudgetMigrationPage {
 	@Keyword
 	public void VerifyBudgetMigrationForOneJob() {
 		try {
-			
-			action.SelectByText(corporationddn, "Instant Impact 4.0 Demo Corp (Dist.)")
+
+			action.SelectByText(corporationddn, "Demo Distributor (QA)")
 
 			WebUI.delay(10)
-			action.SelectByText(marketddn, "Chicago Beverage Systems")
+			action.SelectByText(marketddn, "Demo Dist. 1 QA")
 
 			WebUI.delay(10)
-			action.SelectByIndex(fromBudget, 1)
+			action.SelectByText(fromBudget, "TestBudget1")
 
 			WebUI.delay(5)
 			action.Click(checkBoxFirstJobId)
 
 			WebUI.delay(10)
-			action.SelectByIndex(toBudget, 2)
+			action.SelectByText(toBudget, "TestBudget4")
 
 			WebUI.delay(2)
 			action.Click(submitBtn)
 
 			WebUI.delay(3)
-			boolean statusofSuccessMsg  =     action.IsElementDisplayed(FailedSubmitMsg)
-			Assert.assertTrue(statusofSuccessMsg, "FailedSubmitMsg is visible")
+			boolean statusofSuccessMsg  =     action.IsElementDisplayed(successSubmitMsg)
+			Assert.assertTrue(statusofSuccessMsg, "successSubmitMsg is visible")
 		}
 		catch(Exception e) {
-			println ("Verify InsertBrand Failed due to "+ e)
-			Assert.fail()
+			Assert.fail("Verify InsertBrand Failed due to "+ e)
 		}
 	}
 
 	@Keyword
 	public void VerifyBudgetMigrationForMultipleJobs() {
 		try {
-			action.SelectByText(corporationddn, "Instant Impact 4.0 Demo Corp (Dist.)")
+			action.SelectByText(corporationddn, "Demo Distributor (QA)")
 
 			WebUI.delay(10)
-			action.SelectByText(marketddn, "Chicago Beverage Systems")
+			action.SelectByText(marketddn, "Demo Dist. 1 QA")
 
 			WebUI.delay(10)
-			action.SelectByIndex(fromBudget, 1)
+			action.SelectByText(fromBudget, "TestBudget1")
 
 			WebUI.delay(5)
-			action.Click(checkBoxFirstJobId)
+			action.Click(checkBoxAllJobId)
 
 			WebUI.delay(10)
-			action.SelectByIndex(toBudget, 2)
+			action.SelectByText(toBudget, "TestBudget4")
 
 			WebUI.delay(2)
 			action.Click(submitBtn)
 
 			WebUI.delay(3)
-			boolean statusofSuccessMsg  =     action.IsElementDisplayed(successInsertMsg)
-			Assert.assertTrue(statusofSuccessMsg, "Success msg for insert is visible")
+			boolean statusofSuccessMsg  =     action.IsElementDisplayed(successSubmitMsg)
+			Assert.assertTrue(statusofSuccessMsg, "successSubmitMsg is visible")
 		}
 		catch(Exception e) {
-			println ("Verify InsertBrand Failed due to "+ e)
-			Assert.fail()
+			Assert.fail("VerifyBudgetMigrationForMultipleJobs is Failed due to "+ e)
 		}
 	}
 

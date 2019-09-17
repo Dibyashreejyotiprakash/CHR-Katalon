@@ -482,7 +482,8 @@ public  class Interaction {
 	//Scroll up to element to be visible
 	public void  ScrollToViewElement(WebElement element)
 	{
-		WaitVisible(element)
+		//WaitVisible(element)
+		WebUI.delay(7)
 		js.executeScript("arguments[0].scrolSlIntoView(true);", element);
 	}
 
@@ -601,6 +602,8 @@ public  class Interaction {
 		WebDriverWait wait = new WebDriverWait(driver, 300)
 		wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 
+		WebUI.delay(8)
+
 		//TRY with fluent wait
 		/*Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
 		 .withTimeout(300, SECONDS)
@@ -615,7 +618,7 @@ public  class Interaction {
 		 );*/
 
 	}
-	
+
 	public void  WaitVisibleDup(By by)
 	{
 		WebDriverWait wait = new WebDriverWait(driver, 300)
