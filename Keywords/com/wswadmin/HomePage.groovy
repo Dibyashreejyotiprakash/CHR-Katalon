@@ -66,7 +66,8 @@ public class HomePage {
 	By standarditemgating = By.xpath("//span[contains(text(),'Standard Item Gating')]")
 	By ii4crosscorp = By.xpath("//*[text()='ii4 Cross Corp']")
 	By ii4crosscorpadmin = By.xpath("//*[text()='ii4 Cross Corp Admin']")
-
+	By olof = By.xpath("//*[text()='Online Order Form']")
+	By olofii4configuration = By.xpath("//*[text()='II4 Configuration']")
 
 	@Keyword
 	public void NavigateToItemSearchPage() {
@@ -199,6 +200,24 @@ public class HomePage {
 
 	}
 
+	@Keyword
+	public void ClickOnOLOFII4Configuration()
+	{
+		try
+		{
+			action.WaitVisible(instantimpact)
+			action.MouseHoverOnElement(instantimpact)
+			WebUI.delay(3)
+			action.MouseHoverOnElement(olof)
+			action.Click(olofii4configuration)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e)
+		{
+			println ("Click On OLOF II4 Configuration failed due to "+ e)
+			Assert.fail()
+		}
+	}
 
 	@Keyword
 	public void NavigateToQuoteItemSearch()

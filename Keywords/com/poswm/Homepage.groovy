@@ -47,13 +47,13 @@ public class Homepage {
 	By removeitem = By.xpath("//*[@id='ctl00_MainContent_rdPendingApproval_C_rgPendingApprovalByItem_ctl00__0']/td[3]/a")
 	By cancelorder = By.xpath("//*[@id='ctl00_MainContent_rdPendingApproval_C_rgPendingApprovalByItem_ctl00__0']/td[4]/a")
 	By pendingshipmentshiporder = By.xpath("//*[@id='ctl00_MainContent_rdPendingShipment_C_rgPendingShipment_ctl00']//tr[1]/td[3]")
-	By subMenuitemProperties = By.xpath("//*[@class='rmVertical rmGroup rmLevel1 menu']/li[5]//following-sibling::div/ul/li[1]")
-	By lavelItemProperty = By.xpath("//*[text()='Item Properties']")
-	By menuWarehouse = By.xpath("//*[@id='mainMenu']/div/ul/li[2]/a/span")
-	By subMenuWareHouse = By.xpath("//*[@class='rmVertical rmGroup rmLevel1 menu']/li[5]//following-sibling::div/ul/li[2]")
-	By subMenuWarehouseUsers = By.xpath("//*[@class='rmVertical rmGroup rmLevel1 menu']/li[5]//following-sibling::div/ul/li[3]")
+	By subMenuitemProperties = By.xpath("//*[text()='Item Properties']")
+	By lavelItemProperty = By.xpath("//*[@id='MainContent_lblTypes']")
+	By menuWarehouse = By.xpath("(//*[text()='Warehouse'])[1]")
+	By subMenuWareHouse = By.xpath("(//*[text()='Warehouse'])[2]")
+	By subMenuWarehouseUsers = By.xpath("//*[text()='Warehouse Users']")
 	By subMenuWarehouseSpendLimits = By.xpath("//*[@class='rmVertical rmGroup rmLevel1 menu']/li[5]//following-sibling::div/ul/li[4]")
-	By subMenuWelcomeMessage = By.xpath("//*[@class='rmVertical rmGroup rmLevel1 menu']/li[5]//following-sibling::div/ul/li[5]")
+	By subMenuWelcomeMessage = By.xpath("//*[text()='Welcome Message']")
 	By subMenuUserItemApprovalTransfer = By.xpath("//*[text()='User Item Approval Transfer']")
 	By subMenuMenuLinkBrand = By.xpath("//*[text()='MenuLink_Brand']")
 	By labelWareHouseAdmin = By.xpath("//*[@id='MainContent_pnlSites']")
@@ -65,10 +65,6 @@ public class Homepage {
 	By levelChangePassword = By.xpath("//*[@id='MainContent_lblChangePassword']")
 	By posWarehouseReport = By.xpath("//*[@id='lbReport']")
 	By helpSupportBtn = By.xpath("//*[text()='Help/Support']")
-
-
-
-
 	By logoutlink = By.xpath("//*[text()='Logout']")
 
 	@Keyword
@@ -86,11 +82,10 @@ public class Homepage {
 
 	@Keyword
 	public void ClickOnReports() {
-		action.WaitVisible(warehousebtn)
-		action.MouseHoverOnElement(warehousebtn)
-		action.MouseHoverAndClick(reports)
+		action.MouseHoverOnElement(menuWarehouse)
+		WebUI.delay(5)
+		action.Click(reports)
 		action.WaitForPageToLoad()
-		action.WaitTime(5);
 	}
 
 
@@ -98,97 +93,88 @@ public class Homepage {
 
 	@Keyword
 	public void ClickOnItemSearch() {
-		action.WaitVisible(warehousebtn)
-		action.MouseHoverOnElement(warehousebtn)
-		action.MouseHoverAndClick(itemsearchbtn)
+		action.MouseHoverOnElement(menuWarehouse)
+		WebUI.delay(5)
+		action.Click(itemsearchbtn)
 		action.WaitForPageToLoad()
-		action.WaitTime(5);
 	}
 
 	@Keyword
 	public void ClickOnNewItem() {
-		action.WaitVisible(warehousebtn)
-		action.MouseHoverOnElement(warehousebtn)
-		action.MouseHoverAndClick(newitembtn)
+		action.MouseHoverOnElement(menuWarehouse)
+		action.Click(newitembtn)
 		action.WaitForPageToLoad()
-		action.WaitTime(3)
 	}
 
 	@Keyword
 	public void ClickOnNewOrder() {
-		action.WaitVisible(warehousebtn)
-		action.MouseHoverOnElement(warehousebtn)
-		action.MouseHoverAndClick(neworderbtn)
+		action.MouseHoverOnElement(menuWarehouse)
+		action.Click(neworderbtn)
 		action.WaitForPageToLoad()
 	}
 
 	@Keyword
 	public void ClicOnOrderSearch() {
-		action.WaitVisible(warehousebtn)
-		action.MouseHoverOnElement(warehousebtn)
-		action.MouseHoverAndClick(ordersearchbtn)
+		action.MouseHoverOnElement(menuWarehouse)
+		action.Click(ordersearchbtn)
 		action.WaitForPageToLoad()
 	}
 
 
 	@Keyword
 	public void ClickOnItemProperties() {
+		action.MouseHoverOnElement(menuWarehouse)
 		action.MouseHoverOnElement(adminbtn)
-		action.WaitVisible(subMenuitemProperties)
 		action.Click(subMenuitemProperties)
-		action.WaitVisible(lavelItemProperty)
+		action.WaitForPageToLoad()
 	}
 
 	@Keyword
 	public void ClickOnWarehouse() {
+		action.MouseHoverOnElement(menuWarehouse)
 		action.MouseHoverOnElement(adminbtn)
-		action.WaitVisible(subMenuWareHouse)
+		action.MouseHoverOnElement(adminbtn)
 		action.Click(subMenuWareHouse)
-		action.WaitForPageToLoad();
-		action.WaitVisible(labelWareHouseAdmin)
+		action.WaitForPageToLoad()
 	}
 
 	@Keyword
 	public void ClickOnWarehouseUser() {
+		action.MouseHoverOnElement(menuWarehouse)
 		action.MouseHoverOnElement(adminbtn)
-		action.WaitVisible(subMenuWarehouseUsers)
 		action.Click(subMenuWarehouseUsers)
-		action.WaitForPageToLoad();
-		action.WaitVisible(linkAddNewUser)
+		action.WaitForPageToLoad()
 	}
 
 	@Keyword
 	public void ClickOnWarehouseSpendLimits() {
+		action.MouseHoverOnElement(menuWarehouse)
 		action.MouseHoverOnElement(adminbtn)
-		action.WaitVisible(subMenuWarehouseSpendLimits)
 		action.Click(subMenuWarehouseSpendLimits)
 		action.WaitForPageToLoad();
-		action.WaitVisible(linkAddNewCompliance)
 	}
+
 	@Keyword
 	public void ClickOnWelcomeMessage() {
+		action.MouseHoverOnElement(menuWarehouse)
 		action.MouseHoverOnElement(adminbtn)
-		//action.WaitVisible(subMenuWelcomeMessage)
-		action.Click(welcomemsg)
-		action.WaitForPageToLoad();
-		//action.WaitVisible(btnSaveDashBoardMessage)
+		action.Click(subMenuWelcomeMessage)
+		action.WaitForPageToLoad()
 	}
 	@Keyword
 	public void ClickOnUserItemApprovalTransfer() {
+		action.MouseHoverOnElement(menuWarehouse)
 		action.MouseHoverOnElement(adminbtn)
-		action.WaitVisible(subMenuUserItemApprovalTransfer)
 		action.Click(subMenuUserItemApprovalTransfer)
-		action.WaitForPageToLoad();
-		action.WaitVisible(labelTransferFrom)
+		action.WaitForPageToLoad()
 	}
 
 	@Keyword
 	public void ClickOnMenuLinkBrand() {
+		action.MouseHoverOnElement(menuWarehouse)
 		action.MouseHoverOnElement(adminbtn)
-		action.WaitVisible(subMenuMenuLinkBrand)
 		action.Click(subMenuMenuLinkBrand)
-		action.WaitForPageToLoad();
-		action.WaitTime(5)
+		action.WaitForPageToLoad()
 	}
 
 	@Keyword
