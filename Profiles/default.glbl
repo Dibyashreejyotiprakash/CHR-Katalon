@@ -359,4 +359,9 @@
       <initValue>'chr@1234'</initValue>
       <name>iiadminpassword</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'http://iiadmin.uat.brandmuscle.net/GraphicMaintenance/EditItems.aspx?CorpID=300'</initValue>
+      <name>iiadmincorpurl</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

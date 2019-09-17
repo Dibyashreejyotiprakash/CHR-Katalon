@@ -58,7 +58,9 @@ public class EditItemsPage {
 	@Keyword
 	public void NavigateToCorp300() {
 		try {
-			WebUI.navigateToUrl("http://iiadmin.uat.brandmuscle.net/GraphicMaintenance/EditItems.aspx?CorpID=300")
+
+			String  s =  GlobalVariable.iiadmincorpurl
+			WebUI.navigateToUrl(s)
 			action.WaitVisible(logotab)
 		}
 		catch(Exception e) {
