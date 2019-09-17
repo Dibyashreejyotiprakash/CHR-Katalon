@@ -4,11 +4,11 @@ import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+
 import com.utilities.Interaction
 import org.openqa.selenium.By
 import org.openqa.selenium.WebDriver
 import org.testng.Assert
-
 import com.kms.katalon.core.webui.driver.DriverFactory
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.checkpoint.Checkpoint
@@ -20,7 +20,9 @@ import com.kms.katalon.core.testdata.TestData
 import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
-
+import com.utilities.Interaction
+import com.kms.katalon.core.webui.driver.DriverFactory as DriverFactory
+import org.testng.Assert
 import internal.GlobalVariable
 
 public class LoginPage {
@@ -63,6 +65,19 @@ public class LoginPage {
 		catch(Exception e) {
 			println ("Login To WSWAdmin failed due to "+ e)
 			Assert.fail()
+		}
+	}
+
+	@Keyword
+	public void WSWlogin(String name,String pass) {
+		try {
+			action.WaitVisible(username)
+			action.Type(username, name)
+			action.Type(password, pass)
+			action.Click(loginbtn)
+		}
+		catch(Exception e) {
+			Assert.fail("WSWlogin failed due to "+e)
 		}
 	}
 }

@@ -44,8 +44,7 @@ public class DashboardMessage {
 			action.VerifyCurrentPage("DashboardMessage.aspx")
 		}
 		catch(Exception e) {
-			println ("Verify Welcome message failed due to "+ e)
-			Assert.fail()
+			Assert.fail("Verify Welcome message failed due to "+ e)
 		}
 	}
 }

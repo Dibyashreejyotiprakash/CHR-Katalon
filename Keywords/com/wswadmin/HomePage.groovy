@@ -28,6 +28,8 @@ public class HomePage {
 	Interaction action = new Interaction()
 
 	By instantimpact = By.xpath("//*[text()='Instant Impact']")
+	By quotetracker = By.xpath("//*[text()='QuoteTracker']")
+	By quoteitemsearch = By.xpath("//*[text()='Quote Item Search']")
 	By metatagingitemmaintenance = By.xpath("//*[text()='Meta Tagging Category/Item Maintenance']")
 	By itemsearchtagging = By.xpath("//*[text()='Item Search Tagging']")
 	By metaTaggingEditDelete  = By.xpath("(//span[contains(text(),'Meta Tagging Edit/Delete')])[1]")
@@ -62,9 +64,10 @@ public class HomePage {
 	By bannedphrasesbtn = By.xpath("//*[@href='/InstantImpact/BannedWords/BannedPhrases.aspx']")
 	By itemgatinggroupmanagement = By.xpath("//span[contains(text(),'Item Gating Group Management')]")
 	By standarditemgating = By.xpath("//span[contains(text(),'Standard Item Gating')]")
+	By ii4crosscorp = By.xpath("//*[text()='ii4 Cross Corp']")
+	By ii4crosscorpadmin = By.xpath("//*[text()='ii4 Cross Corp Admin']")
 	By olof = By.xpath("//*[text()='Online Order Form']")
 	By olofii4configuration = By.xpath("//*[text()='II4 Configuration']")
-
 
 	@Keyword
 	public void NavigateToItemSearchPage() {
@@ -215,4 +218,32 @@ public class HomePage {
 			Assert.fail()
 		}
 	}
+
+	@Keyword
+	public void NavigateToQuoteItemSearch()
+	{
+		action.WaitVisible(quotetracker)
+		action.MouseHoverOnElement(quotetracker)
+		WebUI.delay(2)
+		action.WaitVisible(quoteitemsearch)
+		action.Click(quoteitemsearch)
+		action.WaitForPageToLoad()
+
+	}
+
+	@Keyword
+	public void NavigateToII4CrossCorp()
+	{
+		action.WaitVisible(instantimpact)
+		action.MouseHoverOnElement(instantimpact)
+		WebUI.delay(3)
+		action.WaitVisible(ii4crosscorp)
+		action.MouseHoverOnElement(ii4crosscorp)
+		WebUI.delay(2)
+		action.WaitVisible(ii4crosscorpadmin)
+		action.Click(ii4crosscorpadmin)
+		action.WaitForPageToLoad()
+
+	}
+
 }

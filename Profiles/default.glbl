@@ -341,6 +341,21 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
+      <initValue>'dibyashree.jyoti@brandmuscle.com'</initValue>
+      <name>iiadminusername</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'atlas@1234'</initValue>
+      <name>iiadminpassword</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'http://iiadmin.uat.brandmuscle.net/GraphicMaintenance/EditItems.aspx?CorpID=300'</initValue>
+      <name>iiadmincorpurl</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
       <initValue>'testadmin1@brandmuscle.com'</initValue>
       <name>approvalusername</name>
    </GlobalVariableEntity>
