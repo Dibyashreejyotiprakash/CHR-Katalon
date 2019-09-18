@@ -131,7 +131,7 @@ public class EditItemsPage {
 	@Keyword
 	public void uploadfile() {
 		try {
-			StringSelection sel = new StringSelection("C:\\Users\\astha.nigam\\Desktop\\Images\\II_4_Slate_Matt_Logo.ai");
+			StringSelection sel = new StringSelection("C:\\Users\\ashutosh.gupta\\Desktop");
 			Toolkit.getDefaultToolkit().getSystemClipboard().setContents(sel,null);
 			System.out.println("selection" +sel);
 			Robot robot = new Robot();

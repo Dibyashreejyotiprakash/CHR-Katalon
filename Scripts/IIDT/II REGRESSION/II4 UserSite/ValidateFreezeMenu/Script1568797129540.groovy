@@ -14,18 +14,13 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
 
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameiiusersite, GlobalVariable.testtyperegression, GlobalVariable.environment)
 
-CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamewswadmin, GlobalVariable.testtyperegression, GlobalVariable.environment)
+CustomKeywords.'com.ii4usersites.LoginPage.LoginToDemoCorp'(GlobalVariable.iiusersiteusername, GlobalVariable.iiusersitepassword)
 
-CustomKeywords.'com.wswadmin.LoginPage.WSWlogin'(GlobalVariable.wswadminusername, GlobalVariable.wswpassword)
+CustomKeywords.'com.ii4usersites.HomePage.validateFreezeMenuForTicket'()
 
-WebUI.waitForPageLoad(300)
-
-CustomKeywords.'com.wswadmin.HomePage.NavigateToItemSearchPage'()
-
-CustomKeywords.'com.wswadmin.ItemSearchpage.openTemplateConfigurationPage'()
-
-CustomKeywords.'com.wswadmin.ItemSearchpage.validateBrandnameCategory'()
+CustomKeywords.'com.ii4usersites.HomePage.LogOutII4'()
 
 
 

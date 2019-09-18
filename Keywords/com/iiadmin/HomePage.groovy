@@ -24,30 +24,31 @@ import com.kms.katalon.core.webui.driver.DriverFactory
 import internal.GlobalVariable
 
 public class HomePage {
-	
+
 	WebDriver driver = DriverFactory.getWebDriver();
 	Interaction action = new Interaction();
 
-	
+
 	By systemsetupandmaintenance = By.xpath("//*[text()='System Setup and Maintenance']")
 	By operations = By.xpath("//*[text()='Operations']")
 	By shippingagents = By.xpath("//*[text()='Shipping Agents']")
-	
+	By useraccessandcontrol = By.xpath("//*[text()='User Access and Control']")
+	By users = By.xpath("//*[text()='Users']")
+	By editusers = By.xpath("//*[text()='Edit User']")
+
+
 	@Keyword
-	public void VerifyHomePage()
-	{
+	public void VerifyHomePage() {
 		try{
 			action.VerifyCurrentPage("GraphicMaintenance.aspx")
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("Verify Home Page failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
-	public void ClickOnShippinAgents()
-	{
+	public void ClickOnShippinAgents() {
 		try{
 			action.MouseHoverOnElement(systemsetupandmaintenance)
 			WebUI.delay(10)
@@ -56,9 +57,21 @@ public class HomePage {
 			action.Click(shippingagents)
 			action.WaitForPageToLoad()
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("Click on Shipping agents failed due to "+ e)
+		}
+	}
+
+	@Keyword
+	public void CLickOnEditUser() {
+		try{
+			action.MouseHoverOnElement(useraccessandcontrol)
+			action.MouseHoverOnElement(users)
+			action.Click(editusers)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			Assert.fail("CLick On Edit User failed due to "+ e)
 		}
 	}
 }
