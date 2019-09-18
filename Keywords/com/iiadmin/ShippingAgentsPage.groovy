@@ -25,7 +25,7 @@ import internal.GlobalVariable
 import org.testng.Assert
 
 public class ShippingAgentsPage {
-	
+
 	WebDriver driver = DriverFactory.getWebDriver();
 	Interaction action = new Interaction();
 
@@ -35,7 +35,7 @@ public class ShippingAgentsPage {
 	By firstdeletelink = By.xpath("//*[@id='ctl00_Body_fsRules']//tr[2]//tr/td[1]/a[text()='Delete']")
 	By firstselectlink = By.xpath("//*[@id='ctl00_Body_fsRules']//tr[2]//tr/td[1]/a[text()='Select']")
 	By firstnewlink = By.xpath("//*[@id='ctl00_Body_fsRules']//tr[2]//tr/td[2]/a[text()='New']")
-	
+
 	By startrange = By.xpath("//*[@id='ctl00_Body_fvShippingAgentRules_nStartOfRangeTextBox']")
 	By endrange = By.xpath("//*[@id='ctl00_Body_fvShippingAgentRules_nEndOfRangeTextBox']")
 	By corpidddn = By.xpath("//*[@id='ctl00_Body_fvShippingAgentRules_cmbCorps_Arrow']")
@@ -43,44 +43,37 @@ public class ShippingAgentsPage {
 	By democorpddnvalue = By.xpath("//*[text()=' - Demo Distributor (QA)']/input")
 	By itemkeytextbox = By.xpath("//*[@id='ctl00_Body_fvShippingAgentRules_txtItemId']")
 	By insertbtn = By.xpath("//*[@id='ctl00_Body_fvShippingAgentRules_InsertButton']")
-	
+
 	@Keyword
-	public void VerifyShippingAgentsPage()
-	{
+	public void VerifyShippingAgentsPage() {
 		try{
 			action.VerifyCurrentPage("ShippingAgents.aspx")
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("Verify Home Page failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
-	public void SelectShippingAgent()
-	{
+	public void SelectShippingAgent() {
 		try{
 			action.SelectByText(shippingagentsddn, "Centiv Demo and Test")
 			WebUI.delay(5)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("Select Shipping Agent failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
-	public int VerifyShippingRulesExistOrNot()
-	{
+	public int VerifyShippingRulesExistOrNot() {
 		int noofrulesbeforeadding = 0
 		try{
 			action.ScrollToBottomOfPage()
 			List<WebElement> allshipingrules = action.GetElements(availableshippingrules)
 			noofrulesbeforeadding = allshipingrules.size()
-			if(noofrulesbeforeadding >0)
-			{
-				for(int i=0;i< noofrulesbeforeadding;i++ )
-				{
+			if(noofrulesbeforeadding >0) {
+				for(int i=0;i< noofrulesbeforeadding;i++ ) {
 					println (allshipingrules.get(i).getText())
 				}
 			}
@@ -89,15 +82,13 @@ public class ShippingAgentsPage {
 			}
 			return noofrulesbeforeadding
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("Verify Shipping Rules Exist Or Not failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
-	public void CreateNewShippingRule()
-	{
+	public void CreateNewShippingRule() {
 		try{
 			action.Click(firstnewlink)
 			WebUI.delay(10)
@@ -112,30 +103,26 @@ public class ShippingAgentsPage {
 			action.Type(itemkeytextbox, "TTI04")
 			action.Click(insertbtn)
 			WebUI.delay(10)
-			
+
 			action.ScrollToBottomOfPage()
 			List<WebElement> allrulesafteradding = action.GetElements(availableshippingrules)
 			int noofrukesafteradding = allrulesafteradding.size()
 			int noofrulesbeforeadding = VerifyShippingRulesExistOrNot()
-			
-			if((noofrulesbeforeadding+1)== noofrukesafteradding)
-			{
+
+			if((noofrulesbeforeadding+1)== noofrukesafteradding) {
 				println ("New rule has been added successfully")
 			}
 			else{
 				throw new Exception("Rules has not been added")
 			}
-			
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("Create New Shipping Rule failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
-	public void ModifyExistingRuleAndVerify()
-	{
+	public void ModifyExistingRuleAndVerify() {
 		try{
 			action.Click(firstselectlink)
 			WebUI.delay(10)
@@ -152,26 +139,21 @@ public class ShippingAgentsPage {
 			action.Type(itemkeytextbox, "TTI04")
 			action.Click(insertbtn)
 			WebUI.delay(10)
-			
+
 			action.ScrollToBottomOfPage()
 			List<WebElement> allrulesafteradding = action.GetElements(availableshippingrules)
 			int noofrukesaftermodifying = allrulesafteradding.size()
 			int noofrulesbeforemodifying = VerifyShippingRulesExistOrNot()
-			
-			if((noofrulesbeforemodifying)== noofrukesaftermodifying)
-			{
+
+			if((noofrulesbeforemodifying)== noofrukesaftermodifying) {
 				println ("Modified existing rule successfully.")
 			}
 			else{
 				throw new Exception("Rules has not been modied or added duplicate row")
 			}
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("Modify Existing Rule failed due to "+ e)
 		}
 	}
-	
-	
-	
 }

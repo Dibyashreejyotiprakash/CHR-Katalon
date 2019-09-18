@@ -262,47 +262,41 @@ public class II4ConfigurationPage {
 			Assert.fail()
 		}
 	}
-	
+
 	@Keyword
-	public void UpdateIOBerviageText()
-	{
+	public void UpdateIOBerviageText() {
 		try{
 			action.Type(ioberviagetext, "IO berviage updated for testing")
 			action.ScrollToBottomOfPage()
 			action.Click(savebtn)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			println ("Update IO Berviage Text failed due to "+ e)
 			Assert.fail()
 		}
 	}
-	
+
 	@Keyword
-	public void UpdateGLBerviageText()
-	{
+	public void UpdateGLBerviageText() {
 		try{
 			action.Type(glberviagetext, "GL berviage updated for testing")
 			action.ScrollToBottomOfPage()
 			action.Click(savebtn)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			println ("Update GL Berviage Text failed due to "+ e)
 			Assert.fail()
 		}
 	}
-	
+
 	@Keyword
-	public void UpdatePOBerviageText()
-	{
+	public void UpdatePOBerviageText() {
 		try{
 			action.Type(poberviagetext, "PO berviage updated for testing")
 			action.ScrollToBottomOfPage()
 			action.Click(savebtn)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			println ("Update PO Berviage Text failed due to "+ e)
 			Assert.fail()
 		}

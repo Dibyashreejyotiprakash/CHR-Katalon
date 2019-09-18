@@ -24,13 +24,13 @@ import org.testng.Assert
 
 //import internal.GlobalVariable
 
-public class QuoteItemSearch 
+public class QuoteItemSearch
 {
-	
+
 	WebDriver driver = DriverFactory.getWebDriver()
 	Interaction action = new Interaction()
-	
-	
+
+
 	By mypendingitem = By.xpath("//input[@id='ctl00_ctl00_cphMain_cphMain_MyPendingButton_input']")
 	By allitemIcreated = By.xpath("//input[@id='ctl00_ctl00_cphMain_cphMain_MySubmittedButton_input']")
 	By mypendingestimationitem = By.xpath("//input[@id='ctl00_ctl00_cphMain_cphMain_MyEstimatorButton_input']")
@@ -43,60 +43,88 @@ public class QuoteItemSearch
 	By clearbtn = By.xpath("//input[@id='ctl00_ctl00_cphMain_cphMain_ClearSearchButton_input']")
 	By quoterecord = By.xpath("//a[contains(text(),'230397')]")
 	By dtrecord = By.xpath("(//td[contains(text(),'2402881')])[1]")
-	
-	
+
+
+	By quoteidtextbox = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_CloneQuoteIDEditor']")
+	By clonequotebtn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_CloneQuoteButton_input']")
+	By dtjobidtextbox = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_GeneralInfoControl_DTNumberEditor']")
+	By fillindtinfobtn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_GeneralInfoControl_DTFillButton_input']")
+	By cleardtbtn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_GeneralInfoControl_ClearDTButton_input']")
+	By rpojectnametextbox = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_GeneralInfoControl_ProjectNameEditor']")
+
+	By lockcorpmarketbtn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_GeneralInfoControl_LockCorpMarketButton_input']")
+
+	By corpddn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_GeneralInfoControl_CorporationEditor_Arrow']")
+	By corpddntextbox = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_GeneralInfoControl_CorporationEditor_Input']")
+	By corpddnvalue = By.xpath("")
+
+
+
+	@Keyword
+	public void VerifyRequestNewQuotePage()
+	{
+		try{
+			action.VerifyCurrentPage("QuoteRequest/Default.aspx")
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Verify Request New QuotePage")
+		}
+	}
+
+
 	@Keyword
 	public void ValidateTimeout()
 	{
-		
+
 		try
 		{
 			action.WaitVisible(mypendingitem)
 			action.WaitVisible(allitems)
 			action.WaitVisible(allpendingitem)
-			
+
 			action.Click(mypendingitem)
 			WebUI.delay(300)
-			
+
 			action.Click(mypendingestimationitem)
 			WebUI.delay(300)
-			
+
 			action.Click(allpendingitem)
 			WebUI.delay(300)
-			
+
 			action.Click(clearbtn)
 			WebUI.delay(300)
-			
+
 			action.Click(quoteid)
 			action.Type(quoteid, "230397")
 			action.Click(performsearch)
 			WebUI.delay(300)
 			action.IsElementDisplayed(quoterecord)
-			
+
 			action.Click(clearbtn)
 			WebUI.delay(300)
-			
+
 			action.Click(dtjobid)
 			action.Type(dtjobid, "2402881")
 			action.Click(performsearch)
 			WebUI.delay(300)
 			action.IsElementDisplayed(dtrecord)
-			
+
 			action.Clear(clearbtn)
 			WebUI.delay(300)
-			
+
 			action.Click(checkallchkbox)
 			action.Click(performsearch)
 			WebUI.delay(300)
-			
-			
-			
-			
+
+
+
+
 		}
 		catch(Exception e)
 		{
 			Assert.fail("ValidateTimeout Failed Due to "+e)
 		}
 	}
-	
+
 }

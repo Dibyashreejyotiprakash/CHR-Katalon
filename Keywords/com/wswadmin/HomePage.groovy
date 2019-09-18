@@ -69,6 +69,13 @@ public class HomePage {
 	By olof = By.xpath("//*[text()='Online Order Form']")
 	By olofii4configuration = By.xpath("//*[text()='II4 Configuration']")
 
+
+	By requestnewquotebtn = By.xpath("//*[text()='Request New Quote']")
+	By quoteitemsearchbtn = By.xpath("//*[text()='Quote Item Search']")
+	By estimatorassignment = By.xpath("//*[text()='Estimator Assignment']")
+	By vendorprinteradmin = By.xpath("//*[text()='Vendor/Printer Admin']")
+	By itemlistoptionsadmin = By.xpath("//*[text()='Item List Options Admin']")
+
 	@Keyword
 	public void NavigateToItemSearchPage() {
 		action.WaitVisible(instantimpact)
@@ -219,16 +226,76 @@ public class HomePage {
 		}
 	}
 
+
+	@Keyword
+	public void NavigateToRequestNewQuote()
+	{
+		try{
+			action.MouseHoverOnElement(quotetracker)
+			action.Click(requestnewquotebtn)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Navigate To Request New Quote failed due to "+ e)
+		}
+	}
+
 	@Keyword
 	public void NavigateToQuoteItemSearch()
 	{
-		action.WaitVisible(quotetracker)
-		action.MouseHoverOnElement(quotetracker)
-		WebUI.delay(2)
-		action.WaitVisible(quoteitemsearch)
-		action.Click(quoteitemsearch)
-		action.WaitForPageToLoad()
+		try{
+			action.MouseHoverOnElement(quotetracker)
+			action.Click(quoteitemsearch)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Navigate Quote Item Search failed due to "+ e)
+		}
+	}
 
+	@Keyword
+	public void NavigateToEstimatorAssignment()
+	{
+		try{
+			action.MouseHoverOnElement(quotetracker)
+			action.Click(estimatorassignment)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Navigate To Estimator Assignment failed due to "+ e)
+		}
+	}
+
+
+	@Keyword
+	public void NavigateToVendorPrinterAdmin()
+	{
+		try{
+			action.MouseHoverOnElement(quotetracker)
+			action.Click(vendorprinteradmin)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Navigate To Estimator Assignment failed due to "+ e)
+		}
+	}
+
+	@Keyword
+	public void ItemListOptionsAdmin()
+	{
+		try{
+			action.MouseHoverOnElement(quotetracker)
+			action.Click(itemlistoptionsadmin)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Navigate To Estimator Assignment failed due to "+ e)
+		}
 	}
 
 	@Keyword

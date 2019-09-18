@@ -13,15 +13,9 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.openBrowser('')
-
-WebUI.maximizeWindow()
-
-WebUI.waitForPageLoad(300)
-
 CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameiiadmin, GlobalVariable.testtyperegression, GlobalVariable.environment)
 
-CustomKeywords.'com.iiadmin.LoginAndHomePage.LoginToIiadmin'(GlobalVariable.iiadminusername, GlobalVariable.iiadminpassword)
+CustomKeywords.'com.iiadmin.LoginPage.LoginToIIAdmin'(GlobalVariable.iiadminusername, GlobalVariable.iiadminpassword)
 
 CustomKeywords.'com.iiadmin.EditItemsPage.NavigateToCorp300'()
 

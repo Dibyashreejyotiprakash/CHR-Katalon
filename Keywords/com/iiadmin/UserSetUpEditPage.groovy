@@ -1,15 +1,9 @@
-package com.wswadmin
+package com.iiadmin
 
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
-
-import com.utilities.Interaction
-import org.openqa.selenium.By
-import org.openqa.selenium.WebDriver
-import org.testng.Assert
-import com.kms.katalon.core.webui.driver.DriverFactory
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.checkpoint.Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
@@ -21,46 +15,46 @@ import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.utilities.Interaction
-import com.kms.katalon.core.webui.driver.DriverFactory as DriverFactory
+import org.openqa.selenium.By
+import org.openqa.selenium.WebDriver
 import org.testng.Assert
+
+import com.kms.katalon.core.webui.driver.DriverFactory
 import internal.GlobalVariable
 
-public class LoginPage {
+public class UserSetUpEditPage {
 
 	WebDriver driver = DriverFactory.getWebDriver();
 	Interaction action = new Interaction();
 
-	By username = By.xpath("//*[@id='cphMain_LoginCentiv_UserName']")
-	By password = By.xpath("//*[@id='cphMain_LoginCentiv_Password']")
-	By loginbtn = By.xpath("//*[@id='cphMain_LoginCentiv_LoginButton']")
+
+	By usermailtextbox = By.xpath("//*[@id='ctl00_Body_txtUserName']")
+	By selectlinkfordemodist = By.xpath("//*[@id='ctl00_Body_gvCustomers']//tr[3]//td[1]/a[text()='Select']")
+	By forcecccheckbox = By.xpath("//*[@id='ctl00_Body_fvCustomer_forceccCheckBox']")
+	By updatebtn = By.xpath("//*[@id='ctl00_Body_fvCustomer_UpdateButton']")
+
 
 	@Keyword
-	public void VerifyLoginPage() {
-		try {
-			String actualurl = action.GetCurrentURL()
-			if(actualurl.contains("login.aspx")) {
-				println ("Login page is verified")
+	public void SearchForDemoUserAndUpdateWithForceCC() {
+		try{
+			action.Type(usermailtextbox, GlobalVariable.iiusersiteusername)
+			WebUI.delay(5)
+			action.Enter(usermailtextbox)
+			action.Click(selectlinkfordemodist)
+			WebUI.delay(5)
+			boolean statusofforcecccheckbox = action.IsElementSelected(forcecccheckbox)
+			if(statusofforcecccheckbox == true) {
+				action.ScrollToBottomOfPage()
+				action.Click(updatebtn)
 			}
 			else{
-				throw new Exception("Login page is not verified")
+				action.Click(forcecccheckbox)
+				action.ScrollToBottomOfPage()
+				action.Click(updatebtn)
 			}
 		}
 		catch(Exception e) {
-			println ("Verify Login Page failed due to "+ e)
-			Assert.fail()
-		}
-	}
-
-	@Keyword
-	public void WSWlogin(String name,String pass) {
-		try {
-			action.WaitVisible(username)
-			action.Type(username, name)
-			action.Type(password, pass)
-			action.Click(loginbtn)
-		}
-		catch(Exception e) {
-			Assert.fail("WSWlogin failed due to "+e)
+			Assert.fail("Search For Demo User And Update With Force CC")
 		}
 	}
 }

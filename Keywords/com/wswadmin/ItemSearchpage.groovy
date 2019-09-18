@@ -53,8 +53,19 @@ public class ItemSearchpage {
 	By applyselection = By.xpath("//button[@id='btnUpdate']")
 	By selectmetatag = By.xpath("//label[contains(text(),'Wakefield')]")
 	By savebtn = By.xpath("//input[@id='cphMain_cphMain_btnSave']")
-	
-	
+
+	@Keyword
+	public void VerifytemplateFulfillmentPage()
+	{
+		try{
+			action.VerifyCurrentPage("TemplateFulfillment.aspx")
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Verify template Fulfillment Page failed due to "+ e)
+		}
+	}
+
 
 
 
@@ -72,6 +83,26 @@ public class ItemSearchpage {
 		WebUI.delay(2)
 		action.Click(firstselectdata)
 		action.WaitVisible(corporationname)
+	}
+
+	@Keyword
+	public void ValidateRetainSelection()
+	{
+		try{
+			String corpddnvalue = driver.findElement(By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_rcbCorp_Input']")).getAttribute("value")
+			println ("Selection is _________________"+ corpddnvalue)
+			if(corpddnvalue.contains("339 - Demo Distributor (QA)"))
+			{
+				println ("Selected values are retained")
+			}
+			else{
+				throw new Exception ("Selected values are not retained")
+			}
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Validate Retain Selection failed due to "+ e)
+		}
 	}
 
 	@Keyword

@@ -380,7 +380,7 @@ public  class Interaction {
 
 		WebDriverWait wait = new WebDriverWait(driver, 300);
 		pageLoadStatus = (String)js.executeScript("return document.readyState");
-		
+
 		WebUI.delay(10)
 	}
 
