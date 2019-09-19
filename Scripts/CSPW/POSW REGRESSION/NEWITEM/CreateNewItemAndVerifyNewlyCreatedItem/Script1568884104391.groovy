@@ -13,10 +13,28 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameposw, GlobalVariable.testtypesmoke, GlobalVariable.environment)
+
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameposw, GlobalVariable.testtyperegression, GlobalVariable.environment)
 
 WebUI.waitForPageLoad(300)
 
 CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.posusername, GlobalVariable.pospassword)
 
-CustomKeywords.'com.poswm.Homepage.ClickOnNewItem'()
+CustomKeywords.'com.poswm.WarehouseDashBoardPage.ClickOnNewItem'()
+
+CustomKeywords.'com.poswm.WarehouseItem.VerifyWareHouseItemPage'()
+
+CustomKeywords.'com.poswm.WarehouseItem.VerifyWareHouseItemPage'()
+
+String cretaednewitem = CustomKeywords.'com.poswm.WarehouseItem.FillItemInformationSection'()
+
+CustomKeywords.'com.poswm.WarehouseItem.FillImageSection'()
+
+CustomKeywords.'com.poswm.WarehouseItem.FillBrandSection'()
+
+CustomKeywords.'com.poswm.WarehouseItem.FillTransactionsSection'()
+
+
+
+
+

@@ -66,7 +66,7 @@ public class WarehouseItem {
 	By txbUnitOfMeasure =By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_radUnitOfMeasurement']")
 	//By txbDescription = By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_radLongDescription']")
 	//By txbNotes = By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_radNotes']")
-	//By saveIcon = By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_btnCreate']")
+	By saveIcon = By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_btnCreate']")
 	By saveIconItemInfo = By.xpath("//input[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_btnCreate']")
 
 	//By nextButton = By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_btnNext']")
@@ -96,38 +96,46 @@ public class WarehouseItem {
 	By QtyTextField = By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i3_i0_ucItemTransactions_radItemQuantity']")
 	By SaveBtn = By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i3_i0_ucItemTransactions_btnSaveItemBin_input']")
 	By CloseEditModeBtn = By.xpath("//*[@id='MainContent_btnCloseWizard']")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	
+	By iteminfogrid = By.xpath("//*[text()='Step 1: Item Information']")
 
 	@Keyword
-	public void FillItemInformationSection()
+	public void VerifyWareHouseItemPage()
 	{
+		try{
+			action.VerifyCurrentPage("WarehouseItem.aspx")
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Verify ware house item page failed due to "+ e)
+		}
+	}
+
+	@Keyword
+	public void VerifyItemInformationFields()
+	{
+		try{
+			boolean statusofiteminfofields = action.IsElementDisplayed(iteminfogrid)
+			Assert.assertTrue(statusofiteminfofields)
+			
+			boolean statusofsavebtn = action.IsElementEnabled(saveIcon)
+			Assert.assertTrue(statusofsavebtn)
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Verify Item Information Fields failed due to "+ e)
+		}
+	}
+
+	@Keyword
+	public String FillItemInformationSection()
+	{
+		String itemname = null
 		try
 		{
 			if(action.IsDisplayed(txbName))
 			{
-				EnterUniqueItemName()
+				itemname = EnterUniqueItemName()
 			}
 			else{
 
@@ -173,9 +181,15 @@ public class WarehouseItem {
 			{
 				EnterUnitOfMeasure()
 			}
+			if(action.IsDisplayed(saveIcon))
+			{
+				action.Click(saveIcon)
+			}
 			else{
 				throw new Exception("Fill Item Information Section   is falied")
 			}
+			
+			return itemname
 		}
 		catch(Exception e)
 		{
@@ -537,15 +551,12 @@ public class WarehouseItem {
 			println("FillImageSection method failed due to :" + e)
 			Assert.fail()
 		}
-
-
-
 	}
 	@Keyword
 	public void FillBrandSection()
 	{
 		try{
-			
+
 			if(action.IsElementDisplayed(brandFirstValue))
 			{
 				action.Click(brandFirstValue)
@@ -555,24 +566,17 @@ public class WarehouseItem {
 				action.WaitTime(15)
 				action.Click(brandNextBtn)
 				action.WaitTime(3)
-				
+
 			}
 			else
 			{
 				throw new Exception("Brand values are not present in grid")
-				
 			}
-			
-			
-
 		}
 		catch(Exception e){
 			println("FillBrandSection method failed due to :" + e)
 			Assert.fail()
-
 		}
-
-
 	}
 
 	@Keyword
@@ -591,7 +595,7 @@ public class WarehouseItem {
 			{
 				println ("Selelct warehouse drop down not present/failed")
 			}
-			
+
 			if(action.IsElementDisplayed(selectBinDropDown))
 			{
 				action.Click(selectBinDropDown)
@@ -607,21 +611,21 @@ public class WarehouseItem {
 			if(action.IsElementEnabled(SaveBtn)){
 				action.Click(SaveBtn)
 				action.WaitTime(10)
-				
+
 			}
 			else{
 				println ("Save button not present/failed")
 			}
-			
+
 		}
 		catch(Exception e)
 		{
 			println("FillTransactionsSection method failed due to :" + e)
 			Assert.fail()
-			
+
 		}
 	}
-	
+
 	@Keyword
 	public void ClickOnCloseEditMode(){
 		try{
@@ -634,13 +638,13 @@ public class WarehouseItem {
 			else{
 				println ("Close Edit Mode button not present/failed")
 			}
-			
+
 		}
 		catch(Exception e){
 			println("ClickOnCloseEditMode method failed due to :" + e)
 			Assert.fail()
 		}
-		
+
 	}
 
 

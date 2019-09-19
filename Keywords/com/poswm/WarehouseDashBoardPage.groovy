@@ -93,6 +93,25 @@ public class WarehouseDashBoardPage {
 	By myOrderViewOrderLink = By.xpath(" //*[@id='ctl00_MainContent_rdMyOrders_C_rgMyOrders_ctl00']//following-sibling::tbody/tr[1]/td[1]")
 	By myOrderCancelOrderLink = By.xpath(" //*[@id='ctl00_MainContent_rdMyOrders_C_rgMyOrders_ctl00']//following-sibling::tbody/tr[1]/td[2]")
 
+	By warehouse = By.xpath("//*[text()='Warehouse']")
+	By newitem = By.xpath("//*[text()='New Item']")
+
+
+	@Keyword
+	public void ClickOnNewItem()
+	{
+		try{
+			action.MouseHoverOnElement(warehouse)
+			action.WaitVisible(newitem)
+			action.Click(newitem)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Click on new item failed due to "+ e)
+		}
+	}
+
 
 	@Keyword
 	public void VerifyMyOrdersDivision(){
