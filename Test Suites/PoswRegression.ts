@@ -23,12 +23,6 @@
       <testCaseId>Test Cases/CSPW/POSW REGRESSION/CREATENEWORDER/VerifyCreateNewOrder</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>17228032-abac-4a46-93c4-f1499f3a3dbb</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/CSPW/POSW REGRESSION/ITEMSEARCH/VerifyItemSearch</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
       <guid>753ff86e-d24b-42a0-909c-b4d0df27b8a7</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
