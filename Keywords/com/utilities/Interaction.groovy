@@ -1,12 +1,10 @@
 package com.utilities
 
 import org.testng.Assert
-
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
-
 import com.kms.katalon.core.annotation.AfterTestCase
 import com.kms.katalon.core.annotation.BeforeTestCase
 import com.kms.katalon.core.annotation.Keyword
@@ -19,9 +17,7 @@ import com.kms.katalon.core.testdata.TestData
 import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
-
 import internal.GlobalVariable
-
 import com.kms.katalon.core.webui.driver.DriverFactory
 import org.openqa.selenium.WebElement
 import org.openqa.selenium.interactions.Actions
@@ -45,7 +41,6 @@ public  class Interaction {
 	WebDriver driver = DriverFactory.getWebDriver()
 	String pageLoadStatus = null;
 	JavascriptExecutor js = (JavascriptExecutor) driver;
-	//WebElement ele;
 
 
 	@Keyword
@@ -55,7 +50,6 @@ public  class Interaction {
 			{
 				if (BuName.equalsIgnoreCase("CONSOLIDATOR"))
 				{
-
 					if (EnvironmentName.equalsIgnoreCase("UAT"))
 					{
 						WebUI.navigateToUrl(GlobalVariable.consolidatorurlUAT)
@@ -70,7 +64,7 @@ public  class Interaction {
 					}
 					else
 					{
-						println ("Environment is not correct")
+						throw new Exception("Environment is not correct")
 						WebUI.closeBrowser()
 					}
 				}
@@ -91,7 +85,7 @@ public  class Interaction {
 					}
 					else
 					{
-						println ("Environment is not correct")
+						throw new Exception("Environment is not correct")
 						WebUI.closeBrowser()
 					}
 				}
@@ -112,7 +106,7 @@ public  class Interaction {
 					}
 					else
 					{
-						println ("Environment is not correct")
+						throw new Exception("Environment is not correct")
 						WebUI.closeBrowser()
 					}
 				}
@@ -134,7 +128,7 @@ public  class Interaction {
 					}
 					else
 					{
-						println ("Environment is not correct")
+						throw new Exception("Environment is not correct")
 						WebUI.closeBrowser()
 					}
 				}
@@ -155,8 +149,7 @@ public  class Interaction {
 					}
 					else
 					{
-						println ("Environment is not correct")
-						throw new Exception("WSW Environment is not correct")
+						throw new Exception("Environment is not correct")
 						WebUI.closeBrowser()
 					}
 				}
@@ -176,8 +169,7 @@ public  class Interaction {
 					}
 					else
 					{
-						println ("Environment is not correct")
-						throw new Exception("WSW Environment is not correct")
+						throw new Exception("Environment is not correct")
 						WebUI.closeBrowser()
 					}
 				}
@@ -198,7 +190,7 @@ public  class Interaction {
 					}
 					else
 					{
-						println ("Environment is not correct")
+						throw new Exception("Environment is not correct")
 						WebUI.closeBrowser()
 					}
 				}
@@ -219,15 +211,14 @@ public  class Interaction {
 					}
 					else
 					{
-						println ("Environment is not correct")
+						throw new Exception("Environment is not correct")
 						WebUI.closeBrowser()
 					}
 				}
 				else
 				{
-
+					throw new Exception("Environment is not correct")
 					WebUI.closeBrowser()
-					println ("Bu is not correct")
 				}
 			}
 
@@ -246,7 +237,7 @@ public  class Interaction {
 					}
 					else
 					{
-						println ("Environment is not correct")
+						throw new Exception("Environment is not correct")
 						WebUI.closeBrowser()
 					}
 				}
@@ -263,7 +254,7 @@ public  class Interaction {
 					}
 					else
 					{
-						println ("Environment is not correct")
+						throw new Exception("Environment is not correct")
 						WebUI.closeBrowser()
 					}
 				}
@@ -299,7 +290,7 @@ public  class Interaction {
 					}
 					else
 					{
-						println ("Environment is not correct")
+						throw new Exception("Environment is not correct")
 						WebUI.closeBrowser()
 					}
 				}
@@ -316,7 +307,6 @@ public  class Interaction {
 					}
 					else
 					{
-						println ("Environment is not correct")
 						throw new Exception("Environment is not correct")
 						WebUI.closeBrowser()
 					}
@@ -334,7 +324,6 @@ public  class Interaction {
 					}
 					else
 					{
-						println ("Environment is not correct")
 						throw new Exception("Environment is not correct")
 						WebUI.closeBrowser()
 					}
@@ -351,28 +340,26 @@ public  class Interaction {
 					}
 					else
 					{
-						println ("Environment is not correct")
 						throw new Exception("Environment is not correct")
 						WebUI.closeBrowser()
 					}
 				}
 				else
 				{
-					println ("BU is not correct")
 					throw new Exception("BU is not correct")
 					WebUI.closeBrowser()
 				}
 			}
 			else
 			{
-				println ("Test type is not correct")
 				throw new Exception("Test type is not correct")
 				WebUI.closeBrowser()
 			}
 		}
 
 		catch (Exception e) {
-			Assert.fail("GetUrl failed due to"+e)
+			Assert.fail("Ge tUrl failed due to"+e)
+			println ("Failed due to "+ e)
 		}
 	}
 
@@ -393,6 +380,8 @@ public  class Interaction {
 
 		WebDriverWait wait = new WebDriverWait(driver, 300);
 		pageLoadStatus = (String)js.executeScript("return document.readyState");
+
+		WebUI.delay(10)
 	}
 
 
@@ -482,7 +471,8 @@ public  class Interaction {
 	//Scroll up to element to be visible
 	public void  ScrollToViewElement(WebElement element)
 	{
-		WaitVisible(element)
+		//WaitVisible(element)
+		WebUI.delay(7)
 		js.executeScript("arguments[0].scrolSlIntoView(true);", element);
 	}
 
@@ -579,7 +569,6 @@ public  class Interaction {
 		}
 	}
 
-
 	//Element is selected or not
 	public  boolean IsElementSelected(By by) throws Exception
 	{
@@ -599,7 +588,7 @@ public  class Interaction {
 	public void  WaitVisible(By by)
 	{
 		WebDriverWait wait = new WebDriverWait(driver, 300)
-		wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(by))
 		
 		WebUI.delay(8)
 
@@ -897,10 +886,6 @@ public  class Interaction {
 		return options
 	}
 
-
-
-
-
 	//window handling
 	@Keyword
 	public void WindowHandle(){
@@ -925,15 +910,6 @@ public  class Interaction {
 
 		}
 	}
-
-
-
-
-
-
-
-
-
 
 	//Get attribute of webelement
 
@@ -981,28 +957,16 @@ public  class Interaction {
 		return RandomStringUtils.randomNumeric(stringlength)
 	}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	public void VerifyCurrentPage(String expectedurl)
+	{
+		String actualurl = driver.currentUrl
+		if(actualurl.contains(expectedurl))
+		{
+			println ("Page verified")
+		}
+		else
+		{
+			throw new Exception("Page is not verified")
+		}
+	}
 }
