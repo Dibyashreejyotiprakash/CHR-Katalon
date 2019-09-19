@@ -51,7 +51,7 @@ public class WarehouseItemInventory {
 	By linkOtherFilters = By.xpath("//*[text()='Other Filters']")
 	By supplierExpandUpBtn = By.xpath("//*[@id='ctl00_MainContent_rpbSearch']/ul[1]/li[1]/a/span/span[1]")
 	By brandsExpandUpBtn = By.xpath("//*[@id='ctl00_MainContent_rpbSearch']/ul[1]/li[2]/a/span/span[1]")
-    By filterDivision = By.xpath("//*[@id='ctl00_MainContent_rpbSearch']//ul")
+	By filterDivision = By.xpath("//*[@id='ctl00_MainContent_rpbSearch']//ul")
 
 
 	@Keyword
@@ -74,11 +74,12 @@ public class WarehouseItemInventory {
 	}
 
 	@Keyword
-	public void VerifyAllFiltersLink() {
+	public void VerifyAllFiltersLink()
+	{
 
 
-		
-		
+
+
 		boolean statusFilterDiv = action.IsElementDisplayed(filterDivision)
 		if(statusFilterDiv == true)
 		{
@@ -92,117 +93,156 @@ public class WarehouseItemInventory {
 			boolean statusofwarehousefilter= action.IsElementEnabled(linkWarehouse)
 			boolean statusofwarehouselocationfilter= action.IsElementEnabled(linkWarehouseLocation)
 			boolean statusofotherfilter= action.IsElementEnabled(linkOtherFilters)
-			
+
 			if(statusofsupplierfilter== true  && statusofbrandfilter == true && statusofdemographicfilter == true && statusofpremisetypefilter == true && statusofproducttypefilter == true && statusofsalesdivisionfilter == true && statusofseasonaltypefilter == true
-				 && statusofwarehousefilter == true && statusofwarehouselocationfilter == true && statusofotherfilter == true)
+			&& statusofwarehousefilter == true && statusofwarehouselocationfilter == true && statusofotherfilter == true)
 			{
 				println ("All link filters are present/enable")
-				
+
 			}
-			
-			
-		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-//
-//		action.WaitVisible(supplierExpandUpBtn)
-//		boolean status= action.IsElementDisplayed(linkSupplier)
-//		if(status== true) {
-//
-//			action.WaitVisible(supplierExpandUpBtn)
-//			WebUI.delay(3)
-//			//action.Click(supplierExpandUpBtn)
-//			//action.wait(2)
-//			action.ScrollToViewElement(linkSupplier)
-//			boolean statusSupplierLink = action.IsElementEnabled(linkSupplier)
-//			Assert.assertTrue(statusSupplierLink)
-//			println ("Supplier link is present/enable")
-//		}
 
 
-		/*if(action.IsElementDisplayed(linkBrands)) {
-			action.wait(2)
-			action.WaitVisible(brandsExpandUpBtn)
-			action.wait(2)
-			action.Click(brandsExpandUpBtn)
-			action.wait(2)
-			action.ScrollToViewElement(linkBrands)
-			boolean statusBrandLink = action.IsElementEnabled(linkBrands)
-			Assert.assertTrue(statusBrandLink)
-			println ("Brand link is present/enable")
-		}
-
-		if(action.IsElementDisplayed(linkDemographic)) {
-			action.ScrollToViewElement(linkDemographic)
-			boolean statusDemographicLink = action.IsElementEnabled(linkDemographic)
-			Assert.assertTrue(statusDemographicLink)
-			println ("Demographic Link link is present/enable")
-		}
-
-		if(action.IsElementDisplayed(linkPremiseType)) {
-			action.ScrollToViewElement(linkPremiseType)
-			boolean statuslinkPremiseType = action.IsElementEnabled(linkPremiseType)
-			Assert.assertTrue(statuslinkPremiseType)
-			println ("PremiseType Link link is present/enable")
-		}
-
-		if(action.IsElementDisplayed(linkProductType)) {
-			action.ScrollToViewElement(linkProductType)
-			boolean statuslinkProducType = action.IsElementEnabled(linkProductType)
-			Assert.assertTrue(statuslinkProducType)
-			println ("ProducType Link link is present/enable")
 		}
 
 
-		if(action.IsElementDisplayed(linkSalesDivision)) {
-			action.ScrollToViewElement(linkSalesDivision)
-			boolean statuslinkSalesDivision = action.IsElementEnabled(linkSalesDivision)
-			Assert.assertTrue(statuslinkSalesDivision)
-			println ("Sales Division Link link is present/enable")
-		}
-
-		if(action.IsElementDisplayed(linkSeasonalType)) {
-			action.ScrollToViewElement(linkSeasonalType)
-			boolean statuslinkSeasonalType = action.IsElementEnabled(linkSeasonalType)
-			Assert.assertTrue(statuslinkSeasonalType)
-			println ("Seasonal Type  Link link is present/enable")
-		}
-
-		if(action.IsElementDisplayed(linkWarehouse)) {
-			action.ScrollToViewElement(linkWarehouse)
-			boolean statuslinkWarehouse = action.IsElementEnabled(linkWarehouse)
-			Assert.assertTrue(statuslinkWarehouse)
-			println ("Warehouse  Link link is present/enable")
-		}
-
-		if(action.IsElementDisplayed(linkWarehouse)) {
-			action.ScrollToViewElement(linkWarehouse)
-			boolean statuslinkWarehouse = action.IsElementEnabled(linkWarehouse)
-			Assert.assertTrue(statuslinkWarehouse)
-			println ("Warehouse  Link link is present/enable")
-		}
-
-		if(action.IsElementDisplayed(linkWarehouseLocation)) {
-			action.ScrollToViewElement(linkWarehouseLocation)
-			boolean statuslinkWarehouseLocation = action.IsElementEnabled(linkWarehouseLocation)
-			Assert.assertTrue(statuslinkWarehouseLocation)
-			println ("Warehouse Location  link is present/enable")
-		}
-
-		if(action.IsElementDisplayed(linkOtherFilters)) {
-			action.ScrollToViewElement(linkOtherFilters)
-			boolean statuslinkOtherFilters = action.IsElementEnabled(linkOtherFilters)
-			Assert.assertTrue(statuslinkOtherFilters)
-			println ("Other Filters Location  link is present/enable")
-		}*/
 	}
+
+	//verify item seach page
+	@Keyword
+	public void VeriyItemSearchPage()
+	{
+		try{
+
+			String expectedUATUrl = "https://csg.v5qa.brandmuscle.net/Warehouse/Admin/UserTransfer.aspx";
+			String expectedSTAGEUrl ="https://csg.v5stgae.brandmuscle.net/Warehouse/Admin/UserTransfer.aspx"
+
+			action.WaitTime(5)
+			String env = GlobalVariable.environment			
+			action.WaitTime(5)
+			println "environment is -------->"+ env
+			String actualUrl = action.GetCurrentURL()
+			action.WaitTime(5)
+			println "environment is -------->"+ actualUrl
+
+			if(env.equalsIgnoreCase("uat"))
+			{
+				Assert.assertEquals(expectedUATUrl, actualUrl)
+			}
+			else
+				(env.equalsIgnoreCase("stage"))
+			{
+				Assert.assertEquals(expectedSTAGEUrl, actualUrl)
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			println("VeriyItemSearchPage method failed due to :" +e)
+			Assert.fail()
+		}
+	}
+	
+	
+	//search item and verify search result
+	@Keyword
+	public void SearchAndVerifySearchResult(){
+		try{
+			
+		}
+		catch(Exception e){
+			print
+			
+		}
+	}
+	
+
+
+
+
+
+
+
+	//
+	//		action.WaitVisible(supplierExpandUpBtn)
+	//		boolean status= action.IsElementDisplayed(linkSupplier)
+	//		if(status== true) {
+	//
+	//			action.WaitVisible(supplierExpandUpBtn)
+	//			WebUI.delay(3)
+	//			//action.Click(supplierExpandUpBtn)
+	//			//action.wait(2)
+	//			action.ScrollToViewElement(linkSupplier)
+	//			boolean statusSupplierLink = action.IsElementEnabled(linkSupplier)
+	//			Assert.assertTrue(statusSupplierLink)
+	//			println ("Supplier link is present/enable")
+	//		}
+
+
+	/*if(action.IsElementDisplayed(linkBrands)) {
+	 action.wait(2)
+	 action.WaitVisible(brandsExpandUpBtn)
+	 action.wait(2)
+	 action.Click(brandsExpandUpBtn)
+	 action.wait(2)
+	 action.ScrollToViewElement(linkBrands)
+	 boolean statusBrandLink = action.IsElementEnabled(linkBrands)
+	 Assert.assertTrue(statusBrandLink)
+	 println ("Brand link is present/enable")
+	 }
+	 if(action.IsElementDisplayed(linkDemographic)) {
+	 action.ScrollToViewElement(linkDemographic)
+	 boolean statusDemographicLink = action.IsElementEnabled(linkDemographic)
+	 Assert.assertTrue(statusDemographicLink)
+	 println ("Demographic Link link is present/enable")
+	 }
+	 if(action.IsElementDisplayed(linkPremiseType)) {
+	 action.ScrollToViewElement(linkPremiseType)
+	 boolean statuslinkPremiseType = action.IsElementEnabled(linkPremiseType)
+	 Assert.assertTrue(statuslinkPremiseType)
+	 println ("PremiseType Link link is present/enable")
+	 }
+	 if(action.IsElementDisplayed(linkProductType)) {
+	 action.ScrollToViewElement(linkProductType)
+	 boolean statuslinkProducType = action.IsElementEnabled(linkProductType)
+	 Assert.assertTrue(statuslinkProducType)
+	 println ("ProducType Link link is present/enable")
+	 }
+	 if(action.IsElementDisplayed(linkSalesDivision)) {
+	 action.ScrollToViewElement(linkSalesDivision)
+	 boolean statuslinkSalesDivision = action.IsElementEnabled(linkSalesDivision)
+	 Assert.assertTrue(statuslinkSalesDivision)
+	 println ("Sales Division Link link is present/enable")
+	 }
+	 if(action.IsElementDisplayed(linkSeasonalType)) {
+	 action.ScrollToViewElement(linkSeasonalType)
+	 boolean statuslinkSeasonalType = action.IsElementEnabled(linkSeasonalType)
+	 Assert.assertTrue(statuslinkSeasonalType)
+	 println ("Seasonal Type  Link link is present/enable")
+	 }
+	 if(action.IsElementDisplayed(linkWarehouse)) {
+	 action.ScrollToViewElement(linkWarehouse)
+	 boolean statuslinkWarehouse = action.IsElementEnabled(linkWarehouse)
+	 Assert.assertTrue(statuslinkWarehouse)
+	 println ("Warehouse  Link link is present/enable")
+	 }
+	 if(action.IsElementDisplayed(linkWarehouse)) {
+	 action.ScrollToViewElement(linkWarehouse)
+	 boolean statuslinkWarehouse = action.IsElementEnabled(linkWarehouse)
+	 Assert.assertTrue(statuslinkWarehouse)
+	 println ("Warehouse  Link link is present/enable")
+	 }
+	 if(action.IsElementDisplayed(linkWarehouseLocation)) {
+	 action.ScrollToViewElement(linkWarehouseLocation)
+	 boolean statuslinkWarehouseLocation = action.IsElementEnabled(linkWarehouseLocation)
+	 Assert.assertTrue(statuslinkWarehouseLocation)
+	 println ("Warehouse Location  link is present/enable")
+	 }
+	 if(action.IsElementDisplayed(linkOtherFilters)) {
+	 action.ScrollToViewElement(linkOtherFilters)
+	 boolean statuslinkOtherFilters = action.IsElementEnabled(linkOtherFilters)
+	 Assert.assertTrue(statuslinkOtherFilters)
+	 println ("Other Filters Location  link is present/enable")
+	 }*/
+}
 }

@@ -19,9 +19,13 @@ WebUI.maximizeWindow()
 
 CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameposw, GlobalVariable.testtyperegression, GlobalVariable.environment)
 
-WebUI.waitForPageLoad(300)
+WebUI.waitForPageLoad(0)
 
 CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.posusername, GlobalVariable.pospassword)
 
+CustomKeywords.'com.poswm.Homepage.HoverOnWareHouseMenu'()
+
 CustomKeywords.'com.poswm.Homepage.ClickOnItemSearch'()
+
+CustomKeywords.'com.poswm.WarehouseItemInventory.VeriyItemSearchPage'()
 

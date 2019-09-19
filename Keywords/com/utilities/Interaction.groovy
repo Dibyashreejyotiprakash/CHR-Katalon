@@ -600,6 +600,8 @@ public  class Interaction {
 	{
 		WebDriverWait wait = new WebDriverWait(driver, 300)
 		wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+		
+		WebUI.delay(8)
 
 		//TRY with fluent wait
 		/*Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
@@ -615,7 +617,7 @@ public  class Interaction {
 		 );*/
 
 	}
-	
+
 	public void  WaitVisibleDup(By by)
 	{
 		WebDriverWait wait = new WebDriverWait(driver, 300)
@@ -895,6 +897,44 @@ public  class Interaction {
 		return options
 	}
 
+
+
+
+
+	//window handling
+	@Keyword
+	public void WindowHandle(){
+		try{
+			Set<String> set =  driver.getWindowHandles();
+			Iterator<String> it = set.iterator();
+			while(it.hasNext())
+			{
+				String parentwidowid = it.next()
+				println ("Parent Window id is"+ parentwidowid)
+
+				String childwindowid = it.next()
+				println ("Child Window id is"+ childwindowid)
+
+				driver.switchTo().window(childwindowid)
+			}
+
+
+		}
+		catch(Exception e){
+			println ("WindowHandle method failed due to :"+ e)
+
+		}
+	}
+
+
+
+
+
+
+
+
+
+
 	//Get attribute of webelement
 
 	public String Attribute(By by, String attri)
@@ -940,5 +980,29 @@ public  class Interaction {
 	{
 		return RandomStringUtils.randomNumeric(stringlength)
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
