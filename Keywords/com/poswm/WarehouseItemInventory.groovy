@@ -130,7 +130,6 @@ public class WarehouseItemInventory {
 				&& statusofwarehousefilter == true && statusofwarehouselocationfilter == true && statusofotherfilter == true)
 				{
 					println ("All link filters are present/enable")
-
 				}
 				else{
 					throw new Exception("All filters are not enabled")
@@ -224,7 +223,6 @@ public class WarehouseItemInventory {
 	}
 
 
-
 	@Keyword
 	public void FilterByBrands()
 	{
@@ -251,11 +249,46 @@ public class WarehouseItemInventory {
 			else{
 				throw new Exception("No brands found")
 			}
-
 		}
 		catch(Exception e)
 		{
 			println ("Filter By Brands failed due to "+ e)
+			Assert.fail()
+		}
+	}
+
+	//verify item seach page
+	@Keyword
+	public void VeriyItemSearchPage()
+	{
+		try{
+
+			String expectedUATUrl = "https://csg.v5qa.brandmuscle.net/Warehouse/Admin/UserTransfer.aspx";
+			String expectedSTAGEUrl ="https://csg.v5stgae.brandmuscle.net/Warehouse/Admin/UserTransfer.aspx"
+
+			action.WaitTime(5)
+			String env = GlobalVariable.environment			
+			action.WaitTime(5)
+			println "environment is -------->"+ env
+			String actualUrl = action.GetCurrentURL()
+			action.WaitTime(5)
+			println "environment is -------->"+ actualUrl
+
+			if(env.equalsIgnoreCase("uat"))
+			{
+				Assert.assertEquals(expectedUATUrl, actualUrl)
+			}
+			else
+				(env.equalsIgnoreCase("stage"))
+			{
+				Assert.assertEquals(expectedSTAGEUrl, actualUrl)
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			println("VeriyItemSearchPage method failed due to :" +e)
 			Assert.fail()
 		}
 	}
@@ -345,7 +378,6 @@ public class WarehouseItemInventory {
 	@Keyword
 	public String DeleteItem()
 	{
-
 		try{
 			String selecteditemname = null
 
@@ -375,8 +407,6 @@ public class WarehouseItemInventory {
 				}
 				return selecteditemname
 			}
-
-
 		}
 		catch(Exception e)
 		{
@@ -384,6 +414,40 @@ public class WarehouseItemInventory {
 			Assert.fail()
 		}
 	}
+
+	//		action.WaitVisible(supplierExpandUpBtn)
+	//		boolean status= action.IsElementDisplayed(linkSupplier)
+	//		if(status== true) {
+	//
+	//			action.WaitVisible(supplierExpandUpBtn)
+	//			WebUI.delay(3)
+	//			//action.Click(supplierExpandUpBtn)
+	//			//action.wait(2)
+	//			action.ScrollToViewElement(linkSupplier)
+	//			boolean statusSupplierLink = action.IsElementEnabled(linkSupplier)
+	//			Assert.assertTrue(statusSupplierLink)
+	//			println ("Supplier link is present/enable")
+	//		}
+
+
+	/*if(action.IsElementDisplayed(linkBrands)) {
+	 action.wait(2)
+	 action.WaitVisible(brandsExpandUpBtn)
+	 action.wait(2)
+	 action.Click(brandsExpandUpBtn)
+	 action.wait(2)
+	 action.ScrollToViewElement(linkBrands)
+	 boolean statusBrandLink = action.IsElementEnabled(linkBrands)
+	 Assert.assertTrue(statusBrandLink)
+	 println ("Brand link is present/enable")
+	 }
+	 if(action.IsElementDisplayed(linkDemographic)) {
+	 action.ScrollToViewElement(linkDemographic)
+	 boolean statusDemographicLink = action.IsElementEnabled(linkDemographic)
+	 Assert.assertTrue(statusDemographicLink)
+	 println ("Demographic Link link is present/enable")
+	}
+	 }
 
 	@Keyword
 	public void VerifyDeletedItem(String deleteditemname)
@@ -406,17 +470,16 @@ public class WarehouseItemInventory {
 					else{
 						throw new Exception("Not found")
 					}
-
 				}
 			}
 			else{
 				throw new Exception("Deleteditems not found")
 			}
-		}
+	    }
 		catch(Exception e)
 		{
 			println ("Verify Deleted Item failed due to "+ e)
 			Assert.fail()
-		}
-	}
+	    }
+    }
 }

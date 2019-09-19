@@ -65,6 +65,10 @@ public class Homepage {
 	By levelChangePassword = By.xpath("//*[@id='MainContent_lblChangePassword']")
 	By posWarehouseReport = By.xpath("//*[@id='lbReport']")
 	By helpSupportBtn = By.xpath("//*[text()='Help/Support']")
+	By btnClear = By.xpath("//*[text()='Clear']")
+	By firstItem = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_GridData']/table/tbody/tr[1]/td[11]/a")
+	By btnEditThisItem = By.xpath("//*[@id='MainContent_btnEditItemWizard']")
+	By itemInformationSection = By.xpath("//*[text()='Step 1: Item Information']")
 	By logoutlink = By.xpath("//*[text()='Logout']")
 
 	@Keyword
@@ -95,8 +99,10 @@ public class Homepage {
 	public void ClickOnItemSearch() {
 		action.MouseHoverOnElement(menuWarehouse)
 		WebUI.delay(5)
-		action.Click(itemsearchbtn)
+		action.MouseHoverAndClick(itemsearchbtn)
 		action.WaitForPageToLoad()
+		action.WaitVisible(btnClear)
+		action.WaitTime(10);
 	}
 
 	@Keyword
@@ -104,6 +110,8 @@ public class Homepage {
 		action.MouseHoverOnElement(menuWarehouse)
 		action.Click(newitembtn)
 		action.WaitForPageToLoad()
+		action.WaitVisible(itemInformationSection)
+		WebUI.delay(5)
 	}
 
 	@Keyword
@@ -190,5 +198,24 @@ public class Homepage {
 		boolean statusHelpSupportBtn = action.IsElementEnabled(helpSupportBtn)
 		Assert.assertTrue(statusHelpSupportBtn)
 		println ("Help/Support button is enable")
+	}
+
+
+
+	@Keyword
+	public void SelectFirstItem(){
+		try{
+			String ItemName = action.GetText(firstItem)
+			println "Item Name " + ItemName
+			action.Click(firstItem)
+			WebUI.delay(5)
+			action.WindowHandle()
+			WebUI.delay(7)
+			action.Click(btnEditThisItem)
+		}
+		catch(Exception e){
+
+			println ("SelectFirstItem method failed due to : "+ e)
+		}
 	}
 }
