@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>VerifyAddNewCustomer</name>
+   <name>VerifyNewOrderPage</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>9283c01e-0891-494e-9d15-45312521563a</testCaseGuid>
+   <testCaseGuid>4c9bda9f-3333-4f9a-9480-05003e872bcf</testCaseGuid>
 </TestCaseEntity>

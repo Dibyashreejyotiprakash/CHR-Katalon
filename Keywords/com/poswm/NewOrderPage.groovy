@@ -53,15 +53,13 @@ public class NewOrderPage {
 	By ordersuccessfullmsg = By.xpath("//*[contains(text()='Order successfully submitted.')]")
 
 	By addedcustomersuccessfuliymsg = By.xpath("//*[text()='Customer has been selected.']")
-	
+
 	@Keyword
-	public void VerifyNewOrderPage()
-	{
+	public void VerifyNewOrderPage() {
 		try{
 			action.VerifyCurrentPage("WarehouseOrders.aspx")
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			println ("Verify New Order Page failed ue to "+ e)
 			Assert.fail()
 		}
@@ -73,8 +71,7 @@ public class NewOrderPage {
 			action.Click(orderidbutton)
 			action.WaitForPageToLoad()
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			println ("Click On Order Id Btn failed due to "+ e)
 			Assert.fail()
 		}
@@ -82,13 +79,12 @@ public class NewOrderPage {
 
 	@Keyword
 	public void ClickOnNewItem() {
-		
+
 		try{
 			action.Click(newitembtn)
-		action.WaitForPageToLoad()
+			action.WaitForPageToLoad()
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			println ("Click On New Item failed due to "+ e)
 			Assert.fail()
 		}
@@ -99,8 +95,7 @@ public class NewOrderPage {
 		try{
 			action.Click(firstaddlink)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			println ("Click On First Add Btn failed ue to "+ e)
 			Assert.fail()
 		}
@@ -108,15 +103,14 @@ public class NewOrderPage {
 
 	@Keyword
 	public void VerifySalesDivisionBtn() {
-		
+
 		try{
 			boolean statusofvisibityofswitchsalesdivisionbtn = action.IsElementDisplayed(switchsalesdivision)
 			Assert.assertTrue(statusofvisibityofswitchsalesdivisionbtn)
 			boolean statusofenabilityofswitchsalesdivisionbtn = action.IsElementEnabled(switchsalesdivision)
 			Assert.assertTrue(statusofenabilityofswitchsalesdivisionbtn)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			println ("Verify Sales division failed ue to "+ e)
 			Assert.fail()
 		}
@@ -124,15 +118,14 @@ public class NewOrderPage {
 
 	@Keyword
 	public void VerifySwitchSalesDivisionBtn() {
-		
+
 		try{
 			boolean  statusofvisibilityofswitchsalesdivisionbtn  =action.IsElementDisplayed(switchsalesdivision)
 			Assert.assertTrue(statusofvisibilityofswitchsalesdivisionbtn)
 			boolean  statusofenabilityofswitchsalesdivisionbtn  =action.IsElementDisplayed(switchsalesdivision)
 			Assert.assertTrue(statusofenabilityofswitchsalesdivisionbtn)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			println ("Verify Switch Sales Division Btn failed due to "+ e)
 			Assert.fail()
 		}
@@ -147,8 +140,7 @@ public class NewOrderPage {
 			action.Click(selectsalesdivisionddn)
 			action.Click(salesdivisionddnvalue)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			println ("Select Sales Division failed ue to "+ e)
 			Assert.fail()
 		}
@@ -156,15 +148,14 @@ public class NewOrderPage {
 
 	@Keyword
 	public void VerifyAddnewCustomerBtn() {
-		
+
 		try{
 			boolean statusofvisibityofaddnewcustomerbtn = action.IsElementDisplayed(addcustomerbtn)
 			Assert.assertTrue(statusofvisibityofaddnewcustomerbtn)
 			boolean statusofenabilityofnewcustomerbtn = action.IsElementEnabled(addcustomerbtn)
 			Assert.assertTrue(statusofenabilityofnewcustomerbtn)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			println ("Verify Add new Customer Btn failed ue to "+ e)
 			Assert.fail()
 		}
@@ -181,8 +172,7 @@ public class NewOrderPage {
 			action.Click(customername)
 			action.WaitTime(5)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			println ("Add New Customer failed ue to "+ e)
 			Assert.fail()
 		}
@@ -196,8 +186,7 @@ public class NewOrderPage {
 			boolean addedcustomerconfirmationmsg = action.IsElementDisplayed(addedcustomersuccessfuliymsg)
 			Assert.assertTrue(addedcustomerconfirmationmsg)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			println ("Verify New Customer Addedd Successfully failed due to "+ e)
 			Assert.fail()
 		}
@@ -211,8 +200,7 @@ public class NewOrderPage {
 			action.Click(desireddate)
 			action.WaitTime(3)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			println ("Add Desired Ship Date failed due to "+ e)
 			Assert.fail()
 		}
@@ -228,8 +216,7 @@ public class NewOrderPage {
 			action.Click(shipmethodddnvalue)
 			action.WaitTime(5)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			println ("Add Ship Method failed ue to "+ e)
 			Assert.fail()
 		}
@@ -245,8 +232,7 @@ public class NewOrderPage {
 			boolean statusofenablesubmitodrerbtn = action.IsElementEnabled(submitorder)
 			Assert.assertTrue(statusofenablesubmitodrerbtn)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			println ("Verify Submit Button failed due to "+ e)
 			Assert.fail()
 		}
@@ -258,8 +244,7 @@ public class NewOrderPage {
 		try{
 			action.Click(submitorder)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			println ("Click On Submit Order failed due to "+ e)
 			Assert.fail()
 		}
@@ -273,8 +258,7 @@ public class NewOrderPage {
 			boolean orderconfirmationmsg = action.IsElementDisplayed(ordersuccessfullmsg)
 			Assert.assertTrue(orderconfirmationmsg)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			println ("Verify Order Confirmation MSg failed ue to "+ e)
 			Assert.fail()
 		}
@@ -288,8 +272,7 @@ public class NewOrderPage {
 			boolean statusofenabilityofcancelorderbtn = action.IsElementDisplayed(cancelodrerbtn)
 			Assert.assertTrue(statusofenabilityofcancelorderbtn)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			println ("Verify Cancel Butto failed due to "+ e)
 			Assert.fail()
 		}

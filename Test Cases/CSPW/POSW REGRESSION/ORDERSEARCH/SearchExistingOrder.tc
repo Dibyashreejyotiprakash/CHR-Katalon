@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>VerifyAddNewCustomerButton</name>
+   <name>SearchExistingOrder</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>79b5d6ed-1220-4f7a-b146-830b424c6933</testCaseGuid>
+   <testCaseGuid>73085ef7-1d07-47a4-8934-6459908d9330</testCaseGuid>
 </TestCaseEntity>

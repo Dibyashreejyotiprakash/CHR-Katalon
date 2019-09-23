@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>VerifySubmitButton</name>
+   <name>SearchNewlyCreatedOrder</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>e8973bdc-0910-43cf-a955-8e59c7630867</testCaseGuid>
+   <testCaseGuid>72595483-f06a-45e8-a4cd-8920194f9c6d</testCaseGuid>
 </TestCaseEntity>

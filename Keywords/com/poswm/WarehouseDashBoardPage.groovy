@@ -95,6 +95,8 @@ public class WarehouseDashBoardPage {
 
 	By warehouse = By.xpath("//*[text()='Warehouse']")
 	By newitem = By.xpath("//*[text()='New Item']")
+	By neworder = By.xpath("//*[text()='New Order']")
+	By ordersearch = By.xpath("//*[text()='Order Search']")
 
 
 	@Keyword
@@ -112,6 +114,36 @@ public class WarehouseDashBoardPage {
 		}
 	}
 
+	@Keyword
+	public void ClickOnNewOrder()
+	{
+		try
+		{
+			action.MouseHoverOnElement(warehouse)
+			action.WaitVisible(neworder)
+			action.Click(neworder)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Click on new order failed due to "+ e)
+		}
+	}
+
+	@Keyword
+	public void ClickOnOrderSearch()
+	{
+		try{
+			action.MouseHoverOnElement(warehouse)
+			action.WaitVisible(ordersearch)
+			action.Click(ordersearch)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Click On Order Search failed due to "+ e)
+		}
+	}
 
 	@Keyword
 	public void VerifyMyOrdersDivision(){
@@ -121,11 +153,7 @@ public class WarehouseDashBoardPage {
 			action.WaitTime(2)
 			boolean statusPendinShipDiv = action.IsElementDisplayed(myOrderDivision)
 			if(statusPendinShipDiv == true) {
-
-				//			action.Click(pendinApprovalExpandBtn)
-				//			action.WaitVisible(pendinShipmentExpandBtn)
 				action.ScrollToViewElement(myOrderDivision)
-
 				if(action.IsElementDisplayed(myOrderFirstRow)){
 					boolean statusmyOrderViewOrderLink = action.IsElementEnabled(myOrderViewOrderLink)
 					boolean statusmyOrderCancelOrderLink = action.IsElementEnabled(myOrderCancelOrderLink)
@@ -134,9 +162,7 @@ public class WarehouseDashBoardPage {
 					println("View Order link is enable")
 					Assert.assertTrue(statusmyOrderCancelOrderLink)
 					println("Cancel Order link is enable")
-
 				}
-
 			}
 		}
 		catch(Exception e)
@@ -146,22 +172,13 @@ public class WarehouseDashBoardPage {
 		}
 	}
 
-
-
-
 	@Keyword
 	public void VerifyMyDraftOrdersDivision(){
-
-
 		try{
 			action.WaitTime(2)
 			boolean statusPendinShipDiv = action.IsElementDisplayed(MyDraftOrdersDivision)
 			if(statusPendinShipDiv == true) {
-
-				//			action.Click(pendinApprovalExpandBtn)
-				//			action.WaitVisible(pendinShipmentExpandBtn)
 				action.ScrollToViewElement(MyDraftOrdersDivision)
-
 				if(action.IsElementDisplayed(myDraftOrderFirstRow)){
 					boolean statusmyDraftOrderViewOrderLink = action.IsElementEnabled(myDraftOrderViewOrderLink)
 					boolean statusmyDraftOrderCancelOrderLink = action.IsElementEnabled(myDraftOrderCancelOrderLink)
@@ -170,12 +187,10 @@ public class WarehouseDashBoardPage {
 					println("View Order link is enable")
 					Assert.assertTrue(statusmyDraftOrderCancelOrderLink)
 					println("Cancel Order link is enable")
-
 				}
 				else{
 					throw new Exception ("Failed")
 				}
-
 			}
 		}
 		catch(Exception e)
@@ -186,20 +201,12 @@ public class WarehouseDashBoardPage {
 	}
 
 
-
-
 	@Keyword
 	public void VerifyPendingShipmentOrdersDivision(){
-
 		try{
-
 			action.WaitTime(2)
 			boolean statusPendinShipDiv = action.IsElementDisplayed(pendingShipmentOrdersDiv)
 			if(statusPendinShipDiv == true) {
-
-				//			action.Click(pendinApprovalExpandBtn)
-				//			action.WaitVisible(pendinShipmentExpandBtn)
-
 				action.ScrollToViewElement(pendingShipmentOrdersDiv)
 				if(action.IsElementDisplayed(FirstRowpendingShipmentOrders)){
 					boolean statusViewOrder = action.IsElementEnabled(pendinShipmentViewOrderLink)
@@ -213,7 +220,6 @@ public class WarehouseDashBoardPage {
 					Assert.assertTrue(statusCancelOrder)
 					println("Cancel Order link is enable")
 					//action.Click(pendinApprovalExpandBtn)
-
 				}
 				else{
 					throw new Exception ("Failed")
@@ -250,9 +256,7 @@ public class WarehouseDashBoardPage {
 					Assert.assertTrue(cancelOrder)
 					println("Cancel Order link is enable")
 					action.Click(pendinApprovalExpandBtn)
-
 				}
-
 			}
 		}
 		catch(Exception e)
@@ -261,10 +265,6 @@ public class WarehouseDashBoardPage {
 			Assert.fail()
 		}
 	}
-
-
-
-
 
 
 	@Keyword

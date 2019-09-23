@@ -17,25 +17,13 @@ WebUI.openBrowser('')
 
 WebUI.maximizeWindow()
 
-CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameposw, GlobalVariable.testtyperegression, GlobalVariable.environment)
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameposw, GlobalVariable.testtypesmoke, GlobalVariable.environment)
 
 WebUI.waitForPageLoad(300)
 
 CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.posusername, GlobalVariable.pospassword)
 
-CustomKeywords.'com.poswm.Homepage.ClickOnNewOrder'()
+CustomKeywords.'com.poswm.WarehouseDashBoardPage.ClickOnOrderSearch'()
 
-CustomKeywords.'com.poswm.NewOrderPage.ClickOnOrderIdBtn'()
-
-CustomKeywords.'com.poswm.NewOrderPage.SelectSalesDivision'()
-
-CustomKeywords.'com.poswm.NewOrderPage.ClickOnNewItem'()
-
-CustomKeywords.'com.poswm.NewOrderPage.ClickOnFirstAddBtn'()
-
-CustomKeywords.'com.poswm.NewOrderPage.AddNewCustomer'()
-
-CustomKeywords.'com.poswm.NewOrderPage.VerifyNewCustomerAddeddSuccessfully'()
-
-WebUI.closeBrowser()
+CustomKeywords.'com.poswm.WarehouseOrderInventoryPage.VerifyOrderInventoryPage'()
 

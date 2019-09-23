@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>VerifyCancelButton</name>
+   <name>VerifySubmitOrderButton</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>8d7ec50f-c21b-4bee-a3f6-ad6ede890cc0</testCaseGuid>
+   <testCaseGuid>73e816d7-f0c8-4a7a-9629-8e30a6850305</testCaseGuid>
 </TestCaseEntity>

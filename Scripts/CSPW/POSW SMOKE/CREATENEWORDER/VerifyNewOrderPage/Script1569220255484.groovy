@@ -13,13 +13,9 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.openBrowser('')
 
-WebUI.maximizeWindow()
 
 CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameposw, GlobalVariable.testtypesmoke, GlobalVariable.environment)
-
-WebUI.waitForPageLoad(300)
 
 CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.posusername, GlobalVariable.pospassword)
 
@@ -27,7 +23,9 @@ CustomKeywords.'com.poswm.Homepage.ClickOnNewOrder'()
 
 CustomKeywords.'com.poswm.NewOrderPage.ClickOnOrderIdBtn'()
 
-CustomKeywords.'com.poswm.NewOrderPage.VerifySubmitButton'()
+CustomKeywords.'com.poswm.WarehouseOrders.VerifyNewOrderPage'()
+
+CustomKeywords.'com.poswm.WarehouseOrders.VerifyAndClickOnAddOrderIcon'()
 
 WebUI.closeBrowser()
 

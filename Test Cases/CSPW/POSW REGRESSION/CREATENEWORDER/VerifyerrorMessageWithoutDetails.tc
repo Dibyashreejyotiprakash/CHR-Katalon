@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>VerifyOrderSearch</name>
+   <name>VerifyerrorMessageWithoutDetails</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>72595483-f06a-45e8-a4cd-8920194f9c6d</testCaseGuid>
+   <testCaseGuid>40eaa566-5fc5-499a-a45a-a5a59fb738cd</testCaseGuid>
 </TestCaseEntity>

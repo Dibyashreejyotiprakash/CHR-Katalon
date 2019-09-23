@@ -13,21 +13,35 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.openBrowser('')
 
-WebUI.maximizeWindow()
-
-CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameposw, GlobalVariable.testtypesmoke, GlobalVariable.environment)
-
-WebUI.waitForPageLoad(300)
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameposw, GlobalVariable.testtyperegression, GlobalVariable.environment)
 
 CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.posusername, GlobalVariable.pospassword)
 
-CustomKeywords.'com.poswm.Homepage.ClickOnNewOrder'()
+CustomKeywords.'com.poswm.WarehouseDashBoardPage.ClickOnNewOrder'()
 
 CustomKeywords.'com.poswm.NewOrderPage.ClickOnOrderIdBtn'()
 
-CustomKeywords.'com.poswm.NewOrderPage.VerifySalesDivisionBtn'()
+CustomKeywords.'com.poswm.WarehouseOrders.VerifyNewOrderPage'()
 
-WebUI.closeBrowser()
+CustomKeywords.'com.poswm.WarehouseOrders.VerifyAndClickOnAddOrderIcon'()
 
+String orderid = CustomKeywords.'com.poswm.WarehouseOrders.GetOrderId'()
+
+CustomKeywords.'com.poswm.WarehouseOrders.VerifyAddItemLink'()
+
+CustomKeywords.'com.poswm.WarehouseOrders.AddItemAndVerifyMsg'()
+
+CustomKeywords.'com.poswm.WarehouseOrders.AddCustomerAndVerifyMsg'()
+
+CustomKeywords.'com.poswm.WarehouseOrders.AddDesiredShippingDateAndVerifyMsg'()
+
+CustomKeywords.'com.poswm.WarehouseOrders.AddShipingMethodAndVerifyMsg'()
+
+CustomKeywords.'com.poswm.WarehouseOrders.ClickOnSubmitOrderBtnAndevrifyMsg'()
+
+CustomKeywords.'com.poswm.WarehouseDashBoardPage.ClickOnOrderSearch'()
+
+CustomKeywords.'com.poswm.WarehouseOrderInventoryPage.VerifyOrderInventoryPage'()
+
+CustomKeywords.'com.poswm.WarehouseOrderInventoryPage.VerifyOrderSearch'(orderid)

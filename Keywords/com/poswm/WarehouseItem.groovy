@@ -96,7 +96,7 @@ public class WarehouseItem {
 	By QtyTextField = By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i3_i0_ucItemTransactions_radItemQuantity']")
 	By SaveBtn = By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i3_i0_ucItemTransactions_btnSaveItemBin_input']")
 	By CloseEditModeBtn = By.xpath("//*[@id='MainContent_btnCloseWizard']")
-	
+
 	By iteminfogrid = By.xpath("//*[text()='Step 1: Item Information']")
 
 	@Keyword
@@ -117,7 +117,7 @@ public class WarehouseItem {
 		try{
 			boolean statusofiteminfofields = action.IsElementDisplayed(iteminfogrid)
 			Assert.assertTrue(statusofiteminfofields)
-			
+
 			boolean statusofsavebtn = action.IsElementEnabled(saveIcon)
 			Assert.assertTrue(statusofsavebtn)
 		}
@@ -188,7 +188,7 @@ public class WarehouseItem {
 			else{
 				throw new Exception("Fill Item Information Section   is falied")
 			}
-			
+
 			return itemname
 		}
 		catch(Exception e)
