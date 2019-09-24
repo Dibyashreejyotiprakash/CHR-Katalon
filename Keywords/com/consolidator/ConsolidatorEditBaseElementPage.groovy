@@ -35,16 +35,30 @@ public class ConsolidatorEditBaseElementPage {
 
 	@Keyword
 	public void VerifyEditElementpage() {
-		boolean statusofeditelementlabale = action.IsElementDisplayed(editelement)
-		Assert.assertTrue(statusofeditelementlabale)
+		
+		try{
+			action.VerifyCurrentPage("ConsolidatorEditBaseElement.aspx")
+			boolean statusofeditelementlabale = action.IsElementDisplayed(editelement)
+			Assert.assertTrue(statusofeditelementlabale)
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Verify Edit Element page failed due to "+ e)
+		}
 	}
 
 	@Keyword
 	public void VerifyBackBtn() {
-		boolean statusofbackbtn = action.IsElementDisplayed(backbtn)
-		Assert.assertTrue(statusofbackbtn)
-		action.Click(backbtn)
-		action.WaitForPageToLoad()
+		try{
+			boolean statusofbackbtn = action.IsElementDisplayed(backbtn)
+			Assert.assertTrue(statusofbackbtn)
+			action.Click(backbtn)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Verify Back Btn failed due to "+ e)
+		}
 	}
 
 	@Keyword
