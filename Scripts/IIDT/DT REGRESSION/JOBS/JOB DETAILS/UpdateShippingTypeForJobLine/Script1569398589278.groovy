@@ -13,19 +13,27 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.openBrowser('')
 
-WebUI.maximizeWindow()
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamedesigntracker, GlobalVariable.testtyperegression,
+	GlobalVariable.environment)
 
-CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameposw, GlobalVariable.testtypesmoke, GlobalVariable.environment)
+WebUI.waitForPageLoad(300)
 
-CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.posusername, GlobalVariable.pospassword)
+CustomKeywords.'com.designtracker.LoginPage.LoginToDesignTarcker'(GlobalVariable.dtusername, GlobalVariable.dtpassowrd)
 
-CustomKeywords.'com.poswm.Homepage.HoverOnWareHouseMenu'()
+CustomKeywords.'com.designtracker.HomePage.VerifyHomePage'()
 
-CustomKeywords.'com.poswm.Homepage.ClickOnUserItemApprovalTransfer'()
+CustomKeywords.'com.designtracker.HomePage.ClickOnNewJob'()
 
-CustomKeywords.'com.poswm.UserTransfer.VerifyUserItemApprovalTransferPage'()
+CustomKeywords.'com.designtracker.JobNewPage.VerifyNewJobPage'()
 
-WebUI.closeBrowser()
+CustomKeywords.'com.designtracker.JobNewPage.CreateNewJob'()
+
+CustomKeywords.'com.designtracker.JobDetailsPage.AddJobNameJobTicketNameAndAssignDesigner'()
+
+CustomKeywords.'com.designtracker.JobDetailsPage.AddMultiplePartsToJobs'()
+
+CustomKeywords.'com.designtracker.JobDetailsPage.ClickOnDetailsBtn'()
+
+CustomKeywords.'com.designtracker.JobDetailsPage.VerifyUpdateShippingLinkAndUpdateShippingForSingleJobLine'()
 

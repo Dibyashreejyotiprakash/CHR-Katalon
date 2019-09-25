@@ -36,20 +36,86 @@ public class UserTransfer {
 
 	Interaction action = new Interaction();
 	WebDriver driver = DriverFactory.getWebDriver()
+	
+	By transferform = By.xpath("//*[@id='ctl00_MainContent_ddlApproverUser_Arrow']")
+	By transferfromddnvalue = By.xpath("//*[@id='ctl00_MainContent_ddlApproverUser_DropDown']//li[1]")
+	By transferto = By.xpath("//*[@id='ctl00_MainContent_ddlTransferUser_Arrow']")
+	By transfertoddnvalue = By.xpath("//*[@id='ctl00_MainContent_ddlTransferUser_DropDown']//li[1]")
+	By transferitemsbtn = By.xpath("//*[@id='MainContent_btnTransferItems']")
 
 	@Keyword
 	public void VerifyUserItemApprovalTransferPage() {
-		String expectedUATUrl = "https://csg.v5qa.brandmuscle.net/Warehouse/Admin/UserTransfer.aspx";
-		String expectedSTAGEUrl ="https://csg.v5stgae.brandmuscle.net/Warehouse/Admin/UserTransfer.aspx"
-		String expectedPRODUrl = "https://csg.brandmuscle.net/Warehouse/Admin/UserTransfer.aspx";
-
 		try{
 			action.VerifyCurrentPage("UserTransfer.aspx")
 		}
-		catch(Exception e)
-		{
-			println ("Verify User Item Approval Transfer Page failed due to "+ e)
-			Assert.fail()
+		catch(Exception e) {
+			Assert.fail("Verify User Item Approval Transfer Page failed due to "+ e)
 		}
 	}
+	
+	@Keyword
+	public void VerifyAllFields()
+	{
+		try{
+			boolean statusoftransferfromddn  = action.IsElementDisplayed(transferform)
+			Assert.assertTrue(statusoftransferfromddn)
+			WebUI.delay(3)
+			action.Click(transferform)
+			WebUI.delay(3)
+			action.Click(transferfromddnvalue)
+			WebUI.delay(3)
+			
+			boolean statusoffromto = action.IsElementDisplayed(transferto)
+			Assert.assertTrue(statusoffromto)
+			WebUI.delay(3)
+			action.Click(transferto)
+			WebUI.delay(3)
+			action.Click(transfertoddnvalue)
+			WebUI.delay(3)
+			
+			boolean statusoftransferbtn = action.IsElementEnabled(transferitemsbtn)
+			Assert.assertTrue(statusoftransferfromddn)
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Verify All Fields failed due to "+ e)
+		}
+	}
+	
+	@Keyword
+	public void TransferItem()
+	{
+		try{
+			boolean statusoftransferfromddn  = action.IsElementDisplayed(transferform)
+			Assert.assertTrue(statusoftransferfromddn)
+			WebUI.delay(3)
+			action.Click(transferform)
+			WebUI.delay(3)
+			action.Click(transferfromddnvalue)
+			WebUI.delay(3)
+			
+			boolean statusoffromto = action.IsElementDisplayed(transferto)
+			Assert.assertTrue(statusoffromto)
+			WebUI.delay(3)
+			action.Click(transferto)
+			WebUI.delay(3)
+			action.Click(transfertoddnvalue)
+			WebUI.delay(3)
+			
+			boolean statusoftransferbtn = action.IsElementEnabled(transferitemsbtn)
+			Assert.assertTrue(statusoftransferfromddn)
+			
+			if(statusoftransferbtn == true)
+			{
+				action.Click(transferitemsbtn)
+				WebUI.delay(5)
+			}
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Transfer Item failed due to "+ e)
+		}
+	}
+	
+	
 }

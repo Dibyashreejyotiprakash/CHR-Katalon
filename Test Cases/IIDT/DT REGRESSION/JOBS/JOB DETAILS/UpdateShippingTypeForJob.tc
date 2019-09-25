@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>VerifyAllColumnsInManageBaseElementPage</name>
+   <name>UpdateShippingTypeForJob</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>604e404e-30f2-414d-8084-4280da8483fa</testCaseGuid>
+   <testCaseGuid>03ea92ca-cd60-4e80-b52e-fcc7819cbd31</testCaseGuid>
 </TestCaseEntity>

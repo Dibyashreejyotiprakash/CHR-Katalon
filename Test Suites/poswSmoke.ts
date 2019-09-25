@@ -35,12 +35,6 @@
       <testCaseId>Test Cases/CSPW/POSW SMOKE/ADMIN/NewItem/VerifyNewItemPage</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>a8fc963b-b57b-4d7e-bafc-0b9cffdb9cc8</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/CSPW/POSW SMOKE/ADMIN/Transfer/VerifyUserItemApprovalTransferPage</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
       <guid>a65d72ee-3bf9-4bfc-a63d-7ae7f9dcdd00</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>

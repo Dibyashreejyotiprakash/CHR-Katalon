@@ -13,24 +13,15 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.openBrowser('')
 
-WebUI.maximizeWindow()
 
-CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameconsolidator, GlobalVariable.testtypesmoke, GlobalVariable.environment)
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameposw, GlobalVariable.testtypesmoke, GlobalVariable.environment)
 
-CustomKeywords.'com.consolidator.LoginPage.LoginConsolidator'(GlobalVariable.consolusername, GlobalVariable.conslopassword)
+CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.posusername, GlobalVariable.pospassword)
 
-CustomKeywords.'com.consolidator.UpdateLogPage.ClickOnParentBusinessUnit'()
+CustomKeywords.'com.poswm.WarehouseDashBoardPage.ClickOnUserItemApprovalTransfer'()
 
-CustomKeywords.'com.consolidator.ParentBusinessUnitPage.SelectParentBusinessUnit'()
+CustomKeywords.'com.poswm.UserTransfer.VerifyUserItemApprovalTransferPage'()
 
-CustomKeywords.'com.consolidator.UpdateLogPage.ClickOnConsolidatorTab'()
 
-CustomKeywords.'com.consolidator.ConsolidatorDefaultPage.ClickOnManageBaseElement'()
-
-CustomKeywords.'com.consolidator.ManageBaseElementPage.VerifyAllCoulumns'()
-CustomKeywords.'com.consolidator.LoginPage.LogoutFromV5AdminTool'()
-
-WebUI.closeBrowser()
 

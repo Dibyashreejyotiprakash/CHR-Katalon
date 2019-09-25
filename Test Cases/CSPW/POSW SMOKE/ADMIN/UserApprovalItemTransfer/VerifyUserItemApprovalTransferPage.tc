@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>VerifyAddNewElementPageSearch</name>
+   <name>VerifyUserItemApprovalTransferPage</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>a9a0b6ca-18c7-4777-8e29-26a7b30cfac8</testCaseGuid>
+   <testCaseGuid>414fa7bc-bebd-4073-b341-c5081af2aee1</testCaseGuid>
 </TestCaseEntity>

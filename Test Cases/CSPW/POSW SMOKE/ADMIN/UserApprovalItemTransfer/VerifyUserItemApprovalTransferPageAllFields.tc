@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>VerifyEditBaseElementPageDeleteButton</name>
+   <name>VerifyUserItemApprovalTransferPageAllFields</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>237ca375-9680-4a12-b09d-3a094324f01d</testCaseGuid>
+   <testCaseGuid>050523b3-e669-4086-8977-a8dd51164643</testCaseGuid>
 </TestCaseEntity>

@@ -267,7 +267,7 @@ public class WarehouseItemInventory {
 			String expectedSTAGEUrl ="https://csg.v5stgae.brandmuscle.net/Warehouse/Admin/UserTransfer.aspx"
 
 			action.WaitTime(5)
-			String env = GlobalVariable.environment			
+			String env = GlobalVariable.environment
 			action.WaitTime(5)
 			println "environment is -------->"+ env
 			String actualUrl = action.GetCurrentURL()
