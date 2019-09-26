@@ -23,6 +23,7 @@ import com.utilities.Interaction
 import internal.GlobalVariable
 import org.openqa.selenium.WebDriver
 import org.testng.Assert
+import org.eclipse.persistence.internal.jpa.parsing.jpql.antlr.JPQLParser.orderByClause_scope
 import org.openqa.selenium.Alert
 import org.openqa.selenium.By
 import com.kms.katalon.core.webui.driver.DriverFactory
@@ -59,6 +60,7 @@ public class WarehouseItemInventory {
 	By brandfilter = By.xpath("//*[@id='ctl00_MainContent_rpbSearch_i1_i0_rlbBrands_i2']")
 	By allbrandsnameingrid = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00']//tr//td[13]")
 	By allitemname = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00']//tr//td[11]/a")
+	
 	By itemsearchtextbox = By.xpath("//*[@id='ctl00_MainContent_rsbItemSearch_Input']")
 	By itemsearchbtn = By.xpath("//*[@id='ctl00_MainContent_rsbItemSearch_Input']/following-sibling::button")
 	By searchiteminventorybtn = By.xpath("//*[@id='MainContent_btnBackToSearch']")
@@ -69,6 +71,43 @@ public class WarehouseItemInventory {
 	By otherfilterddn = By.xpath("//*[text()='Other Filters']")
 	By deletedcheckbox = By.xpath("//*[@id='ctl00_MainContent_rpbSearch_i10_i0_rlbOtherFilters_i2']//input")
 	By clearallfilterbtn = By.xpath("//*[text()='Clear All Filters']")
+	
+	By SalesDivisionDivision = By.xpath("//*[@id='ctl00_MainContent_rpbSearch']/ul/li[5]/a/span/span[1]")
+	By firstSalesdivisionCheckbox = By.xpath("//*[text()='BBN Beer Off Premise']/preceding-sibling::input")
+	By SuplierAccordian = By.xpath("//*[@id='ctl00_MainContent_rpbSearch']/ul/li[1]/a/span/span[1]")
+	By BrandAccordian = By.xpath("//*[@id='ctl00_MainContent_rpbSearch']/ul/li[2]/a/span/span[1]")
+	
+	
+	By OrderPlusIcon = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00_ctl04_imgOrder']")
+	By UpdateQuantityBtn = By.xpath("//*[text()='Update Quantities']")
+	By NewOrder = By.xpath("(//*[text()='New Order'])[2]")
+	By ClickHeretogotothisorderlink= By.xpath("//*[text()='Click here to go to this order.']")
+	By AddCustomer = By.xpath("//*[text()='Add Customer']")
+	By customerSearchTxtField = By.xpath("//*[@id='ctl00_MainContent_dockCustomerInformation_C_rsbCustomers_Input']")
+	By cutomerFirstOption = By.xpath("(//*[@id='rsbCustomerName'])[1]")
+	By ShipMethodDropdwon= By.xpath("(//*[@id='ctl00_MainContent_dockShippingInformation_C_ddlShippingMethod_Input'])")
+	By FirstShipOption = By.xpath("(//*[@id='ctl00_MainContent_dockShippingInformation_C_ddlShippingMethod_DropDown'])/div/ul/li[1]")
+	By SubmitOrderBtn = By.xpath("(//*[@id='ctl00_MainContent_btnSubmitOrder_input'])")
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	@Keyword
 	public void VerifyWareHouseInventoryPage()
@@ -267,7 +306,7 @@ public class WarehouseItemInventory {
 			String expectedSTAGEUrl ="https://csg.v5stgae.brandmuscle.net/Warehouse/Admin/UserTransfer.aspx"
 
 			action.WaitTime(5)
-			String env = GlobalVariable.environment			
+			String env = GlobalVariable.environment
 			action.WaitTime(5)
 			println "environment is -------->"+ env
 			String actualUrl = action.GetCurrentURL()
@@ -279,7 +318,7 @@ public class WarehouseItemInventory {
 				Assert.assertEquals(expectedUATUrl, actualUrl)
 			}
 			else
-				(env.equalsIgnoreCase("stage"))
+			(env.equalsIgnoreCase("stage"))
 			{
 				Assert.assertEquals(expectedSTAGEUrl, actualUrl)
 			}
@@ -415,71 +454,169 @@ public class WarehouseItemInventory {
 		}
 	}
 
-	//		action.WaitVisible(supplierExpandUpBtn)
-	//		boolean status= action.IsElementDisplayed(linkSupplier)
-	//		if(status== true) {
-	//
-	//			action.WaitVisible(supplierExpandUpBtn)
-	//			WebUI.delay(3)
-	//			//action.Click(supplierExpandUpBtn)
-	//			//action.wait(2)
-	//			action.ScrollToViewElement(linkSupplier)
-	//			boolean statusSupplierLink = action.IsElementEnabled(linkSupplier)
-	//			Assert.assertTrue(statusSupplierLink)
-	//			println ("Supplier link is present/enable")
-	//		}
-
-
-	/*if(action.IsElementDisplayed(linkBrands)) {
-	 action.wait(2)
-	 action.WaitVisible(brandsExpandUpBtn)
-	 action.wait(2)
-	 action.Click(brandsExpandUpBtn)
-	 action.wait(2)
-	 action.ScrollToViewElement(linkBrands)
-	 boolean statusBrandLink = action.IsElementEnabled(linkBrands)
-	 Assert.assertTrue(statusBrandLink)
-	 println ("Brand link is present/enable")
-	 }
-	 if(action.IsElementDisplayed(linkDemographic)) {
-	 action.ScrollToViewElement(linkDemographic)
-	 boolean statusDemographicLink = action.IsElementEnabled(linkDemographic)
-	 Assert.assertTrue(statusDemographicLink)
-	 println ("Demographic Link link is present/enable")
-	}
-	 }
-
+	
 	@Keyword
-	public void VerifyDeletedItem(String deleteditemname)
+	public void SelectSalesDivision()
 	{
-		try{
-			action.Click(otherfilterddn)
+		try
+		{
+			action.Click(SuplierAccordian)
+			WebUI.delay(2)
+			action.Click(BrandAccordian)
+			WebUI.delay(2)
+			//action.ScrollToViewelement(SalesDivisionDivision)
+			action.Click(SalesDivisionDivision)
+			WebUI.delay(2)
+			action.Click(firstSalesdivisionCheckbox)
 			WebUI.delay(5)
-			action.Click(deletedcheckbox)
-			List<WebElement> allitemnames = action.GetElements(allitemname)
-			if(allitemnames.size()>0)
-			{
-				for(int i=0;i< allitemnames.size();i++)
-				{
-					String selecteditemname = allitemnames.get(i).getText()
-					if(selecteditemname.contains(deleteditemname))
-					{
-						println ("Deleted Item found")
-						break
-					}
-					else{
-						throw new Exception("Not found")
-					}
-				}
-			}
-			else{
-				throw new Exception("Deleteditems not found")
-			}
-	    }
+
+			
+		}
 		catch(Exception e)
 		{
-			println ("Verify Deleted Item failed due to "+ e)
-			Assert.fail()
-	    }
-    }
+			Assert.fail("SelectSalesDivision failed due to :" + e)
+		}
+	}
+	
+	
+	@Keyword
+	public void SearchSpecificItem(String itemName)
+	{
+		try
+		{
+			action.WaitVisible(itemsearchtextbox)
+			action.Type(itemsearchtextbox, itemName)
+			action.Click(itemsearchbtn)
+			WebUI.delay(5)
+			
+		}
+		catch(Exception e)
+		{
+			Assert.fail("SearchSpecificItem failed due to :" + e)
+		}
+	}
+	
+	@Keyword
+	
+	public void AddToCart()
+	{
+		try
+		{
+			action.Click(OrderPlusIcon)
+			WebUI.delay(3)
+			action.Click(UpdateQuantityBtn)
+			WebUI.delay(3)
+			action.Click(NewOrder)
+			WebUI.delay(5)
+			action.Click(ClickHeretogotothisorderlink)
+			WebUI.delay(5)
+			
+			
+		}
+		catch(Exception e)
+		{
+			Assert.fail("AddToCart failed due to :" + e)
+		}
+	}
+	
+	@Keyword
+	public void AddCustomer()
+	{
+		try
+		{
+			action.WaitVisible(AddCustomer)
+			action.Click(AddCustomer)
+			WebUI.delay(2)
+			action.Type(customerSearchTxtField, "st")
+			WebUI.delay(2)
+			action.Click(cutomerFirstOption)
+			WebUI.delay(3)
+			
+		}
+		catch(Exception e)
+		{
+			Assert.fail("AddCustomer failed due to :" + e)
+		}
+	}
+	
+	
+	@Keyword
+	public void SelectShipMethod()
+	{
+		try
+		{
+			action.WaitVisible(ShipMethodDropdwon)
+			action.Click(ShipMethodDropdwon)
+			WebUI.delay(2)
+			action.Click(FirstShipOption)
+			WebUI.delay(5)	
+			
+		}
+		catch(Exception e)
+		{
+			Assert.fail("SelectShipMethod failed due to :" + e)
+		}
+	}
+	
+	@Keyword
+	public void ClickOnSubmitOrderBtn()
+	{
+		try
+		{
+			action.WaitVisible(SubmitOrderBtn)
+			action.Click(SubmitOrderBtn)
+			WebUI.delay(5)
+			
+			
+		}
+		catch(Exception e)
+		{
+			Assert.fail("ClickOnSubmitOrderBtn failed due to :" + e)
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

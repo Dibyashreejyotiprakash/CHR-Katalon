@@ -67,6 +67,8 @@ public class WarehouseItem {
 	//By txbDescription = By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_radLongDescription']")
 	//By txbNotes = By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_radNotes']")
 	//By saveIcon = By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_btnCreate']")
+
+
 	By saveIconItemInfo = By.xpath("//input[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_btnCreate']")
 
 	//By nextButton = By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_btnNext']")
@@ -121,13 +123,14 @@ public class WarehouseItem {
 
 
 	@Keyword
-	public void FillItemInformationSection()
+	public String FillItemInformationSection()
 	{
 		try
 		{
+			String itemname = null
 			if(action.IsDisplayed(txbName))
 			{
-				EnterUniqueItemName()
+				itemname = EnterUniqueItemName()
 			}
 			else{
 
@@ -150,7 +153,7 @@ public class WarehouseItem {
 			}
 			if(action.IsDisplayed(salesDivisionDropDown))
 			{
-				SelectMultipleSalesDivision()
+				SelectSalesDivision()
 			}
 			if(action.IsDisplayed(seasonalType))
 			{
@@ -176,6 +179,8 @@ public class WarehouseItem {
 			else{
 				throw new Exception("Fill Item Information Section   is falied")
 			}
+
+			return itemname
 		}
 		catch(Exception e)
 		{
@@ -348,6 +353,35 @@ public class WarehouseItem {
 			Assert.fail()
 		}
 	}
+
+	@Keyword
+	public void SelectSalesDivision()
+	{
+		try
+		{
+			if(action.IsElementDisplayed(salesDivisionDropDown))
+			{
+				WebUI.delay(3)
+				action.Click(salesDivisionDropDown)
+				//action.WaitVisible(salesDivisionListDiv)
+				action.WaitTime(3)
+				action.Click(salesDivisionSecondOption)
+			}
+			else
+			{
+				throw new Exception("Sales Division  Drop Down is not present")
+			}
+		}
+		catch(Exception e)
+		{
+			println("SelectMultipleSalesDivision method failed due to : "+ e)
+			Assert.fail()
+		}
+	}
+
+
+
+
 	@Keyword
 	public void SelectSeasonalType()
 	{
@@ -545,7 +579,7 @@ public class WarehouseItem {
 	public void FillBrandSection()
 	{
 		try{
-			
+
 			if(action.IsElementDisplayed(brandFirstValue))
 			{
 				action.Click(brandFirstValue)
@@ -555,15 +589,15 @@ public class WarehouseItem {
 				action.WaitTime(15)
 				action.Click(brandNextBtn)
 				action.WaitTime(3)
-				
+
 			}
 			else
 			{
 				throw new Exception("Brand values are not present in grid")
-				
+
 			}
-			
-			
+
+
 
 		}
 		catch(Exception e){
@@ -591,7 +625,7 @@ public class WarehouseItem {
 			{
 				println ("Selelct warehouse drop down not present/failed")
 			}
-			
+
 			if(action.IsElementDisplayed(selectBinDropDown))
 			{
 				action.Click(selectBinDropDown)
@@ -607,21 +641,21 @@ public class WarehouseItem {
 			if(action.IsElementEnabled(SaveBtn)){
 				action.Click(SaveBtn)
 				action.WaitTime(10)
-				
+
 			}
 			else{
 				println ("Save button not present/failed")
 			}
-			
+
 		}
 		catch(Exception e)
 		{
 			println("FillTransactionsSection method failed due to :" + e)
 			Assert.fail()
-			
+
 		}
 	}
-	
+
 	@Keyword
 	public void ClickOnCloseEditMode(){
 		try{
@@ -634,13 +668,13 @@ public class WarehouseItem {
 			else{
 				println ("Close Edit Mode button not present/failed")
 			}
-			
+
 		}
 		catch(Exception e){
 			println("ClickOnCloseEditMode method failed due to :" + e)
 			Assert.fail()
 		}
-		
+
 	}
 
 

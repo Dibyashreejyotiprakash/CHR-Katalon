@@ -13,21 +13,23 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.openBrowser('')
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameposw, GlobalVariable.testtyperegression, GlobalVariable.environment)
 
-WebUI.maximizeWindow()
-
-CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameposw, GlobalVariable.testtypesmoke, GlobalVariable.environment)
+WebUI.waitForPageLoad(300)
 
 CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.posusername, GlobalVariable.pospassword)
 
-CustomKeywords.'com.poswm.Homepage.HoverOnWareHouseMenu'()
-
 CustomKeywords.'com.poswm.Homepage.ClickOnMenuLinkBrand'()
 
-CustomKeywords.'com.poswm.WarehouseBrands.VerifyMenuLinkBrandPage'()
+  String brandName = CustomKeywords.'com.poswm.WarehouseBrands.AddNewBrand'()
+  println brandName
+  
+  CustomKeywords.'com.poswm.WarehouseBrands.SearchAndVerifyBrand'(brandName)
+  
+  CustomKeywords.'com.poswm.WarehouseBrands.VerifyEditBrand'()
+  
+  CustomKeywords.'com.poswm.WarehouseBrands.ClickOnDeleteLink'()
+  
+  CustomKeywords.'com.poswm.WarehouseBrands.SearchAndVerifyBrandAfterDelete'(brandName)
 
-CustomKeywords.'com.poswm.WarehouseBrands.VerifyEditBrand'()
-
-WebUI.closeBrowser()
 

@@ -92,6 +92,16 @@ public class WarehouseDashBoardPage {
 	By myOrderFirstRow = By.xpath(" //*[@id='ctl00_MainContent_rdMyOrders_C_rgMyOrders_ctl00']//following-sibling::tbody/tr[1]")
 	By myOrderViewOrderLink = By.xpath(" //*[@id='ctl00_MainContent_rdMyOrders_C_rgMyOrders_ctl00']//following-sibling::tbody/tr[1]/td[1]")
 	By myOrderCancelOrderLink = By.xpath(" //*[@id='ctl00_MainContent_rdMyOrders_C_rgMyOrders_ctl00']//following-sibling::tbody/tr[1]/td[2]")
+	By OrderPcakListLink = By.xpath("//*[text()='Order Pack List']")
+	By PrintIcon = By.xpath("//*[@name='ctl00$MainContent$tlrkReportViewer$ReportToolbar$PrintGr$Print$ctl00']")
+	
+	
+	
+	
+	
+	
+	
+	
 
 
 	@Keyword
@@ -567,7 +577,36 @@ public class WarehouseDashBoardPage {
 	}
 
 
+	@Keyword
+	public void ClickOnOrderPackList()
+	{
+		try
+		{
+			action.WaitVisible(OrderPcakListLink)
+			action.Click(OrderPcakListLink)
+			action.WaitForPageToLoad()
+			
+			
+		}
+		catch(Exception e)
+		{
+			Assert.fail("ClickOnOrderPackList method failed due to :" + e)
+		}
+	}
 
+	@Keyword
+	public void ClickOnPrintIconAndVerifyOrderPackListReport()
+	{
+		try
+		{
+			action.Click(PrintIcon)
+			
+		}
+		catch(Exception e)
+		{
+			Assert.fail("ClickOnPrintIconAndVerifyOrderPackListReport method failed due to :" + e)
+		}
+	}
 
 
 

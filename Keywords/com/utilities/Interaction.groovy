@@ -411,7 +411,7 @@ public  class Interaction {
 	}
 
 	public void  Type(By by, String value) {
-		//WaitVisible(by)
+		WaitVisible(by)
 		driver.findElement(by).sendKeys(value);
 	}
 
@@ -587,10 +587,11 @@ public  class Interaction {
 
 	public void  WaitVisible(By by)
 	{
+		WebUI.delay(1)
 		WebDriverWait wait = new WebDriverWait(driver, 300)
 		wait.until(ExpectedConditions.visibilityOfElementLocated(by))
-		
-		WebUI.delay(8)
+
+
 
 		//TRY with fluent wait
 		/*Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
@@ -803,6 +804,7 @@ public  class Interaction {
 
 	public void MouseHoverOnElement(By by)
 	{
+		WaitVisible(by);
 		WebElement elementToHover = driver.findElement(by);
 		Actions hover = new Actions(driver);
 		hover.moveToElement(elementToHover)
@@ -931,6 +933,7 @@ public  class Interaction {
 
 	public String GetText(By by)
 	{
+		WaitVisible(by)
 		return driver.findElement(by).getText();
 	}
 
