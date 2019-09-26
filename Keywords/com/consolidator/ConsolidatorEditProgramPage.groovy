@@ -38,14 +38,23 @@ public class ConsolidatorEditProgramPage {
 
 	@Keyword
 	public void VerifyAddNewElementBtn() {
-		boolean statusofaddnewelement = action.IsElementDisplayed(addnewelementbtn)
-		if(statusofaddnewelement == true) {
-			boolean isenabale = action.IsElementEnabled(addnewelementbtn)
-			if(isenabale == true) {
-				action.Click(addnewelementbtn)
-				action.WaitForPageToLoad()
-				WebUI.delay(10)
+		try{
+			boolean statusofaddnewelement = action.IsElementDisplayed(addnewelementbtn)
+			if(statusofaddnewelement == true) {
+				boolean isenabale = action.IsElementEnabled(addnewelementbtn)
+				if(isenabale == true) {
+					action.Click(addnewelementbtn)
+					action.WaitForPageToLoad()
+					WebUI.delay(10)
+				}
 			}
+			else{
+				throw new Exception("Add New Element is not enabled")
+			}
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Verify Add New Element Btn failed due to "+ e)
 		}
 	}
 

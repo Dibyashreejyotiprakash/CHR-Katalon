@@ -33,16 +33,17 @@ public class ConsolidatorAddNewItemPage {
 	By addnewelementlbl = By.xpath("//*[text()='Add New Element']")
 	By searchelementtxtbox = By.xpath("//*[@id='searchExternalElementId']")
 	By backbtn = By.xpath("//*[contains(@href,'ConsolidatorEditProgramItem.aspx')]")
+	By firstsuggestedelement = By.xpath("//*[@id='ui-id-1007']")
 
 	@Keyword
 	public void VerifyAddNewElementPage() {
 		try {
+			action.VerifyCurrentPage("ConsolidatorAddNewItem.aspx")
 			boolean statusoflable = action.IsElementDisplayed(addnewelementlbl)
 			Assert.assertTrue(statusoflable)
 		}
 		catch(Exception e) {
-			println ( "Verify Add New Element Page failed due to "+ e)
-			throw e
+			Assert.fail("Verify Add New Element Page failed due to "+ e)
 		}
 	}
 
@@ -57,10 +58,26 @@ public class ConsolidatorAddNewItemPage {
 				action.Click(backbtn)
 				action.WaitForPageToLoad()
 			}
+			else{
+				throw new Exception("Back button is disbaled")
+			}
 		}
 		catch(Exception e) {
-			println ( "Verify Add New Element Page failed due to "+ e)
-			throw e
+			Assert.fail("Verify Add New Element Page failed due to "+ e)
+		}
+	}
+	
+	@Keyword
+	public void SearchAndAddNewElement()
+	{
+		try{
+			action.Type(searchelementtxtbox, "st")
+			WebUI.delay(5)
+			action.Click(firstsuggestedelement)
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Search And Add New Element failed due to "+ e)
 		}
 	}
 }

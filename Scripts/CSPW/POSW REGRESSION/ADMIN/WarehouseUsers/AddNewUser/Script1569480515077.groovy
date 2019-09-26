@@ -24,3 +24,5 @@ CustomKeywords.'com.poswm.Homepage.ClickOnWarehouseUser'()
 
 CustomKeywords.'com.poswm.WarehouseUsersPage.VerifyWarehouseUsersPage'()
 
+CustomKeywords.'com.poswm.WarehouseUsersPage.AddNewUser'()
+

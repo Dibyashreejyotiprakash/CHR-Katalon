@@ -18,6 +18,7 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.utilities.Interaction
 import org.openqa.selenium.By
 import org.openqa.selenium.WebDriver
+import org.openqa.selenium.WebElement
 import org.testng.Assert
 import org.openqa.selenium.Alert
 import com.kms.katalon.core.webui.driver.DriverFactory
@@ -36,12 +37,14 @@ public class ManageProgramElementPage {
 	By enddatecolumn = By.xpath("//*[@id='allProgramsList_wrapper']//thead/tr/th[4]")
 	By statuscolumn = By.xpath("//*[@id='allProgramsList_wrapper']//thead/tr/th[5]")
 	By firsteditlink = By.xpath("//*[@id='allProgramsList_wrapper']//tr[1]/td[6]/a")
+	By allprogramelement = By.xpath("//*[@id='allProgramsList']//tr//td[2]//span[1]")
 
 
 
 	@Keyword
 	public void VerifyManageProgramElements() {
 		try {
+			action.VerifyCurrentPage("ConsolidatorManageProgramItem.aspx")
 			boolean statusofheaderbar = action.IsElementDisplayed(manageprogramelementsheader)
 			Assert.assertTrue(statusofheaderbar)
 		}
@@ -84,11 +87,70 @@ public class ManageProgramElementPage {
 					action.WaitForPageToLoad()
 					WebUI.delay(5)
 				}
+			}else{
+			throw new Exception("First edit link disabled")
 			}
 		}
 		catch(Exception e) {
 			println ("Verify Manage Program Elements failed due to "+ e)
 			throw e;
+		}
+	}
+	
+	@Keyword
+	public void SearchPragramElement()
+	{
+		try{
+			List<WebElement> allprogramelements = action.GetElements(allprogramelement)
+			int totalprogramelement = allprogramelements.size()
+			if(totalprogramelement >0)
+			{
+				for(int i=0;i< allprogramelements.size();i++)
+				{
+					String programelementname =allprogramelements.get(i).getText()
+					action.Type(searchtxtbox, programelementname)
+				}
+			}
+			else{
+				throw new Exception("Program element is not present")
+			}
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Search program element failed due to "+ e)
+		}
+	}
+	
+	@Keyword
+	public void ClickOnEdit()
+	{
+		try{
+			List<WebElement> allprogramelements = action.GetElements(allprogramelement)
+			int totalprogramelement = allprogramelements.size()
+			if(totalprogramelement >0)
+			{
+				for(int i=0;i< allprogramelements.size();i++)
+				{
+					boolean statusoffirsteditlink = action.IsElementDisplayed(firsteditlink)
+					if(statusoffirsteditlink == true) {
+						boolean statusofenablefirsteditlink = action.IsElementEnabled(firsteditlink)
+						if(statusofenablefirsteditlink == true) {
+							action.Click(firsteditlink)
+							action.WaitForPageToLoad()
+							WebUI.delay(5)
+						}
+					}else{
+					throw new Exception("First edit link disabled")
+					}
+				}
+			}
+			else{
+				throw new Exception("Program element is not present")
+			}
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Click On Edit failed due to "+ e)
 		}
 	}
 }

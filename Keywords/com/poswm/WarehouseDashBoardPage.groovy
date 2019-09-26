@@ -99,7 +99,7 @@ public class WarehouseDashBoardPage {
 	By ordersearch = By.xpath("//*[text()='Order Search']")
 	By admin = By.xpath("//*[text()='Administration']")
 	By useritemapprovaltransfer = By.xpath("//*[text()='User Item Approval Transfer']")
-
+	By warehouseusers = By.xpath("//*[text()='Warehouse Users']")
 
 	@Keyword
 	public void ClickOnNewItem()
@@ -513,6 +513,23 @@ public class WarehouseDashBoardPage {
 		catch(Exception e)
 		{
 			Assert.fail("Click On User Item Approval Transfer failed due to "+ e)
+		}
+	}
+
+	@Keyword
+	public void ClickOnWarehouseUsers()
+	{
+		try{
+			action.MouseHoverOnElement(warehouse)
+			WebUI.delay(5)
+			action.MouseHoverOnElement(admin)
+			WebUI.delay(5)
+			action.Click(warehouseusers)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Click On Warehouse Users failed due to "+ e)
 		}
 	}
 }
