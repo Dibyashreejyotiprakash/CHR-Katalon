@@ -92,7 +92,7 @@ public class OrderFormDefaultPage {
 			println ("Click on Create New CustomOrder button failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
 	public void VerifyCloneOrderButton() {
 		try {
@@ -104,7 +104,7 @@ public class OrderFormDefaultPage {
 			println ("Click on Clone Order button failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
 	public void VerifyFinishInCompleteButton() {
 		try {

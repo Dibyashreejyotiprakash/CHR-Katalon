@@ -54,18 +54,21 @@ public class WarehouseOrders {
 
 		String env = GlobalVariable.environment
 		String actualUrl = action.GetCurrentURL();
+		//WebUI.delay(5)
 
 		if(env.equalsIgnoreCase("uat")) {
 			Assert.assertEquals(expectedUATUrl, actualUrl)
 		}
-		else if(env.equalsIgnoreCase("stage")) {
+		else if(env.equalsIgnoreCase("staging")) {
 			Assert.assertEquals(expectedSTAGEUrl, actualUrl)
 		}
 		else if(env.equalsIgnoreCase("prod")) {
 			Assert.assertEquals(expectedPRODUrl, actualUrl)
 		}
 		else {
-			println (Assert.fail());
+
+			println ("ÜRL is not matching");
+			Assert.fail()
 		}
 	}
 
@@ -77,7 +80,7 @@ public class WarehouseOrders {
 
 		action.MouseHoverOnElement(menuWarehouse)
 		action.WaitVisible(werehouseSubMenuList)
-		action.WaitTime(2)
+		//action.WaitTime(2)
 
 		action.Click(subMenuNewOrder)
 		action.WaitForPageToLoad()

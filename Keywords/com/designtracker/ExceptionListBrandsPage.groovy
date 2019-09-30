@@ -86,27 +86,26 @@ class ExceptionListBrandsPage {
 		try {
 			action.SelectByText(corporationddn, "Demo Distributor (QA)")
 
-			//WebUI.delay(7)
-			action.WaitVisible(marketddn)
+			//action.WaitVisible(marketddn)
 			action.SelectByText(marketddn, "Demo Dist. 1 QA")
 
-			WebUI.delay(7)
+			//WebUI.delay(7)
 			action.SelectByText(marketSupplierddn, "Demo Dist. 1 QA")
 
-			WebUI.delay(7)
+			//WebUI.delay(7)
 			action.SelectByText(brandsddn, "TestBrand")
 
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.Click(insertSelBrandBtn)
 
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			boolean statusofSuccessMsg  =     action.IsElementDisplayed(successInsertMsg)
 			Assert.assertTrue(statusofSuccessMsg, "Success msg for insert is visible")
 
-			WebUI.delay(2)
+			//WebUI.delay(2)
 			action.Click(checkBoxToBrand)
 
-			WebUI.delay(2)
+			//WebUI.delay(2)
 			action.Click(delSelBrandBtn)
 		}
 		catch(Exception e) {
