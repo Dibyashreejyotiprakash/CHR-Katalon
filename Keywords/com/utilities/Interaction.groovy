@@ -590,7 +590,7 @@ public  class Interaction {
 		WebDriverWait wait = new WebDriverWait(driver, 300)
 		wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 
-		WebUI.delay(8)
+		WebUI.delay(4)
 
 		//TRY with fluent wait
 		/*Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)

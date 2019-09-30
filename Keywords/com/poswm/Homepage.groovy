@@ -96,14 +96,14 @@ public class Homepage {
 		action.MouseHoverOnElement(menuWarehouse)
 		WebUI.delay(5)
 		action.Click(itemsearchbtn)
-		action.WaitForPageToLoad()
+		//action.WaitForPageToLoad()
 	}
 
 	@Keyword
 	public void ClickOnNewItem() {
 		action.MouseHoverOnElement(menuWarehouse)
 		action.Click(newitembtn)
-		action.WaitForPageToLoad()
+		//action.WaitForPageToLoad()
 	}
 
 	@Keyword
@@ -124,9 +124,11 @@ public class Homepage {
 	@Keyword
 	public void ClickOnItemProperties() {
 		action.MouseHoverOnElement(menuWarehouse)
+		WebUI.delay(2)
 		action.MouseHoverOnElement(adminbtn)
+		WebUI.delay(2)
 		action.Click(subMenuitemProperties)
-		action.WaitForPageToLoad()
+		//action.WaitForPageToLoad()
 	}
 
 	@Keyword
@@ -135,7 +137,7 @@ public class Homepage {
 		action.MouseHoverOnElement(adminbtn)
 		action.MouseHoverOnElement(adminbtn)
 		action.Click(subMenuWareHouse)
-		action.WaitForPageToLoad()
+		//action.WaitForPageToLoad()
 	}
 
 	@Keyword

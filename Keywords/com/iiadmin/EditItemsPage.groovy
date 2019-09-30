@@ -48,10 +48,16 @@ public class EditItemsPage {
 	By insertbtn = By.xpath("//input[@id='ctl00_Body_fvLogos_InsertButton']")
 	By logolistbtn = By.xpath("//input[@id='ctl00_Body_fvLogos_btnListLogos']")
 	By addlogosuccessmssg = By.xpath("//span[contains(text(),'New Record Created')]")
-	By pagetobeclicked = By.xpath("(//a[text() = '2'])[1]")
-	By logodeletebtn = By.xpath("//td[contains(text(),'Test101')]//following-sibling::td[5]/a")
+	By pagetobeclicked = By.xpath("(//a[text() = '1'])[1]")
+	By logodeletebtn = By.xpath("//td[contains(text(),'00000')]//following-sibling::td[5]/a")
 	By deletesuccessmssg = By.xpath("//span[contains(text(),'Record Deleted')]")
 	By alldistributorchkbox = By.xpath("//input[@id='ctl00_Body_fvLogos_chkAllDistr']")
+	By editbtn = By.xpath("//input[@id='ctl00_Body_fvLogos_EditButton']")
+	By selectedcorpbox = By.xpath("//select[@id = 'ctl00_Body_fvLogos_SelectionBoxDistributor_lstSelected']")
+	By userdropdown = By.xpath("//input[@id='btnCust']")
+	By updatebtn = By.xpath("//input[@id='ctl00_Body_fvLogos_UpdateButton']")
+	By updatesuccessmssg = By.xpath("//span[@id='ctl00_spnMsg']")
+	By deletebtn= By.xpath("//input[@id='ctl00_Body_fvLogos_DeleteButton']")
 
 
 
@@ -77,7 +83,7 @@ public class EditItemsPage {
 			WebUI.delay(2)
 			uploadfile()
 			action.Click(logoname)
-			action.Type(logoname,"Test101")
+			action.Type(logoname,"00000")
 			action.SelectByText(distributor,"Chicago Beverage Systems")
 			action.Click(leftmovebtn)
 			action.Click(insertbtn)
@@ -85,7 +91,7 @@ public class EditItemsPage {
 			action.Click(logolistbtn)
 			WebUI.delay(15)
 
-			action.Click(pagetobeclicked)
+			//action.Click(pagetobeclicked)
 
 
 			action.Click(logodeletebtn)
@@ -97,7 +103,7 @@ public class EditItemsPage {
 			WebUI.delay(5)
 			action.WaitVisible(deletesuccessmssg)
 			action.Click(addnewlogo)
-			action.Type(logoname,"Test101")
+			action.Type(logoname,"00000")
 			WebUI.delay(5)
 			action.Click(alldistributorchkbox)
 			WebUI.delay(5)
@@ -109,7 +115,7 @@ public class EditItemsPage {
 			action.WaitVisible(addlogosuccessmssg)
 			action.Click(logolistbtn)
 			WebUI.delay(10)
-			action.Click(pagetobeclicked)
+			//action.Click(pagetobeclicked)
 
 
 			action.Click(logodeletebtn)
@@ -131,7 +137,7 @@ public class EditItemsPage {
 	@Keyword
 	public void uploadfile() {
 		try {
-			StringSelection sel = new StringSelection("C:\\Users\\ashutosh.gupta\\Desktop");
+			StringSelection sel = new StringSelection("C:\\Users\\astha.nigam\\Desktop\\Images\\II_4_Slate_Matt_Logo.ai");
 			Toolkit.getDefaultToolkit().getSystemClipboard().setContents(sel,null);
 			System.out.println("selection" +sel);
 			Robot robot = new Robot();
@@ -154,6 +160,79 @@ public class EditItemsPage {
 		catch(Exception e) {
 			println("uploadfile failed due to "+e)
 			throw e
+		}
+	}
+	
+	
+	@Keyword
+	public void AddLogoForNoDistributor() {
+		try {
+			action.Click(logotab)
+			action.Click(addnewlogo)
+			action.Click(browsefilebtn)
+			WebUI.delay(2)
+			uploadfile()
+			action.Click(logoname)
+			action.Type(logoname,"00000")
+			action.SelectByText(distributor,"No Distributor")
+			action.Click(leftmovebtn)
+			action.Click(insertbtn)
+			action.WaitVisible(addlogosuccessmssg)
+			action.Click(logolistbtn)
+			action.WaitVisible(editbtn)
+			action.Click(editbtn)
+			action.WaitVisible(selectedcorpbox)
+			action.SelectByValue(selectedcorpbox, "No Distributor")
+			action.WaitVisible(userdropdown)
+			action.Click(userdropdown)
+			action.Click(updatebtn)
+			action.Click(updatesuccessmssg)
+			
+			
+			WebUI.delay(10)
+			//action.Click(pagetobeclicked)
+
+
+			action.Click(logodeletebtn)
+			WebUI.delay(2)
+			Robot robot = new Robot();
+			robot.keyPress(KeyEvent.VK_ENTER);
+			robot.keyRelease(KeyEvent.VK_ENTER);
+
+			WebUI.delay(5)
+			action.WaitVisible(deletesuccessmssg)
+			action.Click(addnewlogo)
+			action.Type(logoname,"00000")
+			WebUI.delay(5)
+			action.Click(alldistributorchkbox)
+			WebUI.delay(5)
+			action.Click(browsefilebtn)
+			WebUI.delay(3)
+			uploadfile()
+			WebUI.delay(3)
+			action.Click(insertbtn)
+			action.WaitVisible(addlogosuccessmssg)
+			
+			
+			
+			action.Click(logolistbtn)
+			WebUI.delay(10)
+			//action.Click(pagetobeclicked)
+
+
+			action.Click(logodeletebtn)
+			WebUI.delay(2)
+			//Robot robot = new Robot();
+			robot.keyPress(KeyEvent.VK_ENTER);
+			robot.keyRelease(KeyEvent.VK_ENTER);
+
+			WebUI.delay(5)
+			action.WaitVisible(deletesuccessmssg)
+
+
+		}
+		catch(Exception e) {
+			Assert.fail("AddLogoForDistributor failed due to "+e)
 		}
 	}
 }

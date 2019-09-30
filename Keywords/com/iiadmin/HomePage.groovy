@@ -35,6 +35,11 @@ public class HomePage {
 	By useraccessandcontrol = By.xpath("//*[text()='User Access and Control']")
 	By users = By.xpath("//*[text()='Users']")
 	By editusers = By.xpath("//*[text()='Edit User']")
+	By systemsetup = By.xpath("//a[contains(text(),'System Setup and Maintenance')]")
+	By corpsetup = By.xpath("//a[contains(text(),'Corporation Setup')]")
+	By editcorp = By.xpath("//a[contains(text(),'Edit Corporation')]")
+	By corpdropdown = By.xpath("//select[@id='ctl00_Body_ddlCorps']")
+	
 
 
 	@Keyword
