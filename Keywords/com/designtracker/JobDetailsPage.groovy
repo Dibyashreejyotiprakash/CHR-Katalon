@@ -98,14 +98,14 @@ public class JobDetailsPage {
 	By availableBrandsddn = By.xpath("//div[@id='ctl00_ctl00_cphMain_cphMain_lvMain_ctrl0_upWrapper']//option[1]")
 	By addBrandBtn = By.xpath("//input[@id='ctl00_ctl00_cphMain_cphMain_lvMain_ctrl0_btnAdd']")
 	By saveToAllJobLinesBtn = By.xpath("//input[@id='ctl00_ctl00_cphMain_cphMain_lvMain_ctrl0_btnSaveToAllParts']")
-	
+
 	By updateshippinglink = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_lvJobs_ctrl0_JobLine_rptrJobLines_ctl00_lbtnMassShipping']")
 	By popupupdateshippinglable = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_lvJobs_ctrl0_JobLine_lblMassShipping']")
 	By popupshippingtypeforjobddn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_lvJobs_ctrl0_JobLine_ddlMSJobShippingType']")
 	By updatebtnforjob = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_lvJobs_ctrl0_JobLine_btnMSJobSubmit']")
 	By popupshippingtypeforjoblineddn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_lvJobs_ctrl0_JobLine_ddlMSJobLineShippingType']")
 	By updatebtnforjobline = By.xpath("ctl00_ctl00_cphMain_cphMain_lvJobs_ctrl0_JobLine_btnMSJobLineSubmit")
-	
+
 	By fisrtshippingtype = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_lvJobs_ctrl0_JobLine_rptrJobLines_ctl00_gvJobShippingLocations_ctl02_lblJobShippingType']")
 	By secondshippingtype = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_lvJobs_ctrl0_JobLine_rptrJobLines_ctl01_gvJobShippingLocations_ctl02_lblJobShippingType']")
 
@@ -258,7 +258,7 @@ public class JobDetailsPage {
 	}
 
 	@Keyword
-	public void AddJobNameJobTicketNameAndAssignDesigner() {
+	public String AddJobNameJobTicketNameAndAssignDesigner() {
 		action.Type(jobnametxtbox, "Test Job Name")
 		WebUI.delay(5)
 		action.Type(jobticketnote, "Test Job Ticket Note")
@@ -436,7 +436,7 @@ public class JobDetailsPage {
 			Assert.fail("Assign Budget And Save Brands is failing because of :"+e)
 		}
 	}
-	
+
 	@Keyword
 	public void VerifyUpdateShippingLinkAndUpdateShippingForJob()
 	{
@@ -450,7 +450,7 @@ public class JobDetailsPage {
 			WebUI.delay(3)
 			action.ScrollToViewelement(fisrtshippingtype)
 			String firstshippingtypetext = action.GetText(fisrtshippingtype)
-			
+
 			action.ScrollToViewelement(secondshippingtype)
 			String secondshippingtypetext = action.GetText(secondshippingtype)
 			if ((firstshippingtypetext.equalsIgnoreCase("UPS Ground")) && (secondshippingtypetext.equalsIgnoreCase("UPS Ground")))
@@ -466,8 +466,8 @@ public class JobDetailsPage {
 			Assert.fail("Verify Update Shipping Link And Update Shipping For Job failed due to :"+e)
 		}
 	}
-	
-	
+
+
 	@Keyword
 	public void VerifyUpdateShippingLinkAndUpdateShippingForSingleJobLine()
 	{
@@ -476,22 +476,22 @@ public class JobDetailsPage {
 			WebUI.delay(3)
 			action.Click(updateshippinglink)
 			action.WaitVisible(popupupdateshippinglable)
-			
+
 			action.SelectByIndex(popupshippingtypeforjoblineddn, 2)
 			action.Click(updatebtnforjobline)
 			WebUI.delay(3)
-			
+
 			action.ScrollToViewelement(fisrtshippingtype)
 			String firstshippingtypetext = action.GetText(fisrtshippingtype)
-			
+
 			if(firstshippingtypetext.equalsIgnoreCase("UPS Ground"))
 			{
 				println ("Only job line shipping type updated")
 			}
-			
+
 			action.ScrollToViewelement(secondshippingtype)
 			String secondshippingtypetext = action.GetText(secondshippingtype)
-			
+
 			if(secondshippingtypetext.equalsIgnoreCase("UPS Ground"))
 			{
 				Assert.fail("Second shipping type is updated also")
@@ -505,5 +505,5 @@ public class JobDetailsPage {
 			Assert.fail("Verify Update Shipping Link And Update Shipping For Job failed due to :"+e)
 		}
 	}
-	
+
 }
