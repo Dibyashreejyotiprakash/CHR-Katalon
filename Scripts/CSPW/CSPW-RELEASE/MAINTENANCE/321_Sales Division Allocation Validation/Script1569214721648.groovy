@@ -13,21 +13,48 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.openBrowser('')
-
-WebUI.maximizeWindow()
-
 CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameposw, GlobalVariable.testtypesmoke, GlobalVariable.environment)
 
 CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.posusername, GlobalVariable.pospassword)
 
 CustomKeywords.'com.poswm.Homepage.HoverOnWareHouseMenu'()
 
-CustomKeywords.'com.poswm.Homepage.ClickOnMenuLinkBrand'()
+CustomKeywords.'com.poswm.Homepage.ClickOnNewItem'()
 
-CustomKeywords.'com.poswm.WarehouseBrands.VerifyMenuLinkBrandPage'()
+String itemname = CustomKeywords.'com.poswm.WarehouseItem.FillItemInformationSection'()
 
-CustomKeywords.'com.poswm.WarehouseBrands.VerifyEditBrand'()
+CustomKeywords.'com.poswm.WarehouseItem.ClickOnItemInfoSaveIcon'()
 
-WebUI.closeBrowser()
+CustomKeywords.'com.poswm.WarehouseItem.FillImageSection'()
+
+CustomKeywords.'com.poswm.WarehouseItem.FillBrandSection'()
+
+CustomKeywords.'com.poswm.WarehouseItem.FillTransactionsSection'()
+
+
+
+CustomKeywords.'com.poswm.WarehouseItem.ClickOnCloseEditMode'()
+
+CustomKeywords.'com.poswm.Homepage.HoverOnWareHouseMenu'()
+
+CustomKeywords.'com.poswm.Homepage.ClickOnItemSearch'()
+
+CustomKeywords.'com.poswm.WarehouseItemInventory.SelectSalesDivision'()
+
+CustomKeywords.'com.poswm.WarehouseItemInventory.SearchSpecificItem'(itemname)
+
+CustomKeywords.'com.poswm.WarehouseItemInventory.AddToCart'()
+
+CustomKeywords.'com.poswm.WarehouseItemInventory.AddCustomer'()
+
+CustomKeywords.'com.poswm.WarehouseOrders.AddDesiredShipDate'()
+
+CustomKeywords.'com.poswm.WarehouseItemInventory.SelectShipMethod'()
+
+CustomKeywords.'com.poswm.WarehouseItemInventory.ClickOnSubmitOrderBtn'()
+
+CustomKeywords.'com.poswm.WarehouseOrders.ClickOnItemName'()
+
+CustomKeywords.'com.poswm.WarehouseOrders.ClickOnEditThisItem'()
+
 

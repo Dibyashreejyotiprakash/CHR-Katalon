@@ -37,6 +37,33 @@ public class WarehouseBrands {
 
 
 
+	By SearchBrandAField = By.xpath("//*[@id='ctl00_MainContent_txtSearch']")
+	By SearchBtn = By.xpath("//*[@id='ctl00_MainContent_btnSearch_input']")
+	By ClearBtn = By.xpath("//*[@id='ctl00_MainContent_btnClear_input']")
+	By AddNewBrand = By.xpath("//*[text()='Add New Brand']")
+	//By AddNewBrand = By.xpath("//*[@id='ctl00_MainContent_rgWarehouseBrands_ctl00_ctl02_ctl00_AddNewRecordButton']")
+	//By AddNewBrand = By.xpath("//*[@id='ctl00_MainContent_rgWarehouseBrands_ctl00']/thead/tr[1]/td/table/tbody/tr/td[1]/input")
+	By RefreshBtn = By.xpath("//*[@id='ctl00_MainContent_rgWarehouseBrands_ctl00_ctl02_ctl00_RebindGridButton']")
+	By EditFirstBtn = By.xpath("(//*[@id='ctl00_MainContent_rgWarehouseBrands_ctl00_ctl04_EditButton'])[1]")
+	By DeleteBtn = By.xpath("(//*[text()='Delete'])[1]")
+	By LastPageBtn = By.xpath("//*[@class='rgPageLast']")
+	By NextBtn = By.xpath("//*[@class='rgPageNext']")
+	By PreviousBtn = By.xpath("//*[@class='rgPagePrev']")
+	By FirstPageBtn = By.xpath("//*[@class='rgPageFirst']")
+	By BrandNameTextField = By.xpath("//*[@id='ctl00_MainContent_rgWarehouseBrands_ctl00_ctl02_ctl03_txtBrandName']")
+	By InsertBtn = By.xpath("//*[@id='ctl00_MainContent_rgWarehouseBrands_ctl00_ctl02_ctl03_btnUpdate']")
+	By BrandAddedConfirmationMsg = By.xpath("//*[text()='Brand added successfully.']")
+	By BrandNameColumn = By.xpath("//*[@id='ctl00_MainContent_rgWarehouseBrands_ctl00']/tbody/tr[1]/td[3]")
+	By SuplierDropDown = By.xpath("//*[@id='ctl00_MainContent_rgWarehouseBrands_ctl00_ctl05_ddlSupplier']")
+	By UpdateBtn = By.xpath("//*[@id='ctl00_MainContent_rgWarehouseBrands_ctl00_ctl05_btnUpdate']")
+	By DeleteLink = By.xpath("//*[text()='Delete']")
+	By NoRecordtoDisplay = By.xpath("//*[text()='No records to display.']")
+	By DeleteConfirmationMsg = By.xpath("//*[text()='Brand deleted successfully.']")
+
+
+
+
+
 	@Keyword
 	public void VerifyMenuLinkBrandPage() {
 
@@ -48,10 +75,249 @@ public class WarehouseBrands {
 		try{
 			action.VerifyCurrentPage("WarehouseBrands.aspx")
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			println ("Verify Menu Link Brand Page failed due to "+ e)
 			Assert.fail()
 		}
 	}
+
+
+	@Keyword
+	public String AddNewBrand()
+	{
+		try
+		{
+			action.Click(AddNewBrand)
+
+			String BrandName = action.GenerateRandomAplphabaticString(5)
+			println BrandName
+			action.Type(BrandNameTextField, BrandName)
+			action.Click(InsertBtn)
+			action.WaitVisible(BrandAddedConfirmationMsg)
+			action.GetText(BrandAddedConfirmationMsg)
+			println "********"+BrandAddedConfirmationMsg +"************"
+			return BrandName
+
+		}
+		catch(Exception e)
+		{
+			println ("AddNewBrand method failed due to :" + e)
+			Assert.fail()
+		}
+	}
+
+
+	@Keyword
+	public void SearchAndVerifyBrand(String brandNameExp){
+		try{
+
+			action.Type(SearchBrandAField, brandNameExp)
+			action.Click(SearchBtn)
+			//WebUI.delay(3)
+			String brnadNameActual  = action.GetText(BrandNameColumn)
+			println "======"+brnadNameActual
+			Assert.assertEquals(brandNameExp, brnadNameActual, )
+
+
+		}
+		catch(Exception e){
+
+			Assert.fail("SearchBrand method failed due to :" + e)
+		}
+	}
+
+	@Keyword
+	 public void ClickOnEditBtn(){
+	 try{
+	 action.WaitVisible(EditFirstBtn)
+	 action.Click(EditFirstBtn)
+	 }
+	 catch(Exception e ){
+	 Assert.fail("ClickOnEditBtn method failed due to :" + e)
+	 }
+	 }
+
+	@Keyword
+	public void VerifyEditBrand()
+	{
+		try{
+			action.WaitVisible(EditFirstBtn)
+			action.Click(EditFirstBtn)
+			action.WaitVisible(SuplierDropDown)
+			String supplierValueBeforeEdit = action.GetselectedText(SuplierDropDown)
+			println "++++++"+ supplierValueBeforeEdit
+			
+			action.Click(SuplierDropDown)
+			WebUI.delay(3)
+			action.SelectByIndex(SuplierDropDown, 1)
+			WebUI.delay(3)
+			
+			String supplierValueAfterEdit = action.GetselectedText(SuplierDropDown)
+			println "++++++"+ supplierValueAfterEdit
+			WebUI.delay(2)
+			action.Click(UpdateBtn)
+			
+			Assert.assertNotEquals(supplierValueBeforeEdit, supplierValueAfterEdit)
+			
+
+		}
+		catch(Exception e){
+			Assert.fail("VerifyEditBrand method failed due to :" + e)
+		}
+	}
+
+
+	@Keyword
+	public void SearchSpecificBrand(String brandNameExp){
+		try{
+
+			WebUI.delay(3)
+			action.Type(SearchBrandAField, brandNameExp)
+			action.Click(SearchBtn)
+
+
+		}
+		catch(Exception e){
+
+			Assert.fail("SearchBrand method failed due to :" + e)
+		}
+	}
+
+	@Keyword
+	public void ClickOnDeleteLink()
+	{
+		try
+		{
+			action.Click(DeleteLink)
+			WebUI.delay(2)
+			action.AcceptAlert()
+			WebUI.delay(5)
+			
+			
+		}
+		catch(Exception e)
+		{
+			Assert.fail("ClickOnDeleteLink method failed due to :" + e)
+		}
+	}
+
+
+	@Keyword
+	public void SearchAndVerifyBrandAfterDelete(String brandNameExp){
+		try{
+
+			String expectedConfirmationMsg = "Brand deleted successfully."
+			String ExpectedSearchMsg = "No records to display."
+			
+			String ActualConfirmationMsg = action.GetText(DeleteConfirmationMsg) 
+			WebUI.delay(2)
+			println "*********"+ ActualConfirmationMsg
+			
+			String ActualSearchMsg = action.GetText(NoRecordtoDisplay)
+			WebUI.delay(2)
+			println "*********"+ ExpectedSearchMsg
+			
+			action.TypeClear(SearchBrandAField, brandNameExp)
+			action.Click(SearchBtn)
+			WebUI.delay(2)
+			Assert.assertEquals(expectedConfirmationMsg, ActualConfirmationMsg)
+			WebUI.delay(2)
+			Assert.assertEquals(ExpectedSearchMsg, ActualSearchMsg)
+
+
+		}
+		catch(Exception e){
+
+			Assert.fail("SearchBrand method failed due to :" + e)
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

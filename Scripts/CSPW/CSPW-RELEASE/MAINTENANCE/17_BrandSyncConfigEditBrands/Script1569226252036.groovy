@@ -17,17 +17,9 @@ WebUI.openBrowser('')
 
 WebUI.maximizeWindow()
 
-CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameposw, GlobalVariable.testtypesmoke, GlobalVariable.environment)
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameconsolidator, GlobalVariable.testtypesmoke, GlobalVariable.environment)
 
-CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.posusername, GlobalVariable.pospassword)
+CustomKeywords.'com.consolidator.LoginPage.LoginConsolidator'(GlobalVariable.consolusername, GlobalVariable.conslopassword)
 
-CustomKeywords.'com.poswm.Homepage.HoverOnWareHouseMenu'()
-
-CustomKeywords.'com.poswm.Homepage.ClickOnMenuLinkBrand'()
-
-CustomKeywords.'com.poswm.WarehouseBrands.VerifyMenuLinkBrandPage'()
-
-CustomKeywords.'com.poswm.WarehouseBrands.VerifyEditBrand'()
-
-WebUI.closeBrowser()
+CustomKeywords.'com.consolidator.UpdateLogPage.ClickOnParentBusinessUnit'()
 

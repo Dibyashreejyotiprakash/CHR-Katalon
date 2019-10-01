@@ -180,8 +180,11 @@ public class Homepage {
 	@Keyword
 	public void ClickOnMenuLinkBrand() {
 		action.MouseHoverOnElement(menuWarehouse)
+		WebUI.delay(3)
 		action.MouseHoverOnElement(adminbtn)
+		WebUI.delay(3)
 		action.Click(subMenuMenuLinkBrand)
+		WebUI.delay(3)
 		action.WaitForPageToLoad()
 	}
 
