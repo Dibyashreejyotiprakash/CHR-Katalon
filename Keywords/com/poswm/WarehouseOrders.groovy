@@ -23,6 +23,7 @@ import com.utilities.Interaction
 
 import com.utilities.Interaction
 import internal.GlobalVariable
+import java.time.LocalDate
 import org.openqa.selenium.WebDriver
 import org.testng.Assert
 import org.openqa.selenium.Alert
@@ -60,6 +61,16 @@ public class WarehouseOrders {
 	By submitordermsg = By.xpath("//*[@id='ctl00_MainContent_radNotifyMessage_simpleContentDiv']")
 	By errormsg = By.xpath("//*[@id='ctl00_MainContent_radNotifyMessage_simpleContentDiv']")
 	By cancelationmsg = By.xpath("//*[@id='ctl00_MainContent_radNotifyMessage_simpleContentDiv']")
+	By plusIcon = By.xpath("//*[@id='ctl00_MainContent_RadDock1_C_btnNewOrder']")
+	By itemNameColumn = By.xpath("//*[@id='ctl00_MainContent_dockItemInformation_C_rgOrderItems_ctl00_ctl04_lblItemName']")
+	By EditThisItem = By.xpath("//*[@id='MainContent_btnEditItemWizard']")
+	By imageNextBtn = By.xpath("//input[@id='ctl00_MainContent_radWizardBar_i1_i0_ucItemImage_btnNext']")
+	By brandNextBtn = By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i2_i0_ucItemBrands_btnNext']")
+	By ItemInfonextButton = By.xpath("//input[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_btnNext']")
+	By salesDivisionThirdOption = By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_radSalesDivision_DropDown']/div/ul/li[2]")
+	By salesDivisionDropDown = By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_radSalesDivision_Input']")
+	By itemInfoSaveIcon = By.xpath("//input[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_btnUpdate']")
+	By desiredshipdatetextbox = By.xpath("//*[@id='ctl00_MainContent_dockShippingInformation_C_calShipDate_dateInput']")
 
 
 	@Keyword
@@ -252,4 +263,101 @@ public class WarehouseOrders {
 			Assert.fail("Click On Cancel Btn failed due to "+ e)
 		}
 	}
+
+
+	@Keyword
+	public void ClickOnItemName() {
+		try {
+			action.Click(itemNameColumn)
+			WebUI.delay(5)
+			
+		}
+		catch(Exception e) {
+			Assert.fail("ClickOnItemName method failed due to :"+e)
+		}
+	}
+
+	@Keyword
+	public void ClickOnEditThisItem() {
+		try {
+			action.WindowHandle()
+			WebUI.delay(3)
+			action.Click(EditThisItem)
+			action.WaitForPageToLoad()
+			
+			
+			
+			WebUI.delay(3)
+			action.Click(salesDivisionDropDown)
+			action.WaitTime(3)
+			action.Click(salesDivisionThirdOption)
+			action.Click(itemInfoSaveIcon)
+			WebUI.delay(5)
+			
+			
+			
+			
+			action.Click(ItemInfonextButton)
+			WebUI.delay(2)
+			action.Click(imageNextBtn)
+			WebUI.delay(2)
+			action.Click(brandNextBtn)
+		}
+		catch(Exception e) {
+			Assert.fail("ClickOnEditThisItem method failed due to :"+e)
+		}
+	}
+	
+	
+	
+	@Keyword
+	public void AddDesiredShipDate() {
+		try{
+			action.ScrollToViewelement(desiredshipdatetextbox)
+			LocalDate date = new LocalDate()
+			String todaydate = date.now()
+			action.Type(desiredshipdatetextbox, todaydate)
+		}
+		catch(Exception e) {
+			Assert.fail("Add Desired Shipping Date and verify failed due to "+ e)
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

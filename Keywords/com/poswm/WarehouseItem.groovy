@@ -67,6 +67,8 @@ public class WarehouseItem {
 	//By txbDescription = By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_radLongDescription']")
 	//By txbNotes = By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_radNotes']")
 	By saveIcon = By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_btnCreate']")
+
+
 	By saveIconItemInfo = By.xpath("//input[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_btnCreate']")
 
 	//By nextButton = By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_btnNext']")
@@ -133,6 +135,7 @@ public class WarehouseItem {
 		String itemname = null
 		try
 		{
+			String itemname = null
 			if(action.IsDisplayed(txbName))
 			{
 				itemname = EnterUniqueItemName()
@@ -158,7 +161,7 @@ public class WarehouseItem {
 			}
 			if(action.IsDisplayed(salesDivisionDropDown))
 			{
-				SelectMultipleSalesDivision()
+				SelectSalesDivision()
 			}
 			if(action.IsDisplayed(seasonalType))
 			{
@@ -362,6 +365,35 @@ public class WarehouseItem {
 			Assert.fail()
 		}
 	}
+
+	@Keyword
+	public void SelectSalesDivision()
+	{
+		try
+		{
+			if(action.IsElementDisplayed(salesDivisionDropDown))
+			{
+				WebUI.delay(3)
+				action.Click(salesDivisionDropDown)
+				//action.WaitVisible(salesDivisionListDiv)
+				action.WaitTime(3)
+				action.Click(salesDivisionSecondOption)
+			}
+			else
+			{
+				throw new Exception("Sales Division  Drop Down is not present")
+			}
+		}
+		catch(Exception e)
+		{
+			println("SelectMultipleSalesDivision method failed due to : "+ e)
+			Assert.fail()
+		}
+	}
+
+
+
+
 	@Keyword
 	public void SelectSeasonalType()
 	{
@@ -571,7 +603,6 @@ public class WarehouseItem {
 			else
 			{
 				throw new Exception("Brand values are not present in grid")
-			}
 		}
 		catch(Exception e){
 			println("FillBrandSection method failed due to :" + e)

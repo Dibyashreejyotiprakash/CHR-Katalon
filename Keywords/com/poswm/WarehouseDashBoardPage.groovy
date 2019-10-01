@@ -92,7 +92,8 @@ public class WarehouseDashBoardPage {
 	By myOrderFirstRow = By.xpath(" //*[@id='ctl00_MainContent_rdMyOrders_C_rgMyOrders_ctl00']//following-sibling::tbody/tr[1]")
 	By myOrderViewOrderLink = By.xpath(" //*[@id='ctl00_MainContent_rdMyOrders_C_rgMyOrders_ctl00']//following-sibling::tbody/tr[1]/td[1]")
 	By myOrderCancelOrderLink = By.xpath(" //*[@id='ctl00_MainContent_rdMyOrders_C_rgMyOrders_ctl00']//following-sibling::tbody/tr[1]/td[2]")
-
+	By OrderPcakListLink = By.xpath("//*[text()='Order Pack List']")
+	By PrintIcon = By.xpath("//*[@name='ctl00$MainContent$tlrkReportViewer$ReportToolbar$PrintGr$Print$ctl00']")
 	By warehouse = By.xpath("//*[text()='Warehouse']")
 	By newitem = By.xpath("//*[text()='New Item']")
 	By neworder = By.xpath("//*[text()='New Order']")
@@ -100,7 +101,7 @@ public class WarehouseDashBoardPage {
 	By admin = By.xpath("//*[text()='Administration']")
 	By useritemapprovaltransfer = By.xpath("//*[text()='User Item Approval Transfer']")
 	By warehouseusers = By.xpath("//*[text()='Warehouse Users']")
-
+	
 	@Keyword
 	public void ClickOnNewItem()
 	{
@@ -530,6 +531,37 @@ public class WarehouseDashBoardPage {
 		catch(Exception e)
 		{
 			Assert.fail("Click On Warehouse Users failed due to "+ e)
+		}
+	}
+	
+	@Keyword
+	public void ClickOnOrderPackList()
+	{
+		try
+		{
+			action.WaitVisible(OrderPcakListLink)
+			action.Click(OrderPcakListLink)
+			action.WaitForPageToLoad()
+			
+			
+		}
+		catch(Exception e)
+		{
+			Assert.fail("ClickOnOrderPackList method failed due to :" + e)
+		}
+	}
+
+	@Keyword
+	public void ClickOnPrintIconAndVerifyOrderPackListReport()
+	{
+		try
+		{
+			action.Click(PrintIcon)
+			
+		}
+		catch(Exception e)
+		{
+			Assert.fail("ClickOnPrintIconAndVerifyOrderPackListReport method failed due to :" + e)
 		}
 	}
 }
