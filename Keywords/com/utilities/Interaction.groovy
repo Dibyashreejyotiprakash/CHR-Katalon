@@ -591,8 +591,6 @@ public  class Interaction {
 		WebDriverWait wait = new WebDriverWait(driver, 300)
 		wait.until(ExpectedConditions.visibilityOfElementLocated(by))
 
-
-
 		//TRY with fluent wait
 		/*Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
 		 .withTimeout(300, SECONDS)
