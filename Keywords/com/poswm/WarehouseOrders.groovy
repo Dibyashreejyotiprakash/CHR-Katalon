@@ -75,12 +75,25 @@ public class WarehouseOrders {
 
 	@Keyword
 	public void VerifyNewOrderPage() {
-		try{
-			action.VerifyCurrentPage("WarehouseOrders.aspx")
+	  try{
+		String expectedUATUrl = "https://csg.v5qa.brandmuscle.net/Warehouse/WarehouseItem.aspx";
+		String expectedSTAGEUrl ="https://csg.v5stage.brandmuscle.net/Warehouse/WarehouseItem.aspx"
+		String expectedPRODUrl = "https://csg.v5prod.brandmuscle.net/Warehouse/WarehouseItem.aspx";
+
+		String env = GlobalVariable.environment
+		String actualUrl = action.GetCurrentURL();
+		WebUI.delay(5)
+
+		if(env.equalsIgnoreCase("uat")) {
+			Assert.assertEquals(expectedUATUrl, actualUrl)
 		}
-		catch(Exception e) {
+		else if(env.equalsIgnoreCase("staging")) {
+			Assert.assertEquals(expectedSTAGEUrl, actualUrl)
+		}
+	  }
+	catch(Exception e) {
 			Assert.fail("Verify New Order page failed due to "+ e)
-		}
+	  }
 	}
 
 	@Keyword
@@ -269,8 +282,7 @@ public class WarehouseOrders {
 	public void ClickOnItemName() {
 		try {
 			action.Click(itemNameColumn)
-			WebUI.delay(5)
-			
+			WebUI.delay(5)	
 		}
 		catch(Exception e) {
 			Assert.fail("ClickOnItemName method failed due to :"+e)
@@ -284,19 +296,12 @@ public class WarehouseOrders {
 			WebUI.delay(3)
 			action.Click(EditThisItem)
 			action.WaitForPageToLoad()
-			
-			
-			
 			WebUI.delay(3)
 			action.Click(salesDivisionDropDown)
 			action.WaitTime(3)
 			action.Click(salesDivisionThirdOption)
 			action.Click(itemInfoSaveIcon)
 			WebUI.delay(5)
-			
-			
-			
-			
 			action.Click(ItemInfonextButton)
 			WebUI.delay(2)
 			action.Click(imageNextBtn)
