@@ -37,17 +37,33 @@ public class Reporting {
 	By werehouseSubMenuList = By.xpath("//*[@class='rmVertical rmGroup rmLevel1 menu']")
 	By menuWarehouse = By.xpath("//*[@id='mainMenu']/div/ul/li[2]/a/span")
 	By divPOSWReports = By.xpath("//*[@id='reportlabelsholderDiv']")
-
-
+	By clientReportsTxt = By.xpath("//span[@id='lblreportLabelHeader']")
+	By poswReportHeader = By.xpath("//span[@id='lblReportingTabHeader']")
+	By reportNameCol = By.xpath("//th[contains(text(),'Report Name')]")
+	By descNameCol = By.xpath("//th[contains(text(),'Description')]")
+	
+	
 	@Keyword
 	public void VerifyReportsPage() {
 		try{
-			action.VerifyCurrentPage("Dashboard.aspx")
+			String actualurl = action.GetCurrentURL()
+			if(actualurl.contains("/Reporting/Dashboard.aspx"))
+			{
+				println ("Page URL is correct")
+			}
+			else
+			{
+				throw new Exception("Page URL is not correct")
+			}
+			Assert.assertTrue(action.IsDisplayed(divPOSWReports))
+			Assert.assertTrue(action.IsDisplayed(clientReportsTxt))
+			Assert.assertTrue(action.IsDisplayed(poswReportHeader))
+			Assert.assertTrue(action.IsDisplayed(reportNameCol))
+			Assert.assertTrue(action.IsDisplayed(descNameCol))
 		}
-		catch(Exception e)
-		{
-			println ("Verify Reports Page failed ue to "+ e)
-			Assert.fail()
+		catch(Exception e) {
+			
+			Assert.fail("Verify Reports Page failed due to "+ e)
 		}
 	}
 }
