@@ -51,14 +51,16 @@ public class HomePage {
 	By myaccountlink = By.xpath("//*[@id='ctl00_cphLoginStatus_lvPassword_tab4']")
 	By changepwd = By.xpath("//*[@id='ctl00_cphLoginStatus_lvPassword_tab5']")
 
-	By alldtjobid = By.xpath("//*[@id='ctl00_cphBody_gvDesignsBySalesPerson']//tr//td//a")
+	By alldtjobid = By.xpath("//*[@id='ctl00_cphBody_gvDesignsBySalesPerson_ctl03_lnkJobDetailPage']")
 
 	By currentpassword = By.xpath("//*[@id='CurrentPassword']")
 	By newpassword = By.xpath("//*[@id='NewPassword']")
 	By confirmpassword = By.xpath("//*[@id='ConfirmNewPassword']")
 	By newpasswordsubmitbtn = By.xpath("//*[@id='ctl00_cphBody_passChange_ChangePasswordContainerID_ChangePasswordPushButton']")
 
-	
+	By jobname = By.xpath("//*[@id='ctl00_cphBody_txtJobName']")
+
+
 	@Keyword
 	public void VerifyApprovalHomePage() {
 		try {
@@ -159,9 +161,54 @@ public class HomePage {
 	@Keyword
 	public void VerifyDTJobsAfterSearchByCreatedStatus(String createdjobid) {
 		try{
-			List<WebElement> alldtjobs = action.GetElements(alldtjobid)
-			for(int i=0;i< alldtjobs.size();i++) {
-				if(alldtjobs.get(i).getText().contains(createdjobid)) {
+			action.Click(statusddn)
+			WebUI.delay(10)
+			action.Click(createdstatus)
+			WebUI.delay(10)
+			boolean statusofjobid = action.IsElementDisplayed(alldtjobid)
+			Assert.assertTrue(statusofjobid)
+			if(statusofjobid) {
+				println ("Created Job id in DT found")
+			}
+			else {
+				throw new Exception("Created Job Id not found")
+			}
+		}
+		catch(Exception e) {
+			println ("Verify DT Jobs After Search By Created Status failed due to "+ e)
+			Assert.fail()
+		}
+	}
+
+	@Keyword
+	public boolean VerifyJobNameField() {
+		boolean statusofjobnamefield = false
+		try{
+			statusofjobnamefield = action.IsElementDisplayed(jobname)
+			Assert.assertTrue(statusofjobnamefield)
+			return statusofjobnamefield
+		}
+		catch(Exception e) {
+			Assert.fail("Verify Job Name Field failed due to "+ e)
+		}
+	}
+
+	@Keyword
+	public void VerifyDTSearchByJobName() {
+		try{
+			action.Click(statusddn)
+			WebUI.delay(10)
+			action.Click(createdstatus)
+			WebUI.delay(10)
+
+			if(VerifyJobNameField) {
+				action.Type(jobname, "Test Job Name")
+				action.Click(searchbtn)
+				WebUI.delay(5)
+
+				boolean statusofjobid = action.IsElementDisplayed(alldtjobid)
+				Assert.assertTrue(statusofjobid)
+				if(statusofjobid) {
 					println ("Created Job id in DT found")
 				}
 				else {
@@ -169,99 +216,99 @@ public class HomePage {
 				}
 			}
 		}
-		catch(Exception e) {
-			println ("Verify DT Jobs After Search By Created Status failed due to "+ e)
-			Assert.fail()
-		}
+	catch(Exception e) {
+		Assert.fail("Verify DT Search by job name failed due to "+ e)
 	}
-	
-	
-	@Keyword
-	public void VerifyDTJobsAfterSearchBySalesperson() {
-		try{
-			
-			action.SelectByIndex(salespersonddn, 1)
-			WebUI.delay(10)
-			action.Click(searchbtn)
-			WebUI.delay(5)
-			List<WebElement> alldtjobs = action.GetElements(alldtjobid)
-			for(int i=0;i< alldtjobs.size();i++) {
-				alldtjobs.get(i).click()
-				break
-				action.WaitForPageToLoad()
-				action.VerifyCurrentPage("JobDetails.aspx")
-			}
-		}
-		catch(Exception e) {
-			println ("Verify DT Jobs After Search By Created Status failed due to "+ e)
-			Assert.fail()
-		}
+}
+
+
+@Keyword
+public void VerifyDTJobsAfterSearchBySalesperson() {
+	try{
+
+		action.SelectByIndex(salespersonddn, 1)
+		WebUI.delay(10)
+		action.Click(searchbtn)
+		WebUI.delay(5)
+		boolean statusofjobid = action.IsElementDisplayed(alldtjobid)
+				Assert.assertTrue(statusofjobid)
+				if(statusofjobid) {
+					println ("Created Job id in DT found")
+				}
+				else {
+					throw new Exception("Created Job Id not found")
+				}
 	}
-	
-
-	@Keyword
-	public void VerifyCreatedJobDetails() {
-		try{
-
-			List<WebElement> alldtjobs = action.GetElements(alldtjobid)
-			for(int i=0;i< alldtjobs.size();i++) {
-				alldtjobs.get(i).click()
-				break
-				action.WaitForPageToLoad()
-				action.VerifyCurrentPage("JobDetails.aspx")
-			}
-		}
-		catch(Exception e) {
-			println ("Verify Created Job Details failed due to "+ e)
-			Assert.fail()
-		}
+	catch(Exception e) {
+		println ("Verify DT Jobs After Search By Created Status failed due to "+ e)
+		Assert.fail()
 	}
+}
 
-	@Keyword
-	public void ClickOnAccountLink() {
-		try {
-			action.Click(myaccountlink)
+
+@Keyword
+public void VerifyCreatedJobDetails() {
+	try{
+
+		List<WebElement> alldtjobs = action.GetElements(alldtjobid)
+		for(int i=0;i< alldtjobs.size();i++) {
+			alldtjobs.get(i).click()
+			break
 			action.WaitForPageToLoad()
-			action.VerifyCurrentPage("ChangePassword.aspx")
-		}
-		catch(Exception e) {
-			println ("Click On AccountLink failed due to "+ e)
-			Assert.fail()
+			action.VerifyCurrentPage("JobDetails.aspx")
 		}
 	}
-
-	@Keyword
-	public void VerifyAllFiledsInChangePasswordPage() {
-		try{
-			boolean statusofcurrentpwdfield = action.IsDisplayed(currentpassword)
-			Assert.assertTrue(statusofcurrentpwdfield)
-
-			boolean statusofnewpwdfield = action.IsElementDisplayed(newpassword)
-			Assert.assertTrue(statusofnewpwdfield)
-
-			boolean statusofconfirmpwd = action.IsElementDisplayed(confirmpassword)
-			Assert.assertTrue(statusofconfirmpwd)
-
-			boolean stausofsubmitbtn = action.IsElementDisplayed(newpasswordsubmitbtn)
-			Assert.assertTrue(stausofsubmitbtn)
-		}
-		catch(Exception e) {
-			println ("Verify All Fileds In Change Password Page failed due to "+ e)
-			Assert.fail()
-		}
+	catch(Exception e) {
+		println ("Verify Created Job Details failed due to "+ e)
+		Assert.fail()
 	}
+}
 
-
-	@Keyword
-	public void ClickOnReportsButton() {
-		try{
-			action.Click(reportslink)
-			action.WaitForPageToLoad()
-			action.VerifyCurrentPage("Reports.aspx")
-		}
-		catch(Exception e) {
-			println ("Click On Reports Button failed due to "+ e)
-			Assert.fail()
-		}
+@Keyword
+public void ClickOnAccountLink() {
+	try {
+		action.Click(myaccountlink)
+		action.WaitForPageToLoad()
+		action.VerifyCurrentPage("ChangePassword.aspx")
 	}
+	catch(Exception e) {
+		println ("Click On AccountLink failed due to "+ e)
+		Assert.fail()
+	}
+}
+
+@Keyword
+public void VerifyAllFiledsInChangePasswordPage() {
+	try{
+		boolean statusofcurrentpwdfield = action.IsDisplayed(currentpassword)
+		Assert.assertTrue(statusofcurrentpwdfield)
+
+		boolean statusofnewpwdfield = action.IsElementDisplayed(newpassword)
+		Assert.assertTrue(statusofnewpwdfield)
+
+		boolean statusofconfirmpwd = action.IsElementDisplayed(confirmpassword)
+		Assert.assertTrue(statusofconfirmpwd)
+
+		boolean stausofsubmitbtn = action.IsElementDisplayed(newpasswordsubmitbtn)
+		Assert.assertTrue(stausofsubmitbtn)
+	}
+	catch(Exception e) {
+		println ("Verify All Fileds In Change Password Page failed due to "+ e)
+		Assert.fail()
+	}
+}
+
+
+@Keyword
+public void ClickOnReportsButton() {
+	try{
+		action.Click(reportslink)
+		action.WaitForPageToLoad()
+		action.VerifyCurrentPage("Reports.aspx")
+	}
+	catch(Exception e) {
+		println ("Click On Reports Button failed due to "+ e)
+		Assert.fail()
+	}
+}
 }

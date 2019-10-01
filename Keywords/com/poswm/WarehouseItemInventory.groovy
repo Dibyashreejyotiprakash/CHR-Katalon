@@ -267,7 +267,7 @@ public class WarehouseItemInventory {
 			String expectedSTAGEUrl ="https://csg.v5stgae.brandmuscle.net/Warehouse/Admin/UserTransfer.aspx"
 
 			action.WaitTime(5)
-			String env = GlobalVariable.environment			
+			String env = GlobalVariable.environment
 			action.WaitTime(5)
 			println "environment is -------->"+ env
 			String actualUrl = action.GetCurrentURL()
@@ -414,72 +414,4 @@ public class WarehouseItemInventory {
 			Assert.fail()
 		}
 	}
-
-	//		action.WaitVisible(supplierExpandUpBtn)
-	//		boolean status= action.IsElementDisplayed(linkSupplier)
-	//		if(status== true) {
-	//
-	//			action.WaitVisible(supplierExpandUpBtn)
-	//			WebUI.delay(3)
-	//			//action.Click(supplierExpandUpBtn)
-	//			//action.wait(2)
-	//			action.ScrollToViewElement(linkSupplier)
-	//			boolean statusSupplierLink = action.IsElementEnabled(linkSupplier)
-	//			Assert.assertTrue(statusSupplierLink)
-	//			println ("Supplier link is present/enable")
-	//		}
-
-
-	/*if(action.IsElementDisplayed(linkBrands)) {
-	 action.wait(2)
-	 action.WaitVisible(brandsExpandUpBtn)
-	 action.wait(2)
-	 action.Click(brandsExpandUpBtn)
-	 action.wait(2)
-	 action.ScrollToViewElement(linkBrands)
-	 boolean statusBrandLink = action.IsElementEnabled(linkBrands)
-	 Assert.assertTrue(statusBrandLink)
-	 println ("Brand link is present/enable")
-	 }
-	 if(action.IsElementDisplayed(linkDemographic)) {
-	 action.ScrollToViewElement(linkDemographic)
-	 boolean statusDemographicLink = action.IsElementEnabled(linkDemographic)
-	 Assert.assertTrue(statusDemographicLink)
-	 println ("Demographic Link link is present/enable")
-	}
-	 }
-
-	@Keyword
-	public void VerifyDeletedItem(String deleteditemname)
-	{
-		try{
-			action.Click(otherfilterddn)
-			WebUI.delay(5)
-			action.Click(deletedcheckbox)
-			List<WebElement> allitemnames = action.GetElements(allitemname)
-			if(allitemnames.size()>0)
-			{
-				for(int i=0;i< allitemnames.size();i++)
-				{
-					String selecteditemname = allitemnames.get(i).getText()
-					if(selecteditemname.contains(deleteditemname))
-					{
-						println ("Deleted Item found")
-						break
-					}
-					else{
-						throw new Exception("Not found")
-					}
-				}
-			}
-			else{
-				throw new Exception("Deleteditems not found")
-			}
-	    }
-		catch(Exception e)
-		{
-			println ("Verify Deleted Item failed due to "+ e)
-			Assert.fail()
-	    }
-    }
 }

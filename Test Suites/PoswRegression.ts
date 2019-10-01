@@ -11,12 +11,6 @@
    <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
    <testSuiteGuid>b71b0149-6e2a-4b00-9b20-8a7a5545dd69</testSuiteGuid>
    <testCaseLink>
-      <guid>a3592e8d-bd1d-4951-9cf8-dcb35b699312</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/CSPW/POSW REGRESSION/CREATENEWORDER/VerifyAddNewCustomer</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
       <guid>88e9898f-5562-4426-8b02-844dfa8a5061</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
@@ -32,6 +26,6 @@
       <guid>63854bd7-5cc7-4504-b115-931b7bb4ee0c</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/CSPW/POSW REGRESSION/ORDERSEARCH/VerifyOrderSearch</testCaseId>
+      <testCaseId>Test Cases/CSPW/POSW REGRESSION/ORDERSEARCH/SearchNewlyCreatedOrder</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>VerifyAddNewElemetWithoutOptionalDetails</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>7552b273-5d5c-41bc-b17f-b8ccdcaf9c08</testCaseGuid>
+</TestCaseEntity>
