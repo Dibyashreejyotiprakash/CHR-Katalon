@@ -49,7 +49,7 @@ public class ItemSearchpage {
 	By expandedmetatagcross = By.xpath("(//img[@alt = 'X'])[2]")
 	By completestatus = By.xpath("//li[contains(text(),'Complete')]")
 	By alphaW = By.xpath("//a[@id='aAlpha_W']")
-	By checkboxlist = By.xpath("//input[@checked='']")
+	By checkboxlist = By.xpath("//div[@id = 'programlistContent']//span[@class = 'check']")
 	By applyselection = By.xpath("//button[@id='btnUpdate']")
 	By selectmetatag = By.xpath("//label[contains(text(),'Wakefield')]")
 	By savebtn = By.xpath("//input[@id='cphMain_cphMain_btnSave']")
@@ -211,19 +211,22 @@ public class ItemSearchpage {
 		try
 		{
 			action.WaitVisible(brandnamemetatagcount)
+			action.ScrollToViewElement(brandnamemetatagcount)
+			WebUI.delay(3)
 			action.Click(brandnamemetatagcount)
-
+			WebUI.delay(3)
 			List<WebElement> e = action.GetElements(checkboxlist)
 
 			if(e.size()>0)
 			{
-				for(int i=0;i< e.size(); i++)
+				for(int i=0;i< 3; i++)
 				{
-					action.Click(e[i])
+					e[i].click()
 
 				}
 
 				action.Click(applyselection)
+				action.WaitVisible(savebtn)
 			}
 			else
 			{
