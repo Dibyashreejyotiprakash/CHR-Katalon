@@ -33,6 +33,9 @@ import org.openqa.selenium.Alert
 import org.openqa.selenium.By
 import org.openqa.selenium.Keys
 import org.openqa.selenium.JavascriptExecutor
+import org.openqa.selenium.WebDriver.Timeouts;
+import java.util.concurrent.TimeUnit;
+
 //import internal.GlobalVariable
 import java.time.LocalTime
 
@@ -333,7 +336,7 @@ public  class Interaction {
 					if (EnvironmentName.equalsIgnoreCase("UAT"))
 					{
 						WebUI.navigateToUrl(GlobalVariable.dtUAT)
-						WebUI.delay(3)
+						//WebUI.delay(3)
 					}
 					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
 						WebUI.navigateToUrl(GlobalVariable.dtSTAGE)
@@ -381,7 +384,7 @@ public  class Interaction {
 		WebDriverWait wait = new WebDriverWait(driver, 300);
 		pageLoadStatus = (String)js.executeScript("return document.readyState");
 
-		WebUI.delay(10)
+		//WebUI.delay(10)
 	}
 
 
@@ -407,11 +410,14 @@ public  class Interaction {
 
 
 	public String  GetCurrentURL() {
+
+		//WaitVisible(by)
+		WebUI.delay(2)
 		return driver.getCurrentUrl();
 	}
 
 	public void  Type(By by, String value) {
-		//WaitVisible(by)
+		WaitVisible(by)
 		driver.findElement(by).sendKeys(value);
 	}
 
@@ -585,38 +591,37 @@ public  class Interaction {
 	}
 
 
-	public void  WaitVisible(By by)
+	public void WaitVisible(By by)
 	{
+		WebUI.delay(1)
 		WebDriverWait wait = new WebDriverWait(driver, 300)
-		wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(by))
 
-		WebUI.delay(4)
+		/*println('Entering into Explicit wait statements')
 
-		//TRY with fluent wait
-		/*Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
-		 .withTimeout(300, SECONDS)
-		 .pollingEvery(5, SECONDS)
-		 .ignoring(NoSuchElementException.class);
-		 WebElement foo = wait.until(ExpectedConditions.visibilityOfElementLocated(WebDriver)
-		 {
-		 WebElement apply(WebDriver driver) {
-		 return driver.findElement(By);
-		 }
-		 }
-		 );*/
+		Boolean prsentstatus=wait.until(ExpectedConditions.presenceOfElementLocated(by))
+		println(prsentstatus)
 
+		Boolean prsentstatus1 = wait.until(ExpectedConditions.visibilityOfElementLocated(by))
+		println(prsentstatus1)*/
 	}
 
 	public void  WaitVisibleDup(By by)
 	{
 		WebDriverWait wait = new WebDriverWait(driver, 300)
-		wait.until(ExpectedConditions.visibilityOfElementLocated(by));
-		WebUI.delay(8)
+
+		println('Entering into Explicit wait statements')
+
+		Boolean prsentstatus=wait.until(ExpectedConditions.presenceOfElementLocated(by))
+		println(prsentstatus)
+
+		Boolean clickstatus=wait.until(ExpectedConditions.elementToBeClickable(by))
+		println(clickstatus)
+
 	}
 
 	public void  WaitVisible(By by,int timeinsec)
 	{
-		//WaitVisible(by)
 		WebDriverWait wait = new WebDriverWait(driver, timeinsec);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 	}
@@ -626,7 +631,6 @@ public  class Interaction {
 		WebDriverWait wait = new WebDriverWait(driver,300);
 		wait.until(ExpectedConditions.visibilityOf(element));
 	}
-
 
 
 	public void  WaitVisible(WebElement element,int timeinsec)
@@ -803,6 +807,7 @@ public  class Interaction {
 
 	public void MouseHoverOnElement(By by)
 	{
+		WaitVisible(by);
 		WebElement elementToHover = driver.findElement(by);
 		Actions hover = new Actions(driver);
 		hover.moveToElement(elementToHover)
@@ -886,6 +891,31 @@ public  class Interaction {
 		return options
 	}
 
+	//window handling
+	@Keyword
+	public void WindowHandle(){
+		try{
+			Set<String> set =  driver.getWindowHandles();
+			Iterator<String> it = set.iterator();
+			while(it.hasNext())
+			{
+				String parentwidowid = it.next()
+				println ("Parent Window id is"+ parentwidowid)
+
+				String childwindowid = it.next()
+				println ("Child Window id is"+ childwindowid)
+
+				driver.switchTo().window(childwindowid)
+			}
+
+
+		}
+		catch(Exception e){
+			println ("WindowHandle method failed due to :"+ e)
+
+		}
+	}
+
 	//Get attribute of webelement
 
 	public String Attribute(By by, String attri)
@@ -906,6 +936,7 @@ public  class Interaction {
 
 	public String GetText(By by)
 	{
+		WaitVisible(by)
 		return driver.findElement(by).getText();
 	}
 
@@ -931,18 +962,4 @@ public  class Interaction {
 	{
 		return RandomStringUtils.randomNumeric(stringlength)
 	}
-
-	public void VerifyCurrentPage(String expectedurl)
-	{
-		String actualurl = driver.currentUrl
-		if(actualurl.contains(expectedurl))
-		{
-			println ("Page verified")
-		}
-		else
-		{
-			throw new Exception("Page is not verified")
-		}
-	}
-
 }
