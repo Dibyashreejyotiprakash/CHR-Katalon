@@ -98,20 +98,19 @@ public class Homepage {
 	@Keyword
 	public void ClickOnItemSearch() {
 		action.MouseHoverOnElement(menuWarehouse)
-		WebUI.delay(5)
-		action.MouseHoverAndClick(itemsearchbtn)
-		action.WaitForPageToLoad()
-		action.WaitVisible(btnClear)
-		action.WaitTime(10);
+		WebUI.delay(3)
+		action.Click(itemsearchbtn)
+		//action.WaitForPageToLoad()
 	}
 
 	@Keyword
 	public void ClickOnNewItem() {
 		action.MouseHoverOnElement(menuWarehouse)
+		WebUI.delay(3)
 		action.Click(newitembtn)
-		action.WaitForPageToLoad()
+		//action.WaitForPageToLoad()
 		action.WaitVisible(itemInformationSection)
-		WebUI.delay(5)
+		WebUI.delay(3)
 	}
 
 	@Keyword
@@ -132,9 +131,11 @@ public class Homepage {
 	@Keyword
 	public void ClickOnItemProperties() {
 		action.MouseHoverOnElement(menuWarehouse)
+		WebUI.delay(2)
 		action.MouseHoverOnElement(adminbtn)
+		WebUI.delay(2)
 		action.Click(subMenuitemProperties)
-		action.WaitForPageToLoad()
+		//action.WaitForPageToLoad()
 	}
 
 	@Keyword
@@ -143,7 +144,7 @@ public class Homepage {
 		action.MouseHoverOnElement(adminbtn)
 		action.MouseHoverOnElement(adminbtn)
 		action.Click(subMenuWareHouse)
-		action.WaitForPageToLoad()
+		//action.WaitForPageToLoad()
 	}
 
 	@Keyword
