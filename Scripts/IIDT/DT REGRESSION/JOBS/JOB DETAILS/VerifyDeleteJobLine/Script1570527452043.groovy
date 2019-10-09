@@ -13,26 +13,24 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.openBrowser('')
 
-WebUI.maximizeWindow()
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamedesigntracker, GlobalVariable.testtyperegression,
+	GlobalVariable.environment)
 
-CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameconsolidator, GlobalVariable.testtypesmoke, GlobalVariable.environment)
+WebUI.waitForPageLoad(300)
 
-CustomKeywords.'com.consolidator.LoginPage.LoginConsolidator'(GlobalVariable.consolusername, GlobalVariable.conslopassword)
+CustomKeywords.'com.designtracker.LoginPage.LoginToDesignTarcker'(GlobalVariable.dtusername, GlobalVariable.dtpassowrd)
 
-CustomKeywords.'com.consolidator.UpdateLogPage.ClickOnParentBusinessUnit'()
+CustomKeywords.'com.designtracker.HomePage.VerifyHomePage'()
 
-CustomKeywords.'com.consolidator.ParentBusinessUnitPage.SelectParentBusinessUnit'()
+CustomKeywords.'com.designtracker.HomePage.ClickOnNewJob'()
 
-CustomKeywords.'com.consolidator.UpdateLogPage.ClickOnConsolidatorTab'()
+CustomKeywords.'com.designtracker.JobNewPage.VerifyNewJobPage'()
 
-CustomKeywords.'com.consolidator.ConsolidatorDefaultPage.ClickOnManagePrograms'()
+CustomKeywords.'com.designtracker.JobNewPage.CreateNewJob'()
 
-CustomKeywords.'com.consolidator.ManageProgramElementPage.VerifyManageProgramElements'()
+CustomKeywords.'com.designtracker.JobDetailsPage.AddPartAddonsAndBackToJobDetailsPage'()
 
-CustomKeywords.'com.consolidator.ManageProgramElementPage.NavigateToConsolidatorEditProgramItemPage'()
-CustomKeywords.'com.consolidator.LoginPage.LogoutFromV5AdminTool'()
+CustomKeywords.'com.designtracker.JobDetailsPage.DeletePart'()
 
-WebUI.closeBrowser()
 

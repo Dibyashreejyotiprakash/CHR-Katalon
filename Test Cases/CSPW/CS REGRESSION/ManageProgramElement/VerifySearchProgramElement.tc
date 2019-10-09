@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>VerifyVerifyAddNewElement</name>
+   <name>VerifySearchProgramElement</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>26f74780-36d3-44b7-922b-357694df7f1e</testCaseGuid>
+   <testCaseGuid>2482d7e3-327d-4581-9de7-434b23c0af12</testCaseGuid>
 </TestCaseEntity>

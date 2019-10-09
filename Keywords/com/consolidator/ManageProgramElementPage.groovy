@@ -88,7 +88,7 @@ public class ManageProgramElementPage {
 					WebUI.delay(5)
 				}
 			}else{
-			throw new Exception("First edit link disabled")
+				throw new Exception("First edit link disabled")
 			}
 		}
 		catch(Exception e) {
@@ -96,41 +96,36 @@ public class ManageProgramElementPage {
 			throw e;
 		}
 	}
-	
+
 	@Keyword
-	public void SearchPragramElement()
-	{
+	public void SearchPragramElement() {
 		try{
-			List<WebElement> allprogramelements = action.GetElements(allprogramelement)
-			int totalprogramelement = allprogramelements.size()
-			if(totalprogramelement >0)
-			{
-				for(int i=0;i< allprogramelements.size();i++)
-				{
-					String programelementname =allprogramelements.get(i).getText()
-					action.Type(searchtxtbox, programelementname)
+			List<WebElement> allprogramelementsnames = action.GetElements(allprogramelement)
+			int totalprogramelement = allprogramelementsnames.size()
+			println ("Total Program element Name is ----"+ totalprogramelement)
+			if(totalprogramelement >0) {
+				for(int i=0;i< allprogramelementsnames.size();i++) {
+					String firstprogramelementname =allprogramelementsnames.get(i).getText()
+					println ("Program Element Name is ------"+ firstprogramelementname)
+					action.Type(searchtxtbox, firstprogramelementname)
 				}
 			}
 			else{
 				throw new Exception("Program element is not present")
 			}
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("Search program element failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
-	public void ClickOnEdit()
-	{
+	public void ClickOnEdit() {
 		try{
 			List<WebElement> allprogramelements = action.GetElements(allprogramelement)
 			int totalprogramelement = allprogramelements.size()
-			if(totalprogramelement >0)
-			{
-				for(int i=0;i< allprogramelements.size();i++)
-				{
+			if(totalprogramelement >0) {
+				for(int i=0;i< allprogramelements.size();i++) {
 					boolean statusoffirsteditlink = action.IsElementDisplayed(firsteditlink)
 					if(statusoffirsteditlink == true) {
 						boolean statusofenablefirsteditlink = action.IsElementEnabled(firsteditlink)
@@ -140,7 +135,7 @@ public class ManageProgramElementPage {
 							WebUI.delay(5)
 						}
 					}else{
-					throw new Exception("First edit link disabled")
+						throw new Exception("First edit link disabled")
 					}
 				}
 			}
@@ -148,8 +143,7 @@ public class ManageProgramElementPage {
 				throw new Exception("Program element is not present")
 			}
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("Click On Edit failed due to "+ e)
 		}
 	}

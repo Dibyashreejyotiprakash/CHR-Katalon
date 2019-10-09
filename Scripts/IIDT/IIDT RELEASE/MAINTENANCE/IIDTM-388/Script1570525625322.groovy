@@ -13,26 +13,12 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.openBrowser('')
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamewswadmin, GlobalVariable.testtypesmoke, GlobalVariable.environment)
 
-WebUI.maximizeWindow()
+CustomKeywords.'com.wswadmin.LoginPage.WSWlogin'(GlobalVariable.wswadminusername, GlobalVariable.wswpassword)
 
-CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameconsolidator, GlobalVariable.testtypesmoke, GlobalVariable.environment)
+CustomKeywords.'com.wswadmin.HomePage.NavigateToItemSearchPage'()
 
-CustomKeywords.'com.consolidator.LoginPage.LoginConsolidator'(GlobalVariable.consolusername, GlobalVariable.conslopassword)
+CustomKeywords.'com.wswadmin.ItemSearchpage.VerifytemplateFulfillmentPage'()
 
-CustomKeywords.'com.consolidator.UpdateLogPage.ClickOnParentBusinessUnit'()
-
-CustomKeywords.'com.consolidator.ParentBusinessUnitPage.SelectParentBusinessUnit'()
-
-CustomKeywords.'com.consolidator.UpdateLogPage.ClickOnConsolidatorTab'()
-
-CustomKeywords.'com.consolidator.ConsolidatorDefaultPage.ClickOnManagePrograms'()
-
-CustomKeywords.'com.consolidator.ManageProgramElementPage.VerifyManageProgramElements'()
-
-CustomKeywords.'com.consolidator.ManageProgramElementPage.NavigateToConsolidatorEditProgramItemPage'()
-CustomKeywords.'com.consolidator.LoginPage.LogoutFromV5AdminTool'()
-
-WebUI.closeBrowser()
-
+CustomKeywords.'com.wswadmin.ItemSearchpage.VerifyCorporationDdnIsMandatory'()

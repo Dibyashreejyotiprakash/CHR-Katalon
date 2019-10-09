@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>VerifyDeleteButton</name>
+   <name>IIDTM-866</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>ce400531-e14c-48fc-bd7e-60e34092b1f1</testCaseGuid>
+   <testCaseGuid>55a4dc2e-91c0-4a47-b9f8-212f491263e9</testCaseGuid>
 </TestCaseEntity>

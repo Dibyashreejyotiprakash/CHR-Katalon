@@ -13,24 +13,18 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.openBrowser('')
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameiiadmin, GlobalVariable.testtyperegression, GlobalVariable.environment)
 
-WebUI.maximizeWindow()
+CustomKeywords.'com.iiadmin.LoginPage.LoginToIIAdmin'(GlobalVariable.iiadminusername, GlobalVariable.iiadminpassword)
 
-CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameconsolidator, GlobalVariable.testtypesmoke, GlobalVariable.environment)
+CustomKeywords.'com.iiadmin.EditItemsPage.NavigateToCorp300'()
 
-CustomKeywords.'com.consolidator.LoginPage.LoginConsolidator'(GlobalVariable.consolusername, GlobalVariable.conslopassword)
+CustomKeywords.'com.iiadmin.EditItemsPage.SelectFisrtLogoAndClickOnEditLink'()
 
-CustomKeywords.'com.consolidator.UpdateLogPage.ClickOnParentBusinessUnit'()
+CustomKeywords.'com.iiadmin.EditItemsPage.ClickOnLogosLink'()
 
-CustomKeywords.'com.consolidator.ParentBusinessUnitPage.SelectParentBusinessUnit'()
+CustomKeywords.'com.iiadmin.EditItemsPage.EditFisrtLogoAndUpdte'()
 
-CustomKeywords.'com.consolidator.UpdateLogPage.ClickOnConsolidatorTab'()
+WebUI.delay(100)
 
-CustomKeywords.'com.consolidator.ConsolidatorDefaultPage.ClickOnManagePrograms'()
-
-CustomKeywords.'com.consolidator.ManageProgramElementPage.VerifyManageProgramElements'()
-CustomKeywords.'com.consolidator.LoginPage.LogoutFromV5AdminTool'()
-
-WebUI.closeBrowser()
 

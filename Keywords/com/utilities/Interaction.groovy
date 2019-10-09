@@ -443,9 +443,8 @@ public  class Interaction {
 
 	public void  TypeClear(By by, String value) {
 		WaitVisible(by)
-		WebElement element = driver.findElement(by);
-		element.clear();
-		element.sendKeys(value);
+		driver.findElement(by).clear()
+		driver.findElement(by).sendKeys(value)
 	}
 
 
@@ -598,12 +597,10 @@ public  class Interaction {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(by))
 
 		/*println('Entering into Explicit wait statements')
-
-		Boolean prsentstatus=wait.until(ExpectedConditions.presenceOfElementLocated(by))
-		println(prsentstatus)
-
-		Boolean prsentstatus1 = wait.until(ExpectedConditions.visibilityOfElementLocated(by))
-		println(prsentstatus1)*/
+		 Boolean prsentstatus=wait.until(ExpectedConditions.presenceOfElementLocated(by))
+		 println(prsentstatus)
+		 Boolean prsentstatus1 = wait.until(ExpectedConditions.visibilityOfElementLocated(by))
+		 println(prsentstatus1)*/
 	}
 
 	public void  WaitVisibleDup(By by)
@@ -961,5 +958,18 @@ public  class Interaction {
 	public String GenerateRandomNumericString(int stringlength)
 	{
 		return RandomStringUtils.randomNumeric(stringlength)
+	}
+
+	public void VerifyCurrentPage(String expectedurl)
+	{
+		String actualurl = driver.currentUrl
+		if(actualurl.contains(expectedurl))
+		{
+			println ("Page verified")
+		}
+		else
+		{
+			throw new Exception("Page is not verified")
+		}
 	}
 }

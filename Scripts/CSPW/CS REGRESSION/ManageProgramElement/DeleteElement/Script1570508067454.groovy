@@ -13,9 +13,6 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.openBrowser('')
-
-WebUI.maximizeWindow()
 
 CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameconsolidator, GlobalVariable.testtypesmoke, GlobalVariable.environment)
 
@@ -33,8 +30,11 @@ CustomKeywords.'com.consolidator.ManageProgramElementPage.VerifyManageProgramEle
 
 CustomKeywords.'com.consolidator.ManageProgramElementPage.NavigateToConsolidatorEditProgramItemPage'()
 
-CustomKeywords.'com.consolidator.ConsolidatorEditProgramPage.VerifyAddNewElementBtn'()
+CustomKeywords.'com.consolidator.ConsolidatorEditProgramPage.VerifyEditProgramItemPage'()
+
+CustomKeywords.'com.consolidator.ConsolidatorEditProgramPage.DeleteElement'()
+
 CustomKeywords.'com.consolidator.LoginPage.LogoutFromV5AdminTool'()
 
-WebUI.closeBrowser()
+
 

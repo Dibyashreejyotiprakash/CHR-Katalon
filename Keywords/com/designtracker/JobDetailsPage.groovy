@@ -108,6 +108,15 @@ public class JobDetailsPage {
 
 	By fisrtshippingtype = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_lvJobs_ctrl0_JobLine_rptrJobLines_ctl00_gvJobShippingLocations_ctl02_lblJobShippingType']")
 	By secondshippingtype = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_lvJobs_ctrl0_JobLine_rptrJobLines_ctl01_gvJobShippingLocations_ctl02_lblJobShippingType']")
+	
+	By feesqty = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_gvFees_ctl04_txtFeeQty']")
+	By fesscheckbox = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_gvFees_ctl04_chkSelectedFees']")
+	By attaachfeesbtn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_btnAttachFees']")
+	
+	By removepartlink = By.xpath("//*[text()='Remove Part']")
+	By removecheckbox = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_gvRemove_ctl02_ckRemovePart']")
+	By removeselectedpartbtn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_btnRemoveParts']")
+	By partrow = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_gvRemove']//tr[2]")
 
 
 	@Keyword
@@ -295,7 +304,7 @@ public class JobDetailsPage {
 			action.Type(quantity, "123")
 			action.Click(partsearchbtn)
 			WebUI.delay(10)
-			action.Click(part)
+			action.Click(part1)
 			action.Click(insertbtn)
 			WebUI.delay(10)
 			action.Click(jobdetailsbtn)
@@ -304,6 +313,56 @@ public class JobDetailsPage {
 		catch(Exception e) {
 			println ("Add Part failed due to "+ e)
 			Assert.fail()
+		}
+	}
+	
+	
+	@Keyword
+	public void AddPartAddonsAndBackToJobDetailsPage() {
+		try {
+			action.ScrollToBottomOfPage()
+			WebUI.delay(7)
+			action.Click(addpartlink)
+			WebUI.delay(5)
+			action.WaitForPageToLoad()
+			action.SelectByIndex(printformatddn, 3)
+			action.Type(quantity, "123")
+			action.Click(partsearchbtn)
+			WebUI.delay(5)
+			action.Click(part1)
+			action.Click(insertbtn)
+			WebUI.delay(5)
+			
+			action.ScrollToBottomOfPage()
+			action.Type(feesqty, "11")
+			action.Click(fesscheckbox)
+			action.Click(attaachfeesbtn)
+			WebUI.delay(5)
+			action.ScrollToTopOgPage()
+			action.Click(jobdetailsbtn)
+		}
+		catch(Exception e) {
+			println ("Add Part failed due to "+ e)
+			Assert.fail()
+		}
+	}
+	
+	@Keyword
+	public void DeletePart()
+	{
+		try{
+			action.ScrollToViewelement(removepartlink)
+			action.Click(removepartlink)
+			action.WaitForPageToLoad()
+			action.Click(removecheckbox)
+			action.Click(removeselectedpartbtn)
+			
+			boolean statusofpartrow = action.IsElementDisplayed(partrow)
+			Assert.assertFalse(statusofpartrow)
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Delete Part failed due to "+ e)
 		}
 	}
 

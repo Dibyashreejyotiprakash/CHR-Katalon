@@ -252,6 +252,20 @@ public class ItemSearchpage {
 		}
 	}
 
+	@Keyword
+	public void VerifyCorporationDdnIsMandatory()
+	{
+		try{
+			boolean statusofitemtypeddn = action.IsElementEnabled(itemtypetextbox)
+			println ("Status of Item Type before corporation selection----"+ statusofitemtypeddn)
+			Assert.assertFalse(statusofitemtypeddn)
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Verify Corporation Ddn Is Mandatory failed due to "+ e)
+		}
+	}
+
 
 }
 

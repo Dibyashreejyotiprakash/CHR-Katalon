@@ -76,6 +76,9 @@ public class HomePage {
 	By vendorprinteradmin = By.xpath("//*[text()='Vendor/Printer Admin']")
 	By itemlistoptionsadmin = By.xpath("//*[text()='Item List Options Admin']")
 
+	By productshots = By.xpath("//*[text()='Product Shots']")
+	By productshotremovaltool = By.xpath("//*[text()='Product Shot Removal Tool']")
+
 	@Keyword
 	public void NavigateToItemSearchPage() {
 		action.WaitVisible(instantimpact)
@@ -311,6 +314,23 @@ public class HomePage {
 		action.Click(ii4crosscorpadmin)
 		action.WaitForPageToLoad()
 
+	}
+
+	@Keyword
+	public void NavigateToProductShotRemovalToolPage()
+	{
+		try{
+			action.MouseHoverOnElement(instantimpact)
+			WebUI.delay(3)
+			action.MouseHoverOnElement(productshots)
+			WebUI.delay(3)
+			action.Click(productshotremovaltool)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Navigate To Product Shot Removal Tool Page failed due to "+ e)
+		}
 	}
 
 }
