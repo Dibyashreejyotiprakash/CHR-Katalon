@@ -4,7 +4,6 @@ import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
-
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.checkpoint.Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
@@ -15,13 +14,11 @@ import com.kms.katalon.core.testdata.TestData
 import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
-
 import com.utilities.Interaction
 import internal.GlobalVariable
 import org.openqa.selenium.By
-
+import org.testng.Assert
 import org.openqa.selenium.WebDriver
-
 import com.kms.katalon.core.webui.driver.DriverFactory
 
 class CreateDesignPage {
@@ -51,4 +48,36 @@ class CreateDesignPage {
 	By btnSave = By.xpath("//input[@id='ctl00_Body_rwSaveDesignModal_C_btnDesignSave']")
 	By btnNext = By.xpath("//input[@id='btnNextStep']")
 	By btnYes = By.xpath("//*[@class='btn GenericRedButton']/span/span[text()='Yes']")
+	By cancelbtn = By.xpath("//*[@id='Body_CancelButton']")
+	
+	WebDriver driver = DriverFactory.getWebDriver();
+	Interaction action = new Interaction();
+	
+	@Keyword
+	public void VerifyCurrentPage()
+	{
+		try{
+			action.VerifyCurrentPage("ItemConfiguration.aspx")
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Verify Current page failed due to "+ e)
+		}
+	}
+	
+	@Keyword
+	public void VerifyNavigationFromCreateDesignPageWithoutPreview()
+	{
+		try{
+			action.ScrollToBottomOfPage()
+			action.Click(cancelbtn)
+			action.WaitForPageToLoad()
+			WebUI.delay(5)
+			action.VerifyCurrentPage("ItemSearch.aspx")
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Verify Navigation From CreateDesign Page failed due to "+ e)
+		}
+	}
 }

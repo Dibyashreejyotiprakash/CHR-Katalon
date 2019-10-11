@@ -13,39 +13,22 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.openBrowser('')
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameiiusersite, GlobalVariable.testtyperegression, GlobalVariable.environment)
 
-WebUI.maximizeWindow()
+CustomKeywords.'com.ii4usersites.LoginPage.LoginToDemoCorp'(GlobalVariable.iiusersiteusername, GlobalVariable.iiusersitepassword)
 
-WebUI.waitForPageLoad(300)
-
-CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamewswadmin, GlobalVariable.testtyperegression, GlobalVariable.environment)
-
-CustomKeywords.'com.wswadmin.HomePage.NavigateToItemPartQntyMaintenance'()
-
-CustomKeywords.'com.wswadmin.ItemPartQntyMaintenance.ValidatePart'()
-
-WebUI.closeBrowser()
-
-WebUI.openBrowser('')
-
-WebUI.maximizeWindow()
-
-CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameiiusersite, GlobalVariable.testtypesmoke, GlobalVariable.environment)
-
-CustomKeywords.'com.ii4usersites.LoginPage.LoginToDemoCorp'('demoQA@brandmuscle.com', 'go2web')
+CustomKeywords.'com.ii4usersites.HomePage.VerifyHomePage'()
 
 CustomKeywords.'com.ii4usersites.HomePage.ClickOnPosTemplate'()
 
 CustomKeywords.'com.ii4usersites.ItemSearchPage.ClickOnVariableTemplate'()
 
-CustomKeywords.'com.ii4usersites.ItemDetailsPage.SetVariableTemplateLayout'()
+CustomKeywords.'com.ii4usersites.ItemSearchPage.ClickOnCreateYourOwnDesignAndNavigateToCreateDesignPage'()
 
-CustomKeywords.'com.ii4usersites.ItemDetailsPage.SelectItemType'()
+CustomKeywords.'com.ii4usersites.CreateDesignPage.VerifyCurrentPage'()
 
-CustomKeywords.'com.ii4usersites.ItemDetailsPage.Checkout'()
+CustomKeywords.'com.ii4usersites.CreateDesignPage.VerifyNavigationFromCreateDesignPageWithoutPreview'()
 
-CustomKeywords.'com.ii4usersites.ItemDetailsPage.ValidateMinimumQuantity'()
+CustomKeywords.'com.ii4usersites.HomePage.LogOutII4'()
 
-CustomKeywords.'com.ii4usersites.ItemDetailsPage.ClearShoppingCart'()
 

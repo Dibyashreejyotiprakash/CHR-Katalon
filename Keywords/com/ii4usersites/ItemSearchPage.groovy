@@ -20,7 +20,7 @@ import internal.GlobalVariable
 import org.openqa.selenium.By
 import org.openqa.selenium.Keys
 import org.openqa.selenium.WebDriver
-
+import org.testng.Assert
 
 import com.kms.katalon.core.webui.driver.DriverFactory
 
@@ -97,6 +97,7 @@ class ItemSearchPage {
 	By template = By.xpath("(//*[@href='/POS/ItemDetails.aspx?tid=130722'])[1]")
 	By variabletemplate = By.xpath("(//*[@href='/POS/ItemDetails.aspx?tid=130719'])[1]")
 	By ordernowbtn = By.xpath("//*[@id='Body_btnOrderNow']")
+	By createdesignbtn = By.xpath("//*[@id='Body_btnProductDesign']")
 
 	WebDriver driver = DriverFactory.getWebDriver();
 	Interaction action = new Interaction();
@@ -133,8 +134,23 @@ class ItemSearchPage {
 		}
 	}
 	
-	
-	
+	@Keyword
+	public void ClickOnCreateYourOwnDesignAndNavigateToCreateDesignPage()
+	{
+		try{
+			action.ScrollToBottomOfPage()
+			action.Click(createdesignbtn)
+			action.WaitForPageToLoad()
+			action.VerifyCurrentPage("ItemConfiguration.aspx")
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Click On Create Your Own Design And Navigate To Create Design Page")
+		}
+	}
+
+
+
 	@Keyword
 	public void ClickOnOrderNowButton(){
 		try
@@ -148,7 +164,7 @@ class ItemSearchPage {
 			println ("ClickOnVariableTemplate failed due to "+ e)
 		}
 	}
-	
+
 
 
 

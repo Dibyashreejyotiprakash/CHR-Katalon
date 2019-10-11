@@ -236,47 +236,39 @@ public class EditItemsPage {
 			Assert.fail("AddLogoForDistributor failed due to "+e)
 		}
 	}
-	
+
 	@Keyword
-	public void SelectFisrtLogoAndClickOnEditLink()
-	{
+	public void SelectFisrtLogoAndClickOnEditLink() {
 		try{
 			action.Click(firsteditlink)
 			action.VerifyCurrentPage("EditItems.aspx")
 			action.WaitForPageToLoad()
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("Add Distributors failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
-	public void ClickOnLogosLink()
-	{
+	public void ClickOnLogosLink() {
 		try{
 			action.Click(logotab)
 			action.WaitForPageToLoad()
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("Click On Logos Link failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
-	public void EditFisrtLogoAndUpdte()
-	{
+	public void EditFisrtLogoAndUpdte() {
 		try{
 			action.Click(firstogoeditlink)
 			action.WaitForPageToLoad()
 			action.Click(updatebtn)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("Edit Fisrt Logo failed due to "+ e)
 		}
 	}
-	
-	
 }
