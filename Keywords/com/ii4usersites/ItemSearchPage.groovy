@@ -133,7 +133,7 @@ class ItemSearchPage {
 			println ("ClickOnVariableTemplate failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
 	public void ClickOnCreateYourOwnDesignAndNavigateToCreateDesignPage()
 	{

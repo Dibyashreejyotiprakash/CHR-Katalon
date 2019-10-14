@@ -49,25 +49,22 @@ class CreateDesignPage {
 	By btnNext = By.xpath("//input[@id='btnNextStep']")
 	By btnYes = By.xpath("//*[@class='btn GenericRedButton']/span/span[text()='Yes']")
 	By cancelbtn = By.xpath("//*[@id='Body_CancelButton']")
-	
+
 	WebDriver driver = DriverFactory.getWebDriver();
 	Interaction action = new Interaction();
-	
+
 	@Keyword
-	public void VerifyCurrentPage()
-	{
+	public void VerifyCurrentPage() {
 		try{
 			action.VerifyCurrentPage("ItemConfiguration.aspx")
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("Verify Current page failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
-	public void VerifyNavigationFromCreateDesignPageWithoutPreview()
-	{
+	public void VerifyNavigationFromCreateDesignPageWithoutPreview() {
 		try{
 			action.ScrollToBottomOfPage()
 			action.Click(cancelbtn)
@@ -75,8 +72,7 @@ class CreateDesignPage {
 			WebUI.delay(5)
 			action.VerifyCurrentPage("ItemSearch.aspx")
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("Verify Navigation From CreateDesign Page failed due to "+ e)
 		}
 	}
