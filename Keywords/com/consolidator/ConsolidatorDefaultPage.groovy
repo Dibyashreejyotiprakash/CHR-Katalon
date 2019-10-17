@@ -75,7 +75,7 @@ public class ConsolidatorDefaultPage {
 				action.WaitForPageToLoad();
 			}
 			else if (env.equalsIgnoreCase("PROD")) {
-				action.GoToURL("https://admintool.brandmuscle.net/Admin/Consolidator/ConsolidatorManageProgramItem.aspx");
+				action.GoToURL("https://admintool.brandmuscle.net/Admin/Consolidator/ConsolidatorManageBaseElement.aspx");
 				action.WaitForPageToLoad();
 			}
 		}
@@ -84,7 +84,7 @@ public class ConsolidatorDefaultPage {
 			throw e;
 		}
 	}
-	
+
 	@Keyword
 	public void ClickOnManageProgramElement() {
 		try {

@@ -79,6 +79,10 @@ public class HomePage {
 	By productshots = By.xpath("//*[text()='Product Shots']")
 	By productshotremovaltool = By.xpath("//*[text()='Product Shot Removal Tool']")
 
+	By quotetrackerbtn = By.xpath("//*[text()='QuoteTracker']")
+	By requestnewquote = By.xpath("//*[text()='Request New Quote']")
+
+
 	@Keyword
 	public void NavigateToItemSearchPage() {
 		action.WaitVisible(instantimpact)
@@ -288,7 +292,7 @@ public class HomePage {
 	}
 
 	@Keyword
-	public void ItemListOptionsAdmin()
+	public void NavigateToItemListOptionsAdmin()
 	{
 		try{
 			action.MouseHoverOnElement(quotetracker)
