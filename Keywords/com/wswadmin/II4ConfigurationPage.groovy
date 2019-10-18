@@ -45,6 +45,11 @@ public class II4ConfigurationPage {
 	By glberviagetext = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_rtbGLCodeLbl']")
 	By poyesbtn = By.xpath("//*[@id='collapseFour']/div/div[7]/div[2]/div/span[1]/span[1]")
 	By poberviagetext = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_rtbPONumberLbl']")
+	By smallprintverbiage = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_rtbSmallPrintLbl']")
+	By largeprintverbiage = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_rtbLargePrintLbl']")
+	By booksverbiage = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_rtbBooksLbl']")
+	By accessoriesverbiage = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_rtbAccessoriesLbl']")
+	By itemdetailssection = By.xpath("//*[text()='ITEM DETAILS']")
 
 
 
@@ -299,6 +304,57 @@ public class II4ConfigurationPage {
 		catch(Exception e) {
 			println ("Update PO Berviage Text failed due to "+ e)
 			Assert.fail()
+		}
+	}
+	
+	@Keyword
+	public void AddVerbiageTextForItemDetailsPage()
+	{
+		try{
+			
+			action.ScrollToViewelement(itemdetailssection)
+			
+			action.Clear(smallprintverbiage)
+			action.Type(smallprintverbiage, "Small Text For Testing")
+			
+			action.Clear(largeprintverbiage)
+			action.Type(largeprintverbiage, "Large Text For Testing")
+			
+			action.Clear(booksverbiage)
+			action.Type(booksverbiage, "Books Text For Testing")
+			
+			action.Clear(accessoriesverbiage)
+			action.Type(accessoriesverbiage, "Accessories Text For Testing")
+			
+			action.ScrollToBottomOfPage()
+			
+			WebUI.delay(10)
+			action.Click(savebtn)
+		}
+		catch(Exception e)
+		{
+		Assert.fail("Add Verbiage Text for Item Details Page failed due to "+ e)	
+		}
+	}
+	
+	@Keyword
+	public void VerifyItemDetailsSection()
+	{
+		try{
+			boolean statusofitemdetailssection = action.IsElementDisplayed(itemdetailssection)
+			Assert.assertTrue(statusofitemdetailssection)
+			
+			if(statusofitemdetailssection ==true)
+			{
+				println ("Item Details section verified")
+			}
+			else{
+				throw new Exception ("Item Details section is not appearing")
+			}
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Verify Item Details Selection failed due to "+ e)
 		}
 	}
 }

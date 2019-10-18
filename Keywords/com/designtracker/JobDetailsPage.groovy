@@ -109,6 +109,23 @@ public class JobDetailsPage {
 	By fisrtshippingtype = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_lvJobs_ctrl0_JobLine_rptrJobLines_ctl00_gvJobShippingLocations_ctl02_lblJobShippingType']")
 	By secondshippingtype = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_lvJobs_ctrl0_JobLine_rptrJobLines_ctl01_gvJobShippingLocations_ctl02_lblJobShippingType']")
 
+	By feesqty = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_gvFees_ctl04_txtFeeQty']")
+	By fesscheckbox = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_gvFees_ctl04_chkSelectedFees']")
+	By attaachfeesbtn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_btnAttachFees']")
+
+	By removepartlink = By.xpath("//*[text()='Remove Part']")
+	By removecheckbox = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_gvRemove_ctl02_ckRemovePart']")
+	By removeselectedpartbtn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_btnRemoveParts']")
+	By partrow = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_gvRemove']//tr[2]")
+	
+	By firstaddoncheckbox = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_gvAddOns_ctl03_chkSelectedAddOns']")
+	By firstaddonqty = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_gvAddOns_ctl03_txtAddonQty']")
+	By attachaddons = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_btnAttachAddOns']")
+	By firstaddonprice = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_gvAddOns']//tr[2]//td[5]")
+	By attachaddonsbtn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_btnAttachAddOns']")
+	By addonspriceinjobdetailspage = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_lvJobs_ctrl0_cpPricingSummary_rptrPriceSummary_ctl01_lblLinePrice']")
+	
+
 
 	@Keyword
 	public void ClickOnDetailsBtn() {
@@ -295,7 +312,7 @@ public class JobDetailsPage {
 			action.Type(quantity, "123")
 			action.Click(partsearchbtn)
 			WebUI.delay(10)
-			action.Click(part)
+			action.Click(part1)
 			action.Click(insertbtn)
 			WebUI.delay(10)
 			action.Click(jobdetailsbtn)
@@ -304,6 +321,96 @@ public class JobDetailsPage {
 		catch(Exception e) {
 			println ("Add Part failed due to "+ e)
 			Assert.fail()
+		}
+	}
+	
+
+	@Keyword
+	public String AddPartAddonsAndBackToJobDetailsPage() {
+		String expectedaddonprice = null
+		try {
+			action.ScrollToBottomOfPage()
+			WebUI.delay(7)
+			action.Click(addpartlink)
+			WebUI.delay(5)
+			action.WaitForPageToLoad()
+			action.SelectByIndex(printformatddn, 1)
+			action.Type(quantity, "123")
+			action.Click(partsearchbtn)
+			WebUI.delay(5)
+			action.Click(part1)
+			action.Click(insertbtn)
+			WebUI.delay(5)
+			
+			action.Type(firstaddonqty, "1")
+			WebUI.delay(5)
+			action.Click(firstaddoncheckbox)
+			
+			expectedaddonprice = action.GetText(firstaddonprice)
+			WebUI.delay(5)
+			action.Click(attachaddonsbtn)
+			WebUI.delay(5)			
+			
+			return expectedaddonprice
+		}
+		catch(Exception e) {
+			Assert.fail("Add Part failed due to "+ e)
+		}
+	}
+	
+	
+	@Keyword
+	public String GetDisplayedPrice()
+	{
+		String expectedaddonprice = null
+		try{
+			
+			expectedaddonprice = action.GetText(firstaddonprice)
+			WebUI.delay(5)
+			
+			return expectedaddonprice
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Get Displayed Price failed due to "+ e)
+		}
+	}
+
+	
+	@Keyword
+	public void VerifyAddOnsPriceInJobDetailsPage()
+	{
+		try{
+			action.Click(jobdetailsbtn)
+			action.WaitForPageToLoad()
+			String displayedaddonsprice = action.GetText(addonspriceinjobdetailspage)
+			println ("Displayed Add-Ons Priec -----"+ displayedaddonsprice)
+			String expectedaddonsprice = GetDisplayedPrice()
+			println ("Expected Addons Price --------"+ expectedaddonsprice)
+			
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Verify Add Ons Price In Job Details Page failed due to "+ e)
+		}
+	}
+
+	@Keyword
+	public void DeletePart()
+	{
+		try{
+			action.ScrollToViewelement(removepartlink)
+			action.Click(removepartlink)
+			action.WaitForPageToLoad()
+			action.Click(removecheckbox)
+			action.Click(removeselectedpartbtn)
+
+			boolean statusofpartrow = action.IsElementDisplayed(partrow)
+			Assert.assertFalse(statusofpartrow)
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Delete Part failed due to "+ e)
 		}
 	}
 

@@ -58,7 +58,8 @@ public class EditItemsPage {
 	By updatebtn = By.xpath("//input[@id='ctl00_Body_fvLogos_UpdateButton']")
 	By updatesuccessmssg = By.xpath("//span[@id='ctl00_spnMsg']")
 	By deletebtn= By.xpath("//input[@id='ctl00_Body_fvLogos_DeleteButton']")
-
+	By firsteditlink = By.xpath("//*[@id='ctl00_Body_gvItems']//tr[3]/td[7]/a")
+	By firstogoeditlink = By.xpath("//*[@id='ctl00_Body_gvLogos']//tr[3]//td[5]/a")
 
 
 	@Keyword
@@ -162,8 +163,8 @@ public class EditItemsPage {
 			throw e
 		}
 	}
-	
-	
+
+
 	@Keyword
 	public void AddLogoForNoDistributor() {
 		try {
@@ -187,8 +188,8 @@ public class EditItemsPage {
 			action.Click(userdropdown)
 			action.Click(updatebtn)
 			action.Click(updatesuccessmssg)
-			
-			
+
+
 			WebUI.delay(10)
 			//action.Click(pagetobeclicked)
 
@@ -212,9 +213,9 @@ public class EditItemsPage {
 			WebUI.delay(3)
 			action.Click(insertbtn)
 			action.WaitVisible(addlogosuccessmssg)
-			
-			
-			
+
+
+
 			action.Click(logolistbtn)
 			WebUI.delay(10)
 			//action.Click(pagetobeclicked)
@@ -233,6 +234,41 @@ public class EditItemsPage {
 		}
 		catch(Exception e) {
 			Assert.fail("AddLogoForDistributor failed due to "+e)
+		}
+	}
+
+	@Keyword
+	public void SelectFisrtLogoAndClickOnEditLink() {
+		try{
+			action.Click(firsteditlink)
+			action.VerifyCurrentPage("EditItems.aspx")
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			Assert.fail("Add Distributors failed due to "+ e)
+		}
+	}
+
+	@Keyword
+	public void ClickOnLogosLink() {
+		try{
+			action.Click(logotab)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			Assert.fail("Click On Logos Link failed due to "+ e)
+		}
+	}
+
+	@Keyword
+	public void EditFisrtLogoAndUpdte() {
+		try{
+			action.Click(firstogoeditlink)
+			action.WaitForPageToLoad()
+			action.Click(updatebtn)
+		}
+		catch(Exception e) {
+			Assert.fail("Edit Fisrt Logo failed due to "+ e)
 		}
 	}
 }

@@ -25,6 +25,8 @@ import org.openqa.selenium.By
 
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
+import org.testng.Assert
+
 import com.kms.katalon.core.webui.driver.DriverFactory
 
 
@@ -64,6 +66,9 @@ class ProductionSelectionPage {
 	By btnPreviewChanges = By.xpath("//input[@id='btnRepaintImage']")
 
 	By nobtn = By.xpath("//*[@id='Body_btnNo1']")
+	By acconutlink = By.xpath("//*[text()='Account']")
+	By popupyesbtn = By.xpath("//*[@id='confirm1570783968458_content']//div[2]/a/span/span[text()='Yes']")
+	By popupnobtn = By.xpath("//*[@id='confirm1570783968458_content']//div[2]/a/span/span[text()='No']")
 
 
 
@@ -116,5 +121,27 @@ class ProductionSelectionPage {
 			println("Click on yes from back failed due to : " + e);
 		}
 	}
+
+	@Keyword
+	public void NavigateToOtherPageFromProductSelectionPage()
+	{
+		try{
+			action.Click(acconutlink)
+			driver.switchTo().frame("confirm1570783968458")
+			action.Click(popupnobtn)
+			WebUI.delay(5)
+			action.Click(acconutlink)
+			driver.switchTo().frame("confirm1570783968458")
+			action.Click(popupyesbtn)
+			action.WaitForPageToLoad()
+			action.VerifyCurrentPage("MyAccountPage.aspx")
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Navigate To Other Page From Product Selection Page failed due to "+ e)
+		}
+	}
+
+
 
 }
