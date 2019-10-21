@@ -69,9 +69,20 @@ class ProductionSelectionPage {
 	By acconutlink = By.xpath("//*[text()='Account']")
 	By popupyesbtn = By.xpath("//*[@id='confirm1570783968458_content']//div[2]/a/span/span[text()='Yes']")
 	By popupnobtn = By.xpath("//*[@id='confirm1570783968458_content']//div[2]/a/span/span[text()='No']")
+	By itemtypeddnvalue = By.xpath("//*[text()='Floor Graphic']")
 
 
-
+	@Keyword
+	public void VerifyProductSelectionPage()
+	{
+		try{
+			action.VerifyCurrentPage("")
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Verify Production selection page failed due to "+ e)
+		}
+	}
 
 	@Keyword
 	public void SetQuantity() {
@@ -110,8 +121,7 @@ class ProductionSelectionPage {
 	{
 		try
 		{
-			action.WaitVisible(AddToCart);
-			action.ScrollToViewElement(AddToCart);
+			action.ScrollToBottomOfPage()
 			action.Click(AddToCart);
 			action.WaitTillNotVisible(imgLoading);
 			action.WaitForPageToLoad()
@@ -119,6 +129,21 @@ class ProductionSelectionPage {
 		catch (Exception e)
 		{
 			println("Click on yes from back failed due to : " + e);
+		}
+	}
+	
+	@Keyword
+	public void SelectItemType()
+	{
+		try{
+			action.Click(divItemType)
+			WebUI.delay(5)
+			action.Click(itemtypeddnvalue)
+			WebUI.delay(5)
+		}
+		catch(Exception e)
+		{
+			Assert.assertFalse("Select item type failed due to "+ e)
 		}
 	}
 

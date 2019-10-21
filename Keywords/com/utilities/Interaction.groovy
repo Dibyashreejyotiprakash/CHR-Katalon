@@ -972,4 +972,20 @@ public  class Interaction {
 			throw new Exception("Page is not verified")
 		}
 	}
+	
+	public boolean WaitWhileNotVisible(By by)
+	{
+		boolean stillExists = true
+		while (stillExists)
+		{
+			try
+			{
+				WaitVisible(by, 1)
+			}
+			catch(Exception e)
+			{
+				return stillExists = false
+			}
+		}
+	}
 }

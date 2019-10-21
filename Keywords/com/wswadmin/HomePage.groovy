@@ -33,7 +33,7 @@ public class HomePage {
 	By metatagingitemmaintenance = By.xpath("//*[text()='Meta Tagging Category/Item Maintenance']")
 	By itemsearchtagging = By.xpath("//*[text()='Item Search Tagging']")
 	By metaTaggingEditDelete  = By.xpath("(//span[contains(text(),'Meta Tagging Edit/Delete')])[1]")
-	By metataggingcategoryitemmaintenance = By.xpath("//*[text()='Meta Tagging Category Item Maintenance']")
+	By metataggingcategoryitemmaintenance = By.xpath("//*[text()='Meta Tagging Category/Item Maintenance']")
 	By metatagingcategorymaintenance = By.xpath("//*[text()='Meta Tagging Category Maintenance']")
 	By globalmetataggingpage = By.xpath("(//span[contains(text(),'Global Meta Tagging Maintenance')])[1]")
 	By itempartquantitymaintenance = By.xpath("(//span[contains(text(),'Item/Part Quantity Maintenance')])[1]")
@@ -96,13 +96,10 @@ public class HomePage {
 
 	@Keyword
 	public void  NavigateToMetatagEditDeletePage() {
-		action.WaitVisible(instantimpact)
-		action.Click(instantimpact)
-		WebUI.delay(3)
-		action.WaitVisible(metatagingitemmaintenance)
-		action.MouseHoverOnElement(metatagingitemmaintenance)
-		action.WaitVisible(metaTaggingEditDelete)
+		action.MouseHoverOnElement(instantimpact)
+		action.MouseHoverOnElement(metataggingcategoryitemmaintenance)
 		action.Click(metaTaggingEditDelete)
+		action.WaitForPageToLoad()
 	}
 
 	@Keyword
