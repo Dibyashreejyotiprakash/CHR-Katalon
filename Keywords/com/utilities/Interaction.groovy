@@ -972,7 +972,7 @@ public  class Interaction {
 			throw new Exception("Page is not verified")
 		}
 	}
-	
+
 	public boolean WaitWhileNotVisible(By by)
 	{
 		boolean stillExists = true

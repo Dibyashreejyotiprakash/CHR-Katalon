@@ -334,4 +334,18 @@ public class HomePage {
 		}
 	}
 
+	@Keyword
+	public void NavigateToFulfillmentSearchPage()
+	{
+		try{
+			action.MouseHoverOnElement(fulfillmentbtn)
+			WebUI.delay(5)
+			action.Click(fulfillmentsearchbtn)
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Navigate To Fulfillment Search Page failed due to "+ e)
+		}
+	}
+
 }
