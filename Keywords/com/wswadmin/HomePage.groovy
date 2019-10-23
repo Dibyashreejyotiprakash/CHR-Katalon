@@ -432,4 +432,41 @@ public class HomePage {
 		}
 	}
 
+
+	@Keyword
+	public void NavigateToFulfillmentSizePage()
+	{
+		try{
+			action.MouseHoverOnElement(fulfillmentbtn)
+			WebUI.delay(3)
+			action.MouseHoverOnElement(sizemaintenance)
+			WebUI.delay(3)
+			action.Click(size)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Navigate To Fulfillment Color Page failed due to "+ e)
+		}
+	}
+	
+	@Keyword
+	public void NavigateToFulfillmentSizeToCorpPage()
+	{
+		try{
+			action.MouseHoverOnElement(fulfillmentbtn)
+			WebUI.delay(3)
+			action.MouseHoverOnElement(sizemaintenance)
+			WebUI.delay(3)
+			action.Click(sizetocorporation)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Navigate To Fulfillment Color Page failed due to "+ e)
+		}
+	}
+	
+
+
 }

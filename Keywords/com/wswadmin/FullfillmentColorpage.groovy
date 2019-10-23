@@ -36,6 +36,10 @@ public class FullfillmentColorpage {
 	By allcolornames = By.xpath("//*[@id='ctl00_cphMain_rgColor_ctl00']/tbody/tr/td[3]")
 	By colornamesearchtextfield = By.xpath("//*[@id='ctl00_cphMain_rgColor_ctl00_ctl02_ctl02_FilterTextBox_ColorName']")
 	By searchbtn = By.xpath("//*[@id='ctl00_cphMain_rgColor_ctl00_ctl02_ctl02_Filter_ColorName']")
+	
+	By removebtn = By.xpath("//*[@id='ctl00_cphMain_rgColor_ctl00_ctl04_gbcDeleteColumn']")
+	By firsteditbtn = By.xpath("//*[@id='ctl00_cphMain_rgColor_ctl00_ctl04_EditButton']")
+	By norecodrsfoundmsg = By.xpath("//*[text()='No records to display.']")
 
 
 
@@ -52,7 +56,7 @@ public class FullfillmentColorpage {
 	@Keyword
 	public String AddNewColor() {
 
-		String colorname = "Test Color"
+		String colorname = action.GenerateRandonString("7")
 		try{
 			action.Click(addnewbtn)
 			WebUI.delay(3)
@@ -67,6 +71,36 @@ public class FullfillmentColorpage {
 			Assert.fail("Create New Color failed due to "+ e)
 		}
 	}
+	
+	@Keyword
+	public String DeleteColor() {
+
+		String colorname = action.GenerateRandomAplphabaticString(7)
+		try{
+			action.Click(addnewbtn)
+			WebUI.delay(3)
+			action.Type(colornametextbox,colorname)
+			WebUI.delay(3)
+			action.Click(insertbtn)
+			WebUI.delay(3)
+			action.Type(colornamesearchtextfield, colorname)
+			WebUI.delay(3)
+			action.Click(searchbtn)
+			WebUI.delay(3)
+			String firstcolorname = action.GetText(firstcolor)
+			action.Click(removebtn)
+			WebUI.delay(3)
+			action.AcceptAlert()
+			WebUI.delay(3)
+			String msg = action.GetText(norecodrsfoundmsg)
+			Assert.assertEquals(msg, "No records to display.")
+			return colorname
+		}
+		catch(Exception e) {
+			Assert.fail("Create New Color failed due to "+ e)
+		}
+	}
+	
 
 	@Keyword
 	public void SearhColor() {

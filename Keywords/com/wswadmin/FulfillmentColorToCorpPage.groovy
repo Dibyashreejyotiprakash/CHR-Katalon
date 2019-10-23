@@ -36,7 +36,7 @@ public class FulfillmentColorToCorpPage {
 	By firstavailablecolor = By.xpath("//*[@id='ctl00_cphMain_rgAvailableColors_ctl00__0']")
 	By firstavailablecolorname = By.xpath("//*[@id='ctl00_cphMain_rgAvailableColors_ctl00__0']/td[2]")
 	By fulfillmentcolortocorpheader = By.xpath("//*[@id='cphMain_ctl00_lblSectionHeader']")
-	By newassignedcolorname = By.xpath("//*[@id='ctl00_cphMain_rgCorporationColors_ctl00__0']/td[2]") 
+	By newassignedcolorname = By.xpath("//*[@id='ctl00_cphMain_rgCorporationColors_ctl00__0']/td[2]")
 	By firstassignedcolorname = By.xpath("//*[@id='ctl00_cphMain_rgCorporationColors_ctl00__0']")
 
 
@@ -63,19 +63,18 @@ public class FulfillmentColorToCorpPage {
 			action.Click(addbtn)
 			WebUI.delay(5)
 			action.Type(assignedcolortocorpcolorsearchfield, firstavailablecolorname)
-			action.Click(searchbtn)	
+			action.Click(searchbtn)
 			WebUI.delay(5)
-			String newassignedfirstcolor = action.GetText(newassignedcolorname) 
-			Assert.assertEquals(firstavailablecolorname, newassignedfirstcolor) 
+			String newassignedfirstcolor = action.GetText(newassignedcolorname)
+			Assert.assertEquals(firstavailablecolorname, newassignedfirstcolor)
 		}
 		catch(Exception e) {
 			Assert.fail("AddColorToCorp failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
-	public void RemoveColor()
-	{
+	public void RemoveColor() {
 		try{
 			action.Type(corptextbox, "300 - Instant Impact 4.0 Demo Corp (Dist.)")
 			action.Click(fulfillmentcolortocorpheader)
@@ -101,5 +100,4 @@ public class FulfillmentColorToCorpPage {
 			Assert.fail("Remove Color failed due to "+ e)
 		}
 	}
-	
 }
