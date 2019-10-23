@@ -20,6 +20,7 @@ import internal.GlobalVariable
 import org.openqa.selenium.By
 import org.openqa.selenium.Keys
 import org.openqa.selenium.WebDriver
+import org.testng.Assert
 
 
 import com.kms.katalon.core.webui.driver.DriverFactory
@@ -43,7 +44,7 @@ class ItemSearchPage {
 	By imgCorporationLogo = By.xpath("//img[@id='imgCorporationLogo']")
 	By divHeadline = By.xpath("//div[@id='Body_txtQMHeadline___livespell_proxy']")
 	By ddlHeadLine = By.xpath("//select[@id='Body_ddlHeadline']")
-	//   By imgLoading = By.xpath("//img[@src='/Content/Images/loading.gif']"
+	// By imgLoading = By.xpath("//img[@src='/Content/Images/loading.gif']"
 	By ddlChooseFont = By.xpath("//select [@id='Body_ddlChooseFont']")
 	By ddlChooseColor = By.xpath("//select[@id='Body_ddlChooseColor']")
 	By divPrice = By.xpath("//div[@id='Body_txtQTPrice___livespell_proxy']")
@@ -97,6 +98,22 @@ class ItemSearchPage {
 	By template = By.xpath("(//*[@href='/POS/ItemDetails.aspx?tid=130722'])[1]")
 	By variabletemplate = By.xpath("(//*[@href='/POS/ItemDetails.aspx?tid=130719'])[1]")
 	By ordernowbtn = By.xpath("//*[@id='Body_btnOrderNow']")
+	By splseemorebtn = By.xpath("//a[@id = 'ctl00_Body_rptFilterGroups_ctrl5_lbtnFilterListExpand']")
+	By digitaldownloadcheckbox = By.xpath("(//label[contains(text(),'Digital Download')])[1]//preceding-sibling::input")
+	By savebtn = By.xpath("//input[@id='ctl00_Body_RadWindow1_C_btnSave']")
+	By ddtemplate = By.xpath("//span[contains(text(),'108477')]//preceding-sibling::a")
+	By crosscorpedtemplate = By.xpath("//span[contains(text(),'132061')]")
+	By accountlink = By.xpath("//a[@id='accountsLink']")
+	By mydownloadslink = By.xpath("//a[@href = 'MyDownloads.aspx']")
+	By digitaldownloadheader = By.xpath("//h1[contains(text(),'Digital Downloads')]")
+	By createyourdesignbtn = By.xpath("//input[@id='Body_btnProductDesign']")
+	By previewimgbtn = By.xpath("//input[@id='btnRepaintImage']")
+	By nextstepbtn = By.xpath("//input[@id='btnNextStep']")
+	By savedesignnobtn = By.xpath("//div[@class = 'confirmInnerBox']//div[2]/a[2]")
+	By templatetype = By.xpath("//span[contains(text(),'Template Type')]")
+	By templateimage = By.xpath("//img[@id='ctl00_Body_rlvSearchResults_ctrl1_imgThumbnail']")
+
+
 
 	WebDriver driver = DriverFactory.getWebDriver();
 	Interaction action = new Interaction();
@@ -132,9 +149,9 @@ class ItemSearchPage {
 			println ("ClickOnVariableTemplate failed due to "+ e)
 		}
 	}
-	
-	
-	
+
+
+
 	@Keyword
 	public void ClickOnOrderNowButton(){
 		try
@@ -148,9 +165,126 @@ class ItemSearchPage {
 			println ("ClickOnVariableTemplate failed due to "+ e)
 		}
 	}
-	
 
 
+	@Keyword
+	public void ValidateDDMetatag()
+	{
+		try
+		{
+			action.WaitVisible(splseemorebtn)
+			action.ScrollToViewElement(templatetype)
+			WebUI.delay(3)
+			action.Click(splseemorebtn)
+			action.WaitVisible(digitaldownloadcheckbox)
+			action.ScrollToViewElement(digitaldownloadcheckbox)
+			WebUI.delay(3)
+			action.Click(digitaldownloadcheckbox)
+			action.WaitVisible(savebtn)
+			action.ScrollToViewElement(savebtn)
+			WebUI.delay(3)
+			action.Click(savebtn)
+			action.WaitVisible(ddtemplate)
+		}
+		catch(Exception e)
+		{
+			Assert.fail("ValidateDDMetatag failed due to "+ e)
+		}
+	}
 
+	@Keyword
+	public void ValidateDDMetatagForCrossCorpTemplate()
+	{
+		try
+		{
+			action.WaitVisible(splseemorebtn)
+			action.Click(splseemorebtn)
+			String value = action.IsDisplayed(digitaldownloadcheckbox)
+			Assert.assertEquals(false, value)
+
+		}
+		catch(Exception e)
+		{
+			Assert.fail("ValidateDDMetatag failed due to "+ e)
+		}
+	}
+
+	@Keyword
+	public void ValidateCrossCorpedDDTemplate()
+	{
+		try
+		{
+			action.WaitVisible(txbSearch)
+			action.WaitVisible(splseemorebtn)
+			action.Click(splseemorebtn)
+			WebUI.delay(4)
+			boolean val = 	action.IsDisplayed(digitaldownloadcheckbox)
+			Assert.assertEquals(false, val)
+			action.Type(txbSearch, "132061")
+			action.Click(btnSearch)
+			action.IsDisplayed(crosscorpedtemplate)
+
+		}
+		catch(Exception e)
+		{
+			Assert.fail("ValidateCrossCorpedDDTemplate failed due to "+e)
+		}
+	}
+
+
+	@Keyword
+	public void ValidateMydownloadsInAccounts()
+	{
+		try
+		{
+			action.WaitVisible(accountlink)
+			action.Click(accountlink)
+			action.WaitVisible(mydownloadslink)
+			action.ScrollToViewElement(mydownloadslink)
+			action.Click(mydownloadslink)
+			action.WaitVisible(digitaldownloadheader)
+		}
+		catch(Exception e)
+		{
+			Assert.fail("ValidateMydownloadsInAccounts failed due to "+e)
+		}
+	}
+
+	@Keyword
+	public void SelectTemplate()
+	{
+		try
+		{
+
+			action.Click(templateimage)
+			
+		}
+		catch(Exception e)
+		{
+			Assert.fail("SelectTemplate failed due to "+e)
+		}
+
+	}
+
+	@Keyword
+	public void PreviewTemplate()
+	{
+		try
+		{
+			action.WaitVisible(previewimgbtn)
+			//action.ScrollToViewElement(previewimgbtn)
+			action.ScrollToBottomOfPage()
+			WebUI.delay(2)
+			action.Click(previewimgbtn)
+			WebUI.delay(20)
+			action.Click(nextstepbtn)
+			action.WaitVisible(savedesignnobtn)
+			action.Click(savedesignnobtn)
+		}
+		catch(Exception e)
+		{
+			Assert.fail("PreviewTemplate failed due to "+e)
+		}
+	}
 
 }

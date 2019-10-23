@@ -549,7 +549,7 @@ public  class Interaction {
 	{
 		try
 		{
-			WaitVisible(by)
+			WebUI.delay(10)
 			boolean displayed = driver.findElement(by).isDisplayed();
 			return displayed;
 		}
@@ -593,17 +593,15 @@ public  class Interaction {
 
 	public void WaitVisible(By by)
 	{
-		WebUI.delay(1)
+		WebUI.delay(5)
 		WebDriverWait wait = new WebDriverWait(driver, 300)
 		wait.until(ExpectedConditions.visibilityOfElementLocated(by))
 
 		/*println('Entering into Explicit wait statements')
-
-		Boolean prsentstatus=wait.until(ExpectedConditions.presenceOfElementLocated(by))
-		println(prsentstatus)
-
-		Boolean prsentstatus1 = wait.until(ExpectedConditions.visibilityOfElementLocated(by))
-		println(prsentstatus1)*/
+		 Boolean prsentstatus=wait.until(ExpectedConditions.presenceOfElementLocated(by))
+		 println(prsentstatus)
+		 Boolean prsentstatus1 = wait.until(ExpectedConditions.visibilityOfElementLocated(by))
+		 println(prsentstatus1)*/
 	}
 
 	public void  WaitVisibleDup(By by)
@@ -925,6 +923,21 @@ public  class Interaction {
 		String value = element.getAttribute(attri)
 
 		return value
+
+	}
+
+	public boolean isAttribtuePresent(By by, String attribute)
+	{
+		WebElement element = driver.findElement(by);
+		boolean result = false;
+		String value = element.getAttribute(attribute)
+
+		if(value != null)
+		{
+			result = true
+		}
+
+		return result
 
 	}
 

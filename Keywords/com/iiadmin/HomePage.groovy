@@ -39,7 +39,9 @@ public class HomePage {
 	By corpsetup = By.xpath("//a[contains(text(),'Corporation Setup')]")
 	By editcorp = By.xpath("//a[contains(text(),'Edit Corporation')]")
 	By corpdropdown = By.xpath("//select[@id='ctl00_Body_ddlCorps']")
-	
+	By distsetup = By.xpath("//a[contains(text(),'Distributor Setup')]")
+	By editdist = By.xpath("//a[contains(text(),'Edit Distributor')]")
+
 
 
 	@Keyword
@@ -77,6 +79,37 @@ public class HomePage {
 		}
 		catch(Exception e) {
 			Assert.fail("CLick On Edit User failed due to "+ e)
+		}
+	}
+
+	@Keyword
+	public void EditCorporation() {
+		try {
+			action.WaitVisible(systemsetup)
+			action.Click(systemsetup)
+			action.WaitVisible(corpsetup)
+			action.Click(corpsetup)
+			action.WaitVisible(editcorp)
+			action.Click(editcorp)
+		}
+		catch(Exception e) {
+			Assert.fail("EditCorporation failed due to "+ e)
+		}
+	}
+
+
+	@Keyword
+	public void EditDistributor() {
+		try {
+			action.WaitVisible(systemsetup)
+			action.Click(systemsetup)
+			action.WaitVisible(distsetup)
+			action.Click(distsetup)
+			action.WaitVisible(editdist)
+			action.Click(editdist)
+		}
+		catch(Exception e) {
+			Assert.fail("EditCorporation failed due to "+ e)
 		}
 	}
 }

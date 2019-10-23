@@ -38,4 +38,40 @@ public class NewAccountSetupPage {
 	By payfordownloads = By.xpath("//td[contains(text(),'Pay for Downloads')]")
 	By payperdownloadradiobtn = By.xpath("//input[@id='ctl00_Body_fvDistributors_DigitalDownloadPaymentType_0']")
 	By monthlysubscriptionradiobtn = By.xpath("//input[@id='ctl00_Body_fvDistributors_DigitalDownloadPaymentType_1']")
+
+
+	@Keyword
+	public void ValidateDDPaymentOptionsForCorp() {
+		try {
+			action.WaitVisible(corpdropdown)
+			action.SelectByValue(corpdropdown, "300")
+			action.IsElementDisplayed(payfordownloads)
+			action.IsElementDisplayed(payperdownloadradiobtn)
+			action.IsElementDisplayed(monthlysubscriptionradiobtn)
+			String attribute_val = action.Attribute(payperdownloadradiobtn, "checked")
+			Assert.assertEquals(attribute_val, "checked")
+		}
+		catch(Exception e) {
+			Assert.fail("ValidateDDPaymentOptions User failed due to "+ e)
+		}
+	}
+	
+	
+	@Keyword
+	public void ValidateDDPaymentOptionsForDist() {
+		try {
+			action.WaitVisible(corpdropdown)
+			action.SelectByValue(corpdropdown, "300")
+			action.WaitVisible(distributordropdown)
+			action.SelectByValue(distributordropdown, "Chicago Beverage Systems")
+			action.IsElementDisplayed(payfordownloads)
+			action.IsElementDisplayed(payperdownloadradiobtn)
+			action.IsElementDisplayed(monthlysubscriptionradiobtn)
+			String attribute_val = action.Attribute(payperdownloadradiobtn, "checked")
+			Assert.assertEquals(attribute_val, "checked")
+		}
+		catch(Exception e) {
+			Assert.fail("ValidateDDPaymentOptions User failed due to "+ e)
+		}
+	}
 }
