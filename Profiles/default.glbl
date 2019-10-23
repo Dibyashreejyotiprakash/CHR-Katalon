@@ -404,4 +404,29 @@
       <initValue>'atlas@1234'</initValue>
       <name>iiadminpassword</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://empire.v5qa.brandmuscle.net'</initValue>
+      <name>posurl321</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'adminny@brandmuscle.com'</initValue>
+      <name>Username321</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'password'</initValue>
+      <name>password321</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'cspwadmin@brandmuscle.com'</initValue>
+      <name>posUN59</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'password'</initValue>
+      <name>posPass59</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

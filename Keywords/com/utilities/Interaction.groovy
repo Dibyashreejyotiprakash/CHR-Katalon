@@ -930,6 +930,20 @@ public  class Interaction {
 	{
 		driver.findElement(by).sendKeys(Keys.ENTER);
 	}
+	public void PreseBackSpace(By by)
+	{
+		driver.findElement(by).sendKeys(Keys.BACK_SPACE)
+	}
+	
+	public void PreseLeftArrow(By by)
+	{
+		driver.findElement(by).sendKeys(Keys.ARROW_LEFT)
+	}
+	
+	public void PreseRightArrow(By by)
+	{
+		driver.findElement(by).sendKeys(Keys.ARROW_RIGHT)
+	}
 
 	public String GetText(By by)
 	{

@@ -76,6 +76,125 @@ public class HomePage {
 	By vendorprinteradmin = By.xpath("//*[text()='Vendor/Printer Admin']")
 	By itemlistoptionsadmin = By.xpath("//*[text()='Item List Options Admin']")
 
+
+
+
+
+	By brandmuscleMenu = By.xpath("(//*[text()='Brandmuscle'])[1]")
+	By reportsSubMenu = By.xpath("(//*[text()='Reports'])[1]")
+	By invoiceSubMenu = By.xpath("(//*[text()='Invoice'])[1]")
+	By invoiceLineItem = By.xpath("//*[text()='Invoice Line Items']")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	@Keyword
+	public void NavigateToInvoicePage()
+	{
+		try
+		{
+			action.MouseHoverOnElement(brandmuscleMenu)
+			WebUI.delay(5)
+			action.MouseHoverOnElement(reportsSubMenu)
+			WebUI.delay(5)
+			action.Click(invoiceSubMenu)
+			WebUI.delay(10)
+			
+		}
+		catch(Exception e)
+		{
+			Assert.fail("NavigateToInvoice Failed due to" +e)
+		}
+	}
+
+	@Keyword
+	public boolean VerifyInvoicePage()
+	{
+		try
+		{
+			boolean isPageVerified = false
+			String expectedUrl = "Invoices/InvoiceList.aspx"
+			WebUI.delay(5)
+			 String actualUrl = action.GetCurrentURL()
+			 WebUI.delay(5)
+			 
+			if(actualUrl.contains(expectedUrl))
+			{
+				println ("************ Invoice Page Verified Successfully ***********" )
+				isPageVerified = true
+			}
+			return isPageVerified
+			
+		}
+		catch(Exception e)
+		{
+			Assert.fail("VerifyInvoicePage Failed due to" +e)
+		}
+	}
+
+
+
+	@Keyword
+	public void NavigateToInvoiceLineItemsPage()
+	{
+		try
+		{
+			action.MouseHoverOnElement(brandmuscleMenu)
+			WebUI.delay(5)
+			action.MouseHoverOnElement(reportsSubMenu)
+			WebUI.delay(5)
+			action.Click(invoiceLineItem)
+			WebUI.delay(10)
+			
+		}
+		catch(Exception e)
+		{
+			Assert.fail("NavigateToInvoiceLineItemsPage Failed due to" +e)
+		}
+	}
+
+	@Keyword
+	public boolean VerifyInvoiceLineItemsPage()
+	{
+		try
+		{
+			boolean isPageVerified = false
+			String expectedUrl = "Invoices/LineItemShipping.aspx"
+			WebUI.delay(5)
+			 String actualUrl = action.GetCurrentURL()
+			 WebUI.delay(5)
+			 
+			if(actualUrl.contains(expectedUrl))
+			{
+				println ("************ Invoice Line Items Page Verified Successfully ***********" )
+				isPageVerified = true
+			}
+			return isPageVerified
+			
+		}
+		catch(Exception e)
+		{
+			Assert.fail("VerifyInvoicePage Failed due to" +e)
+		}
+	}
+
+
+
+
+
+
+
 	@Keyword
 	public void NavigateToItemSearchPage() {
 		action.WaitVisible(instantimpact)

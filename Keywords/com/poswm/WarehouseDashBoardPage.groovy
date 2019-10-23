@@ -94,14 +94,15 @@ public class WarehouseDashBoardPage {
 	By myOrderCancelOrderLink = By.xpath(" //*[@id='ctl00_MainContent_rdMyOrders_C_rgMyOrders_ctl00']//following-sibling::tbody/tr[1]/td[2]")
 	By OrderPcakListLink = By.xpath("//*[text()='Order Pack List']")
 	By PrintIcon = By.xpath("//*[@name='ctl00$MainContent$tlrkReportViewer$ReportToolbar$PrintGr$Print$ctl00']")
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
+
 
 
 	@Keyword
@@ -582,11 +583,12 @@ public class WarehouseDashBoardPage {
 	{
 		try
 		{
+			WebUI.delay(10)
 			action.WaitVisible(OrderPcakListLink)
 			action.Click(OrderPcakListLink)
 			action.WaitForPageToLoad()
-			
-			
+
+
 		}
 		catch(Exception e)
 		{
@@ -600,7 +602,10 @@ public class WarehouseDashBoardPage {
 		try
 		{
 			action.Click(PrintIcon)
-			
+			WebUI.delay(10)
+			action.WindowHandle()
+
+
 		}
 		catch(Exception e)
 		{

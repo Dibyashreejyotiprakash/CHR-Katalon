@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>17_BrandSyncConfigEditBrands</name>
+   <name>59_POSW Compliance Validation - Product Type and Item</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>3d901d7f-ff90-4883-aa18-4deb0dd29be9</testCaseGuid>
+   <testCaseGuid>0670b6df-d371-4148-af54-17d3ae3cec12</testCaseGuid>
 </TestCaseEntity>

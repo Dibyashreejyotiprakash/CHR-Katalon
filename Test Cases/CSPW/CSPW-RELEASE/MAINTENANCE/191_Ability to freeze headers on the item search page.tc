@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>191_Ability to freeze headers on the item search page</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>639e4a5e-f94f-4dfe-bd02-5b657649faa1</testCaseGuid>
+</TestCaseEntity>
