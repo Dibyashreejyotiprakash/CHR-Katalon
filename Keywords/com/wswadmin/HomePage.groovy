@@ -47,6 +47,8 @@ public class HomePage {
 	By fulfillmentproductunit = By.xpath("//*[text()='Fulfillment Product Unit']")
 	By createfulfillmentproductunit = By.xpath("//*[text()='Create Fulfillment Product Unit']")
 	By associtaeitemstoproductunit = By.xpath("//*[text()='Associate Items to Product Unit']")
+	By fulfillmentcorpdistadmin = By.xpath("//*[text()='Fulfillment Corp/Distributor Admin']")
+	By fulfillmentcorpmaintenance = By.xpath("//*[text()='Fulfillment Corp Maintenance']")
 
 
 	By reports = By.xpath("//*[@href='/Fulfillment/Reports.aspx']")
@@ -57,7 +59,6 @@ public class HomePage {
 	By size = By.xpath("//*[@href='/Fulfillment/SizeMaintenance/FulfillmentSize.aspx']")
 	By sizetocorporation = By.xpath("//*[@href='/Fulfillment/SizeMaintenance/FulfillmentSizeToCorp.aspx']")
 	By corpdistmaintenance = By.xpath("//*[text()='Corp/Dist Maintenance']")
-	By fulfillmentcorpdistadmin = By.xpath("//*[@href='/Fulfillment/CorpDistributerQuantityPreOrder.aspx']")
 	By fuifillmentcorpmaintenance = By.xpath("//*[@href='/Fulfillment/FulfillmentCorp.aspx']")
 	By redbullsticthlab = By.xpath("//*[text()='Red Bull/Stitch Labs']")
 	By Heading = By.xpath("//h1[Contains(text(),'Brandmuscle Admin Tool')]")
@@ -449,7 +450,7 @@ public class HomePage {
 			Assert.fail("Navigate To Fulfillment Color Page failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
 	public void NavigateToFulfillmentSizeToCorpPage()
 	{
@@ -466,7 +467,41 @@ public class HomePage {
 			Assert.fail("Navigate To Fulfillment Color Page failed due to "+ e)
 		}
 	}
-	
 
+	@Keyword
+	public void NavigateToFulfillmentCorpDistrAdminPage()
+	{
+		try{
+			action.MouseHoverOnElement(fulfillmentbtn)
+			WebUI.delay(3)
+			action.MouseHoverOnElement(corpdistmaintenance)
+			WebUI.delay(3)
+			action.Click(fulfillmentcorpdistadmin)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Navigate To Fulfillment Corp Distr Admin Page failed due to "+ e)
+		}
+	}
+
+	
+	@Keyword
+	public void NavigateToFulfillmentCormaintenancePage()
+	{
+		try{
+			action.MouseHoverOnElement(fulfillmentbtn)
+			WebUI.delay(3)
+			action.MouseHoverOnElement(corpdistmaintenance)
+			WebUI.delay(3)
+			action.Click(fulfillmentcorpmaintenance)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Navigate To Fulfillment Cormaintenance Page failed due to "+ e)
+		}
+	}
+	
 
 }

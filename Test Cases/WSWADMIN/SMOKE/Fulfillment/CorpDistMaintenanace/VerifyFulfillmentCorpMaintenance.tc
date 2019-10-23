@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>VerifyFulfillmentSizepage</name>
+   <name>VerifyFulfillmentCorpMaintenance</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>fc1a5fcf-fe65-4adc-b248-61673502198b</testCaseGuid>
+   <testCaseGuid>4444c88b-36ad-4f37-915e-db93f749b06e</testCaseGuid>
 </TestCaseEntity>

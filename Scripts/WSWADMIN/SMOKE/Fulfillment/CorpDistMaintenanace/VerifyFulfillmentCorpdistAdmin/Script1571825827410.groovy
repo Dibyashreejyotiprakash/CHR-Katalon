@@ -19,12 +19,4 @@ CustomKeywords.'com.wswadmin.LoginPage.VerifyLoginPage'()
 
 CustomKeywords.'com.wswadmin.LoginPage.WSWlogin'(GlobalVariable.wswadminusername, GlobalVariable.wswpassword)
 
-CustomKeywords.'com.wswadmin.HomePage.NavigateToFulfillmentColorPage'()
-
-CustomKeywords.'com.wswadmin.FullfillmentColorpage.VerifyFullfillmentColorPage'()
-
-CustomKeywords.'com.wswadmin.FullfillmentColorpage.AddNewColor'()
-
-
-
-
+CustomKeywords.'com.wswadmin.HomePage.NavigateToFulfillmentCorpDistrAdminPage'()

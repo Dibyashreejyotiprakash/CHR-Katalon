@@ -19,8 +19,4 @@ CustomKeywords.'com.wswadmin.LoginPage.VerifyLoginPage'()
 
 CustomKeywords.'com.wswadmin.LoginPage.WSWlogin'(GlobalVariable.wswadminusername, GlobalVariable.wswpassword)
 
-CustomKeywords.'com.wswadmin.HomePage.NavigateToFulfillmentSizePage'()
-
-CustomKeywords.'com.wswadmin.FulfillmentSizePage.VerifyFulfillmentSizePage'()
-
-CustomKeywords.'com.wswadmin.FulfillmentSizePage.AddNewSize'()
+CustomKeywords.'com.wswadmin.HomePage.NavigateToFulfillmentCormaintenancePage'()
