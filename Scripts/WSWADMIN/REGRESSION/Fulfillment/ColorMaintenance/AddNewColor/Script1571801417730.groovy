@@ -13,12 +13,17 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamewswadmin, GlobalVariable.testtyperegression, GlobalVariable.environment)
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamewswadmin, GlobalVariable.testtypesmoke,GlobalVariable.environment)
 
-CustomKeywords.'com.wswadmin.HomePage.NavigateToLowStockNotificationPage'()
+CustomKeywords.'com.wswadmin.LoginPage.VerifyLoginPage'()
 
-CustomKeywords.'com.wswadmin.LowStockNotificationPage.VerifyLowNotificationPage'()
+CustomKeywords.'com.wswadmin.LoginPage.WSWlogin'(GlobalVariable.wswadminusername, GlobalVariable.wswpassword)
 
-CustomKeywords.'com.wswadmin.LowStockNotificationPage.AddAditionalMail'()
+CustomKeywords.'com.wswadmin.HomePage.NavigateToFulfillmentColorPage'()
+
+CustomKeywords.'com.wswadmin.FullfillmentColorpage.VerifyFullfillmentColorPage'()
+
+CustomKeywords.'com.wswadmin.FullfillmentColorpage.AddNewColor'()
+
 
 

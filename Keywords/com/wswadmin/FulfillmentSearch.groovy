@@ -58,6 +58,8 @@ public class FulfillmentSearch {
 	By firstproductdesc = By.xpath("//*[@id='ctl00_cphMain_radGrdFulfillmentSearch_ctl00']/tbody//tr[1]//td[3]")
 	By allproductdesc = By.xpath("//*[@id='ctl00_cphMain_radGrdFulfillmentSearch_ctl00']/tbody//tr//td[3]")
 
+	By firsteditlink = By.xpath("//*[@id='ctl00_cphMain_radGrdFulfillmentSearch_ctl00']/tbody//tr[1]//td[2]")
+
 
 
 	@Keyword
@@ -147,7 +149,7 @@ public class FulfillmentSearch {
 			List<WebElement> allskus = action.GetElements(skusearchallskus)
 			for(int i=0;i< allskus.size();i++)
 			{
-			String skunameappeared = allskus.get(i).getText()
+				String skunameappeared = allskus.get(i).getText()
 				if(skuname.contains(skunameappeared))
 				{
 					println ("Search By SKU results verified..")
@@ -191,12 +193,30 @@ public class FulfillmentSearch {
 				else{
 					throw new Exception("Search results not matched")
 				}
-				
+
 			}
 		}
 		catch(Exception e)
 		{
 			Assert.fail("Verify Fufillment Search by Desc. failed due to "+ e)
+		}
+	}
+
+	@Keyword
+	public void EditFufillmentItem()
+	{
+		try{
+			action.Click(corpoddnarrow)
+			WebUI.delay(3)
+			action.Type(corptextbox, "300 - Instant Impact 4.0 Demo Corp (Dist.)")
+			action.Click(SkuTextField)
+			action.Click(SearchButton)
+			action.Click(firsteditlink)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Edit Fufillment Item failed due to "+ e)
 		}
 	}
 

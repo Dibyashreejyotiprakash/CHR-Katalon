@@ -19,6 +19,8 @@ CustomKeywords.'com.wswadmin.HomePage.NavigateToLowStockNotificationPage'()
 
 CustomKeywords.'com.wswadmin.LowStockNotificationPage.VerifyLowNotificationPage'()
 
-CustomKeywords.'com.wswadmin.LowStockNotificationPage.AddAditionalMail'()
+CustomKeywords.'com.wswadmin.LowStockNotificationPage.Verifyfields'()
+
+
 
 

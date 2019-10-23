@@ -38,7 +38,7 @@ public class HomePage {
 	By globalmetataggingpage = By.xpath("(//span[contains(text(),'Global Meta Tagging Maintenance')])[1]")
 	By itempartquantitymaintenance = By.xpath("(//span[contains(text(),'Item/Part Quantity Maintenance')])[1]")
 	By resuorcemessagebtn = By.xpath("//*[@href='/InstantImpact/ResourceMessage/ResourceMessage.aspx']")
-
+	By trainingresourcesbtn = By.xpath("//*[text()='Training Resources']")
 
 	By fulfillmentbtn = By.xpath("//*[text()='Fulfillment']")
 	By lowstocknotification = By.xpath("//*[@href='/Fulfillment/LowstockNotification.aspx']")
@@ -345,6 +345,90 @@ public class HomePage {
 		catch(Exception e)
 		{
 			Assert.fail("Navigate To Fulfillment Search Page failed due to "+ e)
+		}
+	}
+
+	@Keyword
+	public void NavigateToTrainingResourcePage()
+	{
+		try{
+			action.MouseHoverOnElement(instantimpact)
+			WebUI.delay(3)
+			action.Click(trainingresourcesbtn)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Navigate To Training Resources Page failed due to "+ e)
+		}
+	}
+
+	@Keyword
+	public void NavigateToFufillmentPorductUnitPage()
+	{
+		try{
+			action.MouseHoverOnElement(fulfillmentbtn)
+			WebUI.delay(3)
+			action.MouseHoverOnElement(fulfillmentproductunit)
+			WebUI.delay(3)
+			action.Click(createfulfillmentproductunit)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Navigate To Fufillment PorductUnit Page failed due to "+ e)
+		}
+	}
+
+
+	@Keyword
+	public void NavigateToAssociateFulfillmentItemsPage()
+	{
+		try{
+			action.MouseHoverOnElement(fulfillmentbtn)
+			WebUI.delay(3)
+			action.MouseHoverOnElement(fulfillmentproductunit)
+			WebUI.delay(3)
+			action.Click(associtaeitemstoproductunit)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Navigate To Fufillment PorductUnit Page failed due to "+ e)
+		}
+	}
+
+	@Keyword
+	public void NavigateToFulfillmentColorPage()
+	{
+		try{
+			action.MouseHoverOnElement(fulfillmentbtn)
+			WebUI.delay(3)
+			action.MouseHoverOnElement(colormaintenance)
+			WebUI.delay(3)
+			action.Click(color)
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Navigate To Fulfillment Color Page failed due to "+ e)
+		}
+	}
+
+
+	@Keyword
+	public void NavigateToFulfillmentColorToCorp()
+	{
+		try{
+			action.MouseHoverOnElement(fulfillmentbtn)
+			WebUI.delay(3)
+			action.MouseHoverOnElement(colormaintenance)
+			WebUI.delay(3)
+			action.Click(colortocorporation)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Navigate To Fulfillment Color Page failed due to "+ e)
 		}
 	}
 
