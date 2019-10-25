@@ -101,7 +101,7 @@ public class WarehouseDashBoardPage {
 	By admin = By.xpath("//*[text()='Administration']")
 	By useritemapprovaltransfer = By.xpath("//*[text()='User Item Approval Transfer']")
 	By warehouseusers = By.xpath("//*[text()='Warehouse Users']")
-	
+
 	@Keyword
 	public void ClickOnNewItem()
 	{
@@ -539,11 +539,12 @@ public class WarehouseDashBoardPage {
 	{
 		try
 		{
+			WebUI.delay(10)
 			action.WaitVisible(OrderPcakListLink)
 			action.Click(OrderPcakListLink)
 			action.WaitForPageToLoad()
-			
-			
+
+
 		}
 		catch(Exception e)
 		{
@@ -557,7 +558,10 @@ public class WarehouseDashBoardPage {
 		try
 		{
 			action.Click(PrintIcon)
-			
+			WebUI.delay(10)
+			action.WindowHandle()
+
+
 		}
 		catch(Exception e)
 		{

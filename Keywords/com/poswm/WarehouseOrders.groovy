@@ -72,6 +72,57 @@ public class WarehouseOrders {
 	By itemInfoSaveIcon = By.xpath("//input[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_btnUpdate']")
 	By desiredshipdatetextbox = By.xpath("//*[@id='ctl00_MainContent_dockShippingInformation_C_calShipDate_dateInput']")
 
+	
+	By addBtn = By.xpath("(//*[text()='Add'])[1]")
+	By addCustomer = By.xpath("(//*[text()='Add Customer'])[1]")
+	By addanItemLink = By.xpath("(//*[text()='Add an Item'])[1]")
+
+
+
+	
+	@Keyword
+	public void ClickOnAddanItemIcon()
+	{
+		try
+		{
+			action.Click(plusIcon)
+			WebUI.delay(10)
+		}
+		catch(Exception e)
+		{
+			Assert.fail("ClickOnAddanItemLink method failed due to :" + e)
+		}
+	}
+	
+	
+	@Keyword
+	public void ClickOnAddanItemLink()
+	{
+		try
+		{
+			action.Click(addanItemLink)
+			WebUI.delay(10)
+		}
+		catch(Exception e)
+		{
+			Assert.fail("ClickOnAddanItemLink method failed due to :" + e)
+		}
+	}
+	
+	@Keyword
+	public void ClickOnAddLink()
+	{
+		try
+		{
+			action.Click(addBtn)
+			WebUI.delay(10)
+			
+		}
+		catch(Exception e)
+		{
+			Assert.fail("ClickOnAddLink method failed due to :" + e)
+		}
+	}
 
 	@Keyword
 	public void VerifyNewOrderPage() {
@@ -312,9 +363,9 @@ public class WarehouseOrders {
 			Assert.fail("ClickOnEditThisItem method failed due to :"+e)
 		}
 	}
-	
-	
-	
+
+
+
 	@Keyword
 	public void AddDesiredShipDate() {
 		try{
@@ -327,42 +378,4 @@ public class WarehouseOrders {
 			Assert.fail("Add Desired Shipping Date and verify failed due to "+ e)
 		}
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }

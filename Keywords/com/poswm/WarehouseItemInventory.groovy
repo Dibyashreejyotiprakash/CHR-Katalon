@@ -60,7 +60,7 @@ public class WarehouseItemInventory {
 	By brandfilter = By.xpath("//*[@id='ctl00_MainContent_rpbSearch_i1_i0_rlbBrands_i2']")
 	By allbrandsnameingrid = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00']//tr//td[13]")
 	By allitemname = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00']//tr//td[11]/a")
-	
+
 	By itemsearchtextbox = By.xpath("//*[@id='ctl00_MainContent_rsbItemSearch_Input']")
 	By itemsearchbtn = By.xpath("//*[@id='ctl00_MainContent_rsbItemSearch_Input']/following-sibling::button")
 	By searchiteminventorybtn = By.xpath("//*[@id='MainContent_btnBackToSearch']")
@@ -71,13 +71,14 @@ public class WarehouseItemInventory {
 	By otherfilterddn = By.xpath("//*[text()='Other Filters']")
 	By deletedcheckbox = By.xpath("//*[@id='ctl00_MainContent_rpbSearch_i10_i0_rlbOtherFilters_i2']//input")
 	By clearallfilterbtn = By.xpath("//*[text()='Clear All Filters']")
-	
+
 	By SalesDivisionDivision = By.xpath("//*[@id='ctl00_MainContent_rpbSearch']/ul/li[5]/a/span/span[1]")
-	By firstSalesdivisionCheckbox = By.xpath("//*[text()='BBN Beer Off Premise']/preceding-sibling::input")
+	//By firstSalesdivisionCheckbox = By.xpath("//*[text()='BBN Beer Off Premise']/preceding-sibling::input")
+	By firstSalesdivisionCheckbox = By.xpath("//*[text()='ADS - On Premise']/preceding-sibling::input")
 	By SuplierAccordian = By.xpath("//*[@id='ctl00_MainContent_rpbSearch']/ul/li[1]/a/span/span[1]")
 	By BrandAccordian = By.xpath("//*[@id='ctl00_MainContent_rpbSearch']/ul/li[2]/a/span/span[1]")
-	
-	
+
+
 	By OrderPlusIcon = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00_ctl04_imgOrder']")
 	By UpdateQuantityBtn = By.xpath("//*[text()='Update Quantities']")
 	By NewOrder = By.xpath("(//*[text()='New Order'])[2]")
@@ -88,26 +89,60 @@ public class WarehouseItemInventory {
 	By ShipMethodDropdwon= By.xpath("(//*[@id='ctl00_MainContent_dockShippingInformation_C_ddlShippingMethod_Input'])")
 	By FirstShipOption = By.xpath("(//*[@id='ctl00_MainContent_dockShippingInformation_C_ddlShippingMethod_DropDown'])/div/ul/li[1]")
 	By SubmitOrderBtn = By.xpath("(//*[@id='ctl00_MainContent_btnSubmitOrder_input'])")
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	By HeaderItemSearchPage = By.xpath("//*[@id='ctl00_MainContent_rmItemCommands']")
+
+	By SelectSalesDivEM = By.xpath("//*[text()='Sales Division']")
+	By FirstSalesDivOptionEM = By.xpath("//*[@id='ctl00_MainContent_rpbSearch_i6_i0_rlbWarehouseSalesDivision_i0']/label/input")
+
+
+	By otherFiltersExpandBtn = By.xpath("//*[@id='ctl00_MainContent_rpbSearch']/ul/li[9]/a/span/span[1]")
+	By availableToOrderCheckBox = By.xpath("//*[@id='ctl00_MainContent_rpbSearch_i10_i0_rlbOtherFilters_i0']/label/input")
+	By ApprovalRequiredCheckBox = By.xpath("//*[@id='ctl00_MainContent_rpbSearch_i10_i0_rlbOtherFilters_i2']/label/input")
+	By clearSelectionLink = By.xpath("//*[text()='Clear Selection']")
+	By clearAllFilters = By.xpath("//*[text()='Clear All Filters']")
+
+
+
+
+
+
+
+
+
+	@Keyword
+	public void SelectSalesDivisionForEmpireMerchant()
+	{
+		try
+		{
+			action.Click(SuplierAccordian)
+			WebUI.delay(2)
+			action.Click(BrandAccordian)
+			WebUI.delay(2)
+			//action.ScrollToViewelement(SalesDivisionDivision)
+			action.Click(SelectSalesDivEM)
+			WebUI.delay(2)
+			action.Click(FirstSalesDivOptionEM)
+			WebUI.delay(5)
+
+
+		}
+		catch(Exception e)
+		{
+			Assert.fail("SelectSalesDivision failed due to :" + e)
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
 
 	@Keyword
 	public void VerifyWareHouseInventoryPage()
@@ -318,7 +353,7 @@ public class WarehouseItemInventory {
 				Assert.assertEquals(expectedUATUrl, actualUrl)
 			}
 			else
-			(env.equalsIgnoreCase("stage"))
+				(env.equalsIgnoreCase("stage"))
 			{
 				Assert.assertEquals(expectedSTAGEUrl, actualUrl)
 			}
@@ -469,15 +504,15 @@ public class WarehouseItemInventory {
 			action.Click(firstSalesdivisionCheckbox)
 			WebUI.delay(5)
 
-			
+
 		}
 		catch(Exception e)
 		{
 			Assert.fail("SelectSalesDivision failed due to :" + e)
 		}
 	}
-	
-	
+
+
 	@Keyword
 	public void SearchSpecificItem(String itemName)
 	{
@@ -487,16 +522,16 @@ public class WarehouseItemInventory {
 			action.Type(itemsearchtextbox, itemName)
 			action.Click(itemsearchbtn)
 			WebUI.delay(5)
-			
+
 		}
 		catch(Exception e)
 		{
 			Assert.fail("SearchSpecificItem failed due to :" + e)
 		}
 	}
-	
+
 	@Keyword
-	
+
 	public void AddToCart()
 	{
 		try
@@ -509,15 +544,15 @@ public class WarehouseItemInventory {
 			WebUI.delay(5)
 			action.Click(ClickHeretogotothisorderlink)
 			WebUI.delay(5)
-			
-			
+
+
 		}
 		catch(Exception e)
 		{
 			Assert.fail("AddToCart failed due to :" + e)
 		}
 	}
-	
+
 	@Keyword
 	public void AddCustomer()
 	{
@@ -530,15 +565,15 @@ public class WarehouseItemInventory {
 			WebUI.delay(2)
 			action.Click(cutomerFirstOption)
 			WebUI.delay(3)
-			
+
 		}
 		catch(Exception e)
 		{
 			Assert.fail("AddCustomer failed due to :" + e)
 		}
 	}
-	
-	
+
+
 	@Keyword
 	public void SelectShipMethod()
 	{
@@ -548,15 +583,15 @@ public class WarehouseItemInventory {
 			action.Click(ShipMethodDropdwon)
 			WebUI.delay(2)
 			action.Click(FirstShipOption)
-			WebUI.delay(5)	
-			
+			WebUI.delay(5)
+
 		}
 		catch(Exception e)
 		{
 			Assert.fail("SelectShipMethod failed due to :" + e)
 		}
 	}
-	
+
 	@Keyword
 	public void ClickOnSubmitOrderBtn()
 	{
@@ -565,57 +600,166 @@ public class WarehouseItemInventory {
 			action.WaitVisible(SubmitOrderBtn)
 			action.Click(SubmitOrderBtn)
 			WebUI.delay(5)
-			
-			
+
+
 		}
 		catch(Exception e)
 		{
 			Assert.fail("ClickOnSubmitOrderBtn failed due to :" + e)
 		}
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+	@Keyword
+	public void VerifyItemSearchPageHeader()
+	{
+		boolean headerStatus = null
+		try
+		{
+			action.WaitVisible(HeaderItemSearchPage)
+			headerStatus = action.IsElementDisplayed(HeaderItemSearchPage)
+			Assert.assertTrue(headerStatus)
+			println "+++++++++++ Header is visible before scrolling down" + headerStatus
+			WebUI.delay(5)
+			action.ScrollToBottomOfPage()
+			WebUI.delay(5)
+			headerStatus = action.IsElementDisplayed(HeaderItemSearchPage)
+			Assert.assertTrue(headerStatus)
+			println "+++++++++++ Header is visible after scrolling down" + headerStatus
+
+		}
+		catch(Exception e)
+		{
+			Assert.fail("VerifyItemSearchPageHeader failed due to :" + e)
+		}
+	}
+
+	@Keyword
+	public void ClickOnSupplierAndBrandFilters()
+	{
+		try
+		{
+			action.Click(SuplierAccordian)
+			WebUI.delay(2)
+			action.Click(BrandAccordian)
+			WebUI.delay(2)
+
+		}
+		catch(Exception e)
+		{
+			Assert.fail("ClickOnSupplierAndBrandFilters failed due to :" + e)
+		}
+	}
+
+	@Keyword
+	public void ClickOnOtherFiltersExpandButton()
+	{
+		try
+		{
+			action.Click(otherFiltersExpandBtn)
+			WebUI.delay(3)
+
+		}
+		catch(Exception e)
+		{
+			Assert.fail("ClickOnSupplierAndBrandFilters failed due to :" + e)
+		}
+	}
+
+	@Keyword
+	public boolean  VerifyAvailableToOrderChecked()
+	{
+		boolean IsChacked = false
+		try
+		{
+			IsChacked = action.IsElementSelected(availableToOrderCheckBox)
+			Assert.assertTrue(IsChacked)
+			println ("Available to order fillter is checked")
+			return IsChacked
+
+		}
+		catch(Exception e)
+		{
+			Assert.fail("VerifyAvailableToOrderChecked failed due to :" + e)
+		}
+	}
+
+	@Keyword
+	public void OtherFilterSecondOption()
+	{
+		try
+		{
+			action.Click(ApprovalRequiredCheckBox)
+			WebUI.delay(10)
+
+		}
+		catch(Exception e)
+		{
+			Assert.fail("OtherFilterSecondOption failed due to :" + e)
+		}
+	}
+
+	@Keyword
+	public void ClickOnClearSelctionLink()
+	{
+		try
+		{
+			action.Click(clearSelectionLink)
+			WebUI.delay(10)
+
+		}
+		catch(Exception e)
+		{
+			Assert.fail("ClickOnClearSelctionLink failed due to :" + e)
+		}
+	}
+
+	@Keyword
+	public void ClickOnClearAllFiltersLink()
+	{
+		try
+		{
+			action.Click(clearAllFilters)
+			WebUI.delay(10)
+
+		}
+		catch(Exception e)
+		{
+			Assert.fail("ClickOnClearAllFiltersLink failed due to :" + e)
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

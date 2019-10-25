@@ -6,6 +6,7 @@ import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
 import org.openqa.selenium.WebDriver
+import org.openqa.selenium.interactions.Actions
 
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.checkpoint.Checkpoint
@@ -25,6 +26,8 @@ import org.openqa.selenium.WebDriver
 import org.testng.Assert
 import org.openqa.selenium.Alert
 import org.openqa.selenium.By
+import org.openqa.selenium.Keys
+
 import com.kms.katalon.core.webui.driver.DriverFactory
 import internal.GlobalVariable
 
@@ -98,7 +101,8 @@ public class WarehouseItem {
 	By QtyTextField = By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i3_i0_ucItemTransactions_radItemQuantity']")
 	By SaveBtn = By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i3_i0_ucItemTransactions_btnSaveItemBin_input']")
 	By CloseEditModeBtn = By.xpath("//*[@id='MainContent_btnCloseWizard']")
-
+	By itemInfoSaveBtnAfterSave = By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_btnUpdate']")
+	By salesDivDropDownArrowBtn = By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_radSalesDivision_Arrow']")
 	By iteminfogrid = By.xpath("//*[text()='Step 1: Item Information']")
 
 	@Keyword
@@ -378,6 +382,9 @@ public class WarehouseItem {
 				//action.WaitVisible(salesDivisionListDiv)
 				action.WaitTime(3)
 				action.Click(salesDivisionSecondOption)
+				action.Click(salesDivDropDownArrowBtn)
+				String selectedSalesDiv = action.GetText(salesDivisionDropDown)
+				println "+++++++++++++++" + selectedSalesDiv
 			}
 			else
 			{
@@ -658,7 +665,8 @@ public class WarehouseItem {
 	}
 
 	@Keyword
-	public void ClickOnCloseEditMode(){
+	public void ClickOnCloseEditMode()
+	{
 		try{
 			action.ScrollToTopOgPage()
 			if(action.IsElementDisplayed(CloseEditModeBtn)){
@@ -678,12 +686,82 @@ public class WarehouseItem {
 
 	}
 
+	/*@Keyword
+	 public String SelectSpecificProductTypeAndVerifyUnitCost(String itemPropertyName,String defaultPrice)
+	 {
+	 String unitCostValue = null
+	 try
+	 {
+	 Actions act = new Actions(Driver)
+	 action.Click(productType)
+	 WebUI.delay(3)
+	 action.Type(productType, itemPropertyName)
+	 WebUI.delay(3)
+	 act.sendKeys(Keys.ENTER)
+	 WebUI.delay(5)
+	 unitCostValue = action.GetText(txbUnitCost)
+	 Assert.assertTrue(unitCostValue.equals(defaultPrice))
+	 return unitCostValue
+	 }
+	 catch(Exception e)
+	 {
+	 Assert.fail("SelectProductType method failed due to :" + e)
+	 }
+	 }*/
 
 
+	@Keyword
+	public void SelectSpecificProductType(String itemPropertyName)
+	{
+		try
+		{
+			action.Type(txbName, "Test")
 
+			SelectSuplier()
 
+			SelectPremiseType()
 
+			SelectSalesDivision()
 
+			SelectSeasonalType()
+
+			EnterUnitOfMeasure()
+
+			action.Click(productType)
+			WebUI.delay(3)
+			action.Type(productType, itemPropertyName)
+			WebUI.delay(5)
+
+			action.Enter(productType)
+			WebUI.delay(5)
+			action.Click(saveIconItemInfo)
+			WebUI.delay(8)
+			/*action.ScrollToBottomOfPage()
+			 action.Click(itemInfoSaveBtnAfterSave)*/
+			WebUI.delay(5)
+		}
+		catch(Exception e)
+		{
+			Assert.fail("SelectSpecificProductType method failed due to :" + e)
+		}
+	}
+
+	@Keyword
+	public void VerifyUnitCostPrice(String actualDefoultPrice)
+	{
+		try
+		{
+			String unitCostValue = driver.findElement(By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_radUnitCost']")).getAttribute("value")
+			WebUI.delay(5)
+			println("**********" + unitCostValue)
+			Assert.assertTrue(unitCostValue.equals(actualDefoultPrice))
+
+		}
+		catch(Exception e)
+		{
+			Assert.fail("VerifyUnitCostPrice method failed due to :" + e)
+		}
+	}
 
 
 
