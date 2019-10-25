@@ -13,14 +13,12 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-
-
 CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamewswadmin, GlobalVariable.testtypesmoke,GlobalVariable.environment)
 
 CustomKeywords.'com.wswadmin.LoginPage.WSWlogin'(GlobalVariable.wswadminusername, GlobalVariable.wswpassword)
 
-CustomKeywords.'com.wswadmin.HomePage.NavigateToBannedPhrases'()
+CustomKeywords.'com.wswadmin.HomePage.NavigateToFulfillmentReportsPage'()
 
-CustomKeywords.'com.wswadmin.BannedPhrasePage.VerifyBannedPhrasesPage'()
+CustomKeywords.'com.wswadmin.FulfillmentReortsPage.VerifyFulfillmentReortsPage'()
 
-
+CustomKeywords.'com.wswadmin.FulfillmentReortsPage.SearchByCorporationName'()

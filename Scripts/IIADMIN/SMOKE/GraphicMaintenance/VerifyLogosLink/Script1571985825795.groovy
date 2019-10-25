@@ -13,14 +13,14 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameiiadmin, GlobalVariable.testtypesmoke, GlobalVariable.environment)
 
+CustomKeywords.'com.iiadmin.LoginPage.VerifyLoginPage'()
 
-CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamewswadmin, GlobalVariable.testtypesmoke,GlobalVariable.environment)
+CustomKeywords.'com.iiadmin.LoginPage.LoginToIIAdmin'(GlobalVariable.iiadminusername, GlobalVariable.iiadminpassword)
 
-CustomKeywords.'com.wswadmin.LoginPage.WSWlogin'(GlobalVariable.wswadminusername, GlobalVariable.wswpassword)
+CustomKeywords.'com.iiadmin.CorpListPage.VerifyGraphicsMaintenancePage'()
 
-CustomKeywords.'com.wswadmin.HomePage.NavigateToBannedPhrases'()
+CustomKeywords.'com.iiadmin.CorpListPage.NavigateToCorp300'()
 
-CustomKeywords.'com.wswadmin.BannedPhrasePage.VerifyBannedPhrasesPage'()
-
-
+CustomKeywords.'com.iiadmin.CorpListPage.VerifyLogosLink'()

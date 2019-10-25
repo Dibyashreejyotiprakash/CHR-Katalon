@@ -502,6 +502,24 @@ public class HomePage {
 			Assert.fail("Navigate To Fulfillment Cormaintenance Page failed due to "+ e)
 		}
 	}
-
+	
+	
+	@Keyword
+	public void NavigateToFulfillmentReportsPage()
+	{
+		try{
+			action.MouseHoverOnElement(fulfillmentbtn)
+			WebUI.delay(3)
+			action.MouseHoverOnElement(fulfillmentproductunit)
+			WebUI.delay(3)
+			action.Click(reports)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Navigate To Fulfillment Reports Page failed due to "+ e)
+		}
+	}
+	
 
 }
