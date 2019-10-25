@@ -15,9 +15,34 @@ import internal.GlobalVariable as GlobalVariable
 
 CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameposw, GlobalVariable.testtyperegression, GlobalVariable.environment)
 
+WebUI.waitForPageLoad(300)
+
 CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.posusername, GlobalVariable.pospassword)
 
-CustomKeywords.'com.poswm.WarehouseDashBoardPage.ClickOnOrderPackList'()
+CustomKeywords.'com.poswm.Homepage.HoverOnWareHouseMenu'()
 
-CustomKeywords.'com.poswm.WarehouseDashBoardPage.ClickOnPrintIconAndVerifyOrderPackListReport'()
+CustomKeywords.'com.poswm.Homepage.ClickOnItemProperties'()
 
+CustomKeywords.'com.poswm.TypesAdmin.ClickOnItemPropertyDropDown'()
+
+CustomKeywords.'com.poswm.TypesAdmin.SelectProductType'()
+
+CustomKeywords.'com.poswm.TypesAdmin.VerifyDefoultPriceLabel'()
+
+String itemPropertyName =  CustomKeywords.'com.poswm.TypesAdmin.ClickAndAddNewItemProperty'()
+println "==========" + itemPropertyName
+
+CustomKeywords.'com.poswm.TypesAdmin.SearchItemProperty'(itemPropertyName)
+
+ String actualDefoultPrice  = CustomKeywords.'com.poswm.TypesAdmin.GetDefoultPrice'()
+ 
+ println "==========" + actualDefoultPrice
+ 
+ CustomKeywords.'com.poswm.Homepage.HoverOnWareHouseMenu'()
+ 
+ CustomKeywords.'com.poswm.Homepage.ClickOnNewItem'()
+ 
+ CustomKeywords.'com.poswm.WarehouseItem.SelectSpecificProductType'(itemPropertyName)
+ 
+ CustomKeywords.'com.poswm.WarehouseItem.VerifyUnitCostPrice'(actualDefoultPrice)
+ 

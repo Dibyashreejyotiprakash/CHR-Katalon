@@ -1,4 +1,5 @@
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
+
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
@@ -13,13 +14,23 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.openBrowser('')
 
-WebUI.maximizeWindow()
 
-CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameconsolidator, GlobalVariable.testtypesmoke, GlobalVariable.environment)
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameposw, GlobalVariable.testtyperegression, GlobalVariable.environment)
 
-CustomKeywords.'com.consolidator.LoginPage.LoginConsolidator'(GlobalVariable.consolusername, GlobalVariable.conslopassword)
+WebUI.waitForPageLoad(300)
 
-CustomKeywords.'com.consolidator.UpdateLogPage.ClickOnParentBusinessUnit'()
+CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.posusername, GlobalVariable.pospassword)
+
+CustomKeywords.'com.poswm.Homepage.HoverOnWareHouseMenu'()
+
+CustomKeywords.'com.poswm.Homepage.ClickOnNewOrder'()
+
+CustomKeywords.'com.poswm.WarehouseOrders.ClickOnAddanItemIcon'()
+
+CustomKeywords.'com.poswm.WarehouseOrders.ClickOnAddanItemLink'()
+
+CustomKeywords.'com.poswm.WarehouseOrders.ClickOnAddLink'()
+
+CustomKeywords.'com.poswm.NewOrderPage.AddNewCustomer'()
 

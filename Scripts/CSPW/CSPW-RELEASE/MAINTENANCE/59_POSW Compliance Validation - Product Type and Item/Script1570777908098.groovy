@@ -13,17 +13,23 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-//CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameposw, GlobalVariable.testtyperegression, GlobalVariable.environment)
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameposw, GlobalVariable.testtyperegression, GlobalVariable.environment)
 
-WebUI.navigateToUrl("https://empire.v5qa.brandmuscle.net")
+WebUI.waitForPageLoad(300)
 
-CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.Username321, GlobalVariable.password321)
+CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.posUN59, GlobalVariable.posPass59)
+
+CustomKeywords.'com.poswm.LoginPage.SelectEmpireMerchantBU'()
 
 CustomKeywords.'com.poswm.Homepage.HoverOnWareHouseMenu'()
 
 CustomKeywords.'com.poswm.Homepage.ClickOnNewItem'()
 
-String itemname = CustomKeywords.'com.poswm.WarehouseItem.FillItemInformationSection'()
+String itemName = CustomKeywords.'com.poswm.WarehouseItem.FillItemInformationSection'()
+
+WebUI.delay(5)
+
+println('++++++++++++++' + itemName)
 
 CustomKeywords.'com.poswm.WarehouseItem.ClickOnItemInfoSaveIcon'()
 
@@ -35,25 +41,33 @@ CustomKeywords.'com.poswm.WarehouseItem.FillTransactionsSection'()
 
 CustomKeywords.'com.poswm.WarehouseItem.ClickOnCloseEditMode'()
 
-CustomKeywords.'com.poswm.Homepage.HoverOnWareHouseMenu'()
+CustomKeywords.'com.poswm.Homepage.ClickOnWarehouseSpendLimits'()
+
+CustomKeywords.'com.poswm.WarehouseSpendingLimits.ClickOn2019Compliance'()
+
+CustomKeywords.'com.poswm.WarehouseSpendingLimits.AddItemTotheComplianceLevel'(itemName)
 
 CustomKeywords.'com.poswm.Homepage.ClickOnItemSearch'()
 
-CustomKeywords.'com.poswm.WarehouseItemInventory.SelectSalesDivision'()
+CustomKeywords.'com.poswm.WarehouseItemInventory.SelectSalesDivisionForEmpireMerchant'()
 
-CustomKeywords.'com.poswm.WarehouseItemInventory.SearchSpecificItem'(itemname)
+CustomKeywords.'com.poswm.WarehouseItemInventory.SearchSpecificItem'(itemName)
 
 CustomKeywords.'com.poswm.WarehouseItemInventory.AddToCart'()
 
 CustomKeywords.'com.poswm.WarehouseItemInventory.AddCustomer'()
 
-CustomKeywords.'com.poswm.WarehouseOrders.AddDesiredShipDate'()
-
 CustomKeywords.'com.poswm.WarehouseItemInventory.SelectShipMethod'()
 
 CustomKeywords.'com.poswm.WarehouseItemInventory.ClickOnSubmitOrderBtn'()
 
-CustomKeywords.'com.poswm.WarehouseOrders.ClickOnItemName'()
+CustomKeywords.'com.poswm.Homepage.ClickOnWarehouseSpendLimits'()
 
-CustomKeywords.'com.poswm.WarehouseOrders.ClickOnEditThisItem'()
+CustomKeywords.'com.poswm.WarehouseSpendingLimits.ClickOn2019Compliance'()
+
+CustomKeywords.'com.poswm.WarehouseSpendingLimits.RemoveItemTotheComplianceLevel'()
+
+String warningMsg = CustomKeywords.'com.poswm.WarehouseSpendingLimits.VerifySpendLimitWarningMsg'()
+
+println(('**************' + warningMsg) + '****************')
 

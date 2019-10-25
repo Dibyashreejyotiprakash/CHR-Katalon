@@ -32,6 +32,35 @@ public class LoginPage {
 	By password = By.id("MainContent_LoginCentiv_Password")
 	By loginbtn = By.id("MainContent_LoginCentiv_btnLogin")
 	By forgotpassword = By.id("MainContent_LoginCentiv_lbForgotPassword")
+	By BUselectionDropdown = By.xpath("//*[@id='MainContent_ddlBusinessUnit']")
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	@Keyword
 	public void VerifyPoswLoginPage() {
@@ -60,4 +89,55 @@ public class LoginPage {
 			Assert.fail()
 		}
 	}
+	
+	
+	@Keyword
+	public void SelectEmpireMerchantBU()
+	{
+		try
+		{
+			//action.Click(BUselectionDropdown)
+			action.SelectByText(BUselectionDropdown, "EMPIRE MERCHANTS")
+			WebUI.delay(7)
+			
+		}
+		catch(Exception e)
+		{
+			Assert.fail("SelectEmpireMarchentBU method failed due to :" + e)
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

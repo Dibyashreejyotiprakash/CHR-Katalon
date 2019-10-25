@@ -15,9 +15,26 @@ import internal.GlobalVariable as GlobalVariable
 
 CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameposw, GlobalVariable.testtyperegression, GlobalVariable.environment)
 
+WebUI.waitForPageLoad(300)
+
 CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.posusername, GlobalVariable.pospassword)
 
-CustomKeywords.'com.poswm.WarehouseDashBoardPage.ClickOnOrderPackList'()
+CustomKeywords.'com.poswm.Homepage.HoverOnWareHouseMenu'()
 
-CustomKeywords.'com.poswm.WarehouseDashBoardPage.ClickOnPrintIconAndVerifyOrderPackListReport'()
+CustomKeywords.'com.poswm.Homepage.ClickOnItemSearch'()
 
+CustomKeywords.'com.poswm.WarehouseItemInventory.ClickOnSupplierAndBrandFilters'()
+
+CustomKeywords.'com.poswm.WarehouseItemInventory.ClickOnOtherFiltersExpandButton'()
+
+CustomKeywords.'com.poswm.WarehouseItemInventory.VerifyAvailableToOrderChecked'()
+
+CustomKeywords.'com.poswm.WarehouseItemInventory.OtherFilterSecondOption'()
+
+CustomKeywords.'com.poswm.WarehouseItemInventory.ClickOnClearSelctionLink'()
+
+CustomKeywords.'com.poswm.WarehouseItemInventory.ClickOnClearAllFiltersLink'()
+
+CustomKeywords.'com.poswm.WarehouseItemInventory.ClickOnOtherFiltersExpandButton'()
+
+CustomKeywords.'com.poswm.WarehouseItemInventory.VerifyAvailableToOrderChecked'()

@@ -167,7 +167,7 @@ public class NewOrderPage {
 			action.ScrollToViewelement(addcustomerbtn)
 			action.Click(addcustomerbtn)
 			action.WaitTime(10)
-			action.Type(customernametxtbx, "test")
+			action.Type(customernametxtbx, "st")
 			action.WaitTime(10)
 			action.Click(customername)
 			action.WaitTime(5)
