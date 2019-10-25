@@ -489,7 +489,6 @@ public class WarehouseItemInventory {
 		}
 	}
 
-
 	@Keyword
 	public void SelectSalesDivision()
 	{

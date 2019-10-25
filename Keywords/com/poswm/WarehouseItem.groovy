@@ -69,7 +69,7 @@ public class WarehouseItem {
 	By txbUnitOfMeasure =By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_radUnitOfMeasurement']")
 	//By txbDescription = By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_radLongDescription']")
 	//By txbNotes = By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_radNotes']")
-	//By saveIcon = By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_btnCreate']")
+	By saveIcon = By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_btnCreate']")
 
 
 	By saveIconItemInfo = By.xpath("//input[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_btnCreate']")
@@ -103,32 +103,40 @@ public class WarehouseItem {
 	By CloseEditModeBtn = By.xpath("//*[@id='MainContent_btnCloseWizard']")
 	By itemInfoSaveBtnAfterSave = By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_btnUpdate']")
 	By salesDivDropDownArrowBtn = By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_radSalesDivision_Arrow']")
+	By iteminfogrid = By.xpath("//*[text()='Step 1: Item Information']")
 
+	@Keyword
+	public void VerifyWareHouseItemPage()
+	{
+		try{
+			action.VerifyCurrentPage("WarehouseItem.aspx")
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Verify ware house item page failed due to "+ e)
+		}
+	}
 
+	@Keyword
+	public void VerifyItemInformationFields()
+	{
+		try{
+			boolean statusofiteminfofields = action.IsElementDisplayed(iteminfogrid)
+			Assert.assertTrue(statusofiteminfofields)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+			boolean statusofsavebtn = action.IsElementEnabled(saveIcon)
+			Assert.assertTrue(statusofsavebtn)
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Verify Item Information Fields failed due to "+ e)
+		}
+	}
 
 	@Keyword
 	public String FillItemInformationSection()
 	{
+		String itemname = null
 		try
 		{
 			String itemname = null
@@ -179,6 +187,10 @@ public class WarehouseItem {
 			if(action.IsDisplayed(txbUnitOfMeasure))
 			{
 				EnterUnitOfMeasure()
+			}
+			if(action.IsDisplayed(saveIcon))
+			{
+				action.Click(saveIcon)
 			}
 			else{
 				throw new Exception("Fill Item Information Section   is falied")
@@ -578,9 +590,6 @@ public class WarehouseItem {
 			println("FillImageSection method failed due to :" + e)
 			Assert.fail()
 		}
-
-
-
 	}
 	@Keyword
 	public void FillBrandSection()
@@ -601,19 +610,11 @@ public class WarehouseItem {
 			else
 			{
 				throw new Exception("Brand values are not present in grid")
-
-			}
-
-
-
 		}
 		catch(Exception e){
 			println("FillBrandSection method failed due to :" + e)
 			Assert.fail()
-
 		}
-
-
 	}
 
 	@Keyword

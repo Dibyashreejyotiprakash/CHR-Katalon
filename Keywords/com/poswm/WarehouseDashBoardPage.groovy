@@ -94,16 +94,59 @@ public class WarehouseDashBoardPage {
 	By myOrderCancelOrderLink = By.xpath(" //*[@id='ctl00_MainContent_rdMyOrders_C_rgMyOrders_ctl00']//following-sibling::tbody/tr[1]/td[2]")
 	By OrderPcakListLink = By.xpath("//*[text()='Order Pack List']")
 	By PrintIcon = By.xpath("//*[@name='ctl00$MainContent$tlrkReportViewer$ReportToolbar$PrintGr$Print$ctl00']")
+	By warehouse = By.xpath("//*[text()='Warehouse']")
+	By newitem = By.xpath("//*[text()='New Item']")
+	By neworder = By.xpath("//*[text()='New Order']")
+	By ordersearch = By.xpath("//*[text()='Order Search']")
+	By admin = By.xpath("//*[text()='Administration']")
+	By useritemapprovaltransfer = By.xpath("//*[text()='User Item Approval Transfer']")
+	By warehouseusers = By.xpath("//*[text()='Warehouse Users']")
 
+	@Keyword
+	public void ClickOnNewItem()
+	{
+		try{
+			action.MouseHoverOnElement(warehouse)
+			action.WaitVisible(newitem)
+			action.Click(newitem)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Click on new item failed due to "+ e)
+		}
+	}
 
+	@Keyword
+	public void ClickOnNewOrder()
+	{
+		try
+		{
+			action.MouseHoverOnElement(warehouse)
+			action.WaitVisible(neworder)
+			action.Click(neworder)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Click on new order failed due to "+ e)
+		}
+	}
 
-
-
-
-
-
-
-
+	@Keyword
+	public void ClickOnOrderSearch()
+	{
+		try{
+			action.MouseHoverOnElement(warehouse)
+			action.WaitVisible(ordersearch)
+			action.Click(ordersearch)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Click On Order Search failed due to "+ e)
+		}
+	}
 
 	@Keyword
 	public void VerifyMyOrdersDivision(){
@@ -113,11 +156,7 @@ public class WarehouseDashBoardPage {
 			action.WaitTime(2)
 			boolean statusPendinShipDiv = action.IsElementDisplayed(myOrderDivision)
 			if(statusPendinShipDiv == true) {
-
-				//			action.Click(pendinApprovalExpandBtn)
-				//			action.WaitVisible(pendinShipmentExpandBtn)
 				action.ScrollToViewElement(myOrderDivision)
-
 				if(action.IsElementDisplayed(myOrderFirstRow)){
 					boolean statusmyOrderViewOrderLink = action.IsElementEnabled(myOrderViewOrderLink)
 					boolean statusmyOrderCancelOrderLink = action.IsElementEnabled(myOrderCancelOrderLink)
@@ -126,9 +165,10 @@ public class WarehouseDashBoardPage {
 					println("View Order link is enable")
 					Assert.assertTrue(statusmyOrderCancelOrderLink)
 					println("Cancel Order link is enable")
-
 				}
-
+			}
+			else{
+				throw new Exception("My order div is disbaled")
 			}
 		}
 		catch(Exception e)
@@ -138,22 +178,13 @@ public class WarehouseDashBoardPage {
 		}
 	}
 
-
-
-
 	@Keyword
 	public void VerifyMyDraftOrdersDivision(){
-
-
 		try{
 			action.WaitTime(2)
 			boolean statusPendinShipDiv = action.IsElementDisplayed(MyDraftOrdersDivision)
 			if(statusPendinShipDiv == true) {
-
-				//			action.Click(pendinApprovalExpandBtn)
-				//			action.WaitVisible(pendinShipmentExpandBtn)
 				action.ScrollToViewElement(MyDraftOrdersDivision)
-
 				if(action.IsElementDisplayed(myDraftOrderFirstRow)){
 					boolean statusmyDraftOrderViewOrderLink = action.IsElementEnabled(myDraftOrderViewOrderLink)
 					boolean statusmyDraftOrderCancelOrderLink = action.IsElementEnabled(myDraftOrderCancelOrderLink)
@@ -162,12 +193,10 @@ public class WarehouseDashBoardPage {
 					println("View Order link is enable")
 					Assert.assertTrue(statusmyDraftOrderCancelOrderLink)
 					println("Cancel Order link is enable")
-
 				}
 				else{
-					throw new Exception ("Failed")
+					throw new Exception ("My draft order div is disbaled")
 				}
-
 			}
 		}
 		catch(Exception e)
@@ -178,20 +207,12 @@ public class WarehouseDashBoardPage {
 	}
 
 
-
-
 	@Keyword
 	public void VerifyPendingShipmentOrdersDivision(){
-
 		try{
-
 			action.WaitTime(2)
 			boolean statusPendinShipDiv = action.IsElementDisplayed(pendingShipmentOrdersDiv)
 			if(statusPendinShipDiv == true) {
-
-				//			action.Click(pendinApprovalExpandBtn)
-				//			action.WaitVisible(pendinShipmentExpandBtn)
-
 				action.ScrollToViewElement(pendingShipmentOrdersDiv)
 				if(action.IsElementDisplayed(FirstRowpendingShipmentOrders)){
 					boolean statusViewOrder = action.IsElementEnabled(pendinShipmentViewOrderLink)
@@ -205,10 +226,9 @@ public class WarehouseDashBoardPage {
 					Assert.assertTrue(statusCancelOrder)
 					println("Cancel Order link is enable")
 					//action.Click(pendinApprovalExpandBtn)
-
 				}
 				else{
-					throw new Exception ("Failed")
+					throw new Exception ("Pending shipment ordre div disabled")
 				}
 
 			}
@@ -242,9 +262,10 @@ public class WarehouseDashBoardPage {
 					Assert.assertTrue(cancelOrder)
 					println("Cancel Order link is enable")
 					action.Click(pendinApprovalExpandBtn)
-
 				}
-
+			}
+			else{
+				throw new Exception ("Pending approval order div is disabled")
 			}
 		}
 		catch(Exception e)
@@ -255,10 +276,6 @@ public class WarehouseDashBoardPage {
 	}
 
 
-
-
-
-
 	@Keyword
 	public void ClickAndVerifyWareHouseOrderLink() {
 		try{
@@ -267,8 +284,10 @@ public class WarehouseDashBoardPage {
 			if(statuswareHouseOrderLink == true){
 				action.Click(wareHouseOrder)
 				action.WaitForPageToLoad()
-				action.WaitVisible(plusIcon)
-				println ("WareHouseOrderLink is enable");
+				action.VerifyCurrentPage("WarehouseOrders.aspx")
+			}
+			else{
+				throw new Exception("Ware house order link is disabled")
 			}
 		}
 		catch(Exception e)
@@ -278,67 +297,46 @@ public class WarehouseDashBoardPage {
 		}
 	}
 
-	@Keyword
-	public void VerifyWareHouseOrderPage() {
-		try{
-			action.VerifyCurrentPage("WarehouseOrders.aspx")
-		}
-		catch(Exception e)
-		{
-			println ("Verify Ware House Order Page failed due to "+ e)
-			Assert.fail()
-		}
-	}
 
 	@Keyword
 	public void ClickAndVerifyWareHouseOrderInventoryLink() {
-		action.WaitVisible(warehouseOrderInventory)
-		boolean statuswareHouseOrderLink = action.IsElementEnabled(warehouseOrderInventory)
-		if(statuswareHouseOrderLink == true){
-			action.Click(warehouseOrderInventory)
-			action.WaitForPageToLoad()
-			action.WaitVisible(OrderInventoryCreateNewBtn)  //need to change xpath
-			println ("warehouseOrderInventory is enable");
-		}
-	}
-
-	@Keyword
-	public void VerifyWareHouseOrderInventoryPage() {
 		try{
-			action.VerifyCurrentPage("WarehouseOrderInventory.aspx")
+			action.WaitVisible(warehouseOrderInventory)
+			boolean statuswareHouseOrderLink = action.IsElementEnabled(warehouseOrderInventory)
+			if(statuswareHouseOrderLink == true){
+				action.Click(warehouseOrderInventory)
+				action.WaitForPageToLoad()
+				action.VerifyCurrentPage("WarehouseOrderInventory.aspx")
+			}
+			else{
+				throw new Exception ("Ware House Inventory link is disabled")
+			}
 		}
 		catch(Exception e)
 		{
-			println ("Verify Ware House Order Inventory Page failed due to "+ e)
-			Assert.fail()
+			Assert.fail("Click And Verify WareHouse Order Inventory Link failed due to "+ e)
 		}
 	}
 
 	@Keyword
 	public void ClickAndVerifyDraftOrdersLink() {
-		action.WaitVisible(draftOrder)
-		boolean statuswareHouseOrderLink = action.IsElementEnabled(draftOrder)
-		if(statuswareHouseOrderLink == true){
-			action.Click(draftOrder)
-			action.WaitForPageToLoad()
-			action.WaitVisible(downloadDivisionForDraftOrder)  //need to change xpath
-			println ("draftOrder link is enable");
-		}
-	}
-
-	@Keyword
-	public void VerifyDraftOrdersPage() {
 		try{
-			action.VerifyCurrentPage("WarehouseOrderInventory.aspx?status=Created")
+			action.WaitVisible(draftOrder)
+			boolean statuswareHouseOrderLink = action.IsElementEnabled(draftOrder)
+			if(statuswareHouseOrderLink == true){
+				action.Click(draftOrder)
+				action.WaitForPageToLoad()
+				action.VerifyCurrentPage("WarehouseOrderInventory.aspx?status=Created")
+			}
+			else{
+				throw new Exception ("Draft order link disabled")
+			}
 		}
 		catch(Exception e)
 		{
-			println ("Verify Draft Order failed due to "+ e)
-			Assert.fail()
+			Assert.fail("Click And Verify Draft Orders Link failed due to "+ e)
 		}
 	}
-
-
 
 
 	@Keyword
@@ -364,69 +362,24 @@ public class WarehouseDashBoardPage {
 	}
 
 	@Keyword
-	public void VerifyCompletedOrdersPage() {
-		//		String expectedUATUrl = "https://csg.v5qa.brandmuscle.net/Warehouse/WarehouseOrders.aspx";
-		//		String expectedSTAGEUrl ="https://csg.v5stage.brandmuscle.net/Warehouse/WarehouseOrders.aspx"
-		//		String expectedPRODUrl = "https://csg.brandmuscle.net/Warehouse/WarehouseOrders.aspx";
-
-
-
-		String env = GlobalVariable.environment
-		String actualUrl = action.GetCurrentURL()
-
-		if(env.equalsIgnoreCase("uat")) {
-			Assert.assertEquals(expectedUATUrl, actualUrl)
-		}
-		else if(env.equalsIgnoreCase("stage")) {
-			Assert.assertEquals(expectedSTAGEUrl, actualUrl)
-		}
-		else if(env.equalsIgnoreCase("prod")) {
-			Assert.assertEquals(expectedPRODUrl, actualUrl)
-		}
-		else {
-			println (Assert.fail())
-		}
-	}
-
-
-
-	@Keyword
 	public void ClickAndVerifyWarehouseItemLink() {
-		action.WaitVisible(warehouseItem)
-		boolean statuswareHouseOrderLink = action.IsElementEnabled(warehouseItem)
-		if(statuswareHouseOrderLink == true){
-			action.Click(warehouseItem)
-			action.WaitForPageToLoad()
-			action.WaitVisible(ItemInfoDiv)
-			println ("completed Order link is enable");
+		try{
+			action.WaitVisible(warehouseItem)
+			boolean statuswareHouseOrderLink = action.IsElementEnabled(warehouseItem)
+			if(statuswareHouseOrderLink == true){
+				action.Click(warehouseItem)
+				action.WaitForPageToLoad()
+				action.VerifyCurrentPage("WarehouseItem.aspx")
+			}
+			else{
+				throw new Exception ("Ware house item is disabled")
+			}
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Click And Verify Warehouse Item Link failed due to "+ e)
 		}
 	}
-
-	@Keyword
-	public void VerifyWarehouseItemPage() {
-		String expectedUATUrl = "https://csg.v5qa.brandmuscle.net/Warehouse/WarehouseItem.aspx";
-		String expectedSTAGEUrl ="https://csg.v5stage.brandmuscle.net/Warehouse/WarehouseItem.aspx"
-		String expectedPRODUrl = "https://csg.brandmuscle.net/Warehouse/WarehouseItem.aspx";
-
-
-
-		String env = GlobalVariable.environment
-		String actualUrl = action.GetCurrentURL()
-
-		if(env.equalsIgnoreCase("uat")) {
-			Assert.assertEquals(expectedUATUrl, actualUrl)
-		}
-		else if(env.equalsIgnoreCase("stage")) {
-			Assert.assertEquals(expectedSTAGEUrl, actualUrl)
-		}
-		else if(env.equalsIgnoreCase("prod")) {
-			Assert.assertEquals(expectedPRODUrl, actualUrl)
-		}
-		else {
-			println (Assert.fail())
-		}
-	}
-
 
 
 	@Keyword
@@ -442,114 +395,76 @@ public class WarehouseDashBoardPage {
 	}
 
 	@Keyword
-	public void VerifyWarehouseItemInventoryPage() {
-		//		String expectedUATUrl = "https://csg.v5qa.brandmuscle.net/Warehouse/WarehouseOrders.aspx";
-		//		String expectedSTAGEUrl ="https://csg.v5stage.brandmuscle.net/Warehouse/WarehouseOrders.aspx"
-		//		String expectedPRODUrl = "https://csg.brandmuscle.net/Warehouse/WarehouseOrders.aspx";
-
-
-
-		String env = GlobalVariable.environment
-		String actualUrl = action.GetCurrentURL()
-
-		if(env.equalsIgnoreCase("uat")) {
-			Assert.assertEquals(expectedUATUrl, actualUrl)
-		}
-		else if(env.equalsIgnoreCase("stage")) {
-			Assert.assertEquals(expectedSTAGEUrl, actualUrl)
-		}
-		else if(env.equalsIgnoreCase("prod")) {
-			Assert.assertEquals(expectedPRODUrl, actualUrl)
-		}
-		else {
-			println (Assert.fail())
-		}
-	}
-
-	@Keyword
 	public void ClickAndVerifyItemPickListLink() {
-		action.WaitVisible(itemPackList)
-		boolean statuswareHouseOrderLink = action.IsElementEnabled(itemPackList)
-		if(statuswareHouseOrderLink == true){
-			action.Click(itemPackList)
-			action.WaitForPageToLoad()
-			action.WaitVisible(plusIcon)  //need to change xpath
-			println ("Warehouse item inventory link is enable");
+		try{
+			action.WaitVisible(itemPackList)
+			boolean statuswareHouseOrderLink = action.IsElementEnabled(itemPackList)
+			if(statuswareHouseOrderLink == true){
+				action.Click(itemPackList)
+				action.WaitForPageToLoad()
+				action.VerifyCurrentPage("TelerikPickList.aspx?ItemPicklist")
+			}
+			else{
+				throw new Exception("Item pack list link is not enabled")
+			}
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Click And Verify Item Pick List Link failed due to "+ e)
 		}
 	}
 
 	@Keyword
 	public void VerifyItemPickListPage() {
-		//		String expectedUATUrl = "https://csg.v5qa.brandmuscle.net/Warehouse/WarehouseOrders.aspx";
-		//		String expectedSTAGEUrl ="https://csg.v5stage.brandmuscle.net/Warehouse/WarehouseOrders.aspx"
-		//		String expectedPRODUrl = "https://csg.brandmuscle.net/Warehouse/WarehouseOrders.aspx";
-
-
-
-		String env = GlobalVariable.environment
-		String actualUrl = action.GetCurrentURL()
-
-		if(env.equalsIgnoreCase("uat")) {
-			Assert.assertEquals(expectedUATUrl, actualUrl)
+		try{
+			action.VerifyCurrentPage("ItemPicklist")
 		}
-		else if(env.equalsIgnoreCase("stage")) {
-			Assert.assertEquals(expectedSTAGEUrl, actualUrl)
-		}
-		else if(env.equalsIgnoreCase("prod")) {
-			Assert.assertEquals(expectedPRODUrl, actualUrl)
-		}
-		else {
-			println (Assert.fail())
+		catch(Exception e)
+		{
+			Assert.fail("Verify Item Pick List Page failed due to "+ e)
 		}
 	}
 
 	@Keyword
 	public void ClickAndVerifyOrderPackListLink() {
-		action.WaitVisible(orderPackList)
-		boolean statuswareHouseOrderLink = action.IsElementEnabled(orderPackList)
-		if(statuswareHouseOrderLink == true){
-			action.Click(orderPackList)
-			action.WaitForPageToLoad()
-			action.WaitVisible(plusIcon)  //need to change xpath
-			println ("Warehouse item inventory link is enable");
+		try{
+			action.WaitVisible(orderPackList)
+			boolean statuswareHouseOrderLink = action.IsElementEnabled(orderPackList)
+			if(statuswareHouseOrderLink == true){
+				action.Click(orderPackList)
+				action.WaitForPageToLoad()
+				action.WaitVisible(plusIcon)  //need to change xpath
+				println ("Warehouse item inventory link is enable");
+			}
+			else{
+				throw new Exception ("Ware house item inventory link is disabled")
+			}
 		}
-	}
-
-	@Keyword
-	public void VerifyOrderPackListPage() {
-		//		String expectedUATUrl = "https://csg.v5qa.brandmuscle.net/Warehouse/WarehouseOrders.aspx";
-		//		String expectedSTAGEUrl ="https://csg.v5stage.brandmuscle.net/Warehouse/WarehouseOrders.aspx"
-		//		String expectedPRODUrl = "https://csg.brandmuscle.net/Warehouse/WarehouseOrders.aspx";
-
-
-
-		String env = GlobalVariable.environment
-		String actualUrl = action.GetCurrentURL()
-
-		if(env.equalsIgnoreCase("uat")) {
-			Assert.assertEquals(expectedUATUrl, actualUrl)
-		}
-		else if(env.equalsIgnoreCase("stage")) {
-			Assert.assertEquals(expectedSTAGEUrl, actualUrl)
-		}
-		else if(env.equalsIgnoreCase("prod")) {
-			Assert.assertEquals(expectedPRODUrl, actualUrl)
-		}
-		else {
-			println (Assert.fail())
+		catch(Exception e)
+		{
+			Assert.fail("Click And Verify Order Pack List Link failed due to "+ e)
 		}
 	}
 
 
 	@Keyword
 	public void ClickAndVerifyReportBatchesLink() {
-		action.WaitVisible(reportBatches)
-		boolean statuswareHouseOrderLink = action.IsElementEnabled(reportBatches)
-		if(statuswareHouseOrderLink == true){
-			action.Click(reportBatches)
-			action.WaitForPageToLoad()
-			action.WaitVisible(plusIcon)  //need to change xpath
-			println ("Warehouse item inventory link is enable");
+		try{
+			action.WaitVisible(reportBatches)
+			boolean statuswareHouseOrderLink = action.IsElementEnabled(reportBatches)
+			if(statuswareHouseOrderLink == true)
+			{
+				action.Click(reportBatches)
+				action.WaitForPageToLoad()
+				action.VerifyCurrentPage("WarehouseOrderReportBatch.aspx")
+			}
+			else{
+				Assert.fail("Click And Verify Report Batches Link is disabled")
+			}
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Click And Verify Report Batches Link failed due to "+ e)
 		}
 	}
 
@@ -560,24 +475,65 @@ public class WarehouseDashBoardPage {
 		}
 		catch(Exception e)
 		{
-			println ("Verify Report Batches Page failed due to "+ e)
-			Assert.fail()
+			Assert.fail("Verify Report Batches Page failed due to "+ e)
 		}
 	}
 
 	@Keyword
 	public void ClickAndVerifyUserGuideLink() {
-		action.WaitVisible(userGuide)
-		boolean statuswareHouseOrderLink = action.IsElementEnabled(userGuide)
-		if(statuswareHouseOrderLink == true){
-			action.Click(userGuide)
-			action.WaitForPageToLoad()
-			action.WaitVisible(plusIcon)  //need to change xpath
-			println ("Warehouse item inventory link is enable");
+		try{
+			action.WaitVisible(userGuide)
+			boolean statuswareHouseOrderLink = action.IsElementEnabled(userGuide)
+			if(statuswareHouseOrderLink == true){
+				action.Click(userGuide)
+				action.WaitForPageToLoad()
+				action.VerifyCurrentPage("POSWarehouseUserGuideGeneric.pdf")
+			}
+			else{
+				throw new Exception ("User Guide link is not enabled")
+			}
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Click And Verify User Guide Link failed due to "+ e)
 		}
 	}
 
 
+	@Keyword
+	public void ClickOnUserItemApprovalTransfer()
+	{
+		try{
+			action.MouseHoverOnElement(warehouse)
+			WebUI.delay(5)
+			action.MouseHoverOnElement(admin)
+			WebUI.delay(5)
+			action.Click(useritemapprovaltransfer)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Click On User Item Approval Transfer failed due to "+ e)
+		}
+	}
+
+	@Keyword
+	public void ClickOnWarehouseUsers()
+	{
+		try{
+			action.MouseHoverOnElement(warehouse)
+			WebUI.delay(5)
+			action.MouseHoverOnElement(admin)
+			WebUI.delay(5)
+			action.Click(warehouseusers)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Click On Warehouse Users failed due to "+ e)
+		}
+	}
+	
 	@Keyword
 	public void ClickOnOrderPackList()
 	{
@@ -612,14 +568,4 @@ public class WarehouseDashBoardPage {
 			Assert.fail("ClickOnPrintIconAndVerifyOrderPackListReport method failed due to :" + e)
 		}
 	}
-
-
-
-
-
-
-
-
-
-
 }

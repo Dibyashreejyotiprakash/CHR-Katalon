@@ -75,7 +75,10 @@ public class HomePage {
 	By estimatorassignment = By.xpath("//*[text()='Estimator Assignment']")
 	By vendorprinteradmin = By.xpath("//*[text()='Vendor/Printer Admin']")
 	By itemlistoptionsadmin = By.xpath("//*[text()='Item List Options Admin']")
-
+	By productshots = By.xpath("//*[text()='Product Shots']")
+	By productshotremovaltool = By.xpath("//*[text()='Product Shot Removal Tool']")
+	By quotetrackerbtn = By.xpath("//*[text()='QuoteTracker']")
+	By requestnewquote = By.xpath("//*[text()='Request New Quote']")
 
 
 
@@ -188,10 +191,6 @@ public class HomePage {
 			Assert.fail("VerifyInvoicePage Failed due to" +e)
 		}
 	}
-
-
-
-
 
 
 
@@ -404,7 +403,7 @@ public class HomePage {
 	}
 
 	@Keyword
-	public void ItemListOptionsAdmin()
+	public void NavigateToItemListOptionsAdmin()
 	{
 		try{
 			action.MouseHoverOnElement(quotetracker)
@@ -430,6 +429,23 @@ public class HomePage {
 		action.Click(ii4crosscorpadmin)
 		action.WaitForPageToLoad()
 
+	}
+
+	@Keyword
+	public void NavigateToProductShotRemovalToolPage()
+	{
+		try{
+			action.MouseHoverOnElement(instantimpact)
+			WebUI.delay(3)
+			action.MouseHoverOnElement(productshots)
+			WebUI.delay(3)
+			action.Click(productshotremovaltool)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Navigate To Product Shot Removal Tool Page failed due to "+ e)
+		}
 	}
 
 }
