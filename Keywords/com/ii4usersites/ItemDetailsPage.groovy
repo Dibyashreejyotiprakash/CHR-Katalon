@@ -61,6 +61,8 @@ public class ItemDetailsPage {
 	By productselectionnobtn = By.xpath("//input[@id='Body_btnNo1']")
 	By paymentpagetext = By.xpath("//h1[contains(text(),'Enter Payment and Billing Details')]")
 	By shoppingcartqty = By.xpath("//input[@id='ctl00_Body_shopCartItemsListView_ctrl0_qtyNumTextBox']")
+	By designnumber = By.xpath("//span[@id='Body_lblDesignNumber']")
+	By diecutframe = By.xpath("//li[contains(text(),'Die-Cut A-Frame Table Tent 4x6')]")
 
 
 
@@ -255,4 +257,23 @@ public class ItemDetailsPage {
 			println("Enter values To Production Selection Page failed due to "+ e)
 		}
 	}
+	
+	@Keyword
+	public void ClickOnCreateYourOwnDesign()
+	{
+		try
+		{
+			action.WaitVisible(designnumber)
+			//action.WaitVisible(diecutframe)
+			//action.ScrollToViewElement(diecutframe)
+			action.ScrollToBottomOfPage()
+			WebUI.delay(2)
+			action.Click(createdesignbtn)
+		}
+		catch(Exception e)
+		{
+			Assert.fail("ClickOnCreateYourOwnDesign Failed due to "+e)
+		}
+	}
+	
 }

@@ -27,11 +27,11 @@ import org.testng.Assert
 
 public class ii4crosscorpadmin
 {
-	
+
 	WebDriver driver = DriverFactory.getWebDriver()
 	Interaction action = new Interaction()
 
-	
+
 	By FromCorp = By.xpath("//span[@aria-labelledby='select2-cphMain_ddlFromCorp-container']")
 	By ToCorp = By.xpath("//span[@aria-labelledby='select2-cphMain_ddlToCorp-container']")
 	By searchcorpfield = By.xpath("//input[@class = 'select2-search__field']")
@@ -44,8 +44,12 @@ public class ii4crosscorpadmin
 	By saveandexitbtn = By.xpath("//input[@id = 'cphMain_btnApply']")
 	By confirmmssg = By.xpath("//div[contains(text(),'The Cross Corp Association is being set up')]")
 	By updatebtn = By.xpath("//input[@id='cphMain_btnApply']")
-	
-	
+	By templatesearchbox = By.xpath("//input[@id='txtTemplateSearch']")
+	By ddtemplate = By.xpath("//input[@class = '132061']")
+	By ddtemplatetoclick = By.xpath("//input[@class = '132061']//following-sibling::span")
+	By corpremoveassociationlink = By.xpath("//div[@id='rmCorpAssociation']/a")
+
+
 	@Keyword
 	public void ValidateCrossCorpTimeout()
 	{
@@ -62,7 +66,7 @@ public class ii4crosscorpadmin
 			action.WaitVisible(searchcorpfield)
 			action.Type(searchcorpfield, "320")
 			action.Click(ToCorpVal)
-			
+
 			action.WaitVisible(corptocorpchkbox)
 			action.Click(corptocorpchkbox)
 			action.Click(choosetemplatebtn)
@@ -72,7 +76,7 @@ public class ii4crosscorpadmin
 			WebUI.delay(5)
 			action.Click(firstchkbox)
 			WebUI.delay(4)
-			
+
 			if(action.IsDisplayed(saveandexitbtn))
 			{
 				action.Click(saveandexitbtn)
@@ -81,14 +85,75 @@ public class ii4crosscorpadmin
 			{
 				action.Click(updatebtn)
 			}
-			
-			
+
+
 		}
 		catch(Exception e)
 		{
 			Assert.fail("ValidateCrossCorpTimeout Failed due to "+e)
 		}
 	}
-	
-	
+
+	@Keyword
+	public void CrossCorpDDTemplate()
+	{
+		try
+		{
+			action.WaitVisible(FromCorp)
+			action.WaitVisible(ToCorp)
+			action.Click(FromCorp)
+			action.WaitVisible(searchcorpfield)
+			action.Type(searchcorpfield, "300")
+			action.Click(FromCorpVal)
+			WebUI.delay(2)
+			action.Click(ToCorp)
+			action.WaitVisible(searchcorpfield)
+			action.Type(searchcorpfield, "320")
+			action.Click(ToCorpVal)
+
+			action.WaitVisible(corptocorpchkbox)
+			
+			
+			
+			if(action.IsDisplayed(corpremoveassociationlink))
+			{
+				action.Click(corptocorpchkbox)
+				action.Click(choosetemplatebtn)
+				action.WaitVisible(templatesearchbox)
+				action.Type(templatesearchbox, "132061")
+				action.WaitVisible(ddtemplatetoclick)
+				println("VALUE IS-->"+ action.isAttribtuePresent(ddtemplate, "checked"))
+				
+				if(!action.isAttribtuePresent(ddtemplate, "checked"))
+				{
+					action.Click(ddtemplatetoclick)
+					action.Click(saveandexitbtn)
+				}
+				
+				
+				
+			}
+			
+			else
+			{
+				action.Click(corptocorpchkbox)
+				action.Click(choosetemplatebtn)
+				action.WaitVisible(templatesearchbox)
+				action.Click(selectallchkbox)
+				action.Type(templatesearchbox, "132061")
+				action.WaitVisible(ddtemplatetoclick)
+				action.Click(ddtemplatetoclick)
+				action.Click(saveandexitbtn)
+			}
+			
+
+			
+			
+		}
+		catch(Exception e)
+		{
+			Assert.fail("CrossCorpDDTemplate Failed due to "+e)
+		}
+	}
+
 }

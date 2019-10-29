@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>1382_ValidateIiadminPaymentConfigForDD</name>
+   <name>1383_ValidatedMyDownloadsSection</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>df83a2b1-ec47-4d03-9bdf-58a51804b2cd</testCaseGuid>
+   <testCaseGuid>993fe987-7b40-46f1-a496-ba6072c2a55c</testCaseGuid>
 </TestCaseEntity>

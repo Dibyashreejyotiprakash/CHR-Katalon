@@ -23,19 +23,17 @@ import com.kms.katalon.core.webui.driver.DriverFactory
 
 
 public class CheckOutPage {
-	
+
 	WebDriver driver = DriverFactory.getWebDriver();
 	Interaction action = new Interaction();
-	
+
 	By dtaccountddn = By.xpath("//*[@id='ctl00_Body_desTrackAccComboBox_Arrow']")
 	By dtaccountvalue = By.xpath("//*[@id='ctl00_Body_desTrackAccComboBox_DropDown']//li[2]")
 	By continuetoreview = By.xpath("//*[@id='ctl00_Body_bottomContToCheckOutBtn']")
-	
+
 	@Keyword
-	public void ClickOnContinueToReview()
-	{
-		try
-		{
+	public void ClickOnContinueToReview() {
+		try {
 			action.WaitUntilElementClickable(dtaccountddn)
 			action.Click(dtaccountddn)
 			action.WaitUntilElementClickable(dtaccountvalue)
@@ -46,8 +44,7 @@ public class CheckOutPage {
 			action.Click(continuetoreview)
 			action.WaitForPageToLoad()
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			println ("Click On Continue To Review failed due to "+ e)
 		}
 	}

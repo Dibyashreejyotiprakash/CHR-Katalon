@@ -49,12 +49,13 @@ class ReviewPage {
 
 
 
-     @Keyword
+	@Keyword
 	//click on place order btn
 	public void ClickOnPlaceOrderBtn()
 	{
 		try
 		{
+			action.WaitVisible(lnkEditPaymentDetails)
 			action.ScrollToBottomOfPage()
 			action.Click(btnPlaceOrder)
 			action.WaitForPageToLoad()

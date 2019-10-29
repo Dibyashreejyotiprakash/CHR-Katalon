@@ -20,6 +20,7 @@ import com.utilities.Interaction
 import org.openqa.selenium.By
 import org.openqa.selenium.WebDriver
 import com.kms.katalon.core.webui.driver.DriverFactory
+import org.testng.Assert
 
 
 public class ConfirmationPage {
@@ -28,6 +29,9 @@ public class ConfirmationPage {
 	Interaction action = new Interaction();
 
 	By orderid = By.xpath("//*[@id='Body_lblInvoiceNumber']")
+	By downloadpagelink = By.xpath("//a[contains(text(),'Click here to download your Template')]")
+	By confirmationnumber = By.xpath("//span[@id='Body_lblInvoiceNumber']")
+	
 
 	@Keyword
 	public String GetConfirmationId() {
@@ -42,4 +46,20 @@ public class ConfirmationPage {
 			println ("Get confirmation number "+ e)
 		}
 	}
+	
+	
+	@Keyword
+	public void GetConfNumAndValidateOrderOnMyDownloads()
+	{
+		try
+		{
+			action.WaitVisible(confirmationnumber)
+			String conf_num = action.GetText(confirmationnumber)
+		}
+		catch(Exception e)
+		{
+			Assert.fail("GetConfNumAndValidateOrderOnMyDownloads Failed due to "+e)
+		}
+	}
+	
 }

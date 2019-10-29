@@ -20,7 +20,7 @@ import internal.GlobalVariable
 import com.utilities.Interaction
 
 import org.openqa.selenium.By
-
+import org.testng.Assert
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
 import com.kms.katalon.core.webui.driver.DriverFactory
@@ -33,7 +33,7 @@ class ShoppingCartPage {
 
 
 
-	By btnContinueToCheckout =By.xpath("//input[@id='ctl00_Body_sideContToCheckOutBtn']")
+	By btnContinueToCheckout =By.xpath("//input[@id='ctl00_Body_bottomContToCheckOutBtn']")
 	By ddlShippingAdd = By.xpath("//div[@id='ctl00_Body_shopCartItemsListView_ctrl0_shipAddressPanel']/div")
 	By ddlicon = By.id("ctl00_Body_shopCartItemsListView_ctrl0_addComboBox_Arrow")
 	By ddlValue = By.xpath("//ul[@class='rcbList']/li")
@@ -566,7 +566,19 @@ class ShoppingCartPage {
 
 	}
 
-
+	@Keyword
+	public void CheckoutDDitem()
+	{
+		try
+		{
+			action.WaitVisible(btnContinueToCheckout)
+			action.Click(btnContinueToCheckout)
+		}
+		catch(Exception e)
+		{
+			Assert.fail("CheckoutDDitem failed due to "+e)
+		}
+	}
 
 
 }
