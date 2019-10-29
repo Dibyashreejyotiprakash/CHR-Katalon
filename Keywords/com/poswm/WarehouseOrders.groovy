@@ -26,6 +26,7 @@ import org.openqa.selenium.WebDriver
 import org.testng.Assert
 import org.openqa.selenium.Alert
 import org.openqa.selenium.By
+import java.util.Date
 import com.kms.katalon.core.webui.driver.DriverFactory
 
 import internal.GlobalVariable
@@ -52,78 +53,225 @@ public class WarehouseOrders {
 	By itemInfoSaveIcon = By.xpath("//input[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_btnUpdate']")
 	By desiredshipdatetextbox = By.xpath("//*[@id='ctl00_MainContent_dockShippingInformation_C_calShipDate_dateInput']")
 
-	
+
 	By addBtn = By.xpath("(//*[text()='Add'])[1]")
 	By addCustomer = By.xpath("(//*[text()='Add Customer'])[1]")
 	By addanItemLink = By.xpath("(//*[text()='Add an Item'])[1]")
 
+	By desiredShipDateTestBox = By.xpath("//*[@id='ctl00_MainContent_dockShippingInformation_C_calShipDate_dateInput']")
 
 
-	
+	By shipDate = By.xpath("//*[@id='ctl00_MainContent_RadDock1_C_lblShipDateTop']")
+	By shipLink = By.xpath("//*[@id='ctl00_MainContent_dockItemInformation_C_rgOrderItems_ctl00_ctl04_lnkShip']")
+	By approveLink = By.xpath("//*[text()='Approve']")
+	By rejectLink = By.xpath("//*[text()='Reject']")
+	By rejectNoteTextBox = By.xpath("//*[@id='ctl00_MainContent_dockItemInformation_C_rgOrderItems_ctl00_ctl04_rttReject_C_txtReject']")
+	By submitBtn = By.xpath("//*[@id='ctl00_MainContent_dockItemInformation_C_rgOrderItems_ctl00_ctl04_rttReject_C_btnRejectSubmit']")
+	By updateLink = By.xpath("//*[text()='Update']")
+	By calanderIcon = By.xpath("//*[@id='ctl00_MainContent_dockShippingInformation_C_calShipDate_popupButton']")
+	By popCalander = By.xpath("//*[@id='ctl00_MainContent_rwInstaller_C_rdInstallationDate_popupButton']")
+
 	@Keyword
-	public void ClickOnAddanItemIcon()
+	public boolean Verifydate()
 	{
+		boolean IsEnable = false
 		try
 		{
-			action.Click(plusIcon)
-			WebUI.delay(10)
+			if (!action.IsElementEnabled(calanderIcon))
+			{
+				println "************Calandar button/icon is disable**********"
+			}
+			return IsEnable = true
 		}
 		catch(Exception e)
 		{
-			Assert.fail("ClickOnAddanItemLink method failed due to :" + e)
+			Assert.fail("Verifydate method failed due to :" + e)
 		}
+		
+		/*LocalDate date = LocalDate.now();
+		LocalDate yesterday = date.minusDays(1);
+		LocalDate tomorrow = yesterday.plusDays(2);
+		println("Today date: "+date);
+		println("Yesterday date: "+yesterday);
+		println("Tommorow date: "+tomorrow);*/
+		//SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy")
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		/*
+		LocalDate date = new LocalDate()
+		String todaydate = date.now()
+		println ("Today date --------------"+todaydate)*/
 	}
-	
-	
+
+
+
 	@Keyword
-	public void ClickOnAddanItemLink()
-	{
-		try
-		{
-			action.Click(addanItemLink)
-			WebUI.delay(10)
-		}
-		catch(Exception e)
-		{
-			Assert.fail("ClickOnAddanItemLink method failed due to :" + e)
-		}
-	}
-	
-	@Keyword
-	public void ClickOnAddLink()
-	{
-		try
-		{
-			action.Click(addBtn)
-			WebUI.delay(10)
+	public void ClickOnUpdateLink() {
+		try {
+			if(action.IsDisplayed(updateLink))
+			{
+				action.Click(updateLink)
+				WebUI.delay(5)
+			}
+			else
+			{
+				println ("Reject link is not present  " + shipDate)
+			}
 			
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
+			Assert.fail("ClickOnRejectLink method failed due to :" + e)
+		}
+	}
+	@Keyword
+	public void ClickOnAddanItemIcon() {
+		try {
+			action.Click(plusIcon)
+			//WebUI.delay(10)
+		}
+		catch(Exception e) {
+			Assert.fail("ClickOnAddanItemLink method failed due to :" + e)
+		}
+	}
+
+	@Keyword
+	public void ClickOnRejectLink() {
+		try {
+			if(action.IsDisplayed(rejectLink))
+			{
+				action.Click(rejectLink)
+				WebUI.delay(5)
+			}
+			else
+			{
+				println ("Reject link is not present  " + shipDate)
+			}
+			
+		}
+		catch(Exception e) {
+			Assert.fail("ClickOnRejectLink method failed due to :" + e)
+		}
+	}
+	
+	@Keyword
+	public void ClickOnApproveLink() {
+		try {
+			if(action.IsDisplayed(approveLink))
+			{
+				action.Click(approveLink)
+				WebUI.delay(5)
+			}
+			else
+			{
+				println ("Approve link is not present  " + shipDate)
+			}
+			
+		}
+		catch(Exception e) {
+			Assert.fail("ClickOnRejectLink method failed due to :" + e)
+		}
+	}
+	
+	
+	@Keyword
+	public void WriteRejectNote() {
+		try {
+			action.Click(rejectNoteTextBox)
+			action.Type(rejectNoteTextBox, "testReject")
+			action.Click(submitBtn)
+		}
+		catch(Exception e) {
+			Assert.fail("WriteRejectNote method failed due to :" + e)
+		}
+	}
+
+
+
+	@Keyword
+	public String GetShipDate() {
+		try {
+			String shipDate = action.GetText(shipDate)
+
+			println ("Approve Date is " + shipDate)
+			
+			/*String[] p = shipDate.split("/")
+			String p1 = p[0]
+			String p2 = p[1]
+			
+			println "***********"+ p1
+			println "***********"+ p2*/
+		
+		 
+		 println ("Actual Date is " + shipDate)
+			
+		}
+		catch(Exception e) {
+			Assert.fail("GetShipDate method failed due to :" + e)
+		}
+	}
+
+	@Keyword
+	public void ClickOnShipLink() {
+		try {
+			action.Click(shipLink)
+			WebUI.delay(10)
+		}
+		catch(Exception e) {
+			Assert.fail("ClickOnShipLink method failed due to :" + e)
+		}
+	}
+
+	@Keyword
+	public void ClickOnAddanItemLink() {
+		try {
+			action.Click(addanItemLink)
+			//WebUI.delay(10)
+		}
+		catch(Exception e) {
+			Assert.fail("ClickOnAddanItemLink method failed due to :" + e)
+		}
+	}
+
+	@Keyword
+	public void ClickOnAddLink() {
+		try {
+			action.Click(addBtn)
+			//WebUI.delay(10)
+
+		}
+		catch(Exception e) {
 			Assert.fail("ClickOnAddLink method failed due to :" + e)
 		}
 	}
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	@Keyword
 	public void VerifyNewItemPage() {
@@ -186,7 +334,7 @@ public class WarehouseOrders {
 	public void ClickOnItemName() {
 		try {
 			action.Click(itemNameColumn)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 		}
 		catch(Exception e) {
 			Assert.fail("ClickOnItemName method failed due to :"+e)
@@ -197,26 +345,26 @@ public class WarehouseOrders {
 	public void ClickOnEditThisItem() {
 		try {
 			action.WindowHandle()
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(EditThisItem)
 			action.WaitForPageToLoad()
 
 
 
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(salesDivisionDropDown)
 			action.WaitTime(3)
 			action.Click(salesDivisionThirdOption)
 			action.Click(itemInfoSaveIcon)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 
 
 
 
 			action.Click(ItemInfonextButton)
-			WebUI.delay(2)
+			//WebUI.delay(2)
 			action.Click(imageNextBtn)
-			WebUI.delay(2)
+			//WebUI.delay(2)
 			action.Click(brandNextBtn)
 		}
 		catch(Exception e) {
@@ -225,6 +373,17 @@ public class WarehouseOrders {
 	}
 
 
+	@Keyword
+	public void GetDesiredShipDate() {
+		try {
+			action.ScrollToViewelement(desiredShipDateTestBox)
+			String shipDate = action.GetText(desiredShipDateTestBox)
+			println ("**********" + shipDate)
+		}
+		catch(Exception e) {
+			Assert.fail("GetDesiredShipDate method failed due to :"+e)
+		}
+	}
 
 	@Keyword
 	public void AddDesiredShipDate() {
@@ -233,6 +392,8 @@ public class WarehouseOrders {
 			LocalDate date = new LocalDate()
 			String todaydate = date.now()
 			action.Type(desiredshipdatetextbox, todaydate)
+			WebUI.delay(10)
+			//return todaydate
 		}
 		catch(Exception e) {
 			Assert.fail("Add Desired Shipping Date and verify failed due to "+ e)

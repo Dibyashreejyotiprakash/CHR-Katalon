@@ -172,10 +172,10 @@ public class WarehouseItem {
 			{
 				EnterNotes()
 			}
-			if(action.IsDisplayed(txbUnitCost))
+			/*if(action.IsDisplayed(txbUnitCost))
 			{
 				EnterUnitCost()
-			}
+			}*/
 			if(action.IsDisplayed(txbUnitOfMeasure))
 			{
 				EnterUnitOfMeasure()
@@ -206,10 +206,10 @@ public class WarehouseItem {
 		try{
 			if(action.IsElementDisplayed(txbName))
 			{
-				WebUI.delay(3)
+				////WebUI.delay(3)
 				itemName = action.GenerateRandomAplphabaNeumericString(5)
 				action.Type(txbName, itemName)
-				WebUI.delay(3)
+				////WebUI.delay(3)
 			}
 			else
 			{
@@ -231,12 +231,12 @@ public class WarehouseItem {
 		{
 			if(action.IsElementDisplayed(ApproverDropDown))
 			{
-				WebUI.delay(3)
+				////WebUI.delay(3)
 				action.Click(ApproverDropDown)
 				//action.WaitVisible(approverListDivision)
-				action.WaitTime(3)
+				////action.WaitTime(3)
 				action.Click(approverFirst)
-				action.WaitTime(3)
+				////action.WaitTime(3)
 			}
 			else
 			{
@@ -257,12 +257,12 @@ public class WarehouseItem {
 		{
 			if(action.IsElementDisplayed(productType))
 			{
-				WebUI.delay(3)
+				////WebUI.delay(3)
 				action.Click(productType)
 				action.WaitVisible(divProductType)
-				action.WaitTime(3)
+				////action.WaitTime(3)
 				action.Click(firstProductType)
-				action.WaitTime(3)
+				////action.WaitTime(3)
 			}
 			else
 			{
@@ -283,12 +283,12 @@ public class WarehouseItem {
 		{
 			if(action.IsElementDisplayed(supplierDropDown))
 			{
-				WebUI.delay(3)
+				////WebUI.delay(3)
 				action.Click(supplierDropDown)
 				action.WaitVisible(supplierListDivision)
-				action.WaitTime(3)
+				////action.WaitTime(3)
 				action.Click(supplierFirstOption)
-				action.WaitTime(5)
+				////action.WaitTime(5)
 			}
 			else
 			{
@@ -309,12 +309,12 @@ public class WarehouseItem {
 		{
 			if(action.IsElementDisplayed(PremiseTypeDropDown))
 			{
-				WebUI.delay(3)
+				////WebUI.delay(3)
 				action.Click(PremiseTypeDropDown)
 				action.WaitVisible(PremiseTypeListDiv)
-				action.WaitTime(3)
+				////action.WaitTime(3)
 				action.Click(PremiseTypeListDiv)
-				action.WaitTime(3)
+				////action.WaitTime(3)
 			}
 			else
 			{
@@ -335,16 +335,16 @@ public class WarehouseItem {
 		{
 			if(action.IsElementDisplayed(salesDivisionDropDown))
 			{
-				WebUI.delay(3)
+				////WebUI.delay(3)
 				action.Click(salesDivisionDropDown)
 				//action.WaitVisible(salesDivisionListDiv)
-				action.WaitTime(3)
+				////action.WaitTime(3)
 				action.Click(salesDivisionSecondOption)
-				action.WaitTime(2)
+				////action.WaitTime(2)
 				action.Click(salesDivisionThirdOption)
-				action.WaitTime(2)
+				////action.WaitTime(2)
 				action.Click(salesDivisionFourthOption)
-				action.WaitTime(2)
+				////action.WaitTime(2)
 			}
 			else
 			{
@@ -365,10 +365,10 @@ public class WarehouseItem {
 		{
 			if(action.IsElementDisplayed(salesDivisionDropDown))
 			{
-				WebUI.delay(3)
+				////WebUI.delay(3)
 				action.Click(salesDivisionDropDown)
 				//action.WaitVisible(salesDivisionListDiv)
-				action.WaitTime(3)
+				////action.WaitTime(3)
 				action.Click(salesDivisionSecondOption)
 				action.Click(salesDivDropDownArrowBtn)
 				String selectedSalesDiv = action.GetText(salesDivisionDropDown)
@@ -396,12 +396,12 @@ public class WarehouseItem {
 		{
 			if(action.IsElementDisplayed(seasonalType))
 			{
-				WebUI.delay(3)
+				////WebUI.delay(3)
 				action.Click(seasonalType)
 				//action.WaitVisible(seasonalTypeDiv)
-				action.WaitTime(3)
+				////action.WaitTime(3)
 				action.Click(seasonalTypeFisrOption)
-				action.WaitTime(3)
+				////action.WaitTime(3)
 
 			}
 			else
@@ -422,12 +422,12 @@ public class WarehouseItem {
 		{
 			if(action.IsElementDisplayed(demographicsDropDown))
 			{
-				WebUI.delay(5)
+				////WebUI.delay(5)
 				action.Click(demographicsDropDown)
 				action.WaitVisible(demographicsDiv)
-				action.WaitTime(3)
+				////action.WaitTime(3)
 				action.Click(demographic2ndOption)
-				action.WaitTime(5)
+				////action.WaitTime(5)
 
 			}
 			else
@@ -449,7 +449,7 @@ public class WarehouseItem {
 		{
 			if(action.IsElementDisplayed(txbDescription))
 			{
-				WebUI.delay(3)
+				////WebUI.delay(3)
 				action.Type(txbDescription, "TestDesc")
 
 			}
@@ -471,7 +471,7 @@ public class WarehouseItem {
 		{
 			if(action.IsElementDisplayed(txbNotes))
 			{
-				WebUI.delay(3)
+				////WebUI.delay(3)
 				action.Type(txbNotes, "TestNotes")
 
 			}
@@ -493,7 +493,7 @@ public class WarehouseItem {
 		{
 			if(action.IsElementDisplayed(txbUnitCost))
 			{
-				WebUI.delay(3)
+				////WebUI.delay(3)
 				action.Type(txbUnitCost, "10")
 
 			}
@@ -517,7 +517,7 @@ public class WarehouseItem {
 			{
 
 				action.Type(txbUnitOfMeasure, "EACH")
-				WebUI.delay(3)
+				////WebUI.delay(3)
 
 			}
 			else
@@ -540,15 +540,15 @@ public class WarehouseItem {
 
 			//action.WaitUntilElementClickable(saveIconItemInfo)
 			action.ScrollToBottomOfPage()
-			//WebUI.delay(3)
+			////WebUI.delay(3)
 			action.Click(saveIconItemInfo)
-			action.WaitTime(15)
+			////action.WaitTime(15)
 			//action.WaitTillNotVisible(itemInformationConfirmationMsg, 300)
 			//action.ScrollToViewElement(nextButton)
 			action.Click(nextButton)
-			action.WaitTime(5)
+			////action.WaitTime(5)
 			//action.WaitVisible(divisionImage)
-			//action.WaitTime(5)
+			////action.WaitTime(5)
 
 
 		}
@@ -569,9 +569,9 @@ public class WarehouseItem {
 		try{
 			action.ScrollToViewElement(saveIconImage)
 			action.Click(saveIconImage)
-			action.WaitTime(2)
+			//action.WaitTime(2)
 			action.Click(imageNextBtn)
-			action.WaitTime(5)
+			//action.WaitTime(5)
 			//action.WaitVisible(divBrands)
 		}
 		catch(Exception e){
@@ -593,9 +593,9 @@ public class WarehouseItem {
 				action.Click(transeferRightBtn)
 				action.ScrollToViewElement(brandSaveBtn)
 				action.Click(brandSaveBtn)
-				action.WaitTime(15)
+				//action.WaitTime(15)
 				action.Click(brandNextBtn)
-				action.WaitTime(3)
+				//action.WaitTime(3)
 
 			}
 			else
@@ -623,10 +623,12 @@ public class WarehouseItem {
 		{
 			if(action.IsElementDisplayed(selectWarehouseDropDown))
 			{
+				//action.WaitVisible(selectWarehouseDropDown)
 				action.Click(selectWarehouseDropDown)
-				action.WaitTime(2)
+				//action.WaitVisible(selectWarehouseFirstValue)
+				////action.WaitTime(2)
 				action.Click(selectWarehouseFirstValue)
-				action.WaitTime(5)
+				////action.WaitTime(5)
 			}
 			else
 			{
@@ -636,18 +638,18 @@ public class WarehouseItem {
 			if(action.IsElementDisplayed(selectBinDropDown))
 			{
 				action.Click(selectBinDropDown)
-				action.WaitTime(3)
+				////action.WaitTime(3)
 				action.Click(selectBinFirstValue)
-				action.WaitTime(3)
+				////action.WaitTime(3)
 				action.Type(QtyTextField, "5")
 			}
 			else
 			{
 				println ("Selelct Bin drop down not present/failed")
 			}
-			if(action.IsElementEnabled(SaveBtn)){
+			if(action.IsElementDisplayed(SaveBtn)){
 				action.Click(SaveBtn)
-				action.WaitTime(10)
+				////action.WaitTime(10)
 
 			}
 			else{
@@ -671,7 +673,7 @@ public class WarehouseItem {
 			if(action.IsElementDisplayed(CloseEditModeBtn)){
 				action.Click(CloseEditModeBtn)
 				action.WaitForPageToLoad()
-				action.WaitTime(10)
+				//action.WaitTime(10)
 			}
 			else{
 				println ("Close Edit Mode button not present/failed")
@@ -693,11 +695,11 @@ public class WarehouseItem {
 	 {
 	 Actions act = new Actions(Driver)
 	 action.Click(productType)
-	 WebUI.delay(3)
+	 //WebUI.delay(3)
 	 action.Type(productType, itemPropertyName)
-	 WebUI.delay(3)
+	 //WebUI.delay(3)
 	 act.sendKeys(Keys.ENTER)
-	 WebUI.delay(5)
+	 //WebUI.delay(5)
 	 unitCostValue = action.GetText(txbUnitCost)
 	 Assert.assertTrue(unitCostValue.equals(defaultPrice))
 	 return unitCostValue
@@ -727,17 +729,17 @@ public class WarehouseItem {
 			EnterUnitOfMeasure()
 
 			action.Click(productType)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Type(productType, itemPropertyName)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 
 			action.Enter(productType)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.Click(saveIconItemInfo)
-			WebUI.delay(8)
+			//WebUI.delay(8)
 			/*action.ScrollToBottomOfPage()
 			 action.Click(itemInfoSaveBtnAfterSave)*/
-			WebUI.delay(5)
+			//WebUI.delay(5)
 		}
 		catch(Exception e)
 		{
@@ -751,7 +753,7 @@ public class WarehouseItem {
 		try
 		{
 			String unitCostValue = driver.findElement(By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_radUnitCost']")).getAttribute("value")
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			println("**********" + unitCostValue)
 			Assert.assertTrue(unitCostValue.equals(actualDefoultPrice))
 

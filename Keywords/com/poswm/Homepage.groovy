@@ -74,6 +74,10 @@ public class Homepage {
 	By btnEditThisItem = By.xpath("//*[@id='MainContent_btnEditItemWizard']")
 	By itemInformationSection = By.xpath("//*[text()='Step 1: Item Information']")
 	By logoutlink = By.xpath("//*[text()='Logout']")
+	By homeMenu = By.xpath("//*[text()='Home']")
+	By approveDateCol = By.xpath("//*[text()='Approved Date']")
+
+
 
 	@Keyword
 	public void PosLogout() {
@@ -97,6 +101,24 @@ public class Homepage {
 	}
 
 
+	@Keyword
+	public NaviagteToDashBoard() {
+		action.Click(homeMenu)
+		WebUI.delay(5)
+	}
+
+	@Keyword
+	public void VerifyApproveDateColumn() {
+		try {
+			//boolean IsColumnVerified =false
+			boolean status =  action.IsElementDisplayed(approveDateCol)
+			Assert.assertTrue(status)
+			println "column verified successfully"
+		}
+		catch(Exception e) {
+			Assert.fail("VerifyApproveDateColumn method failed due to :" + e)
+		}
+	}
 
 
 	@Keyword
