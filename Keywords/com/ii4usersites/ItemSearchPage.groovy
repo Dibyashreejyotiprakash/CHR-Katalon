@@ -22,7 +22,6 @@ import org.openqa.selenium.Keys
 import org.openqa.selenium.WebDriver
 import org.testng.Assert
 
-
 import com.kms.katalon.core.webui.driver.DriverFactory
 
 class ItemSearchPage {
@@ -98,6 +97,7 @@ class ItemSearchPage {
 	By template = By.xpath("(//*[@href='/POS/ItemDetails.aspx?tid=130722'])[1]")
 	By variabletemplate = By.xpath("(//*[@href='/POS/ItemDetails.aspx?tid=130719'])[1]")
 	By ordernowbtn = By.xpath("//*[@id='Body_btnOrderNow']")
+	By createdesignbtn = By.xpath("//*[@id='Body_btnProductDesign']")
 	By splseemorebtn = By.xpath("//a[@id = 'ctl00_Body_rptFilterGroups_ctrl5_lbtnFilterListExpand']")
 	By digitaldownloadcheckbox = By.xpath("(//label[contains(text(),'Digital Download')])[1]//preceding-sibling::input")
 	By savebtn = By.xpath("//input[@id='ctl00_Body_RadWindow1_C_btnSave']")
@@ -150,6 +150,20 @@ class ItemSearchPage {
 		}
 	}
 
+	@Keyword
+	public void ClickOnCreateYourOwnDesignAndNavigateToCreateDesignPage()
+	{
+		try{
+			action.ScrollToBottomOfPage()
+			action.Click(createdesignbtn)
+			action.WaitForPageToLoad()
+			action.VerifyCurrentPage("ItemConfiguration.aspx")
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Click On Create Your Own Design And Navigate To Create Design Page")
+		}
+	}
 
 
 	@Keyword
