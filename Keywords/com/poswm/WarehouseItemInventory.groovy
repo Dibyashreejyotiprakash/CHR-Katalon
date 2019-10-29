@@ -78,17 +78,18 @@ public class WarehouseItemInventory {
 	By SuplierAccordian = By.xpath("//*[@id='ctl00_MainContent_rpbSearch']/ul/li[1]/a/span/span[1]")
 	By BrandAccordian = By.xpath("//*[@id='ctl00_MainContent_rpbSearch']/ul/li[2]/a/span/span[1]")
 
+	By salesDivisionNV= By.xpath("//*[@id='ctl00_MainContent_rpbSearch_i5_i0_rlbSalesDivision']/div/ul/li[1]/label/input")
 
 	By OrderPlusIcon = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00_ctl04_imgOrder']")
 	By UpdateQuantityBtn = By.xpath("//*[text()='Update Quantities']")
 	By NewOrder = By.xpath("(//*[text()='New Order'])[2]")
 	By ClickHeretogotothisorderlink= By.xpath("//*[text()='Click here to go to this order.']")
-	By AddCustomer = By.xpath("//*[text()='Add Customer']")
+	//By AddCustomer = By.xpath("//*[text()='Add Customer']")
 	By customerSearchTxtField = By.xpath("//*[@id='ctl00_MainContent_dockCustomerInformation_C_rsbCustomers_Input']")
 	By cutomerFirstOption = By.xpath("(//*[@id='rsbCustomerName'])[1]")
-	By ShipMethodDropdwon= By.xpath("(//*[@id='ctl00_MainContent_dockShippingInformation_C_ddlShippingMethod_Input'])")
+	By ShipMethodDropdwon= By.xpath("//*[@id='ctl00_MainContent_dockShippingInformation_C_ddlShippingMethod_Arrow']")
 	By FirstShipOption = By.xpath("(//*[@id='ctl00_MainContent_dockShippingInformation_C_ddlShippingMethod_DropDown'])/div/ul/li[1]")
-	By SubmitOrderBtn = By.xpath("(//*[@id='ctl00_MainContent_btnSubmitOrder_input'])")
+	By SubmitOrderBtn = By.xpath("(//*[@id='ctl00_MainContent_btnSubmitOrder'])")
 	By HeaderItemSearchPage = By.xpath("//*[@id='ctl00_MainContent_rmItemCommands']")
 
 	By SelectSalesDivEM = By.xpath("//*[text()='Sales Division']")
@@ -97,17 +98,85 @@ public class WarehouseItemInventory {
 
 	By otherFiltersExpandBtn = By.xpath("//*[@id='ctl00_MainContent_rpbSearch']/ul/li[9]/a/span/span[1]")
 	By availableToOrderCheckBox = By.xpath("//*[@id='ctl00_MainContent_rpbSearch_i10_i0_rlbOtherFilters_i0']/label/input")
-	By ApprovalRequiredCheckBox = By.xpath("//*[@id='ctl00_MainContent_rpbSearch_i10_i0_rlbOtherFilters_i2']/label/input")
+	By ApprovalRequiredCheckBox = By.xpath("//*[@id='ctl00_MainContent_rpbSearch_i10_i0_rlbOtherFilters_i1']/label/input")
 	By clearSelectionLink = By.xpath("//*[text()='Clear Selection']")
 	By clearAllFilters = By.xpath("//*[text()='Clear All Filters']")
 
 
+	By plusIcon = By.xpath("(//*[@id='ctl00_MainContent_rgItemSearch_ctl00_ctl04_imgOrder'])[1]")
+	By addBtn = By.xpath("(//*[text()='Add'])[1]")
+	By addCustomer = By.xpath("//*[@id='ctl00_MainContent_dockCustomerInformation_C_btnModifyCustomer']")
+	By addanItemLink = By.xpath("(//*[text()='Add an Item'])[1]")
+
+	By firstItem = By.xpath("(//*[@id='ctl00_MainContent_rgItemSearch_ctl00_ctl04_lblItemName'])[1]")
+	By itemName = By.xpath("//*[@id='ctl00_MainContent_ucItemOverView_radListItemProperties_ctrl0_ItemName']")
+	By deleteItemLink = By.xpath("//*[@id='MainContent_btnDeleteItem']")
+	By DeleteItemBtn  = By.xpath("//*[@id='ctl00_MainContent_rwDeleteItemSettings_C_btnDeleteItemAndResetQuantities_input']")
+	By deleteCheckBox = By.xpath("//*[@id='ctl00_MainContent_rpbSearch_i10_i0_rlbOtherFilters_i2']/label/input")
+	By itemNameColValiue = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00']/tbody/tr/td[3]")
+	By approverColVal = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00__0']/td[7]")
 
 
 
 
+	@Keyword
+	public void VerifyApproverCol(String ApproverNameExpected)
+	{
+		try
+		{
+			String ApproverNameActual = action.GetText(approverColVal)
+			println "***********" + ApproverNameActual
+			if(ApproverNameActual.equalsIgnoreCase(ApproverNameExpected))
+			{
+				println "Approver transfer successfully"
+			}
+
+		}
+		catch(Exception e)
+		{
+			Assert.fail("VerifyApproverCol failed due to :" + e)
+		}
+	}
+	@Keyword
+	public String DeleteFirstItem()
+	{
+		try
+		{
+			action.WindowHandle()
+			String itemName = action.GetText(itemName)
+			action.ScrollToBottomOfPage()
+			action.Click(deleteItemLink)
+			WebUI.delay(5)
+			action.AcceptAlert()
+			WebUI.delay(3)
+			action.ScrollToTopOgPage()
+			action.Click(DeleteItemBtn)
+			WebUI.delay(3)
+
+			return 	itemName
+
+		}
+		catch(Exception e)
+		{
+			Assert.fail("DeleteItem failed due to :" + e)
+		}
+	}
 
 
+	@Keyword
+	public void ClickOnFirstItemName()
+	{
+		try
+		{
+			action.Click(firstItem)
+			WebUI.delay(7)
+
+		}
+		catch(Exception e)
+		{
+			Assert.fail("ClickOnFirstItemName failed due to :" + e)
+		}
+	}
 
 	@Keyword
 	public void SelectSalesDivisionForEmpireMerchant()
@@ -115,12 +184,12 @@ public class WarehouseItemInventory {
 		try
 		{
 			action.Click(SuplierAccordian)
-			WebUI.delay(2)
+			//WebUI.delay(2)
 			action.Click(BrandAccordian)
-			WebUI.delay(2)
+			//WebUI.delay(2)
 			//action.ScrollToViewelement(SalesDivisionDivision)
 			action.Click(SelectSalesDivEM)
-			WebUI.delay(2)
+			//WebUI.delay(2)
 			action.Click(FirstSalesDivOptionEM)
 			WebUI.delay(5)
 
@@ -134,6 +203,28 @@ public class WarehouseItemInventory {
 
 
 
+	@Keyword
+	public void SelectSalesDivisionForNV()
+	{
+		try
+		{
+			action.Click(SuplierAccordian)
+			//WebUI.delay(2)
+			action.Click(BrandAccordian)
+			//WebUI.delay(2)
+			//action.ScrollToViewelement(SalesDivisionDivision)
+			action.Click(SelectSalesDivEM)
+			//WebUI.delay(2)
+			action.Click(salesDivisionNV)
+			//WebUI.delay(5)
+
+
+		}
+		catch(Exception e)
+		{
+			Assert.fail("SelectSalesDivision failed due to :" + e)
+		}
+	}
 
 
 
@@ -249,7 +340,7 @@ public class WarehouseItemInventory {
 	{
 		try{
 			action.Click(supplierfilter)
-			WebUI.delay(20)
+			//WebUI.delay(20)
 			boolean statusofclearallfilterbtn = action.IsElementDisplayed(clearallfilterbtn)
 			Assert.assertTrue(statusofclearallfilterbtn)
 			action.Click(clearallfilterbtn)
@@ -266,9 +357,9 @@ public class WarehouseItemInventory {
 	{
 		try{
 			//action.Click(linkSupplier)
-			WebUI.delay(10)
+			//WebUI.delay(10)
 			action.Click(supplierfilter)
-			WebUI.delay(20)
+			//WebUI.delay(20)
 			String suppliername = action.GetText(supplierfilter)
 			List<WebElement> allsuppliersname = action.GetElements(allsuppliersnameingrid)
 			if(allsuppliersname.size()>0)
@@ -302,9 +393,9 @@ public class WarehouseItemInventory {
 	{
 		try{
 			//action.Click(linkBrands)
-			WebUI.delay(10)
+			//WebUI.delay(10)
 			action.Click(brandfilter)
-			WebUI.delay(20)
+			//WebUI.delay(20)
 			String brandnamename = action.GetText(brandfilter)
 			List<WebElement> allbrandsname = action.GetElements(allbrandsnameingrid)
 			if(allbrandsname.size()>0)
@@ -377,7 +468,7 @@ public class WarehouseItemInventory {
 				for(int i=0;i<allitemnames.size();i++)
 				{
 					action.Type(itemsearchbtn, allitemnames.get(i).getText())
-					WebUI.delay(10)
+					//WebUI.delay(10)
 					action.Click(itemsearchbtn)
 					break
 				}
@@ -414,7 +505,7 @@ public class WarehouseItemInventory {
 					String parentwindowid = it.next()
 					String childwindowid = it.next()
 					driver.switchTo().window(childwindowid)
-					WebUI.delay(10)
+					//WebUI.delay(10)
 				}
 			}
 
@@ -471,9 +562,9 @@ public class WarehouseItemInventory {
 					String parentwindowid = it.next()
 					String childwindowid = it.next()
 					driver.switchTo().window(childwindowid)
-					WebUI.delay(10)
+					//WebUI.delay(10)
 					action.Click(deletethisitembtn)
-					WebUI.delay(10)
+					//WebUI.delay(10)
 					action.AcceptAlert()
 					action.Click(deletebtn)
 					WebUI.closeBrowser()
@@ -495,14 +586,14 @@ public class WarehouseItemInventory {
 		try
 		{
 			action.Click(SuplierAccordian)
-			WebUI.delay(2)
+			//WebUI.delay(2)
 			action.Click(BrandAccordian)
-			WebUI.delay(2)
+			//WebUI.delay(2)
 			//action.ScrollToViewelement(SalesDivisionDivision)
 			action.Click(SalesDivisionDivision)
-			WebUI.delay(2)
+			//WebUI.delay(2)
 			action.Click(firstSalesdivisionCheckbox)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 
 
 		}
@@ -537,13 +628,13 @@ public class WarehouseItemInventory {
 		try
 		{
 			action.Click(OrderPlusIcon)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(UpdateQuantityBtn)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(NewOrder)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.Click(ClickHeretogotothisorderlink)
-			WebUI.delay(5)
+			WebUI.delay(10)
 
 
 		}
@@ -558,8 +649,8 @@ public class WarehouseItemInventory {
 	{
 		try
 		{
-			action.WaitVisible(AddCustomer)
-			action.Click(AddCustomer)
+			//action.WaitVisible(AddCustomer)
+			action.Click(addCustomer)
 			WebUI.delay(2)
 			action.Type(customerSearchTxtField, "st")
 			WebUI.delay(2)
@@ -579,9 +670,11 @@ public class WarehouseItemInventory {
 	{
 		try
 		{
-			action.WaitVisible(ShipMethodDropdwon)
+			//action.WaitVisible(ShipMethodDropdwon)
+			//action.ScrollToViewelement(ShipMethodDropdwon)
+			action.ScrollToBottomOfPage()
 			action.Click(ShipMethodDropdwon)
-			WebUI.delay(2)
+			WebUI.delay(3)
 			action.Click(FirstShipOption)
 			WebUI.delay(5)
 
@@ -600,6 +693,7 @@ public class WarehouseItemInventory {
 			action.WaitVisible(SubmitOrderBtn)
 			action.Click(SubmitOrderBtn)
 			WebUI.delay(5)
+			action.ScrollToTopOgPage()
 
 
 		}
@@ -619,9 +713,9 @@ public class WarehouseItemInventory {
 			headerStatus = action.IsElementDisplayed(HeaderItemSearchPage)
 			Assert.assertTrue(headerStatus)
 			println "+++++++++++ Header is visible before scrolling down" + headerStatus
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.ScrollToBottomOfPage()
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			headerStatus = action.IsElementDisplayed(HeaderItemSearchPage)
 			Assert.assertTrue(headerStatus)
 			println "+++++++++++ Header is visible after scrolling down" + headerStatus
@@ -656,7 +750,7 @@ public class WarehouseItemInventory {
 		try
 		{
 			action.Click(otherFiltersExpandBtn)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 
 		}
 		catch(Exception e)
@@ -689,6 +783,21 @@ public class WarehouseItemInventory {
 		try
 		{
 			action.Click(ApprovalRequiredCheckBox)
+			//WebUI.delay(10)
+
+		}
+		catch(Exception e)
+		{
+			Assert.fail("OtherFilterSecondOption failed due to :" + e)
+		}
+	}
+
+	@Keyword
+	public void OtherFilterDeleteOption()
+	{
+		try
+		{
+			action.Click(deleteCheckBox)
 			WebUI.delay(10)
 
 		}
@@ -704,7 +813,7 @@ public class WarehouseItemInventory {
 		try
 		{
 			action.Click(clearSelectionLink)
-			WebUI.delay(10)
+			//WebUI.delay(10)
 
 		}
 		catch(Exception e)
@@ -719,7 +828,7 @@ public class WarehouseItemInventory {
 		try
 		{
 			action.Click(clearAllFilters)
-			WebUI.delay(10)
+			//WebUI.delay(10)
 
 		}
 		catch(Exception e)
@@ -729,6 +838,68 @@ public class WarehouseItemInventory {
 	}
 
 
+	@Keyword
+	public void VerifyDeletedItem(String itemName)
+	{
+		try
+		{
+			List<WebElement> allitemnames = action.GetElements(itemNameColValiue)
+			if(allitemnames.size()>0)
+			{
+				for(int i=0;i< allitemnames.size();i++)
+				{
+					String appeareditemname = allitemnames.get(i).getText()
+					if(appeareditemname.contains(itemName))
+						println "******** Item Verified Successfully**************"
+				}
+			}
+
+		}
+		catch(Exception e)
+		{
+			Assert.fail("VerifyDeletedItem failed due to :" + e)
+		}
+	}
+
+	/*@Keyword
+	 public void ClickOnAddanItemIcon()
+	 {
+	 try
+	 {
+	 action.Click(plusIcon)
+	 //WebUI.delay(10)
+	 }
+	 catch(Exception e)
+	 {
+	 Assert.fail("ClickOnAddanItemLink method failed due to :" + e)
+	 }
+	 }
+	 @Keyword
+	 public void ClickOnAddanItemLink()
+	 {
+	 try
+	 {
+	 action.Click(addanItemLink)
+	 //WebUI.delay(10)
+	 }
+	 catch(Exception e)
+	 {
+	 Assert.fail("ClickOnAddanItemLink method failed due to :" + e)
+	 }
+	 }
+	 @Keyword
+	 public void ClickOnAddLink()
+	 {
+	 try
+	 {
+	 action.Click(addBtn)
+	 //WebUI.delay(10)
+	 }
+	 catch(Exception e)
+	 {
+	 Assert.fail("ClickOnAddLink method failed due to :" + e)
+	 }
+	 }*/
 
 
 

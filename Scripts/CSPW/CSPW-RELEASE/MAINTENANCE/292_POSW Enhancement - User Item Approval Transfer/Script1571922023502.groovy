@@ -18,39 +18,23 @@ import internal.GlobalVariable as GlobalVariable
 
 CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameposw, GlobalVariable.testtyperegression, GlobalVariable.environment)
 
-WebUI.waitForPageLoad(300)
-
 CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.posusername, GlobalVariable.pospassword)
+
+CustomKeywords.'com.poswm.Homepage.ClickOnUserItemApprovalTransfer'()
+
+CustomKeywords.'com.poswm.UserTransfer.SelectTransferFromUser'()
+
+ String itemName = CustomKeywords.'com.poswm.UserTransfer.SelectFistItem'()
+ println "**************"+ itemName
+
+String transferToUserName = CustomKeywords.'com.poswm.UserTransfer.SelectTransferToUser'()
+println "**************"+ transferToUserName
+
+CustomKeywords.'com.poswm.UserTransfer.ClickOnTransferItemsBtn'()
 
 CustomKeywords.'com.poswm.Homepage.ClickOnItemSearch'()
 
-//CustomKeywords.'com.poswm.Homepage.HoverOnWareHouseMenu'()
+CustomKeywords.'com.poswm.WarehouseItemInventory.SearchSpecificItem'(itemName)
 
-CustomKeywords.'com.poswm.WarehouseItemInventory.ClickOnSupplierAndBrandFilters'()
-
-CustomKeywords.'com.poswm.WarehouseItemInventory.ClickOnOtherFiltersExpandButton'()
-
-CustomKeywords.'com.poswm.WarehouseItemInventory.OtherFilterSecondOption'()
-//CustomKeywords.'com.poswm.Homepage.ClickOnNewOrder'()
-
-CustomKeywords.'com.poswm.WarehouseItemInventory.AddToCart'()
-
-CustomKeywords.'com.poswm.WarehouseItemInventory.AddCustomer'()
-
-//CustomKeywords.'com.poswm.WarehouseOrders.AddDesiredShipDate'()
-
-//CustomKeywords.'com.poswm.WarehouseOrders.GetDesiredShipDate'()
-
-CustomKeywords.'com.poswm.WarehouseItemInventory.SelectShipMethod'()
-
-
-
-CustomKeywords.'com.poswm.WarehouseItemInventory.ClickOnSubmitOrderBtn'()
-
-CustomKeywords.'com.poswm.WarehouseOrders.GetShipDate'()
-
-CustomKeywords.'com.poswm.Homepage.NaviagteToDashBoard'()
-CustomKeywords.'com.poswm.Homepage.VerifyApproveDateColumn'()
-
-
+CustomKeywords.'com.poswm.WarehouseItemInventory.VerifyApproverCol'(transferToUserName)
 

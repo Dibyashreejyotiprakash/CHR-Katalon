@@ -14,43 +14,35 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-
-
 CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameposw, GlobalVariable.testtyperegression, GlobalVariable.environment)
 
 WebUI.waitForPageLoad(300)
 
-CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.posusername, GlobalVariable.pospassword)
+CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.posUN59, GlobalVariable.posPass59)
+
+CustomKeywords.'com.poswm.LoginPage.SelectEmpireMerchantBU'()
+
+CustomKeywords.'com.poswm.Homepage.HoverOnWareHouseMenu'()
 
 CustomKeywords.'com.poswm.Homepage.ClickOnItemSearch'()
 
-//CustomKeywords.'com.poswm.Homepage.HoverOnWareHouseMenu'()
-
-CustomKeywords.'com.poswm.WarehouseItemInventory.ClickOnSupplierAndBrandFilters'()
-
-CustomKeywords.'com.poswm.WarehouseItemInventory.ClickOnOtherFiltersExpandButton'()
-
-CustomKeywords.'com.poswm.WarehouseItemInventory.OtherFilterSecondOption'()
-//CustomKeywords.'com.poswm.Homepage.ClickOnNewOrder'()
+CustomKeywords.'com.poswm.WarehouseItemInventory.SelectSalesDivisionForEmpireMerchant'()
 
 CustomKeywords.'com.poswm.WarehouseItemInventory.AddToCart'()
 
 CustomKeywords.'com.poswm.WarehouseItemInventory.AddCustomer'()
 
-//CustomKeywords.'com.poswm.WarehouseOrders.AddDesiredShipDate'()
-
-//CustomKeywords.'com.poswm.WarehouseOrders.GetDesiredShipDate'()
+CustomKeywords.'com.poswm.WarehouseOrders.GetShipDate'()
 
 CustomKeywords.'com.poswm.WarehouseItemInventory.SelectShipMethod'()
 
-
-
 CustomKeywords.'com.poswm.WarehouseItemInventory.ClickOnSubmitOrderBtn'()
 
-CustomKeywords.'com.poswm.WarehouseOrders.GetShipDate'()
+CustomKeywords.'com.poswm.WarehouseOrders.ClickOnApproveLink'()
 
-CustomKeywords.'com.poswm.Homepage.NaviagteToDashBoard'()
-CustomKeywords.'com.poswm.Homepage.VerifyApproveDateColumn'()
+CustomKeywords.'com.poswm.WarehouseOrders.ClickOnShipLink'()
 
+//CustomKeywords.'com.poswm.WarehouseOrders.ClickOnUpdateLink'()
 
+CustomKeywords.'com.poswm.WarehouseOrders.Verifydate'()
 
