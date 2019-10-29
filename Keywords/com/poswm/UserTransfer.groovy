@@ -36,13 +36,103 @@ public class UserTransfer {
 
 	Interaction action = new Interaction();
 	WebDriver driver = DriverFactory.getWebDriver()
-	
+
 	By transferform = By.xpath("//*[@id='ctl00_MainContent_ddlApproverUser_Arrow']")
 	By transferfromddnvalue = By.xpath("//*[@id='ctl00_MainContent_ddlApproverUser_DropDown']//li[1]")
 	By transferto = By.xpath("//*[@id='ctl00_MainContent_ddlTransferUser_Arrow']")
 	By transfertoddnvalue = By.xpath("//*[@id='ctl00_MainContent_ddlTransferUser_DropDown']//li[1]")
-	By transferitemsbtn = By.xpath("//*[@id='MainContent_btnTransferItems']")
-
+	By transferitemsbtn = By.xpath("//*[@id='MainContent_btnTransferItems']")	
+	By transferFromDropDown = By.xpath("//*[@id='ctl00_MainContent_ddlApproverUser_Arrow']")
+	By transferFromUsernameList = By.xpath("//*[@id='ctl00_MainContent_ddlApproverUser_DropDown']/div/ul/li[2]")
+	By transferToDropDown = By.xpath("//*[@id='ctl00_MainContent_ddlTransferUser_Arrow']")
+	By transferToUserNameList = By.xpath("//*[@id='ctl00_MainContent_ddlTransferUser_DropDown']/div/ul/li[1]")
+	By transferToUtestBox = By.xpath("//*[@id='ctl00_MainContent_ddlTransferUser_Input']")
+	By transferItemsBtn = By.xpath("//*[@id='MainContent_btnTransferItems']")
+	By firstCheckBix = By.xpath("//*[@id='ctl00_MainContent_rgApprovalItems_ctl00']/tbody/tr[1]/td[1]/input")
+	By firstItemName = By.xpath("//*[@id='ctl00_MainContent_rgApprovalItems_ctl00']/tbody/tr[1]/td[3]")
+	
+	
+	
+	
+	
+	@Keyword
+	public void SelectTransferFromUser()
+	{
+		try
+		{
+			action.Click(transferFromDropDown)
+			WebUI.delay(3)
+			action.Click(transferFromUsernameList)
+			WebUI.delay(30)
+			
+			
+		}
+		catch(Exception e)
+		{
+			Assert.fail("SelectTransferFromUser method failed due to :" + e)
+		}
+	}
+	
+	
+	@Keyword
+	public String SelectTransferToUser()
+	{
+		try
+		{
+			action.Click(transferToDropDown)
+			WebUI.delay(3)
+			action.Click(transferToUserNameList)
+			WebUI.delay(8)
+			String UserName = driver.findElement(By.xpath("//*[@id='ctl00_MainContent_ddlTransferUser_Input']")).getAttribute("value")
+			//String UserName = action.GetselectedText(transferToUtestBox)
+			//String UserName = action.GetText(transferToUtestBox)
+			return UserName
+			
+			
+		}
+		catch(Exception e)
+		{
+			Assert.fail("SelectTransferFromUser method failed due to :" + e)
+		}
+	}
+	
+	@Keyword
+	public void ClickOnTransferItemsBtn()
+	{
+		try
+		{
+			action.Click(transferItemsBtn)
+			WebUI.delay(5)
+			
+			
+			
+		}
+		catch(Exception e)
+		{
+			Assert.fail("SelectTransferFromUser method failed due to :" + e)
+		}
+	}
+	
+	
+	@Keyword
+	public String SelectFistItem()
+	{
+		try
+		{
+			action.Click(firstCheckBix)
+			String itemName = action.GetText(firstItemName)
+			return itemName
+			
+		}
+		catch(Exception e)
+		{
+			Assert.fail("SelectFistItem method failed due to :" + e)
+		
+		}
+		
+	}
+	
+		
 	@Keyword
 	public void VerifyUserItemApprovalTransferPage() {
 		try{
@@ -116,6 +206,4 @@ public class UserTransfer {
 			Assert.fail("Transfer Item failed due to "+ e)
 		}
 	}
-	
-	
 }
