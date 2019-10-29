@@ -28,6 +28,7 @@ import org.openqa.selenium.WebElement
 import org.testng.Assert
 
 import com.kms.katalon.core.webui.driver.DriverFactory
+import org.testng.Assert
 
 
 
@@ -43,6 +44,7 @@ class ProductionSelectionPage {
 	By YesBtn= By.xpath("//*[@id='Body_btnYes1']")
 	By txbItemType = By.xpath("//div[@id='Body_itemTypeContainer1']/span")
 	By divItemType = By.xpath("//div[@id='ctl00_Body_ItemTypeDropDownList1']")
+	By itemTypeDrpDownArrow = By.xpath("//a[@id='ctl00_Body_ItemTypeDropDownList1_Arrow']")
 	By lstItemType1 = By.xpath("//input[@id='ctl00_Body_ItemTypeDropDownList1_Input']")
 	By lstDivision = By.xpath("//div[@class='rcbScroll rcbWidth']/ul")
 	By lstItemType = By.xpath("//ul[@class='rcbList']/li")
@@ -64,6 +66,7 @@ class ProductionSelectionPage {
 	By divAddProduct = By.xpath("//div[@id='Body_mainLinkDevMain2']")
 	By btnContinueToCheckout = (By.xpath("//input[@id='ctl00_Body_sideContToCheckOutBtn']"))
 	By btnPreviewChanges = By.xpath("//input[@id='btnRepaintImage']")
+	By digitaldownloaditemtype = By.xpath("//li[contains(text(),'Digital Download')]")
 
 	By nobtn = By.xpath("//*[@id='Body_btnNo1']")
 	By acconutlink = By.xpath("//*[text()='Account']")
@@ -142,6 +145,29 @@ class ProductionSelectionPage {
 		}
 	}
 
-
-
+	@Keyword
+	public void AddDDItemToCart()
+	{
+		try
+		{
+			WebUI.delay(3)
+			action.WaitVisible(itemTypeDrpDownArrow)
+			action.Click(itemTypeDrpDownArrow)
+			action.WaitVisible(digitaldownloaditemtype)
+			action.Click(digitaldownloaditemtype)
+			WebUI.delay(7)
+			action.ScrollToBottomOfPage()
+			WebUI.delay(2)
+			action.Click(nobtn)
+			//action.WaitVisible(imgLoading)
+			WebUI.delay(5)
+			//action.ScrollToViewElement(AddToCart)
+			//WebUI.delay(2)
+			action.Click(AddToCart)
+		}
+		catch(Exception e)
+		{
+			Assert.fail("AddDDItemToCart failed due to "+e)
+		}
+	}
 }

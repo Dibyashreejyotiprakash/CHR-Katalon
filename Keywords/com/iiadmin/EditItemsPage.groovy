@@ -60,7 +60,13 @@ public class EditItemsPage {
 	By deletebtn= By.xpath("//input[@id='ctl00_Body_fvLogos_DeleteButton']")
 	By firsteditlink = By.xpath("//*[@id='ctl00_Body_gvItems']//tr[3]/td[7]/a")
 	By firstogoeditlink = By.xpath("//*[@id='ctl00_Body_gvLogos']//tr[3]//td[5]/a")
-
+	By finishedgoodstab= By.xpath("//a[contains(text(),'Finished Goods')]")
+	By edittemplate = By.xpath("//td[contains(text(),'108477')]//following-sibling::td[6]/a")
+	By savebtn = By.xpath("//input[@id='ctl00_Body_btnFinGoods']")
+	By ddpartinRHSbox = By.xpath(".//*[@id='ctl00_Body_SelectionBoxFinGoods_lstSelected']/option[contains(text(),'ET11')]")
+	By ddpartinLHSbox = By.xpath(".//*[@id='ctl00_Body_SelectionBoxFinGoods_lstAvailable']/option[contains(text(),'ET11')]")
+	By rightarrow = By.xpath("//input[@id='btnAdd']")
+	By updatesuccess = By.xpath("//span[contains(text(),'Update Succeeded!')]")
 
 	@Keyword
 	public void NavigateToCorp300() {
@@ -269,6 +275,32 @@ public class EditItemsPage {
 		}
 		catch(Exception e) {
 			Assert.fail("Edit Fisrt Logo failed due to "+ e)
+		}
+	}
+
+	@Keyword
+	public void AssociateDDPartToTemplate() {
+		try {
+			action.WaitVisible(edittemplate)
+			action.Click(edittemplate)
+			action.WaitVisible(finishedgoodstab)
+			action.Click(finishedgoodstab)
+			action.WaitVisible(savebtn)
+			
+			boolean checkpart = action.IsDisplayed(ddpartinRHSbox)
+			
+			println("VALUE "+checkpart)
+
+			if(!checkpart) {
+				println("INSIDE IF")
+				action.Click(ddpartinLHSbox)
+				action.Click(rightarrow)
+				action.Click(savebtn)
+				action.WaitVisible(updatesuccess)
+			}
+		}
+		catch(Exception e) {
+			Assert.fail("AssociateDDPartToTemplate failed due to "+e)
 		}
 	}
 }
