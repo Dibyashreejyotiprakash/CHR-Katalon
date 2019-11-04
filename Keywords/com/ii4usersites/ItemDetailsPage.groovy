@@ -61,6 +61,20 @@ public class ItemDetailsPage {
 	By productselectionnobtn = By.xpath("//input[@id='Body_btnNo1']")
 	By paymentpagetext = By.xpath("//h1[contains(text(),'Enter Payment and Billing Details')]")
 	By shoppingcartqty = By.xpath("//input[@id='ctl00_Body_shopCartItemsListView_ctrl0_qtyNumTextBox']")
+	
+	
+	
+	@Keyword
+	public void ClickCreateDesignBtn() {
+		try {
+			action.ScrollToBottomOfPage()
+			action.Click(createdesignbtn)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("Click On Order Now failed due to "+ e)
+		}
+	}
 
 
 

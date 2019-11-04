@@ -73,13 +73,11 @@ class ProductionSelectionPage {
 
 
 	@Keyword
-	public void VerifyProductSelectionPage()
-	{
+	public void VerifyProductSelectionPage() {
 		try{
 			action.VerifyCurrentPage("")
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("Verify Production selection page failed due to "+ e)
 		}
 	}
@@ -131,7 +129,7 @@ class ProductionSelectionPage {
 			println("Click on yes from back failed due to : " + e);
 		}
 	}
-	
+
 	@Keyword
 	public void SelectItemType()
 	{

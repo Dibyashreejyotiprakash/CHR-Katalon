@@ -21,17 +21,11 @@ CustomKeywords.'com.wswadmin.HomePage.ClickOnOLOFII4Configuration'()
 
 CustomKeywords.'com.wswadmin.II4ConfigurationPage.VerifyII4ConfigurationPage'()
 
-CustomKeywords.'com.wswadmin.II4ConfigurationPage.VerifyAllFieldsOnOLOFII4ConfigurationPage'()
-
-WebUI.delay(10)
-
 CustomKeywords.'com.wswadmin.II4ConfigurationPage.SelectCorpAndMarkets'()
 
-CustomKeywords.'com.wswadmin.II4ConfigurationPage.VerifyItemDetailsSection'()
+CustomKeywords.'com.wswadmin.II4ConfigurationPage.UpdatePriceBreakVisiblity'()
 
-CustomKeywords.'com.wswadmin.II4ConfigurationPage.AddVerbiageTextForItemDetailsPage'()
-
-CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameiiusersite, GlobalVariable.testtypesmoke, GlobalVariable.environment)
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameiiusersite, GlobalVariable.testtyperegression,GlobalVariable.environment)
 
 CustomKeywords.'com.ii4usersites.LoginPage.LoginToDemoCorp'(GlobalVariable.iiusersiteusername, GlobalVariable.iiusersitepassword)
 
@@ -41,5 +35,15 @@ CustomKeywords.'com.ii4usersites.OrderFormDefaultPage.ClickonCreateNewCustomOrde
 
 CustomKeywords.'com.ii4usersites.OrderFormOrderHederPage.EnterValuesToFiledsInOrderPage'()
 
-CustomKeywords.'com.ii4usersites.OrderFormItemDetails1Page.VerifyVerbiageForAllItemType'()
+CustomKeywords.'com.ii4usersites.OrderFormDefaultPage.ClickonCreateNewCustomOrder'()
+
+CustomKeywords.'com.ii4usersites.OrderFormPrintDetails1Page.EnterAllVauesInPrintDetails1Page'()
+
+CustomKeywords.'com.ii4usersites.OrderFormPrintDetails1Page.EnterAllVauesInPrintDetails1Page'()
+
+CustomKeywords.'com.ii4usersites.OrderFormPrintDetails2Page.VerifyIOCodevisibilty'()
+
+CustomKeywords.'com.ii4usersites.OrderFormPrintDetails2Page.VerifyPOBerviage'()
+
+
 

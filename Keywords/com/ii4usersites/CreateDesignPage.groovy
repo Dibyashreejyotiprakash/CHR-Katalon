@@ -49,7 +49,7 @@ class CreateDesignPage {
 	By btnNext = By.xpath("//input[@id='btnNextStep']")
 	By btnYes = By.xpath("//*[@class='btn GenericRedButton']/span/span[text()='Yes']")
 	By cancelbtn = By.xpath("//*[@id='Body_CancelButton']")
-	
+
 	By btnNo = By.cssSelector("[valign] .boxes .GenericRedButton:nth-child(3)")
 
 	WebDriver driver = DriverFactory.getWebDriver();
@@ -78,10 +78,9 @@ class CreateDesignPage {
 			Assert.fail("Verify Navigation From CreateDesign Page failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
-	public String SelectHeadLine()
-	{
+	public String SelectHeadLine() {
 		String selectedHeadLine = null;
 		try{
 			action.SelectByIndex(divHeadline, 1)
@@ -90,42 +89,36 @@ class CreateDesignPage {
 			println ("Selected Head Line is----------- "+ selectedHeadLine)
 			return selectedHeadLine
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("Select Head Line failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
-	public void VerifyHeadLineBackFromShoppingCartPag()
-	{
+	public void VerifyHeadLineBackFromShoppingCartPag() {
 		try{
 			String dispalyedheadline = action.GetselectedText(divHeadline)
 			String beforeselectedheadline = SelectHeadLine()
 			Assert.assertEquals(dispalyedheadline, beforeselectedheadline)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("Select Head Line failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
-	public void ClickOnPreviewChangesButton()
-	{
+	public void ClickOnPreviewChangesButton() {
 		try{
 			action.Click(btnPreviewChanges)
 			WebUI.delay(20)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("Click on Preview Changes Button failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
-	public void ClickOnNextStepBtnAndNavigateToProductSelectionPage()
-	{
+	public void ClickOnNextStepBtnAndNavigateToProductSelectionPage() {
 		try{
 			action.ScrollToBottomOfPage()
 			WebUI.delay(3)
@@ -134,12 +127,8 @@ class CreateDesignPage {
 			action.Click(btnNo)
 			action.WaitForPageToLoad()
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("Click On Next Step Btn And Navigate To Product Selection Page failed due to "+ e)
 		}
 	}
-	
-	
-	
 }

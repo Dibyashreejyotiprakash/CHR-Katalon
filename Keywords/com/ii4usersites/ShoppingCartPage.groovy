@@ -73,30 +73,26 @@ class ShoppingCartPage {
 	By btnSearchItems = By.xpath("//span[@id='ctl00_Body_emptyCartCancelBtn']")
 	By lblClearCartConfirmationMsg = By.xpath("//div[@id='Body_emptyShopCartContainer']/h4")
 	By iconCrossBtn = By.xpath("//a[@id='ctl00_Body_shopCartItemsListView_ctrl0_delLineItemBtn']")
-	
+
 	By firstitemeditlink = By.xpath("//*[@id='ctl00_Body_shopCartItemsListView_ctrl0_editItemDesignLink']")
 
 	@Keyword
-	public void VerifyShoppingCartPage()
-	{
+	public void VerifyShoppingCartPage() {
 		try{
 			action.VerifyCurrentPage("ShoppingCart.aspx")
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("Verify Shopping Cart Page failed due to ----"+ e)
 		}
 	}
-	
+
 	@Keyword
-	public void ClickOnEditLinkForFirstItem()
-	{
+	public void ClickOnEditLinkForFirstItem() {
 		try{
 			action.Click(firstitemeditlink)
 			action.WaitForPageToLoad()
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("Click On Edit Link For First Item failed due to ----"+ e)
 		}
 	}

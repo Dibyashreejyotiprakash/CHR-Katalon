@@ -117,14 +117,14 @@ public class JobDetailsPage {
 	By removecheckbox = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_gvRemove_ctl02_ckRemovePart']")
 	By removeselectedpartbtn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_btnRemoveParts']")
 	By partrow = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_gvRemove']//tr[2]")
-	
+
 	By firstaddoncheckbox = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_gvAddOns_ctl03_chkSelectedAddOns']")
 	By firstaddonqty = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_gvAddOns_ctl03_txtAddonQty']")
 	By attachaddons = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_btnAttachAddOns']")
 	By firstaddonprice = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_gvAddOns']//tr[2]//td[5]")
 	By attachaddonsbtn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_btnAttachAddOns']")
 	By addonspriceinjobdetailspage = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_lvJobs_ctrl0_cpPricingSummary_rptrPriceSummary_ctl01_lblLinePrice']")
-	
+
 
 
 	@Keyword
@@ -136,6 +136,19 @@ public class JobDetailsPage {
 		}
 		catch(Exception e) {
 			println ("Click On DetailsPage failed due to "+ e)
+		}
+	}
+	
+	@Keyword
+	public void VerifyUpdateJobNameForPosTemplate()
+	{
+		try {
+			action.TypeAndClear(jobnametxtbox, "Updated Job Name For POS Template")
+			action.ScrollToViewelement(savejobinfobtn)
+			action.Click(savejobinfobtn)
+		}
+		catch(Exception e) {
+			println ("Verify Update Job Name For Pos Template failed due to "+ e)
 		}
 	}
 
@@ -323,7 +336,7 @@ public class JobDetailsPage {
 			Assert.fail()
 		}
 	}
-	
+
 
 	@Keyword
 	public String AddPartAddonsAndBackToJobDetailsPage() {
@@ -341,33 +354,33 @@ public class JobDetailsPage {
 			action.Click(part1)
 			action.Click(insertbtn)
 			WebUI.delay(5)
-			
+
 			action.Type(firstaddonqty, "1")
 			WebUI.delay(5)
 			action.Click(firstaddoncheckbox)
-			
+
 			expectedaddonprice = action.GetText(firstaddonprice)
 			WebUI.delay(5)
 			action.Click(attachaddonsbtn)
-			WebUI.delay(5)			
-			
+			WebUI.delay(5)
+
 			return expectedaddonprice
 		}
 		catch(Exception e) {
 			Assert.fail("Add Part failed due to "+ e)
 		}
 	}
-	
-	
+
+
 	@Keyword
 	public String GetDisplayedPrice()
 	{
 		String expectedaddonprice = null
 		try{
-			
+
 			expectedaddonprice = action.GetText(firstaddonprice)
 			WebUI.delay(5)
-			
+
 			return expectedaddonprice
 		}
 		catch(Exception e)
@@ -376,7 +389,7 @@ public class JobDetailsPage {
 		}
 	}
 
-	
+
 	@Keyword
 	public void VerifyAddOnsPriceInJobDetailsPage()
 	{
@@ -387,7 +400,7 @@ public class JobDetailsPage {
 			println ("Displayed Add-Ons Priec -----"+ displayedaddonsprice)
 			String expectedaddonsprice = GetDisplayedPrice()
 			println ("Expected Addons Price --------"+ expectedaddonsprice)
-			
+
 		}
 		catch(Exception e)
 		{

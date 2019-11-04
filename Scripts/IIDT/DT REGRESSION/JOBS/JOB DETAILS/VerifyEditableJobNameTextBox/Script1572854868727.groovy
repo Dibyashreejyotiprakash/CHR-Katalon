@@ -13,9 +13,6 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.openBrowser('')
-
-WebUI.maximizeWindow()
 
 CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameiiusersite, GlobalVariable.testtyperegression, GlobalVariable.environment)
 
@@ -25,7 +22,70 @@ CustomKeywords.'com.ii4usersites.HomePage.ClickOnPosTemplate'()
 
 CustomKeywords.'com.ii4usersites.ItemSearchPage.ClickOnVariableTemplate'()
 
-CustomKeywords.'com.ii4usersites.ItemDetailsPage.SetVariableTemplateLayout'()
+CustomKeywords.'com.ii4usersites.ItemDetailsPage.ClickCreateDesignBtn'()
+
+CustomKeywords.'com.ii4usersites.CreateDesignPage.ClickOnPreviewChangesButton'()
+
+CustomKeywords.'com.ii4usersites.CreateDesignPage.ClickOnNextStepBtnAndNavigateToProductSelectionPage'()
+
+CustomKeywords.'com.ii4usersites.ProductionSelectionPage.VerifyProductSelectionPage'()
+
+CustomKeywords.'com.ii4usersites.ProductionSelectionPage.SetQuantity'()
+
+CustomKeywords.'com.ii4usersites.ProductionSelectionPage.ClickOnNo'()
+
+CustomKeywords.'com.ii4usersites.ProductionSelectionPage.ClickOnAddToKart'()
+
+CustomKeywords.'com.ii4usersites.ShoppingCartPage.VerifyShoppingCartPage'()
+
+CustomKeywords.'com.ii4usersites.ShoppingCartPage.ClickOnCheckOutBtn'()
+
+CustomKeywords.'com.ii4usersites.CheckOutPage.ClickOnContinueToReview'()
+
+CustomKeywords.'com.ii4usersites.ReviewPage.ClickOnPlaceOrderBtn'()
+
+String confirmationno = CustomKeywords.'com.ii4usersites.ConfirmationPage.GetConfirmationId'()
+
+WebUI.closeBrowser()
+
+WebUI.openBrowser('')
+
+WebUI.maximizeWindow()
+
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamedesigntracker, GlobalVariable.testtypesmoke, GlobalVariable.environment)
+
+CustomKeywords.'com.designtracker.LoginPage.LoginToDesignTarcker'(GlobalVariable.dtusername, GlobalVariable.dtpassowrd)
+
+CustomKeywords.'com.designtracker.HomePage.VerifyNewlyCreatedJobSearchInDT'(confirmationno)
+
+CustomKeywords.'com.designtracker.JobDetailsPage.VerifyJobDetailsPage'()
+
+CustomKeywords.'com.designtracker.JobDetailsPage.VerifyUpdateJobNameForPosTemplate'()
+
+WebUI.closeBrowser()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*CustomKeywords.'com.ii4usersites.ItemDetailsPage.SetVariableTemplateLayout'()
 
 CustomKeywords.'com.ii4usersites.ItemDetailsPage.SelectItemType'()
 
@@ -65,9 +125,4 @@ CustomKeywords.'com.designtracker.HomePage.VerifyNewlyCreatedJobSearchInDT'(conf
 
 CustomKeywords.'com.designtracker.JobDetailsPage.VerifyJobDetailsPage'()
 
-WebUI.closeBrowser()
-
-
-
-
-
+WebUI.closeBrowser()*/

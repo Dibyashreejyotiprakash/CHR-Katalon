@@ -51,10 +51,10 @@ public class HomePage {
 	By receipe = By.xpath("//*[text()='Recipes']")
 	By aamlist = By.xpath("//*[text()='AAM List']")
 	By designerlist = By.xpath("//*[text()='Designer List']")
-	
+
 	By couponadmin = By.xpath("//*[text()='Coupon Admin']")
 	By maintaincoupon = By.xpath("//*[text()='Maintain Coupons']")
-	
+
 
 	By operations = By.xpath("//*[text()='Operations']")
 	By shippingagents = By.xpath("//*[text()='Shipping Agents']")
@@ -212,8 +212,8 @@ public class HomePage {
 			Assert.fail("Navigate To Add Distr. Page failed due to "+ e)
 		}
 	}
-	
-	
+
+
 	@Keyword
 	public void NavigateToAddRetailerPage() {
 		try{
@@ -229,8 +229,8 @@ public class HomePage {
 			Assert.fail("Navigate To Add Retailer Page failed due to "+ e)
 		}
 	}
-	
-	
+
+
 	@Keyword
 	public void NavigateToEditRetailerPage() {
 		try{
@@ -246,8 +246,8 @@ public class HomePage {
 			Assert.fail("Navigate To Edit Retailer Page failed due to "+ e)
 		}
 	}
-	
-	
+
+
 	@Keyword
 	public void NavigateToMainTainCouponPage() {
 		try{
@@ -263,7 +263,7 @@ public class HomePage {
 			Assert.fail("Navigate To Maintain Coupon Page failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
 	public void NavigateToAgencyPriceBreakPage() {
 		try{
@@ -279,8 +279,8 @@ public class HomePage {
 			Assert.fail("Navigate To Agaency Price Break Page failed due to "+ e)
 		}
 	}
-	
-	
+
+
 	@Keyword
 	public void NavigateToBudgetsPage() {
 		try{
@@ -296,7 +296,7 @@ public class HomePage {
 			Assert.fail("Navigate To Budget Page failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
 	public void NavigateToHelpMenuPage() {
 		try{
@@ -312,8 +312,8 @@ public class HomePage {
 			Assert.fail("Navigate To Help Menu Page failed due to "+ e)
 		}
 	}
-	
-	
+
+
 	@Keyword
 	public void NavigateToReceipePage() {
 		try{
@@ -329,7 +329,7 @@ public class HomePage {
 			Assert.fail("Navigate To Receipe Page failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
 	public void NavigateToAAMListPage() {
 		try{
@@ -345,8 +345,8 @@ public class HomePage {
 			Assert.fail("Navigate To AAM List Page failed due to "+ e)
 		}
 	}
-	
-	
+
+
 	@Keyword
 	public void NavigateToDesignerListPage() {
 		try{
@@ -362,6 +362,4 @@ public class HomePage {
 			Assert.fail("Navigate To Designer List Page failed due to "+ e)
 		}
 	}
-	
-	
 }
