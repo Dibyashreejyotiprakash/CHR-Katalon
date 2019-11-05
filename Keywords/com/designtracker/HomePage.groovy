@@ -485,7 +485,7 @@ public class HomePage {
 		try {
 			action.WaitVisible(corporationddn)
 			action.SelectByText(corporationddn, "Demo Distributor (QA)")
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.ScrollToBottomOfPage()
 			action.WaitUntilElementClickable(searchbtn)
 			action.Click(searchbtn)

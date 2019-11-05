@@ -52,7 +52,7 @@ public class WarehouseOrders {
 	By iteminfobar = By.xpath("//*[@id='ctl00_MainContent_dockItemInformation_T']")
 	By customername = By.xpath("//*[@id='rsbCustomerName']")
 	By customeraddedmsg = By.xpath("//*[@id='ctl00_MainContent_radNotifyMessage_simpleContentDiv']")
-	By desiredshipdatetextbox = By.xpath("//*[@id='ctl00_MainContent_dockShippingInformation_C_calShipDate_dateInput']")
+	//By desiredshipdatetextbox = By.xpath("//*[@id='ctl00_MainContent_dockShippingInformation_C_calShipDate_dateInput']")
 	By desiredshipdateaddedmsg = By.xpath("//*[@id='ctl00_MainContent_radNotifyMessage_simpleContentDiv']")
 	By shippingmethodddn = By.xpath("//*[@id='ctl00_MainContent_dockShippingInformation_C_ddlShippingMethod_Arrow']")
 	By shipingmethodddnvalue = By.xpath("//*[@id='ctl00_MainContent_dockShippingInformation_C_ddlShippingMethod_DropDown']//li[1]")
@@ -92,43 +92,39 @@ public class WarehouseOrders {
 	By popCalander = By.xpath("//*[@id='ctl00_MainContent_rwInstaller_C_rdInstallationDate_popupButton']")
 
 	@Keyword
-	public boolean Verifydate()
-	{
+	public boolean Verifydate() {
 		boolean IsEnable = false
-		try
-		{
-			if (!action.IsElementEnabled(calanderIcon))
-			{
+		try {
+			if (!action.IsElementEnabled(calanderIcon)) {
 				println "************Calandar button/icon is disable**********"
 			}
 			return IsEnable = true
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("Verifydate method failed due to :" + e)
 		}
-		
+
 		/*LocalDate date = LocalDate.now();
-		LocalDate yesterday = date.minusDays(1);
-		LocalDate tomorrow = yesterday.plusDays(2);
-		println("Today date: "+date);
-		println("Yesterday date: "+yesterday);
-		println("Tommorow date: "+tomorrow);*/
+		 LocalDate yesterday = date.minusDays(1);
+		 LocalDate tomorrow = yesterday.plusDays(2);
+		 println("Today date: "+date);
+		 println("Yesterday date: "+yesterday);
+		 println("Tommorow date: "+tomorrow);*/
 		//SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy")
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
+
+
+
+
+
+
+
+
+
 		/*
-		LocalDate date = new LocalDate()
-		String todaydate = date.now()
-		println ("Today date --------------"+todaydate)*/
+		 LocalDate date = new LocalDate()
+		 String todaydate = date.now()
+		 println ("Today date --------------"+todaydate)*/
 	}
 
 
@@ -136,16 +132,13 @@ public class WarehouseOrders {
 	@Keyword
 	public void ClickOnUpdateLink() {
 		try {
-			if(action.IsDisplayed(updateLink))
-			{
+			if(action.IsDisplayed(updateLink)) {
 				action.Click(updateLink)
 				WebUI.delay(5)
 			}
-			else
-			{
+			else {
 				println ("Reject link is not present  " + shipDate)
 			}
-			
 		}
 		catch(Exception e) {
 			Assert.fail("ClickOnRejectLink method failed due to :" + e)
@@ -165,42 +158,36 @@ public class WarehouseOrders {
 	@Keyword
 	public void ClickOnRejectLink() {
 		try {
-			if(action.IsDisplayed(rejectLink))
-			{
+			if(action.IsDisplayed(rejectLink)) {
 				action.Click(rejectLink)
 				WebUI.delay(5)
 			}
-			else
-			{
+			else {
 				println ("Reject link is not present  " + shipDate)
 			}
-			
 		}
 		catch(Exception e) {
 			Assert.fail("ClickOnRejectLink method failed due to :" + e)
 		}
 	}
-	
+
 	@Keyword
 	public void ClickOnApproveLink() {
 		try {
-			if(action.IsDisplayed(approveLink))
-			{
+			if(action.IsDisplayed(approveLink)) {
 				action.Click(approveLink)
 				WebUI.delay(5)
 			}
-			else
-			{
+			else {
 				println ("Approve link is not present  " + shipDate)
 			}
-			
 		}
 		catch(Exception e) {
 			Assert.fail("ClickOnRejectLink method failed due to :" + e)
 		}
 	}
-	
-	
+
+
 	@Keyword
 	public void WriteRejectNote() {
 		try {
@@ -221,17 +208,15 @@ public class WarehouseOrders {
 			String shipDate = action.GetText(shipDate)
 
 			println ("Approve Date is " + shipDate)
-			
+
 			/*String[] p = shipDate.split("/")
-			String p1 = p[0]
-			String p2 = p[1]
-			
-			println "***********"+ p1
-			println "***********"+ p2*/
-		
-		 
-		 println ("Actual Date is " + shipDate)
-			
+			 String p1 = p[0]
+			 String p2 = p[1]
+			 println "***********"+ p1
+			 println "***********"+ p2*/
+
+
+			println ("Actual Date is " + shipDate)
 		}
 		catch(Exception e) {
 			Assert.fail("GetShipDate method failed due to :" + e)
@@ -274,25 +259,26 @@ public class WarehouseOrders {
 
 	@Keyword
 	public void VerifyNewOrderPage() {
-	  try{
-		String expectedUATUrl = "https://csg.v5qa.brandmuscle.net/Warehouse/WarehouseItem.aspx";
-		String expectedSTAGEUrl ="https://csg.v5stage.brandmuscle.net/Warehouse/WarehouseItem.aspx"
-		String expectedPRODUrl = "https://csg.v5prod.brandmuscle.net/Warehouse/WarehouseItem.aspx";
+		try{
+			String expectedUATUrl = "https://csg.v5qa.brandmuscle.net/Warehouse/WarehouseOrders.aspx";
+			String expectedSTAGEUrl ="https://csg.v5stage.brandmuscle.net/Warehouse/WarehouseOrders.aspx"
+			String expectedPRODUrl = "https://csg.v5prod.brandmuscle.net/Warehouse/WarehouseOrders.aspx";
 
-		String env = GlobalVariable.environment
-		String actualUrl = action.GetCurrentURL();
-		WebUI.delay(5)
+			/*String env = GlobalVariable.environment
+			String actualUrl = action.GetCurrentURL();
+			WebUI.delay(5)
 
-		if(env.equalsIgnoreCase("uat")) {
-			Assert.assertEquals(expectedUATUrl, actualUrl)
+			if(env.equalsIgnoreCase("uat")) {
+				Assert.assertEquals(expectedUATUrl, actualUrl)
+			}
+			else if(env.equalsIgnoreCase("staging")) {
+				Assert.assertEquals(expectedSTAGEUrl, actualUrl)
+			}*/
+		    action.VerifyCurrentPage("WarehouseOrders.aspx")
 		}
-		else if(env.equalsIgnoreCase("staging")) {
-			Assert.assertEquals(expectedSTAGEUrl, actualUrl)
-		}
-	  }
-	catch(Exception e) {
+		catch(Exception e) {
 			Assert.fail("Verify New Order page failed due to "+ e)
-	  }
+		}
 	}
 
 	@Keyword
@@ -535,6 +521,18 @@ public class WarehouseOrders {
 		}
 		catch(Exception e) {
 			Assert.fail("Add Desired Shipping Date and verify failed due to "+ e)
+		}
+	}
+
+	//VerifyNewItemPage
+	@Keyword
+	public void VerifyNewItemPage() {
+		try{
+			action.VerifyCurrentPage("WarehouseItem.aspx")
+			
+		}
+		catch(Exception e) {
+			Assert.fail("VerifyNewItemPage failed due to "+ e)
 		}
 	}
 }

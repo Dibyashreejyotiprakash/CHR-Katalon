@@ -41,7 +41,7 @@ public class ii3LoginPage {
 		action.Click(loginbtn)
 		action.WaitForPageToLoad()
 		action.SelectByText(corporationddn, "Glazer's Family of Companies")
-		action.SelectByText(distrddn,"Glazer's TX")
+		action.SelectByText(distrddn,"Southern Glazer's Wine & Spirits - TX")
 		action.WaitForPageToLoad()
 	}
 }

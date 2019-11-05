@@ -23,7 +23,7 @@ CustomKeywords.'com.designtracker.LoginPage.LoginToDesignTarcker'(GlobalVariable
 
 CustomKeywords.'com.designtracker.HomePage.VerifyExistingJobSearch'()
 
-WebUI.delay(10)
+//WebUI.delay(10)
 
 CustomKeywords.'com.designtracker.JobDetailsPage.VerifyJobDetailsPage'()
 
