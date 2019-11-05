@@ -135,7 +135,7 @@ public class WarehouseItem {
 		String itemname = null
 		try
 		{
-			String itemname = null
+			itemname = null
 			if(action.IsDisplayed(txbName))
 			{
 				itemname = EnterUniqueItemName()

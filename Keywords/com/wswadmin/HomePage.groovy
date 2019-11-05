@@ -32,10 +32,13 @@ public class HomePage {
 	By quoteitemsearch = By.xpath("//*[text()='Quote Item Search']")
 	By metatagingitemmaintenance = By.xpath("//*[text()='Meta Tagging Category/Item Maintenance']")
 	By itemsearchtagging = By.xpath("//*[text()='Item Search Tagging']")
+	By metaggingbulkimport = By.xpath("//*[text()='Meta Tagging Bulk Import Tool']")
 	By metaTaggingEditDelete  = By.xpath("(//span[contains(text(),'Meta Tagging Edit/Delete')])[1]")
 	By metataggingcategoryitemmaintenance = By.xpath("//*[text()='Meta Tagging Category/Item Maintenance']")
 	By metatagingcategorymaintenance = By.xpath("//*[text()='Meta Tagging Category Maintenance']")
+	By metataggingcategoryitemmaintenancesubmenu = By.xpath("//*[text()='Meta Tagging Category Item Maintenance']")
 	By globalmetataggingpage = By.xpath("(//span[contains(text(),'Global Meta Tagging Maintenance')])[1]")
+	By globalmetataggingmaintenance = By.xpath("//*[text()='Global Meta Tagging Maintenance']")
 	By itempartquantitymaintenance = By.xpath("(//span[contains(text(),'Item/Part Quantity Maintenance')])[1]")
 	By resuorcemessagebtn = By.xpath("//*[@href='/InstantImpact/ResourceMessage/ResourceMessage.aspx']")
 	By trainingresourcesbtn = By.xpath("//*[text()='Training Resources']")
@@ -502,8 +505,8 @@ public class HomePage {
 			Assert.fail("Navigate To Fulfillment Cormaintenance Page failed due to "+ e)
 		}
 	}
-	
-	
+
+
 	@Keyword
 	public void NavigateToFulfillmentReportsPage()
 	{
@@ -521,5 +524,100 @@ public class HomePage {
 		}
 	}
 	
+	/**********************************************************05-11-2019 Meta Tag Automation*********************************************************************/
+	
+	/*TemplateFulfillment.aspx*/
+	public void NavigateToItemSearchTaggingPage()
+	{
+		try{
+			action.MouseHoverOnElement(instantimpact)
+			action.MouseHoverOnElement(metataggingcategoryitemmaintenance)
+			action.Click(itemsearchtagging)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Navigate To Item Search Tagging Page failed due to "+ e)
+		}
+	}
+	
+	/*MetatagBulkImport.aspx*/
+	public void NavigateToMetataggingBulkImportToolPage()
+	{
+		try{
+			action.MouseHoverOnElement(instantimpact)
+			action.MouseHoverOnElement(metataggingcategoryitemmaintenance)
+			action.Click(metaggingbulkimport)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Navigate To Metatagging Bulk Import Tool Page failed due to "+ e)
+		}
+	}
+	
+	/*CategoriesMaintenance.aspx*/
+	public void NavigateToMetaTaggingCategoryMaintenancePage()
+	{
+		try{
+			action.MouseHoverOnElement(instantimpact)
+			action.MouseHoverOnElement(metataggingcategoryitemmaintenance)
+			action.Click(metatagingcategorymaintenance)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Navigate To Meta Tagging Category Maintenance Page failed due to "+ e)
+		}
+	}
+	
+	
+	/*CategoryItemMaintenance.aspx*/
+	public void NavigateToMetaTaggingCategoryItemMaintenancePage()
+	{
+		try{
+			action.MouseHoverOnElement(instantimpact)
+			action.MouseHoverOnElement(metataggingcategoryitemmaintenance)
+			action.Click(metataggingcategoryitemmaintenancesubmenu)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Navigate To MetaTagging Category Item Maintenance Page failed due to "+ e)
+		}
+	}
+	
+	
+	/*CategoryItemEditDelete.aspx*/
+	public void NavigateToMetaTaggingEditDeletePage()
+	{
+		try{
+			action.MouseHoverOnElement(instantimpact)
+			action.MouseHoverOnElement(metataggingcategoryitemmaintenance)
+			action.Click(metaTaggingEditDelete)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Navigate To Meta Tagging Edit Delete Page failed due to "+ e)
+		}
+		
+	}
+	
+	
+	/*GlobalMetaTaggingMaintenance.aspx*/
+	public void NavigateToGlobalMetaTaggingMaintenancePage()
+	{
+		try{
+			action.MouseHoverOnElement(instantimpact)
+			action.MouseHoverOnElement(metataggingcategoryitemmaintenance)
+			action.Click(globalmetataggingmaintenance)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Navigate To Global Meta Tagging Maintenance Page failed due to "+ e)
+		}
+	}
 
 }

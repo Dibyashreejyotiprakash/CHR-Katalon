@@ -63,6 +63,8 @@ public class CategoriesMaintenancePage {
 	By corposettingpopup = By.xpath("//*[@id='ctl00_cphMain_RadCategorySetting_ctl00__ctl00_cphMain_RadCategorySetting_ctl00_ctl00___PEF']")
 
 	By  newacategoryaddedmsg = By.xpath("//*[text()='You successfully entered a category!']")
+	
+	By createexternaltypesuccssmsg = By.xpath("//*[@id='cphMain_lblMessage']")
 
 
 	@Keyword
@@ -228,6 +230,22 @@ public class CategoriesMaintenancePage {
 		if(statusofclearbtn == true) {
 			action.Type(descriptiontxtbx, "Test")
 			action.Click(clearbtn)
+		}
+	}
+	
+	@Keyword
+	public String CreateNewExternalItemType()
+	{
+		String externaltype = null
+		try{
+			externaltype = "Test External Item Type"+action.GenerateRandomAplphabaticString(9)
+			action.Type(descriptiontxtbx, externaltype)
+			action.Click(savebtn)
+			
+			return externaltype
+		}catch(Exception e)
+		{
+			Assert.fail("Delete Meta tag failed due "+ e)
 		}
 	}
 }

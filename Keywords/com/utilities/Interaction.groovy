@@ -383,8 +383,6 @@ public  class Interaction {
 
 		WebDriverWait wait = new WebDriverWait(driver, 300);
 		pageLoadStatus = (String)js.executeScript("return document.readyState");
-
-		//WebUI.delay(10)
 	}
 
 
@@ -410,9 +408,6 @@ public  class Interaction {
 
 
 	public String  GetCurrentURL() {
-
-		//WaitVisible(by)
-		WebUI.delay(2)
 		return driver.getCurrentUrl();
 	}
 
@@ -476,8 +471,6 @@ public  class Interaction {
 	//Scroll up to element to be visible
 	public void  ScrollToViewElement(WebElement element)
 	{
-		//WaitVisible(element)
-		WebUI.delay(7)
 		js.executeScript("arguments[0].scrolSlIntoView(true);", element);
 	}
 
@@ -592,15 +585,8 @@ public  class Interaction {
 
 	public void WaitVisible(By by)
 	{
+		WebUI.enableSmartWait()
 		WebUI.delay(1)
-		WebDriverWait wait = new WebDriverWait(driver, 300)
-		wait.until(ExpectedConditions.visibilityOfElementLocated(by))
-
-		/*println('Entering into Explicit wait statements')
-		 Boolean prsentstatus=wait.until(ExpectedConditions.presenceOfElementLocated(by))
-		 println(prsentstatus)
-		 Boolean prsentstatus1 = wait.until(ExpectedConditions.visibilityOfElementLocated(by))
-		 println(prsentstatus1)*/
 	}
 
 	public void  WaitVisibleDup(By by)
@@ -833,7 +819,7 @@ public  class Interaction {
 
 	public void SelectByText(By by, String text)
 	{
-		WaitVisible(by);
+		WebUI.enableSmartWait()
 		WebElement elementToHover = driver.findElement(by);
 		Select select = new Select(elementToHover)
 		select.selectByVisibleText(text)
