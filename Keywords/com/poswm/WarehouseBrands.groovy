@@ -127,38 +127,38 @@ public class WarehouseBrands {
 	}
 
 	@Keyword
-	 public void ClickOnEditBtn(){
-	 try{
-	 action.WaitVisible(EditFirstBtn)
-	 action.Click(EditFirstBtn)
-	 }
-	 catch(Exception e ){
-	 Assert.fail("ClickOnEditBtn method failed due to :" + e)
-	 }
-	 }
+	public void ClickOnEditBtn(){
+		try{
+			action.WaitVisible(EditFirstBtn)
+			action.Click(EditFirstBtn)
+		}
+		catch(Exception e ){
+			Assert.fail("ClickOnEditBtn method failed due to :" + e)
+		}
+	}
 
 	@Keyword
 	public void VerifyEditBrand()
 	{
 		try{
-			action.WaitVisible(EditFirstBtn)
+			//action.WaitVisible(EditFirstBtn)
 			action.Click(EditFirstBtn)
 			action.WaitVisible(SuplierDropDown)
 			String supplierValueBeforeEdit = action.GetselectedText(SuplierDropDown)
 			println "++++++"+ supplierValueBeforeEdit
-			
+
 			action.Click(SuplierDropDown)
 			WebUI.delay(3)
 			action.SelectByIndex(SuplierDropDown, 1)
 			WebUI.delay(3)
-			
+
 			String supplierValueAfterEdit = action.GetselectedText(SuplierDropDown)
 			println "++++++"+ supplierValueAfterEdit
 			WebUI.delay(2)
 			action.Click(UpdateBtn)
-			
+
 			Assert.assertNotEquals(supplierValueBeforeEdit, supplierValueAfterEdit)
-			
+
 
 		}
 		catch(Exception e){
@@ -192,8 +192,8 @@ public class WarehouseBrands {
 			WebUI.delay(2)
 			action.AcceptAlert()
 			WebUI.delay(5)
-			
-			
+
+
 		}
 		catch(Exception e)
 		{
@@ -208,15 +208,15 @@ public class WarehouseBrands {
 
 			String expectedConfirmationMsg = "Brand deleted successfully."
 			String ExpectedSearchMsg = "No records to display."
-			
-			String ActualConfirmationMsg = action.GetText(DeleteConfirmationMsg) 
+
+			String ActualConfirmationMsg = action.GetText(DeleteConfirmationMsg)
 			WebUI.delay(2)
 			println "*********"+ ActualConfirmationMsg
-			
+
 			String ActualSearchMsg = action.GetText(NoRecordtoDisplay)
 			WebUI.delay(2)
 			println "*********"+ ExpectedSearchMsg
-			
+
 			action.TypeClear(SearchBrandAField, brandNameExp)
 			action.Click(SearchBtn)
 			WebUI.delay(2)

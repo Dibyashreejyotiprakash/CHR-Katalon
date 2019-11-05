@@ -19,6 +19,8 @@ WebUI.maximizeWindow()
 
 CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamewswadmin, GlobalVariable.testtyperegression, GlobalVariable.environment)
 
+CustomKeywords.'com.wswadmin.LoginPage.WSWlogin'(GlobalVariable.wswadminusername, GlobalVariable.wswpassword)
+
 CustomKeywords.'com.wswadmin.HomePage.NavigateToResourceMessagePage'()
 
 WebUI.closeBrowser()

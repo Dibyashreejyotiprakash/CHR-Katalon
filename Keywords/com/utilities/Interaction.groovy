@@ -592,7 +592,7 @@ public  class Interaction {
 
 	public void WaitVisible(By by)
 	{
-		WebUI.delay(5)
+		WebUI.delay(1)
 		WebDriverWait wait = new WebDriverWait(driver, 300)
 		wait.until(ExpectedConditions.visibilityOfElementLocated(by))
 
@@ -949,12 +949,12 @@ public  class Interaction {
 	{
 		driver.findElement(by).sendKeys(Keys.BACK_SPACE)
 	}
-	
+
 	public void PreseLeftArrow(By by)
 	{
 		driver.findElement(by).sendKeys(Keys.ARROW_LEFT)
 	}
-	
+
 	public void PreseRightArrow(By by)
 	{
 		driver.findElement(by).sendKeys(Keys.ARROW_RIGHT)
@@ -991,7 +991,9 @@ public  class Interaction {
 
 	public void VerifyCurrentPage(String expectedurl)
 	{
-		String actualurl = driver.currentUrl
+		WebUI.delay(5)
+		String actualurl = driver.getCurrentUrl()
+		//boolean b = actualurl.contains(expectedurl)
 		if(actualurl.contains(expectedurl))
 		{
 			println ("Page verified")

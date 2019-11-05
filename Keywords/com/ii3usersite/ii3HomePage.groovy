@@ -32,10 +32,9 @@ public class ii3HomePage {
 	By orderformbtn = By.xpath("//*[text()='Online Order Form']")
 	By logoutlink = By.xpath("//*[text()='Log Out']")
 	By homebutton = By.xpath("//*[text()='Home']")
-	
+
 	@Keyword
-	public void VerifyHomePage()
-	{
+	public void VerifyHomePage() {
 		boolean statusofhomebtn = action.IsElementDisplayed(homebutton)
 		Assert.assertTrue(statusofhomebtn)
 	}

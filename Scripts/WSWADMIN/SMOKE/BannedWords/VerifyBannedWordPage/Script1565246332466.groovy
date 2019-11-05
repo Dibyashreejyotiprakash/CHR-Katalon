@@ -19,13 +19,15 @@ WebUI.maximizeWindow()
 
 CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamewswadmin, GlobalVariable.testtypesmoke,GlobalVariable.environment)
 
+CustomKeywords.'com.wswadmin.LoginPage.WSWlogin'(GlobalVariable.wswadminusername, GlobalVariable.wswpassword)
+
 CustomKeywords.'com.wswadmin.HomePage.NavigateToBannedPhrases'()
 
-WebUI.delay(10)
+//WebUI.delay(10)
 
 CustomKeywords.'com.wswadmin.BannedPhrasePage.VerifyBannedWordsGrid'()
 
-WebUI.delay(10)
+//WebUI.delay(10)
 
 CustomKeywords.'com.wswadmin.BannedPhrasePage.AddNewBannedWordAndVerify'()
 

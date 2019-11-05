@@ -11,187 +11,181 @@
    <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
    <testSuiteGuid>52c96e95-b2f7-43ac-acc0-17dbcc471cfb</testSuiteGuid>
    <testCaseLink>
-      <guid>992daef2-4566-44ec-bdbf-34740d603c1e</guid>
+      <guid>a20bb13b-e817-4f3d-85e4-f9b30f37af81</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/WSWADMIN/SMOKE/MetaTaggingBulkImportTool/AssociateMetatagToTemplate</testCaseId>
+      <testCaseId>Test Cases/WSWADMIN/SMOKE/BannedWords/VerifyBannedWordPage</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>a94864e6-f9b2-4c95-b709-0e5c49722da9</guid>
+      <guid>30c35754-4f86-4d2a-a081-32c5f81ab88f</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/WSWADMIN/SMOKE/MetaTaggingBulkImportTool/ValidateBulkUploadPage</testCaseId>
+      <testCaseId>Test Cases/WSWADMIN/SMOKE/Fulfillment/LowStcokNotification/VerifyLowStockNotificationPage</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>5f0b688e-b051-4ce5-a4c7-5fc833380a55</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/WSWADMIN/SMOKE/ItemSearchTagging/ValidateCategoryMaintenancePage</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>2d75d8e3-9e43-4190-9daa-ec5a8c7edaa6</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/WSWADMIN/SMOKE/ItemSearchTagging/ValidateEditDeletePage</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>a8b0cfc1-c83c-4d8c-80be-9f3750d5efd9</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/WSWADMIN/SMOKE/ItemSearchTagging/ValidateExternalItemCorpSettings</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>dce3681e-41db-4601-8f90-27530ba769bd</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/WSWADMIN/SMOKE/GlobalMetataggingmaintenance/ValidateGlobalAddMetatagFields</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>8650fe61-6f8d-4e98-84e1-3163300a15c1</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/WSWADMIN/SMOKE/GlobalMetataggingmaintenance/ValidateGlobalElipssys</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>e9803e53-f7df-481d-b496-83f776f521ce</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/WSWADMIN/SMOKE/GlobalMetataggingmaintenance/ValidateGlobalMetaTagPage</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>a294db82-b148-4721-aac4-00bc65549bbf</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/WSWADMIN/SMOKE/MetaTaggingBulkImportTool/VerifyContinueBtnWithoutUpload</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>5af1ec7d-a4e3-4c12-b3ba-95bac4313487</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/WSWADMIN/SMOKE/MetaTaggingBulkImportTool/VerifyContinueBtnWithUpload</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>21c3a50f-755a-436c-83ce-e55c50893d7c</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/WSWADMIN/SMOKE/MetaTaggingBulkImportTool/VerifyUploadButton</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>8c6933c0-562d-47f6-b084-3b4da9a7fb73</guid>
+      <guid>9e4f7ecc-7ca7-46f2-bbb6-205ed9382364</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WSWADMIN/SMOKE/METATAGGINGCATEGORYITEMMAINTENANCE/VerifyCategoryItemMaintenancePage</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>9667c246-6c61-445d-8547-97bdd2728569</guid>
+      <guid>ef86a4fb-7938-47f8-9b18-bfb01c14416d</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WSWADMIN/SMOKE/METATAGGINGCATEGORYITEMMAINTENANCE/VerifyCategoryItemMaintenancePageAllFileds</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>2788a147-0052-4f63-9e91-8835636abe17</guid>
+      <guid>98eb98a5-ab3b-4726-803d-b8e5a08c19fc</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WSWADMIN/SMOKE/METATAGGINGCATEGORYITEMMAINTENANCE/VerifyCategoryItemMaintenanceSaveBtnWithouAnySelection</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>ca63fca8-cd5a-4f97-b66b-56461a36e82e</guid>
+      <guid>75ad80a6-8f3f-4ee3-8893-6e781ada21f1</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WSWADMIN/SMOKE/METATAGGINGCATEGORYMAINTENANCE/VerifyAddNewCorpSettingBtn</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>21314876-3ef5-49ec-879c-c66346265d56</guid>
+      <guid>49dbe9e4-f47a-4db3-904b-625feafec28e</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WSWADMIN/SMOKE/METATAGGINGCATEGORYMAINTENANCE/VerifyCategoryMaintenancePage</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>7ece46ac-bfce-42ca-b5c3-0ffa3f2a0f38</guid>
+      <guid>47b129e7-0e88-43fe-9b05-2dba13fdf756</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WSWADMIN/SMOKE/METATAGGINGCATEGORYMAINTENANCE/VerifyClearForDescription</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>63fe5762-500d-4ea3-9b46-6a682bf2d67b</guid>
+      <guid>87d43e19-87bc-4f88-95bd-ba0da860cbb7</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WSWADMIN/SMOKE/METATAGGINGCATEGORYMAINTENANCE/VerifyCreateExternalItemType</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>f1757e9e-0472-4ba2-b258-5204fb426e40</guid>
+      <guid>e174f081-5e24-4704-b528-35d082d6330f</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WSWADMIN/SMOKE/METATAGGINGCATEGORYMAINTENANCE/VerifyCreateExternalItemTypeSettingPopup</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>3a4666d6-90ce-43fa-9967-edc3fe938772</guid>
+      <guid>3a69faf8-69c4-476b-acad-3daac5caf15d</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WSWADMIN/SMOKE/METATAGGINGCATEGORYMAINTENANCE/VerifyCreateExternalItemTypeSettingPopupCancelBtn</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>eba18538-7fc6-4034-a3c8-91420d6ac973</guid>
+      <guid>5026134b-885b-47ac-9d4b-10463d3060df</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WSWADMIN/SMOKE/METATAGGINGCATEGORYMAINTENANCE/VerifyCreateExternalItemTypeSettingPopupInsertBtn</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>59d6dc5d-b09e-4b0b-b7a8-aea9c89f9ef1</guid>
+      <guid>b233fa50-d555-42bb-b626-f60b625989f1</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WSWADMIN/SMOKE/METATAGGINGCATEGORYMAINTENANCE/VerifyCreateExternalItemTypeSettings</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>56a5f279-d456-4caf-b6ba-7f59a717906a</guid>
+      <guid>ee7b66b9-cc4a-4bdf-be87-b89ccd1025f1</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/WSWADMIN/SMOKE/OLOFII4Configuration/VerifyAllFiledsOnOLOFII4ConfigurationPage</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>e2187ba1-36cf-49b8-86c1-de3f0563ea13</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/WSWADMIN/SMOKE/OLOFII4Configuration/VerifyOLOFII4ConfigurationPage</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>c0e48550-4fd3-4255-935a-7167608297cb</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/WSWADMIN/SMOKE/OLOFII4Configuration/VerifyWelComeScreenSection</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>b67997db-330f-4250-a6c3-bed939fdfc84</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/WSWADMIN/SMOKE/QuoteTracker/VerifyItemListOptionsPage</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>ee2cda14-0ca1-468a-80dd-29a4ce3ac296</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/WSWADMIN/SMOKE/QuoteTracker/VerifyQuoteItemSearchPage</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>0ce04eba-6f33-431e-96b8-fff1733aa9a4</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/WSWADMIN/SMOKE/QuoteTracker/VerifyQuoteRequestPage</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>3b423e47-0ef0-44f3-b79b-4d0b08cbf21d</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/WSWADMIN/SMOKE/Reports/Verify Invoice Line Item Page</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>9efd4cdd-047f-46bd-8289-ef73956d3eb3</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/WSWADMIN/SMOKE/Reports/Verify Invoice Page</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>20faab8d-228f-4d7e-81c3-addccbdbddc6</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WSWADMIN/SMOKE/RESOURCE MESSAGE/VerifyResouceMessagePage</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>d443acdb-3a4f-47e8-90b7-050d9c2d4496</guid>
+      <guid>ce6544e0-c504-4a35-91ed-9d4a6cb8aa70</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WSWADMIN/SMOKE/RESOURCE MESSAGE/VerifyResouceMessagePageAllManadatoryFields</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>764de575-1b7d-4406-a8ac-9ab1e0b43d0e</guid>
+      <guid>3337e952-3a85-4997-95db-5a58bc035499</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WSWADMIN/SMOKE/RESOURCE MESSAGE/VerifyResouceMessagePopUpForAccounts</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>b0f0e6b0-cc82-4c50-aba5-25396223d220</guid>
+      <guid>1ed4dc5f-edfd-4dea-8e2a-1c5e17ea45fc</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WSWADMIN/SMOKE/RESOURCE MESSAGE/VerifyResouceMessagePopUpForAddressBook</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>53c4ef25-220d-4fdc-986f-5f772fa4ad08</guid>
+      <guid>3559d38f-cda3-49fb-8d29-10fd359f5a4c</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WSWADMIN/SMOKE/RESOURCE MESSAGE/VerifyResouceMessagePopUpForAddressList</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>3375bbd1-64ef-4d64-b902-6f4beacb0075</guid>
+      <guid>46e0170f-12ad-4231-8d6d-4c19eeadaaba</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WSWADMIN/SMOKE/RESOURCE MESSAGE/VerifyResouceMessagePopUpForLogoLocker</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>09be73a7-b6e3-403b-a612-58e315aed8fc</guid>
+      <guid>30a21400-c3c7-40df-b38f-9077d9151214</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WSWADMIN/SMOKE/RESOURCE MESSAGE/VerifyResouceMessagePopUpForProfile</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>4e575ff6-6a39-4234-933f-da7421de130e</guid>
+      <guid>fddbb552-b8de-4f5b-9de1-87b01dbbf874</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WSWADMIN/SMOKE/RESOURCE MESSAGE/VerifyResouceMessagePopUpForProjects</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>c4b28ef6-cbe9-4582-9660-9f89e2513699</guid>
+      <guid>1b7cfd9a-51fc-4260-8d14-b05ea8a3c3e2</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WSWADMIN/SMOKE/RESOURCE MESSAGE/VerifyResouceMessagePopUpForReports</testCaseId>
