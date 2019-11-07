@@ -63,7 +63,7 @@ public class CategoriesMaintenancePage {
 	By corposettingpopup = By.xpath("//*[@id='ctl00_cphMain_RadCategorySetting_ctl00__ctl00_cphMain_RadCategorySetting_ctl00_ctl00___PEF']")
 
 	By  newacategoryaddedmsg = By.xpath("//*[text()='You successfully entered a category!']")
-	
+
 	By createexternaltypesuccssmsg = By.xpath("//*[@id='cphMain_lblMessage']")
 
 
@@ -232,7 +232,9 @@ public class CategoriesMaintenancePage {
 			action.Click(clearbtn)
 		}
 	}
-	
+
+	/*********************************************************05-11-2019*********************************************************************/
+
 	@Keyword
 	public String CreateNewExternalItemType()
 	{
@@ -241,7 +243,15 @@ public class CategoriesMaintenancePage {
 			externaltype = "Test External Item Type"+action.GenerateRandomAplphabaticString(9)
 			action.Type(descriptiontxtbx, externaltype)
 			action.Click(savebtn)
-			
+			try{
+
+			}
+			catch(Exception e)
+
+
+
+			boolean statusofcreatenewexternaltypesuccessmsg = action.IsElementDisplayed(createexternaltypesuccssmsg)
+			Assert.assertTrue(statusofcreatenewexternaltypesuccessmsg)
 			return externaltype
 		}catch(Exception e)
 		{
