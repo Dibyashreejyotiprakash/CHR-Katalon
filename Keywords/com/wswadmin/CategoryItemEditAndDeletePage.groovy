@@ -17,7 +17,9 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.utilities.Interaction
 import org.openqa.selenium.By
 import org.openqa.selenium.WebDriver
+import org.openqa.selenium.WebElement
 import org.testng.Assert
+import org.testng.AssertJUnit
 
 import com.kms.katalon.core.webui.driver.DriverFactory
 import internal.GlobalVariable
@@ -34,6 +36,9 @@ public class CategoryItemEditAndDeletePage {
 	By metatagtextbox = By.xpath("//*[@id='ctl00_cphMain_RadCategoryMaintenance_ctl00_ctl05_radExternalItem']")
 	By metattagupdatebtn = By.xpath("//*[@id='ctl00_cphMain_RadCategoryMaintenance_ctl00_ctl05_btnSave_input']")
 	By editsuccessfullmsg = By.xpath("//*[text()='You have successfully updated the meta tag description!']")
+	By corpsearchtextbox = By.xpath("//*[@id='ctl00_cphMain_RadCategoryMaintenance_ctl00_ctl02_ctl03_FilterTextBox_corporationname']")
+	By allcorporation = By.xpath("//*[@id='ctl00_cphMain_RadCategoryMaintenance_ctl00']/tbody/tr/td[3]")
+
 
 	@Keyword
 	public void VerifyCategoryItemEditDeletePage() {
@@ -82,4 +87,22 @@ public class CategoryItemEditAndDeletePage {
 			Assert.fail("Delete Meta tag failed due "+ e)
 		}
 	}
+
+	@Keyword
+	public void VerifyCorporationSearch() {
+		try{
+			action.Type(corpsearchtextbox, "Instant Impact")
+			action.Enter(corpsearchtextbox)
+			List<WebElement> allcorporationnameingrid = action.GetElements(allcorporation)
+			for(int i=0;i<allcorporationnameingrid.size();i++ ) {
+			}
+		}
+		catch(Exception e) {
+			Assert.fail("Verify Corporation Search failed due "+ e)
+		}
+	}
 }
+
+
+
+

@@ -603,6 +603,7 @@ public class WarehouseItem {
 			else
 			{
 				throw new Exception("Brand values are not present in grid")
+			}
 		}
 		catch(Exception e){
 			println("FillBrandSection method failed due to :" + e)

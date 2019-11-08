@@ -167,6 +167,7 @@ public class ManageProgramElementPage {
 				boolean statusofyesbtn = action.IsElementEnabled(yesbtn)
 				println ("Status of Yes Button ---"+ statusofyesbtn)
 				Assert.assertTrue(statusofyesbtn)
+				action.Click(yesbtn)
 				
 				boolean statusofnobtn = action.IsElementEnabled(nobtn)
 				println ("Status of No Button ---"+ statusofnobtn)

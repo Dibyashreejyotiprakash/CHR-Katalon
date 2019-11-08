@@ -16,7 +16,9 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
 
-CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamewswadmin, GlobalVariable.testtypesmoke,GlobalVariable.environment)
+
+
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamewswadmin, GlobalVariable.testtyperegression,GlobalVariable.environment)
 
 CustomKeywords.'com.wswadmin.LoginPage.VerifyLoginPage'()
 
@@ -26,8 +28,6 @@ CustomKeywords.'com.wswadmin.HomePage.NavigateToMetaTaggingCategoryMaintenancePa
 
 CustomKeywords.'com.wswadmin.CategoriesMaintenancePage.VerifyCategoriesMaintenancePage'()
 
+String newlycreateditem = CustomKeywords.'com.wswadmin.CategoriesMaintenancePage.CreateNewExternalItemType'()
 
-
-
-
-
+CustomKeywords.'com.wswadmin.CategoriesMaintenancePage.AssociateExternalTypeWithCorp'(newlycreateditem)

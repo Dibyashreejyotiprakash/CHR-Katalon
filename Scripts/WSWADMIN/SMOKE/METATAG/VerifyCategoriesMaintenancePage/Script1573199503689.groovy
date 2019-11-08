@@ -22,12 +22,11 @@ CustomKeywords.'com.wswadmin.LoginPage.VerifyLoginPage'()
 
 CustomKeywords.'com.wswadmin.LoginPage.WSWlogin'(GlobalVariable.wswadminusername, GlobalVariable.wswpassword)
 
-CustomKeywords.'com.wswadmin.HomePage.NavigateToMetaTaggingCategoryMaintenancePage'()
+CustomKeywords.'com.wswadmin.HomePage.NavigateToItemSearchTaggingPage'()
 
-CustomKeywords.'com.wswadmin.CategoriesMaintenancePage.VerifyCategoriesMaintenancePage'()
+CustomKeywords.'com.wswadmin.TemplateFulfillmentPage.VerifyTemplateFulfillmentPage'()
 
-
-
+CustomKeywords.'com.wswadmin.TemplateFulfillmentPage.SelectInCompleteFulfilledItem'()
 
 
 

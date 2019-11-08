@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>CreateNewExternalItemTypeAndVerifyInMetatagConfigurationPage</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>f0d95541-7b92-42ea-bcff-27179f23944a</testCaseGuid>
+</TestCaseEntity>

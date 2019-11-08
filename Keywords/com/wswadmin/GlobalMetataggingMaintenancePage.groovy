@@ -57,6 +57,17 @@ public class GlobalMetataggingMaintenancePage {
 	LocalTime currenttime = LocalTime.now()
 	String newmetatagname = "Test"+ currenttime
 
+	@Keyword
+	public void VerifyGlobalMetaTaggingMaintenancePage()
+	{
+		try{
+			action.VerifyCurrentPage("GlobalMetaTaggingMaintenance.aspx")
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Verify Global MetaTagging Maintenance Page failed due "+ e)
+		}
+	}
 
 	@Keyword
 	public void selectCategory(){

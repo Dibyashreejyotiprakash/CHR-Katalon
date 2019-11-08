@@ -523,9 +523,9 @@ public class HomePage {
 			Assert.fail("Navigate To Fulfillment Reports Page failed due to "+ e)
 		}
 	}
-	
+
 	/**********************************************************05-11-2019 Meta Tag Automation*********************************************************************/
-	
+
 	/*TemplateFulfillment.aspx*/
 	public void NavigateToItemSearchTaggingPage()
 	{
@@ -540,7 +540,7 @@ public class HomePage {
 			Assert.fail("Navigate To Item Search Tagging Page failed due to "+ e)
 		}
 	}
-	
+
 	/*MetatagBulkImport.aspx*/
 	public void NavigateToMetataggingBulkImportToolPage()
 	{
@@ -555,7 +555,7 @@ public class HomePage {
 			Assert.fail("Navigate To Metatagging Bulk Import Tool Page failed due to "+ e)
 		}
 	}
-	
+
 	/*CategoriesMaintenance.aspx*/
 	public void NavigateToMetaTaggingCategoryMaintenancePage()
 	{
@@ -570,8 +570,8 @@ public class HomePage {
 			Assert.fail("Navigate To Meta Tagging Category Maintenance Page failed due to "+ e)
 		}
 	}
-	
-	
+
+
 	/*CategoryItemMaintenance.aspx*/
 	public void NavigateToMetaTaggingCategoryItemMaintenancePage()
 	{
@@ -586,8 +586,8 @@ public class HomePage {
 			Assert.fail("Navigate To MetaTagging Category Item Maintenance Page failed due to "+ e)
 		}
 	}
-	
-	
+
+
 	/*CategoryItemEditDelete.aspx*/
 	public void NavigateToMetaTaggingEditDeletePage()
 	{
@@ -601,10 +601,10 @@ public class HomePage {
 		{
 			Assert.fail("Navigate To Meta Tagging Edit Delete Page failed due to "+ e)
 		}
-		
+
 	}
-	
-	
+
+
 	/*GlobalMetaTaggingMaintenance.aspx*/
 	public void NavigateToGlobalMetaTaggingMaintenancePage()
 	{

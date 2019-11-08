@@ -16,7 +16,9 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
 
-CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamewswadmin, GlobalVariable.testtypesmoke,GlobalVariable.environment)
+
+
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamewswadmin, GlobalVariable.testtyperegression,GlobalVariable.environment)
 
 CustomKeywords.'com.wswadmin.LoginPage.VerifyLoginPage'()
 
@@ -26,8 +28,30 @@ CustomKeywords.'com.wswadmin.HomePage.NavigateToMetaTaggingCategoryMaintenancePa
 
 CustomKeywords.'com.wswadmin.CategoriesMaintenancePage.VerifyCategoriesMaintenancePage'()
 
+String newlycreateditem = CustomKeywords.'com.wswadmin.CategoriesMaintenancePage.CreateNewExternalItemType'()
 
+println ("Newly created external item is -------"+ newlycreateditem)
 
+String newassocieatedexternalitem = CustomKeywords.'com.wswadmin.CategoriesMaintenancePage.AssociateExternalTypeWithCorp'(newlycreateditem)
 
+println ("Associated extrenal item ------------"+ newassocieatedexternalitem)
 
+CustomKeywords.'com.wswadmin.HomePage.NavigateToItemSearchTaggingPage'()
 
+CustomKeywords.'com.wswadmin.TemplateFulfillmentPage.VerifyTemplateFulfillmentPage'()
+
+CustomKeywords.'com.wswadmin.TemplateFulfillmentPage.SelectCompleteTemplate'()
+
+CustomKeywords.'com.wswadmin.MetatagConfigurationPage.VerifyMetatagConfigurationPage'()
+
+CustomKeywords.'com.wswadmin.MetatagConfigurationPage.VerifySelectedTemplatedId'()
+
+//CustomKeywords.'com.wswadmin.MetatagConfigurationPage.VerifyNewlyCreatedExternalItemType'(newassocieatedexternalitem)
+
+CustomKeywords.'com.wswadmin.HomePage.NavigateToMetaTaggingCategoryMaintenancePage'()
+
+CustomKeywords.'com.wswadmin.CategoriesMaintenancePage.VerifyCategoriesMaintenancePage'()
+
+CustomKeywords.'com.wswadmin.CategoriesMaintenancePage.ClickOnCreateExternalItemCorpSettting'()
+
+CustomKeywords.'com.wswadmin.CategoriesMaintenancePage.DeleteExistingExternalItem'()

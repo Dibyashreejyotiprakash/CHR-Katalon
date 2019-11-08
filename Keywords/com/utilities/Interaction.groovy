@@ -586,7 +586,7 @@ public  class Interaction {
 	public void WaitVisible(By by)
 	{
 		WebUI.enableSmartWait()
-		WebUI.delay(1)
+		WebUI.delay(3)
 	}
 
 	public void  WaitVisibleDup(By by)
