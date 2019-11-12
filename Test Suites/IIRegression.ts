@@ -59,10 +59,10 @@
       <testCaseId>Test Cases/IIDT/II REGRESSION/Online Order Form/ClonePreviousDTOrder/VerifyEditLinkOnCloneItemDetailsPage</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>b99a2c5d-e46e-47e7-8f12-efce5c654fb8</guid>
+      <guid>e6c43419-72b1-4e21-900b-726cdc9dbff4</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/II REGRESSION/Online Order Form/Create New Order/VerifyClickOnLargeFormatButton</testCaseId>
+      <testCaseId>Test Cases/IIDT/II REGRESSION/Online Order Form/Create New Order/VerifyDetailsPageAndNavigationToFinishDetailsPage</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>09d906ae-2161-41ab-bb6f-df57f31c5fe0</guid>
@@ -77,10 +77,10 @@
       <testCaseId>Test Cases/IIDT/II REGRESSION/Online Order Form/Create New Order/VerifyClickOnSmallFormatPrintButton</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>e6c43419-72b1-4e21-900b-726cdc9dbff4</guid>
+      <guid>b99a2c5d-e46e-47e7-8f12-efce5c654fb8</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/II REGRESSION/Online Order Form/Create New Order/VerifyDetailsPageAndNavigationToFinishDetailsPage</testCaseId>
+      <testCaseId>Test Cases/IIDT/II REGRESSION/Online Order Form/Create New Order/VerifyClickOnLargeFormatButton</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>f7d00d06-8e25-46c4-a375-1c965e42697f</guid>

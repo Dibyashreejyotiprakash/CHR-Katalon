@@ -118,34 +118,37 @@ public class WarehouseUsersPage {
 			if(totalusers >0) {
 				action.WaitUntilElementClickable(firstusereditlink)
 				action.Click(firstusereditlink) 
-					WebUI.delay(10)
+					WebUI.delay(2)
 					boolean statusofeditfirstname = action.IsElementDisplayed(editfirstname)
 					Assert.assertTrue(statusofeditfirstname)
 
-					WebUI.delay(10)
+					WebUI.delay(1)
 					boolean statusofeditsecondname = action.IsElementDisplayed(editlastname)
 					Assert.assertTrue(statusofeditsecondname)
 
-					WebUI.delay(10)
+					WebUI.delay(1)
 					boolean statusofeditemailaddress = action.IsElementDisplayed(editemailaddress)
 					Assert.assertTrue(statusofeditemailaddress)
 
-					WebUI.delay(10)
+					WebUI.delay(1)
 					boolean statusofeditcheckbox = action.IsElementSelected(editactivecheckbox)
 					Assert.assertTrue(statusofeditcheckbox)
 
+					WebUI.delay(1)
 					boolean statusofmembersofgroup = action.IsElementSelected(availablewarehouse)
 					Assert.assertTrue(statusofmembersofgroup)
 
 					action.WaitUntilElementClickable(updatebtn)
+					WebUI.delay(1)
 					boolean statusofmembersofupdatebtn = action.IsElementEnabled(updatebtn)
 					Assert.assertTrue(statusofmembersofupdatebtn)
 
 					action.WaitUntilElementClickable(closebtn)
+					WebUI.delay(1)
 					boolean statusofclosebtn = action.IsElementEnabled(closebtn)
 					Assert.assertTrue(statusofclosebtn)
 
-					WebUI.delay(10)
+					WebUI.delay(1)
 					action.WaitUntilElementClickable(deleteusersbtn)
 					boolean statusofdeleteuserbtn = action.IsElementEnabled(deleteusersbtn)
 					Assert.assertTrue(statusofdeleteuserbtn)

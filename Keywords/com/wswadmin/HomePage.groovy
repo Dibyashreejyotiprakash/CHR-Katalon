@@ -332,7 +332,7 @@ public class HomePage {
 		{
 			action.WaitVisible(instantimpact)
 			action.MouseHoverOnElement(instantimpact)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.MouseHoverOnElement(olof)
 			action.Click(olofii4configuration)
 			action.WaitForPageToLoad()

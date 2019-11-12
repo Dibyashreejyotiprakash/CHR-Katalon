@@ -19,11 +19,13 @@ WebUI.maximizeWindow()
 
 CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameposw, GlobalVariable.testtypesmoke, GlobalVariable.environment)
 
-WebUI.waitForPageLoad(300)
+//WebUI.waitForPageLoad(300)
 
 CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.posusername, GlobalVariable.pospassword)
 
 CustomKeywords.'com.poswm.Homepage.ClicOnOrderSearch'()
+
+CustomKeywords.'com.poswm.WarehouseOrderInventoryPage.VerifyItemSearchPage'()
 
 WebUI.closeBrowser()
 

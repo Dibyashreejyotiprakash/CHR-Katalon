@@ -476,8 +476,8 @@ public  class Interaction {
 	//Scroll up to element to be visible
 	public void  ScrollToViewElement(WebElement element)
 	{
-		//WaitVisible(element)
-		WebUI.delay(7)
+		WaitVisible(element)
+		//WebUI.delay(1)
 		js.executeScript("arguments[0].scrolSlIntoView(true);", element);
 	}
 
@@ -485,14 +485,16 @@ public  class Interaction {
 	//Scroll upto element to be visible
 	public void  ScrollToViewelement(By by)
 	{
-		WaitVisible(by)
+		WebUI.delay(1)
 		js.executeScript("arguments[0].scrolSlIntoView(true);", by);
+		WaitVisible(by)
 	}
 
 
 	//Scroll to bottom of page
 	public void  ScrollToBottomOfPage()
 	{
+		WebUI.delay(1)
 		js.executeScript("window.scrollTo(0, document.body.clientHeight);");
 	}
 
@@ -500,6 +502,7 @@ public  class Interaction {
 	//Scroll to top of page
 	public void  ScrollToTopOgPage()
 	{
+		WebUI.delay(1)
 		js.executeScript("window.scrollTo(0, 0)");
 	}
 
@@ -548,7 +551,8 @@ public  class Interaction {
 	{
 		try
 		{
-			WebUI.delay(10)
+			//WebUI.delay(10)
+			WaitVisible(by)
 			boolean displayed = driver.findElement(by).isDisplayed();
 			return displayed;
 		}
@@ -593,7 +597,7 @@ public  class Interaction {
 	public void WaitVisible(By by)
 	{
 		WebUI.delay(1)
-		WebDriverWait wait = new WebDriverWait(driver, 300)
+		WebDriverWait wait = new WebDriverWait(driver, 60)
 		wait.until(ExpectedConditions.visibilityOfElementLocated(by))
 
 		/*println('Entering into Explicit wait statements')
@@ -619,12 +623,14 @@ public  class Interaction {
 
 	public void  WaitVisible(By by,int timeinsec)
 	{
+		WebUI.delay(1)
 		WebDriverWait wait = new WebDriverWait(driver, timeinsec);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 	}
 
 	public void  WaitVisible(WebElement element)
 	{
+		WebUI.delay(1)
 		WebDriverWait wait = new WebDriverWait(driver,300);
 		wait.until(ExpectedConditions.visibilityOf(element));
 	}
@@ -834,6 +840,7 @@ public  class Interaction {
 	public void SelectByText(By by, String text)
 	{
 		WaitVisible(by);
+		WaitVisibleDup(by);
 		WebElement elementToHover = driver.findElement(by);
 		Select select = new Select(elementToHover)
 		select.selectByVisibleText(text)
@@ -991,7 +998,7 @@ public  class Interaction {
 
 	public void VerifyCurrentPage(String expectedurl)
 	{
-		WebUI.delay(5)
+		WebUI.delay(3)
 		String actualurl = driver.getCurrentUrl()
 		//boolean b = actualurl.contains(expectedurl)
 		if(actualurl.contains(expectedurl))

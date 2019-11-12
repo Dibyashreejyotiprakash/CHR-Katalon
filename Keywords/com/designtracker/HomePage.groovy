@@ -483,7 +483,7 @@ public class HomePage {
 	@Keyword
 	public void VerifyExistingJobSearch() {
 		try {
-			action.WaitVisible(corporationddn)
+			//action.WaitVisible(corporationddn)
 			action.SelectByText(corporationddn, "Demo Distributor (QA)")
 			//WebUI.delay(5)
 			action.ScrollToBottomOfPage()

@@ -91,7 +91,8 @@ public class ItemListOptionPage {
 				action.Click(colorbtn)
 				WebUI.delay(3)
 				
-				driver.switchTo().frame("ItemColorGrid.aspx")
+				//driver.switchTo().frame("ItemColorGrid.aspx")
+				Assert.assertTrue(action.IsDisplayed(coloraddnewbtn))
 			}
 			else{
 				throw new Exception("Verify Colors btn failed")

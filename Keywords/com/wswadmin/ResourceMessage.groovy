@@ -23,7 +23,7 @@ import org.openqa.selenium.WebElement
 import org.testng.Assert
 import org.openqa.selenium.Alert
 import com.kms.katalon.core.webui.driver.DriverFactory
-//import internal.GlobalVariable
+import internal.GlobalVariable
 
 public class ResourceMessage {
 
@@ -162,12 +162,12 @@ public class ResourceMessage {
 		action.Click(corporationddnvalue)
 		action.WaitVisible(distributorddn)
 		action.WaitUntilElementClickable(distributorddn)
-		WebUI.delay(10)
+		//WebUI.delay(10)
 		action.Click(distributorddn)
 		action.Click(distributorvalue)
 		if(action.IsElementEnabled(accountseditlink)) {
 			action.Click(accountseditlink)
-			WebUI.delay(10)
+			//WebUI.delay(10)
 			action.WaitVisible(acccountresorcespopup)
 			if(action.IsElementDisplayed(acccountresorcespopup)) {
 				println ("Resorce message pop up is verified for Account")

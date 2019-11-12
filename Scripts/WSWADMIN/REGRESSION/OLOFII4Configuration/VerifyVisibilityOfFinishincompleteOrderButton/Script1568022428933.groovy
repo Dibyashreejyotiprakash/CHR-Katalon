@@ -19,7 +19,7 @@ CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamewswadmin,
 
 CustomKeywords.'com.wswadmin.LoginPage.VerifyLoginPage'()
 
-CustomKeywords.'com.wswadmin.LoginPage.LoginToWSWAdmin'(GlobalVariable.wswadminusername, GlobalVariable.wswpassword)
+CustomKeywords.'com.wswadmin.LoginPage.WSWlogin'(GlobalVariable.wswadminusername, GlobalVariable.wswpassword)
 
 CustomKeywords.'com.wswadmin.HomePage.ClickOnOLOFII4Configuration'()
 
@@ -27,7 +27,7 @@ CustomKeywords.'com.wswadmin.II4ConfigurationPage.VerifyII4ConfigurationPage'()
 
 CustomKeywords.'com.wswadmin.II4ConfigurationPage.VerifyAllFieldsOnOLOFII4ConfigurationPage'()
 
-WebUI.delay(10)
+//WebUI.delay(10)
 
 CustomKeywords.'com.wswadmin.II4ConfigurationPage.SelectCorpAndMarkets'()
 
