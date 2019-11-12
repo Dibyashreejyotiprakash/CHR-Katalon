@@ -45,7 +45,7 @@ public class GlobalMetataggingMaintenancePage {
 	By elipssys = By.xpath("//span[@id='spnMenuIcon_506']")
 	By globalsearchbox = By.xpath("//input[@id='txtSearch']")
 	By renameoption = By.xpath("//div[@id='divMenu']/div[contains(text(),'Rename')]")
-	By searchcategoryfield = By.xpath("//input[@placeholder = 'Search or Select Category']")
+	By searchcategoryfield = By.xpath("//*[@id='select2-cphMain_ddlCategories-container']")
 	By selectbrandcategory = By.xpath("//li[contains(text(),'Brand Name')]")
 	By categorydropdown = By.xpath("//span[@id='select2-cphMain_ddlCategories-container']")
 	By metatagcount = By.xpath("//label[@id='lblMetatagCount']")
@@ -53,6 +53,7 @@ public class GlobalMetataggingMaintenancePage {
 	By addmetatagsuccessmssg = By.xpath("//div[contains(text(),'has been added successfully')]")
 	By specialcharactermetatag = By.xpath("//label[contains(text(),'Te@t')]")
 	By specialmetatagelipssys = By.xpath("//span[@name = 'Te@t']")
+	By newlycreatedexternalitemcategory = By.xpath("//*[text()='11-A- External Item-89768hgfhggh']")
 
 	LocalTime currenttime = LocalTime.now()
 	String newmetatagname = "Test"+ currenttime
@@ -167,6 +168,36 @@ public class GlobalMetataggingMaintenancePage {
 		}
 		catch(Exception e) {
 			Assert.fail("ValidateDeleteSpecialCharacterGlobalMetatag "+e)
+		}
+	}
+
+	/********************************************************************/
+	
+	@Keyword
+	public String CreteGlobalMetatag()
+	{
+		String newlycreatedglobalmetatag = null
+		try {
+			action.Click(searchcategoryfield)
+			action.Click(newlycreatedexternalitemcategory)
+			action.Enter(searchcategoryfield)
+			
+			boolean statusofaddnewmetatagbtn = action.IsElementEnabled(addnewmetatagbtn)
+			Assert.assertTrue(statusofaddnewmetatagbtn)
+			
+			if(statusofaddnewmetatagbtn == true){
+				action.Click(addnewmetatagbtn)
+				newlycreatedglobalmetatag = "Test Global Metatag"+action.GenerateRandomAplphabaticString(10)
+				action.Type(newmetatagnamefield, newlycreatedglobalmetatag)
+				action.Click(addmetatagbtn)
+			}else{
+			throw new Exception("Add New Meta Tag button is not enabled")
+			}
+			
+			return newlycreatedglobalmetatag
+		}
+		catch(Exception e) {
+			Assert.fail( "Create Global Meta stag"+e)
 		}
 	}
 }

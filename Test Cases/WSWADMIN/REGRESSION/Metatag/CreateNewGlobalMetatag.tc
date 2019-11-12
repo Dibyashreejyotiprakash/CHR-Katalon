@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>CreateNewMetatTag</name>
+   <name>CreateNewGlobalMetatag</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>bb04b2c0-ec1d-434c-abfe-37a45081c9a5</testCaseGuid>
+   <testCaseGuid>367ac03a-4ea5-43dd-9efc-4e7b53bb3b6f</testCaseGuid>
 </TestCaseEntity>

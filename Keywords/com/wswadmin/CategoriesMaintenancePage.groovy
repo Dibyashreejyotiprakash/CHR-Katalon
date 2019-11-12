@@ -272,9 +272,7 @@ public class CategoriesMaintenancePage {
 		try{
 			externaltype = "11-A-Test External Item Type - "+action.GenerateRandomAplphabaticString(9)
 			action.Type(descriptiontxtbx, externaltype)
-			WebUI.delay(3)
 			action.Click(savebtn)
-			WebUI.delay(3)
 			boolean statusofcreatenewexternaltypesuccessmsg = action.IsElementDisplayed(createexternaltypesuccssmsg)
 			Assert.assertTrue(statusofcreatenewexternaltypesuccessmsg)
 			return externaltype
@@ -292,22 +290,15 @@ public class CategoriesMaintenancePage {
 		println ("External Item --------"+ externalitemname)
 		try{
 			action.Click(createexternalitemcorpseting)
-			WebUI.delay(5)
 			action.Type(corporationtxtbx, "339 - Demo Distributor (QA)")
 			action.Click(categorymaintenaceheader)
-			WebUI.delay(5)
 			action.Click(addnewcorporatesetting)
-
 			action.Type(externalitemtypetextbox, newlycreatedexternalitemtype)
 			action.Enter(externalitemtypetextbox)
 			action.Type(distributortextbox, "Demo Dist. Market #1 (QA)")
-			WebUI.delay(3)
 			action.Click(insertbtn)
-			WebUI.delay(3)
 			//Search and Verify newly associated extrnal item type
-
 			action.Type(descriptionsearchtextbox, newlycreatedexternalitemtype)
-			WebUI.delay(3)
 			action.Enter(descriptionsearchtextbox)
 
 			String firstdescription = action.GetText(firstsearchresultsdescription)
@@ -329,27 +320,17 @@ public class CategoriesMaintenancePage {
 		String overrideexternamitem = null;
 		try{
 			action.Click(createexternalitemcorpseting)
-			WebUI.delay(3)
 			action.Type(corporationtxtbx, "339 - Demo Distributor (QA)")
-			WebUI.delay(3)
 			action.Click(categorymaintenaceheader)
-			WebUI.delay(3)
 			action.Click(addnewcorporatesetting)
-			WebUI.delay(3)
 			action.Type(externalitemtypetextbox, newlycreatedexternalitem)
-			WebUI.delay(3)
 			action.Enter(externalitemtypetextbox)
 			overrideexternamitem = "Override Externalitem"+ action.GenerateRandomAplphabaticString(9)
-			WebUI.delay(3)
 			action.Type(descriptionoverridetextbox, overrideexternamitem)
-			WebUI.delay(3)
 			action.Type(distributortextbox, "Demo Dist. Market #2 (QA)")
-			WebUI.delay(3)
 			action.Enter(distributortextbox)
 			action.Click(insertbtn)
-
 			action.Type(overridedescriptionsearchtextbox, overrideexternamitem)
-			WebUI.delay(3)
 			action.Enter(overridedescriptionsearchtextbox)
 
 			//Search and Verify newly overrided extrnal item type
@@ -393,7 +374,7 @@ public class CategoriesMaintenancePage {
 			Assert.fail("Delete Newly Created External Item Type failed due "+ e)
 		}
 	}
-	
+
 	@Keyword
 	public void DeleteExistingExternalItem()
 	{

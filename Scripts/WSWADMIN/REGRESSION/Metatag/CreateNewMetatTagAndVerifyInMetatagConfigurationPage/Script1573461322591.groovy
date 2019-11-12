@@ -22,22 +22,26 @@ CustomKeywords.'com.wswadmin.LoginPage.VerifyLoginPage'()
 
 CustomKeywords.'com.wswadmin.LoginPage.WSWlogin'(GlobalVariable.wswadminusername, GlobalVariable.wswpassword)
 
-/*CustomKeywords.'com.wswadmin.HomePage.NavigateToMetaTaggingCategoryMaintenancePage'()
-
-CustomKeywords.'com.wswadmin.CategoriesMaintenancePage.VerifyCategoriesMaintenancePage'()
-
-String newlycreateditem = CustomKeywords.'com.wswadmin.CategoriesMaintenancePage.CreateNewExternalItemType'()
-
-String newassocieatedexternalitem = CustomKeywords.'com.wswadmin.CategoriesMaintenancePage.AssociateExternalTypeWithCorp'(newlycreateditem)
-
-println ("Newly created external item is -------"+ newlycreateditem)*/
-
 CustomKeywords.'com.wswadmin.HomePage.NavigateToMetaTaggingCategoryItemMaintenancePage'()
 
 CustomKeywords.'com.wswadmin.CategoryItemMaintenancePage.VerifyCategryMaintenancePage'()
 
-WebUI.delay(10)
+String newlycreatedmetatagname = CustomKeywords.'com.wswadmin.CategoryItemMaintenancePage.CreateMetatag'()
 
-CustomKeywords.'com.wswadmin.CategoryItemMaintenancePage.CreateMetatag'()
+CustomKeywords.'com.wswadmin.HomePage.NavigateToItemSearchTaggingPage'()
 
-WebUI.delay(10)
+CustomKeywords.'com.wswadmin.TemplateFulfillmentPage.VerifyTemplateFulfillmentPage'()
+
+CustomKeywords.'com.wswadmin.TemplateFulfillmentPage.SelectCompleteTemplate'()
+
+CustomKeywords.'com.wswadmin.MetatagConfigurationPage.VerifyMetatagConfigurationPage'()
+
+CustomKeywords.'com.wswadmin.MetatagConfigurationPage.VerifyNewlyCreatedMetatag'(newlycreatedmetatagname)
+
+CustomKeywords.'com.wswadmin.HomePage.NavigateToMetaTaggingEditDeletePage'()
+
+CustomKeywords.'com.wswadmin.CategoryItemEditAndDeletePage.VerifyCategoryItemEditDeletePage'()
+
+
+CustomKeywords.'com.wswadmin.CategoryItemEditAndDeletePage.DeleteNewlyCreatedMetatag'(newlycreatedmetatagname)
+

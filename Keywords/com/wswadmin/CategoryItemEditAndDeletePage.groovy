@@ -38,6 +38,9 @@ public class CategoryItemEditAndDeletePage {
 	By editsuccessfullmsg = By.xpath("//*[text()='You have successfully updated the meta tag description!']")
 	By corpsearchtextbox = By.xpath("//*[@id='ctl00_cphMain_RadCategoryMaintenance_ctl00_ctl02_ctl03_FilterTextBox_corporationname']")
 	By allcorporation = By.xpath("//*[@id='ctl00_cphMain_RadCategoryMaintenance_ctl00']/tbody/tr/td[3]")
+	By metatagdescriptionsearchbox = By.xpath("//*[@id='ctl00_cphMain_RadCategoryMaintenance_ctl00_ctl02_ctl03_FilterTextBox_Description']")
+	By norecordsmesg = By.xpath("//*[text()='No records to display.']")
+	By overridepopup = By.xpath("//*[@id='ctl00_cphMain_RadCategoryMaintenance_ctl00_ctl05_radExternalItem']")
 
 
 	@Keyword
@@ -99,6 +102,37 @@ public class CategoryItemEditAndDeletePage {
 		}
 		catch(Exception e) {
 			Assert.fail("Verify Corporation Search failed due "+ e)
+		}
+	}
+
+	@Keyword
+	public void DeleteNewlyCreatedMetatag(String newlycreatedmetatag) {
+		try{
+			action.Type(metatagdescriptionsearchbox, newlycreatedmetatag)
+			action.Enter(metatagdescriptionsearchbox)
+			action.Click(firstdeletelink)
+			action.AcceptAlert()
+		}
+		catch(Exception e) {
+			Assert.fail("Delete Newly Created Metatag failed due "+ e)
+		}
+	}
+
+	@Keyword
+	public void VerifyDeletedNewlyCreatedMetatag(String newlycreatedmetatag) {
+		try{
+			action.TypeClear(metatagdescriptionsearchbox, newlycreatedmetatag)
+			action.Enter(metatagdescriptionsearchbox)
+			boolean statusofnorecordmsg = action.IsElementDisplayed(norecordsmesg)
+			Assert.assertTrue(statusofnorecordmsg)
+			if(statusofnorecordmsg == true){
+				println ("Newly created metatag is deleted successfully")
+			}else{
+				throw new Exception("Not Deleted")
+			}
+		}
+		catch(Exception e) {
+			Assert.fail("Delete Newly Created Metatag failed due "+ e)
 		}
 	}
 }

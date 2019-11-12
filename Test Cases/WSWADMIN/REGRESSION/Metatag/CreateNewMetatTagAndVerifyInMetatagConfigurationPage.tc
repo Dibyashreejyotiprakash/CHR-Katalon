@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>EditMetatatg</name>
+   <name>CreateNewMetatTagAndVerifyInMetatagConfigurationPage</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>43561460-7413-42ca-9ce4-4890d5c24c48</testCaseGuid>
+   <testCaseGuid>bb04b2c0-ec1d-434c-abfe-37a45081c9a5</testCaseGuid>
 </TestCaseEntity>

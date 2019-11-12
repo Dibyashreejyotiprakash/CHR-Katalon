@@ -52,14 +52,12 @@ public class CategoryItemMaintenancePage {
 			action.Type(corpddntextbox, "339 - Demo Distributor (QA)")
 			action.Enter(corpddntextbox)
 			action.Click(externalitemtypeddn)
-			WebUI.delay(2)
 			action.Click(externalitemtypeddn)
-			WebUI.delay(2)
 			action.Click(externalitemtypeddnvalue)
 			newmetatag = "Test Metatag "+ action.GenerateRandomAplphabaticString(9)
 			action.Type(description, newmetatag)
 			action.Click(savebtn)
-			
+
 			return newmetatag
 		}
 		catch(Exception e) {

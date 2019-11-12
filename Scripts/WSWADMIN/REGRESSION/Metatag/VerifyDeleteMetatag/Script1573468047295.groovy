@@ -16,20 +16,32 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
 
-
-
 CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamewswadmin, GlobalVariable.testtyperegression,GlobalVariable.environment)
 
 CustomKeywords.'com.wswadmin.LoginPage.VerifyLoginPage'()
 
 CustomKeywords.'com.wswadmin.LoginPage.WSWlogin'(GlobalVariable.wswadminusername, GlobalVariable.wswpassword)
 
-CustomKeywords.'com.wswadmin.HomePage.NavigateToMetaTaggingCategoryMaintenancePage'()
+CustomKeywords.'com.wswadmin.HomePage.NavigateToMetaTaggingCategoryItemMaintenancePage'()
 
-CustomKeywords.'com.wswadmin.CategoriesMaintenancePage.VerifyCategoriesMaintenancePage'()
+CustomKeywords.'com.wswadmin.CategoryItemMaintenancePage.VerifyCategryMaintenancePage'()
 
-String newlycreateditem = CustomKeywords.'com.wswadmin.CategoriesMaintenancePage.CreateNewExternalItemType'()
+String newlycreatedmetatagname = CustomKeywords.'com.wswadmin.CategoryItemMaintenancePage.CreateMetatag'()
 
-CustomKeywords.'com.wswadmin.CategoriesMaintenancePage.AssociateExternalTypeWithCorp'(newlycreateditem)
+CustomKeywords.'com.wswadmin.HomePage.NavigateToItemSearchTaggingPage'()
 
-CustomKeywords.'com.wswadmin.CategoriesMaintenancePage.DeleteNewlyCreatedExternalItemType'(newlycreateditem)
+CustomKeywords.'com.wswadmin.TemplateFulfillmentPage.VerifyTemplateFulfillmentPage'()
+
+CustomKeywords.'com.wswadmin.TemplateFulfillmentPage.SelectCompleteTemplate'()
+
+CustomKeywords.'com.wswadmin.MetatagConfigurationPage.VerifyMetatagConfigurationPage'()
+
+CustomKeywords.'com.wswadmin.MetatagConfigurationPage.VerifyNewlyCreatedMetatag'(newlycreatedmetatagname)
+
+CustomKeywords.'com.wswadmin.HomePage.NavigateToMetaTaggingEditDeletePage'()
+
+CustomKeywords.'com.wswadmin.CategoryItemEditAndDeletePage.VerifyCategoryItemEditDeletePage'()
+
+CustomKeywords.'com.wswadmin.CategoryItemEditAndDeletePage.DeleteNewlyCreatedMetatag'(newlycreatedmetatagname)
+
+CustomKeywords.'com.wswadmin.CategoryItemEditAndDeletePage.VerifyDeletedNewlyCreatedMetatag'(newlycreatedmetatagname)

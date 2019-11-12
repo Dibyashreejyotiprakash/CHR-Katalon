@@ -98,6 +98,10 @@ class ItemSearchPage {
 	By variabletemplate = By.xpath("(//*[@href='/POS/ItemDetails.aspx?tid=130719'])[1]")
 	By ordernowbtn = By.xpath("//*[@id='Body_btnOrderNow']")
 	By createdesignbtn = By.xpath("//*[@id='Body_btnProductDesign']")
+	
+	By newlycreatedmetatagcheckbox = By.xpath("ctl00_Body_rptFilterGroups_ctrl0_cblFilterList_0")
+	By metatagsearchtemplate = By.xpath("(//*[@href='/POS/ItemDetails.aspx?tid=130722'])[2]")
+	
 
 	WebDriver driver = DriverFactory.getWebDriver();
 	Interaction action = new Interaction();
@@ -163,6 +167,20 @@ class ItemSearchPage {
 		{
 			println ("ClickOnVariableTemplate failed due to "+ e)
 		}
+	}
+	
+	@Keyword
+	public void ClickOnNewlyCreatedMetatagAndVerify()
+	{
+		try{
+			action.Click(newlycreatedmetatagcheckbox)
+			boolean statusoftemplatesearch = action.IsElementDisplayed(metatagsearchtemplate)
+			Assert.assertTrue(statusoftemplatesearch)
+		}
+		catch(Exception e){
+			Assert.fail("Click On Newly Created Metatag failed due to "+ e)
+		}
+		
 	}
 
 
