@@ -317,9 +317,9 @@
       <testCaseId>Test Cases/IIDT/DT SMOKE/SITEADMIN/SUPPLIERS/VerifySuppliersPageAllFieldsOnLoading</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>d1fff0e6-f0bf-48e2-8083-441ef9c7f669</guid>
+      <guid>7289ce05-0b97-47bd-ad98-4464f212a420</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/DT SMOKE/LOGIN/VerifyDTLoginLogout</testCaseId>
+      <testCaseId>Test Cases/IIDT/DT SMOKE/LOGIN/VerifyDTLoginLogout1</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>
