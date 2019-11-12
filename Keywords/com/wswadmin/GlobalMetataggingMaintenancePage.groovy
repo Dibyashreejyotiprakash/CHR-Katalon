@@ -34,7 +34,7 @@ public class GlobalMetataggingMaintenancePage {
 	Interaction action = new Interaction()
 
 
-	By addnewmetatagbtn = By.xpath("//button[contains(text(),'Add New Meta Tag')]")
+	By addnewmetatagbtn = By.xpath("//*[@id='btnAdd']")
 	By addmetatagbtn = By.xpath("//input[@id='btnaddnew']")
 	By newmetatagnamefield = By.xpath("//input[@id='txtaddmetatag']")
 	By canceladdmetatagbtn = By.xpath("(//input[@class = 'btn-primary cancel-btn'])[2]")
@@ -54,6 +54,11 @@ public class GlobalMetataggingMaintenancePage {
 	By specialcharactermetatag = By.xpath("//label[contains(text(),'Te@t')]")
 	By specialmetatagelipssys = By.xpath("//span[@name = 'Te@t']")
 	By newlycreatedexternalitemcategory = By.xpath("//*[text()='11-A- External Item-89768hgfhggh']")
+	By globalmettagmenu = By.xpath("//*[contains(@id,'spnMenuIcon')]")
+	By globalmetatagsearchbox = By.xpath("//*[@id='txtSearch']")
+	By deletesubmenulink = By.xpath("//*[@id='menuDelete']")
+	By deletecheckbox = By.cssSelector("div#deletemodal > .image-modal-dialog.modal-dialog > .image-modal-content.modal-content .check")
+	By deletebtn = By.cssSelector("div#deletemodal > .image-modal-dialog.modal-dialog input[value='Delete']")
 
 	LocalTime currenttime = LocalTime.now()
 	String newmetatagname = "Test"+ currenttime
@@ -172,7 +177,7 @@ public class GlobalMetataggingMaintenancePage {
 	}
 
 	/********************************************************************/
-	
+
 	@Keyword
 	public String CreteGlobalMetatag()
 	{
@@ -180,24 +185,35 @@ public class GlobalMetataggingMaintenancePage {
 		try {
 			action.Click(searchcategoryfield)
 			action.Click(newlycreatedexternalitemcategory)
-			action.Enter(searchcategoryfield)
-			
-			boolean statusofaddnewmetatagbtn = action.IsElementEnabled(addnewmetatagbtn)
-			Assert.assertTrue(statusofaddnewmetatagbtn)
-			
-			if(statusofaddnewmetatagbtn == true){
-				action.Click(addnewmetatagbtn)
-				newlycreatedglobalmetatag = "Test Global Metatag"+action.GenerateRandomAplphabaticString(10)
-				action.Type(newmetatagnamefield, newlycreatedglobalmetatag)
-				action.Click(addmetatagbtn)
-			}else{
-			throw new Exception("Add New Meta Tag button is not enabled")
-			}
-			
+			action.Click(addnewmetatagbtn)
+			newlycreatedglobalmetatag = "Test Global Metatag "+action.GenerateRandomAplphabaticString(10)
+			action.Type(newmetatagnamefield, newlycreatedglobalmetatag)
+			action.Click(addmetatagbtn)
+
 			return newlycreatedglobalmetatag
 		}
 		catch(Exception e) {
-			Assert.fail( "Create Global Meta stag"+e)
+			Assert.fail( "Create Global Meta tag"+e)
 		}
+	}
+	
+	@Keyword
+	public void DeleteNewlyCreatedGlobalMetaTag(String newlycreatedglobalmetatag)
+	{
+		try{
+			action.Click(searchcategoryfield)
+			action.Click(newlycreatedexternalitemcategory)
+			action.Enter(searchcategoryfield)
+			action.Type(globalmetatagsearchbox, newlycreatedglobalmetatag)
+			action.Enter(globalmetatagsearchbox)
+			action.Click(globalmettagmenu)
+			action.Click(deletesubmenulink)
+			action.Click(deletecheckbox)
+			action.Click(deletebtn)
+		}
+		catch(Exception e)
+		{
+			Assert.fail( "Delete Newly Created Global MetaTag"+e)
+		}		
 	}
 }

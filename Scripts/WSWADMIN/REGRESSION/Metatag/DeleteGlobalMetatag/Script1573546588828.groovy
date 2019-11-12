@@ -38,3 +38,9 @@ CustomKeywords.'com.wswadmin.MetatagConfigurationPage.VerifyMetatagConfiguration
 
 CustomKeywords.'com.wswadmin.MetatagConfigurationPage.VerifyNewlyCreatedMetatag'(newlycreatedglobalmetatag)
 
+CustomKeywords.'com.wswadmin.HomePage.NavigateToGlobalMetaTaggingMaintenancePage'()
+
+CustomKeywords.'com.wswadmin.GlobalMetataggingMaintenancePage.VerifyGlobalMetaTaggingMaintenancePage'()
+
+CustomKeywords.'com.wswadmin.GlobalMetataggingMaintenancePage.DeleteNewlyCreatedGlobalMetaTag'(newlycreatedglobalmetatag)
+

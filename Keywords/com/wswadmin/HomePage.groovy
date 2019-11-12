@@ -613,7 +613,6 @@ public class HomePage {
 			action.MouseHoverOnElement(metataggingcategoryitemmaintenance)
 			action.Click(globalmetataggingmaintenance)
 			action.WaitForPageToLoad()
-			WebUI.delay(10)
 		}
 		catch(Exception e)
 		{
