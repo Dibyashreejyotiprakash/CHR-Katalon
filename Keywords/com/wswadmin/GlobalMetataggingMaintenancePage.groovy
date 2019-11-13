@@ -59,6 +59,10 @@ public class GlobalMetataggingMaintenancePage {
 	By deletesubmenulink = By.xpath("//*[@id='menuDelete']")
 	By deletecheckbox = By.cssSelector("div#deletemodal > .image-modal-dialog.modal-dialog > .image-modal-content.modal-content .check")
 	By deletebtn = By.cssSelector("div#deletemodal > .image-modal-dialog.modal-dialog input[value='Delete']")
+	By renamelink = By.xpath("//*[@id='menuRename']")
+	By renametextbox = By.xpath("//*[@id='txtrenamemetatag']")
+	By renamecheckbox = By.cssSelector(".rename-checkbox .check")
+	By renamesavechangesbtn = By.cssSelector("input[value='Save Changes']")
 
 	LocalTime currenttime = LocalTime.now()
 	String newmetatagname = "Test"+ currenttime
@@ -196,7 +200,7 @@ public class GlobalMetataggingMaintenancePage {
 			Assert.fail( "Create Global Meta tag"+e)
 		}
 	}
-	
+
 	@Keyword
 	public void DeleteNewlyCreatedGlobalMetaTag(String newlycreatedglobalmetatag)
 	{
@@ -214,6 +218,28 @@ public class GlobalMetataggingMaintenancePage {
 		catch(Exception e)
 		{
 			Assert.fail( "Delete Newly Created Global MetaTag"+e)
-		}		
+		}
+	}
+	
+	@Keyword
+	public void RenameNewlyCreatedGlobalMetaTag(String newlycreatedglobalmetatag)
+	{
+		try{
+			action.Click(searchcategoryfield)
+			action.Click(newlycreatedexternalitemcategory)
+			action.Enter(searchcategoryfield)
+			action.Type(globalmetatagsearchbox, newlycreatedglobalmetatag)
+			action.Enter(globalmetatagsearchbox)
+			action.Click(globalmettagmenu)
+			action.Click(renamelink)
+			String renamedglobalmetatagname = "Override Global Metatag "+ newlycreatedglobalmetatag
+			action.TypeClear(renametextbox, renamedglobalmetatagname)
+			action.Click(renamecheckbox)
+			action.Click(renamesavechangesbtn)
+		}
+		catch(Exception e)
+		{
+			Assert.fail( "Rename Newly Created Global MetaTag"+e)
+		}
 	}
 }
