@@ -220,7 +220,7 @@ public class GlobalMetataggingMaintenancePage {
 			Assert.fail( "Delete Newly Created Global MetaTag"+e)
 		}
 	}
-	
+
 	@Keyword
 	public void RenameNewlyCreatedGlobalMetaTag(String newlycreatedglobalmetatag)
 	{
