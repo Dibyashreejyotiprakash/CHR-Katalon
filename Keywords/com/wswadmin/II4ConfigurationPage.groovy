@@ -75,14 +75,14 @@ public class II4ConfigurationPage {
 	public void SelectCorpAndMarkets() {
 		try {
 			action.Click(corpddn)
-			WebUI.delay(20)
+			//WebUI.delay(20)
 			//action.ScrollToViewelement(corpddnvalue)
 			action.Click(corpddnvalue)
-			WebUI.delay(20)
+			//WebUI.delay(20)
 			action.Click(marketddn)
-			WebUI.delay(20)
+			//WebUI.delay(20)
 			action.Click(marketddnvalue)
-			WebUI.delay(20)
+			//WebUI.delay(20)
 		}
 		catch(Exception e) {
 			println ("Select Corp And Markets failed due to "+ e)
@@ -312,7 +312,8 @@ public class II4ConfigurationPage {
 	{
 		try{
 			
-			action.ScrollToViewelement(itemdetailssection)
+			//action.ScrollToViewelement(itemdetailssection)
+			action.ScrollToBottomOfPage()
 			
 			action.Clear(smallprintverbiage)
 			action.Type(smallprintverbiage, "Small Text For Testing")
@@ -333,7 +334,7 @@ public class II4ConfigurationPage {
 		}
 		catch(Exception e)
 		{
-		Assert.fail("Add Verbiage Text for Item Details Page failed due to "+ e)	
+		   Assert.fail("Add Verbiage Text for Item Details Page failed due to "+ e)	
 		}
 	}
 	

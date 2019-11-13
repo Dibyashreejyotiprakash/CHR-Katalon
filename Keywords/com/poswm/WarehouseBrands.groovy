@@ -144,14 +144,20 @@ public class WarehouseBrands {
 			//action.WaitVisible(EditFirstBtn)
 			action.Click(EditFirstBtn)
 			action.WaitVisible(SuplierDropDown)
-			String supplierValueBeforeEdit = action.GetselectedText(SuplierDropDown)
-			println "++++++"+ supplierValueBeforeEdit
+			//String supplierValueBeforeEdit = action.GetselectedText(SuplierDropDown)
+			//println "++++++"+ supplierValueBeforeEdit
 
 			action.Click(SuplierDropDown)
 			WebUI.delay(3)
 			action.SelectByIndex(SuplierDropDown, 1)
 			WebUI.delay(3)
+			String supplierValueBeforeEdit = action.GetselectedText(SuplierDropDown)
+			println "++++++"+ supplierValueBeforeEdit
 
+			
+			WebUI.delay(3)
+			action.SelectByIndex(SuplierDropDown, 2)
+			WebUI.delay(3)
 			String supplierValueAfterEdit = action.GetselectedText(SuplierDropDown)
 			println "++++++"+ supplierValueAfterEdit
 			WebUI.delay(2)

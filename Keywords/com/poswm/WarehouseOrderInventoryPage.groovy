@@ -180,4 +180,16 @@ public class WarehouseOrderInventoryPage {
 		}
 	}
 
+	@Keyword
+	public void VerifyOrderSearchPage()
+	{
+		try{
+			action.VerifyCurrentPage("WarehouseOrderInventory.aspx")
+		}
+		catch(Exception e) {
+			Assert.fail("VerifyOrderSearchPage failed due to "+ e)
+		}
+
+	}
+
 }

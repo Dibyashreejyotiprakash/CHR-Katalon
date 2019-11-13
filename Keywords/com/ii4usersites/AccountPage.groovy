@@ -45,11 +45,11 @@ public class AccountPage {
 		String actualprofilelable = null
 		String actualaccoutresourcemsg = action.GetText(accountlabel)
 		println ("Profile resource message is appearing "+ actualaccoutresourcemsg )
-		if(actualaccoutresourcemsg.equals(expectedaccountlable)) {
+		if(actualaccoutresourcemsg.equalsIgnoreCase(expectedaccountlable)) {
 			println ("Profile resource message is appearing "+ actualaccoutresourcemsg )
 		}
 		else {
-			Assert.fail()
+			Assert.fail("account name is not matching")
 		}
 	}
 
@@ -150,11 +150,29 @@ public class AccountPage {
 			break;
 		}
 	}
+	
+	@Keyword
+	public void VerifyLogoLockerResourceMsg() {
+		String expectedlogolockerlable = GlobalVariable.resourcemsglogolocker
+		println ("Expected Lable for Profile "+ expectedlogolockerlable)
+		List<WebElement> alllables = action.GetElements(allbuttons)
+		String actuallogolockerlable = null
+		for(int i=0;i<= alllables.size();i++) {
+			actuallogolockerlable = alllables.get(4).getText()
+			if(actuallogolockerlable.equals(expectedlogolockerlable)) {
+				println ("Profile resource message is appearing "+ actuallogolockerlable )
+			}
+			else {
+				Assert.fail()
+			}
+			break;
+		}
+	}
 
 	@Keyword
 	public void VerifyDeleteProfileGlobalMsg() {
 		WebUI.delay(3)
-		String expectedprofilelable = GlobalVariable.globalmsgprofile
+		String expectedprofilelable = "Profile"
 		List<WebElement> alllables = action.GetElements(allbuttons)
 		String actualprofilelables = null
 		for(int i=0;i<= alllables.size();i++) {
@@ -171,20 +189,80 @@ public class AccountPage {
 	}
 
 
+	@Keyword
+	public void VerifyDeleteAddressBookResourceMsg() {
+		String expectedaddressbooklable = "Address Book"
+		println ("Expected Lable for Reports "+ expectedaddressbooklable)
+		List<WebElement> alllables = action.GetElements(allbuttons)
+		String actualaddressbooklable = null
+		for(int i=0;i<= alllables.size();i++) {
+			actualaddressbooklable = alllables.get(2).getText()
+			println ("Report resource message is appearing "+ actualaddressbooklable )
+			if(actualaddressbooklable.equals(expectedaddressbooklable)) {
+				println ("Report resource message is appearing "+ actualaddressbooklable )
+			}
+			else {
+				Assert.fail()
+			}
+			break;
+		}
+	}
 
 
+	@Keyword
+	public void VerifyDeleteAddressListResourceMsg() {
+		String expectedaddresslistlable = "Address List"
+		println ("Expected Lable for AddressList "+ expectedaddresslistlable)
+		List<WebElement> alllables = action.GetElements(allbuttons)
+		String actualaddresslistlable = null
+		for(int i=0;i<= alllables.size();i++) {
+			actualaddresslistlable = alllables.get(3).getText()
+			println ("Report resource message is appearing "+ actualaddresslistlable )
+			if(actualaddresslistlable.equals(expectedaddresslistlable)) {
+				println ("Report resource message is appearing "+ actualaddresslistlable )
+			}
+			else {
+				Assert.fail()
+			}
+			break;
+		}
+	}
 
+	@Keyword
+	public void VerifyDeleteLogoLockerResourceMsg() {
+		String expectedlogolockerlable = "Logo Locker"
+		println ("Expected Lable for Profile "+ expectedlogolockerlable)
+		List<WebElement> alllables = action.GetElements(allbuttons)
+		String actuallogolockerlable = null
+		for(int i=0;i<= alllables.size();i++) {
+			actuallogolockerlable = alllables.get(4).getText()
+			if(actuallogolockerlable.equals(expectedlogolockerlable)) {
+				println ("Profile resource message is appearing "+ actuallogolockerlable )
+			}
+			else {
+				Assert.fail()
+			}
+			break;
+		}
+	}
 
-
-
-
-
-
-
-
-
-
-
+	@Keyword
+	public void VerifyDeleteProjectsResourceMsg() {
+		String expectedprojectslable = "Projects"
+		println ("Expected Lable for Profile "+ expectedprojectslable)
+		List<WebElement> alllables = action.GetElements(allbuttons)
+		String actualprojectslables = null
+		for(int i=0;i<= alllables.size();i++) {
+			actualprojectslables = alllables.get(5).getText()
+			if(actualprojectslables.equals(expectedprojectslable)) {
+				println ("Profile resource message is appearing "+ actualprojectslables )
+			}
+			else {
+				Assert.fail()
+			}
+			break;
+		}
+	}
 
 	@Keyword
 	public void VerifyDeleteReportsGlobalMsg() {

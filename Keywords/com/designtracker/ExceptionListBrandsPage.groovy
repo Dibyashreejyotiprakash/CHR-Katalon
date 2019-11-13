@@ -65,12 +65,12 @@ class ExceptionListBrandsPage {
 	@Keyword
 	public void VerifyAllDropDownInBrandExceptionList() {
 		try {
-			WebUI.delay(2)
+			//WebUI.delay(2)
 			boolean statusofcorpddn  =     action.IsElementDisplayed(corporationddn)
 			Assert.assertTrue(statusofcorpddn, "Corporation dropdown visible")
 			action.SelectByText(corporationddn, "Instant Impact 4.0 Demo Corp (Dist.)")
 
-			WebUI.delay(10)
+			//WebUI.delay(10)
 			boolean statusofmarketddn  =     action.IsElementDisplayed(corporationddn)
 			Assert.assertTrue(statusofmarketddn, "Market dropdown visible")
 			action.SelectByText(marketddn, "Chicago Beverage Systems")
@@ -89,23 +89,23 @@ class ExceptionListBrandsPage {
 			//action.WaitVisible(marketddn)
 			action.SelectByText(marketddn, "Demo Dist. 1 QA")
 
-			//WebUI.delay(7)
+			////WebUI.delay(7)
 			action.SelectByText(marketSupplierddn, "Demo Dist. 1 QA")
 
-			//WebUI.delay(7)
+			////WebUI.delay(7)
 			action.SelectByText(brandsddn, "TestBrand")
 
-			//WebUI.delay(5)
+			////WebUI.delay(5)
 			action.Click(insertSelBrandBtn)
 
-			//WebUI.delay(3)
+			////WebUI.delay(3)
 			boolean statusofSuccessMsg  =     action.IsElementDisplayed(successInsertMsg)
 			Assert.assertTrue(statusofSuccessMsg, "Success msg for insert is visible")
 
-			//WebUI.delay(2)
+			////WebUI.delay(2)
 			action.Click(checkBoxToBrand)
 
-			//WebUI.delay(2)
+			////WebUI.delay(2)
 			action.Click(delSelBrandBtn)
 		}
 		catch(Exception e) {
@@ -119,29 +119,30 @@ class ExceptionListBrandsPage {
 		try {
 			action.SelectByText(corporationddn, "Demo Distributor (QA)")
 
-			WebUI.delay(7)
+			//WebUI.delay(7)
+			action.WaitVisibleDup(marketddn)
 			action.SelectByText(marketddn, "Demo Dist. 1 QA")
 
-			WebUI.delay(7)
+			//WebUI.delay(7)
 			action.SelectByText(marketSupplierddn, "Demo Dist. 1 QA")
 
-			WebUI.delay(10)
+			//WebUI.delay(10)
 			action.SelectByText(brandsddn, "TestBrand")
 
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.Click(insertSelBrandBtn)
 
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			boolean statusofSuccessMsg  =     action.IsElementDisplayed(successInsertMsg)
 			Assert.assertTrue(statusofSuccessMsg, "Success msg for insert is visible")
 
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.Click(checkBoxToBrand)
 
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.Click(delSelBrandBtn)
 
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			boolean statusofDeleteMsg  =     action.IsElementDisplayed(successDelMsg)
 			Assert.assertTrue(statusofDeleteMsg, "Success msg for delete is visible")
 		}
@@ -156,35 +157,35 @@ class ExceptionListBrandsPage {
 		try {
 			action.SelectByText(corporationddn, "Demo Distributor (QA)")
 
-			WebUI.delay(7)
+			//WebUI.delay(7)
 			action.SelectByText(marketddn, "Demo Dist. 1 QA")
 
-			WebUI.delay(7)
+			//WebUI.delay(7)
 			action.SelectByText(marketSupplierddn, "Demo Dist. 1 QA")
-			WebUI.delay(10)
+			//WebUI.delay(10)
 			action.SelectByText(brandsddn, "TestBrand")
 
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.Click(insertSelBrandBtn)
 
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			boolean statusofSuccessMsg  =     action.IsElementDisplayed(successInsertMsg)
 			Assert.assertTrue(statusofSuccessMsg, "Success msg for insert is visible")
 
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.Click(insertSelBrandBtn)
 
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			boolean statusofErrorMsgOnInsertingDuplidate  =     action.IsElementDisplayed(ErrorMsgOnInsertingDuplidateBrand)
 			Assert.assertTrue(statusofErrorMsgOnInsertingDuplidate, "Error msg for inserting duplicate is visible")
 
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.Click(checkBoxToBrand)
 
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.Click(delSelBrandBtn)
 
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			boolean statusofDeleteMsg  =     action.IsElementDisplayed(successDelMsg)
 			Assert.assertTrue(statusofDeleteMsg, "Success msg for delete is visible")
 		}
@@ -199,39 +200,39 @@ class ExceptionListBrandsPage {
 		try {
 			action.SelectByText(corporationddn, "Demo Distributor (QA)")
 
-			WebUI.delay(7)
+			//WebUI.delay(7)
 			action.SelectByText(marketddn, "Demo Dist. 1 QA")
 
-			WebUI.delay(7)
+			//WebUI.delay(7)
 			action.SelectByText(marketSupplierddn, "Demo Dist. 1 QA")
 
-			WebUI.delay(10)
+			//WebUI.delay(10)
 			action.SelectByText(brandsddn, "TestBrand")
 
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.Click(insertSelBrandBtn)
 
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			boolean statusofSuccessMsg  =     action.IsElementDisplayed(successInsertMsg)
 			Assert.assertTrue(statusofSuccessMsg, "Success msg for insert is visible")
 
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.SelectByText(brandsddn, "TestBrand1")
 
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.Click(insertSelBrandBtn)
 
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			boolean statusofSuccessMsgOnAddingBrand2  =     action.IsElementDisplayed(successInsertMsg)
 			Assert.assertTrue(statusofSuccessMsgOnAddingBrand2, "Success msg for insert is visible")
 
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.Click(checkBoxToSelAllBrandName)
 
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.Click(delSelBrandBtn)
 
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			boolean statusofDeleteMsg  =     action.IsElementDisplayed(successDelMsg)
 			Assert.assertTrue(statusofDeleteMsg, "Success msg for delete is visible")
 		}

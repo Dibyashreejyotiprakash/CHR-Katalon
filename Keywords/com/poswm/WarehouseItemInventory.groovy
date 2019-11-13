@@ -282,7 +282,7 @@ public class WarehouseItemInventory {
 			{
 				boolean statusofsupplierfilter= action.IsElementEnabled(linkSupplier)
 				boolean statusofbrandfilter= action.IsElementEnabled(linkBrands)
-				boolean statusofdemographicfilter= action.IsElementEnabled(linkDemographic)
+				//boolean statusofdemographicfilter= action.IsElementEnabled(linkDemographic)
 				boolean statusofpremisetypefilter= action.IsElementEnabled(linkPremiseType)
 				boolean statusofproducttypefilter= action.IsElementEnabled(linkProductType)
 				boolean statusofsalesdivisionfilter= action.IsElementEnabled(linkSalesDivision)
@@ -291,7 +291,7 @@ public class WarehouseItemInventory {
 				boolean statusofwarehouselocationfilter= action.IsElementEnabled(linkWarehouseLocation)
 				boolean statusofotherfilter= action.IsElementEnabled(linkOtherFilters)
 
-				if(statusofsupplierfilter== true  && statusofbrandfilter == true && statusofdemographicfilter == true && statusofpremisetypefilter == true && statusofproducttypefilter == true && statusofsalesdivisionfilter == true && statusofseasonaltypefilter == true
+				if(statusofsupplierfilter== true  && statusofbrandfilter == true && statusofpremisetypefilter == true && statusofproducttypefilter == true && statusofsalesdivisionfilter == true && statusofseasonaltypefilter == true
 				&& statusofwarehousefilter == true && statusofwarehouselocationfilter == true && statusofotherfilter == true)
 				{
 					println ("All link filters are present/enable")
@@ -426,35 +426,14 @@ public class WarehouseItemInventory {
 	@Keyword
 	public void VeriyItemSearchPage()
 	{
-		try{
-
 			String expectedUATUrl = "https://csg.v5qa.brandmuscle.net/Warehouse/Admin/UserTransfer.aspx";
 			String expectedSTAGEUrl ="https://csg.v5stgae.brandmuscle.net/Warehouse/Admin/UserTransfer.aspx"
 
-			action.WaitTime(5)
-			String env = GlobalVariable.environment
-			action.WaitTime(5)
-			println "environment is -------->"+ env
-			String actualUrl = action.GetCurrentURL()
-			action.WaitTime(5)
-			println "environment is -------->"+ actualUrl
-
-			if(env.equalsIgnoreCase("uat"))
-			{
-				Assert.assertEquals(expectedUATUrl, actualUrl)
-			}
-			else
-				(env.equalsIgnoreCase("stage"))
-			{
-				Assert.assertEquals(expectedSTAGEUrl, actualUrl)
-			}
-
-
+		try{
+			action.VerifyCurrentPage("WarehouseItemInventory.aspx")
 		}
-		catch(Exception e)
-		{
-			println("VeriyItemSearchPage method failed due to :" +e)
-			Assert.fail()
+		catch(Exception e) {
+			Assert.fail("VerifyItemSearchPage failed due to "+ e)
 		}
 	}
 

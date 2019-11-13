@@ -18,23 +18,17 @@ import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.utilities.Interaction
-
-import com.utilities.Interaction
 import internal.GlobalVariable
-import org.openqa.selenium.WebDriver
 import org.testng.Assert
 import org.openqa.selenium.Alert
 import org.openqa.selenium.By
 import com.kms.katalon.core.webui.driver.DriverFactory
-import internal.GlobalVariable
-
 
 
 public class WarehouseDashBoardPage {
 
 	Interaction action = new Interaction();
 	WebDriver driver = DriverFactory.getWebDriver()
-
 
 
 	By downloadDivisionForDraftOrder = By.xpath("//*[@id='ctl00_MainContent_rmItemCommands']")
@@ -50,7 +44,7 @@ public class WarehouseDashBoardPage {
 	By orderPackList = By.xpath("//*[text()='Order Pack List']")
 	By reportBatches = By.xpath("//*[text()='Report Batches']")
 	By userGuide = By.xpath("//*[text()='User Guide']")
-	By plusIcon = By.xpath("//*[@id='ctl00_MainContent_RadDock1_C_btnNewOrder']")
+	By plusIcon = By.xpath("//li[@class='rmItem rmFirst']//img[@class='rmLeftImage']")
 	By ItemInfoDiv = By.xpath("//*[text()='Step 1: Item Information']")
 
 
@@ -93,7 +87,7 @@ public class WarehouseDashBoardPage {
 	By myOrderViewOrderLink = By.xpath(" //*[@id='ctl00_MainContent_rdMyOrders_C_rgMyOrders_ctl00']//following-sibling::tbody/tr[1]/td[1]")
 	By myOrderCancelOrderLink = By.xpath(" //*[@id='ctl00_MainContent_rdMyOrders_C_rgMyOrders_ctl00']//following-sibling::tbody/tr[1]/td[2]")
 	By OrderPcakListLink = By.xpath("//*[text()='Order Pack List']")
-	By PrintIcon = By.xpath("//*[@name='ctl00$MainContent$tlrkReportViewer$ReportToolbar$PrintGr$Print$ctl00']")
+	//By PrintIcon = By.xpath("//*[@name='ctl00$MainContent$tlrkReportViewer$ReportToolbar$PrintGr$Print$ctl00']")
 	By warehouse = By.xpath("//*[text()='Warehouse']")
 	By newitem = By.xpath("//*[text()='New Item']")
 	By neworder = By.xpath("//*[text()='New Order']")
@@ -139,6 +133,7 @@ public class WarehouseDashBoardPage {
 		try{
 			action.MouseHoverOnElement(warehouse)
 			action.WaitVisible(ordersearch)
+			WebUI.delay(3)
 			action.Click(ordersearch)
 			action.WaitForPageToLoad()
 		}
@@ -342,6 +337,10 @@ public class WarehouseDashBoardPage {
 	@Keyword
 	public void ClickAndVerifyCompletedOrdersLink() {
 		try{
+			println "hi"
+			action.WaitForPageToLoad()
+			WebUI.delay(3)
+			action.WaitTime(2)
 			action.WaitVisible(completedOrder)
 			boolean statuswareHouseOrderLink = action.IsElementEnabled(completedOrder)
 			if(statuswareHouseOrderLink == true){
@@ -433,11 +432,12 @@ public class WarehouseDashBoardPage {
 			if(statuswareHouseOrderLink == true){
 				action.Click(orderPackList)
 				action.WaitForPageToLoad()
-				action.WaitVisible(plusIcon)  //need to change xpath
-				println ("Warehouse item inventory link is enable");
+				action.VerifyCurrentPage("TelerikPickList.aspx")
+				//action.WaitVisible(plusIcon)  //need to change xpath
+				//println ("Warehouse item inventory link is enable");
 			}
 			else{
-				throw new Exception ("Ware house item inventory link is disabled")
+				throw new Exception ("OrderPackListLink is disabled")
 			}
 		}
 		catch(Exception e)
@@ -459,7 +459,7 @@ public class WarehouseDashBoardPage {
 				action.VerifyCurrentPage("WarehouseOrderReportBatch.aspx")
 			}
 			else{
-				Assert.fail("Click And Verify Report Batches Link is disabled")
+				Assert.fail("ReportBatchesLink is disabled")
 			}
 		}
 		catch(Exception e)
@@ -533,7 +533,7 @@ public class WarehouseDashBoardPage {
 			Assert.fail("Click On Warehouse Users failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
 	public void ClickOnOrderPackList()
 	{
@@ -557,7 +557,7 @@ public class WarehouseDashBoardPage {
 	{
 		try
 		{
-			action.Click(PrintIcon)
+			//action.Click(PrintIcon)
 			WebUI.delay(10)
 			action.WindowHandle()
 

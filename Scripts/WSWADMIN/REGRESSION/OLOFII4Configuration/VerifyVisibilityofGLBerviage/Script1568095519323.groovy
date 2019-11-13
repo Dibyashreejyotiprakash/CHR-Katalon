@@ -17,8 +17,6 @@ CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameiiusersit
 
 CustomKeywords.'com.ii4usersites.LoginPage.LoginToDemoCorp'(GlobalVariable.iiusersiteusername, GlobalVariable.iiusersitepassword)
 
-CustomKeywords.'com.ii4usersites.LoginPage.LoginToDemoCorp'(GlobalVariable.iiusersiteusername, GlobalVariable.iiusersitepassword)
-
 CustomKeywords.'com.ii4usersites.HomePage.ClickOnOrderForm'()
 
 CustomKeywords.'com.ii4usersites.OrderFormDefaultPage.ClickonCreateNewCustomOrder'()
