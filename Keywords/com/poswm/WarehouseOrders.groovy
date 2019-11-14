@@ -265,16 +265,15 @@ public class WarehouseOrders {
 			String expectedPRODUrl = "https://csg.v5prod.brandmuscle.net/Warehouse/WarehouseOrders.aspx";
 
 			/*String env = GlobalVariable.environment
-			String actualUrl = action.GetCurrentURL();
-			WebUI.delay(5)
-
-			if(env.equalsIgnoreCase("uat")) {
-				Assert.assertEquals(expectedUATUrl, actualUrl)
-			}
-			else if(env.equalsIgnoreCase("staging")) {
-				Assert.assertEquals(expectedSTAGEUrl, actualUrl)
-			}*/
-		    action.VerifyCurrentPage("WarehouseOrders.aspx")
+			 String actualUrl = action.GetCurrentURL();
+			 WebUI.delay(5)
+			 if(env.equalsIgnoreCase("uat")) {
+			 Assert.assertEquals(expectedUATUrl, actualUrl)
+			 }
+			 else if(env.equalsIgnoreCase("staging")) {
+			 Assert.assertEquals(expectedSTAGEUrl, actualUrl)
+			 }*/
+			action.VerifyCurrentPage("WarehouseOrders.aspx")
 		}
 		catch(Exception e) {
 			Assert.fail("Verify New Order page failed due to "+ e)
@@ -529,7 +528,7 @@ public class WarehouseOrders {
 	public void VerifyNewItemPage() {
 		try{
 			action.VerifyCurrentPage("WarehouseItem.aspx")
-			
+
 		}
 		catch(Exception e) {
 			Assert.fail("VerifyNewItemPage failed due to "+ e)

@@ -486,7 +486,7 @@ public  class Interaction {
 	public void  ScrollToViewelement(By by)
 	{
 		WebUI.delay(1)
-		js.executeScript("arguments[0].scrolSlIntoView(true);", by);
+		js.executeScript("arguments[0].scrollIntoView(true);", by);
 		WaitVisible(by)
 	}
 

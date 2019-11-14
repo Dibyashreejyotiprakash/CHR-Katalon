@@ -44,13 +44,15 @@ public class OrderFormMenuBookDetailsPage {
 			action.Type(joblinename, "test")
 			action.Click(productgroupddn)
 			action.Click(productgroupddnvalue)
+			action.ScrollToBottomOfPage()
 			boolean statusofnextbtn = action.IsElementDisplayed(nextbtn)
-			WebUI.delay(10)
+			WebUI.delay(5)
+			println (statusofnextbtn)
 			if(statusofnextbtn == true) {
 				action.WaitUntilElementClickable(nextbtn)
 				action.Click(nextbtn)
 			}
-		}
+		    }
 		catch(Exception e) {
 			println ("Enter Values To Job Details page failed due to "+ e)
 		}
