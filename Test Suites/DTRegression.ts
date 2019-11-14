@@ -341,18 +341,6 @@
       <testCaseId>Test Cases/IIDT/DT REGRESSION/SITEADMIN/JobLineStratification/ValidateNewStratificationInList</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>3f9c61fb-6d5a-4e65-b83c-b9e377c98ee0</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/DT REGRESSION/SITEADMIN/Jobtype/CreateNewJobType</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>38f0384b-4c97-4b94-a014-87ce11b3096c</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/DT REGRESSION/SITEADMIN/Jobtype/VerifyCreatedNewJbTypeInCreateNewJobPage</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
       <guid>5e85efa8-81e5-4add-95f4-4685526550b0</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
@@ -447,5 +435,17 @@
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/IIDT/DT REGRESSION/SITEADMIN/SupplierBrandManagers/ErrorOnAddingDupSupplierBrandManager</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>66d2a031-150c-48e1-80ae-eae7eb8d9684</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/IIDT/DT REGRESSION/SITEADMIN/JobType1/CreateNewJobType</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>fea0c131-b4b4-4eeb-85d5-2b2ecd2c782f</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/IIDT/DT REGRESSION/SITEADMIN/JobType1/VerifyCreatedNewJbTypeInCreateNewJobPage</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>
