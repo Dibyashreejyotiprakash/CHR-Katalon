@@ -6,6 +6,7 @@ import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
 import org.openqa.selenium.WebDriver
+import org.openqa.selenium.interactions.Actions
 
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.checkpoint.Checkpoint
@@ -25,6 +26,8 @@ import org.openqa.selenium.WebDriver
 import org.testng.Assert
 import org.openqa.selenium.Alert
 import org.openqa.selenium.By
+import org.openqa.selenium.Keys
+
 import com.kms.katalon.core.webui.driver.DriverFactory
 import internal.GlobalVariable
 
@@ -98,7 +101,8 @@ public class WarehouseItem {
 	By QtyTextField = By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i3_i0_ucItemTransactions_radItemQuantity']")
 	By SaveBtn = By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i3_i0_ucItemTransactions_btnSaveItemBin_input']")
 	By CloseEditModeBtn = By.xpath("//*[@id='MainContent_btnCloseWizard']")
-
+	By itemInfoSaveBtnAfterSave = By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_btnUpdate']")
+	By salesDivDropDownArrowBtn = By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_radSalesDivision_Arrow']")
 	By iteminfogrid = By.xpath("//*[text()='Step 1: Item Information']")
 
 	@Keyword
@@ -135,7 +139,7 @@ public class WarehouseItem {
 		String itemname = null
 		try
 		{
-			String itemname = null
+			//String itemname = null
 			if(action.IsDisplayed(txbName))
 			{
 				itemname = EnterUniqueItemName()
@@ -176,10 +180,10 @@ public class WarehouseItem {
 			{
 				EnterNotes()
 			}
-			if(action.IsDisplayed(txbUnitCost))
-			{
-				EnterUnitCost()
-			}
+			/*if(action.IsDisplayed(txbUnitCost))
+			 {
+			 EnterUnitCost()
+			 }*/
 			if(action.IsDisplayed(txbUnitOfMeasure))
 			{
 				EnterUnitOfMeasure()
@@ -214,10 +218,10 @@ public class WarehouseItem {
 		try{
 			if(action.IsElementDisplayed(txbName))
 			{
-				WebUI.delay(3)
+				////WebUI.delay(3)
 				itemName = action.GenerateRandomAplphabaNeumericString(5)
 				action.Type(txbName, itemName)
-				WebUI.delay(3)
+				////WebUI.delay(3)
 			}
 			else
 			{
@@ -239,12 +243,12 @@ public class WarehouseItem {
 		{
 			if(action.IsElementDisplayed(ApproverDropDown))
 			{
-				WebUI.delay(3)
+				////WebUI.delay(3)
 				action.Click(ApproverDropDown)
 				//action.WaitVisible(approverListDivision)
-				action.WaitTime(3)
+				////action.WaitTime(3)
 				action.Click(approverFirst)
-				action.WaitTime(3)
+				////action.WaitTime(3)
 			}
 			else
 			{
@@ -265,12 +269,12 @@ public class WarehouseItem {
 		{
 			if(action.IsElementDisplayed(productType))
 			{
-				WebUI.delay(3)
+				////WebUI.delay(3)
 				action.Click(productType)
 				action.WaitVisible(divProductType)
-				action.WaitTime(3)
+				////action.WaitTime(3)
 				action.Click(firstProductType)
-				action.WaitTime(3)
+				////action.WaitTime(3)
 			}
 			else
 			{
@@ -291,12 +295,12 @@ public class WarehouseItem {
 		{
 			if(action.IsElementDisplayed(supplierDropDown))
 			{
-				WebUI.delay(3)
+				////WebUI.delay(3)
 				action.Click(supplierDropDown)
 				action.WaitVisible(supplierListDivision)
-				action.WaitTime(3)
+				////action.WaitTime(3)
 				action.Click(supplierFirstOption)
-				action.WaitTime(5)
+				////action.WaitTime(5)
 			}
 			else
 			{
@@ -317,12 +321,12 @@ public class WarehouseItem {
 		{
 			if(action.IsElementDisplayed(PremiseTypeDropDown))
 			{
-				WebUI.delay(3)
+				////WebUI.delay(3)
 				action.Click(PremiseTypeDropDown)
 				action.WaitVisible(PremiseTypeListDiv)
-				action.WaitTime(3)
+				////action.WaitTime(3)
 				action.Click(PremiseTypeListDiv)
-				action.WaitTime(3)
+				////action.WaitTime(3)
 			}
 			else
 			{
@@ -343,16 +347,16 @@ public class WarehouseItem {
 		{
 			if(action.IsElementDisplayed(salesDivisionDropDown))
 			{
-				WebUI.delay(3)
+				////WebUI.delay(3)
 				action.Click(salesDivisionDropDown)
 				//action.WaitVisible(salesDivisionListDiv)
-				action.WaitTime(3)
+				////action.WaitTime(3)
 				action.Click(salesDivisionSecondOption)
-				action.WaitTime(2)
+				////action.WaitTime(2)
 				action.Click(salesDivisionThirdOption)
-				action.WaitTime(2)
+				////action.WaitTime(2)
 				action.Click(salesDivisionFourthOption)
-				action.WaitTime(2)
+				////action.WaitTime(2)
 			}
 			else
 			{
@@ -373,11 +377,14 @@ public class WarehouseItem {
 		{
 			if(action.IsElementDisplayed(salesDivisionDropDown))
 			{
-				WebUI.delay(3)
+				////WebUI.delay(3)
 				action.Click(salesDivisionDropDown)
 				//action.WaitVisible(salesDivisionListDiv)
-				action.WaitTime(3)
+				////action.WaitTime(3)
 				action.Click(salesDivisionSecondOption)
+				action.Click(salesDivDropDownArrowBtn)
+				String selectedSalesDiv = action.GetText(salesDivisionDropDown)
+				println "+++++++++++++++" + selectedSalesDiv
 			}
 			else
 			{
@@ -401,12 +408,12 @@ public class WarehouseItem {
 		{
 			if(action.IsElementDisplayed(seasonalType))
 			{
-				WebUI.delay(3)
+				////WebUI.delay(3)
 				action.Click(seasonalType)
 				//action.WaitVisible(seasonalTypeDiv)
-				action.WaitTime(3)
+				////action.WaitTime(3)
 				action.Click(seasonalTypeFisrOption)
-				action.WaitTime(3)
+				////action.WaitTime(3)
 
 			}
 			else
@@ -427,12 +434,12 @@ public class WarehouseItem {
 		{
 			if(action.IsElementDisplayed(demographicsDropDown))
 			{
-				WebUI.delay(5)
+				////WebUI.delay(5)
 				action.Click(demographicsDropDown)
 				action.WaitVisible(demographicsDiv)
-				action.WaitTime(3)
+				////action.WaitTime(3)
 				action.Click(demographic2ndOption)
-				action.WaitTime(5)
+				////action.WaitTime(5)
 
 			}
 			else
@@ -454,7 +461,7 @@ public class WarehouseItem {
 		{
 			if(action.IsElementDisplayed(txbDescription))
 			{
-				WebUI.delay(3)
+				////WebUI.delay(3)
 				action.Type(txbDescription, "TestDesc")
 
 			}
@@ -476,7 +483,7 @@ public class WarehouseItem {
 		{
 			if(action.IsElementDisplayed(txbNotes))
 			{
-				WebUI.delay(3)
+				////WebUI.delay(3)
 				action.Type(txbNotes, "TestNotes")
 
 			}
@@ -498,7 +505,7 @@ public class WarehouseItem {
 		{
 			if(action.IsElementDisplayed(txbUnitCost))
 			{
-				WebUI.delay(3)
+				////WebUI.delay(3)
 				action.Type(txbUnitCost, "10")
 
 			}
@@ -522,7 +529,7 @@ public class WarehouseItem {
 			{
 
 				action.Type(txbUnitOfMeasure, "EACH")
-				WebUI.delay(3)
+				////WebUI.delay(3)
 
 			}
 			else
@@ -545,15 +552,15 @@ public class WarehouseItem {
 
 			//action.WaitUntilElementClickable(saveIconItemInfo)
 			action.ScrollToBottomOfPage()
-			//WebUI.delay(3)
+			////WebUI.delay(3)
 			action.Click(saveIconItemInfo)
-			action.WaitTime(15)
+			////action.WaitTime(15)
 			//action.WaitTillNotVisible(itemInformationConfirmationMsg, 300)
 			//action.ScrollToViewElement(nextButton)
 			action.Click(nextButton)
-			action.WaitTime(5)
+			////action.WaitTime(5)
 			//action.WaitVisible(divisionImage)
-			//action.WaitTime(5)
+			////action.WaitTime(5)
 
 
 		}
@@ -574,9 +581,9 @@ public class WarehouseItem {
 		try{
 			action.ScrollToViewElement(saveIconImage)
 			action.Click(saveIconImage)
-			action.WaitTime(2)
+			//action.WaitTime(2)
 			action.Click(imageNextBtn)
-			action.WaitTime(5)
+			//action.WaitTime(5)
 			//action.WaitVisible(divBrands)
 		}
 		catch(Exception e){
@@ -595,20 +602,22 @@ public class WarehouseItem {
 				action.Click(transeferRightBtn)
 				action.ScrollToViewElement(brandSaveBtn)
 				action.Click(brandSaveBtn)
-				action.WaitTime(15)
+				//action.WaitTime(15)
 				action.Click(brandNextBtn)
-				action.WaitTime(3)
+				//action.WaitTime(3)
 
 			}
 			else
 			{
 				throw new Exception("Brand values are not present in grid")
 			}
-			catch(Exception e){
+		}
+		catch(Exception e){
 				println("FillBrandSection method failed due to :" + e)
 				Assert.fail()
-			}
-		}
+	    }
+
+	}
 
 		@Keyword
 		public void FillTransactionsSection()
@@ -642,7 +651,6 @@ public class WarehouseItem {
 				if(action.IsElementEnabled(SaveBtn)){
 					action.Click(SaveBtn)
 					action.WaitTime(10)
-
 				}
 				else{
 					println ("Save button not present/failed")
@@ -669,26 +677,87 @@ public class WarehouseItem {
 				else{
 					println ("Close Edit Mode button not present/failed")
 				}
-
 			}
 			catch(Exception e){
 				println("ClickOnCloseEditMode method failed due to :" + e)
 				Assert.fail()
 			}
-
 		}
 
+		/*@Keyword
+		 public String SelectSpecificProductTypeAndVerifyUnitCost(String itemPropertyName,String defaultPrice)
+		 {
+		 String unitCostValue = null
+		 try
+		 {
+		 Actions act = new Actions(Driver)
+		 action.Click(productType)
+		 //WebUI.delay(3)
+		 action.Type(productType, itemPropertyName)
+		 //WebUI.delay(3)
+		 act.sendKeys(Keys.ENTER)
+		 //WebUI.delay(5)
+		 unitCostValue = action.GetText(txbUnitCost)
+		 Assert.assertTrue(unitCostValue.equals(defaultPrice))
+		 return unitCostValue
+		 }
+		 catch(Exception e)
+		 {
+		 Assert.fail("SelectProductType method failed due to :" + e)
+		 }
+		 }*/
 
 
+		@Keyword
+		public void SelectSpecificProductType(String itemPropertyName)
+		{
+			try
+			{
+				action.Type(txbName, "Test")
 
+				SelectSuplier()
 
+				SelectPremiseType()
 
+				SelectSalesDivision()
 
+				SelectSeasonalType()
 
+				EnterUnitOfMeasure()
 
+				action.Click(productType)
+				//WebUI.delay(3)
+				action.Type(productType, itemPropertyName)
+				//WebUI.delay(5)
 
+				action.Enter(productType)
+				//WebUI.delay(5)
+				action.Click(saveIconItemInfo)
+				//WebUI.delay(8)
+				/*action.ScrollToBottomOfPage()
+				 action.Click(itemInfoSaveBtnAfterSave)*/
+				//WebUI.delay(5)
+			}
+			catch(Exception e)
+			{
+				Assert.fail("SelectSpecificProductType method failed due to :" + e)
+			}
+		}
 
+		@Keyword
+		public void VerifyUnitCostPrice(String actualDefoultPrice)
+		{
+			try
+			{
+				String unitCostValue = driver.findElement(By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_radUnitCost']")).getAttribute("value")
+				//WebUI.delay(5)
+				println("**********" + unitCostValue)
+				Assert.assertTrue(unitCostValue.equals(actualDefoultPrice))
 
-
-
-	}
+			}
+			catch(Exception e)
+			{
+				Assert.fail("VerifyUnitCostPrice method failed due to :" + e)
+			}
+		}
+}
