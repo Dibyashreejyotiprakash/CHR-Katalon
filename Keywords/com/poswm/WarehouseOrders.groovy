@@ -75,25 +75,25 @@ public class WarehouseOrders {
 
 	@Keyword
 	public void VerifyNewOrderPage() {
-	  try{
-		String expectedUATUrl = "https://csg.v5qa.brandmuscle.net/Warehouse/WarehouseItem.aspx";
-		String expectedSTAGEUrl ="https://csg.v5stage.brandmuscle.net/Warehouse/WarehouseItem.aspx"
-		String expectedPRODUrl = "https://csg.v5prod.brandmuscle.net/Warehouse/WarehouseItem.aspx";
+		try{
+			String expectedUATUrl = "https://csg.v5qa.brandmuscle.net/Warehouse/WarehouseItem.aspx";
+			String expectedSTAGEUrl ="https://csg.v5stage.brandmuscle.net/Warehouse/WarehouseItem.aspx"
+			String expectedPRODUrl = "https://csg.v5prod.brandmuscle.net/Warehouse/WarehouseItem.aspx";
 
-		String env = GlobalVariable.environment
-		String actualUrl = action.GetCurrentURL();
-		WebUI.delay(5)
+			String env = GlobalVariable.environment
+			String actualUrl = action.GetCurrentURL();
+			WebUI.delay(5)
 
-		if(env.equalsIgnoreCase("uat")) {
-			Assert.assertEquals(expectedUATUrl, actualUrl)
+			if(env.equalsIgnoreCase("uat")) {
+				Assert.assertEquals(expectedUATUrl, actualUrl)
+			}
+			else if(env.equalsIgnoreCase("staging")) {
+				Assert.assertEquals(expectedSTAGEUrl, actualUrl)
+			}
 		}
-		else if(env.equalsIgnoreCase("staging")) {
-			Assert.assertEquals(expectedSTAGEUrl, actualUrl)
-		}
-	  }
-	catch(Exception e) {
+		catch(Exception e) {
 			Assert.fail("Verify New Order page failed due to "+ e)
-	  }
+		}
 	}
 
 	@Keyword
@@ -282,7 +282,7 @@ public class WarehouseOrders {
 	public void ClickOnItemName() {
 		try {
 			action.Click(itemNameColumn)
-			WebUI.delay(5)	
+			WebUI.delay(5)
 		}
 		catch(Exception e) {
 			Assert.fail("ClickOnItemName method failed due to :"+e)
@@ -312,9 +312,9 @@ public class WarehouseOrders {
 			Assert.fail("ClickOnEditThisItem method failed due to :"+e)
 		}
 	}
-	
-	
-	
+
+
+
 	@Keyword
 	public void AddDesiredShipDate() {
 		try{
@@ -327,42 +327,4 @@ public class WarehouseOrders {
 			Assert.fail("Add Desired Shipping Date and verify failed due to "+ e)
 		}
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }

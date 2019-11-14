@@ -603,92 +603,92 @@ public class WarehouseItem {
 			else
 			{
 				throw new Exception("Brand values are not present in grid")
+			}
+			catch(Exception e){
+				println("FillBrandSection method failed due to :" + e)
+				Assert.fail()
+			}
 		}
-		catch(Exception e){
-			println("FillBrandSection method failed due to :" + e)
-			Assert.fail()
-		}
-	}
 
-	@Keyword
-	public void FillTransactionsSection()
-	{
-		try
+		@Keyword
+		public void FillTransactionsSection()
 		{
-			if(action.IsElementDisplayed(selectWarehouseDropDown))
+			try
 			{
-				action.Click(selectWarehouseDropDown)
-				action.WaitTime(2)
-				action.Click(selectWarehouseFirstValue)
-				action.WaitTime(5)
-			}
-			else
-			{
-				println ("Selelct warehouse drop down not present/failed")
-			}
+				if(action.IsElementDisplayed(selectWarehouseDropDown))
+				{
+					action.Click(selectWarehouseDropDown)
+					action.WaitTime(2)
+					action.Click(selectWarehouseFirstValue)
+					action.WaitTime(5)
+				}
+				else
+				{
+					println ("Selelct warehouse drop down not present/failed")
+				}
 
-			if(action.IsElementDisplayed(selectBinDropDown))
-			{
-				action.Click(selectBinDropDown)
-				action.WaitTime(3)
-				action.Click(selectBinFirstValue)
-				action.WaitTime(3)
-				action.Type(QtyTextField, "5")
-			}
-			else
-			{
-				println ("Selelct Bin drop down not present/failed")
-			}
-			if(action.IsElementEnabled(SaveBtn)){
-				action.Click(SaveBtn)
-				action.WaitTime(10)
+				if(action.IsElementDisplayed(selectBinDropDown))
+				{
+					action.Click(selectBinDropDown)
+					action.WaitTime(3)
+					action.Click(selectBinFirstValue)
+					action.WaitTime(3)
+					action.Type(QtyTextField, "5")
+				}
+				else
+				{
+					println ("Selelct Bin drop down not present/failed")
+				}
+				if(action.IsElementEnabled(SaveBtn)){
+					action.Click(SaveBtn)
+					action.WaitTime(10)
+
+				}
+				else{
+					println ("Save button not present/failed")
+				}
 
 			}
-			else{
-				println ("Save button not present/failed")
+			catch(Exception e)
+			{
+				println("FillTransactionsSection method failed due to :" + e)
+				Assert.fail()
+
+			}
+		}
+
+		@Keyword
+		public void ClickOnCloseEditMode(){
+			try{
+				action.ScrollToTopOgPage()
+				if(action.IsElementDisplayed(CloseEditModeBtn)){
+					action.Click(CloseEditModeBtn)
+					action.WaitForPageToLoad()
+					action.WaitTime(10)
+				}
+				else{
+					println ("Close Edit Mode button not present/failed")
+				}
+
+			}
+			catch(Exception e){
+				println("ClickOnCloseEditMode method failed due to :" + e)
+				Assert.fail()
 			}
 
 		}
-		catch(Exception e)
-		{
-			println("FillTransactionsSection method failed due to :" + e)
-			Assert.fail()
 
-		}
+
+
+
+
+
+
+
+
+
+
+
+
+
 	}
-
-	@Keyword
-	public void ClickOnCloseEditMode(){
-		try{
-			action.ScrollToTopOgPage()
-			if(action.IsElementDisplayed(CloseEditModeBtn)){
-				action.Click(CloseEditModeBtn)
-				action.WaitForPageToLoad()
-				action.WaitTime(10)
-			}
-			else{
-				println ("Close Edit Mode button not present/failed")
-			}
-
-		}
-		catch(Exception e){
-			println("ClickOnCloseEditMode method failed due to :" + e)
-			Assert.fail()
-		}
-
-	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-}
