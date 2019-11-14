@@ -36,15 +36,17 @@ public class FinishingDetailsPage {
 
 	@Keyword
 	public void AddNewNote() {
-		action.ScrollToBottomOfPage()
+		action.WaitForPageToLoad()
+		//action.ScrollToBottomOfPage()
+		//action.ScrollToViewelement(addnewnotebtn)
 		action.WaitUntilElementClickable(addnewnotebtn)
-		WebUI.delay(10)
+		WebUI.delay(5)
 		action.Click(addnewnotebtn)
-		WebUI.delay(10)
+		//WebUI.delay(10)
 		action.Type(addnewtextarea, "Test")
-		WebUI.delay(10)
+		//WebUI.delay(10)
 		action.Click(sabebtn)
-		WebUI.delay(10)
+		//WebUI.delay(10)
 		action.ScrollToBottomOfPage()
 		action.Click(nextbtn)
 		action.WaitForPageToLoad()
