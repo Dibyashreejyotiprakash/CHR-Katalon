@@ -31,6 +31,8 @@ public class OrderFormOrderSumaryPage {
 
 
 	By completeorderbtn = By.xpath("//*[@id='ctl00_Body_btnContinue']")
+	By paymentsection = By.xpath("//*[text()='Payment']")
+	
 
 	@Keyword
 	public void PlaceOrder() {
@@ -41,4 +43,6 @@ public class OrderFormOrderSumaryPage {
 		action.Click(completeorderbtn)
 		action.WaitForPageToLoad()
 	}
+	
+	
 }

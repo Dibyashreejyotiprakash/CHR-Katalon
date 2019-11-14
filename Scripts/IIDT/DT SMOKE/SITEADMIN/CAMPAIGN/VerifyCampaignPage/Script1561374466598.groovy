@@ -27,5 +27,7 @@ CustomKeywords.'com.designtracker.HomePage.VerifyHomePage'()
 
 CustomKeywords.'com.designtracker.HomePage.ClickOnCampaign'()
 
+CustomKeywords.'com.designtracker.CampaignPage.VerifyCampaignPage'()
+
 WebUI.closeBrowser()
 

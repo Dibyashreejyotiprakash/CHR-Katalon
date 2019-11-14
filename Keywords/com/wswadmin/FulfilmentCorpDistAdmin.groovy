@@ -21,7 +21,7 @@ import org.openqa.selenium.WebDriver
 import org.testng.Assert
 import org.openqa.selenium.Alert
 import com.kms.katalon.core.webui.driver.DriverFactory
-import internal.GlobalVariable
+//import internal.GlobalVariable
 
 public class FulfilmentCorpDistAdmin {
 

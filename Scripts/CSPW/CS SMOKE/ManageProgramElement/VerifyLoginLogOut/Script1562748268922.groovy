@@ -22,6 +22,7 @@ CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameconsolida
 CustomKeywords.'com.consolidator.LoginPage.LoginConsolidator'(GlobalVariable.consolusername, GlobalVariable.conslopassword)
 
 CustomKeywords.'com.consolidator.UpdateLogPage.ClickOnLogout'()
+CustomKeywords.'com.consolidator.LoginPage.LogoutFromV5AdminTool'()
 
 WebUI.closeBrowser()
 

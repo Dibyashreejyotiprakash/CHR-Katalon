@@ -35,12 +35,6 @@
       <testCaseId>Test Cases/CSPW/POSW SMOKE/ADMIN/NewItem/VerifyNewItemPage</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>a8fc963b-b57b-4d7e-bafc-0b9cffdb9cc8</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/CSPW/POSW SMOKE/ADMIN/Transfer/VerifyUserItemApprovalTransferPage</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
       <guid>a65d72ee-3bf9-4bfc-a63d-7ae7f9dcdd00</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
@@ -69,36 +63,6 @@
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/CSPW/POSW SMOKE/ChangePassword/VerifyChangePasswordPage</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>60d82bd6-6ae5-423b-94cb-fd0dac52d6c5</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/CSPW/POSW SMOKE/CREATENEWORDER/VerifyAddNewCustomerButton</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>8c2e4dce-f6cc-48b3-b13c-877b3f0c75c6</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/CSPW/POSW SMOKE/CREATENEWORDER/VerifyCancelButton</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>c28be357-ebd9-4849-be70-b94f73f0ea22</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/CSPW/POSW SMOKE/CREATENEWORDER/VerifyNewOrderPageNavigation</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>7f8a1186-130d-4d55-ba48-1aa9dfa9af88</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/CSPW/POSW SMOKE/CREATENEWORDER/VerifySubmitButton</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>3bff587c-a4d5-40c9-9a4c-5487fd73d478</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/CSPW/POSW SMOKE/CREATENEWORDER/VerifySwitchSalesDivisionButton</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>840d6c7b-a370-4d43-b65b-a95e062bc80a</guid>
@@ -140,7 +104,7 @@
       <guid>d5783d78-2eca-4f63-9303-3bd58401bc42</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/CSPW/POSW SMOKE/ODRERSEARCH/VerifyOrderSearchNavigation</testCaseId>
+      <testCaseId>Test Cases/CSPW/POSW SMOKE/ODRERSEARCH/VerifyOrderSearchPage</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>fb02c483-e8e4-4e61-98ac-6cc19c751794</guid>

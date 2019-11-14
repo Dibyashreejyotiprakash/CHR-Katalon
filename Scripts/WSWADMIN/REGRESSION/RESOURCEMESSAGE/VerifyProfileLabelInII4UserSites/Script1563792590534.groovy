@@ -17,7 +17,9 @@ WebUI.openBrowser('')
 
 WebUI.maximizeWindow()
 
-CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamewswadmin, GlobalVariable.testtyperegression, GlobalVariable.environment)
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamewswadmin, GlobalVariable.testtypesmoke,GlobalVariable.environment)
+
+CustomKeywords.'com.wswadmin.LoginPage.WSWlogin'(GlobalVariable.wswadminusername, GlobalVariable.wswpassword)
 
 CustomKeywords.'com.wswadmin.HomePage.NavigateToResourceMessagePage'()
 
@@ -41,5 +43,5 @@ CustomKeywords.'com.ii4usersites.HomePage.VerifyHomePage'()
 
 CustomKeywords.'com.ii4usersites.HomePage.ClickOnAccount'()
 
-CustomKeywords.'com.ii4usersites.AccountPage.VerifyAddressListResourceMsg'()
+CustomKeywords.'com.ii4usersites.AccountPage.VerifyProfileResourceMsg'()
 

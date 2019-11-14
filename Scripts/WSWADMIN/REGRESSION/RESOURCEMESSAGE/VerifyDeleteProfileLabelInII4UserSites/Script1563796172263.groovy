@@ -17,7 +17,9 @@ WebUI.openBrowser('')
 
 WebUI.maximizeWindow()
 
-CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamewswadmin, GlobalVariable.testtyperegression, GlobalVariable.environment)
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamewswadmin, GlobalVariable.testtypesmoke,GlobalVariable.environment)
+
+CustomKeywords.'com.wswadmin.LoginPage.WSWlogin'(GlobalVariable.wswadminusername, GlobalVariable.wswpassword)
 
 CustomKeywords.'com.wswadmin.HomePage.NavigateToResourceMessagePage'()
 
@@ -31,7 +33,7 @@ CustomKeywords.'com.wswadmin.ResourceMessage.VerifyDeleteResourceMessageProfile'
 
 WebUI.closeBrowser()
 
-WebUI.delay(10)
+//WebUI.delay(10)
 
 WebUI.openBrowser('')
 

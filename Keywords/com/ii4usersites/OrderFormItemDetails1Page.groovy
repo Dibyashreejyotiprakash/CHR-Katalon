@@ -37,6 +37,11 @@ public class OrderFormItemDetails1Page {
 	By orderform = By.xpath("//*[@href='default.aspx']")
 	By brandmusclelogo = By.xpath("//*[@id='imgCorporationLogo']")
 	By logout = By.xpath("//*[@id='lbLogout']")
+	
+	By smallprintverbiage = By.xpath("//*[@id='Body_lblSmallPrint']")
+	By largeprintverviage = By.xpath("//*[@id='Body_lblLargePrint']")
+	By booksverbiage = By.xpath("//*[@id='Body_lblMenuBook']")
+	By accessoriesverbiage = By.xpath("//*[@id='Body_lblAccessories']")
 
 	@Keyword
 	public void ClickOnSmallPrintBtn() {
@@ -97,7 +102,7 @@ public class OrderFormItemDetails1Page {
 		action.Click(logout)
 		action.WaitForPageToLoad()
 	}
-	
+
 	@Keyword
 	public void VerifySmallLargeMenuFormat() {
 		try {
@@ -108,6 +113,28 @@ public class OrderFormItemDetails1Page {
 		}
 		catch(Exception e) {
 			println ("Click On Small Print Btn failed due to "+ e)
+		}
+	}
+	
+	@Keyword
+	public void VerifyVerbiageForAllItemType()
+	{
+		try{
+			String smallitemtext = action.GetText(smallprintverbiage)
+			Assert.assertTrue(smallitemtext.contains("Small"))
+			
+			String largeitemtext = action.GetText(largeprintverviage)
+			Assert.assertTrue(smallitemtext.contains("Large"))
+			
+			String bookstext = action.GetText(booksverbiage)
+			Assert.assertTrue(smallitemtext.contains("Book"))
+			
+			String accessoriesitemtext = action.GetText(accessoriesverbiage)
+			Assert.assertTrue(smallitemtext.contains("Accessories"))
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Verify Verbiage For All Item Type failed due to "+ e)
 		}
 	}
 }

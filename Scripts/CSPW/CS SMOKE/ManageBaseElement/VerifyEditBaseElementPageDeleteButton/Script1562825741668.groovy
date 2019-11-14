@@ -32,6 +32,6 @@ CustomKeywords.'com.consolidator.ConsolidatorDefaultPage.ClickOnManageBaseElemen
 CustomKeywords.'com.consolidator.ManageBaseElementPage.VerifyNavigationofEditBaseElementPage'()
 
 CustomKeywords.'com.consolidator.ConsolidatorEditBaseElementPage.VerifyDeleteBtn'()
-
+CustomKeywords.'com.consolidator.LoginPage.LogoutFromV5AdminTool'()
 WebUI.closeBrowser()
 

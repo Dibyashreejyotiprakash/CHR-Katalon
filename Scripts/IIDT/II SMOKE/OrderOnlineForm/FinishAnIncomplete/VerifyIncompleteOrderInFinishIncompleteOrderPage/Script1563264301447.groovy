@@ -27,7 +27,7 @@ CustomKeywords.'com.ii4usersites.OrderFormDefaultPage.ClickonCreateNewCustomOrde
 
 CustomKeywords.'com.ii4usersites.OrderFormOrderHederPage.EnterValuesToFiledsInOrderPageForIncopmleteOrder'()
 
-WebUI.delay(10)
+//WebUI.delay(10)
 
 CustomKeywords.'com.ii4usersites.OrderFormItemDetails1Page.LogOutII4'()
 

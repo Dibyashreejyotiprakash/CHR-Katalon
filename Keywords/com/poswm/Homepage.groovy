@@ -1,3 +1,7 @@
+
+
+
+
 package com.poswm
 
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
@@ -47,15 +51,15 @@ public class Homepage {
 	By removeitem = By.xpath("//*[@id='ctl00_MainContent_rdPendingApproval_C_rgPendingApprovalByItem_ctl00__0']/td[3]/a")
 	By cancelorder = By.xpath("//*[@id='ctl00_MainContent_rdPendingApproval_C_rgPendingApprovalByItem_ctl00__0']/td[4]/a")
 	By pendingshipmentshiporder = By.xpath("//*[@id='ctl00_MainContent_rdPendingShipment_C_rgPendingShipment_ctl00']//tr[1]/td[3]")
-	By subMenuitemProperties = By.xpath("//*[@class='rmVertical rmGroup rmLevel1 menu']/li[5]//following-sibling::div/ul/li[1]")
+	By subMenuitemProperties = By.xpath("//*[text()='Item Properties']")
 	By lavelItemProperty = By.xpath("//*[@id='MainContent_lblTypes']")
-	By menuWarehouse = By.xpath("//*[@id='mainMenu']/div/ul/li[2]/a/span")
-	By subMenuWareHouse = By.xpath("//*[@class='rmVertical rmGroup rmLevel1 menu']/li[5]//following-sibling::div/ul/li[2]")
-	By subMenuWarehouseUsers = By.xpath("//*[@class='rmVertical rmGroup rmLevel1 menu']/li[5]//following-sibling::div/ul/li[3]")
+	By menuWarehouse = By.xpath("(//*[text()='Warehouse'])[1]")
+	By subMenuWareHouse = By.xpath("(//*[text()='Warehouse'])[2]")
+	By subMenuWarehouseUsers = By.xpath("//*[text()='Warehouse Users']")
 	By subMenuWarehouseSpendLimits = By.xpath("//*[@class='rmVertical rmGroup rmLevel1 menu']/li[5]//following-sibling::div/ul/li[4]")
-	By subMenuWelcomeMessage = By.xpath("//*[@class='rmVertical rmGroup rmLevel1 menu']/li[5]//following-sibling::div/ul/li[5]")
-	By subMenuUserItemApprovalTransfer = By.xpath("//*[@class='rmVertical rmGroup rmLevel1 menu']/li[5]//following-sibling::div/ul/li[6]")
-	By subMenuMenuLinkBrand = By.xpath("//*[@class='rmVertical rmGroup rmLevel1 menu']/li[5]//following-sibling::div/ul/li[7]")
+	By subMenuWelcomeMessage = By.xpath("//*[text()='Welcome Message']")
+	By subMenuUserItemApprovalTransfer = By.xpath("//*[text()='User Item Approval Transfer']")
+	By subMenuMenuLinkBrand = By.xpath("//*[text()='MenuLink_Brand']")
 	By labelWareHouseAdmin = By.xpath("//*[@id='MainContent_pnlSites']")
 	By linkAddNewUser = By.xpath("//*[@id='ctl00_MainContent_rdGridWarehouseUsers_ctl00_ctl02_ctl00_InitInsertButton']")
 	By linkAddNewCompliance = By.xpath("//*[@id='ctl00_MainContent_rgExistingBudgets_ctl00_ctl02_ctl00_InitInsertButton']")
@@ -64,12 +68,16 @@ public class Homepage {
 	By menuChangePassword = By.xpath("//*[text()='Change Password']")
 	By levelChangePassword = By.xpath("//*[@id='MainContent_lblChangePassword']")
 	By posWarehouseReport = By.xpath("//*[@id='lbReport']")
-    By helpSupportBtn = By.xpath("//*[text()='Help/Support']")
-
-
-
-
+	By helpSupportBtn = By.xpath("//*[text()='Help/Support']")
+	By btnClear = By.xpath("//*[text()='Clear']")
+	By firstItem = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_GridData']/table/tbody/tr[1]/td[11]/a")
+	By btnEditThisItem = By.xpath("//*[@id='MainContent_btnEditItemWizard']")
+	By itemInformationSection = By.xpath("//*[text()='Step 1: Item Information']")
 	By logoutlink = By.xpath("//*[text()='Logout']")
+	By homeMenu = By.xpath("//*[text()='Home']")
+	By approveDateCol = By.xpath("//*[text()='Approved Date']")
+
+
 
 	@Keyword
 	public void PosLogout() {
@@ -86,109 +94,125 @@ public class Homepage {
 
 	@Keyword
 	public void ClickOnReports() {
-		action.WaitVisible(warehousebtn)
-		action.MouseHoverOnElement(warehousebtn)
-		action.MouseHoverAndClick(reports)
+		action.MouseHoverOnElement(menuWarehouse)
+		WebUI.delay(5)
+		action.Click(reports)
 		action.WaitForPageToLoad()
-		action.WaitTime(5);
 	}
 
 
+	@Keyword
+	public NaviagteToDashBoard() {
+		action.Click(homeMenu)
+		WebUI.delay(5)
+	}
+
+	@Keyword
+	public void VerifyApproveDateColumn() {
+		try {
+			//boolean IsColumnVerified =false
+			boolean status =  action.IsElementDisplayed(approveDateCol)
+			Assert.assertTrue(status)
+			println "column verified successfully"
+		}
+		catch(Exception e) {
+			Assert.fail("VerifyApproveDateColumn method failed due to :" + e)
+		}
+	}
 
 
 	@Keyword
 	public void ClickOnItemSearch() {
-		action.WaitVisible(warehousebtn)
-		action.MouseHoverOnElement(warehousebtn)
-		action.MouseHoverAndClick(itemsearchbtn)
-		action.WaitForPageToLoad()
-		action.WaitTime(5);
+		action.MouseHoverOnElement(menuWarehouse)
+		WebUI.delay(3)
+		action.Click(itemsearchbtn)
+		//action.WaitForPageToLoad()
 	}
 
 	@Keyword
 	public void ClickOnNewItem() {
-		action.WaitVisible(warehousebtn)
-		action.MouseHoverOnElement(warehousebtn)
-		action.MouseHoverAndClick(newitembtn)
-		action.WaitForPageToLoad()
-		action.WaitTime(3)
+		action.MouseHoverOnElement(menuWarehouse)
+		WebUI.delay(3)
+		action.Click(newitembtn)
+		//action.WaitForPageToLoad()
+		action.WaitVisible(itemInformationSection)
+		WebUI.delay(3)
 	}
 
 	@Keyword
 	public void ClickOnNewOrder() {
-		action.WaitVisible(warehousebtn)
-		action.MouseHoverOnElement(warehousebtn)
-		action.MouseHoverAndClick(neworderbtn)
+		action.MouseHoverOnElement(menuWarehouse)
+		action.Click(neworderbtn)
 		action.WaitForPageToLoad()
 	}
 
 	@Keyword
 	public void ClicOnOrderSearch() {
-		action.WaitVisible(warehousebtn)
-		action.MouseHoverOnElement(warehousebtn)
-		action.MouseHoverAndClick(ordersearchbtn)
+		action.MouseHoverOnElement(menuWarehouse)
+		action.Click(ordersearchbtn)
 		action.WaitForPageToLoad()
 	}
 
 
 	@Keyword
 	public void ClickOnItemProperties() {
+		action.MouseHoverOnElement(menuWarehouse)
+		WebUI.delay(2)
 		action.MouseHoverOnElement(adminbtn)
-		action.WaitVisible(subMenuitemProperties)
+		WebUI.delay(2)
 		action.Click(subMenuitemProperties)
-		action.WaitVisible(lavelItemProperty)
+		//action.WaitForPageToLoad()
 	}
 
 	@Keyword
 	public void ClickOnWarehouse() {
+		action.MouseHoverOnElement(menuWarehouse)
 		action.MouseHoverOnElement(adminbtn)
-		action.WaitVisible(subMenuWareHouse)
+		action.MouseHoverOnElement(adminbtn)
 		action.Click(subMenuWareHouse)
-		action.WaitForPageToLoad();
-		action.WaitVisible(labelWareHouseAdmin)
+		//action.WaitForPageToLoad()
 	}
 
 	@Keyword
 	public void ClickOnWarehouseUser() {
+		action.MouseHoverOnElement(menuWarehouse)
 		action.MouseHoverOnElement(adminbtn)
-		action.WaitVisible(subMenuWarehouseUsers)
 		action.Click(subMenuWarehouseUsers)
-		action.WaitForPageToLoad();
-		action.WaitVisible(linkAddNewUser)
+		action.WaitForPageToLoad()
 	}
 
 	@Keyword
 	public void ClickOnWarehouseSpendLimits() {
+		action.MouseHoverOnElement(menuWarehouse)
 		action.MouseHoverOnElement(adminbtn)
-		action.WaitVisible(subMenuWarehouseSpendLimits)
 		action.Click(subMenuWarehouseSpendLimits)
 		action.WaitForPageToLoad();
-		action.WaitVisible(linkAddNewCompliance)
 	}
+
 	@Keyword
 	public void ClickOnWelcomeMessage() {
+		action.MouseHoverOnElement(menuWarehouse)
 		action.MouseHoverOnElement(adminbtn)
-		action.WaitVisible(subMenuWelcomeMessage)
 		action.Click(subMenuWelcomeMessage)
-		action.WaitForPageToLoad();
-		action.WaitVisible(btnSaveDashBoardMessage)
+		action.WaitForPageToLoad()
 	}
 	@Keyword
 	public void ClickOnUserItemApprovalTransfer() {
+		action.MouseHoverOnElement(menuWarehouse)
 		action.MouseHoverOnElement(adminbtn)
-		action.WaitVisible(subMenuUserItemApprovalTransfer)
 		action.Click(subMenuUserItemApprovalTransfer)
-		action.WaitForPageToLoad();
-		action.WaitVisible(labelTransferFrom)
+		action.WaitForPageToLoad()
 	}
 
 	@Keyword
 	public void ClickOnMenuLinkBrand() {
+		action.MouseHoverOnElement(menuWarehouse)
+		WebUI.delay(3)
 		action.MouseHoverOnElement(adminbtn)
-		action.WaitVisible(subMenuMenuLinkBrand)
+		WebUI.delay(3)
 		action.Click(subMenuMenuLinkBrand)
-		action.WaitForPageToLoad();
-		action.WaitTime(5)
+		WebUI.delay(3)
+		action.WaitForPageToLoad()
 	}
 
 	@Keyword
@@ -198,27 +222,30 @@ public class Homepage {
 		action.WaitVisible(levelChangePassword)
 		action.WaitTime(5)
 	}
-	
+
 	@Keyword
 	public void VerifyHelpSupport(){
 		boolean statusHelpSupportBtn = action.IsElementEnabled(helpSupportBtn)
 		Assert.assertTrue(statusHelpSupportBtn)
 		println ("Help/Support button is enable")
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+	@Keyword
+	public void SelectFirstItem(){
+		try{
+			String ItemName = action.GetText(firstItem)
+			println "Item Name " + ItemName
+			action.Click(firstItem)
+			WebUI.delay(5)
+			action.WindowHandle()
+			WebUI.delay(7)
+			action.Click(btnEditThisItem)
+		}
+		catch(Exception e){
+
+			println ("SelectFirstItem method failed due to : "+ e)
+		}
+	}
 }

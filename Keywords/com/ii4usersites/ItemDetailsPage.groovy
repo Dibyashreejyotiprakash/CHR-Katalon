@@ -61,6 +61,8 @@ public class ItemDetailsPage {
 	By productselectionnobtn = By.xpath("//input[@id='Body_btnNo1']")
 	By paymentpagetext = By.xpath("//h1[contains(text(),'Enter Payment and Billing Details')]")
 	By shoppingcartqty = By.xpath("//input[@id='ctl00_Body_shopCartItemsListView_ctrl0_qtyNumTextBox']")
+	By designnumber = By.xpath("//span[@id='Body_lblDesignNumber']")
+	By diecutframe = By.xpath("//li[contains(text(),'Die-Cut A-Frame Table Tent 4x6')]")
 
 
 
@@ -226,18 +228,51 @@ public class ItemDetailsPage {
 
 	@Keyword
 	public void EditShoppingCartQty() {
-		try
-		{
+		try {
 			WebUI.delay(3)
 			action.Click(shoppingcartqty)
 			action.Clear(shoppingcartqty)
 			action.Type(shoppingcartqty, "15")
-			
-			
 		}
 		catch(Exception e) {
 			println("EditShoppingCartQty Failed")
 			Assert.fail("EditShoppingCartQty failed due to "+e)
+		}
+	}
+
+	@Keyword
+	public void EntervaluesToProductionSelectionPage() {
+		try {
+			action.Type(quantity, "10")
+			action.ScrollToBottomOfPage()
+			WebUI.delay(10)
+			action.WaitUntilElementClickable(nobtn)
+			action.Click(nobtn)
+			WebUI.delay(10)
+			action.WaitUntilElementClickable(addtocartbtn)
+			action.Click(addtocartbtn)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println("Enter values To Production Selection Page failed due to "+ e)
+		}
+	}
+	
+	@Keyword
+	public void ClickOnCreateYourOwnDesign()
+	{
+		try
+		{
+			action.WaitVisible(designnumber)
+			//action.WaitVisible(diecutframe)
+			//action.ScrollToViewElement(diecutframe)
+			action.ScrollToBottomOfPage()
+			WebUI.delay(2)
+			action.Click(createdesignbtn)
+		}
+		catch(Exception e)
+		{
+			Assert.fail("ClickOnCreateYourOwnDesign Failed due to "+e)
 		}
 	}
 	

@@ -1,12 +1,12 @@
 package com.utilities
 
 import org.testng.Assert
-
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
-
+import com.kms.katalon.core.annotation.AfterTestCase
+import com.kms.katalon.core.annotation.BeforeTestCase
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.checkpoint.Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
@@ -17,8 +17,7 @@ import com.kms.katalon.core.testdata.TestData
 import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
-
-
+import internal.GlobalVariable
 import com.kms.katalon.core.webui.driver.DriverFactory
 import org.openqa.selenium.WebElement
 import org.openqa.selenium.interactions.Actions
@@ -26,12 +25,18 @@ import org.openqa.selenium.support.ui.ExpectedCondition
 import org.openqa.selenium.support.ui.ExpectedConditions
 import org.openqa.selenium.support.ui.Select
 import org.openqa.selenium.support.ui.WebDriverWait
+import org.openqa.selenium.support.ui.Wait
+import org.openqa.selenium.support.ui.FluentWait
 import org.openqa.selenium.WebDriver
+import org.apache.commons.lang.RandomStringUtils
 import org.openqa.selenium.Alert
 import org.openqa.selenium.By
 import org.openqa.selenium.Keys
 import org.openqa.selenium.JavascriptExecutor
-import internal.GlobalVariable
+import org.openqa.selenium.WebDriver.Timeouts;
+import java.util.concurrent.TimeUnit;
+
+//import internal.GlobalVariable
 import java.time.LocalTime
 
 public  class Interaction {
@@ -44,323 +49,320 @@ public  class Interaction {
 	@Keyword
 	public void GetUrl(String BuName,String TestType, String EnvironmentName) {
 		try {
-
-			if(TestType.equalsIgnoreCase("SMOKE")) {
-				if (BuName.equalsIgnoreCase("CONSOLIDATOR")) {
-
-					if (EnvironmentName.equalsIgnoreCase("UAT")) {
-						WebUI.navigateToUrl("https://admintool.v5qa.brandmuscle.net")
+			if(TestType.equalsIgnoreCase("SMOKE"))
+			{
+				if (BuName.equalsIgnoreCase("CONSOLIDATOR"))
+				{
+					if (EnvironmentName.equalsIgnoreCase("UAT"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.consolidatorurlUAT)
 					}
-					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
-						WebUI.navigateToUrl("https://admintool.v5stage.brandmuscle.net")
+					else if (EnvironmentName.equalsIgnoreCase("STAGING"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.consolidatorurlSTAGE)
 					}
-					else if (EnvironmentName.equalsIgnoreCase("PROD")) {
-						WebUI.navigateToUrl("https://admintool.brandmuscle.net")
+					else if (EnvironmentName.equalsIgnoreCase("PROD"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.consolidatorurlPROD)
 					}
-					else if (EnvironmentName.equalsIgnoreCase("DEV")) {
-						WebUI.navigateToUrl("https://admintool.v5dev.brandmuscle.net")
-					}
-					else{
-						println ("Environment is not correct")
+					else
+					{
+						throw new Exception("Environment is not correct")
 						WebUI.closeBrowser()
 					}
 				}
-				else if (BuName.equalsIgnoreCase("ii3")) {
+				else if (BuName.equalsIgnoreCase("ii3"))
+				{
 
-					if (EnvironmentName.equalsIgnoreCase("UAT")) {
-						WebUI.navigateToUrl("http://ii3.uat.brandmuscle.net")
+					if (EnvironmentName.equalsIgnoreCase("UAT"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.ii3UAT)
 					}
-					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
-						WebUI.navigateToUrl("https://ii3.stage.brandmuscle.net")
+					else if (EnvironmentName.equalsIgnoreCase("STAGING"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.ii3STAGE)
 					}
-					else if (EnvironmentName.equalsIgnoreCase("PROD")) {
-						WebUI.navigateToUrl("http://rel3.instantimpact.com")
+					else if (EnvironmentName.equalsIgnoreCase("PROD"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.ii3PROD)
 					}
-					else if (EnvironmentName.equalsIgnoreCase("DEV")) {
-						WebUI.navigateToUrl("https://ii3.dev.brandmuscle.net")
-					}
-					else{
-						println ("Environment is not correct")
+					else
+					{
+						throw new Exception("Environment is not correct")
 						WebUI.closeBrowser()
 					}
 				}
-				else if (BuName.equalsIgnoreCase("DESIGNTRACKER")) {
+				else if (BuName.equalsIgnoreCase("DESIGNTRACKER"))
+				{
 
-					if (EnvironmentName.equalsIgnoreCase("UAT")) {
-						WebUI.navigateToUrl("http://designtracker.uat.brandmuscle.net/")
+					if (EnvironmentName.equalsIgnoreCase("UAT"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.dtUAT)
 					}
-					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
-						WebUI.navigateToUrl("http://designtracker.stage.brandmuscle.net/")
+					else if (EnvironmentName.equalsIgnoreCase("STAGING"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.dtSTAGE)
 					}
-					else if (EnvironmentName.equalsIgnoreCase("PROD")) {
-						WebUI.navigateToUrl("http://designtracker.brandmuscle.net/")
+					else if (EnvironmentName.equalsIgnoreCase("PROD"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.dtPROD)
 					}
-					else if (EnvironmentName.equalsIgnoreCase("DEV")) {
-						WebUI.navigateToUrl("http://designtracker.dev.brandmuscle.net/")
-					}
-					else{
-						println ("Environment is not correct")
-						WebUI.closeBrowser()
-					}
-				}
-				else if (BuName.equalsIgnoreCase("DESIGNTRACKERAPPROVALPORTAL")) {
-
-					if (EnvironmentName.equalsIgnoreCase("UAT")) {
-					}
-					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
-					}
-					else if (EnvironmentName.equalsIgnoreCase("PROD")) {
-					}
-					else if (EnvironmentName.equalsIgnoreCase("DEV")) {
-					}
-					else{
-						println ("Environment is not correct")
-						WebUI.closeBrowser()
-					}
-				}
-				else if(BuName.equalsIgnoreCase("POSW")){
-					if (EnvironmentName.equalsIgnoreCase("UAT")) {
-						WebUI.navigateToUrl("http://csg.v5qa.brandmuscle.net")
-					}
-					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
-						WebUI.navigateToUrl("https://csg.v5stage.brandmuscle.net")
-					}
-					else if (EnvironmentName.equalsIgnoreCase("PROD")) {
-						WebUI.navigateToUrl("http://csg.brandmuscle.net")
-					}
-					else if (EnvironmentName.equalsIgnoreCase("DEV")) {
-						WebUI.navigateToUrl("https://csg.v5dev.brandmuscle.net")
-					}
-					else{
-						println ("Environment is not correct")
+					else
+					{
+						throw new Exception("Environment is not correct")
 						WebUI.closeBrowser()
 					}
 				}
 
-				else if (BuName.equalsIgnoreCase("INSTANTIMPACTUSERSITE")) {
+				else if(BuName.equalsIgnoreCase("POSW"))
+				{
 
-					if (EnvironmentName.equalsIgnoreCase("UAT")) {
-						WebUI.navigateToUrl("http://ii4.uat.brandmuscle.net/")
+					if (EnvironmentName.equalsIgnoreCase("UAT"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.poswUAT)
 					}
-					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
-						WebUI.navigateToUrl("https://ii4.v5stage.brandmuscle.net/")
+					else if (EnvironmentName.equalsIgnoreCase("STAGING"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.poswSTAGE)
 					}
-					else if (EnvironmentName.equalsIgnoreCase("PROD")) {
-						WebUI.navigateToUrl("http://rel4.instantimpact.com")
+					else if (EnvironmentName.equalsIgnoreCase("PROD"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.poswPROD)
 					}
-					else if (EnvironmentName.equalsIgnoreCase("DEV")) {
-						WebUI.navigateToUrl("http://ii4.dev.brandmuscle.net/")
-					}
-					else{
-						println ("Environment is not correct")
+					else
+					{
+						throw new Exception("Environment is not correct")
 						WebUI.closeBrowser()
 					}
 				}
-				else if (BuName.equalsIgnoreCase("WSWADMIN")) {
+				else if (BuName.equalsIgnoreCase("INSTANTIMPACTUSERSITE"))
+				{
 
-					if (EnvironmentName.equalsIgnoreCase("UAT")) {
-						println("Inside WSW UAT Environment")
-						WebUI.navigateToUrl("http://dibyashree.jyoti:chr@1234@wswadmin.uat.brandmuscle.net")
-						println("Executed  WSW UAT Environment")
+					if (EnvironmentName.equalsIgnoreCase("UAT"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.ii4UAT)
 					}
-					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
-						WebUI.navigateToUrl("http://dibyashree.jyoti:chr@1234@wswadmin.stage.brandmuscle.net")
+					else if (EnvironmentName.equalsIgnoreCase("STAGING"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.ii4STAGE)
 					}
-					else if (EnvironmentName.equalsIgnoreCase("PROD")) {
-						WebUI.navigateToUrl("http://dibyashree.jyoti:chr@1234@wswadmin.brandmuscle.net")
+					else if (EnvironmentName.equalsIgnoreCase("PROD"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.ii4PROD)
 					}
-					else if (EnvironmentName.equalsIgnoreCase("DEV")) {
-						WebUI.navigateToUrl("http://dibyashree.jyoti:chr@1234@wswadmin.dev.brandmuscle.net")
-					}
-					else{
-						println ("Environment is not correct")
-						throw new Exception("WSW Environment is not correct")
+					else
+					{
+						throw new Exception("Environment is not correct")
 						WebUI.closeBrowser()
 					}
 				}
-				else if (BuName.equalsIgnoreCase("IIADMIN")) {
-
-					if (EnvironmentName.equalsIgnoreCase("UAT")) {
-						WebUI.navigateToUrl("http://dibyashree.jyoti:chr@1234@iiadmin.uat.brandmuscle.net/")
+				else if (BuName.equalsIgnoreCase("WSWADMIN"))
+				{
+					if (EnvironmentName.equalsIgnoreCase("UAT"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.wswadminUAT)
 					}
-					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
-						WebUI.navigateToUrl("http://dibyashree.jyoti:chr@1234@iiadmin.stage.brandmuscle.net//")
+					else if (EnvironmentName.equalsIgnoreCase("STAGING"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.wswadminSATGE)
 					}
-					else if (EnvironmentName.equalsIgnoreCase("PROD")) {
-						WebUI.navigateToUrl("http://dibyashree.jyoti:chr@1234@iiadmin.brandmuscle.net/")
+					else if (EnvironmentName.equalsIgnoreCase("PROD"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.wswadminPROD)
 					}
-					else if (EnvironmentName.equalsIgnoreCase("DEV")) {
-						WebUI.navigateToUrl("http://dibyashree.jyoti:chr@1234@iiadmin.dev.brandmuscle.net/")
-					}
-					else{
-						println ("Environment is not correct")
+					else
+					{
+						throw new Exception("Environment is not correct")
 						WebUI.closeBrowser()
 					}
 				}
+				else if (BuName.equalsIgnoreCase("IIADMIN"))
+				{
 
-
-				else if (BuName.equalsIgnoreCase("PROOFGALLERY")) {
-
-					if (EnvironmentName.equalsIgnoreCase("UAT")) {
+					if (EnvironmentName.equalsIgnoreCase("UAT"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.iiadminUAT)
 					}
-					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
+					else if (EnvironmentName.equalsIgnoreCase("STAGING"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.iiadminSTAGE)
 					}
-					else if (EnvironmentName.equalsIgnoreCase("PROD")) {
+					else if (EnvironmentName.equalsIgnoreCase("PROD"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.iiadminPROD)
 					}
-					else if (EnvironmentName.equalsIgnoreCase("DEV")) {
-					}
-					else{
-						println ("Environment is not correct")
+					else
+					{
+						throw new Exception("Environment is not correct")
 						WebUI.closeBrowser()
 					}
 				}
-				else{
+				else if (BuName.equalsIgnoreCase("APPROVALS"))
+				{
 
+					if (EnvironmentName.equalsIgnoreCase("UAT"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.dtapprovalUAT)
+					}
+					else if (EnvironmentName.equalsIgnoreCase("STAGING"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.dtapprovalSTAGE)
+					}
+					else if (EnvironmentName.equalsIgnoreCase("PROD"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.dtapprovalsPROD)
+					}
+					else
+					{
+						throw new Exception("Environment is not correct")
+						WebUI.closeBrowser()
+					}
+				}
+				else
+				{
+					throw new Exception("Environment is not correct")
 					WebUI.closeBrowser()
-					println ("Bu is not correct")
 				}
 			}
 
-			else if(TestType.equalsIgnoreCase("REGRESSION")) {
-				if (BuName.equalsIgnoreCase("CONSOLIDATOR")) {
+			else if(TestType.equalsIgnoreCase("REGRESSION"))
+			{
+				if (BuName.equalsIgnoreCase("CONSOLIDATOR"))
+				{
 
-					if (EnvironmentName.equalsIgnoreCase("UAT")) {
+					if (EnvironmentName.equalsIgnoreCase("UAT"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.consolidatorurlUAT)
 					}
-					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
+					else if (EnvironmentName.equalsIgnoreCase("STAGING"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.consolidatorurlSTAGE)
 					}
-					else if (EnvironmentName.equalsIgnoreCase("DEV")) {
-					}
-					else{
-						println ("Environment is not correct")
+					else
+					{
+						throw new Exception("Environment is not correct")
 						WebUI.closeBrowser()
 					}
 				}
-				else if (BuName.equalsIgnoreCase("INSTANTIMPACTUSERSITE")) {
+				else if (BuName.equalsIgnoreCase("INSTANTIMPACTUSERSITE"))
+				{
 
-					if (EnvironmentName.equalsIgnoreCase("UAT")) {
-						WebUI.navigateToUrl("http://ii4.uat.brandmuscle.net/")
+					if (EnvironmentName.equalsIgnoreCase("UAT"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.ii4UAT)
 					}
-					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
-						WebUI.navigateToUrl("https://ii4.v5stage.brandmuscle.net/")
+					else if (EnvironmentName.equalsIgnoreCase("STAGING"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.ii4STAGE)
 					}
-					else if (EnvironmentName.equalsIgnoreCase("PROD")) {
-						WebUI.navigateToUrl("http://rel4.instantimpact.com")
-					}
-					else if (EnvironmentName.equalsIgnoreCase("DEV")) {
-						WebUI.navigateToUrl("http://ii4.dev.brandmuscle.net/")
-					}
-					else{
-						println ("Environment is not correct")
+					else
+					{
+						throw new Exception("Environment is not correct")
 						WebUI.closeBrowser()
 					}
 				}
+				else if (BuName.equalsIgnoreCase("POSW"))
+				{
 
-				else if (BuName.equalsIgnoreCase("INSTANTIMPACTUSERSITE")) {
-
-					if (EnvironmentName.equalsIgnoreCase("UAT")) {
-						WebUI.navigateToUrl("https://ii4.uat.brandmuscle.net")
+					if (EnvironmentName.equalsIgnoreCase("UAT"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.poswUAT)
 					}
-					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
-						WebUI.navigateToUrl("https://ii4.v5stage.brandmuscle.net")
+					else if (EnvironmentName.equalsIgnoreCase("STAGING"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.poswSTAGE)
 					}
-					else if (EnvironmentName.equalsIgnoreCase("DEV")) {
-						WebUI.navigateToUrl("http://ii4.dev.brandmuscle.net")
-					}
-					else{
-						println ("Environment is not correct")
-						WebUI.closeBrowser()
-					}
-				}
-
-				else if (BuName.equalsIgnoreCase("POSW")) {
-
-					if (EnvironmentName.equalsIgnoreCase("UAT")) {
-						WebUI.navigateToUrl("https://csg.v5stage.brandmuscle.net")
-					}
-					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
-						WebUI.navigateToUrl("https://csg.v5stage.brandmuscle.net")
-					}
-					else if (EnvironmentName.equalsIgnoreCase("DEV")) {
-						WebUI.navigateToUrl("https://csg.v5dev.brandmuscle.net")
-					}
-					else{
+					else
+					{
 						println ("Environment is not correct")
 						WebUI.closeBrowser()
 						throw new Exception("Environment is not correct")
 					}
 				}
 
+				else if (BuName.equalsIgnoreCase("APPROVALS"))
+				{
 
-				else if (BuName.equalsIgnoreCase("PROOFGALLERY")) {
-
-					if (EnvironmentName.equalsIgnoreCase("UAT")) {
-						WebUI.navigateToUrl("http://proofs.uat.brandmuscle.net/")
+					if (EnvironmentName.equalsIgnoreCase("UAT"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.dtapprovalUAT)
 					}
-					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
-						WebUI.navigateToUrl("http://proofs.stage.brandmuscle.net/")
+					else if (EnvironmentName.equalsIgnoreCase("STAGING"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.dtapprovalSTAGE)
 					}
-					else if (EnvironmentName.equalsIgnoreCase("DEV")) {
-						WebUI.navigateToUrl("http://proofs.dev.brandmuscle.net/")
-					}
-				}
-				else if (BuName.equalsIgnoreCase("WSWADMIN")) {
-
-					if (EnvironmentName.equalsIgnoreCase("UAT")) {
-						WebUI.navigateToUrl("http://dibyashree.jyoti:chr@1234@wswadmin.uat.brandmuscle.net")
-						println("WSW admin URL executed")
-					}
-					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
-						WebUI.navigateToUrl("http://dibyashree.jyoti:chr@1234@wswadmin.stage.brandmuscle.net")
-					}
-					else if (EnvironmentName.equalsIgnoreCase("DEV")) {
-						WebUI.navigateToUrl("http://dibyashree.jyoti:chr@1234@wswadmin.dev.brandmuscle.net")
-					}
-					else{
-						println ("Environment is not correct")
+					else
+					{
 						throw new Exception("Environment is not correct")
 						WebUI.closeBrowser()
 					}
 				}
-				else if (BuName.equalsIgnoreCase("IIADMIN")) {
+				else if (BuName.equalsIgnoreCase("WSWADMIN"))
+				{
 
-					if (EnvironmentName.equalsIgnoreCase("UAT")) {
-						WebUI.navigateToUrl("http://dibyashree.jyoti:chr@1234@iiadmin.uat.brandmuscle.net/")
+					if (EnvironmentName.equalsIgnoreCase("UAT"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.wswadminUAT)
 					}
-					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
-						WebUI.navigateToUrl("http://dibyashree.jyoti:chr@1234@iiadmin.stage.brandmuscle.net//")
+					else if (EnvironmentName.equalsIgnoreCase("STAGING"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.wswadminSATGE)
 					}
-					else if (EnvironmentName.equalsIgnoreCase("DEV")) {
-						WebUI.navigateToUrl("http://dibyashree.jyoti:chr@1234@iiadmin.dev.brandmuscle.net/")
-					}
-					else{
-						println ("Environment is not correct")
+					else
+					{
 						throw new Exception("Environment is not correct")
 						WebUI.closeBrowser()
 					}
 				}
-				else if (BuName.equalsIgnoreCase("DESIGNTRACKER")) {
+				else if (BuName.equalsIgnoreCase("IIADMIN"))
+				{
 
-					if (EnvironmentName.equalsIgnoreCase("UAT")) {
-						WebUI.navigateToUrl("http://designtracker.uat.brandmuscle.net/")
+					if (EnvironmentName.equalsIgnoreCase("UAT"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.iiadminUAT)
+					}
+					else if (EnvironmentName.equalsIgnoreCase("STAGING"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.iiadminSTAGE)
+					}
+					else
+					{
+						throw new Exception("Environment is not correct")
+						WebUI.closeBrowser()
+					}
+				}
+				else if (BuName.equalsIgnoreCase("DESIGNTRACKER"))
+				{
+					if (EnvironmentName.equalsIgnoreCase("UAT"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.dtUAT)
+						//WebUI.delay(3)
 					}
 					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
-						WebUI.navigateToUrl("http://designtracker.stage.brandmuscle.net/")
+						WebUI.navigateToUrl(GlobalVariable.dtSTAGE)
 					}
-					else if (EnvironmentName.equalsIgnoreCase("DEV")) {
-						WebUI.navigateToUrl("http://designtracker.dev.brandmuscle.net/")
+					else
+					{
+						throw new Exception("Environment is not correct")
+						WebUI.closeBrowser()
 					}
+				}
+				else
+				{
+					throw new Exception("BU is not correct")
+					WebUI.closeBrowser()
 				}
 			}
-			else{
-				println ("Test type is not correct")
-				WebUI.closeBrowser()
+			else
+			{
 				throw new Exception("Test type is not correct")
+				WebUI.closeBrowser()
 			}
 		}
 
 		catch (Exception e) {
-			println ("GetUrl failed due to " + e);
-			Assert.fail("GetUrl failed due to"+e)
+			Assert.fail("Ge tUrl failed due to"+e)
+			println ("Failed due to "+ e)
 		}
 	}
 
@@ -381,9 +383,15 @@ public  class Interaction {
 
 		WebDriverWait wait = new WebDriverWait(driver, 300);
 		pageLoadStatus = (String)js.executeScript("return document.readyState");
+
+		//WebUI.delay(10)
 	}
 
 
+	public void CloseAllBrowser()
+	{
+		driver.quit()
+	}
 
 	public void  GoToURL(String url) {
 		driver.navigate().to(url);
@@ -402,12 +410,14 @@ public  class Interaction {
 
 
 	public String  GetCurrentURL() {
+
+		//WaitVisible(by)
+		WebUI.delay(2)
 		return driver.getCurrentUrl();
 	}
 
-
 	public void  Type(By by, String value) {
-		//WaitVisible(by)
+		WaitVisible(by)
 		driver.findElement(by).sendKeys(value);
 	}
 
@@ -431,12 +441,23 @@ public  class Interaction {
 	}
 
 
-	public void  TypeClear(By by, String value,WebDriver driver) {
+	public void  TypeClear(By by, String value) {
+		WaitVisible(by)
+		driver.findElement(by).clear()
+		driver.findElement(by).sendKeys(value)
+	}
+
+
+	//clear text field and type value
+	public void TypeAndClear(By by, String value){
 		WaitVisible(by)
 		WebElement element = driver.findElement(by);
 		element.clear();
 		element.sendKeys(value);
+
 	}
+
+
 
 
 	public void  ScrollBy(int scroll) {
@@ -456,6 +477,7 @@ public  class Interaction {
 	public void  ScrollToViewElement(WebElement element)
 	{
 		WaitVisible(element)
+		//WebUI.delay(1)
 		js.executeScript("arguments[0].scrolSlIntoView(true);", element);
 	}
 
@@ -463,14 +485,16 @@ public  class Interaction {
 	//Scroll upto element to be visible
 	public void  ScrollToViewelement(By by)
 	{
+		WebUI.delay(1)
+		js.executeScript("arguments[0].scrollIntoView(true);", by);
 		WaitVisible(by)
-		js.executeScript("arguments[0].scrolSlIntoView(true);", by);
 	}
 
 
 	//Scroll to bottom of page
 	public void  ScrollToBottomOfPage()
 	{
+		WebUI.delay(1)
 		js.executeScript("window.scrollTo(0, document.body.clientHeight);");
 	}
 
@@ -478,6 +502,7 @@ public  class Interaction {
 	//Scroll to top of page
 	public void  ScrollToTopOgPage()
 	{
+		WebUI.delay(1)
 		js.executeScript("window.scrollTo(0, 0)");
 	}
 
@@ -526,7 +551,8 @@ public  class Interaction {
 	{
 		try
 		{
-			//WaitVisible(by)
+			//WebUI.delay(10)
+			WaitVisible(by)
 			boolean displayed = driver.findElement(by).isDisplayed();
 			return displayed;
 		}
@@ -552,7 +578,6 @@ public  class Interaction {
 		}
 	}
 
-
 	//Element is selected or not
 	public  boolean IsElementSelected(By by) throws Exception
 	{
@@ -569,32 +594,46 @@ public  class Interaction {
 	}
 
 
-	public void  WaitVisible(By by)
+	public void WaitVisible(By by)
 	{
+		WebUI.delay(1)
+		WebDriverWait wait = new WebDriverWait(driver, 60)
+		wait.until(ExpectedConditions.visibilityOfElementLocated(by))
 
-		WebDriverWait wait = new WebDriverWait(driver, 300);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+		/*println('Entering into Explicit wait statements')
+		 Boolean prsentstatus=wait.until(ExpectedConditions.presenceOfElementLocated(by))
+		 println(prsentstatus)
+		 Boolean prsentstatus1 = wait.until(ExpectedConditions.visibilityOfElementLocated(by))
+		 println(prsentstatus1)*/
 	}
 
+	public void  WaitVisibleDup(By by)
+	{
+		WebDriverWait wait = new WebDriverWait(driver, 300)
 
+		println('Entering into Explicit wait statements')
 
+		Boolean prsentstatus=wait.until(ExpectedConditions.presenceOfElementLocated(by))
+		println(prsentstatus)
+
+		Boolean clickstatus=wait.until(ExpectedConditions.elementToBeClickable(by))
+		println(clickstatus)
+
+	}
 
 	public void  WaitVisible(By by,int timeinsec)
 	{
-		WaitVisible(by)
+		WebUI.delay(1)
 		WebDriverWait wait = new WebDriverWait(driver, timeinsec);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 	}
 
-
-
 	public void  WaitVisible(WebElement element)
 	{
-		WaitVisible(element)
-		WebDriverWait wait = new WebDriverWait(driver,20);
+		WebUI.delay(1)
+		WebDriverWait wait = new WebDriverWait(driver,300);
 		wait.until(ExpectedConditions.visibilityOf(element));
 	}
-
 
 
 	public void  WaitVisible(WebElement element,int timeinsec)
@@ -630,15 +669,11 @@ public  class Interaction {
 		wait.until(ExpectedConditions.presenceOfNestedElementLocatedBy(by, nestedlocator));
 	}
 
-
-
 	public void  WaitExistsForNestedElements(WebElement element,By subelement)
 	{
 		WebDriverWait wait = new WebDriverWait(driver,300);
 		wait.until(ExpectedConditions.presenceOfNestedElementLocatedBy(subelement, subelement));
 	}
-
-
 
 	public void  WaitTillNotVisible(By by,int timeinsec)
 	{
@@ -656,8 +691,6 @@ public  class Interaction {
 		}
 	}
 
-
-
 	public  WebElement WaitUntilElementClickable(WebElement element)
 	{
 		try
@@ -671,8 +704,6 @@ public  class Interaction {
 			throw e;
 		}
 	}
-
-
 
 	public void  WaitUntilElementClickable(By by)
 	{
@@ -688,8 +719,6 @@ public  class Interaction {
 		}
 	}
 
-
-
 	public  boolean WaitUntilStalenessOfElement(WebElement element, int timeinsec)
 	{
 		try
@@ -704,7 +733,6 @@ public  class Interaction {
 		}
 	}
 
-
 	/*Click*/
 	public void  Click(By by)
 	{
@@ -712,13 +740,11 @@ public  class Interaction {
 		driver.findElement(by).click();
 	}
 
-
 	public void  ClickAndWait(By by,int timeinsec) throws InterruptedException
 	{
 		WaitTime(timeinsec);
 		driver.findElement(by).click();
 	}
-
 
 	public void  DoubleClick(By by) throws InterruptedException
 	{
@@ -730,14 +756,11 @@ public  class Interaction {
 		WaitTime(4);
 	}
 
-
 	public void  JsClick(WebElement element)
 	{
 		WebDriverWait wait = new WebDriverWait(driver,300);
 		js.executeScript( "arguments[0].click();", element );
 	}
-
-
 
 	/*Alert Handler*/
 	public  void AcceptAlert()
@@ -752,7 +775,6 @@ public  class Interaction {
 			println (e)
 		}
 	}
-
 
 	public  boolean DismissAlert()
 	{
@@ -770,7 +792,6 @@ public  class Interaction {
 		}
 	}
 
-
 	public  String GetAlertText()
 	{
 		try
@@ -787,16 +808,14 @@ public  class Interaction {
 		}
 	}
 
-
 	public void MouseHoverOnElement(By by)
 	{
+		WaitVisible(by);
 		WebElement elementToHover = driver.findElement(by);
 		Actions hover = new Actions(driver);
 		hover.moveToElement(elementToHover)
 		hover.perform();
 	}
-
-
 
 	public void MouseHoverAndClick(By by)
 	{
@@ -806,8 +825,6 @@ public  class Interaction {
 		hover.moveToElement(elementToHover).click().perform();
 
 	}
-
-
 
 	public void MouserHoverAndClick(By hoverby, By clickby)
 	{
@@ -820,17 +837,29 @@ public  class Interaction {
 
 	}
 
-
-
-
-
 	public void SelectByText(By by, String text)
 	{
 		WaitVisible(by);
+		WaitVisibleDup(by);
 		WebElement elementToHover = driver.findElement(by);
 		Select select = new Select(elementToHover)
 		select.selectByVisibleText(text)
 
+	}
+
+	public List<WebElement> GetAllOptions(By by)
+	{
+		WaitVisible(by)
+		WebElement elementToHover = driver.findElement(by)
+		Select select = new Select(elementToHover)
+		return select.getAllSelectedOptions()
+	}
+
+	public String GetselectedText(By by)
+	{
+		Select select = new Select(driver.findElement(by))
+		WebElement option = select.getFirstSelectedOption()
+		return  option.getText()
 	}
 
 
@@ -855,13 +884,92 @@ public  class Interaction {
 		select.selectByIndex(index)
 	}
 
+	//Get all options
+	public List<WebElement> GetAllOption(By by)
+	{
+		WaitVisible(by);
+		WebElement elementToHover = driver.findElement(by)
+		Select select = new Select(elementToHover)
+		List <WebElement> options = select.getOptions()
+
+		return options
+	}
+
+	//window handling
+	@Keyword
+	public void WindowHandle(){
+		try{
+			Set<String> set =  driver.getWindowHandles();
+			Iterator<String> it = set.iterator();
+			while(it.hasNext())
+			{
+				String parentwidowid = it.next()
+				println ("Parent Window id is"+ parentwidowid)
+
+				String childwindowid = it.next()
+				println ("Child Window id is"+ childwindowid)
+
+				driver.switchTo().window(childwindowid)
+			}
+
+
+		}
+		catch(Exception e){
+			println ("WindowHandle method failed due to :"+ e)
+
+		}
+	}
+
+	//Get attribute of webelement
+
+	public String Attribute(By by, String attri)
+	{
+		WaitVisible(by);
+		WebElement element = driver.findElement(by);
+		String value = element.getAttribute(attri)
+
+		return value
+
+	}
+
+	public boolean isAttribtuePresent(By by, String attribute)
+	{
+		WebElement element = driver.findElement(by);
+		boolean result = false;
+		String value = element.getAttribute(attribute)
+
+		if(value != null)
+		{
+			result = true
+		}
+
+		return result
+
+	}
+
+
 	public void Enter(By by)
 	{
 		driver.findElement(by).sendKeys(Keys.ENTER);
 	}
+	public void PreseBackSpace(By by)
+	{
+		driver.findElement(by).sendKeys(Keys.BACK_SPACE)
+	}
+
+	public void PreseLeftArrow(By by)
+	{
+		driver.findElement(by).sendKeys(Keys.ARROW_LEFT)
+	}
+
+	public void PreseRightArrow(By by)
+	{
+		driver.findElement(by).sendKeys(Keys.ARROW_RIGHT)
+	}
 
 	public String GetText(By by)
 	{
+		WaitVisible(by)
 		return driver.findElement(by).getText();
 	}
 
@@ -873,5 +981,33 @@ public  class Interaction {
 		return newcategoryname
 	}
 
+	public String GenerateRandomAplphabaticString(int stringlength)
+	{
+		return RandomStringUtils.randomAlphabetic(stringlength)
+	}
 
+	public String GenerateRandomAplphabaNeumericString(int stringlength)
+	{
+		return RandomStringUtils.randomAlphanumeric(stringlength)
+	}
+
+	public String GenerateRandomNumericString(int stringlength)
+	{
+		return RandomStringUtils.randomNumeric(stringlength)
+	}
+
+	public void VerifyCurrentPage(String expectedurl)
+	{
+		WebUI.delay(3)
+		String actualurl = driver.getCurrentUrl()
+		//boolean b = actualurl.contains(expectedurl)
+		if(actualurl.contains(expectedurl))
+		{
+			println ("Page verified")
+		}
+		else
+		{
+			throw new Exception("Page is not verified")
+		}
+	}
 }

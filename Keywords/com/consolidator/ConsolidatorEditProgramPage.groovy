@@ -34,17 +34,42 @@ public class ConsolidatorEditProgramPage {
 	By firsteditlink = By.xpath("//*[@id='allProgramElements']//tr[1]/td[6]/a")
 	By dleeteelementlink = By.xpath("//*[@class='remove full-width']")
 	By viewdetailslink = By.xpath("//*[text()='View Details']")
+	By pricetextbox = By.xpath("//*[@id='price']")
+	By savechangesbtn = By.xpath("//*[@id='saveButton']")
+	By confirmchangesbtn = By.xpath("//*[@id='updateButton']")
+	By okbtn = By.xpath("//*[@id='btnCfmOk']")
+	By deletelink = By.xpath("//*[@class='remove full-width']")
+	By deletecheckbox = By.cssSelector(".check")
+	By deletebtn = By.xpath("//*[@id='btnDeleteElement']")
 
+	@Keyword
+	public void VerifyEditProgramItemPage() {
+		try{
+			action.VerifyCurrentPage("ConsolidatorEditProgramItem.aspx")
+		}
+		catch(Exception e) {
+			Assert.fail("Verify Edit Program Item Page failed due to "+ e)
+		}
+	}
 
 	@Keyword
 	public void VerifyAddNewElementBtn() {
-		boolean statusofaddnewelement = action.IsElementDisplayed(addnewelementbtn)
-		if(statusofaddnewelement == true) {
-			boolean isenabale = action.IsElementEnabled(addnewelementbtn)
-			if(isenabale == true) {
-				action.Click(addnewelementbtn)
-				action.WaitForPageToLoad()
+		try{
+			boolean statusofaddnewelement = action.IsElementDisplayed(addnewelementbtn)
+			if(statusofaddnewelement == true) {
+				boolean isenabale = action.IsElementEnabled(addnewelementbtn)
+				if(isenabale == true) {
+					action.Click(addnewelementbtn)
+					action.WaitForPageToLoad()
+					WebUI.delay(10)
+				}
 			}
+			else{
+				throw new Exception("Add New Element is not enabled")
+			}
+		}
+		catch(Exception e) {
+			Assert.fail("Verify Add New Element Btn failed due to "+ e)
 		}
 	}
 
@@ -58,6 +83,7 @@ public class ConsolidatorEditProgramPage {
 				Assert.assertTrue(statusofenablebacklink)
 				action.Click(backbtn)
 				action.WaitForPageToLoad()
+				WebUI.delay(5)
 			}
 		}
 		catch(Exception e) {
@@ -78,6 +104,7 @@ public class ConsolidatorEditProgramPage {
 			if(statusenablelink == true) {
 				action.Click(firsteditlink)
 				action.WaitForPageToLoad()
+				WebUI.delay(5)
 			}
 		}
 		catch(Exception e) {
@@ -106,5 +133,65 @@ public class ConsolidatorEditProgramPage {
 
 		boolean statusofenableviewlink = action.IsElementEnabled(viewdetailslink)
 		Assert.assertTrue(statusofenableviewlink)
+	}
+
+	@Keyword
+	public void EditFirstElement() {
+		try{
+			action.Click(firsteditlink)
+			action.WaitForPageToLoad()
+			action.TypeClear(pricetextbox, "10001")
+			WebUI.delay(5)
+			action.ScrollToBottomOfPage()
+			boolean statusofsavechangesbtn = action.IsElementEnabled(savechangesbtn)
+			Assert.assertTrue(statusofsavechangesbtn)
+			if(statusofsavechangesbtn == true) {
+				action.Click(savechangesbtn)
+				action.Click(confirmchangesbtn)
+				action.Click(okbtn)
+			}
+			else{
+				throw new Exception ("Save Changes button is not enabled")
+			}
+		}
+		catch(Exception e) {
+			Assert.fail("Edit First Element failed due to "+ e)
+		}
+	}
+
+	@Keyword
+	public void DeleteElement() {
+		try{
+			action.Click(firsteditlink)
+			action.WaitForPageToLoad()
+			boolean statusofdeletelink = action.IsElementEnabled(deletelink)
+			Assert.assertTrue(statusofdeletelink)
+			if(statusofdeletelink == true) {
+				action.Click(deletelink)
+				WebUI.delay(5)
+				action.Click(deletecheckbox)
+				WebUI.delay(5)
+				action.Click(deletebtn)
+			}
+		}
+		catch(Exception e) {
+			Assert.fail("Delete Element failed due to "+ e)
+		}
+	}
+
+	@Keyword
+	public void VerifyDetailsLink() {
+		try{
+			action.Click(firsteditlink)
+			action.WaitForPageToLoad()
+			boolean statusofdetialslink = action.IsElementEnabled(viewdetailslink)
+			Assert.assertTrue(statusofdetialslink)
+			if(statusofdetialslink == true) {
+				action.Click(viewdetailslink)
+			}
+		}
+		catch(Exception e){
+			Assert.fail("Verify Details Link failed due to "+ e)
+		}
 	}
 }

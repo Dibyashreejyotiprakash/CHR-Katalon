@@ -27,5 +27,7 @@ CustomKeywords.'com.poswm.Homepage.ClickOnMenuLinkBrand'()
 
 CustomKeywords.'com.poswm.WarehouseBrands.VerifyMenuLinkBrandPage'()
 
+CustomKeywords.'com.poswm.WarehouseBrands.VerifyEditBrand'()
+
 WebUI.closeBrowser()
 

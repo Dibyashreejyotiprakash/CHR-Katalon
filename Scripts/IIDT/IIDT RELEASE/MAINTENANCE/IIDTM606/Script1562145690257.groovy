@@ -13,13 +13,10 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.openBrowser('')
-
-WebUI.maximizeWindow()
 
 CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamewswadmin, GlobalVariable.testtyperegression, GlobalVariable.environment)
 
-WebUI.waitForPageLoad(300)
+CustomKeywords.'com.wswadmin.LoginPage.WSWlogin'(GlobalVariable.wswadminusername, GlobalVariable.wswpassword)
 
 CustomKeywords.'com.wswadmin.HomePage.NavigateToItemSearchPage'()
 
@@ -27,5 +24,4 @@ CustomKeywords.'com.wswadmin.ItemSearchpage.openTemplateConfigurationPage1'()
 
 CustomKeywords.'com.wswadmin.ItemSearchpage.validateSupplierCategory'()
 
-WebUI.closeBrowser()
 

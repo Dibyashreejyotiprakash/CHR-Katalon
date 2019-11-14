@@ -13,9 +13,6 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.openBrowser('')
-
-WebUI.maximizeWindow()
 
 CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameposw, GlobalVariable.testtyperegression, GlobalVariable.environment)
 
@@ -27,21 +24,21 @@ CustomKeywords.'com.poswm.Homepage.ClickOnNewOrder'()
 
 CustomKeywords.'com.poswm.NewOrderPage.ClickOnOrderIdBtn'()
 
-CustomKeywords.'com.poswm.NewOrderPage.SelectSalesDivision'()
+CustomKeywords.'com.poswm.WarehouseOrders.VerifyNewOrderPage'()
 
-CustomKeywords.'com.poswm.NewOrderPage.ClickOnNewItem'()
+CustomKeywords.'com.poswm.WarehouseOrders.VerifyAndClickOnAddOrderIcon'()
 
-CustomKeywords.'com.poswm.NewOrderPage.ClickOnFirstAddBtn'()
+CustomKeywords.'com.poswm.WarehouseOrders.VerifyAddItemLink'()
 
-CustomKeywords.'com.poswm.NewOrderPage.AddNewCustomer'()
+CustomKeywords.'com.poswm.WarehouseOrders.AddItemAndVerifyMsg'()
 
-CustomKeywords.'com.poswm.NewOrderPage.AddDesiredShipDate'()
+CustomKeywords.'com.poswm.WarehouseOrders.AddCustomerAndVerifyMsg'()
 
-CustomKeywords.'com.poswm.NewOrderPage.AddShipMethod'()
+CustomKeywords.'com.poswm.WarehouseOrders.AddDesiredShippingDateAndVerifyMsg'()
 
-CustomKeywords.'com.poswm.NewOrderPage.ClickOnSubmitOrder'()
+CustomKeywords.'com.poswm.WarehouseOrders.AddShipingMethodAndVerifyMsg'()
 
-CustomKeywords.'com.poswm.NewOrderPage.VerifyOrderConfirmationMSg'()
+CustomKeywords.'com.poswm.WarehouseOrders.ClickOnSubmitOrderBtnAndevrifyMsg'()
 
-WebUI.closeBrowser()
+
 

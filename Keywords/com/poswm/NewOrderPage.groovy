@@ -55,126 +55,226 @@ public class NewOrderPage {
 	By addedcustomersuccessfuliymsg = By.xpath("//*[text()='Customer has been selected.']")
 
 	@Keyword
+	public void VerifyNewOrderPage() {
+		try{
+			action.VerifyCurrentPage("WarehouseOrders.aspx")
+		}
+		catch(Exception e) {
+			println ("Verify New Order Page failed ue to "+ e)
+			Assert.fail()
+		}
+	}
+
+	@Keyword
 	public void ClickOnOrderIdBtn() {
-		action.Click(orderidbutton)
-		action.WaitForPageToLoad()
+		try{
+			action.Click(orderidbutton)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("Click On Order Id Btn failed due to "+ e)
+			Assert.fail()
+		}
 	}
 
 	@Keyword
 	public void ClickOnNewItem() {
-		action.Click(newitembtn)
-		action.WaitForPageToLoad()
+
+		try{
+			action.Click(newitembtn)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("Click On New Item failed due to "+ e)
+			Assert.fail()
+		}
 	}
 
 	@Keyword
 	public void ClickOnFirstAddBtn() {
-		action.Click(firstaddlink)
+		try{
+			action.Click(firstaddlink)
+		}
+		catch(Exception e) {
+			println ("Click On First Add Btn failed ue to "+ e)
+			Assert.fail()
+		}
 	}
 
 	@Keyword
 	public void VerifySalesDivisionBtn() {
-		action.WaitVisible(switchsalesdivision)
-		boolean statusofvisibityofswitchsalesdivisionbtn = action.IsElementDisplayed(switchsalesdivision)
-		Assert.assertTrue(statusofvisibityofswitchsalesdivisionbtn)
-		boolean statusofenabilityofswitchsalesdivisionbtn = action.IsElementEnabled(switchsalesdivision)
-		Assert.assertTrue(statusofenabilityofswitchsalesdivisionbtn)
+
+		try{
+			boolean statusofvisibityofswitchsalesdivisionbtn = action.IsElementDisplayed(switchsalesdivision)
+			Assert.assertTrue(statusofvisibityofswitchsalesdivisionbtn)
+			boolean statusofenabilityofswitchsalesdivisionbtn = action.IsElementEnabled(switchsalesdivision)
+			Assert.assertTrue(statusofenabilityofswitchsalesdivisionbtn)
+		}
+		catch(Exception e) {
+			println ("Verify Sales division failed ue to "+ e)
+			Assert.fail()
+		}
 	}
 
 	@Keyword
 	public void VerifySwitchSalesDivisionBtn() {
-		action.WaitVisible(switchsalesdivision)
-		boolean  statusofvisibilityofswitchsalesdivisionbtn  =action.IsElementDisplayed(switchsalesdivision)
-		Assert.assertTrue(statusofvisibilityofswitchsalesdivisionbtn)
-		boolean  statusofenabilityofswitchsalesdivisionbtn  =action.IsElementDisplayed(switchsalesdivision)
-		Assert.assertTrue(statusofenabilityofswitchsalesdivisionbtn)
+
+		try{
+			boolean  statusofvisibilityofswitchsalesdivisionbtn  =action.IsElementDisplayed(switchsalesdivision)
+			Assert.assertTrue(statusofvisibilityofswitchsalesdivisionbtn)
+			boolean  statusofenabilityofswitchsalesdivisionbtn  =action.IsElementDisplayed(switchsalesdivision)
+			Assert.assertTrue(statusofenabilityofswitchsalesdivisionbtn)
+		}
+		catch(Exception e) {
+			println ("Verify Switch Sales Division Btn failed due to "+ e)
+			Assert.fail()
+		}
 	}
 
 
 
 	@Keyword
 	public void SelectSalesDivision() {
-		action.Click(switchsalesdivision)
-		action.Click(selectsalesdivisionddn)
-		action.Click(salesdivisionddnvalue)
+		try{
+			action.Click(switchsalesdivision)
+			action.Click(selectsalesdivisionddn)
+			action.Click(salesdivisionddnvalue)
+		}
+		catch(Exception e) {
+			println ("Select Sales Division failed ue to "+ e)
+			Assert.fail()
+		}
 	}
 
 	@Keyword
 	public void VerifyAddnewCustomerBtn() {
-		action.WaitVisible(addcustomerbtn)
-		boolean statusofvisibityofaddnewcustomerbtn = action.IsElementDisplayed(addcustomerbtn)
-		Assert.assertTrue(statusofvisibityofaddnewcustomerbtn)
-		boolean statusofenabilityofnewcustomerbtn = action.IsElementEnabled(addcustomerbtn)
-		Assert.assertTrue(statusofenabilityofnewcustomerbtn)
+
+		try{
+			boolean statusofvisibityofaddnewcustomerbtn = action.IsElementDisplayed(addcustomerbtn)
+			Assert.assertTrue(statusofvisibityofaddnewcustomerbtn)
+			boolean statusofenabilityofnewcustomerbtn = action.IsElementEnabled(addcustomerbtn)
+			Assert.assertTrue(statusofenabilityofnewcustomerbtn)
+		}
+		catch(Exception e) {
+			println ("Verify Add new Customer Btn failed ue to "+ e)
+			Assert.fail()
+		}
 	}
 
 	@Keyword
 	public void AddNewCustomer() {
-		//action.ScrollToViewelement(addcustomerbtn)
-		action.Click(addcustomerbtn)
-		action.WaitTime(10)
-		action.Type(customernametxtbx, "test")
-		action.WaitTime(10)
-		action.Click(customername)
-		action.WaitTime(5)
+		try{
+			action.ScrollToViewelement(addcustomerbtn)
+			action.Click(addcustomerbtn)
+			action.WaitTime(10)
+			action.Type(customernametxtbx, "st")
+			action.WaitTime(10)
+			action.Click(customername)
+			action.WaitTime(5)
+		}
+		catch(Exception e) {
+			println ("Add New Customer failed ue to "+ e)
+			Assert.fail()
+		}
 	}
 
 	@Keyword
 	public void VerifyNewCustomerAddeddSuccessfully() {
-		action.ScrollToTopOgPage()
-		action.WaitVisible(addedcustomersuccessfuliymsg)
-		boolean addedcustomerconfirmationmsg = action.IsElementDisplayed(addedcustomersuccessfuliymsg)
-		Assert.assertTrue(addedcustomerconfirmationmsg)
+		try{
+			action.ScrollToTopOgPage()
+			action.WaitVisible(addedcustomersuccessfuliymsg)
+			boolean addedcustomerconfirmationmsg = action.IsElementDisplayed(addedcustomersuccessfuliymsg)
+			Assert.assertTrue(addedcustomerconfirmationmsg)
+		}
+		catch(Exception e) {
+			println ("Verify New Customer Addedd Successfully failed due to "+ e)
+			Assert.fail()
+		}
 	}
 
 	@Keyword
 	public void AddDesiredShipDate() {
-		action.Click(calanderdesireddatebtn)
-		action.WaitTime(3)
-		action.Click(desireddate)
-		action.WaitTime(3)
+		try{
+			action.Click(calanderdesireddatebtn)
+			action.WaitTime(3)
+			action.Click(desireddate)
+			action.WaitTime(3)
+		}
+		catch(Exception e) {
+			println ("Add Desired Ship Date failed due to "+ e)
+			Assert.fail()
+		}
 	}
 
 
 
 	@Keyword
 	public void AddShipMethod() {
-		action.Click(shipmethodddn)
-		action.WaitTime(5)
-		action.Click(shipmethodddnvalue)
-		action.WaitTime(5)
+		try{
+			action.Click(shipmethodddn)
+			action.WaitTime(5)
+			action.Click(shipmethodddnvalue)
+			action.WaitTime(5)
+		}
+		catch(Exception e) {
+			println ("Add Ship Method failed ue to "+ e)
+			Assert.fail()
+		}
 	}
 
 	@Keyword
 	public void VerifySubmitButton() {
-		action.ScrollToBottomOfPage()
-		action.WaitVisible(submitorder)
-		boolean statusofsubmitodrerbtn = action.IsElementDisplayed(submitorder)
-		Assert.assertTrue(statusofsubmitodrerbtn)
-		boolean statusofenablesubmitodrerbtn = action.IsElementEnabled(submitorder)
-		Assert.assertTrue(statusofenablesubmitodrerbtn)
+		try{
+			action.ScrollToBottomOfPage()
+			action.WaitVisible(submitorder)
+			boolean statusofsubmitodrerbtn = action.IsElementDisplayed(submitorder)
+			Assert.assertTrue(statusofsubmitodrerbtn)
+			boolean statusofenablesubmitodrerbtn = action.IsElementEnabled(submitorder)
+			Assert.assertTrue(statusofenablesubmitodrerbtn)
+		}
+		catch(Exception e) {
+			println ("Verify Submit Button failed due to "+ e)
+			Assert.fail()
+		}
 	}
 
 	@Keyword
 	public void ClickOnSubmitOrder() {
 
-		action.Click(submitorder)
+		try{
+			action.Click(submitorder)
+		}
+		catch(Exception e) {
+			println ("Click On Submit Order failed due to "+ e)
+			Assert.fail()
+		}
 	}
 
 
 
 	@Keyword
 	public void VerifyOrderConfirmationMSg() {
-		action.WaitVisible(ordersuccessfullmsg)
-		boolean orderconfirmationmsg = action.IsElementDisplayed(ordersuccessfullmsg)
-		Assert.assertTrue(orderconfirmationmsg)
+		try{
+			boolean orderconfirmationmsg = action.IsElementDisplayed(ordersuccessfullmsg)
+			Assert.assertTrue(orderconfirmationmsg)
+		}
+		catch(Exception e) {
+			println ("Verify Order Confirmation MSg failed ue to "+ e)
+			Assert.fail()
+		}
 	}
 
 	@Keyword
 	public void VerifyCancelButton() {
-		action.WaitVisible(cancelodrerbtn)
-		boolean statusofpresenceofcancelorderbtn = action.IsElementDisplayed(cancelodrerbtn)
-		Assert.assertTrue(statusofpresenceofcancelorderbtn)
-		boolean statusofenabilityofcancelorderbtn = action.IsElementDisplayed(cancelodrerbtn)
-		Assert.assertTrue(statusofenabilityofcancelorderbtn)
+		try{
+			boolean statusofpresenceofcancelorderbtn = action.IsElementDisplayed(cancelodrerbtn)
+			Assert.assertTrue(statusofpresenceofcancelorderbtn)
+			boolean statusofenabilityofcancelorderbtn = action.IsElementDisplayed(cancelodrerbtn)
+			Assert.assertTrue(statusofenabilityofcancelorderbtn)
+		}
+		catch(Exception e) {
+			println ("Verify Cancel Butto failed due to "+ e)
+			Assert.fail()
+		}
 	}
 }

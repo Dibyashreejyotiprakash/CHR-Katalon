@@ -18,6 +18,7 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.utilities.Interaction
 import org.openqa.selenium.By
 import org.openqa.selenium.WebDriver
+import org.openqa.selenium.WebElement
 import org.testng.Assert
 import org.openqa.selenium.Alert
 import com.kms.katalon.core.webui.driver.DriverFactory
@@ -37,28 +38,49 @@ public class ManageBaseElementPage {
 	By estqtycolumn = By.xpath("//*[@id='allProgramsList']//tr[1]/th[4]")
 	By estvrcoulmn = By.xpath("//*[@id='allProgramsList']//tr[1]/th[5]")
 	By firsteditbtn = By.xpath("//*[@id='allProgramsList_wrapper']//tr[1]/td[6]/a")
+	By allelementsname = By.xpath("//*[@id='allProgramsList']//tbody//tr//td[1]/label")
+	By firstelemnetname = By.xpath("//*[@id='allProgramsList']//tbody//tr[1]//td[1]/label")
 
 	@Keyword
 	public void VerifyManageBaseElementPage() {
-		boolean statusofvisibility = action.IsElementDisplayed(managebaseelementlable)
-		Assert.assertTrue(statusofvisibility)
+		try{
+			action.VerifyCurrentPage("ConsolidatorManageBaseElement.aspx")
+			boolean statusofvisibility = action.IsElementDisplayed(managebaseelementlable)
+			Assert.assertTrue(statusofvisibility)
+		}
+		catch(Exception e) {
+			Assert.fail("Verify manage base element page failed due to "+ e)
+		}
 	}
 
 	@Keyword
 	public void VerifyAddNewElementButton() {
-		boolean statusofvisibility = action.IsElementDisplayed(addnewitembtn)
-		Assert.assertTrue(statusofvisibility)
+		try{
+			boolean statusofvisibility = action.IsElementDisplayed(addnewitembtn)
+			Assert.assertTrue(statusofvisibility)
+		}
+		catch(Exception e) {
+			Assert.fail("Verify Add New Element Button failed due to "+ e)
+		}
 	}
-	
+
 	@Keyword
 	public void ClickAddNewElementButton() {
-		boolean statusofvisibility = action.IsElementDisplayed(addnewitembtn)
-		Assert.assertTrue(statusofvisibility)
-		
-		if(statusofvisibility == true)
-		{
-			action.Click(addnewitembtn)
-			action.WaitForPageToLoad()
+		try{
+			boolean statusofvisibility = action.IsElementDisplayed(addnewitembtn)
+			Assert.assertTrue(statusofvisibility)
+
+			if(statusofvisibility == true) {
+				action.Click(addnewitembtn)
+				action.WaitForPageToLoad()
+				WebUI.delay(10)
+			}
+			else{
+				throw new Exception ("Add new item button not available")
+			}
+		}
+		catch(Exception e) {
+			Assert.fail("Click Add New Element Button failed due to "+ e)
 		}
 	}
 
@@ -78,17 +100,73 @@ public class ManageBaseElementPage {
 			Assert.assertTrue(estqtyperpackcolmn)
 		}
 		catch(Exception e) {
-			println ("Verify All Coulumns failed due to "+ e)
-			throw e;
+			Assert.fail("Verify All Coulumns failed due to "+ e)
 		}
 	}
 
 	@Keyword
 	public void VerifyNavigationofEditBaseElementPage() {
-		boolean statusoffirsteditlink = action.IsElementDisplayed(firsteditbtn)
-		if(statusoffirsteditlink == true) {
-			action.Click(firsteditbtn)
-			action.WaitForPageToLoad()
+		try{
+			boolean statusoffirsteditlink = action.IsElementDisplayed(firsteditbtn)
+			if(statusoffirsteditlink == true) {
+				action.Click(firsteditbtn)
+				action.WaitForPageToLoad()
+				WebUI.delay(5)
+			}
+			else{
+				throw new Exception("First edit link is not there")
+			}
+		}
+		catch(Exception e) {
+			Assert.fail("Verify Navigation of Edit Base Element Page failed due to "+ e)
+		}
+	}
+
+	@Keyword
+	public void SearchElement() {
+		try{
+			String elementname = null
+			List<WebElement> elementnamesbeforesearch = action.GetElements(allelementsname)
+			if(elementnamesbeforesearch.size() != 0) {
+				for(int i=0;i< elementnamesbeforesearch.size();i++) {
+					elementname = elementnamesbeforesearch.get(i).getText()
+					action.Type(searchtxtbox, elementname)
+					WebUI.delay(2)
+					String aftersearchelementname = action.GetText(firstelemnetname)
+					if(aftersearchelementname.contentEquals(elementname)) {
+						println ("Element found")
+					}
+					else{
+						throw new Exception("element not found")
+					}
+				}
+			}
+			else{
+				throw new Exception("No Element is available in the grid")
+			}
+		}
+		catch(Exception e) {
+			Assert.fail("Search Element failed due to "+ e)
+		}
+	}
+	
+	@Keyword
+	public void ClickOnEditLink()
+	{
+		try{
+			List<WebElement> elementnamesbeforesearch = action.GetElements(allelementsname)
+			if(elementnamesbeforesearch.size() != 0)
+			{
+				action.Click(firsteditbtn)
+				action.WaitForPageToLoad()
+			}
+			else{
+				throw new Exception ("No element present in the grid")
+			}
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Click On Edit Link failed due to "+ e)
 		}
 	}
 }

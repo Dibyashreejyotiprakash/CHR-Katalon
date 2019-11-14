@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>ValidateAddedSalePersonInSalesPersonDropdown</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>dbdbe3a7-205a-4a8d-81ec-4d4172e88b15</testCaseGuid>
+</TestCaseEntity>

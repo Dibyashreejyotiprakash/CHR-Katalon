@@ -21,8 +21,9 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.utilities.Interaction
 import com.kms.katalon.core.webui.driver.DriverFactory as DriverFactory
+import org.openqa.selenium.WebElement
 
-import internal.GlobalVariable
+//import internal.GlobalVariable
 
 public class ItemSearchpage {
 
@@ -47,6 +48,25 @@ public class ItemSearchpage {
 	By noresultfoundtxt = By.xpath("//div[@id='programlistContent']/div[1]")
 	By expandedmetatagcross = By.xpath("(//img[@alt = 'X'])[2]")
 	By completestatus = By.xpath("//li[contains(text(),'Complete')]")
+	By alphaW = By.xpath("//a[@id='aAlpha_W']")
+	By checkboxlist = By.xpath("//div[@id = 'programlistContent']//span[@class = 'check']")
+	By applyselection = By.xpath("//button[@id='btnUpdate']")
+	By selectmetatag = By.xpath("//label[contains(text(),'Wakefield')]")
+	By savebtn = By.xpath("//input[@id='cphMain_cphMain_btnSave']")
+
+	@Keyword
+	public void VerifytemplateFulfillmentPage()
+	{
+		try{
+			action.VerifyCurrentPage("TemplateFulfillment.aspx")
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Verify template Fulfillment Page failed due to "+ e)
+		}
+	}
+
+
 
 
 
@@ -55,12 +75,34 @@ public class ItemSearchpage {
 
 		action.Click(corporationtextbox)
 		action.Type(corporationtextbox, "300")
-		action.Click(selectcorp1)
-		WebUI.delay(10)
+		action.Click(selectcorp)
+		WebUI.delay(15)
 		action.Click(itemtypetextbox)
+		WebUI.delay(2)
 		action.Click(selectitemtemplate)
+		WebUI.delay(2)
 		action.Click(firstselectdata)
 		action.WaitVisible(corporationname)
+	}
+
+	@Keyword
+	public void ValidateRetainSelection()
+	{
+		try{
+			String corpddnvalue = driver.findElement(By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_rcbCorp_Input']")).getAttribute("value")
+			println ("Selection is _________________"+ corpddnvalue)
+			if(corpddnvalue.contains("339 - Demo Distributor (QA)"))
+			{
+				println ("Selected values are retained")
+			}
+			else{
+				throw new Exception ("Selected values are not retained")
+			}
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Validate Retain Selection failed due to "+ e)
+		}
 	}
 
 	@Keyword
@@ -111,13 +153,11 @@ public class ItemSearchpage {
 			Assert.fail("Navigate To Template Configuration Page failed due to "+ e)
 		}
 	}
-	
-	
+
+
 	@Keyword
-	public void SelectCompleteTemplate()
-	{
-		try
-		{
+	public void SelectCompleteTemplate() {
+		try {
 			action.Click(corporationtextbox)
 			action.Type(corporationtextbox, "300")
 			action.Click(selectcorp)
@@ -129,55 +169,104 @@ public class ItemSearchpage {
 			action.Click(firstselectdata)
 			action.WaitVisible(corporationname)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("SelectCompleteTemplate failed due to "+ e)
 		}
-		
 	}
-	
-	
+
+
 	@Keyword
-	public void OpenBrandNameExpandedWindow()
-	{
-		try
-		{
+	public void OpenBrandNameExpandedWindow() {
+		try {
 			action.WaitVisible(brandnamecategory)
-		WebUI.delay(5)
-		action.ScrollToViewElement(brandnamemetatagcount)
-		action.WaitVisible(brandnamemetatagcount)
-		action.Click(brandnamemetatagcount)
-		action.WaitVisible(expandedmetatagcross)
-		
+			WebUI.delay(5)
+			action.ScrollToViewElement(brandnamemetatagcount)
+			action.WaitVisible(brandnamemetatagcount)
+			action.Click(brandnamemetatagcount)
+			action.WaitVisible(expandedmetatagcross)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("OpenBrandNameExpandedWindow failed due to "+ e)
 		}
-		
 	}
-	
+
 	@Keyword
-	public void ValidateSpecialCharacterMetatag()
-	{
-		try
-		{
+	public void ValidateSpecialCharacterMetatag() {
+		try {
 			action.Click(expandedmetatagsearch)
 			action.Type(expandedmetatagsearch, "?")
 			action.WaitVisible(noresultfoundtxt)
 			action.Click(expandedmetatagcross)
 			action.WaitVisible(corporationname)
 			action.ScrollToViewElement(corporationname)
-		
+		}
+		catch(Exception e) {
+			Assert.fail("ValidateSpecialCharacterMetatag failed due to "+ e)
+		}
+	}
+
+	@Keyword
+	public void ValidateMetatagUnselectionOnExpandedScreen()
+	{
+		try
+		{
+			action.WaitVisible(brandnamemetatagcount)
+			action.ScrollToViewElement(brandnamemetatagcount)
+			WebUI.delay(3)
+			action.Click(brandnamemetatagcount)
+			WebUI.delay(3)
+			List<WebElement> e = action.GetElements(checkboxlist)
+
+			if(e.size()>0)
+			{
+				for(int i=0;i< 3; i++)
+				{
+					e[i].click()
+
+				}
+
+				action.Click(applyselection)
+				action.WaitVisible(savebtn)
+			}
+			else
+			{
+				action.Click(alphaW)
+				action.WaitVisible(selectmetatag)
+				action.Click(selectmetatag)
+				action.Click(applyselection)
+				action.WaitVisible(brandnamecategory)
+				action.WaitVisible(brandnamemetatagcount)
+				action.Click(brandnamemetatagcount)
+				action.WaitVisible(expandedmetatagcross)
+				action.Click(alphaW)
+				action.Click(selectmetatag)
+				action.Click(applyselection)
+				action.WaitVisible(savebtn)
+				action.Click(savebtn)
+			}
+
 		}
 		catch(Exception e)
 		{
-			Assert.fail("ValidateSpecialCharacterMetatag failed due to "+ e)
+			Assert.fail("ValidateMetatagUnselectionOnExpandedScreen failed due to "+ e)
 		}
-		
 	}
-	
-	
+
+	@Keyword
+	public void VerifyCorporationDdnIsMandatory()
+	{
+		try{
+			boolean statusofitemtypeddn = action.IsElementEnabled(itemtypetextbox)
+			println ("Status of Item Type before corporation selection----"+ statusofitemtypeddn)
+			Assert.assertFalse(statusofitemtypeddn)
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Verify Corporation Ddn Is Mandatory failed due to "+ e)
+		}
+	}
+
+
 }
 
 

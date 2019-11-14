@@ -87,13 +87,13 @@ public class ResourceMessage {
 	By reportseditlink = By.xpath("//*[@id='ctl00_cphMain_RadGridResource_ctl00']//tr/td[text()='Reports']/..//a[text()='Edit']")
 
 
-	 By accountsdeletelink = By.xpath("//*[@id='ctl00_cphMain_RadGridResource_ctl00']//tr/td[text()='Account']/..//a[text()=' Delete']")
-	 By addressbookdeletelink = By.xpath("//*[@id='ctl00_cphMain_RadGridResource_ctl00']//tr/td[text()='Address Book']/..//a[text()=' Delete']")
-	 By addresslistdeletelink = By.xpath("//*[@id='ctl00_cphMain_RadGridResource_ctl00']//tr/td[text()='Address Lists']/..//a[text()=' Delete']")
-	 By logolockerdeletelink = By.xpath("//*[@id='ctl00_cphMain_RadGridResource_ctl00']//tr/td[text()='Logo Locker']/..//a[text()=' Delete']")
-	 By profiledeletelink = By.xpath("//*[@id='ctl00_cphMain_RadGridResource_ctl00']//tr/td[text()='Profile']/..//a[text()=' Delete']")
-	 By projectsdeletelink = By.xpath("//*[@id='ctl00_cphMain_RadGridResource_ctl00']//tr/td[text()='Projects']/..//a[text()=' Delete']")
-	 By reportsdeletelink = By.xpath("//*[@id='ctl00_cphMain_RadGridResource_ctl00']//tr/td[text()='Reports']/..//a[text()=' Delete']")
+	By accountsdeletelink = By.xpath("//*[@id='ctl00_cphMain_RadGridResource_ctl00']//tr/td[text()='Account']/..//a[text()=' Delete']")
+	By addressbookdeletelink = By.xpath("//*[@id='ctl00_cphMain_RadGridResource_ctl00']//tr/td[text()='Address Book']/..//a[text()=' Delete']")
+	By addresslistdeletelink = By.xpath("//*[@id='ctl00_cphMain_RadGridResource_ctl00']//tr/td[text()='Address Lists']/..//a[text()=' Delete']")
+	By logolockerdeletelink = By.xpath("//*[@id='ctl00_cphMain_RadGridResource_ctl00']//tr/td[text()='Logo Locker']/..//a[text()=' Delete']")
+	By profiledeletelink = By.xpath("//*[@id='ctl00_cphMain_RadGridResource_ctl00']//tr/td[text()='Profile']/..//a[text()=' Delete']")
+	By projectsdeletelink = By.xpath("//*[@id='ctl00_cphMain_RadGridResource_ctl00']//tr/td[text()='Projects']/..//a[text()=' Delete']")
+	By reportsdeletelink = By.xpath("//*[@id='ctl00_cphMain_RadGridResource_ctl00']//tr/td[text()='Reports']/..//a[text()=' Delete']")
 
 
 
@@ -162,12 +162,12 @@ public class ResourceMessage {
 		action.Click(corporationddnvalue)
 		action.WaitVisible(distributorddn)
 		action.WaitUntilElementClickable(distributorddn)
-		WebUI.delay(10)
+		//WebUI.delay(10)
 		action.Click(distributorddn)
 		action.Click(distributorvalue)
 		if(action.IsElementEnabled(accountseditlink)) {
 			action.Click(accountseditlink)
-			WebUI.delay(10)
+			//WebUI.delay(10)
 			action.WaitVisible(acccountresorcespopup)
 			if(action.IsElementDisplayed(acccountresorcespopup)) {
 				println ("Resorce message pop up is verified for Account")
@@ -423,13 +423,13 @@ public class ResourceMessage {
 		action.Click(reportsupdatebtn)
 		WebUI.delay(10)
 	}
-	
-	
-	
+
+
+
 	@Keyword
 	public void VerifyDeleteResourceMessageProfile() {
-		
-		
+
+
 		if(action.IsElementEnabled(profiledeletelink)) {
 			action.Click(profiledeletelink)
 			WebUI.delay(10)
@@ -437,11 +437,11 @@ public class ResourceMessage {
 			WebUI.delay(10)
 		}
 	}
-	
+
 	@Keyword
 	public void VerifyDeleteResourceMessageReports() {
-		
-		
+
+
 		if(action.IsElementEnabled(reportsdeletelink)) {
 			action.Click(reportsdeletelink)
 			WebUI.delay(10)
@@ -449,12 +449,12 @@ public class ResourceMessage {
 			WebUI.delay(10)
 		}
 	}
-	
-	
+
+
 	@Keyword
 	public void VerifyDeleteResourceMessageLogoLocker() {
-		
-		
+
+
 		if(action.IsElementEnabled(logolockerdeletelink)) {
 			action.Click(logolockerdeletelink)
 			WebUI.delay(10)
@@ -462,11 +462,11 @@ public class ResourceMessage {
 			WebUI.delay(10)
 		}
 	}
-	
+
 	@Keyword
 	public void VerifyDeleteResourceMessageProjects() {
-		
-		
+
+
 		if(action.IsElementEnabled(projectsdeletelink)) {
 			action.Click(projectsdeletelink)
 			WebUI.delay(10)
@@ -474,11 +474,11 @@ public class ResourceMessage {
 			WebUI.delay(10)
 		}
 	}
-	
+
 	@Keyword
 	public void VerifyDeleteResourceMessageAddressBook() {
-		
-		
+
+
 		if(action.IsElementEnabled(addressbookdeletelink)) {
 			action.Click(addressbookdeletelink)
 			WebUI.delay(10)
@@ -486,11 +486,11 @@ public class ResourceMessage {
 			WebUI.delay(10)
 		}
 	}
-	
+
 	@Keyword
 	public void VerifyDeleteResourceMessageAddressList() {
-		
-		
+
+
 		if(action.IsElementEnabled(addresslistdeletelink)) {
 			action.Click(addresslistdeletelink)
 			WebUI.delay(10)

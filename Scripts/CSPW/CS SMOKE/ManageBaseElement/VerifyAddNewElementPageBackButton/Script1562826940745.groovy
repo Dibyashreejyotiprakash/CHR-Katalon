@@ -33,5 +33,7 @@ CustomKeywords.'com.consolidator.ManageBaseElementPage.ClickAddNewElementButton'
 
 CustomKeywords.'com.consolidator.ConsolidatorAddBaseElementPage.VerifyBackButton'()
 
+CustomKeywords.'com.consolidator.LoginPage.LogoutFromV5AdminTool'()
+
 WebUI.closeBrowser()
 

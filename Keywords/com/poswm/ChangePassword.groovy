@@ -36,36 +36,12 @@ public class ChangePassword {
 
 	@Keyword
 	public void VerifyChangePasswordPage() {
-
-		String expectedUATUrl = "https://csg.v5qa.brandmuscle.net/MyAccount/ChangePassword.aspx";
-		String expectedSTAGEUrl ="https://csg.v5stage.brandmuscle.net/MyAccount/ChangePassword.aspx"
-		String expectedPRODUrl = "https://csg.brandmuscle.net/MyAccount/ChangePassword.aspx";
-		String expectedHeader = "Change Password"
-
-
-
-		String env = GlobalVariable.environment
-		String actualUrl = action.GetCurrentURL()
-
-		if(env.equalsIgnoreCase("uat")) {
-			Assert.assertEquals(expectedUATUrl, actualUrl)
-			//String actualHeaderChangePass = action.GetText(levelChangePassword)
-			boolean status= action.IsElementDisplayed(levelChangePassword)
-			Assert.assertTrue(status)
-
+		try{
+			action.VerifyCurrentPage("ChangePassword.aspx")
 		}
-		else if(env.equalsIgnoreCase("stage")) {
-			Assert.assertEquals(expectedSTAGEUrl, actualUrl)
-			boolean status= action.IsElementDisplayed(levelChangePassword)
-			Assert.assertTrue(status)
-		}
-		else if(env.equalsIgnoreCase("prod")) {
-			Assert.assertEquals(expectedPRODUrl, actualUrl)
-			boolean status= action.IsElementDisplayed(levelChangePassword)
-			Assert.assertTrue(status)
-		}
-		else {
-			println (Assert.fail())
+		catch(Exception e) {
+			println ("Verify change password failed ue to "+ e)
+			Assert.fail()
 		}
 	}
 }

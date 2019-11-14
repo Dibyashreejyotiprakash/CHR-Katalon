@@ -15,12 +15,13 @@ import com.kms.katalon.core.testdata.TestData
 import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
-import internal.GlobalVariable
+//import internal.GlobalVariable
 import java.time.LocalTime
 import com.utilities.Interaction
 import org.openqa.selenium.By
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
+import org.testng.Assert
 
 import com.kms.katalon.core.webui.driver.DriverFactory
 
@@ -30,6 +31,7 @@ public class MetatagConfigurationPage {
 	Interaction action = new Interaction();
 
 	By metatag = By.xpath("//*[@class='ExternalItemPlaceHolder']/fieldset[1]//div/span")
+	By backtotemplatesbtn = By.xpath("//*[text()='Back to Templates']")
 
 	@Keyword
 	public void VerifyMetaTag() {
@@ -41,6 +43,19 @@ public class MetatagConfigurationPage {
 			if(metatagname.contains("Test")) {
 				println ("Created New Meta tag found")
 			}
+		}
+	}
+
+	@Keyword
+	public void BackToItemSearchPage()
+	{
+		try{
+			action.Click(backtotemplatesbtn)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Back To Item Search Page failed due to "+ e)
 		}
 	}
 }

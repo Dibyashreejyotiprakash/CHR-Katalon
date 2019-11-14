@@ -89,7 +89,31 @@ public class OrderFormDefaultPage {
 			Assert.assertTrue(statusofcreatenewdesignbtn)
 		}
 		catch(Exception e) {
-			println ("Click on Create New CustomOrder failed due to "+ e)
+			println ("Click on Create New CustomOrder button failed due to "+ e)
+		}
+	}
+
+	@Keyword
+	public void VerifyCloneOrderButton() {
+		try {
+
+			boolean statusofcloneorderbtn = action.IsElementDisplayed(clone)
+			Assert.assertTrue(statusofcloneorderbtn)
+		}
+		catch(Exception e) {
+			println ("Click on Clone Order button failed due to "+ e)
+		}
+	}
+
+	@Keyword
+	public void VerifyFinishInCompleteButton() {
+		try {
+
+			boolean statusoffinishincompletebtn = action.IsElementDisplayed(finishincompletebtn)
+			Assert.assertTrue(statusoffinishincompletebtn)
+		}
+		catch(Exception e) {
+			println ("Click on finish Incomplete button failed due to "+ e)
 		}
 	}
 }

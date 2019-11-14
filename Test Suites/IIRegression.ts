@@ -59,10 +59,10 @@
       <testCaseId>Test Cases/IIDT/II REGRESSION/Online Order Form/ClonePreviousDTOrder/VerifyEditLinkOnCloneItemDetailsPage</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>b99a2c5d-e46e-47e7-8f12-efce5c654fb8</guid>
+      <guid>e6c43419-72b1-4e21-900b-726cdc9dbff4</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/II REGRESSION/Online Order Form/Create New Order/VerifyClickOnLargeFormatButton</testCaseId>
+      <testCaseId>Test Cases/IIDT/II REGRESSION/Online Order Form/Create New Order/VerifyDetailsPageAndNavigationToFinishDetailsPage</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>09d906ae-2161-41ab-bb6f-df57f31c5fe0</guid>
@@ -77,10 +77,10 @@
       <testCaseId>Test Cases/IIDT/II REGRESSION/Online Order Form/Create New Order/VerifyClickOnSmallFormatPrintButton</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>e6c43419-72b1-4e21-900b-726cdc9dbff4</guid>
+      <guid>b99a2c5d-e46e-47e7-8f12-efce5c654fb8</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/II REGRESSION/Online Order Form/Create New Order/VerifyDetailsPageAndNavigationToFinishDetailsPage</testCaseId>
+      <testCaseId>Test Cases/IIDT/II REGRESSION/Online Order Form/Create New Order/VerifyClickOnLargeFormatButton</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>f7d00d06-8e25-46c4-a375-1c965e42697f</guid>
@@ -113,12 +113,6 @@
       <testCaseId>Test Cases/IIDT/II REGRESSION/Online Order Form/Create New Order/VerifySmallFormatOrder</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>b7796232-7e72-4488-87bb-10f400f6d8eb</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/II REGRESSION/Online Order Form/FinishAnIncomplete/VerifyClearbuttonforFilterOption</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
       <guid>db3e2eb7-4f88-482c-b0ac-b7a38b91f59c</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
@@ -129,12 +123,6 @@
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/IIDT/II REGRESSION/Online Order Form/FinishAnIncomplete/VerifyEdit</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>a18b44d0-11a1-4ca6-98a5-fedb5e916553</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/II REGRESSION/Online Order Form/FinishAnIncomplete/VerifyFilterButtonforFilterOption</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>af06120a-40c3-47a4-978a-acfd0b3bb068</guid>

@@ -23,7 +23,7 @@ CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.posusername, Globa
 
 CustomKeywords.'com.poswm.WarehouseDashBoardPage.ClickAndVerifyOrderPackListLink'()
 
-CustomKeywords.'com.poswm.WarehouseDashBoardPage.VerifyOrderPackListPage'()
+//CustomKeywords.'com.poswm.WarehouseDashBoardPage.VerifyOrderPackListPage'()
 
 WebUI.closeBrowser()
 

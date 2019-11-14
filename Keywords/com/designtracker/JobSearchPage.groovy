@@ -33,6 +33,7 @@ public class JobSearchPage {
 	By searchbtn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_btnSearch']")
 	By displayedjobid = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_gvSingleSearchResults_ctl00__0']/td[4]")
 	By selectjoblink = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_gvSingleSearchResults_ctl00__0']/td[1]/a")
+	By confirmationradiobtn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_rbtnlCriteria_1']")
 
 	@Keyword
 	public void VerifyJobSearchPage() {
@@ -62,5 +63,21 @@ public class JobSearchPage {
 		action.WaitVisible(selectjoblink)
 		action.Click(selectjoblink)
 		action.WaitForPageToLoad()
+	}
+	
+	@Keyword
+	public void VerifyCreatedJobInDTSearchPage(String jobcreatedinusersite)
+	{
+		try{
+			action.Click(confirmationradiobtn)
+			action.Type(searchtxtbox, jobcreatedinusersite)
+			action.ScrollToBottomOfPage()
+			action.Click(searchbtn)
+		}
+		catch(Exception e)
+		{
+			println ("Verify Created Job In DT Search Page")
+			Assert.fail()
+		}
 	}
 }

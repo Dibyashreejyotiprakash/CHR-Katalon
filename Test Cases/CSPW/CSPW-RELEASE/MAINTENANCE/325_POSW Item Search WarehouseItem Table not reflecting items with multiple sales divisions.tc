@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>325_POSW Item Search WarehouseItem Table not reflecting items with multiple sales divisions</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>61e0d9fa-4dbc-4e98-87a1-4b7e3d87d7e6</testCaseGuid>
+</TestCaseEntity>

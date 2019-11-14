@@ -20,7 +20,7 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.utilities.Interaction
 import com.kms.katalon.core.webui.driver.DriverFactory as DriverFactory
-import internal.GlobalVariable
+//import internal.GlobalVariable
 import org.openqa.selenium.WebElement
 import org.testng.Assert
 
