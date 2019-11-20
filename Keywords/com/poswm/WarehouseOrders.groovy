@@ -23,11 +23,11 @@ import com.utilities.Interaction
 
 import com.utilities.Interaction
 import internal.GlobalVariable
-import java.time.LocalDate
 import org.openqa.selenium.WebDriver
 import org.testng.Assert
 import org.openqa.selenium.Alert
 import org.openqa.selenium.By
+import java.text.SimpleDateFormat;
 import java.util.Date
 import com.kms.katalon.core.webui.driver.DriverFactory
 
@@ -341,10 +341,10 @@ public class WarehouseOrders {
 	@Keyword
 	public void AddCustomerAndVerifyMsg() {
 		try{
-			action.ScrollToViewelement(addcustomerbtn)
+			action.ScrollToViewElement(addcustomerbtn)
 			action.WaitUntilElementClickable(addcustomerbtn)
 			action.Click(addcustomerbtn)
-			WebUI.delay(10)
+			//WebUI.delay(10)
 			action.Type(customertextbox, "st")
 			action.Click(customername)
 			action.ScrollToTopOgPage()
@@ -359,9 +359,14 @@ public class WarehouseOrders {
 	@Keyword
 	public void AddDesiredShippingDateAndVerifyMsg() {
 		try{
-			action.ScrollToViewelement(desiredshipdatetextbox)
-			LocalDate date = new LocalDate()
-			String todaydate = date.now()
+			action.ScrollToViewElement(desiredshipdatetextbox)
+			//LocalDate date = new LocalDate()
+			//String todaydate = date.now()
+			//println (todaydate)
+			//LocalDate todaydate = LocalDate.now()
+			Date date = new Date();
+			SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
+			String todaydate = formatter.format(date);
 			action.Type(desiredshipdatetextbox, todaydate)
 			action.ScrollToTopOgPage()
 			boolean statusofaddedshimethodmsg = action.IsElementDisplayed(desiredshipdateaddedmsg)
@@ -375,7 +380,7 @@ public class WarehouseOrders {
 	@Keyword
 	public void AddShipingMethodAndVerifyMsg() {
 		try{
-			action.ScrollToViewelement(shippingmethodddn)
+			action.ScrollToViewElement(shippingmethodddn)
 			action.WaitUntilElementClickable(shippingmethodddn)
 			WebUI.delay(10)
 			action.Click(shippingmethodddn)
@@ -393,7 +398,7 @@ public class WarehouseOrders {
 	@Keyword
 	public void ClickOnSubmitOrderBtnAndevrifyMsg() {
 		try{
-			action.ScrollToViewelement(submitbtn)
+			action.ScrollToViewElement(submitbtn)
 			action.Click(submitbtn)
 			action.ScrollToTopOgPage()
 			boolean statusofsubmitordermsg = action.IsElementDisplayed(submitordermsg)
@@ -499,7 +504,7 @@ public class WarehouseOrders {
 	@Keyword
 	public void GetDesiredShipDate() {
 		try {
-			action.ScrollToViewelement(desiredShipDateTestBox)
+			action.ScrollToViewElement(desiredShipDateTestBox)
 			String shipDate = action.GetText(desiredShipDateTestBox)
 			println ("**********" + shipDate)
 		}
@@ -511,7 +516,7 @@ public class WarehouseOrders {
 	@Keyword
 	public void AddDesiredShipDate() {
 		try{
-			action.ScrollToViewelement(desiredshipdatetextbox)
+			action.ScrollToViewElement(desiredshipdatetextbox)
 			LocalDate date = new LocalDate()
 			String todaydate = date.now()
 			action.Type(desiredshipdatetextbox, todaydate)

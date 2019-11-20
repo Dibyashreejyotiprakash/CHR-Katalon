@@ -118,39 +118,47 @@ public class WarehouseUsersPage {
 			if(totalusers >0) {
 				action.WaitUntilElementClickable(firstusereditlink)
 				action.Click(firstusereditlink) 
-					WebUI.delay(2)
+					//WebUI.delay(2)
 					boolean statusofeditfirstname = action.IsElementDisplayed(editfirstname)
+					println (statusofeditfirstname)
 					Assert.assertTrue(statusofeditfirstname)
 
-					WebUI.delay(1)
+					//WebUI.delay(1)
 					boolean statusofeditsecondname = action.IsElementDisplayed(editlastname)
+					println (statusofeditsecondname)
 					Assert.assertTrue(statusofeditsecondname)
 
-					WebUI.delay(1)
+					//WebUI.delay(1)
 					boolean statusofeditemailaddress = action.IsElementDisplayed(editemailaddress)
+					println (statusofeditemailaddress)
 					Assert.assertTrue(statusofeditemailaddress)
 
-					WebUI.delay(1)
+					//WebUI.delay(1)
 					boolean statusofeditcheckbox = action.IsElementSelected(editactivecheckbox)
+					println (statusofeditcheckbox)
 					Assert.assertTrue(statusofeditcheckbox)
 
-					WebUI.delay(1)
-					boolean statusofmembersofgroup = action.IsElementSelected(availablewarehouse)
+					//WebUI.delay(1)
+					boolean statusofmembersofgroup = action.IsElementDisplayed(availablewarehouse)
+					println (statusofmembersofgroup)
 					Assert.assertTrue(statusofmembersofgroup)
 
 					action.WaitUntilElementClickable(updatebtn)
-					WebUI.delay(1)
+					//WebUI.delay(1)
 					boolean statusofmembersofupdatebtn = action.IsElementEnabled(updatebtn)
+					println (statusofmembersofupdatebtn)
 					Assert.assertTrue(statusofmembersofupdatebtn)
 
 					action.WaitUntilElementClickable(closebtn)
-					WebUI.delay(1)
+					//WebUI.delay(1)
 					boolean statusofclosebtn = action.IsElementEnabled(closebtn)
+					println (statusofclosebtn)
 					Assert.assertTrue(statusofclosebtn)
 
-					WebUI.delay(1)
+					//WebUI.delay(1)
 					action.WaitUntilElementClickable(deleteusersbtn)
 					boolean statusofdeleteuserbtn = action.IsElementEnabled(deleteusersbtn)
+					println (statusofdeleteuserbtn)
 					Assert.assertTrue(statusofdeleteuserbtn)
 				}
 			else{

@@ -15,21 +15,21 @@ import internal.GlobalVariable as GlobalVariable
 
 CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameposw, GlobalVariable.testtyperegression, GlobalVariable.environment)
 
-WebUI.waitForPageLoad(300)
+//WebUI.waitForPageLoad(300)
 
 CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.posusername, GlobalVariable.pospassword)
 
 CustomKeywords.'com.poswm.Homepage.ClickOnItemSearch'()
 
-WebUI.delay(10)
+//WebUI.delay(10)
 
 CustomKeywords.'com.poswm.WarehouseItemInventory.VerifyWareHouseInventoryPage'()
 
-WebUI.delay(10)
+//WebUI.delay(10)
 
-CustomKeywords.'com.poswm.WarehouseItemInventory.SelctOneItemSwichToWareHouseItemPageVerifyWareHouseItemDetails'()
+CustomKeywords.'com.poswm.WarehouseItemInventory.SwichToWareHouseItemPageVerifyWareHouseItemDetails'()
 
-WebUI.delay(10)
+//WebUI.delay(10)
 
 CustomKeywords.'com.poswm.WarehouseItemInventory.VerifyAllFieldsInWareHouseitemDetailsPage'()
 

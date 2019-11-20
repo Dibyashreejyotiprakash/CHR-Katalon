@@ -110,12 +110,13 @@ public class ConsolidatorAddBaseElementPage {
 			boolean statusofaddelementbtn = false
 			action.Type(searchtextbox, "Test")
 			WebUI.delay(5)
-
-			statusofaddelementbtn = action.IsElementEnabled(addelementbtn)
-			Assert.assertFalse(statusofaddelementbtn)
-			WebUI.delay(5)
-
 			action.Click(firstsugestedelement)
+
+			WebUI.delay(2)
+			/*statusofaddelementbtn = action.IsElementEnabled(addelementbtn)
+			Assert.assertFalse(statusofaddelementbtn)
+			println(action.IsElementEnabled(statusofaddelementbtn))*/
+			
 			action.Type(price, "100")
 			action.Type(qtyperpack, "12")
 

@@ -104,11 +104,11 @@ public class ManageProgramElementPage {
 			int totalprogramelement = allprogramelementsnames.size()
 			println ("Total Program element Name is ----"+ totalprogramelement)
 			if(totalprogramelement >0) {
-				for(int i=0;i< allprogramelementsnames.size();i++) {
-					String firstprogramelementname =allprogramelementsnames.get(i).getText()
+				//for(int i=0;i< allprogramelementsnames.size();i++) {
+					String firstprogramelementname =allprogramelementsnames.get(0).getText()
 					println ("Program Element Name is ------"+ firstprogramelementname)
 					action.Type(searchtxtbox, firstprogramelementname)
-				}
+				//}
 			}
 			else{
 				throw new Exception("Program element is not present")

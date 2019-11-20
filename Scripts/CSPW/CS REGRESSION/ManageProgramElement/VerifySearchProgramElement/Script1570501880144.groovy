@@ -25,11 +25,11 @@ CustomKeywords.'com.consolidator.UpdateLogPage.ClickOnConsolidatorTab'()
 
 CustomKeywords.'com.consolidator.ConsolidatorDefaultPage.ClickOnManageProgramElement'()
 
-WebUI.delay(15)
+//WebUI.delay(15)
 
 CustomKeywords.'com.consolidator.ManageProgramElementPage.VerifyManageProgramElements'()
 
-WebUI.delay(15)
+//WebUI.delay(15)
 
 CustomKeywords.'com.consolidator.ManageProgramElementPage.SearchPragramElement'()
 

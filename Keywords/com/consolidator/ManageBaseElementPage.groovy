@@ -73,7 +73,7 @@ public class ManageBaseElementPage {
 			if(statusofvisibility == true) {
 				action.Click(addnewitembtn)
 				action.WaitForPageToLoad()
-				WebUI.delay(10)
+				//WebUI.delay(10)
 			}
 			else{
 				throw new Exception ("Add new item button not available")
@@ -128,20 +128,23 @@ public class ManageBaseElementPage {
 			String elementname = null
 			List<WebElement> elementnamesbeforesearch = action.GetElements(allelementsname)
 			if(elementnamesbeforesearch.size() != 0) {
-				for(int i=0;i< elementnamesbeforesearch.size();i++) {
-					elementname = elementnamesbeforesearch.get(i).getText()
+				//for(int i=0;i< elementnamesbeforesearch.size();i++) {
+					elementname = elementnamesbeforesearch.get(0).getText()
 					action.Type(searchtxtbox, elementname)
 					WebUI.delay(2)
+					//wait.until(ExpectedConditions.presenceOfElementLocated(firstelemnetname));
 					String aftersearchelementname = action.GetText(firstelemnetname)
 					if(aftersearchelementname.contentEquals(elementname)) {
 						println ("Element found")
 					}
-					else{
+					else
+					{
 						throw new Exception("element not found")
 					}
-				}
+				//}
 			}
-			else{
+			else
+			{
 				throw new Exception("No Element is available in the grid")
 			}
 		}
