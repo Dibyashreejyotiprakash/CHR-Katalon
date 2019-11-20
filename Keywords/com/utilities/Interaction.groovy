@@ -465,11 +465,13 @@ public  class Interaction {
 	}
 
 
-
+	//Scroll upto element to be visible
 	public void  ScrollToViewElement(By by) {
-		WaitVisible(by)
+
+		WebUI.delay(1)
 		WebElement element = driver.findElement(by);
 		js.executeScript("arguments[0].scrollIntoView(true);", element);
+		//WaitVisible(by)
 	}
 
 
@@ -483,12 +485,12 @@ public  class Interaction {
 
 
 	//Scroll upto element to be visible
-	public void  ScrollToViewelement(By by)
-	{
-		WebUI.delay(1)
-		js.executeScript("arguments[0].scrollIntoView(true);", by);
-		WaitVisible(by)
-	}
+	/*public void  ScrollToViewelement(By by)
+	 {
+	 WebUI.delay(1)
+	 js.executeScript("arguments[0].scrollIntoView(true);", by);
+	 WaitVisible(by)
+	 }*/
 
 
 	//Scroll to bottom of page

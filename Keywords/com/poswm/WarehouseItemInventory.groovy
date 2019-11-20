@@ -56,11 +56,13 @@ public class WarehouseItemInventory {
 	By filterDivision = By.xpath("//*[@id='ctl00_MainContent_rpbSearch']//ul")
 	By clearallfilter = By.xpath("//*[text()='Clear All Filters']")
 	By supplierfilter = By.xpath("//*[@id='ctl00_MainContent_rpbSearch_i0_i0_rlbSupplier_i2']")
-	By allsuppliersnameingrid = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00']//tr//td[12]")
+	//By allsuppliersnameingrid = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00']//tr//td[12]")
+	By allsuppliersnameingrid = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00']/tbody/tr/td[4]")
 	By brandfilter = By.xpath("//*[@id='ctl00_MainContent_rpbSearch_i1_i0_rlbBrands_i2']")
-	By allbrandsnameingrid = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00']//tr//td[13]")
+	//By allbrandsnameingrid = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00']//tr//td[13]")
+	By allbrandsnameingrid = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00']/tbody/tr/td[5]")
 	By allitemname = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00']//tr//td[11]/a")
-
+    By firstitemname = By.xpath("//a[@id='ctl00_MainContent_rgItemSearch_ctl00_ctl04_lblItemName']")
 	By itemsearchtextbox = By.xpath("//*[@id='ctl00_MainContent_rsbItemSearch_Input']")
 	By itemsearchbtn = By.xpath("//*[@id='ctl00_MainContent_rsbItemSearch_Input']/following-sibling::button")
 	By searchiteminventorybtn = By.xpath("//*[@id='MainContent_btnBackToSearch']")
@@ -115,7 +117,7 @@ public class WarehouseItemInventory {
 	By deleteCheckBox = By.xpath("//*[@id='ctl00_MainContent_rpbSearch_i10_i0_rlbOtherFilters_i2']/label/input")
 	By itemNameColValiue = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00']/tbody/tr/td[3]")
 	By approverColVal = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00__0']/td[7]")
-
+	By loadmaskerPosw = By.xpath("//img[@id='MainContent_Image2']")
 
 
 
@@ -361,6 +363,8 @@ public class WarehouseItemInventory {
 			action.Click(supplierfilter)
 			//WebUI.delay(20)
 			String suppliername = action.GetText(supplierfilter)
+			//WebUI.delay(8)
+			action.WaitTillNotVisible(loadmaskerPosw,30)
 			List<WebElement> allsuppliersname = action.GetElements(allsuppliersnameingrid)
 			if(allsuppliersname.size()>0)
 			{
@@ -397,11 +401,15 @@ public class WarehouseItemInventory {
 			action.Click(brandfilter)
 			//WebUI.delay(20)
 			String brandnamename = action.GetText(brandfilter)
+			println(brandnamename+"++++++++")
+			//WebUI.delay(8)
+			action.WaitTillNotVisible(loadmaskerPosw,30)
 			List<WebElement> allbrandsname = action.GetElements(allbrandsnameingrid)
 			if(allbrandsname.size()>0)
 			{
 				for(int i=0;i< allbrandsname.size();i++)
 				{
+					println(allbrandsname.get(i).getText()+"++++++++")
 					if(allbrandsname.get(i).getText().contains(brandnamename))
 					{
 						println ("Filter by brand verified")
@@ -467,7 +475,7 @@ public class WarehouseItemInventory {
 	public void SwichToWareHouseItemPageVerifyWareHouseItemDetails()
 	{
 		try{
-			List<WebElement> allitemnames = action.GetElements(allitemname)
+			/*List<WebElement> allitemnames = action.GetElements(allitemname)
 			int totalitems = allitemnames.size()
 			println ("Number of ietms -----------"+ totalitems)
 			if(totalitems>0)
@@ -476,7 +484,8 @@ public class WarehouseItemInventory {
 				{
 					allitemnames.get(i).click()
 					break
-				}
+				}*/
+			    action.Click(firstitemname)
 				Set<String> windowids = driver.getWindowHandles()
 				Iterator<String> it = windowids.iterator()
 				while(it.hasNext())
@@ -486,7 +495,7 @@ public class WarehouseItemInventory {
 					driver.switchTo().window(childwindowid)
 					//WebUI.delay(10)
 				}
-			}
+			//}
 
 		}
 		catch(Exception e)

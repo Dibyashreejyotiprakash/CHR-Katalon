@@ -72,7 +72,7 @@ public class WarehouseAdminWarehousePage {
 	By transcationvalue = By.xpath("//li[contains(text(),'Return')]")
 	By quantitytotransfer = By.xpath("//input[@id='ctl00_MainContent_radWizardBar_i3_i0_ucItemTransactions_radItemAdjQuantity']")
 	By transfersuccess = By.xpath("//div[contains(text(),'Quantity has been updated')]")
-	By bintobedeleted = By.xpath("//td[contains(text(),'000-000-001')]//preceding-sibling::td[1]")
+	By bintobedeleted = By.xpath("//td[contains(text(),'000-000-002')]//preceding-sibling::td[1]")
 	By deletesuccess = By.xpath("//span[contains(text(),'Warehouse bin deleted successfully')]")
 	
 	
@@ -99,7 +99,7 @@ public class WarehouseAdminWarehousePage {
 		try {
 			action.Click(addbinplus)
 			action.WaitVisible(binname)
-			action.Type(binname, "000-000-001")
+			action.Type(binname, "000-000-002")
 			WebUI.delay(2)
 			action.Click(insertbtn)
 			action.WaitVisible(binsuccessmssg)

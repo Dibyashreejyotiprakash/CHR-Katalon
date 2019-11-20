@@ -25,7 +25,7 @@ CustomKeywords.'com.poswm.WarehouseAdminWarehousePage.AddBin'()
 
 CustomKeywords.'com.poswm.Homepage.ClickOnItemSearch'()
 
-CustomKeywords.'com.poswm.WarehouseAdminWarehousePage.AssociateBinWithItem'()
+//CustomKeywords.'com.poswm.WarehouseAdminWarehousePage.AssociateBinWithItem'()
 
 CustomKeywords.'com.poswm.Homepage.ClickOnWarehouse'()
 

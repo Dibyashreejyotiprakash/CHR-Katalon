@@ -164,7 +164,7 @@ public class UserTransfer {
 			WebUI.delay(3)
 			
 			boolean statusoftransferbtn = action.IsElementEnabled(transferitemsbtn)
-			Assert.assertTrue(statusoftransferfromddn)
+			Assert.assertTrue(statusoftransferbtn)
 		}
 		catch(Exception e)
 		{

@@ -24,7 +24,7 @@ CustomKeywords.'com.poswm.WarehouseDashBoardPage.ClickOnNewItem'()
 
 CustomKeywords.'com.poswm.WarehouseItem.VerifyWareHouseItemPage'()
 
-CustomKeywords.'com.poswm.WarehouseItem.VerifyWareHouseItemPage'()
+//CustomKeywords.'com.poswm.WarehouseItem.VerifyWareHouseItemPage'()
 
 String cretaednewitem = CustomKeywords.'com.poswm.WarehouseItem.FillItemInformationSection'()
 
