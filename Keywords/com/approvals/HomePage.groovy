@@ -197,14 +197,15 @@ public class HomePage {
 	public void VerifyDTSearchByJobName() {
 		try{
 			action.Click(statusddn)
-			WebUI.delay(10)
+			//WebUI.delay(10)
+			action.WaitVisibleDup(createdstatus)
 			action.Click(createdstatus)
-			WebUI.delay(10)
+			//WebUI.delay(10)
 
 			if(VerifyJobNameField) {
 				action.Type(jobname, "Test Job Name")
 				action.Click(searchbtn)
-				WebUI.delay(5)
+				//WebUI.delay(5)
 
 				boolean statusofjobid = action.IsElementDisplayed(alldtjobid)
 				Assert.assertTrue(statusofjobid)
