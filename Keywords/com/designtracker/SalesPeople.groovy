@@ -22,6 +22,10 @@ import com.kms.katalon.core.webui.driver.DriverFactory
 import org.openqa.selenium.By
 import org.testng.Assert
 import org.openqa.selenium.WebElement
+import java.awt.*;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
 
 
 
@@ -71,6 +75,11 @@ public class SalesPeople {
 	By salepersonList = By.xpath("//select[@id='ctl00_ctl00_cphMain_cphMain_CorpsAndMarkets_ddlSalesPerson']/option")
 	By usertoupdate = By.xpath("//option[starts-with(text(),'AUTO')]")
 	By updatesuccessmssg = By.xpath("//li[contains(text(),'The Sales Person has been updated.')]")
+	By insertnewaddresslistlink = By.xpath("//a[@id='ctl00_ctl00_cphMain_cphMain_btnALInsert']")
+	By listname = By.xpath("//input[@id='ctl00_ctl00_cphMain_cphMain_txtAddressListName']")
+	By selectfilebtn = By.xpath("(//input[@class = 'ruButton ruBrowse'])[1]")
+	By uploadaddresslistbtn = By.xpath("//input[@id='ctl00_ctl00_cphMain_cphMain_btnSaveAddressList']")
+
 
 	@Keyword
 	public void ValidateSalesPeopleFields() {
@@ -83,8 +92,8 @@ public class SalesPeople {
 			Assert.fail("ValidateSalesPeopleFields Failed due to "+e)
 		}
 	}
-	
-	
+
+
 	@Keyword
 	public void ValidateMandatoryFieldForSalesPeople() {
 		try {
@@ -99,18 +108,15 @@ public class SalesPeople {
 			action.IsElementDisplayed(insertbtn)
 			action.Click(insertbtn)
 			action.IsElementDisplayed(requiredfieldmssg)
-			
 		}
 		catch(Exception e) {
 			Assert.fail("ValidateSalesPeopleFields Failed due to "+e)
 		}
 	}
-	
+
 	@Keyword
-	public void AddNewSalesPeople()
-	{
-		try
-		{
+	public void AddNewSalesPeople() {
+		try {
 			action.IsElementDisplayed(corpName)
 			action.SelectByText(corpName, "Instant Impact 4.0 Demo Corp (Dist.)")
 			action.WaitVisible(progressIndicator)
@@ -118,19 +124,19 @@ public class SalesPeople {
 			action.SelectByText(market, "Chicago Beverage Systems")
 			action.WaitVisible(progressIndicator)
 			WebUI.delay(2)
-			
+
 			action.Click(addnewsalepersonbtn)
 			action.WaitVisible(firstname)
-			
-			String s = action.GenerateRandomAplphabaNeumericString(4) 
+
+			String s = action.GenerateRandomAplphabaNeumericString(4)
 			String id = action.GenerateRandomNumericString(6)
 			String name1 = "Test" + s
 			String name2 = "Auto" + s
 			String email = "test"+s+"@brandmuscle.com"
 			String add1 = "4th Avenue"
-			
+
 			println("EMAIL IS "+email)
-			
+
 			action.Type(firstname, name1)
 			action.Type(lastname, name2)
 			action.Type(address1, add1)
@@ -149,44 +155,37 @@ public class SalesPeople {
 			action.SelectByText(salespersondropdown,"Default - 6250 N. River Rd Suite 9000, Rosemont, IL 60018")
 			action.Click(insertbtn)
 			action.IsElementDisplayed(updatebtn)
-			
-			
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("AddNewSalesPeople Failed due to "+e)
 		}
-		
-		
 	}
-	
-	
+
+
 	@Keyword
-	public void ValidateNewSalePersonInSalePersonDD()
-	{
-		
-		try
-		{
-		    action.IsElementDisplayed(corpName)
+	public void ValidateNewSalePersonInSalePersonDD() {
+
+		try {
+			action.IsElementDisplayed(corpName)
 			action.SelectByText(corpName, "Instant Impact 4.0 Demo Corp (Dist.)")
 			action.WaitVisible(progressIndicator)
 			WebUI.delay(5)
 			action.SelectByText(market, "Chicago Beverage Systems")
 			action.WaitVisible(progressIndicator)
 			WebUI.delay(2)
-			
+
 			action.Click(addnewsalepersonbtn)
 			action.WaitVisible(firstname)
-			
-			String s = action.GenerateRandomAplphabaNeumericString(4) 
+
+			String s = action.GenerateRandomAplphabaNeumericString(4)
 			String id = action.GenerateRandomNumericString(6)
 			String name1 = "Test" + s
 			String name2 = "Auto" + s
 			String email = "test"+s+"@brandmuscle.com"
 			String add1 = "4th Avenue"
-			
+
 			println("EMAIL IS "+email)
-			
+
 			action.Type(firstname, name1)
 			action.Type(lastname, name2)
 			action.Type(address1, add1)
@@ -204,67 +203,112 @@ public class SalesPeople {
 			action.SelectByText(salespersondropdown,"Default - 6250 N. River Rd Suite 9000, Rosemont, IL 60018")
 			action.Click(insertbtn)
 			action.IsElementDisplayed(updatebtn)
-		
-		
-		
-		action.MouseHoverOnElement(siteadmin)
-		WebUI.delay(3)
-		action.Click(salespeople)
-		action.WaitForPageToLoad()
-		action.IsDisplayed(salespeople)
-		action.IsElementDisplayed(corpName)
-		action.SelectByText(corpName, "Instant Impact 4.0 Demo Corp (Dist.)")
-		action.WaitVisible(progressIndicator)
-		WebUI.delay(5)
-		action.SelectByText(market, "Chicago Beverage Systems")
-		action.WaitVisible(progressIndicator)
-		WebUI.delay(2)
-		action.Click(saleperson)
-		WebUI.delay(2)
-		/*List<WebElement>person_list =   action.GetElements(salepersonList)
-		List<String> person_name_List = new ArrayList<String>()
-		
-		for (int i=0;i<person_list.size();i++)
-		{
-			println(person_list[i].getText())
-			person_name_List.add(person_list[i].getText())
+
+
+
+			action.MouseHoverOnElement(siteadmin)
+			WebUI.delay(3)
+			action.Click(salespeople)
+			action.WaitForPageToLoad()
+			action.IsDisplayed(salespeople)
+			action.IsElementDisplayed(corpName)
+			action.SelectByText(corpName, "Instant Impact 4.0 Demo Corp (Dist.)")
+			action.WaitVisible(progressIndicator)
+			WebUI.delay(5)
+			action.SelectByText(market, "Chicago Beverage Systems")
+			action.WaitVisible(progressIndicator)
+			WebUI.delay(2)
+			action.Click(saleperson)
+			WebUI.delay(2)
+			/*List<WebElement>person_list =   action.GetElements(salepersonList)
+			 List<String> person_name_List = new ArrayList<String>()
+			 for (int i=0;i<person_list.size();i++)
+			 {
+			 println(person_list[i].getText())
+			 person_name_List.add(person_list[i].getText())
+			 }
+			 for(int j=0;j<person_name_List.size();j++)
+			 {
+			 if(person_name_List)
+			 {
+			 println("User is present")
+			 }
+			 else
+			 {
+			 throw new Exception("User Not Present")
+			 }
+			 }*/
 		}
-		
-		for(int j=0;j<person_name_List.size();j++)
-		{
-		  if(person_name_List)
-		  {
-			println("User is present")
-		 	
-		  }
-		  else
-		  {
-			throw new Exception("User Not Present")
-		  }
-	  }*/
+		catch(Exception e) {
+			Assert.fail("ValidateNewSalePersonInSalePersonDD Failed due to "+e)
+		}
 	}
-	catch(Exception e)
-	{
-		Assert.fail("ValidateNewSalePersonInSalePersonDD Failed due to "+e)
-	}	
-		
-  }
-	
-	
+
+
 	@Keyword
-	public void updateUser()
-	{
-		try
-		{
+	public void updateUser() {
+		try {
 			action.Click(budgetmanagerrole)
 			action.Click(updatebtn)
 			action.IsElementDisplayed(updatesuccessmssg)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("updateUser Failed due to "+e)
 		}
-		
+	}
+
+	@Keyword
+	public void InsertAddressList() {
+		try {
+			action.IsElementDisplayed(corpName)
+			action.SelectByText(corpName, "Instant Impact 4.0 Demo Corp (Dist.)")
+			action.WaitVisible(progressIndicator)
+			//WebUI.delay(5)
+			action.SelectByText(market, "Chicago Beverage Systems")
+			action.WaitVisible(progressIndicator)
+			//WebUI.delay(2)
+			action.SelectByText(saleperson, "ADMIN2, TEST (testadmin2@brandmuscle.com)")
+			action.WaitVisible(updatebtn)
+			action.ScrollToViewElement(insertnewaddresslistlink)
+			action.WaitVisible(insertnewaddresslistlink)
+			action.Click(insertnewaddresslistlink)
+			action.WaitVisible(progressIndicator)
+			action.WaitVisible(listname)
+			action.WaitVisible(selectfilebtn)
+			action.Type(listname, "TestFile")
+			action.Click(selectfilebtn)
+			uploadFile("D:\\Jeremy_Address_List.xls")
+
+		}
+		catch(Exception e) {
+			Assert.fail("InsertAddressList Failed due to "+e)
+		}
+	}
+	
+	@Keyword
+	public void uploadFile(String imagePath) {
+		StringSelection stringSelection = new StringSelection(imagePath);
+		Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+		clipboard.setContents(stringSelection, null);
+ 
+		Robot robot = null;
+ 
+		try {
+			robot = new Robot();
+		} catch (AWTException e) {
+			e.printStackTrace();
+		}
+ 
+		robot.delay(250);
+		//robot.keyPress(KeyEvent.VK_ENTER);
+		//robot.keyRelease(KeyEvent.VK_ENTER);
+		robot.keyPress(KeyEvent.VK_CONTROL);
+		robot.keyPress(KeyEvent.VK_V);
+		robot.keyRelease(KeyEvent.VK_V);
+		robot.keyRelease(KeyEvent.VK_CONTROL);
+		robot.keyPress(KeyEvent.VK_ENTER);
+		robot.delay(150);
+		robot.keyRelease(KeyEvent.VK_ENTER);
 	}
 	
 	

@@ -48,6 +48,7 @@ public class ii4crosscorpadmin
 	By ddtemplate = By.xpath("//input[@class = '132061']")
 	By ddtemplatetoclick = By.xpath("//input[@class = '132061']//following-sibling::span")
 	By corpremoveassociationlink = By.xpath("//div[@id='rmCorpAssociation']/a")
+	By noresultmssg = By.xpath("//div[@class = 'row']//div[contains(text(),'No result found')]")
 
 
 	@Keyword
@@ -112,9 +113,9 @@ public class ii4crosscorpadmin
 			action.Click(ToCorpVal)
 
 			action.WaitVisible(corptocorpchkbox)
-			
-			
-			
+
+
+
 			if(action.IsDisplayed(corpremoveassociationlink))
 			{
 				action.Click(corptocorpchkbox)
@@ -123,17 +124,17 @@ public class ii4crosscorpadmin
 				action.Type(templatesearchbox, "132061")
 				action.WaitVisible(ddtemplatetoclick)
 				println("VALUE IS-->"+ action.isAttribtuePresent(ddtemplate, "checked"))
-				
+
 				if(!action.isAttribtuePresent(ddtemplate, "checked"))
 				{
 					action.Click(ddtemplatetoclick)
 					action.Click(saveandexitbtn)
 				}
-				
-				
-				
+
+
+
 			}
-			
+
 			else
 			{
 				action.Click(corptocorpchkbox)
@@ -145,14 +146,45 @@ public class ii4crosscorpadmin
 				action.Click(ddtemplatetoclick)
 				action.Click(saveandexitbtn)
 			}
-			
 
-			
-			
+
+
+
 		}
 		catch(Exception e)
 		{
 			Assert.fail("CrossCorpDDTemplate Failed due to "+e)
+		}
+	}
+	
+	@Keyword
+	public void ValidateStaticouponTemplateInCrossCorp()
+	{
+		try
+		{
+			action.WaitVisible(FromCorp)
+			action.WaitVisible(ToCorp)
+			action.Click(FromCorp)
+			action.WaitVisible(searchcorpfield)
+			action.Type(searchcorpfield, "300")
+			action.Click(FromCorpVal)
+			WebUI.delay(2)
+			action.Click(ToCorp)
+			action.WaitVisible(searchcorpfield)
+			action.Type(searchcorpfield, "320")
+			action.Click(ToCorpVal)
+
+			action.WaitVisible(corptocorpchkbox)
+			action.Click(corptocorpchkbox)
+			action.Click(choosetemplatebtn)
+			action.WaitVisible(templatesearchbox)
+			action.Type(templatesearchbox, "108477")
+			action.IsElementDisplayed(noresultmssg)
+
+		}
+		catch(Exception e)
+		{
+			Assert.fail("ValidateStaticouponTemplateInCrossCorp Failed due to "+e)
 		}
 	}
 

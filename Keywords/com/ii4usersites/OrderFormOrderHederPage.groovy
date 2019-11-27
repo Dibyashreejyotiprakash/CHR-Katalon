@@ -36,6 +36,7 @@ public class OrderFormOrderHederPage {
 	By continuetoitemsbtn = By.xpath("//*[@id='ctl00_Body_btnContinue']")
 	By accountname = By.xpath("//input[@id='Body_txtAccount']")
 	By accountnametobevalidated = By.xpath("(//li[contains(text(),'QATest2019')])[1]")
+	By nextbtn = By.xpath("//span[contains(text(),'Next')]")
 
 
 	@Keyword
@@ -94,6 +95,16 @@ public class OrderFormOrderHederPage {
 		}
 		catch(Exception e) {
 			Assert.fail("ValidateAccountNameAddedInDT failed "+e)
+		}
+	}
+
+	@Keyword
+	public void ClickNextBtn() {
+		try {
+			action.Click(nextbtn)
+		}
+		catch(Exception e) {
+			Assert.fail("ClickNextBtn failed "+e)
 		}
 	}
 }

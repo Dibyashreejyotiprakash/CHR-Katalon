@@ -36,6 +36,8 @@ import org.openqa.selenium.JavascriptExecutor
 import org.openqa.selenium.WebDriver.Timeouts;
 import java.util.concurrent.TimeUnit;
 
+
+
 //import internal.GlobalVariable
 import java.time.LocalTime
 
@@ -949,12 +951,12 @@ public  class Interaction {
 	{
 		driver.findElement(by).sendKeys(Keys.BACK_SPACE)
 	}
-	
+
 	public void PreseLeftArrow(By by)
 	{
 		driver.findElement(by).sendKeys(Keys.ARROW_LEFT)
 	}
-	
+
 	public void PreseRightArrow(By by)
 	{
 		driver.findElement(by).sendKeys(Keys.ARROW_RIGHT)
@@ -1001,4 +1003,8 @@ public  class Interaction {
 			throw new Exception("Page is not verified")
 		}
 	}
+
+
+
+
 }

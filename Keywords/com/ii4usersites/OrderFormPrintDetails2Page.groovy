@@ -41,8 +41,12 @@ public class OrderFormPrintDetails2Page {
 	By ioberviage = By.xpath("//*[@id='Body_lblIOCodeVerbiage']")
 	By glberviage = By.xpath("//*[@id='Body_lblGLNumberVerbiage']")
 	By poverviage = By.xpath("//*[@id='Body_lblPONumberVerbiage']")
-
-
+	By addnotesbtn = By.xpath("//input[@id='ctl00_Body_JobLineNotes1_grdNotes_ctl00_ctl02_ctl00_AddNewRecordButton']")
+	By textarea = By.xpath("//textarea[@id='ctl00_Body_JobLineNotes1_grdNotes_ctl00_ctl02_ctl02_txtNotesTextArea']")
+	By nextbtn = By.xpath("//span[contains(text(),'Next')]")
+	By savebtn = By.xpath("//input[@id='ctl00_Body_JobLineNotes1_grdNotes_ctl00_ctl02_ctl02_btnUpdate_input']")
+	By nobrandmentionbtn = By.xpath("//span[contains(text(),'NO BRAND MENTIONS')]")
+	
 	@Keyword
 	public void ClickOnContinueToOrderSummary() {
 		try {
@@ -65,7 +69,7 @@ public class OrderFormPrintDetails2Page {
 			println ("Verify IO Code visibilty failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
 	public void VerifyIOVerviagevisibilty() {
 		try {
@@ -76,11 +80,10 @@ public class OrderFormPrintDetails2Page {
 			println ("Verify IO Code visibilty failed due to "+ e)
 		}
 	}
-	
-	
+
+
 	@Keyword
-	public void VerifyIOBerviage()
-	{
+	public void VerifyIOBerviage() {
 		try {
 			boolean statusofioberviage = action.IsElementDisplayed(ioberviage)
 			Assert.assertTrue(statusofioberviage)
@@ -101,10 +104,9 @@ public class OrderFormPrintDetails2Page {
 		}
 	}
 
-	
+
 	@Keyword
-	public void VerifyGLBerviage()
-	{
+	public void VerifyGLBerviage() {
 		try {
 			boolean statusofglberviage = action.IsElementDisplayed(glberviage)
 			Assert.assertTrue(statusofglberviage)
@@ -124,16 +126,49 @@ public class OrderFormPrintDetails2Page {
 			println ("Verify PO Number visibilty failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
-	public void VerifyPOBerviage()
-	{
+	public void VerifyPOBerviage() {
 		try {
 			boolean statusofpoberviage = action.IsElementDisplayed(poverviage)
 			Assert.assertTrue(statusofpoberviage)
 		}
 		catch(Exception e) {
 			println ("Verify PO berviage visibilty failed due to "+ e)
+		}
+	}
+	
+	@Keyword
+	public void addnotes()
+	{
+		try
+		{
+			action.WaitVisible(addnotesbtn)
+			action.Click(addnotesbtn)
+			action.WaitVisible(textarea)
+			action.Click(textarea)
+			action.Type(textarea, "test")
+			action.ScrollToBottomOfPage()
+			action.Click(savebtn)
+			action.Click(nextbtn)
+		}
+		catch(Exception e)
+		{
+			Assert.fail("addnotes failed due to "+e)
+		}
+	}
+	
+	@Keyword
+	public void ClicOnNoBrand()
+	{
+		
+		try
+		{
+			
+		}
+		catch(Exception e)
+		{
+			Assert.fail("ClicOnNoBrand failed due to "+e)
 		}
 	}
 }
