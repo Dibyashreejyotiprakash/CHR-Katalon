@@ -46,7 +46,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'atlas@1234'</initValue>
+      <initValue>'chr@123456'</initValue>
       <name>dtpassowrd</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -56,7 +56,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'atlas@1234'</initValue>
+      <initValue>'chr@123456'</initValue>
       <name>wswpassword</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -341,16 +341,6 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'dibyashree.jyoti@brandmuscle.com'</initValue>
-      <name>iiadminusername</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description></description>
-      <initValue>'atlas@1234'</initValue>
-      <name>iiadminpassword</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description></description>
       <initValue>'http://iiadmin.uat.brandmuscle.net/GraphicMaintenance/EditItems.aspx?CorpID=300'</initValue>
       <name>iiadmincorpurl</name>
    </GlobalVariableEntity>
@@ -401,7 +391,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'atlas@1234'</initValue>
+      <initValue>'chr@123456'</initValue>
       <name>iiadminpassword</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>

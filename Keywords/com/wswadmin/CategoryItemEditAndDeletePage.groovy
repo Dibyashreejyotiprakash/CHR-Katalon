@@ -41,6 +41,7 @@ public class CategoryItemEditAndDeletePage {
 	By metatagdescriptionsearchbox = By.xpath("//*[@id='ctl00_cphMain_RadCategoryMaintenance_ctl00_ctl02_ctl03_FilterTextBox_Description']")
 	By norecordsmesg = By.xpath("//*[text()='No records to display.']")
 	By overridepopup = By.xpath("//*[@id='ctl00_cphMain_RadCategoryMaintenance_ctl00_ctl05_radExternalItem']")
+	By firstmetatagdescription = By.xpath("//*[@id='ctl00_cphMain_RadCategoryMaintenance_ctl00__0']//td[5]")
 
 
 	@Keyword
@@ -67,8 +68,10 @@ public class CategoryItemEditAndDeletePage {
 	}
 
 	@Keyword
-	public void EditMetatag() {
+	public void EditMetatag(String newlycreatedmetatag) {
 		try{
+			action.Type(metatagdescriptionsearchbox, newlycreatedmetatag)
+			action.Enter(metatagdescriptionsearchbox)
 			action.Click(firsteditlink)
 			boolean statusofeditpop = action.IsElementDisplayed(editpopup)
 			Assert.assertTrue(statusofeditpop)
@@ -92,16 +95,21 @@ public class CategoryItemEditAndDeletePage {
 	}
 
 	@Keyword
-	public void VerifyCorporationSearch() {
+	public void VerifyMetatagDescriptionSearch(String newlycreatedmetatag) {
 		try{
-			action.Type(corpsearchtextbox, "Instant Impact")
-			action.Enter(corpsearchtextbox)
-			List<WebElement> allcorporationnameingrid = action.GetElements(allcorporation)
-			for(int i=0;i<allcorporationnameingrid.size();i++ ) {
+			action.Type(metatagdescriptionsearchbox, newlycreatedmetatag)
+			action.Enter(metatagdescriptionsearchbox)
+			boolean statusoffirstmetatagdescription = action.IsElementDisplayed(firstmetatagdescription)
+			Assert.assertTrue(statusoffirstmetatagdescription)
+			String descriptionapperingaftersearch = action.GetText(firstmetatagdescription)
+			if(descriptionapperingaftersearch.equals(newlycreatedmetatag)){
+				println ("Newly created metatag searching verified")
+			}else{
+				Assert.fail("Newly created metatag not found "+ e1)
 			}
 		}
-		catch(Exception e) {
-			Assert.fail("Verify Corporation Search failed due "+ e)
+		catch(Exception e){
+			Assert.fail("Verify Metatag Description Search failed due "+ e)
 		}
 	}
 
