@@ -394,4 +394,19 @@
       <initValue>'chr@123456'</initValue>
       <name>iiadminpassword</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'testadmin1@brandmuscle.com'</initValue>
+      <name>distcorpusername</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'go2web'</initValue>
+      <name>distcorppassword</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'132933'</initValue>
+      <name>distcorptemplateid</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

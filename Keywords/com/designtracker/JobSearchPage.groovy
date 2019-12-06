@@ -64,18 +64,16 @@ public class JobSearchPage {
 		action.Click(selectjoblink)
 		action.WaitForPageToLoad()
 	}
-	
+
 	@Keyword
-	public void VerifyCreatedJobInDTSearchPage(String jobcreatedinusersite)
-	{
+	public void VerifyCreatedJobInDTSearchPage(String jobcreatedinusersite) {
 		try{
 			action.Click(confirmationradiobtn)
 			action.Type(searchtxtbox, jobcreatedinusersite)
 			action.ScrollToBottomOfPage()
 			action.Click(searchbtn)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			println ("Verify Created Job In DT Search Page")
 			Assert.fail()
 		}

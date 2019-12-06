@@ -124,6 +124,8 @@ public class JobDetailsPage {
 	By firstaddonprice = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_gvAddOns']//tr[2]//td[5]")
 	By attachaddonsbtn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_btnAttachAddOns']")
 	By addonspriceinjobdetailspage = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_lvJobs_ctrl0_cpPricingSummary_rptrPriceSummary_ctl01_lblLinePrice']")
+	
+	By commetinnoteinformation = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_lvJobs_ctrl0_gvJobNotes_ctl03_lblNoteText']")
 
 
 
@@ -138,7 +140,7 @@ public class JobDetailsPage {
 			println ("Click On DetailsPage failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
 	public void VerifyUpdateJobNameForPosTemplate()
 	{
@@ -261,6 +263,7 @@ public class JobDetailsPage {
 			println ("Verify Status Of Newly Created Job failed due to "+ e)
 		}
 	}
+	
 
 	@Keyword
 	public void VerifyJobNameAndJobTicketNoteAreMandatory() {
@@ -624,6 +627,24 @@ public class JobDetailsPage {
 		{
 			Assert.fail("Verify Update Shipping Link And Update Shipping For Job failed due to :"+e)
 		}
+	}
+	
+	@Keyword
+	public void VerifyMessage(String givencommentinii4){
+		try{
+			boolean statusofcomment = action.IsElementDisplayed(commetinnoteinformation)
+			Assert.assertTrue(statusofcomment)
+			
+			String appearingcomment = action.GetText(commetinnoteinformation)
+			if(appearingcomment.equals(appearingcomment)){
+				println ("Comment is appearing")
+			}else{
+				Assert.fail("Comment is not matched")
+			}
+		}catch(Exception e){
+		Assert.fail("Verify Message In Note Information failed due to :"+e)
+		}
+		
 	}
 
 }
