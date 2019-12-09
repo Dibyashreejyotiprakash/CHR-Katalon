@@ -253,9 +253,9 @@ public void VerifyCreatedJobDetails() {
 		List<WebElement> alldtjobs = action.GetElements(alldtjobid)
 		for(int i=0;i< alldtjobs.size();i++) {
 			alldtjobs.get(i).click()
-			break
 			action.WaitForPageToLoad()
 			action.VerifyCurrentPage("JobDetails.aspx")
+			break
 		}
 	}
 	catch(Exception e) {
