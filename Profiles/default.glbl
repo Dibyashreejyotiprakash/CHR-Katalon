@@ -81,7 +81,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'STAGING'</initValue>
+      <initValue>'uat'</initValue>
       <name>environment</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
