@@ -227,6 +227,7 @@ public class GlobalMetataggingMaintenancePage {
 		try{
 			action.Click(searchcategoryfield)
 			action.Click(newlycreatedexternalitemcategory)
+			action.WaitVisible(searchcategoryfield)
 			action.Enter(searchcategoryfield)
 			action.Type(globalmetatagsearchbox, newlycreatedglobalmetatag)
 			action.Enter(globalmetatagsearchbox)
@@ -236,6 +237,7 @@ public class GlobalMetataggingMaintenancePage {
 			action.TypeClear(renametextbox, renamedglobalmetatagname)
 			action.Click(renamecheckbox)
 			action.Click(renamesavechangesbtn)
+			DeleteNewlyCreatedGlobalMetaTag(renamedglobalmetatagname)
 		}
 		catch(Exception e)
 		{
