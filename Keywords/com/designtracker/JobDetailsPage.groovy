@@ -117,7 +117,7 @@ public class JobDetailsPage {
 	By removecheckbox = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_gvRemove_ctl02_ckRemovePart']")
 	By removeselectedpartbtn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_btnRemoveParts']")
 	By partrow = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_gvRemove']//tr[2]")
-	
+
 	By firstaddoncheckbox = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_gvAddOns_ctl03_chkSelectedAddOns']")
 	By firstaddonqty = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_gvAddOns_ctl03_txtAddonQty']")
 	By attachaddons = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_btnAttachAddOns']")
@@ -125,8 +125,9 @@ public class JobDetailsPage {
 	By attachaddonsbtn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_btnAttachAddOns']")
 	By addonspriceinjobdetailspage = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_lvJobs_ctrl0_cpPricingSummary_rptrPriceSummary_ctl01_lblLinePrice']")
 	
-
-
+	
+	
+	
 	@Keyword
 	public void ClickOnDetailsBtn() {
 		try {
@@ -323,7 +324,7 @@ public class JobDetailsPage {
 			Assert.fail()
 		}
 	}
-	
+
 
 	@Keyword
 	public String AddPartAddonsAndBackToJobDetailsPage() {
@@ -341,33 +342,33 @@ public class JobDetailsPage {
 			action.Click(part1)
 			action.Click(insertbtn)
 			WebUI.delay(5)
-			
+
 			action.Type(firstaddonqty, "1")
 			WebUI.delay(5)
 			action.Click(firstaddoncheckbox)
-			
+
 			expectedaddonprice = action.GetText(firstaddonprice)
 			WebUI.delay(5)
 			action.Click(attachaddonsbtn)
-			WebUI.delay(5)			
-			
+			WebUI.delay(5)
+
 			return expectedaddonprice
 		}
 		catch(Exception e) {
 			Assert.fail("Add Part failed due to "+ e)
 		}
 	}
-	
-	
+
+
 	@Keyword
 	public String GetDisplayedPrice()
 	{
 		String expectedaddonprice = null
 		try{
-			
+
 			expectedaddonprice = action.GetText(firstaddonprice)
 			WebUI.delay(5)
-			
+
 			return expectedaddonprice
 		}
 		catch(Exception e)
@@ -376,7 +377,7 @@ public class JobDetailsPage {
 		}
 	}
 
-	
+
 	@Keyword
 	public void VerifyAddOnsPriceInJobDetailsPage()
 	{
@@ -387,7 +388,7 @@ public class JobDetailsPage {
 			println ("Displayed Add-Ons Priec -----"+ displayedaddonsprice)
 			String expectedaddonsprice = GetDisplayedPrice()
 			println ("Expected Addons Price --------"+ expectedaddonsprice)
-			
+
 		}
 		catch(Exception e)
 		{
@@ -612,5 +613,7 @@ public class JobDetailsPage {
 			Assert.fail("Verify Update Shipping Link And Update Shipping For Job failed due to :"+e)
 		}
 	}
+	
+	
 
 }
