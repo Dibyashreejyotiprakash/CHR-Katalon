@@ -271,7 +271,7 @@ class ItemSearchPage {
 		{
 
 			action.Click(templateimage)
-			
+
 		}
 		catch(Exception e)
 		{

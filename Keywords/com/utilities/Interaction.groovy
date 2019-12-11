@@ -36,6 +36,8 @@ import org.openqa.selenium.JavascriptExecutor
 import org.openqa.selenium.WebDriver.Timeouts;
 import java.util.concurrent.TimeUnit;
 
+
+
 //import internal.GlobalVariable
 import java.time.LocalTime
 
@@ -1012,4 +1014,8 @@ public  class Interaction {
 			throw new Exception("Page is not verified")
 		}
 	}
+
+
+
+
 }

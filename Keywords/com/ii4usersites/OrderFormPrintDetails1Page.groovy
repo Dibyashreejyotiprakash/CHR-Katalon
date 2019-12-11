@@ -85,4 +85,13 @@ public class OrderFormPrintDetails1Page {
 			println ("Enter All Vaues In Print Details1 Page failed due to "+ e)
 		}
 	}
+
+	@Keyword
+	public void ValidateAutoPopulationOfFieldsWithOneValueInDdn() {
+
+		try {
+		}
+		catch(Exception e) {
+		}
+	}
 }

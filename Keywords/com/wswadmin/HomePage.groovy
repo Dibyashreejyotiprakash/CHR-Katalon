@@ -113,7 +113,7 @@ public class HomePage {
 			WebUI.delay(5)
 			action.Click(invoiceSubMenu)
 			WebUI.delay(10)
-			
+
 		}
 		catch(Exception e)
 		{
@@ -129,16 +129,16 @@ public class HomePage {
 			boolean isPageVerified = false
 			String expectedUrl = "Invoices/InvoiceList.aspx"
 			WebUI.delay(5)
-			 String actualUrl = action.GetCurrentURL()
-			 WebUI.delay(5)
-			 
+			String actualUrl = action.GetCurrentURL()
+			WebUI.delay(5)
+
 			if(actualUrl.contains(expectedUrl))
 			{
 				println ("************ Invoice Page Verified Successfully ***********" )
 				isPageVerified = true
 			}
 			return isPageVerified
-			
+
 		}
 		catch(Exception e)
 		{
@@ -159,7 +159,7 @@ public class HomePage {
 			WebUI.delay(5)
 			action.Click(invoiceLineItem)
 			WebUI.delay(10)
-			
+
 		}
 		catch(Exception e)
 		{
@@ -175,16 +175,16 @@ public class HomePage {
 			boolean isPageVerified = false
 			String expectedUrl = "Invoices/LineItemShipping.aspx"
 			WebUI.delay(5)
-			 String actualUrl = action.GetCurrentURL()
-			 WebUI.delay(5)
-			 
+			String actualUrl = action.GetCurrentURL()
+			WebUI.delay(5)
+
 			if(actualUrl.contains(expectedUrl))
 			{
 				println ("************ Invoice Line Items Page Verified Successfully ***********" )
 				isPageVerified = true
 			}
 			return isPageVerified
-			
+
 		}
 		catch(Exception e)
 		{

@@ -186,10 +186,10 @@ public class JobNewPage {
 			//WebUI.delay(5)
 			return jobIdValue
 			/*WebUI.delay(10)
-			action.GetText(jobid)
-			action.WaitForPageToLoad()
-			WebUI.delay(5)
-			return jobid*/
+			 action.GetText(jobid)
+			 action.WaitForPageToLoad()
+			 WebUI.delay(5)
+			 return jobid*/
 		}
 		catch(Exception e) {
 			//println ("Verify Create New Jobs Failed due to "+ e)
@@ -229,7 +229,7 @@ public class JobNewPage {
 			WebUI.delay(10)
 			action.SelectByIndex(accountddn, 1)
 			WebUI.delay(10)
-			action.SelectByText(jobtypeddn, "Books/Accessories Only")
+			action.SelectByText(jobtypeddn, "Print Only")
 			WebUI.delay(10)
 			action.Click(createjobbtn)
 			WebUI.delay(10)
@@ -238,15 +238,39 @@ public class JobNewPage {
 			WebUI.delay(10)
 			jobIdValue = action.GetText(jobid)
 			return jobIdValue
-			WebUI.delay(10)
-			action.GetText(jobid)
-			return jobid
+			/*WebUI.delay(10)
+			 action.GetText(jobid)
+			 return jobid*/
 		}
 		catch(Exception e)
 		{
 			println ("Create a new job failed due to "+ e)
 			Assert.fail()
 		}
+	}
+
+	@Keyword
+	public void CreateDDJob()
+	{
+		try
+		{
+			action.SelectByText(corporationddn, "Instant Impact 4.0 Demo Corp (Dist.)")
+			WebUI.delay(10)
+			action.SelectByText(marketddn, "Chicago Beverage Systems")
+			WebUI.delay(10)
+			action.SelectByText(salespersonddn, "ADMIN2, TEST (testadmin2@brandmuscle.com)")
+			WebUI.delay(10)
+			action.SelectByIndex(accountddn, 1)
+			WebUI.delay(10)
+			action.SelectByText(jobtypeddn, "Print Only")
+			WebUI.delay(10)
+			action.Click(createjobbtn)
+		}
+		catch(Exception e)
+		{
+			Assert.fail("CreateDDJob Failed due to "+e)
+		}
+
 	}
 
 }

@@ -33,6 +33,7 @@ public class OrderFormShiipingDetailsPage {
 	By nextbtn = By.xpath("//*[@id='ctl00_Body_btnNext']")
 	By myitemsbtn = By.xpath("//*[text()='My Items']")
 	By previousbtn = By.xpath("//*[text()='Previous']")
+	By imagesection = By.xpath("//th[contains(text(),'Image')]")
 
 	@Keyword
 	public void ClickOnNextBtn() {
@@ -45,6 +46,19 @@ public class OrderFormShiipingDetailsPage {
 		}
 		catch(Exception e) {
 			println ("Click On Next Btn failed due to "+ e)
+		}
+	}
+	
+	@Keyword
+	public void ValidateImageSectionForNewOLOFOrder()
+	{
+		try
+		{
+			action.IsElementDisplayed(imagesection)
+		}
+		catch(Exception e)
+		{
+			Assert.fail("ValidateImageSectionForNewOLOFOrder Failed due to "+e)
 		}
 	}
 }

@@ -40,6 +40,8 @@ class HomePage {
 	By accountlink = By.xpath("//*[text()='Account']")
 	By projects = By.xpath("//*[text()='Projects']")
 	By helpMenu = By.xpath("//li[@class='rmItem rmLast']//span[@class='rmToggle']")
+	By pagebox = By.xpath("//input[@id='ctl00_Body_rntbPage']")
+	By resultpage60 = By.xpath("//input[@id='ctl00_Body_btn60']")
 
 	@Keyword
 	public boolean VerifyHomePage() {
@@ -136,4 +138,29 @@ class HomePage {
 			throw e;
 		}
 	}
+
+	@Keyword
+	public void ValidatePagination()
+	{
+		try
+		{
+			action.WaitVisible(pagebox)
+			action.ScrollToViewElement(pagebox)
+			action.Clear(pagebox)
+			action.Type(pagebox, "12")
+			action.Enter(pagebox)
+			//action.WaitUntilElementClickable(resultpage60)
+			action.ScrollToViewElement(resultpage60)
+			action.Click(resultpage60)
+			action.WaitUntilElementClickable(pagebox)
+			action.GetText(pagebox)
+		}
+
+		catch(Exception e)
+		{
+			Assert.fail("ValidatePagination failed due to :"+e)
+		}
+
+	}
+
 }

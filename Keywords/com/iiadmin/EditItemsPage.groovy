@@ -67,6 +67,9 @@ public class EditItemsPage {
 	By ddpartinLHSbox = By.xpath(".//*[@id='ctl00_Body_SelectionBoxFinGoods_lstAvailable']/option[contains(text(),'ET11')]")
 	By rightarrow = By.xpath("//input[@id='btnAdd']")
 	By updatesuccess = By.xpath("//span[contains(text(),'Update Succeeded!')]")
+	By templatesavebtn = By.xpath("//input[@id='ctl00_Body_fvItems_Button1']")
+	By staticcouponchkbox = By.xpath("//input[@id='ctl00_Body_fvItems_chkStaticCoupon']")
+	By updatetempsuccessmssg = By.xpath("//span[contains(text(),'Update Succeeded')]")
 
 	@Keyword
 	public void NavigateToCorp300() {
@@ -286,9 +289,9 @@ public class EditItemsPage {
 			action.WaitVisible(finishedgoodstab)
 			action.Click(finishedgoodstab)
 			action.WaitVisible(savebtn)
-			
+
 			boolean checkpart = action.IsDisplayed(ddpartinRHSbox)
-			
+
 			println("VALUE "+checkpart)
 
 			if(!checkpart) {
@@ -302,5 +305,25 @@ public class EditItemsPage {
 		catch(Exception e) {
 			Assert.fail("AssociateDDPartToTemplate failed due to "+e)
 		}
+	}
+	
+	@Keyword
+	public void MakeTemplateAsStaticCoupon()
+	{
+		try
+		{
+			action.WaitVisible(edittemplate)
+			action.Click(edittemplate)
+			action.WaitVisible(templatesavebtn)
+			action.ScrollToViewElement(staticcouponchkbox)
+			action.Click(staticcouponchkbox)
+			action.Click(templatesavebtn)
+			action.WaitVisible(updatetempsuccessmssg)
+		}
+		catch(Exception e)
+		{
+			Assert.fail("MakeTemplateAsStaticCoupon failed due to "+e)
+		}
+		
 	}
 }

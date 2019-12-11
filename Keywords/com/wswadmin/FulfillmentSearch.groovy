@@ -46,7 +46,7 @@ public class FulfillmentSearch {
 	By FulfillmentTypeOptions = By.xpath("//*[@id='ctl00_cphMain_rcbFulfillmentType_DropDown']/div/ul/li")
 	By SearchButton = By.xpath("//*[@id='cphMain_btnSearch']")
 	By ClearSearch = By.xpath("//*[@id='cphMain_btnClearSearch']")
-	
+
 
 
 
