@@ -127,7 +127,7 @@ public class JobDetailsPage {
 	By extendedsearch = By.xpath("//legend[contains(text(),'Extended Search')]")
 	By searchpart = By.xpath("//select[@id = 'ctl00_ctl00_cphMain_cphMain_lbxParts']")
 
-
+	
 	@Keyword
 	public void ClickOnDetailsBtn() {
 		try {
@@ -613,7 +613,7 @@ public class JobDetailsPage {
 			Assert.fail("Verify Update Shipping Link And Update Shipping For Job failed due to :"+e)
 		}
 	}
-
+	
 	@Keyword
 	public void ValidateDDInPrintFormatDdn()
 	{
@@ -676,5 +676,4 @@ public class JobDetailsPage {
 			Assert.fail("AddDDPart Job failed due to :"+e)
 		}
 	}
-
 }
