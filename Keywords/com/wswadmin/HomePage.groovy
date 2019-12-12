@@ -82,9 +82,19 @@ public class HomePage {
 
 	By productshots = By.xpath("//*[text()='Product Shots']")
 	By productshotremovaltool = By.xpath("//*[text()='Product Shot Removal Tool']")
+	By importproductshots = By.xpath("//*[text()='Product Shots Import Utility']")
 
 	By quotetrackerbtn = By.xpath("//*[text()='QuoteTracker']")
 	By requestnewquote = By.xpath("//*[text()='Request New Quote']")
+
+	By stichlabbtn = By.xpath("//*[text()='Stitch Labs']")
+	By stichlablookup = By.xpath("//*[text()='Stitch Labs Order Look-Up']")
+	By fraudriskorders = By.xpath("//*[text()='Fraud Risk Orders']")
+	By shippingerrors = By.xpath("//*[text()='Shipping Errors']")
+	By invalidqtyorder = By.xpath("//*[text()='Invalid Quantity Orders']")
+	By manuallycloseorders = By.xpath("//*[text()='Manually Close Orders']")
+	By orderswithouttracking = By.xpath("//*[text()='Orders Without Tracking']")
+	By createnewskus = By.xpath("//*[text()='Create New SKUs']")
 
 
 	@Keyword
@@ -619,5 +629,141 @@ public class HomePage {
 			Assert.fail("Navigate To Global Meta Tagging Maintenance Page failed due to "+ e)
 		}
 	}
+
+
+	@Keyword
+	public void NavigateToStitchLabsOrderLookUpPage()
+	{
+		try{
+			action.MouseHoverOnElement(fulfillmentbtn)
+			action.MouseHoverOnElement(stichlabbtn)
+			action.Click(stichlablookup)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e){
+			Assert.fail("Navigate To Stitch Labs Order Look Up Page failed due to "+ e)
+		}
+	}
+
+
+	@Keyword
+	public void NavigateToFraudRiskOrdersPage()
+	{
+		try{
+			action.MouseHoverOnElement(fulfillmentbtn)
+			action.MouseHoverOnElement(stichlabbtn)
+			action.Click(fraudriskorders)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e){
+			Assert.fail("Navigate To Fraud Risk Orders Page failed due to "+ e)
+		}
+	}
+
+
+	@Keyword
+	public void NavigateToShippingErrorsPage()
+	{
+		try{
+			action.MouseHoverOnElement(fulfillmentbtn)
+			action.MouseHoverOnElement(stichlabbtn)
+			action.Click(shippingerrors)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e){
+			Assert.fail("Navigate To Shipping Errors Page failed due to "+ e)
+		}
+	}
+
+
+	@Keyword
+	public void NavigateToInvalidQtyOrdersPage()
+	{
+		try{
+			action.MouseHoverOnElement(fulfillmentbtn)
+			action.MouseHoverOnElement(stichlabbtn)
+			action.Click(invalidqtyorder)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e){
+			Assert.fail("Navigate To Invalid Qty Orders Page failed due to "+ e)
+		}
+	}
+
+
+	@Keyword
+	public void NavigateToManuallyCloseOrdersPage()
+	{
+		try{
+			action.MouseHoverOnElement(fulfillmentbtn)
+			action.MouseHoverOnElement(stichlabbtn)
+			action.Click(manuallycloseorders)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e){
+			Assert.fail("Navigate To Manually Close Orders Page failed due to "+ e)
+		}
+	}
+
+
+	@Keyword
+	public void NavigateToAddTrackingPage()
+	{
+		try{
+			action.MouseHoverOnElement(fulfillmentbtn)
+			action.MouseHoverOnElement(stichlabbtn)
+			action.Click(orderswithouttracking)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e){
+			Assert.fail("Navigate To Add Tracking Page failed due to "+ e)
+		}
+	}
+
+
+	@Keyword
+	public void NavigateToCreateNewSKUsPage()
+	{
+		try{
+			action.MouseHoverOnElement(fulfillmentbtn)
+			action.MouseHoverOnElement(stichlabbtn)
+			action.Click(createnewskus)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e){
+			Assert.fail("Navigate To CreateNewSKUs Page failed due to "+ e)
+		}
+	}
+	
+	
+	@Keyword
+	public void NavigateToImportProductShotsPage()
+	{
+		try{
+			action.MouseHoverOnElement(instantimpact)
+			action.MouseHoverOnElement(productshots)
+			action.Click(importproductshots)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e){
+			Assert.fail("Navigate To Import Product Shots Page failed due to "+ e)
+		}
+	}
+	
+	
+	@Keyword
+	public void NavigateRemoveProductShotsRemovalPage()
+	{
+		try{
+			action.MouseHoverOnElement(instantimpact)
+			action.MouseHoverOnElement(productshots)
+			action.Click(productshotremovaltool)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e){
+			Assert.fail("Navigate Remove Product Shots Removal Page failed due to "+ e)
+		}
+	}
+	
 
 }

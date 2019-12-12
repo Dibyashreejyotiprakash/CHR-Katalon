@@ -4,12 +4,12 @@ import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 import com.utilities.Interaction
 import org.openqa.selenium.By
 import org.openqa.selenium.WebDriver
-import org.testng.Assert
-
 import com.kms.katalon.core.webui.driver.DriverFactory
+import org.testng.Assert
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.checkpoint.Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
@@ -20,34 +20,36 @@ import com.kms.katalon.core.testdata.TestData
 import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 
 import internal.GlobalVariable
 
-public class ProductShotRemovalToolPage {
-
-	By searchlabel = By.xpath("//*[text()='Search']")
-
+public class ProductShotsPages {
+	
 	WebDriver driver = DriverFactory.getWebDriver();
 	Interaction action = new Interaction();
 
+
 	@Keyword
-	public void VerifyProductShotRemovalToolPage() {
-		try{
+	public void VerifyImportProductShotPages() {
+		try {
+			action.VerifyCurrentPage("ImportProductShots.aspx")
+		}
+		catch(Exception e) {
+			println ("Verify Product Shots Page failed due to "+ e)
+			Assert.fail()
+		}
+	}
+	
+	
+	@Keyword
+	public void VerifyRemovalProductShotToolsPages() {
+		try {
 			action.VerifyCurrentPage("ProductShotRemovalTool.aspx")
 		}
 		catch(Exception e) {
-			Assert.fail("Verify Product Shot Removal Tool Page failed due to "+ e)
-		}
-	}
-
-	@Keyword
-	public void VerifySearchLabelAndDropdowns() {
-		try{
-			boolean statusofsearchlable = action.IsElementDisplayed(searchlabel)
-			Assert.assertTrue(statusofsearchlable)
-		}
-		catch(Exception e) {
-			Assert.fail("Verify Search Label And Drop downs failed due to "+ e)
+			println ("Verify Product Shots Removal Page failed due to "+ e)
+			Assert.fail()
 		}
 	}
 }
