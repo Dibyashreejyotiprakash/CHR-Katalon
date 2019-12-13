@@ -91,6 +91,9 @@ public class HomePage {
 
 
 
+	By ItemGatingGroupManagementSubMenu = By.xpath("//*[text()='Item Gating Group Management']")
+	By administrativeItemTaggingSubMenu = By.xpath("//*[text()='Administrative Item Gating']")
+
 
 
 
@@ -113,7 +116,7 @@ public class HomePage {
 			WebUI.delay(5)
 			action.Click(invoiceSubMenu)
 			WebUI.delay(10)
-			
+
 		}
 		catch(Exception e)
 		{
@@ -129,16 +132,16 @@ public class HomePage {
 			boolean isPageVerified = false
 			String expectedUrl = "Invoices/InvoiceList.aspx"
 			WebUI.delay(5)
-			 String actualUrl = action.GetCurrentURL()
-			 WebUI.delay(5)
-			 
+			String actualUrl = action.GetCurrentURL()
+			WebUI.delay(5)
+
 			if(actualUrl.contains(expectedUrl))
 			{
 				println ("************ Invoice Page Verified Successfully ***********" )
 				isPageVerified = true
 			}
 			return isPageVerified
-			
+
 		}
 		catch(Exception e)
 		{
@@ -159,7 +162,7 @@ public class HomePage {
 			WebUI.delay(5)
 			action.Click(invoiceLineItem)
 			WebUI.delay(10)
-			
+
 		}
 		catch(Exception e)
 		{
@@ -175,16 +178,16 @@ public class HomePage {
 			boolean isPageVerified = false
 			String expectedUrl = "Invoices/LineItemShipping.aspx"
 			WebUI.delay(5)
-			 String actualUrl = action.GetCurrentURL()
-			 WebUI.delay(5)
-			 
+			String actualUrl = action.GetCurrentURL()
+			WebUI.delay(5)
+
 			if(actualUrl.contains(expectedUrl))
 			{
 				println ("************ Invoice Line Items Page Verified Successfully ***********" )
 				isPageVerified = true
 			}
 			return isPageVerified
-			
+
 		}
 		catch(Exception e)
 		{
@@ -447,5 +450,53 @@ public class HomePage {
 			Assert.fail("Navigate To Product Shot Removal Tool Page failed due to "+ e)
 		}
 	}
+
+
+
+	@Keyword
+	public void NavigateToItemGatingGroupManagementAdministrativeItemGating()
+	{
+		try
+		{
+			action.WaitVisible(instantimpact)
+			action.MouseHoverOnElement(instantimpact)
+			WebUI.delay(3)
+			action.MouseHoverOnElement(ItemGatingGroupManagementSubMenu)
+			WebUI.delay(2)
+			//action.WaitVisible(ii4crosscorpadmin)
+			action.Click(administrativeItemTaggingSubMenu)
+			action.WaitForPageToLoad()
+
+		}
+		catch(Exception e)
+		{
+			Assert.fail("NavigateToItemGatingGroupManagementAdministrativeItemGating method failed due to "+ e)
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }

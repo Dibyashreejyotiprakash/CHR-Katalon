@@ -13,27 +13,18 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-/*WebUI.openBrowser('')
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameposw, GlobalVariable.testtyperegression, GlobalVariable.environment)
 
-WebUI.maximizeWindow()*/
+//Enter credential
 
-CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameiiusersite, GlobalVariable.testtyperegression, GlobalVariable.environment)
-
-CustomKeywords.'com.ii4usersites.LoginPage.LoginToDemoCorp'(GlobalVariable.iiusersiteusername, GlobalVariable.iiusersitepassword)
-
-CustomKeywords.'com.ii4usersites.HomePage.ClickOnOrderForm'()
-
-CustomKeywords.'com.ii4usersites.OrderFormDefaultPage.ClickonCloneOrder'()
-
-CustomKeywords.'com.ii4usersites.CloneOrderHeaderPage.EnterValuesToFiledsInOrderHeaderPage'()
-
-CustomKeywords.'com.ii4usersites.CloneJobSearchPage.VerifyJobSearchPage'()
-
-CustomKeywords.'com.ii4usersites.CloneJobSearchPage.VerifyDtJobSearch'(GlobalVariable.dtjobidforcloning)
-
-CustomKeywords.'com.ii4usersites.CloneJobSearchPage.SelectItemAndAddSelectedItem'()
-
-CustomKeywords.'com.ii4usersites.CloneItemDetailPage.VerifyDeleteLink'()
-
-WebUI.closeBrowser()
-
+CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.PoswTestUserName, GlobalVariable.PoswTestPassword)
+//select BU as Empire Marchent 
+CustomKeywords.'com.poswm.LoginPage.SelectEmpireMerchantBU'()
+//navigate to spend limit page
+CustomKeywords.'com.poswm.Homepage.ClickOnWarehouseSpendLimits'()
+//click on 2019 State compliance 
+CustomKeywords.'com.poswm.WarehouseSpendingLimits.ClickOn2019Compliance'()
+//Verify show more link
+CustomKeywords.'com.poswm.WarehouseSpendingLimits.VerifyShowMoreLink'()
+//Verify show less link
+CustomKeywords.'com.poswm.WarehouseSpendingLimits.VerifyShowLessLink'()

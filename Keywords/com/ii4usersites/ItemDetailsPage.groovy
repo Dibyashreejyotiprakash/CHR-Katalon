@@ -257,12 +257,10 @@ public class ItemDetailsPage {
 			println("Enter values To Production Selection Page failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
-	public void ClickOnCreateYourOwnDesign()
-	{
-		try
-		{
+	public void ClickOnCreateYourOwnDesign() {
+		try {
 			action.WaitVisible(designnumber)
 			//action.WaitVisible(diecutframe)
 			//action.ScrollToViewElement(diecutframe)
@@ -270,10 +268,8 @@ public class ItemDetailsPage {
 			WebUI.delay(2)
 			action.Click(createdesignbtn)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("ClickOnCreateYourOwnDesign Failed due to "+e)
 		}
 	}
-	
 }

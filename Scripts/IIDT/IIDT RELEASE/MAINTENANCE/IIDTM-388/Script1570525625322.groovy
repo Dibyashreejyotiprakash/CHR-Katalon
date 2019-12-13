@@ -21,4 +21,4 @@ CustomKeywords.'com.wswadmin.HomePage.NavigateToItemSearchPage'()
 
 CustomKeywords.'com.wswadmin.ItemSearchpage.VerifytemplateFulfillmentPage'()
 
-CustomKeywords.'com.wswadmin.ItemSearchpage.VerifyCorporationDdnIsMandatory'()
+CustomKeywords.'com.wswadmin.II4ConfigurationPage.SelectCorpAndMarkets'()

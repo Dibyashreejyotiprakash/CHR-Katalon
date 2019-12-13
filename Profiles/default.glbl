@@ -51,12 +51,12 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'dibyashree.jyoti@brandmuscle.com'</initValue>
+      <initValue>'chandan.kumar@brandmuscle.com'</initValue>
       <name>wswadminusername</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'atlas@1234'</initValue>
+      <initValue>'Python@2019'</initValue>
       <name>wswpassword</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -81,7 +81,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'uat'</initValue>
+      <initValue>'STAGING'</initValue>
       <name>environment</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -428,5 +428,15 @@
       <description></description>
       <initValue>'password'</initValue>
       <name>posPass59</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'cspwadmin@brandmuscle.com'</initValue>
+      <name>PoswTestUserName</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'password'</initValue>
+      <name>PoswTestPassword</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>

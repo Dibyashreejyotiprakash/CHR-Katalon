@@ -13,27 +13,23 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-/*WebUI.openBrowser('')
 
-WebUI.maximizeWindow()*/
+WebUI.openBrowser('')
 
-CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameiiusersite, GlobalVariable.testtyperegression, GlobalVariable.environment)
+WebUI.maximizeWindow()
 
-CustomKeywords.'com.ii4usersites.LoginPage.LoginToDemoCorp'(GlobalVariable.iiusersiteusername, GlobalVariable.iiusersitepassword)
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamewswadmin, GlobalVariable.testtypesmoke,GlobalVariable.environment)
+//Login to WSW admin
+CustomKeywords.'com.wswadmin.LoginPage.WSWlogin'(GlobalVariable.wswadminusername, GlobalVariable.wswpassword)
+//Navigate to Adminintrative Item Gating User Groups page
+CustomKeywords.'com.wswadmin.HomePage.NavigateToItemGatingGroupManagementAdministrativeItemGating'()
+//Verify Adminintrative Item Gating User Groups page header
+CustomKeywords.'com.wswadmin.AdminItemGating.VerifyAdministrativeItemGatingUserGroups'()
 
-CustomKeywords.'com.ii4usersites.HomePage.ClickOnOrderForm'()
 
-CustomKeywords.'com.ii4usersites.OrderFormDefaultPage.ClickonCloneOrder'()
 
-CustomKeywords.'com.ii4usersites.CloneOrderHeaderPage.EnterValuesToFiledsInOrderHeaderPage'()
 
-CustomKeywords.'com.ii4usersites.CloneJobSearchPage.VerifyJobSearchPage'()
 
-CustomKeywords.'com.ii4usersites.CloneJobSearchPage.VerifyDtJobSearch'(GlobalVariable.dtjobidforcloning)
 
-CustomKeywords.'com.ii4usersites.CloneJobSearchPage.SelectItemAndAddSelectedItem'()
 
-CustomKeywords.'com.ii4usersites.CloneItemDetailPage.VerifyDeleteLink'()
-
-WebUI.closeBrowser()
 

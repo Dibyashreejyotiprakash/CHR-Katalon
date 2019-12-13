@@ -467,9 +467,10 @@ public  class Interaction {
 
 
 	public void  ScrollToViewElement(By by) {
-		WaitVisible(by)
+		WebUI.delay(1)		
 		WebElement element = driver.findElement(by);
 		js.executeScript("arguments[0].scrollIntoView(true);", element);
+		WaitVisible(by)
 	}
 
 
@@ -585,6 +586,8 @@ public  class Interaction {
 		{
 			WaitVisible(by)
 			boolean selected = driver.findElement(by).isSelected();
+			
+			println ("****************"+selected + "*************")
 			return selected;
 		}
 		catch(Exception e)

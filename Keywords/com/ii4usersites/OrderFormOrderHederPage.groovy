@@ -36,6 +36,7 @@ public class OrderFormOrderHederPage {
 	By continuetoitemsbtn = By.xpath("//*[@id='ctl00_Body_btnContinue']")
 	By accountname = By.xpath("//input[@id='Body_txtAccount']")
 	By accountnametobevalidated = By.xpath("(//li[contains(text(),'QATest2019')])[1]")
+	By jobTittleTextField = By.xpath("//*[@id='ctl00_Body_rtbJobTitle']")
 
 
 	@Keyword
@@ -44,9 +45,11 @@ public class OrderFormOrderHederPage {
 			action.WaitVisible(newaccountname)
 			action.ScrollToViewElement(newaccountname)
 			action.Type(newaccountname, "test")
-			action.WaitVisible(jobtypeddn)
-			action.Click(jobtypeddn)
-			action.Click(jobtypeddnvalue)
+			//action.WaitVisible(jobtypeddn)
+			//action.Click(jobtypeddn)
+			//action.Click(jobtypeddnvalue)
+			
+			action.Type(jobTittleTextField,"testTittle")
 			action.WaitVisible(continuetoitemsbtn)
 			action.ScrollToBottomOfPage()
 			action.Click(continuetoitemsbtn)
