@@ -186,10 +186,10 @@ public class JobNewPage {
 			//WebUI.delay(5)
 			return jobIdValue
 			/*WebUI.delay(10)
-			action.GetText(jobid)
-			action.WaitForPageToLoad()
-			WebUI.delay(5)
-			return jobid*/
+			 action.GetText(jobid)
+			 action.WaitForPageToLoad()
+			 WebUI.delay(5)
+			 return jobid*/
 		}
 		catch(Exception e) {
 			//println ("Verify Create New Jobs Failed due to "+ e)

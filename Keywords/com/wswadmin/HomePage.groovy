@@ -66,6 +66,7 @@ public class HomePage {
 	By standarditemgating = By.xpath("//span[contains(text(),'Standard Item Gating')]")
 	By ii4crosscorp = By.xpath("//*[text()='ii4 Cross Corp']")
 	By ii4crosscorpadmin = By.xpath("//*[text()='ii4 Cross Corp Admin']")
+	By ii4crosscorpassociation = By.xpath("//*[text()='Cross Corp Associations']")
 	By olof = By.xpath("//*[text()='Online Order Form']")
 	By olofii4configuration = By.xpath("//*[text()='II4 Configuration']")
 
@@ -113,7 +114,7 @@ public class HomePage {
 			WebUI.delay(5)
 			action.Click(invoiceSubMenu)
 			WebUI.delay(10)
-			
+
 		}
 		catch(Exception e)
 		{
@@ -129,16 +130,16 @@ public class HomePage {
 			boolean isPageVerified = false
 			String expectedUrl = "Invoices/InvoiceList.aspx"
 			WebUI.delay(5)
-			 String actualUrl = action.GetCurrentURL()
-			 WebUI.delay(5)
-			 
+			String actualUrl = action.GetCurrentURL()
+			WebUI.delay(5)
+
 			if(actualUrl.contains(expectedUrl))
 			{
 				println ("************ Invoice Page Verified Successfully ***********" )
 				isPageVerified = true
 			}
 			return isPageVerified
-			
+
 		}
 		catch(Exception e)
 		{
@@ -159,7 +160,7 @@ public class HomePage {
 			WebUI.delay(5)
 			action.Click(invoiceLineItem)
 			WebUI.delay(10)
-			
+
 		}
 		catch(Exception e)
 		{
@@ -175,16 +176,16 @@ public class HomePage {
 			boolean isPageVerified = false
 			String expectedUrl = "Invoices/LineItemShipping.aspx"
 			WebUI.delay(5)
-			 String actualUrl = action.GetCurrentURL()
-			 WebUI.delay(5)
-			 
+			String actualUrl = action.GetCurrentURL()
+			WebUI.delay(5)
+
 			if(actualUrl.contains(expectedUrl))
 			{
 				println ("************ Invoice Line Items Page Verified Successfully ***********" )
 				isPageVerified = true
 			}
 			return isPageVerified
-			
+
 		}
 		catch(Exception e)
 		{
@@ -446,6 +447,33 @@ public class HomePage {
 		{
 			Assert.fail("Navigate To Product Shot Removal Tool Page failed due to "+ e)
 		}
+	}
+	
+	
+	@Keyword
+	public void NavigateToII4CrossCorpAssociation()
+	{
+		try
+		{
+			
+		
+		 action.WaitVisible(instantimpact)
+		 action.MouseHoverOnElement(instantimpact)
+		 WebUI.delay(3)
+		 action.WaitVisible(ii4crosscorp)
+		 action.MouseHoverOnElement(ii4crosscorp)
+		 WebUI.delay(2)
+		 action.WaitVisible(ii4crosscorpadmin)
+		 action.WaitVisible(ii4crosscorpassociation)
+		 action.Click(ii4crosscorpassociation)
+		 action.WaitForPageToLoad()
+		 
+		}
+		catch(Exception e)
+		{
+			Assert.fail("NavigateToII4CrossCorpAssociation failed due to "+ e)
+		}
+
 	}
 
 }

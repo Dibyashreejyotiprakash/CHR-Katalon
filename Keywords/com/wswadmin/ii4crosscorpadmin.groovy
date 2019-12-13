@@ -37,6 +37,7 @@ public class ii4crosscorpadmin
 	By searchcorpfield = By.xpath("//input[@class = 'select2-search__field']")
 	By FromCorpVal = By.xpath("//li[contains(text(),'300 - Instant Impact 4.0 Demo Corp (Dist.)')]")
 	By ToCorpVal = By.xpath("//li[contains(text(),'320 - Instant Impact 4.0 Demo Corp (Supp.)')]")
+	By TomarketCorpVal = By.xpath("//li[contains(text(),'339 - Demo Distributor (QA)')]")
 	By corptocorpchkbox = By.xpath("//span[contains(text(),'Corp To Corp')]//preceding-sibling::span")
 	By choosetemplatebtn = By.xpath("//span[@id='cphMain_spncontinuebtntext']")
 	By selectallchkbox = By.xpath("//input[@id = 'ctl00_cphMain_gvSearchResults_ctl00_ctl02_ctl00_chkSelect']//following-sibling::span")
@@ -48,6 +49,21 @@ public class ii4crosscorpadmin
 	By ddtemplate = By.xpath("//input[@class = '132061']")
 	By ddtemplatetoclick = By.xpath("//input[@class = '132061']//following-sibling::span")
 	By corpremoveassociationlink = By.xpath("//div[@id='rmCorpAssociation']/a")
+	By mktremoveassociationlink = By.xpath("//div[@id='rmMarketAssociation']/a")
+	By filter = By.xpath(".//*[@id='row_0_0']/td/label/span")
+	By showallfilter = By.xpath("//input[@class = 'FilterCategory']")
+	By viewbatchbtn = By.xpath(".//*[@id='132061']")
+	By viewbatchcorptocorpassociation = By.xpath("(//span[contains(text(),'Corp To Corp')])[2]")
+	By viewbatchcorptomktassociation = By.xpath("(//span[contains(text(),'Corp To Market')])[2]")
+	By market = By.xpath("//span[contains(text(),'Demo Dist. 1 QA')]")
+	By deleteconfirmcheckbox = By.xpath("//input[@id = 'deleteconfirm']//following-sibling::span[1]")
+	By confirmremovebtn = By.xpath("//input[@id='cphMain_btnRemove']")
+	By createassociationbtn = By.xpath("//button[@id='btnAdd']")
+	By removebtn = By.xpath("(//a[@class = 'btn-delete'])[1]")
+	By editbtn = By.xpath("(//a[@class = 'btn-edit'])[1]")
+	By associationpagesearchbox = By.xpath("//input[@id='txtSearch']")
+	By association = By.xpath("(//label[contains(text(),'300-Instant Impact')])[1]")
+	By edittemplatebtn = By.xpath("//span[contains(text(),'Edit Template')]")
 
 
 	@Keyword
@@ -112,9 +128,9 @@ public class ii4crosscorpadmin
 			action.Click(ToCorpVal)
 
 			action.WaitVisible(corptocorpchkbox)
-			
-			
-			
+
+
+
 			if(action.IsDisplayed(corpremoveassociationlink))
 			{
 				action.Click(corptocorpchkbox)
@@ -123,17 +139,17 @@ public class ii4crosscorpadmin
 				action.Type(templatesearchbox, "132061")
 				action.WaitVisible(ddtemplatetoclick)
 				println("VALUE IS-->"+ action.isAttribtuePresent(ddtemplate, "checked"))
-				
+
 				if(!action.isAttribtuePresent(ddtemplate, "checked"))
 				{
 					action.Click(ddtemplatetoclick)
 					action.Click(saveandexitbtn)
 				}
-				
-				
-				
+
+
+
 			}
-			
+
 			else
 			{
 				action.Click(corptocorpchkbox)
@@ -145,15 +161,512 @@ public class ii4crosscorpadmin
 				action.Click(ddtemplatetoclick)
 				action.Click(saveandexitbtn)
 			}
-			
 
-			
-			
+
+
+
 		}
 		catch(Exception e)
 		{
 			Assert.fail("CrossCorpDDTemplate Failed due to "+e)
 		}
+	}
+
+
+	@Keyword
+	public void ValidateCrossCorpPageFields()
+	{
+		try
+		{
+			action.WaitVisible(FromCorp)
+			action.IsElementDisplayed(FromCorp)
+			action.IsElementDisplayed(ToCorp)
+			//action.IsElementDisplayed(corptocorpchkbox)
+			//action.IsElementDisplayed(choosetemplatebtn)
+
+
+
+		}
+		catch(Exception e)
+		{
+			Assert.fail("ValidateCrossCorpPageFields Failed due to "+e)
+		}
+
+
+	}
+
+	@Keyword
+	public void CreateCorpToCorpAssociation()
+	{
+		try
+		{
+			action.WaitVisible(FromCorp)
+			action.WaitVisible(ToCorp)
+			action.Click(FromCorp)
+			action.WaitVisible(searchcorpfield)
+			action.Type(searchcorpfield, "300")
+			action.Click(FromCorpVal)
+			WebUI.delay(2)
+			action.Click(ToCorp)
+			action.WaitVisible(searchcorpfield)
+			action.Type(searchcorpfield, "320")
+			action.Click(ToCorpVal)
+
+			action.WaitVisible(corptocorpchkbox)
+
+
+
+			if(action.IsDisplayed(corpremoveassociationlink))
+			{
+				action.Click(corptocorpchkbox)
+				action.Click(choosetemplatebtn)
+				action.WaitVisible(templatesearchbox)
+				action.Type(templatesearchbox, "132061")
+				action.WaitVisible(ddtemplatetoclick)
+
+				/*println("VALUE IS-->"+ action.isAttribtuePresent(ddtemplate, "checked"))
+				 if(!action.isAttribtuePresent(ddtemplate, "checked"))
+				 {
+				 action.Click(ddtemplatetoclick)
+				 action.Click(saveandexitbtn)
+				 }*/
+
+
+
+			}
+
+			else
+			{
+				action.Click(corptocorpchkbox)
+				action.Click(choosetemplatebtn)
+				action.WaitVisible(templatesearchbox)
+				action.Click(selectallchkbox)
+				action.Type(templatesearchbox, "132061")
+				action.WaitVisible(ddtemplatetoclick)
+				action.Click(ddtemplatetoclick)
+				action.Click(saveandexitbtn)
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			Assert.fail("CreateCorpToCorpAssociation Failed due to "+e)
+		}
+
+	}
+
+
+	@Keyword
+	public void ValidateFilter()
+	{
+		try
+		{
+			action.WaitVisible(FromCorp)
+			action.WaitVisible(ToCorp)
+			action.Click(FromCorp)
+			action.WaitVisible(searchcorpfield)
+			action.Type(searchcorpfield, "300")
+			action.Click(FromCorpVal)
+			WebUI.delay(2)
+			action.Click(ToCorp)
+			action.WaitVisible(searchcorpfield)
+			action.Type(searchcorpfield, "320")
+			action.Click(ToCorpVal)
+
+			action.WaitVisible(corptocorpchkbox)
+			action.Click(corptocorpchkbox)
+			action.Click(choosetemplatebtn)
+			action.WaitVisible(templatesearchbox)
+			action.WaitVisible(filter)
+			action.Click(filter)
+
+
+		}
+		catch(Exception e)
+		{
+			Assert.fail("ValidateFilter Failed due to "+e)
+		}
+	}
+
+	@Keyword
+	public void ValidateShowAllFilter()
+	{
+		try
+		{
+			action.WaitVisible(FromCorp)
+			action.WaitVisible(ToCorp)
+			action.Click(FromCorp)
+			action.WaitVisible(searchcorpfield)
+			action.Type(searchcorpfield, "300")
+			action.Click(FromCorpVal)
+			WebUI.delay(2)
+			action.Click(ToCorp)
+			action.WaitVisible(searchcorpfield)
+			action.Type(searchcorpfield, "320")
+			action.Click(ToCorpVal)
+
+			action.WaitVisible(corptocorpchkbox)
+			action.Click(corptocorpchkbox)
+			action.Click(choosetemplatebtn)
+			action.WaitVisible(templatesearchbox)
+			action.ScrollToBottomOfPage()
+			action.WaitVisible(showallfilter)
+			action.Click(showallfilter)
+
+
+		}
+		catch(Exception e)
+		{
+			Assert.fail("ValidateShowAllFilter Failed due to "+e)
+		}
+	}
+
+	@Keyword
+	public void ValidateViewBatchForCorpAssociation()
+	{
+		try
+		{
+			action.ScrollToViewElement(viewbatchbtn)
+			action.WaitVisible(viewbatchbtn)
+			action.Click(viewbatchbtn)
+			action.WaitVisible(viewbatchcorptocorpassociation)
+			action.IsElementDisplayed(viewbatchcorptocorpassociation)
+		}
+		catch(Exception e)
+		{
+			Assert.fail("ValidateViewBatchForCorpAssociation Failed due to "+e)
+		}
+
+	}
+
+	@Keyword
+	public void CreateCorpToMarketAssociation()
+	{
+		try
+		{
+			action.WaitVisible(FromCorp)
+			action.WaitVisible(ToCorp)
+			action.Click(FromCorp)
+			action.WaitVisible(searchcorpfield)
+			action.Type(searchcorpfield, "300")
+			action.Click(FromCorpVal)
+			WebUI.delay(2)
+			action.Click(ToCorp)
+			action.WaitVisible(searchcorpfield)
+			action.Type(searchcorpfield, "339")
+			action.Click(TomarketCorpVal)
+
+			action.WaitVisible(corptocorpchkbox)
+			action.ScrollToBottomOfPage()
+
+
+			if(action.IsDisplayed(mktremoveassociationlink))
+			{
+
+				action.Click(market)
+				action.Click(choosetemplatebtn)
+				action.WaitVisible(templatesearchbox)
+				action.Type(templatesearchbox, "132061")
+				action.WaitVisible(ddtemplatetoclick)
+
+				/*println("VALUE IS-->"+ action.isAttribtuePresent(ddtemplate, "checked"))
+				 if(!action.isAttribtuePresent(ddtemplate, "checked"))
+				 {
+				 action.Click(ddtemplatetoclick)
+				 action.Click(saveandexitbtn)
+				 }*/
+
+
+
+			}
+
+			else
+			{
+				action.Click(market)
+				action.Click(choosetemplatebtn)
+				action.WaitVisible(templatesearchbox)
+				action.Click(selectallchkbox)
+				action.Type(templatesearchbox, "132061")
+				action.WaitVisible(ddtemplatetoclick)
+				action.Click(ddtemplatetoclick)
+				action.Click(saveandexitbtn)
+			}
+		}
+		catch(Exception e)
+		{
+			Assert.fail("CreateCorpToMarketAssociation Failed Due to "+e)
+		}
+
+	}
+
+	@Keyword
+	public void ValidateViewBatchForMktAssociation()
+	{
+		try
+		{
+			action.ScrollToBottomOfPage()
+			action.WaitVisible(viewbatchbtn)
+			action.Click(viewbatchbtn)
+			action.WaitVisible(viewbatchcorptomktassociation)
+
+		}
+		catch(Exception e)
+		{
+			Assert.fail("ValidateViewBatchForMktAssociation Failed Due to "+e)
+
+		}
+
+	}
+
+	@Keyword
+	public void ValidateCorpRemoveAssociation()
+	{
+		try
+		{
+			action.WaitVisible(FromCorp)
+			action.WaitVisible(ToCorp)
+			action.Click(FromCorp)
+			action.WaitVisible(searchcorpfield)
+			action.Type(searchcorpfield, "300")
+			action.Click(FromCorpVal)
+			WebUI.delay(2)
+			action.Click(ToCorp)
+			action.WaitVisible(searchcorpfield)
+			action.Type(searchcorpfield, "320")
+			action.Click(ToCorpVal)
+
+			action.WaitVisible(corptocorpchkbox)
+
+
+
+			if(action.IsDisplayed(corpremoveassociationlink))
+			{
+				action.Click(corpremoveassociationlink)
+				action.WaitVisible(deleteconfirmcheckbox)
+				action.Click(deleteconfirmcheckbox)
+				action.Click(confirmremovebtn)
+
+
+
+			}
+
+			else
+			{
+				action.Click(corptocorpchkbox)
+				action.Click(choosetemplatebtn)
+				action.WaitVisible(templatesearchbox)
+				action.Click(selectallchkbox)
+				action.Type(templatesearchbox, "132061")
+				action.WaitVisible(ddtemplatetoclick)
+				action.Click(ddtemplatetoclick)
+				action.Click(saveandexitbtn)
+				action.WaitVisible(corpremoveassociationlink)
+				action.Click(corpremoveassociationlink)
+				action.WaitVisible(deleteconfirmcheckbox)
+				action.Click(deleteconfirmcheckbox)
+				action.Click(confirmremovebtn)
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			Assert.fail("ValidateCorpRemoveAssociation Failed Due to "+e)
+
+		}
+
+	}
+
+	@Keyword
+	public void ValidateMarketRemoveAssociation()
+	{
+		try
+		{
+			action.WaitVisible(FromCorp)
+			action.WaitVisible(ToCorp)
+			action.Click(FromCorp)
+			action.WaitVisible(searchcorpfield)
+			action.Type(searchcorpfield, "300")
+			action.Click(FromCorpVal)
+			WebUI.delay(2)
+			action.Click(ToCorp)
+			action.WaitVisible(searchcorpfield)
+			action.Type(searchcorpfield, "339")
+			action.Click(TomarketCorpVal)
+
+			action.WaitVisible(corptocorpchkbox)
+			action.ScrollToBottomOfPage()
+
+
+			if(action.IsDisplayed(mktremoveassociationlink))
+			{
+
+				action.Click(mktremoveassociationlink)
+
+				action.WaitVisible(deleteconfirmcheckbox)
+				action.Click(deleteconfirmcheckbox)
+				action.Click(confirmremovebtn)
+
+				/*println("VALUE IS-->"+ action.isAttribtuePresent(ddtemplate, "checked"))
+				 if(!action.isAttribtuePresent(ddtemplate, "checked"))
+				 {
+				 action.Click(ddtemplatetoclick)
+				 action.Click(saveandexitbtn)
+				 }*/
+
+
+
+			}
+
+			else
+			{
+				action.Click(market)
+				action.Click(choosetemplatebtn)
+				action.WaitVisible(templatesearchbox)
+				action.Click(selectallchkbox)
+				action.Type(templatesearchbox, "132061")
+				action.WaitVisible(ddtemplatetoclick)
+				action.Click(ddtemplatetoclick)
+				action.Click(saveandexitbtn)
+
+				action.WaitVisible(mktremoveassociationlink)
+				action.Click(mktremoveassociationlink)
+
+				action.WaitVisible(deleteconfirmcheckbox)
+				action.Click(deleteconfirmcheckbox)
+				action.Click(confirmremovebtn)
+
+
+			}
+
+		}
+		catch(Exception e)
+		{
+			Assert.fail("ValidateMarketRemoveAssociation Failed Due to "+e)
+		}
+
+	}
+
+	@Keyword
+	public void ValidateCrossCorpAssociationFields()
+	{
+		try
+		{
+			action.Refresh()
+			action.WaitVisible(createassociationbtn)
+			action.IsElementDisplayed(createassociationbtn)
+			action.IsElementDisplayed(removebtn)
+			action.IsElementDisplayed(editbtn)
+			action.IsElementDisplayed(associationpagesearchbox)
+
+		}
+		catch(Exception e)
+		{
+			Assert.fail("ValidateCrossCorpAssociationFields Failed Due to "+e)
+		}
+
+	}
+
+	@Keyword
+	public void ValidateCreatedCorpAssociationOnAssociationPage()
+	{
+		try
+		{
+			action.Refresh()
+			action.WaitVisible(associationpagesearchbox)
+			action.Click(associationpagesearchbox)
+			action.Type(associationpagesearchbox, "300")
+			action.IsElementDisplayed(association)
+
+		}
+		catch(Exception e)
+		{
+			Assert.fail("ValidateCreatedCorpAssociationOnAssociationPage Failed Due to "+e)
+
+		}
+
+	}
+
+	@Keyword
+	public void CreateAssociationFromAssociationPage()
+	{
+		try
+		{
+			action.Refresh()
+			action.WaitVisible(createassociationbtn)
+			action.Click(createassociationbtn)
+			action.WaitVisible(FromCorp)
+			action.WaitVisible(ToCorp)
+
+		}
+		catch(Exception e)
+		{
+			Assert.fail("CreateAssociationFromAssociationPage Failed Due to "+e)
+
+		}
+
+
+	}
+
+	@Keyword
+	public void RemoveAssociationFromAssociationPage()
+	{
+		try
+		{
+			action.Refresh()
+			action.WaitVisible(associationpagesearchbox)
+			action.Type(associationpagesearchbox, "300")
+			action.WaitVisible(removebtn)
+			action.Click(removebtn)
+
+		}
+		catch(Exception e)
+		{
+			Assert.fail("RemoveAssociationFromAssociationPage Failed Due to "+e)
+
+		}
+
+
+	}
+
+	@Keyword
+	public void EditAssociationFromAssociationPage()
+	{
+		try
+		{
+			action.Refresh()
+			action.WaitVisible(associationpagesearchbox)
+			action.Type(associationpagesearchbox, "300")
+			action.WaitVisible(editbtn)
+			action.Click(editbtn)
+			action.WaitVisible(edittemplatebtn)
+
+		}
+		catch(Exception e)
+		{
+			Assert.fail("EditAssociationFromAssociationPage Failed Due to "+e)
+
+		}
+
+	}
+	
+	@Keyword
+	public void ValidateSearchInAssociationPage()
+	{
+		try
+		{
+			action.Refresh()
+			action.WaitVisible(associationpagesearchbox)
+			action.Type(associationpagesearchbox, "300")
+			action.IsDisplayed(association)
+			
+		}
+		catch(Exception e)
+		{
+			Assert.fail("ValidateSearchInAssociationPage Failed Due to "+e)
+		}
+		
 	}
 
 }
