@@ -11,103 +11,103 @@
    <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
    <testSuiteGuid>67be3fe4-1a3e-482c-81cc-7ef7fac23e0c</testSuiteGuid>
    <testCaseLink>
-      <guid>157002c7-ceec-4d04-b71d-b5c5fe6e8341</guid>
+      <guid>99b5053d-8c48-4d72-9956-841a9d55c2c9</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/CSPW/CSPW-RELEASE/MAINTENANCE/143_SR Notified when Item is Rejected by Customer</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>327666ec-6593-4777-95e9-912d484846d4</guid>
+      <guid>edc6468e-b76b-4140-aa05-7eaa904c0057</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/CSPW/CSPW-RELEASE/MAINTENANCE/152_POS Warehouse Enhancement Request</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>f6e7bb57-5d3c-4a2f-a6d4-c20ec53eea48</guid>
+      <guid>d7d95cc9-7ec8-4459-80b6-dd5312013d36</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/CSPW/CSPW-RELEASE/MAINTENANCE/191_Ability to freeze headers on the item search page</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>72b46001-553a-4a5d-9be6-b3cf980f709b</guid>
+      <guid>89039fb8-251d-4189-86ce-95262e52e4fa</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/CSPW/CSPW-RELEASE/MAINTENANCE/214_Empire Merchants Change to Merchandiser Process</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>2ba0dcee-8196-4e17-92c4-a0c29e6a0aaf</guid>
+      <guid>544b8026-2ae2-4de3-be04-4e28389ed7a7</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/CSPW/CSPW-RELEASE/MAINTENANCE/222_AddingNEWTypeoptionforPOSWarehouse</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>3e036419-6477-4327-83aa-db0a123aeca8</guid>
+      <guid>ddae82e4-4c53-4840-89c6-39108d4f97bf</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/CSPW/CSPW-RELEASE/MAINTENANCE/234_POSWarehouse-OrderPackListReport</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>cc212a18-49db-4490-8f49-db8a768b7fe0</guid>
+      <guid>7ce401d2-5452-4045-bfe5-f8e594c4aa67</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/CSPW/CSPW-RELEASE/MAINTENANCE/272_POSWarehouseSupport-InstallerColumn</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>a1a34e47-e3cc-4456-933e-afb97ce2390d</guid>
+      <guid>d363a3d2-11fc-4c3a-a9bb-2a77bd289400</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/CSPW/CSPW-RELEASE/MAINTENANCE/292_POSW Enhancement - User Item Approval Transfer</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>725dd209-28d2-4e67-9baf-26cb6ad20609</guid>
+      <guid>72c2e7c2-657c-4c77-a3bd-7586a6ba45da</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/CSPW/CSPW-RELEASE/MAINTENANCE/2_Default price for a product type - POS Warehouse</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>2e7f78d8-a479-4804-9c13-d96a84c08325</guid>
+      <guid>f32bf3fc-2abc-4d39-98f0-6acedfe3ee77</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/CSPW/CSPW-RELEASE/MAINTENANCE/321_Sales Division Allocation Validation</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>acf3a912-3330-4d97-bde1-1c5e172f1cc6</guid>
+      <guid>f8bb94ba-e1de-47cf-ab3c-95d39fc4a5f3</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/CSPW/CSPW-RELEASE/MAINTENANCE/325_POSW Item Search WarehouseItem Table not reflecting items with multiple sales divisions</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>574eb29c-1fe6-4714-a112-6a21d9fc1d7a</guid>
+      <guid>193af6ac-c21e-4856-ba46-3350799c48a0</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/CSPW/CSPW-RELEASE/MAINTENANCE/32_Empire Merchants POS Warehouse Add Positive Inventory In Filters</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>bedbeb16-da15-4a65-87b3-1eb8ae0d3375</guid>
+      <guid>273a3a83-3211-4f76-840a-5a4e5b2563cd</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/CSPW/CSPW-RELEASE/MAINTENANCE/336_POS Empire - Deleted Filter not working</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>6af70132-1835-4f92-aebf-64010d2c6043</guid>
+      <guid>4b39aaaa-44d2-4ad9-b01b-92c30c65d740</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/CSPW/CSPW-RELEASE/MAINTENANCE/343_POSWPackListsCannotPrint</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>82df49bd-87df-48df-a9f5-5726003ca460</guid>
+      <guid>97275765-5c74-407b-84fc-6f7f3e823eb2</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/CSPW/CSPW-RELEASE/MAINTENANCE/59_POSW Compliance Validation - Product Type and Item</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>1ae2bf95-b5d8-4410-a2d3-971c7c36af6e</guid>
+      <guid>477b9201-23d8-4908-8eab-a55adb673134</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/CSPW/CSPW-RELEASE/MAINTENANCE/POSWarehouseShipOrdernotworking</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>a51f89da-8dc2-485a-9e0e-7d189c495c84</guid>
+      <guid>ab250370-48f7-4ea7-8b52-50a85eb6afc6</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/CSPW/CSPW-RELEASE/MAINTENANCE/Test</testCaseId>

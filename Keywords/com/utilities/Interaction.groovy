@@ -220,6 +220,27 @@ public  class Interaction {
 						WebUI.closeBrowser()
 					}
 				}
+				else if (BuName.equalsIgnoreCase("PROOFGALLERY"))
+				{
+
+					if (EnvironmentName.equalsIgnoreCase("UAT"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.proofgalleryUAT)
+					}
+					else if (EnvironmentName.equalsIgnoreCase("STAGING"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.proofgallerySTAGE)
+					}
+					else if (EnvironmentName.equalsIgnoreCase("PROD"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.proofgalleryPROD)
+					}
+					else
+					{
+						throw new Exception("Environment is not correct")
+						WebUI.closeBrowser()
+					}
+				}
 				else
 				{
 					throw new Exception("Environment is not correct")
@@ -342,6 +363,26 @@ public  class Interaction {
 					}
 					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
 						WebUI.navigateToUrl(GlobalVariable.dtSTAGE)
+					}
+					else
+					{
+						throw new Exception("Environment is not correct")
+						WebUI.closeBrowser()
+					}
+				}
+				else if (BuName.equalsIgnoreCase("PROOFGALLERY"))
+				{
+					if (EnvironmentName.equalsIgnoreCase("DEV"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.proofgalleryDEV)
+					}
+					else if (EnvironmentName.equalsIgnoreCase("UAT"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.proofgalleryUAT)
+					}
+					else if (EnvironmentName.equalsIgnoreCase("STAGING"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.proofgallerySTAGE)
 					}
 					else
 					{
