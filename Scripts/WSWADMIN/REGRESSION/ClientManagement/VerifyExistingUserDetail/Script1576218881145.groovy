@@ -13,18 +13,11 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamewswadmin, GlobalVariable.testtypesmoke, GlobalVariable.environment)
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamewswadmin, GlobalVariable.testtyperegression,GlobalVariable.environment)
 
 CustomKeywords.'com.wswadmin.LoginPage.WSWlogin'(GlobalVariable.wswadminusername, GlobalVariable.wswpassword)
 
-CustomKeywords.'com.wswadmin.HomePage.NavigateToItemSearchPage'()
+CustomKeywords.'com.wswadmin.ClientMgmtUserMaintenancePage.VerifyUserMaintenancePage'()
 
-CustomKeywords.'com.wswadmin.ItemSearchpage.VerifytemplateFulfillmentPage'()
+CustomKeywords.'com.wswadmin.ClientMgmtUserMaintenancePage.VerifyExistingUserDetails'()
 
-CustomKeywords.'com.wswadmin.ItemSearchpage.NavigateToTemplateConfigurationPage'()
-
-CustomKeywords.'com.wswadmin.MetatagConfigurationPage.BackToItemSearchPage'()
-
-CustomKeywords.'com.wswadmin.ItemSearchpage.VerifytemplateFulfillmentPage'()
-
-CustomKeywords.'com.wswadmin.ItemSearchpage.ValidateRetainSelection'()

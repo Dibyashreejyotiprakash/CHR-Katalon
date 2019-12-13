@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description></description>
-   <name>VerifyBulkUploadAddSelectedForExisting</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>5817dd65-65dc-44cf-9be2-54ba184f67fd</testCaseGuid>
-</TestCaseEntity>

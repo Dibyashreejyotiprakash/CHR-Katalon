@@ -13,12 +13,14 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamewswadmin, GlobalVariable.testtypesmoke,GlobalVariable.environment)
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamewswadmin, GlobalVariable.testtyperegression,GlobalVariable.environment)
 
 CustomKeywords.'com.wswadmin.LoginPage.WSWlogin'(GlobalVariable.wswadminusername, GlobalVariable.wswpassword)
 
-CustomKeywords.'com.wswadmin.HomePage.NavigateToRequestNewQuote'()
+CustomKeywords.'com.wswadmin.ClientMgmtUserMaintenancePage.VerifyUserMaintenancePage'()
 
-CustomKeywords.'com.wswadmin.QuoteRequestPage.VerifyQuoteRequestPage'()
+String username = CustomKeywords.'com.wswadmin.ClientMgmtUserMaintenancePage.VerifyCreatingAndValidatingLoginWithNewUser'()
 
-CustomKeywords.'com.wswadmin.QuoteRequestPage.CreateNewQuote'()
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameproofgallery, GlobalVariable.testtypesmoke,GlobalVariable.environment)
+
+CustomKeywords.'com.proofgallery.LoginPage.VerifyLoginToProofGallery'(username, GlobalVariable.proofgallerypwd)

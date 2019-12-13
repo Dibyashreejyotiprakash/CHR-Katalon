@@ -17,12 +17,11 @@ WebUI.openBrowser('')
 
 WebUI.maximizeWindow()
 
-CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameapprovalswswadmin, GlobalVariable.testtyperegression, GlobalVariable.environment)
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamewswadmin, GlobalVariable.testtyperegression, GlobalVariable.environment)
 
 WebUI.waitForPageLoad(300)
 
 CustomKeywords.'com.wswadmin.HomePage.NavigateToGlobalMetaTaggigPage'()
-
 
 WebUI.closeBrowser()
 
