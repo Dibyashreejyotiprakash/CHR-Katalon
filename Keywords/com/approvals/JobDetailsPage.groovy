@@ -24,41 +24,36 @@ import com.kms.katalon.core.webui.driver.DriverFactory
 import internal.GlobalVariable
 
 public class JobDetailsPage {
-	
+
 	WebDriver driver = DriverFactory.getWebDriver();
 	Interaction action = new Interaction();
-	
-	
+
+
 	By jobcreatedfor = By.xpath("//*[@id='ctl00_cphBody_fvDesignSummary_OrderedForLabel']")
 	By jobstatus = By.xpath("//*[@id='ctl00_cphBody_fvDesignSummary_statusLabel']")
-	
+
 	@Keyword
-	public void VerifyJobCreatedForField()
-	{
+	public void VerifyJobCreatedForField() {
 		try{
 			boolean statusofjobcreatedforfield= action.IsElementDisplayed(jobcreatedfor)
 			Assert.assertTrue(statusofjobcreatedforfield)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			println ("Verify job Created For field failed due to "+ e)
 			Assert.fail()
 		}
 	}
-	
-	
+
+
 	@Keyword
-	public void VerifyJobStatusField()
-	{
+	public void VerifyJobStatusField() {
 		try{
 			boolean statusofjobstatusfield= action.IsElementDisplayed(jobstatus)
 			Assert.assertTrue(statusofjobstatusfield)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			println ("Verify job status field failed due to "+ e)
 			Assert.fail()
 		}
 	}
-
 }

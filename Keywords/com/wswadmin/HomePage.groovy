@@ -96,6 +96,9 @@ public class HomePage {
 	By orderswithouttracking = By.xpath("//*[text()='Orders Without Tracking']")
 	By createnewskus = By.xpath("//*[text()='Create New SKUs']")
 
+	By proofgallery = By.xpath("//*[text()='Proof Gallery']")
+	By assigncorpmarketsupplier = By.xpath("//*[text()='Assign Corporations / Markets / Suppliers']")
+
 
 	@Keyword
 	public void NavigateToItemSearchPage() {
@@ -734,8 +737,8 @@ public class HomePage {
 			Assert.fail("Navigate To CreateNewSKUs Page failed due to "+ e)
 		}
 	}
-	
-	
+
+
 	@Keyword
 	public void NavigateToImportProductShotsPage()
 	{
@@ -749,8 +752,8 @@ public class HomePage {
 			Assert.fail("Navigate To Import Product Shots Page failed due to "+ e)
 		}
 	}
-	
-	
+
+
 	@Keyword
 	public void NavigateRemoveProductShotsRemovalPage()
 	{
@@ -764,6 +767,19 @@ public class HomePage {
 			Assert.fail("Navigate Remove Product Shots Removal Page failed due to "+ e)
 		}
 	}
-	
+
+
+	@Keyword
+	public void NavigateAssignCorpSupplierMarketPage()
+	{
+		try{
+			action.MouseHoverOnElement(proofgallery)
+			action.Click(assigncorpmarketsupplier)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e){
+			Assert.fail("Navigate Assign Corp Supplier Market Page failed due to "+ e)
+		}
+	}
 
 }
