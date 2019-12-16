@@ -52,9 +52,61 @@ public class II4ConfigurationPage {
 	By itemdetailssection = By.xpath("//*[text()='ITEM DETAILS']")
 	By brandmentions = By.xpath("//*[@id='collapseEight']")
 	By pricebreakyesbtn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_rbDivPriceBreaksTrue']/span[1]")
-	By pricebreaknobtn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_rbDivPriceBreaksFalse']/span[1]")
-
-
+	By pricebreaknobtn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_rbDivPriceBreaksFalse']/span[1]")	
+	By IIDemoCOrpDist = By.xpath("//*[text()='Instant Impact 4.0 Demo Corp (Dist.)']")
+	By ChicagoBeverageMarket = By.xpath("//*[text()='Chicago Beverage Systems (296)']")
+	By priceDisclaimerYesCheckBox = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_rbPnlPriceDisclaimerTrue']/span[1]")
+	By priceDisclaimerNoCheckBox = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_rbPnlPriceDisclaimerFalse']/span[1]")
+	
+	
+	@Keyword
+	public void SelectIICorpAndMarkets() {
+		try {
+			action.Click(corpddn)
+			//WebUI.delay(10)
+			//action.ScrollToViewelement(corpddnvalue)
+			action.Click(IIDemoCOrpDist)
+			//WebUI.delay(20)
+			action.Click(marketddn)
+			//WebUI.delay(10)
+			action.Click(ChicagoBeverageMarket)
+			//WebUI.delay(10)
+		}
+		catch(Exception e) {
+			println ("SelectIICorpAndMarkets method failed due to "+ e)
+			Assert.fail()
+		}
+	}
+	
+	@Keyword
+	public String EnableAndDisablePriceDisclaimer(String Disclaimer)
+	{
+		try
+		{
+			if (Disclaimer.equalsIgnoreCase("Enable"))
+			{
+				action.ScrollToBottomOfPage()
+				action.Click(priceDisclaimerYesCheckBox)
+				action.Click(savebtn)
+				WebUI.delay(5)
+				return Disclaimer
+				
+			}
+			else
+			{
+				action.ScrollToBottomOfPage()
+				action.Click(priceDisclaimerNoCheckBox)
+				action.Click(savebtn)
+				WebUI.delay(5)
+				return Disclaimer
+			}
+		}
+		catch(Exception e)
+		{
+			Assert.fail("EnableAndDisablePriceDisclaimer failed due to :" + e)
+		}
+	}
+	
 
 	@Keyword
 	public void VerifyII4ConfigurationPage() {
@@ -78,14 +130,14 @@ public class II4ConfigurationPage {
 	public void SelectCorpAndMarkets() {
 		try {
 			action.Click(corpddn)
-			WebUI.delay(20)
+			//WebUI.delay(20)
 			//action.ScrollToViewelement(corpddnvalue)
 			action.Click(corpddnvalue)
-			WebUI.delay(20)
+			//WebUI.delay(20)
 			action.Click(marketddn)
-			WebUI.delay(20)
+			//WebUI.delay(20)
 			action.Click(marketddnvalue)
-			WebUI.delay(20)
+			//WebUI.delay(20)
 		}
 		catch(Exception e) {
 			println ("Select Corp And Markets failed due to "+ e)
@@ -309,8 +361,7 @@ public class II4ConfigurationPage {
 			Assert.fail()
 		}
 	}
-	
-	
+
 	@Keyword
 	public void UpdatePriceBreakVisiblity() {
 		try{
@@ -334,14 +385,11 @@ public class II4ConfigurationPage {
 		}
 	}
 	
-	
-	
-
 	@Keyword
 	public void AddVerbiageTextForItemDetailsPage() {
 		try{
-
-			action.ScrollToViewelement(itemdetailssection)
+			//action.ScrollToViewelement(itemdetailssection)
+			action.ScrollToBottomOfPage()
 
 			action.Clear(smallprintverbiage)
 			action.Type(smallprintverbiage, "Small Text For Testing")

@@ -23,11 +23,12 @@ import com.utilities.Interaction
 
 import com.utilities.Interaction
 import internal.GlobalVariable
-import java.time.LocalDate
 import org.openqa.selenium.WebDriver
 import org.testng.Assert
 import org.openqa.selenium.Alert
 import org.openqa.selenium.By
+import java.text.SimpleDateFormat;
+import java.util.Date
 import com.kms.katalon.core.webui.driver.DriverFactory
 
 import internal.GlobalVariable
@@ -73,23 +74,206 @@ public class WarehouseOrders {
 	By desiredshipdatetextbox = By.xpath("//*[@id='ctl00_MainContent_dockShippingInformation_C_calShipDate_dateInput']")
 
 
+	By addBtn = By.xpath("(//*[text()='Add'])[1]")
+	By addCustomer = By.xpath("(//*[text()='Add Customer'])[1]")
+	By addanItemLink = By.xpath("(//*[text()='Add an Item'])[1]")
+
+	By desiredShipDateTestBox = By.xpath("//*[@id='ctl00_MainContent_dockShippingInformation_C_calShipDate_dateInput']")
+
+
+	By shipDate = By.xpath("//*[@id='ctl00_MainContent_RadDock1_C_lblShipDateTop']")
+	By shipLink = By.xpath("//*[@id='ctl00_MainContent_dockItemInformation_C_rgOrderItems_ctl00_ctl04_lnkShip']")
+	By approveLink = By.xpath("//*[text()='Approve']")
+	By rejectLink = By.xpath("//*[text()='Reject']")
+	By rejectNoteTextBox = By.xpath("//*[@id='ctl00_MainContent_dockItemInformation_C_rgOrderItems_ctl00_ctl04_rttReject_C_txtReject']")
+	By submitBtn = By.xpath("//*[@id='ctl00_MainContent_dockItemInformation_C_rgOrderItems_ctl00_ctl04_rttReject_C_btnRejectSubmit']")
+	By updateLink = By.xpath("//*[text()='Update']")
+	By calanderIcon = By.xpath("//*[@id='ctl00_MainContent_dockShippingInformation_C_calShipDate_popupButton']")
+	By popCalander = By.xpath("//*[@id='ctl00_MainContent_rwInstaller_C_rdInstallationDate_popupButton']")
+
+	@Keyword
+	public boolean Verifydate() {
+		boolean IsEnable = false
+		try {
+			if (!action.IsElementEnabled(calanderIcon)) {
+				println "************Calandar button/icon is disable**********"
+			}
+			return IsEnable = true
+		}
+		catch(Exception e) {
+			Assert.fail("Verifydate method failed due to :" + e)
+		}
+
+		/*LocalDate date = LocalDate.now();
+		 LocalDate yesterday = date.minusDays(1);
+		 LocalDate tomorrow = yesterday.plusDays(2);
+		 println("Today date: "+date);
+		 println("Yesterday date: "+yesterday);
+		 println("Tommorow date: "+tomorrow);*/
+		//SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy")
+
+
+
+
+
+
+
+
+
+
+		/*
+		 LocalDate date = new LocalDate()
+		 String todaydate = date.now()
+		 println ("Today date --------------"+todaydate)*/
+	}
+
+
+
+	@Keyword
+	public void ClickOnUpdateLink() {
+		try {
+			if(action.IsDisplayed(updateLink)) {
+				action.Click(updateLink)
+				WebUI.delay(5)
+			}
+			else {
+				println ("Reject link is not present  " + shipDate)
+			}
+		}
+		catch(Exception e) {
+			Assert.fail("ClickOnRejectLink method failed due to :" + e)
+		}
+	}
+	@Keyword
+	public void ClickOnAddanItemIcon() {
+		try {
+			action.Click(plusIcon)
+			//WebUI.delay(10)
+		}
+		catch(Exception e) {
+			Assert.fail("ClickOnAddanItemLink method failed due to :" + e)
+		}
+	}
+
+	@Keyword
+	public void ClickOnRejectLink() {
+		try {
+			if(action.IsDisplayed(rejectLink)) {
+				action.Click(rejectLink)
+				WebUI.delay(5)
+			}
+			else {
+				println ("Reject link is not present  " + shipDate)
+			}
+		}
+		catch(Exception e) {
+			Assert.fail("ClickOnRejectLink method failed due to :" + e)
+		}
+	}
+
+	@Keyword
+	public void ClickOnApproveLink() {
+		try {
+			if(action.IsDisplayed(approveLink)) {
+				action.Click(approveLink)
+				WebUI.delay(5)
+			}
+			else {
+				println ("Approve link is not present  " + shipDate)
+			}
+		}
+		catch(Exception e) {
+			Assert.fail("ClickOnRejectLink method failed due to :" + e)
+		}
+	}
+
+
+	@Keyword
+	public void WriteRejectNote() {
+		try {
+			action.Click(rejectNoteTextBox)
+			action.Type(rejectNoteTextBox, "testReject")
+			action.Click(submitBtn)
+		}
+		catch(Exception e) {
+			Assert.fail("WriteRejectNote method failed due to :" + e)
+		}
+	}
+
+
+
+	@Keyword
+	public String GetShipDate() {
+		try {
+			String shipDate = action.GetText(shipDate)
+
+			println ("Approve Date is " + shipDate)
+
+			/*String[] p = shipDate.split("/")
+			 String p1 = p[0]
+			 String p2 = p[1]
+			 println "***********"+ p1
+			 println "***********"+ p2*/
+
+
+			println ("Actual Date is " + shipDate)
+		}
+		catch(Exception e) {
+			Assert.fail("GetShipDate method failed due to :" + e)
+		}
+	}
+
+	@Keyword
+	public void ClickOnShipLink() {
+		try {
+			action.Click(shipLink)
+			WebUI.delay(10)
+		}
+		catch(Exception e) {
+			Assert.fail("ClickOnShipLink method failed due to :" + e)
+		}
+	}
+
+	@Keyword
+	public void ClickOnAddanItemLink() {
+		try {
+			action.Click(addanItemLink)
+			//WebUI.delay(10)
+		}
+		catch(Exception e) {
+			Assert.fail("ClickOnAddanItemLink method failed due to :" + e)
+		}
+	}
+
+	@Keyword
+	public void ClickOnAddLink() {
+		try {
+			action.Click(addBtn)
+			//WebUI.delay(10)
+
+		}
+		catch(Exception e) {
+			Assert.fail("ClickOnAddLink method failed due to :" + e)
+		}
+	}
+
 	@Keyword
 	public void VerifyNewOrderPage() {
 		try{
-			String expectedUATUrl = "https://csg.v5qa.brandmuscle.net/Warehouse/WarehouseItem.aspx";
-			String expectedSTAGEUrl ="https://csg.v5stage.brandmuscle.net/Warehouse/WarehouseItem.aspx"
-			String expectedPRODUrl = "https://csg.v5prod.brandmuscle.net/Warehouse/WarehouseItem.aspx";
+			String expectedUATUrl = "https://csg.v5qa.brandmuscle.net/Warehouse/WarehouseOrders.aspx";
+			String expectedSTAGEUrl ="https://csg.v5stage.brandmuscle.net/Warehouse/WarehouseOrders.aspx"
+			String expectedPRODUrl = "https://csg.v5prod.brandmuscle.net/Warehouse/WarehouseOrders.aspx";
 
-			String env = GlobalVariable.environment
-			String actualUrl = action.GetCurrentURL();
-			WebUI.delay(5)
-
-			if(env.equalsIgnoreCase("uat")) {
-				Assert.assertEquals(expectedUATUrl, actualUrl)
-			}
-			else if(env.equalsIgnoreCase("staging")) {
-				Assert.assertEquals(expectedSTAGEUrl, actualUrl)
-			}
+			/*String env = GlobalVariable.environment
+			 String actualUrl = action.GetCurrentURL();
+			 WebUI.delay(5)
+			 if(env.equalsIgnoreCase("uat")) {
+			 Assert.assertEquals(expectedUATUrl, actualUrl)
+			 }
+			 else if(env.equalsIgnoreCase("staging")) {
+			 Assert.assertEquals(expectedSTAGEUrl, actualUrl)
+			 }*/
+			action.VerifyCurrentPage("WarehouseOrders.aspx")
 		}
 		catch(Exception e) {
 			Assert.fail("Verify New Order page failed due to "+ e)
@@ -157,10 +341,10 @@ public class WarehouseOrders {
 	@Keyword
 	public void AddCustomerAndVerifyMsg() {
 		try{
-			action.ScrollToViewelement(addcustomerbtn)
+			action.ScrollToViewElement(addcustomerbtn)
 			action.WaitUntilElementClickable(addcustomerbtn)
 			action.Click(addcustomerbtn)
-			WebUI.delay(10)
+			//WebUI.delay(10)
 			action.Type(customertextbox, "st")
 			action.Click(customername)
 			action.ScrollToTopOgPage()
@@ -175,9 +359,14 @@ public class WarehouseOrders {
 	@Keyword
 	public void AddDesiredShippingDateAndVerifyMsg() {
 		try{
-			action.ScrollToViewelement(desiredshipdatetextbox)
-			LocalDate date = new LocalDate()
-			String todaydate = date.now()
+			action.ScrollToViewElement(desiredshipdatetextbox)
+			//LocalDate date = new LocalDate()
+			//String todaydate = date.now()
+			//println (todaydate)
+			//LocalDate todaydate = LocalDate.now()
+			Date date = new Date();
+			SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
+			String todaydate = formatter.format(date);
 			action.Type(desiredshipdatetextbox, todaydate)
 			action.ScrollToTopOgPage()
 			boolean statusofaddedshimethodmsg = action.IsElementDisplayed(desiredshipdateaddedmsg)
@@ -191,7 +380,7 @@ public class WarehouseOrders {
 	@Keyword
 	public void AddShipingMethodAndVerifyMsg() {
 		try{
-			action.ScrollToViewelement(shippingmethodddn)
+			action.ScrollToViewElement(shippingmethodddn)
 			action.WaitUntilElementClickable(shippingmethodddn)
 			WebUI.delay(10)
 			action.Click(shippingmethodddn)
@@ -209,7 +398,7 @@ public class WarehouseOrders {
 	@Keyword
 	public void ClickOnSubmitOrderBtnAndevrifyMsg() {
 		try{
-			action.ScrollToViewelement(submitbtn)
+			action.ScrollToViewElement(submitbtn)
 			action.Click(submitbtn)
 			action.ScrollToTopOgPage()
 			boolean statusofsubmitordermsg = action.IsElementDisplayed(submitordermsg)
@@ -282,7 +471,6 @@ public class WarehouseOrders {
 	public void ClickOnItemName() {
 		try {
 			action.Click(itemNameColumn)
-			WebUI.delay(5)
 		}
 		catch(Exception e) {
 			Assert.fail("ClickOnItemName method failed due to :"+e)
@@ -293,19 +481,18 @@ public class WarehouseOrders {
 	public void ClickOnEditThisItem() {
 		try {
 			action.WindowHandle()
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(EditThisItem)
 			action.WaitForPageToLoad()
-			WebUI.delay(3)
 			action.Click(salesDivisionDropDown)
 			action.WaitTime(3)
 			action.Click(salesDivisionThirdOption)
 			action.Click(itemInfoSaveIcon)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.Click(ItemInfonextButton)
-			WebUI.delay(2)
+			//WebUI.delay(2)
 			action.Click(imageNextBtn)
-			WebUI.delay(2)
+			//WebUI.delay(2)
 			action.Click(brandNextBtn)
 		}
 		catch(Exception e) {
@@ -314,55 +501,42 @@ public class WarehouseOrders {
 	}
 
 
+	@Keyword
+	public void GetDesiredShipDate() {
+		try {
+			action.ScrollToViewElement(desiredShipDateTestBox)
+			String shipDate = action.GetText(desiredShipDateTestBox)
+			println ("**********" + shipDate)
+		}
+		catch(Exception e) {
+			Assert.fail("GetDesiredShipDate method failed due to :"+e)
+		}
+	}
 
 	@Keyword
 	public void AddDesiredShipDate() {
 		try{
-			action.ScrollToViewelement(desiredshipdatetextbox)
+			action.ScrollToViewElement(desiredshipdatetextbox)
 			LocalDate date = new LocalDate()
 			String todaydate = date.now()
 			action.Type(desiredshipdatetextbox, todaydate)
+			WebUI.delay(3)
+			//return todaydate
 		}
 		catch(Exception e) {
 			Assert.fail("Add Desired Shipping Date and verify failed due to "+ e)
 		}
 	}
 
+	//VerifyNewItemPage
+	@Keyword
+	public void VerifyNewItemPage() {
+		try{
+			action.VerifyCurrentPage("WarehouseItem.aspx")
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+		}
+		catch(Exception e) {
+			Assert.fail("VerifyNewItemPage failed due to "+ e)
+		}
+	}
 }

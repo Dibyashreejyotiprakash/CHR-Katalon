@@ -31,6 +31,8 @@ public class JobDetailsPage {
 
 	By jobcreatedfor = By.xpath("//*[@id='ctl00_cphBody_fvDesignSummary_OrderedForLabel']")
 	By jobstatus = By.xpath("//*[@id='ctl00_cphBody_fvDesignSummary_statusLabel']")
+	By copyPreDesignSection = By.xpath("//h1[contains(text(),'(Pre-Design)')]")
+	By itemName = By.xpath("//td[@xpath=1]")
 
 	@Keyword
 	public void VerifyJobCreatedForField() {
@@ -56,4 +58,18 @@ public class JobDetailsPage {
 			Assert.fail()
 		}
 	}
+	
+	@Keyword
+	public void VerifyCopyPredesign() {
+		try{
+			action.ScrollToViewElement(copyPreDesignSection)
+			Assert.assertTrue(action.IsElementDisplayed(copyPreDesignSection))
+			//Assert.assertTrue(action.IsElementDisplayed(itemName))
+		}
+		catch(Exception e) {
+			Assert.fail("VerifyCopyPredesign failed due to "+ e)
+		}
+	}
+	
+	
 }

@@ -65,12 +65,12 @@ public class HomePage {
 	By corpsetup = By.xpath("//a[contains(text(),'Corporation Setup')]")
 	By editcorp = By.xpath("//a[contains(text(),'Edit Corporation')]")
 	By corpdropdown = By.xpath("//select[@id='ctl00_Body_ddlCorps']")
-
+	By distsetup = By.xpath("//a[contains(text(),'Distributor Setup')]")
+	By editdist = By.xpath("//a[contains(text(),'Edit Distributor')]")
 	By graphicsmaintenace = By.xpath("//*[text()='Graphic Maintenance']")
 	By corplist = By.xpath("//*[text()='Corporation List']")
 	By catalogcategorysetup = By.xpath("//*[text()='Catalog Category Setup']")
 	By generatebarcode = By.xpath("//*[text()='Generate Barcode']")
-
 
 
 	@Keyword
@@ -101,8 +101,36 @@ public class HomePage {
 		}
 	}
 
+	@Keyword
+	public void EditCorporation() {
+		try {
+			action.WaitVisible(systemsetup)
+			action.Click(systemsetup)
+			action.WaitVisible(corpsetup)
+			action.Click(corpsetup)
+			action.WaitVisible(editcorp)
+			action.Click(editcorp)
+		}
+		catch(Exception e) {
+			Assert.fail("EditCorporation failed due to "+ e)
+		}
+	}
 
 
+	@Keyword
+	public void EditDistributor() {
+		try {
+			action.WaitVisible(systemsetup)
+			action.Click(systemsetup)
+			action.WaitVisible(distsetup)
+			action.Click(distsetup)
+			action.WaitVisible(editdist)
+			action.Click(editdist)
+		}
+		catch(Exception e) {
+			Assert.fail("EditCorporation failed due to "+ e)
+		}
+	}
 
 	@Keyword
 	public void  NavigateToCorpListpage() {

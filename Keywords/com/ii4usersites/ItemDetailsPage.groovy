@@ -61,7 +61,11 @@ public class ItemDetailsPage {
 	By productselectionnobtn = By.xpath("//input[@id='Body_btnNo1']")
 	By paymentpagetext = By.xpath("//h1[contains(text(),'Enter Payment and Billing Details')]")
 	By shoppingcartqty = By.xpath("//input[@id='ctl00_Body_shopCartItemsListView_ctrl0_qtyNumTextBox']")
-	
+	By designnumber = By.xpath("//span[@id='Body_lblDesignNumber']")
+	By diecutframe = By.xpath("//li[contains(text(),'Die-Cut A-Frame Table Tent 4x6')]")
+	By descriptionfield = By.xpath("//div[@id = 'ctl00_Body_radAjaxPanel']//h4[1]")
+	By showpricebreak = By.xpath("//a[@id='priceBreakA1']")
+	By unitprice = By.xpath("//th[contains(text(),'Unit Price')]")
 	
 	
 	@Keyword
@@ -109,6 +113,7 @@ public class ItemDetailsPage {
 			action.WaitVisible(previewchangebtn)
 			WebUI.delay(10)
 			action.WaitUntilElementClickable(previewchangebtn)
+			WebUI.delay(5)
 			action.Click(previewchangebtn)
 			action.WaitUntilElementClickable(nextstepbtn)
 			action.Click(nextstepbtn)
@@ -164,6 +169,9 @@ public class ItemDetailsPage {
 			WebUI.delay(5)
 			action.WaitUntilElementClickable(addtocartbtn)
 			action.Click(addtocartbtn)
+			action.WaitVisible(showpricebreak)
+			action.Click(showpricebreak)
+			action.WaitVisible(unitprice)
 		}
 		catch(Exception e) {
 			println("SelectItemType Failed")
@@ -267,6 +275,34 @@ public class ItemDetailsPage {
 		}
 		catch(Exception e) {
 			println("Enter values To Production Selection Page failed due to "+ e)
+		}
+	}
+
+	@Keyword
+	public void ClickOnCreateYourOwnDesign() {
+		try {
+			action.WaitVisible(designnumber)
+			//action.WaitVisible(diecutframe)
+			//action.ScrollToViewElement(diecutframe)
+			action.ScrollToBottomOfPage()
+			WebUI.delay(2)
+			action.Click(createdesignbtn)
+		}
+		catch(Exception e) {
+			Assert.fail("ClickOnCreateYourOwnDesign Failed due to "+e)
+		}
+	}
+
+	@Keyword
+	public void ValidateNAinDescription() {
+		try {
+			action.WaitVisible(descriptionfield)
+			String s = action.GetText(descriptionfield)
+			boolean val = s.contains("N/A")
+			Assert.assertEquals(val, "false")
+		}
+		catch(Exception e) {
+			Assert.fail("ValidateNAinDescription Failed due to "+e)
 		}
 	}
 }

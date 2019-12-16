@@ -36,6 +36,8 @@ import org.openqa.selenium.JavascriptExecutor
 import org.openqa.selenium.WebDriver.Timeouts;
 import java.util.concurrent.TimeUnit;
 
+
+
 //import internal.GlobalVariable
 import java.time.LocalTime
 
@@ -218,6 +220,27 @@ public  class Interaction {
 						WebUI.closeBrowser()
 					}
 				}
+				else if (BuName.equalsIgnoreCase("PROOFGALLERY"))
+				{
+
+					if (EnvironmentName.equalsIgnoreCase("UAT"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.proofgalleryUAT)
+					}
+					else if (EnvironmentName.equalsIgnoreCase("STAGING"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.proofgallerySTAGE)
+					}
+					else if (EnvironmentName.equalsIgnoreCase("PROD"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.proofgalleryPROD)
+					}
+					else
+					{
+						throw new Exception("Environment is not correct")
+						WebUI.closeBrowser()
+					}
+				}
 				else
 				{
 					throw new Exception("Environment is not correct")
@@ -347,6 +370,26 @@ public  class Interaction {
 						WebUI.closeBrowser()
 					}
 				}
+				else if (BuName.equalsIgnoreCase("PROOFGALLERY"))
+				{
+					if (EnvironmentName.equalsIgnoreCase("DEV"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.proofgalleryDEV)
+					}
+					else if (EnvironmentName.equalsIgnoreCase("UAT"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.proofgalleryUAT)
+					}
+					else if (EnvironmentName.equalsIgnoreCase("STAGING"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.proofgallerySTAGE)
+					}
+					else
+					{
+						throw new Exception("Environment is not correct")
+						WebUI.closeBrowser()
+					}
+				}
 				else
 				{
 					throw new Exception("BU is not correct")
@@ -383,6 +426,8 @@ public  class Interaction {
 
 		WebDriverWait wait = new WebDriverWait(driver, 300);
 		pageLoadStatus = (String)js.executeScript("return document.readyState");
+
+		//WebUI.delay(10)
 	}
 
 
@@ -408,6 +453,9 @@ public  class Interaction {
 
 
 	public String  GetCurrentURL() {
+
+		//WaitVisible(by)
+		WebUI.delay(2)
 		return driver.getCurrentUrl();
 	}
 
@@ -460,32 +508,38 @@ public  class Interaction {
 	}
 
 
-
+	//Scroll upto element to be visible
 	public void  ScrollToViewElement(By by) {
-		WaitVisible(by)
+
+		WebUI.delay(1)
 		WebElement element = driver.findElement(by);
 		js.executeScript("arguments[0].scrollIntoView(true);", element);
+		//WaitVisible(by)
 	}
 
 
 	//Scroll up to element to be visible
 	public void  ScrollToViewElement(WebElement element)
 	{
+		WaitVisible(element)
+		//WebUI.delay(1)
 		js.executeScript("arguments[0].scrolSlIntoView(true);", element);
 	}
 
 
 	//Scroll upto element to be visible
-	public void  ScrollToViewelement(By by)
-	{
-		WaitVisible(by)
-		js.executeScript("arguments[0].scrolSlIntoView(true);", by);
-	}
+	/*public void  ScrollToViewelement(By by)
+	 {
+	 WebUI.delay(1)
+	 js.executeScript("arguments[0].scrollIntoView(true);", by);
+	 WaitVisible(by)
+	 }*/
 
 
 	//Scroll to bottom of page
 	public void  ScrollToBottomOfPage()
 	{
+		WebUI.delay(1)
 		js.executeScript("window.scrollTo(0, document.body.clientHeight);");
 	}
 
@@ -493,6 +547,7 @@ public  class Interaction {
 	//Scroll to top of page
 	public void  ScrollToTopOgPage()
 	{
+		WebUI.delay(1)
 		js.executeScript("window.scrollTo(0, 0)");
 	}
 
@@ -541,6 +596,7 @@ public  class Interaction {
 	{
 		try
 		{
+			//WebUI.delay(10)
 			WaitVisible(by)
 			boolean displayed = driver.findElement(by).isDisplayed();
 			return displayed;
@@ -574,6 +630,8 @@ public  class Interaction {
 		{
 			WaitVisible(by)
 			boolean selected = driver.findElement(by).isSelected();
+			
+			println ("****************"+selected + "*************")
 			return selected;
 		}
 		catch(Exception e)
@@ -585,8 +643,15 @@ public  class Interaction {
 
 	public void WaitVisible(By by)
 	{
-		WebUI.enableSmartWait()
-		WebUI.delay(3)
+		WebUI.delay(1)
+		WebDriverWait wait = new WebDriverWait(driver, 60)
+		wait.until(ExpectedConditions.visibilityOfElementLocated(by))
+
+		/*println('Entering into Explicit wait statements')
+		 Boolean prsentstatus=wait.until(ExpectedConditions.presenceOfElementLocated(by))
+		 println(prsentstatus)
+		 Boolean prsentstatus1 = wait.until(ExpectedConditions.visibilityOfElementLocated(by))
+		 println(prsentstatus1)*/
 	}
 
 	public void  WaitVisibleDup(By by)
@@ -605,12 +670,14 @@ public  class Interaction {
 
 	public void  WaitVisible(By by,int timeinsec)
 	{
+		WebUI.delay(1)
 		WebDriverWait wait = new WebDriverWait(driver, timeinsec);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 	}
 
 	public void  WaitVisible(WebElement element)
 	{
+		WebUI.delay(1)
 		WebDriverWait wait = new WebDriverWait(driver,300);
 		wait.until(ExpectedConditions.visibilityOf(element));
 	}
@@ -819,7 +886,8 @@ public  class Interaction {
 
 	public void SelectByText(By by, String text)
 	{
-		WebUI.enableSmartWait()
+		WaitVisible(by);
+		WaitVisibleDup(by);
 		WebElement elementToHover = driver.findElement(by);
 		Select select = new Select(elementToHover)
 		select.selectByVisibleText(text)
@@ -911,10 +979,39 @@ public  class Interaction {
 
 	}
 
+	public boolean isAttribtuePresent(By by, String attribute)
+	{
+		WebElement element = driver.findElement(by);
+		boolean result = false;
+		String value = element.getAttribute(attribute)
+
+		if(value != null)
+		{
+			result = true
+		}
+
+		return result
+
+	}
+
 
 	public void Enter(By by)
 	{
 		driver.findElement(by).sendKeys(Keys.ENTER);
+	}
+	public void PreseBackSpace(By by)
+	{
+		driver.findElement(by).sendKeys(Keys.BACK_SPACE)
+	}
+
+	public void PreseLeftArrow(By by)
+	{
+		driver.findElement(by).sendKeys(Keys.ARROW_LEFT)
+	}
+
+	public void PreseRightArrow(By by)
+	{
+		driver.findElement(by).sendKeys(Keys.ARROW_RIGHT)
 	}
 
 	public String GetText(By by)
@@ -948,7 +1045,9 @@ public  class Interaction {
 
 	public void VerifyCurrentPage(String expectedurl)
 	{
-		String actualurl = driver.currentUrl
+		WebUI.delay(3)
+		String actualurl = driver.getCurrentUrl()
+		//boolean b = actualurl.contains(expectedurl)
 		if(actualurl.contains(expectedurl))
 		{
 			println ("Page verified")
@@ -959,19 +1058,7 @@ public  class Interaction {
 		}
 	}
 
-	public boolean WaitWhileNotVisible(By by)
-	{
-		boolean stillExists = true
-		while (stillExists)
-		{
-			try
-			{
-				WaitVisible(by, 1)
-			}
-			catch(Exception e)
-			{
-				return stillExists = false
-			}
-		}
-	}
+
+
+
 }

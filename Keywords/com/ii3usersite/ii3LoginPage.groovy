@@ -41,7 +41,6 @@ public class ii3LoginPage {
 		action.Click(loginbtn)
 		action.WaitForPageToLoad()
 		action.SelectByText(corporationddn, "Glazer's Family of Companies")
-		WebUI.delay(5)
 		action.SelectByText(distrddn,"Southern Glazer's Wine & Spirits - TX")
 		action.WaitForPageToLoad()
 	}

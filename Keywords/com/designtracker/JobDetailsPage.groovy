@@ -124,11 +124,11 @@ public class JobDetailsPage {
 	By firstaddonprice = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_gvAddOns']//tr[2]//td[5]")
 	By attachaddonsbtn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_btnAttachAddOns']")
 	By addonspriceinjobdetailspage = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_lvJobs_ctrl0_cpPricingSummary_rptrPriceSummary_ctl01_lblLinePrice']")
-	
+	By extendedsearch = By.xpath("//legend[contains(text(),'Extended Search')]")
+	By searchpart = By.xpath("//select[@id = 'ctl00_ctl00_cphMain_cphMain_lbxParts']")
 	By commetinnoteinformation = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_lvJobs_ctrl0_gvJobNotes_ctl03_lblNoteText']")
 
-
-
+	
 	@Keyword
 	public void ClickOnDetailsBtn() {
 		try {
@@ -646,5 +646,67 @@ public class JobDetailsPage {
 		}
 		
 	}
+	
+	@Keyword
+	public void ValidateDDInPrintFormatDdn()
+	{
+		try
+		{
+			action.ScrollToBottomOfPage()
+			WebUI.delay(7)
+			action.Click(addpartlink)
+			WebUI.delay(10)
+			action.WaitForPageToLoad()
+			action.SelectByIndex(printformatddn, 5)
+			WebUI.delay(10)
+			action.Type(quantity, "1")
 
+
+
+		}
+		catch(Exception e)
+		{
+			Assert.fail("ValidateDDInPrintFormatDdn Job failed due to :"+e)
+		}
+	}
+
+	@Keyword
+	public void ValidatedExtendedSearchForDD()
+	{
+		try
+		{
+			String s = action.IsDisplayed(extendedsearch)
+			Assert.assertEquals(s, "False")
+		}
+		catch(Exception e)
+		{
+			Assert.fail("ValidatedExtendedSearchForDD Job failed due to :"+e)
+		}
+	}
+	
+	@Keyword
+	public void AddDDPart()
+	{
+		try
+		{
+			action.ScrollToBottomOfPage()
+			WebUI.delay(7)
+			action.Click(addpartlink)
+			WebUI.delay(10)
+			action.WaitForPageToLoad()
+			action.SelectByIndex(printformatddn, 5)
+			WebUI.delay(10)
+			action.Type(quantity, "1")
+			action.Click(partsearchbtn)
+			action.WaitVisible(searchpart)
+			action.SelectByIndex(searchpart, 2)
+			action.Click(insertbtn)
+			action.Click(re)
+			
+		}
+		catch(Exception e)
+		{
+			Assert.fail("AddDDPart Job failed due to :"+e)
+		}
+	}
 }

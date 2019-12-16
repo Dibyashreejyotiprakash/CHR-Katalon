@@ -70,23 +70,19 @@ public class HomePage {
 	By standarditemgating = By.xpath("//span[contains(text(),'Standard Item Gating')]")
 	By ii4crosscorp = By.xpath("//*[text()='ii4 Cross Corp']")
 	By ii4crosscorpadmin = By.xpath("//*[text()='ii4 Cross Corp Admin']")
+	By ii4crosscorpassociation = By.xpath("//*[text()='Cross Corp Associations']")
 	By olof = By.xpath("//*[text()='Online Order Form']")
 	By olofii4configuration = By.xpath("//*[text()='II4 Configuration']")
-
-
 	By requestnewquotebtn = By.xpath("//*[text()='Request New Quote']")
 	By quoteitemsearchbtn = By.xpath("//*[text()='Quote Item Search']")
 	By estimatorassignment = By.xpath("//*[text()='Estimator Assignment']")
 	By vendorprinteradmin = By.xpath("//*[text()='Vendor/Printer Admin']")
 	By itemlistoptionsadmin = By.xpath("//*[text()='Item List Options Admin']")
-
 	By productshots = By.xpath("//*[text()='Product Shots']")
 	By productshotremovaltool = By.xpath("//*[text()='Product Shot Removal Tool']")
 	By importproductshots = By.xpath("//*[text()='Product Shots Import Utility']")
-
 	By quotetrackerbtn = By.xpath("//*[text()='QuoteTracker']")
 	By requestnewquote = By.xpath("//*[text()='Request New Quote']")
-
 	By stichlabbtn = By.xpath("//*[text()='Stitch Labs']")
 	By stichlablookup = By.xpath("//*[text()='Stitch Labs Order Look-Up']")
 	By fraudriskorders = By.xpath("//*[text()='Fraud Risk Orders']")
@@ -95,9 +91,106 @@ public class HomePage {
 	By manuallycloseorders = By.xpath("//*[text()='Manually Close Orders']")
 	By orderswithouttracking = By.xpath("//*[text()='Orders Without Tracking']")
 	By createnewskus = By.xpath("//*[text()='Create New SKUs']")
-
 	By proofgallery = By.xpath("//*[text()='Proof Gallery']")
 	By assigncorpmarketsupplier = By.xpath("//*[text()='Assign Corporations / Markets / Suppliers']")
+	By brandmuscleMenu = By.xpath("(//*[text()='Brandmuscle'])[1]")
+	By reportsSubMenu = By.xpath("(//*[text()='Reports'])[1]")
+	By invoiceSubMenu = By.xpath("(//*[text()='Invoice'])[1]")
+	By invoiceLineItem = By.xpath("//*[text()='Invoice Line Items']")
+	By ItemGatingGroupManagementSubMenu = By.xpath("//*[text()='Item Gating Group Management']")
+	By administrativeItemTaggingSubMenu = By.xpath("//*[text()='Administrative Item Gating']")
+
+
+	@Keyword
+	public void NavigateToInvoicePage()
+	{
+		try
+		{
+			action.MouseHoverOnElement(brandmuscleMenu)
+			WebUI.delay(5)
+			action.MouseHoverOnElement(reportsSubMenu)
+			WebUI.delay(5)
+			action.Click(invoiceSubMenu)
+			WebUI.delay(10)
+
+		}
+		catch(Exception e)
+		{
+			Assert.fail("NavigateToInvoice Failed due to" +e)
+		}
+	}
+
+	@Keyword
+	public boolean VerifyInvoicePage()
+	{
+		try
+		{
+			boolean isPageVerified = false
+			String expectedUrl = "Invoices/InvoiceList.aspx"
+			WebUI.delay(5)
+			String actualUrl = action.GetCurrentURL()
+			WebUI.delay(5)
+
+			if(actualUrl.contains(expectedUrl))
+			{
+				println ("************ Invoice Page Verified Successfully ***********" )
+				isPageVerified = true
+			}
+			return isPageVerified
+
+		}
+		catch(Exception e)
+		{
+			Assert.fail("VerifyInvoicePage Failed due to" +e)
+		}
+	}
+
+
+
+	@Keyword
+	public void NavigateToInvoiceLineItemsPage()
+	{
+		try
+		{
+			action.MouseHoverOnElement(brandmuscleMenu)
+			WebUI.delay(5)
+			action.MouseHoverOnElement(reportsSubMenu)
+			WebUI.delay(5)
+			action.Click(invoiceLineItem)
+			WebUI.delay(10)
+
+		}
+		catch(Exception e)
+		{
+			Assert.fail("NavigateToInvoiceLineItemsPage Failed due to" +e)
+		}
+	}
+
+	@Keyword
+	public boolean VerifyInvoiceLineItemsPage()
+	{
+		try
+		{
+			boolean isPageVerified = false
+			String expectedUrl = "Invoices/LineItemShipping.aspx"
+			WebUI.delay(5)
+			String actualUrl = action.GetCurrentURL()
+			WebUI.delay(5)
+
+			if(actualUrl.contains(expectedUrl))
+			{
+				println ("************ Invoice Line Items Page Verified Successfully ***********" )
+				isPageVerified = true
+			}
+			return isPageVerified
+
+		}
+		catch(Exception e)
+		{
+			Assert.fail("VerifyInvoicePage Failed due to" +e)
+		}
+	}
+
 
 
 	@Keyword
@@ -235,7 +328,7 @@ public class HomePage {
 		{
 			action.WaitVisible(instantimpact)
 			action.MouseHoverOnElement(instantimpact)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.MouseHoverOnElement(olof)
 			action.Click(olofii4configuration)
 			action.WaitForPageToLoad()
@@ -348,6 +441,55 @@ public class HomePage {
 		catch(Exception e)
 		{
 			Assert.fail("Navigate To Product Shot Removal Tool Page failed due to "+ e)
+		}
+	}
+	
+	
+	@Keyword
+	public void NavigateToII4CrossCorpAssociation()
+	{
+		try
+		{
+			
+		
+		 action.WaitVisible(instantimpact)
+		 action.MouseHoverOnElement(instantimpact)
+		 WebUI.delay(3)
+		 action.WaitVisible(ii4crosscorp)
+		 action.MouseHoverOnElement(ii4crosscorp)
+		 WebUI.delay(2)
+		 action.WaitVisible(ii4crosscorpadmin)
+		 action.WaitVisible(ii4crosscorpassociation)
+		 action.Click(ii4crosscorpassociation)
+		 action.WaitForPageToLoad()
+		 
+		}
+		catch(Exception e)
+		{
+			Assert.fail("NavigateToII4CrossCorpAssociation failed due to "+ e)
+		}
+
+	}
+
+
+	@Keyword
+	public void NavigateToItemGatingGroupManagementAdministrativeItemGating()
+	{
+		try
+		{
+			action.WaitVisible(instantimpact)
+			action.MouseHoverOnElement(instantimpact)
+			WebUI.delay(3)
+			action.MouseHoverOnElement(ItemGatingGroupManagementSubMenu)
+			WebUI.delay(2)
+			//action.WaitVisible(ii4crosscorpadmin)
+			action.Click(administrativeItemTaggingSubMenu)
+			action.WaitForPageToLoad()
+
+		}
+		catch(Exception e)
+		{
+			Assert.fail("NavigateToItemGatingGroupManagementAdministrativeItemGating method failed due to "+ e)
 		}
 	}
 
@@ -768,7 +910,6 @@ public class HomePage {
 		}
 	}
 
-
 	@Keyword
 	public void NavigateAssignCorpSupplierMarketPage()
 	{
@@ -781,5 +922,4 @@ public class HomePage {
 			Assert.fail("Navigate Assign Corp Supplier Market Page failed due to "+ e)
 		}
 	}
-
 }

@@ -11,61 +11,55 @@
    <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
    <testSuiteGuid>59ff795b-66ae-41dd-9213-455c7746a207</testSuiteGuid>
    <testCaseLink>
-      <guid>40e31347-f951-40fe-9a4a-8a02b7c9aeff</guid>
+      <guid>b9833bde-2d97-4d19-9d82-56ef3a2b00ae</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/CSPW/CS REGRESSION/ManageBaseElement/EditBaseElement</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>250e7064-5751-4565-ba15-033b11943437</guid>
+      <guid>fbda7e83-5d7f-4687-9b3e-9dbac631ee39</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/CSPW/CS REGRESSION/ManageBaseElement/VerifyAddNewElementButton</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>3a8a42e5-9a16-4af3-8c41-f62be597b4d5</guid>
+      <guid>ec3ea127-6134-4ab3-9771-8f642343c0ac</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/CSPW/CS REGRESSION/ManageBaseElement/VerifyAddNewElementPage</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>8f83480d-bb39-4c50-825d-792c327a2c17</guid>
+      <guid>9719c8e9-5748-48bc-9b68-b9500010d121</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/CSPW/CS REGRESSION/ManageBaseElement/VerifyAddNewElemetWithoutOptionalDetails</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>badcb9ee-7c53-4241-bc6d-256b3d33cb59</guid>
+      <guid>8f9da0bb-2117-4f0a-ad42-be4b298507e1</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/CSPW/CS REGRESSION/ManageBaseElement/VerifySearchelement</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>b8b2834f-ef9d-4cde-84b7-28133cf9beb2</guid>
+      <guid>bf702d64-dc0d-4181-a6c7-2a80d396819f</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/CSPW/CS REGRESSION/ManageProgramElement/DeleteElement</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>4c52a48f-d537-4a05-8f54-a3bbe674b5de</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/CSPW/CS REGRESSION/ManageProgramElement/VerifyDownloadProgramsPopup</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>bab8d2dd-d796-49d5-bfe5-0771f3c78ace</guid>
+      <guid>94635ff4-def7-40d0-8132-dd256f18c885</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/CSPW/CS REGRESSION/ManageProgramElement/VerifyEditProgramElement</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>c17457fd-49a8-4fdf-810f-b888392fe2ce</guid>
+      <guid>24d7710d-64b6-4a83-b71a-a63ba2190d8e</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/CSPW/CS REGRESSION/ManageProgramElement/VerifySearchProgramElement</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>ddb56c9f-e8c0-4673-9753-095637d1a076</guid>
+      <guid>0a299082-6d5f-483c-8827-e57151aa1cce</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/CSPW/CS REGRESSION/ManageProgramElement/VerifyViewDetailsLink</testCaseId>
