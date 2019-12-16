@@ -25,7 +25,7 @@ class CreateDesignPage {
 
 	By btnCreateYourDesign = By.xpath("//input[@id='Body_btnProductDesign']")
 	By imgCorporationLogo = By.xpath("//img[@id='imgCorporationLogo']")
-	By divHeadline = By.xpath("//div[@id='Body_txtQMHeadline___livespell_proxy']")
+	By divHeadline = By.xpath("//*[@id='Body_ddlHeadline']")
 	By ddlHeadLine = By.xpath("//select[@id='Body_ddlHeadline']")
 	By imgLoading = By.xpath("//img[@src='/Content/Images/loading.gif']")
 	By ddlChooseFont = By.xpath("//select [@id='Body_ddlChooseFont']")
@@ -40,7 +40,7 @@ class CreateDesignPage {
 	By lnkAccount = By.xpath("//a[@href='/Account/MyAccountPage.aspx']")
 	By colDesignName = By.xpath("//table[@id='ctl00_Body_RadGridTemplate_ctl00']/tbody/tr/td[5]")
 	By btnNextPage = By.xpath(".//*[@id='ctl00_Body_RadGridTemplate_ctl00']/tfoot/tr/td/div/div[3]/button[1]")
-	By btnPreviewChanges = By.xpath("//input[@id='btnRepaintImage']")
+	By btnPreviewChanges = By.xpath("//input[@id='Body_repaintImageTopButton']")
 	By ddlChooseLayout = By.xpath("//select[@id='Body_ddlChooseLayout']")
 	By ddlAccount = By.xpath("//select[@id='Body_ddlAccount']")
 	By txbCreateDesign = By.xpath("//input[@id='Body_txtQTText']")
@@ -49,6 +49,8 @@ class CreateDesignPage {
 	By btnNext = By.xpath("//input[@id='btnNextStep']")
 	By btnYes = By.xpath("//*[@class='btn GenericRedButton']/span/span[text()='Yes']")
 	By cancelbtn = By.xpath("//*[@id='Body_CancelButton']")
+
+	By btnNo = By.cssSelector("[valign] .boxes .GenericRedButton:nth-child(3)")
 
 	WebDriver driver = DriverFactory.getWebDriver();
 	Interaction action = new Interaction();
@@ -74,6 +76,59 @@ class CreateDesignPage {
 		}
 		catch(Exception e) {
 			Assert.fail("Verify Navigation From CreateDesign Page failed due to "+ e)
+		}
+	}
+
+	@Keyword
+	public String SelectHeadLine() {
+		String selectedHeadLine = null;
+		try{
+			action.SelectByIndex(divHeadline, 1)
+			WebUI.delay(5)
+			selectedHeadLine = action.GetselectedText(divHeadline)
+			println ("Selected Head Line is----------- "+ selectedHeadLine)
+			return selectedHeadLine
+		}
+		catch(Exception e) {
+			Assert.fail("Select Head Line failed due to "+ e)
+		}
+	}
+
+	@Keyword
+	public void VerifyHeadLineBackFromShoppingCartPag() {
+		try{
+			String dispalyedheadline = action.GetselectedText(divHeadline)
+			String beforeselectedheadline = SelectHeadLine()
+			Assert.assertEquals(dispalyedheadline, beforeselectedheadline)
+		}
+		catch(Exception e) {
+			Assert.fail("Select Head Line failed due to "+ e)
+		}
+	}
+
+	@Keyword
+	public void ClickOnPreviewChangesButton() {
+		try{
+			action.Click(btnPreviewChanges)
+			WebUI.delay(20)
+		}
+		catch(Exception e) {
+			Assert.fail("Click on Preview Changes Button failed due to "+ e)
+		}
+	}
+
+	@Keyword
+	public void ClickOnNextStepBtnAndNavigateToProductSelectionPage() {
+		try{
+			action.ScrollToBottomOfPage()
+			WebUI.delay(3)
+			action.Click(btnNextStep)
+			action.WaitUntilElementClickable(btnNo)
+			action.Click(btnNo)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			Assert.fail("Click On Next Step Btn And Navigate To Product Selection Page failed due to "+ e)
 		}
 	}
 }

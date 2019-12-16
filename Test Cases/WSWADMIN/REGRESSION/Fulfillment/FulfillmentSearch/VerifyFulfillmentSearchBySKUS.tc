@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>VerifyFulfillmentSearchBySKUS</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>b195c6b0-d022-4011-bf9a-beec7fbcd016</testCaseGuid>
+</TestCaseEntity>

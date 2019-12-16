@@ -24,33 +24,29 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable
 
 public class ProductShotRemovalToolPage {
-	
+
 	By searchlabel = By.xpath("//*[text()='Search']")
-	
+
 	WebDriver driver = DriverFactory.getWebDriver();
 	Interaction action = new Interaction();
-	
+
 	@Keyword
-	public void VerifyProductShotRemovalToolPage()
-	{
+	public void VerifyProductShotRemovalToolPage() {
 		try{
 			action.VerifyCurrentPage("ProductShotRemovalTool.aspx")
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("Verify Product Shot Removal Tool Page failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
-	public void VerifySearchLabelAndDropdowns()
-	{
+	public void VerifySearchLabelAndDropdowns() {
 		try{
 			boolean statusofsearchlable = action.IsElementDisplayed(searchlabel)
 			Assert.assertTrue(statusofsearchlable)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("Verify Search Label And Drop downs failed due to "+ e)
 		}
 	}

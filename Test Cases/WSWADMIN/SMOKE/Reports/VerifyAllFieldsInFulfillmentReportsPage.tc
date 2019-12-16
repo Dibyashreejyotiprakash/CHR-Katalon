@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>VerifyAllFieldsInFulfillmentReportsPage</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>da89e172-83c9-48ab-9060-baea890ab018</testCaseGuid>
+</TestCaseEntity>

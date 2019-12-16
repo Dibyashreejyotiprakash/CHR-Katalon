@@ -104,6 +104,8 @@ public class HomePage {
 	By salespeopleviewtransferjob = By.xpath("//*[text()='SALES PEOPLE JOBS VIEW/TRANSFER']")
 	By suppliers = By.xpath("//*[text()='SUPPLIERS']")
 	By salespeople = By.xpath("//*[text()='SALES PEOPLE']")
+	By jobnotenotify = By.xpath("//*[text()='JOB NOTE NOTIFY']")
+	
 
 	@Keyword
 	public void VerifyHomePage() {
@@ -718,4 +720,47 @@ public class HomePage {
 			Assert.fail()
 		}
 	}
+
+
+	@Keyword
+	public void NavigateToJobNoteNotificationPage()
+	{
+		try
+		{
+			action.MouseHoverOnElement(applicationadmin)
+			WebUI.delay(5)
+			action.Click(jobnotenotify)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e)
+		{
+			println ("Navigate To Job Note Notification Page failed due to "+ e)
+			Assert.fail()
+		}
+	}
+	
+	@Keyword
+	public void ValidateGexOrderStatusBtn()
+	{
+		try
+		{
+			action.MouseHoverOnElement(reports)
+			WebUI.delay(5)
+			try{
+				action.WaitVisible(gexorderstatus)
+				boolean statusofgexstatusbtn = action.IsElementDisplayed(gexOrderStatus)
+				println ("Gex status ------"+ statusofgexstatusbtn)
+				Assert.assertFalse(statusofgexstatusbtn)
+			}
+			catch(Exception e){
+				throw new Exception("Gex odrer status is not present")
+			}
+		}
+		catch(Exception e)
+		{
+			println ("Navigate To Job Note Notification Page failed due to "+ e)
+			Assert.fail()
+		}
+	}
+	
 }

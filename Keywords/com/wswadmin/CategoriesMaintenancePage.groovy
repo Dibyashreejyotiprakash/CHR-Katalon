@@ -64,6 +64,21 @@ public class CategoriesMaintenancePage {
 
 	By  newacategoryaddedmsg = By.xpath("//*[text()='You successfully entered a category!']")
 
+	By createexternaltypesuccssmsg = By.xpath("//*[@id='cphMain_lblMessage']")
+
+	By categorymaintenancelable = By.xpath("//*[@id='cphMain_ctl00_lblSectionHeader']")
+	By externalitemtypetextbox = By.xpath("//*[@id='ctl00_cphMain_RadCategorySetting_ctl00_ctl02_ctl04_radExternalItemID_Input']")
+	By popupheader = By.xpath("//*[@id='ctl00_cphMain_RadCategorySetting_ctl00__ctl00_cphMain_RadCategorySetting_ctl00_ctl00___PEF']")
+	By descriptionoverridetextbox = By.xpath("//*[@id='ctl00_cphMain_RadCategorySetting_ctl00_ctl02_ctl04_radDescription']")
+	By distributortextbox = By.xpath("//*[@id='ctl00_cphMain_RadCategorySetting_ctl00_ctl02_ctl04_radDistributerID_Input']")
+
+	By descriptionsearchtextbox = By.xpath("//*[@id='ctl00_cphMain_RadCategorySetting_ctl00_ctl02_ctl03_FilterTextBox_Description']")
+	By firstsearchresultsdescription = By.xpath("//*[@id='ctl00_cphMain_RadCategorySetting_ctl00__0']/td[6]")
+
+	By firstdelete = By.xpath("//*[@id='ctl00_cphMain_RadCategorySetting_ctl00__0']/td[2]/a")
+	By norecordsmsg = By.xpath("//*[text()='No records to display.']")
+	By overridedescriptionsearchtextbox = By.xpath("//*[@id='ctl00_cphMain_RadCategorySetting_ctl00_ctl02_ctl03_FilterTextBox_DescriptionOverride']")
+
 
 	@Keyword
 	public void VerifyCreateNewCategory() {
@@ -228,6 +243,151 @@ public class CategoriesMaintenancePage {
 		if(statusofclearbtn == true) {
 			action.Type(descriptiontxtbx, "Test")
 			action.Click(clearbtn)
+		}
+	}
+
+
+
+	/********************************************************************************************************************************/
+
+	@Keyword
+	public void VerifyCategoriesMaintenancePage()
+	{
+		try{
+			action.VerifyCurrentPage("CategoriesMaintenance.aspx")
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Verify Categories Maintenance Page failed due "+ e)
+		}
+	}
+
+
+
+
+	@Keyword
+	public String CreateNewExternalItemType()
+	{
+		String externaltype = null
+		try{
+			externaltype = "11-A-Test External Item Type - "+action.GenerateRandomAplphabaticString(9)
+			action.Type(descriptiontxtbx, externaltype)
+			action.Click(savebtn)
+			boolean statusofcreatenewexternaltypesuccessmsg = action.IsElementDisplayed(createexternaltypesuccssmsg)
+			Assert.assertTrue(statusofcreatenewexternaltypesuccessmsg)
+			return externaltype
+		}catch(Exception e)
+		{
+			Assert.fail("Delete Meta tag failed due "+ e)
+		}
+	}
+
+
+	@Keyword
+	public String AssociateExternalTypeWithCorp(String newlycreatedexternalitemtype)
+	{
+		String externalitemname =newlycreatedexternalitemtype
+		println ("External Item --------"+ externalitemname)
+		try{
+			action.Click(createexternalitemcorpseting)
+			action.Type(corporationtxtbx, "339 - Demo Distributor (QA)")
+			action.Click(categorymaintenaceheader)
+			action.Click(addnewcorporatesetting)
+			action.Type(externalitemtypetextbox, newlycreatedexternalitemtype)
+			action.Enter(externalitemtypetextbox)
+			action.Type(distributortextbox, "Demo Dist. Market #1 (QA)")
+			action.Click(insertbtn)
+			//Search and Verify newly associated extrnal item type
+			action.Type(descriptionsearchtextbox, newlycreatedexternalitemtype)
+			action.Enter(descriptionsearchtextbox)
+
+			String firstdescription = action.GetText(firstsearchresultsdescription)
+			if(firstdescription.equals(newlycreatedexternalitemtype)){
+				println ("Newly created external item is verified")
+			}
+			return externalitemname
+
+		}catch(Exception e)
+		{
+			Assert.fail("Associate External Type With Corp failed due "+ e)
+		}
+	}
+
+
+	@Keyword
+	public String OverrideExternalType(String newlycreatedexternalitem)
+	{
+		String overrideexternamitem = null;
+		try{
+			action.Click(createexternalitemcorpseting)
+			action.Type(corporationtxtbx, "339 - Demo Distributor (QA)")
+			action.Click(categorymaintenaceheader)
+			action.Click(addnewcorporatesetting)
+			action.Type(externalitemtypetextbox, newlycreatedexternalitem)
+			action.Enter(externalitemtypetextbox)
+			overrideexternamitem = "Override Externalitem"+ action.GenerateRandomAplphabaticString(9)
+			action.Type(descriptionoverridetextbox, overrideexternamitem)
+			action.Type(distributortextbox, "Demo Dist. Market #2 (QA)")
+			action.Enter(distributortextbox)
+			action.Click(insertbtn)
+			action.Type(overridedescriptionsearchtextbox, overrideexternamitem)
+			action.Enter(overridedescriptionsearchtextbox)
+
+			//Search and Verify newly overrided extrnal item type
+
+			String firstdescription = action.GetText(firstsearchresultsdescription)
+			if(firstdescription.equals(overrideexternamitem)){
+				println ("Newly created external item is verified")
+			}
+
+
+			return overrideexternamitem
+		}catch(Exception e)
+		{
+			Assert.fail("Override External Type failed due "+ e)
+		}
+	}
+
+	@Keyword
+	public void DeleteNewlyCreatedExternalItemType(String newlycreatedextenalitem)
+	{
+		try{
+			action.Click(firstdelete)
+			action.AcceptAlert()
+
+			action.Type(descriptionsearchtextbox, newlycreatedextenalitem)
+			action.Enter(descriptionsearchtextbox)
+
+			try{
+				boolean statusofdeletedmsg = action.IsElementDisplayed(norecordsmsg)
+				Assert.assertTrue(statusofdeletedmsg)
+			}catch(Exception e1)
+			{
+				println ("Record is not delered")
+				throw e1
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Delete Newly Created External Item Type failed due "+ e)
+		}
+	}
+
+	@Keyword
+	public void DeleteExistingExternalItem()
+	{
+		try{
+			action.Type(corporationtxtbx, "339 - Demo Distributor (QA)")
+			action.Click(categorymaintenaceheader)
+			WebUI.delay(3)
+			action.Click(firstdelete)
+			action.AcceptAlert()
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Delete Existing External Item failed due "+ e)
 		}
 	}
 }
