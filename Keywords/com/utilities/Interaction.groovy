@@ -36,6 +36,8 @@ import org.openqa.selenium.JavascriptExecutor
 import org.openqa.selenium.WebDriver.Timeouts;
 import java.util.concurrent.TimeUnit;
 
+
+
 //import internal.GlobalVariable
 import java.time.LocalTime
 
@@ -218,6 +220,27 @@ public  class Interaction {
 						WebUI.closeBrowser()
 					}
 				}
+				else if (BuName.equalsIgnoreCase("PROOFGALLERY"))
+				{
+
+					if (EnvironmentName.equalsIgnoreCase("UAT"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.proofgalleryUAT)
+					}
+					else if (EnvironmentName.equalsIgnoreCase("STAGING"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.proofgallerySTAGE)
+					}
+					else if (EnvironmentName.equalsIgnoreCase("PROD"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.proofgalleryPROD)
+					}
+					else
+					{
+						throw new Exception("Environment is not correct")
+						WebUI.closeBrowser()
+					}
+				}
 				else
 				{
 					throw new Exception("Environment is not correct")
@@ -347,6 +370,26 @@ public  class Interaction {
 						WebUI.closeBrowser()
 					}
 				}
+				else if (BuName.equalsIgnoreCase("PROOFGALLERY"))
+				{
+					if (EnvironmentName.equalsIgnoreCase("DEV"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.proofgalleryDEV)
+					}
+					else if (EnvironmentName.equalsIgnoreCase("UAT"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.proofgalleryUAT)
+					}
+					else if (EnvironmentName.equalsIgnoreCase("STAGING"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.proofgallerySTAGE)
+					}
+					else
+					{
+						throw new Exception("Environment is not correct")
+						WebUI.closeBrowser()
+					}
+				}
 				else
 				{
 					throw new Exception("BU is not correct")
@@ -465,12 +508,13 @@ public  class Interaction {
 	}
 
 
-
+	//Scroll upto element to be visible
 	public void  ScrollToViewElement(By by) {
-		WebUI.delay(1)		
+
+		WebUI.delay(1)
 		WebElement element = driver.findElement(by);
 		js.executeScript("arguments[0].scrollIntoView(true);", element);
-		WaitVisible(by)
+		//WaitVisible(by)
 	}
 
 
@@ -484,12 +528,12 @@ public  class Interaction {
 
 
 	//Scroll upto element to be visible
-	public void  ScrollToViewelement(By by)
-	{
-		WebUI.delay(1)
-		js.executeScript("arguments[0].scrolSlIntoView(true);", by);
-		WaitVisible(by)
-	}
+	/*public void  ScrollToViewelement(By by)
+	 {
+	 WebUI.delay(1)
+	 js.executeScript("arguments[0].scrollIntoView(true);", by);
+	 WaitVisible(by)
+	 }*/
 
 
 	//Scroll to bottom of page
@@ -1013,4 +1057,8 @@ public  class Interaction {
 			throw new Exception("Page is not verified")
 		}
 	}
+
+
+
+
 }
