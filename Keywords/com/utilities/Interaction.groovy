@@ -630,6 +630,8 @@ public  class Interaction {
 		{
 			WaitVisible(by)
 			boolean selected = driver.findElement(by).isSelected();
+			
+			println ("****************"+selected + "*************")
 			return selected;
 		}
 		catch(Exception e)

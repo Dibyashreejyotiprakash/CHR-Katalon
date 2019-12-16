@@ -51,7 +51,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'dibyashree.jyoti@brandmuscle.com'</initValue>
+      <initValue>'chandan.kumar@brandmuscle.com'</initValue>
       <name>wswadminusername</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -448,5 +448,15 @@
       <description></description>
       <initValue>'password'</initValue>
       <name>proofgallerypwd</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'cspwadmin@brandmuscle.com'</initValue>
+      <name>PoswTestUserName</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'password'</initValue>
+      <name>PoswTestPassword</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>
