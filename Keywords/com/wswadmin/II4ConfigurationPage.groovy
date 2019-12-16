@@ -50,8 +50,9 @@ public class II4ConfigurationPage {
 	By booksverbiage = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_rtbBooksLbl']")
 	By accessoriesverbiage = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_rtbAccessoriesLbl']")
 	By itemdetailssection = By.xpath("//*[text()='ITEM DETAILS']")
-	
-	
+	By brandmentions = By.xpath("//*[@id='collapseEight']")
+	By pricebreakyesbtn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_rbDivPriceBreaksTrue']/span[1]")
+	By pricebreaknobtn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_rbDivPriceBreaksFalse']/span[1]")	
 	By IIDemoCOrpDist = By.xpath("//*[text()='Instant Impact 4.0 Demo Corp (Dist.)']")
 	By ChicagoBeverageMarket = By.xpath("//*[text()='Chicago Beverage Systems (296)']")
 	By priceDisclaimerYesCheckBox = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_rbPnlPriceDisclaimerTrue']/span[1]")
@@ -362,9 +363,31 @@ public class II4ConfigurationPage {
 	}
 
 	@Keyword
+	public void UpdatePriceBreakVisiblity() {
+		try{
+			action.ScrollToViewelement(brandmentions)
+		    boolean statusofpricebreakyesbtn = action.IsElementSelected(pricebreakyesbtn)
+			if(statusofpricebreakyesbtn == true)
+			{
+				action.ScrollToBottomOfPage()
+				action.Click(savebtn)
+			}
+			else
+			{
+			action.Click(pricebreakyesbtn)
+			action.ScrollToBottomOfPage()
+			action.Click(savebtn)
+			}
+		}
+		catch(Exception e) {
+			println ("Update Price Break Visibility failed due to "+ e)
+			Assert.fail()
+		}
+	}
+	
+	@Keyword
 	public void AddVerbiageTextForItemDetailsPage() {
 		try{
-
 			//action.ScrollToViewelement(itemdetailssection)
 			action.ScrollToBottomOfPage()
 

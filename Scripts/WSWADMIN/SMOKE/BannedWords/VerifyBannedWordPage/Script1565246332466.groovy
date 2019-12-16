@@ -13,9 +13,6 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.openBrowser('')
-
-WebUI.maximizeWindow()
 
 CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamewswadmin, GlobalVariable.testtypesmoke,GlobalVariable.environment)
 
@@ -23,11 +20,12 @@ CustomKeywords.'com.wswadmin.LoginPage.WSWlogin'(GlobalVariable.wswadminusername
 
 CustomKeywords.'com.wswadmin.HomePage.NavigateToBannedPhrases'()
 
-//WebUI.delay(10)
-
 CustomKeywords.'com.wswadmin.BannedPhrasePage.VerifyBannedWordsGrid'()
 
 //WebUI.delay(10)
 
 CustomKeywords.'com.wswadmin.BannedPhrasePage.AddNewBannedWordAndVerify'()
+
+CustomKeywords.'com.wswadmin.BannedPhrasePage.VerifyBannedPhrasesPage'()
+
 

@@ -15,8 +15,6 @@ import internal.GlobalVariable as GlobalVariable
 
 CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamewswadmin, GlobalVariable.testtyperegression,GlobalVariable.environment)
 
-WebUI.waitForPageLoad(300)
-
 CustomKeywords.'com.wswadmin.LoginPage.WSWlogin'(GlobalVariable.wswadminusername, GlobalVariable.wswpassword)
 
 CustomKeywords.'com.wswadmin.HomePage.ClickOnOLOFII4Configuration'()

@@ -140,6 +140,7 @@ public class WarehouseItem {
 		try
 		{
 			//String itemname = null
+
 			if(action.IsDisplayed(txbName))
 			{
 				itemname = EnterUniqueItemName()

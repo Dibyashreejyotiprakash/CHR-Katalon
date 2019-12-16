@@ -33,7 +33,6 @@ public class JobDetailsPage {
 	By jobstatus = By.xpath("//*[@id='ctl00_cphBody_fvDesignSummary_statusLabel']")
 	By copyPreDesignSection = By.xpath("//h1[contains(text(),'(Pre-Design)')]")
 	By itemName = By.xpath("//td[@xpath=1]")
-	
 
 	@Keyword
 	public void VerifyJobCreatedForField() {

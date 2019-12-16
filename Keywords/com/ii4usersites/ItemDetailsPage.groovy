@@ -66,6 +66,19 @@ public class ItemDetailsPage {
 	By descriptionfield = By.xpath("//div[@id = 'ctl00_Body_radAjaxPanel']//h4[1]")
 	By showpricebreak = By.xpath("//a[@id='priceBreakA1']")
 	By unitprice = By.xpath("//th[contains(text(),'Unit Price')]")
+	
+	
+	@Keyword
+	public void ClickCreateDesignBtn() {
+		try {
+			action.ScrollToBottomOfPage()
+			action.Click(createdesignbtn)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("Click On Order Now failed due to "+ e)
+		}
+	}
 
 
 
