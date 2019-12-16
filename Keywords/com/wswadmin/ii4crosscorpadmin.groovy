@@ -49,6 +49,7 @@ public class ii4crosscorpadmin
 	By ddtemplate = By.xpath("//input[@class = '132061']")
 	By ddtemplatetoclick = By.xpath("//input[@class = '132061']//following-sibling::span")
 	By corpremoveassociationlink = By.xpath("//div[@id='rmCorpAssociation']/a")
+	By noresultmssg = By.xpath("//div[@class = 'row']//div[contains(text(),'No result found')]")
 	By mktremoveassociationlink = By.xpath("//div[@id='rmMarketAssociation']/a")
 	By filter = By.xpath(".//*[@id='row_0_0']/td/label/span")
 	By showallfilter = By.xpath("//input[@class = 'FilterCategory']")
@@ -667,6 +668,37 @@ public class ii4crosscorpadmin
 			Assert.fail("ValidateSearchInAssociationPage Failed Due to "+e)
 		}
 		
+	}
+	
+	@Keyword
+	public void ValidateStaticouponTemplateInCrossCorp()
+	{
+		try
+		{
+			action.WaitVisible(FromCorp)
+			action.WaitVisible(ToCorp)
+			action.Click(FromCorp)
+			action.WaitVisible(searchcorpfield)
+			action.Type(searchcorpfield, "300")
+			action.Click(FromCorpVal)
+			WebUI.delay(2)
+			action.Click(ToCorp)
+			action.WaitVisible(searchcorpfield)
+			action.Type(searchcorpfield, "320")
+			action.Click(ToCorpVal)
+
+			action.WaitVisible(corptocorpchkbox)
+			action.Click(corptocorpchkbox)
+			action.Click(choosetemplatebtn)
+			action.WaitVisible(templatesearchbox)
+			action.Type(templatesearchbox, "108477")
+			action.IsElementDisplayed(noresultmssg)
+
+		}
+		catch(Exception e)
+		{
+			Assert.fail("ValidateStaticouponTemplateInCrossCorp Failed due to "+e)
+		}
 	}
 
 }
