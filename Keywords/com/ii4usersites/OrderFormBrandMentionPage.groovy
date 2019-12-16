@@ -33,16 +33,20 @@ public class OrderFormBrandMentionPage {
 
 	By nobarndmentionbtn = By.xpath("//*[@id='ctl00_Body_btnNoBrands']")
 	By nextbtn = By.xpath("//*[@id='ctl00_Body_btnNext']")
+	By headerItemDetails = By.xpath("//*[@id='Body_CurrentItemInfo_lblItemInfo']")
 
 
 	@Keyword
 	public void ClickOnNoBrandmentionAndClickonNextBtn() {
 		try {
-			action.WaitUntilElementClickable(nobarndmentionbtn)
+			//action.WaitUntilElementClickable(nobarndmentionbtn)
+			action.ScrollToViewElement(headerItemDetails)
+			//WebUI.delay(5)
 			action.Click(nobarndmentionbtn)
 			action.ScrollToBottomOfPage()
-			action.WaitUntilElementClickable(nextbtn)
+			//action.WaitUntilElementClickable(nextbtn)
 			action.Click(nextbtn)
+			//WebUI.delay(10)
 			action.WaitForPageToLoad()
 		}
 		catch(Exception e) {

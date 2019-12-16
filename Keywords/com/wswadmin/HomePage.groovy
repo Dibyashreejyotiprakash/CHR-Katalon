@@ -92,6 +92,9 @@ public class HomePage {
 
 
 
+	By ItemGatingGroupManagementSubMenu = By.xpath("//*[text()='Item Gating Group Management']")
+	By administrativeItemTaggingSubMenu = By.xpath("//*[text()='Administrative Item Gating']")
+
 
 
 
@@ -475,5 +478,53 @@ public class HomePage {
 		}
 
 	}
+
+
+
+	@Keyword
+	public void NavigateToItemGatingGroupManagementAdministrativeItemGating()
+	{
+		try
+		{
+			action.WaitVisible(instantimpact)
+			action.MouseHoverOnElement(instantimpact)
+			WebUI.delay(3)
+			action.MouseHoverOnElement(ItemGatingGroupManagementSubMenu)
+			WebUI.delay(2)
+			//action.WaitVisible(ii4crosscorpadmin)
+			action.Click(administrativeItemTaggingSubMenu)
+			action.WaitForPageToLoad()
+
+		}
+		catch(Exception e)
+		{
+			Assert.fail("NavigateToItemGatingGroupManagementAdministrativeItemGating method failed due to "+ e)
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }

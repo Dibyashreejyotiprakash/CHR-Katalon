@@ -37,21 +37,37 @@ public class WarehouseSpendingLimits {
 
 	Interaction action = new Interaction();
 	WebDriver driver = DriverFactory.getWebDriver()
-	
-	
-	
-	
-	
+
+
+
+
+
 	By StateComplianceLebel2019 = By.xpath("//*[text()='2019 State Compliance']")
 	By complianceLevelEditBtn = By.xpath("(//*[text()='Edit'])[2]")
 	By ITEMStextBox = By.xpath("//*[@id='ctl00_MainContent_rgBudgetLevel_ctl00_ctl05_rcbWarehouseItems']/div/input")
 	By UPDATEbtn = By.xpath("//*[@id='ctl00_MainContent_rgBudgetLevel_ctl00_ctl05_btnUpdateBL']")
 	By FirstItemName = By.xpath("//*[@class='racSlide']/div/ul/li[1]")
-	
+
 	By ItemNameList = By.xpath("//*[@id='ctl00_MainContent_rgBudgetLevel_ctl00_ctl05_rcbWarehouseItems']//span")
 	By Itenamremovelink = By.xpath("//*[@id='ctl00_MainContent_rgBudgetLevel_ctl00_ctl05_rcbWarehouseItems']//span/a")
 	By warningMsg = By.xpath("//*[@id='ctl00_MainContent_radNotification_simpleContentDiv']/big")
 	By warningMsgDiv = By.xpath("//*[@id='ctl00_MainContent_radNotification_popup']")
+	By showMoreLink = By.xpath("//*[text()='Show More']")
+	By FirstshowMoreLink = By.xpath("(//*[text()='Show More'])[1]")
+	By showLessLink = By.xpath("//*[text()='Show Less']")
+	By FirstShowLessLink = By.xpath("//*[text()='Show Less']")
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
@@ -59,24 +75,90 @@ public class WarehouseSpendingLimits {
 	
 	
 	@Keyword
-	public void ClickOn2019Compliance()
+	public boolean VerifyShowLessLink()
 	{
+		boolean Status = null
+		//boolean IsShowMoreLnkVerified = false
 		try
 		{
-			action.Click(StateComplianceLebel2019)
-			WebUI.delay(5)
+			
+			  Status= action.IsElementDisplayed(showLessLink)
+			 if (Status ==true)
+			 {
+				 action.ScrollToViewElement(FirstShowLessLink)
+				 action.Click(FirstShowLessLink)
+				 WebUI.delay(10)
+				 println("************ Show Less link is present and verified*************"  + Status)
+				 
+				 return Status = true
+			 }
+			 else
+			 {
+				 println("Show Less link is not present")
+			 }
+						 
 		}
 		catch(Exception e)
 		{
-			Assert.fail("ClickOn2019Compliance method failed due to : "+ e)
+			Assert.fail("VerifyShowLessLink method failed due to : "+ e)
 		}
 	}
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	@Keyword
-	public void AddItemTotheComplianceLevel(String ItemName)
+	public boolean VerifyShowMoreLink()
 	{
+		boolean Status = null
+		//boolean IsShowMoreLnkVerified = false
 		try
 		{
+			
+			  Status= action.IsElementDisplayed(showMoreLink)
+			 if (Status ==true)
+			 {
+				 action.ScrollToViewElement(FirstshowMoreLink)
+				 action.Click(FirstshowMoreLink)
+				 WebUI.delay(10)
+				 println("************ Show Less link is present and verified*************"  + Status)
+				 return Status = true
+			 }
+			 else
+			 {
+				 println("Show More link is not present")
+			 }			 
+			 			
+		}
+		catch(Exception e)
+		{
+			Assert.fail("VerifyShowMoreLink method failed due to : "+ e)
+		}
+	}
+	
+	
+	
+	@Keyword
+	public void ClickOn2019Compliance() {
+		try {
+			action.Click(StateComplianceLebel2019)
+			WebUI.delay(5)
+		}
+		catch(Exception e) {
+			Assert.fail("ClickOn2019Compliance method failed due to : "+ e)
+		}
+	}
+
+	@Keyword
+	public void AddItemTotheComplianceLevel(String ItemName) {
+		try {
 			action.Click(complianceLevelEditBtn)
 			WebUI.delay(5)
 			action.Click(ITEMStextBox)
@@ -86,111 +168,100 @@ public class WarehouseSpendingLimits {
 			WebUI.delay(5)
 			action.Click(UPDATEbtn)
 			WebUI.delay(5)
-			
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("AddItemTotheComplianceLevel method failed due to : "+ e)
 		}
 	}
-	
-	
-	
-	
-	
+
+
+
+
+
 	/*@Keyword
-	public void RemoveItemTotheComplianceLevel(String GivenItemName)
-	{
-		try
-		{
-			action.Click(complianceLevelEditBtn)
-			WebUI.delay(5)
-			action.Click(ITEMStextBox)
-			
-			List<WebElement> itemnames = action.GetElement(ItemNameList)
-			WebUI.delay(5)
-			for(int i=0;i<= itemnames.size();i++ )
-			{
-				String displayeditemname = itemnames.get(i).getText()
-				WebUI.delay(5)
-				if(displayeditemname.equals(GivenItemName))
-				{
-					println "both are same " + displayeditemname
-					List<WebElement> removebuttons = action.GetElement(Itenamremovelink)
-					WebUI.delay(5)
-					for(int j=0;j<= removebuttons.size();j++)
-					{
-						WebUI.delay(5)
-						removebuttons.get(i).click()
-						WebUI.delay(5)
-					}
-				}
-			}
-			
-			action.Type(ITEMStextBox, GivenItemName)
-			WebUI.delay(5)
-			action.Click(FirstItemName)
-			WebUI.delay(5)
-			action.Click(UPDATEbtn)
-			WebUI.delay(5)
-			
-		}
-		catch(Exception e)
-		{
-			Assert.fail("AddItemTotheComplianceLevel method failed due to : "+ e)
-		}
-	}*/
-	
-	
-	
-	
-	
-	
+	 public void RemoveItemTotheComplianceLevel(String GivenItemName)
+	 {
+	 try
+	 {
+	 action.Click(complianceLevelEditBtn)
+	 WebUI.delay(5)
+	 action.Click(ITEMStextBox)
+	 List<WebElement> itemnames = action.GetElement(ItemNameList)
+	 WebUI.delay(5)
+	 for(int i=0;i<= itemnames.size();i++ )
+	 {
+	 String displayeditemname = itemnames.get(i).getText()
+	 WebUI.delay(5)
+	 if(displayeditemname.equals(GivenItemName))
+	 {
+	 println "both are same " + displayeditemname
+	 List<WebElement> removebuttons = action.GetElement(Itenamremovelink)
+	 WebUI.delay(5)
+	 for(int j=0;j<= removebuttons.size();j++)
+	 {
+	 WebUI.delay(5)
+	 removebuttons.get(i).click()
+	 WebUI.delay(5)
+	 }
+	 }
+	 }
+	 action.Type(ITEMStextBox, GivenItemName)
+	 WebUI.delay(5)
+	 action.Click(FirstItemName)
+	 WebUI.delay(5)
+	 action.Click(UPDATEbtn)
+	 WebUI.delay(5)
+	 }
+	 catch(Exception e)
+	 {
+	 Assert.fail("AddItemTotheComplianceLevel method failed due to : "+ e)
+	 }
+	 }*/
+
+
+
+
+
+
 	@Keyword
-	public void RemoveItemTotheComplianceLevel()
-	{
-		try
-		{
+	public void RemoveItemTotheComplianceLevel() {
+		try {
 			action.Click(complianceLevelEditBtn)
 			WebUI.delay(5)
 			action.Click(ITEMStextBox)
 			action.PreseLeftArrow(ITEMStextBox)
 			action.PreseLeftArrow(ITEMStextBox)
 			action.PreseBackSpace(ITEMStextBox)
-			
+
 			WebUI.delay(5)
 			action.Click(UPDATEbtn)
 			WebUI.delay(5)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("RemoveItemTotheComplianceLevel method failed due to : "+ e)
 		}
 	}
-	
+
 	@Keyword
-	public String  VerifySpendLimitWarningMsg()
-	{
-		try
-		{
+	public String  VerifySpendLimitWarningMsg() {
+		try {
 			boolean statusWarningMsg = action.IsElementDisplayed(warningMsgDiv)
 			Assert.assertTrue(statusWarningMsg)
 			String warningMsg = action.GetText(warningMsg)
 			WebUI.delay(3)
 			//println ("**************" + warningMsg + "****************")
-			
+
 			return warningMsg
-			
+
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("VerifySpendLimitWarningMsg method failed due to : "+ e)
 		}
 	}
-	
-	
-	
-	
+
+
+
+
 
 	@Keyword
 	public void VerifyWarehouseSpendLimitPage() {

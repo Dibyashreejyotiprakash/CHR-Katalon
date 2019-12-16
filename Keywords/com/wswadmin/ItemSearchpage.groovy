@@ -54,17 +54,21 @@ public class ItemSearchpage {
 	By selectmetatag = By.xpath("//label[contains(text(),'Wakefield')]")
 	By savebtn = By.xpath("//input[@id='cphMain_cphMain_btnSave']")
 
-	@Keyword
-	public void VerifytemplateFulfillmentPage()
-	{
-		try{
-			action.VerifyCurrentPage("TemplateFulfillment.aspx")
-		}
-		catch(Exception e)
-		{
-			Assert.fail("Verify template Fulfillment Page failed due to "+ e)
-		}
-	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
