@@ -11,42 +11,6 @@
    <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
    <testSuiteGuid>fb80a35e-2109-4e46-972a-10eaacd0b80a</testSuiteGuid>
    <testCaseLink>
-      <guid>8462811c-5704-4c6d-925b-89499c5236b8</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/IIDT RELEASE/ROADMAP/CrossCorp/Regression/IIDTR-158</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>892bee20-170c-4446-9e8a-1165da70ed5f</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/IIDT RELEASE/ROADMAP/CrossCorp/Regression/IIDTR-179</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>6b45c839-e9da-4a20-ab78-b3b191f0b3c1</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/IIDT RELEASE/ROADMAP/CrossCorp/Regression/IIDTR-223</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>822aec98-b1a7-467d-b785-6eb8ff29e3e6</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/IIDT RELEASE/ROADMAP/CrossCorp/Regression/IIDTR-229</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>d9492960-9199-4810-b347-b85a9fa8e144</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/IIDT RELEASE/ROADMAP/CrossCorp/Regression/IIDTR-888</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>d259ba23-8478-4e4c-99b2-6b63face7ab4</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/IIDT RELEASE/ROADMAP/CrossCorp/Smoke/test</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
       <guid>7683d835-970c-44ce-bb0a-1569c0aaf9e4</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
@@ -183,5 +147,149 @@
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/IIDT/IIDT RELEASE/ROADMAP/DigitalDownload/Regression/75_ValidateCloneDDOrderInDT</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>377378c2-3c11-4891-a33a-de123b785ae2</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/IIDT/IIDT RELEASE/ROADMAP/CrossCorp/Regression/CreateAssociationFromAssociationPage</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>015c6e8a-4688-4ab0-b899-310f56bdbd2e</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/IIDT/IIDT RELEASE/ROADMAP/CrossCorp/Regression/CreateCorpToCorpAssociation</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>dbd78f8e-11dc-405a-bac0-61761956dbe2</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/IIDT/IIDT RELEASE/ROADMAP/CrossCorp/Regression/CreateCorpToMarketAssociation</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>a6022b1d-07ae-456f-906d-28d0a8639e63</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/IIDT/IIDT RELEASE/ROADMAP/CrossCorp/Regression/CrossCorpAdminField Validation</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>fce38eec-0948-4710-8edd-4cca3994eb60</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/IIDT/IIDT RELEASE/ROADMAP/CrossCorp/Regression/EditAssociationFromAssociationPage</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>1f9887b8-77b6-4f26-8cda-35b3096acda4</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/IIDT/IIDT RELEASE/ROADMAP/CrossCorp/Regression/IIDTR-158</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>aed6e67b-8814-4b4f-a3a9-402259009ee2</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/IIDT/IIDT RELEASE/ROADMAP/CrossCorp/Regression/IIDTR-179</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>7fc8a013-3cd3-46f6-ba48-5a523d53b6bf</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/IIDT/IIDT RELEASE/ROADMAP/CrossCorp/Regression/IIDTR-223</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>2c91296f-a10e-4d20-bdce-00ab8f122e2a</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/IIDT/IIDT RELEASE/ROADMAP/CrossCorp/Regression/IIDTR-229</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>6c0945c1-5dfe-45ab-8e94-bbae46e1fae0</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/IIDT/IIDT RELEASE/ROADMAP/CrossCorp/Regression/IIDTR-888</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>91ce5991-648d-4e32-b235-870039d4e451</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/IIDT/IIDT RELEASE/ROADMAP/CrossCorp/Regression/RemoveAssociationFromAssociationPage</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>09ad493a-2a05-403c-8df6-8585cafcefd9</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/IIDT/IIDT RELEASE/ROADMAP/CrossCorp/Regression/ValidateAssociationPageSearchFunctionality</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>59ea75de-697a-4207-8f14-450698be9741</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/IIDT/IIDT RELEASE/ROADMAP/CrossCorp/Regression/ValidateCorpAssociatgionOnAssociationPage</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>de8066ad-6b1b-4ae4-a3b4-57caac200eb8</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/IIDT/IIDT RELEASE/ROADMAP/CrossCorp/Regression/ValidateCorpAssociationPage</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>f70cd313-259b-4f21-b2f7-5dae6af012d5</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/IIDT/IIDT RELEASE/ROADMAP/CrossCorp/Regression/ValidateCorpToCorpOnCrossCorpAssociationPage</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>291861b1-c382-4430-bbcc-dc3a9d31a89b</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/IIDT/IIDT RELEASE/ROADMAP/CrossCorp/Regression/ValidateCorpToMktAssociationOnIi4</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>311bd0f4-d01c-40c7-842d-5e2435eb2cdc</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/IIDT/IIDT RELEASE/ROADMAP/CrossCorp/Regression/ValidateCrossCorpedTemplateOnII4</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>8e49840a-951d-4c7a-87fd-ebde3f01ce5a</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/IIDT/IIDT RELEASE/ROADMAP/CrossCorp/Regression/ValidateCrossCorpFilter</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>2a2f8213-938c-4209-bb9a-83b644d37f3d</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/IIDT/IIDT RELEASE/ROADMAP/CrossCorp/Regression/ValidateCrossCorpShowAllFilter</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>937dc24a-71a8-462d-abfd-04a1af6e63ff</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/IIDT/IIDT RELEASE/ROADMAP/CrossCorp/Regression/ValidateRemoveCorptoCorpAssociation</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>ee3d24d9-4014-4ff2-a518-fe99181071d2</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/IIDT/IIDT RELEASE/ROADMAP/CrossCorp/Regression/ValidateRemoveCorpToMarketAssociation</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>c498cbbb-5576-4b50-ba08-4887eb09d72d</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/IIDT/IIDT RELEASE/ROADMAP/CrossCorp/Regression/ValidateViewBatchForCorptoCorp</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>ba4f54bc-ae11-4f08-856a-cda4e37a2d15</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/IIDT/IIDT RELEASE/ROADMAP/CrossCorp/Regression/ValidateViewBatchForMktAssociation</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>f5964f74-bea9-408e-915b-b1615c826c22</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/IIDT/IIDT RELEASE/ROADMAP/CrossCorp/Smoke/test</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>

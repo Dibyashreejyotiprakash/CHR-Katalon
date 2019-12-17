@@ -11,12 +11,6 @@
    <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
    <testSuiteGuid>491144dd-2b61-4979-85d6-1fca140449f9</testSuiteGuid>
    <testCaseLink>
-      <guid>1244c6b3-c05d-463c-830a-eb096d1050ca</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/WSWADMIN/REGRESSION/BannedWords/CreateNewQuote</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
       <guid>46f027e3-5f8e-44e9-99a8-6bf6ff5367b6</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
