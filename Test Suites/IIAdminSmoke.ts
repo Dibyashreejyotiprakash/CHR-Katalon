@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestSuiteEntity>
    <description></description>
-   <name>IIAdmin</name>
+   <name>IIAdminSmoke</name>
    <tag></tag>
    <isRerun>false</isRerun>
    <mailRecipient></mailRecipient>
@@ -10,36 +10,6 @@
    <pageLoadTimeoutDefault>true</pageLoadTimeoutDefault>
    <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
    <testSuiteGuid>73c8854f-f9f7-4af0-a17f-ab2a694ccd1e</testSuiteGuid>
-   <testCaseLink>
-      <guid>981895ff-7ae9-4f92-a410-7b49430fed11</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/IIADMIN/REGRESSION/AddNewShippingRule</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>7c4eb4ce-1bf8-4216-ab43-eb000a51d6ed</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/IIADMIN/REGRESSION/ModifyExstingRule</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>db7e4a07-3ea5-499b-a888-b9bef9777894</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/IIADMIN/REGRESSION/VerifyEditTemplate</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>b0a93f43-d788-401c-b42c-9a3c1f7a5d67</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/IIADMIN/REGRESSION/VerifyFilterByStatus</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>2255e18a-3ad8-429a-a049-6985e859ff04</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/IIADMIN/REGRESSION/VerifyTemplateSearch</testCaseId>
-   </testCaseLink>
    <testCaseLink>
       <guid>86ecfe49-c73d-418c-8895-2360971d1425</guid>
       <isReuseDriver>false</isReuseDriver>
