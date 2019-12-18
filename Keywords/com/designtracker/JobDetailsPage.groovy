@@ -127,8 +127,8 @@ public class JobDetailsPage {
 	By extendedsearch = By.xpath("//legend[contains(text(),'Extended Search')]")
 	By searchpart = By.xpath("//select[@id = 'ctl00_ctl00_cphMain_cphMain_lbxParts']")
 	By commetinnoteinformation = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_lvJobs_ctrl0_gvJobNotes_ctl03_lblNoteText']")
+	By returntojob = By.xpath("//input[@id='ctl00_ctl00_cphMain_cphMain_btnReturn']")
 
-	
 	@Keyword
 	public void ClickOnDetailsBtn() {
 		try {
@@ -263,7 +263,7 @@ public class JobDetailsPage {
 			println ("Verify Status Of Newly Created Job failed due to "+ e)
 		}
 	}
-	
+
 
 	@Keyword
 	public void VerifyJobNameAndJobTicketNoteAreMandatory() {
@@ -628,13 +628,13 @@ public class JobDetailsPage {
 			Assert.fail("Verify Update Shipping Link And Update Shipping For Job failed due to :"+e)
 		}
 	}
-	
+
 	@Keyword
 	public void VerifyMessage(String givencommentinii4){
 		try{
 			boolean statusofcomment = action.IsElementDisplayed(commetinnoteinformation)
 			Assert.assertTrue(statusofcomment)
-			
+
 			String appearingcomment = action.GetText(commetinnoteinformation)
 			if(appearingcomment.equals(appearingcomment)){
 				println ("Comment is appearing")
@@ -642,11 +642,11 @@ public class JobDetailsPage {
 				Assert.fail("Comment is not matched")
 			}
 		}catch(Exception e){
-		Assert.fail("Verify Message In Note Information failed due to :"+e)
+			Assert.fail("Verify Message In Note Information failed due to :"+e)
 		}
-		
+
 	}
-	
+
 	@Keyword
 	public void ValidateDDInPrintFormatDdn()
 	{
@@ -683,7 +683,7 @@ public class JobDetailsPage {
 			Assert.fail("ValidatedExtendedSearchForDD Job failed due to :"+e)
 		}
 	}
-	
+
 	@Keyword
 	public void AddDDPart()
 	{
@@ -699,10 +699,10 @@ public class JobDetailsPage {
 			action.Type(quantity, "1")
 			action.Click(partsearchbtn)
 			action.WaitVisible(searchpart)
-			action.SelectByIndex(searchpart, 2)
+			action.SelectByIndex(searchpart, 1)
 			action.Click(insertbtn)
-			action.Click(re)
-			
+			action.Click(returntojob)
+
 		}
 		catch(Exception e)
 		{

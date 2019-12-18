@@ -36,7 +36,7 @@ public class HomePage {
 	By metaTaggingEditDelete  = By.xpath("(//span[contains(text(),'Meta Tagging Edit/Delete')])[1]")
 	By metataggingcategoryitemmaintenance = By.xpath("//*[text()='Meta Tagging Category/Item Maintenance']")
 	By metatagingcategorymaintenance = By.xpath("//*[text()='Meta Tagging Category Maintenance']")
-	By metataggingcategoryitemmaintenancesubmenu = By.xpath("//*[text()='Meta Tagging Category Item Maintenance']")
+	By metataggingcategoryitemmaintenancesubmenu = By.xpath("//span[contains(text(),'Meta Tagging Category Item Maintenance')]")
 	By globalmetataggingpage = By.xpath("(//span[contains(text(),'Global Meta Tagging Maintenance')])[1]")
 	By globalmetataggingmaintenance = By.xpath("//*[text()='Global Meta Tagging Maintenance']")
 	By itempartquantitymaintenance = By.xpath("(//span[contains(text(),'Item/Part Quantity Maintenance')])[1]")
@@ -239,9 +239,9 @@ public class HomePage {
 			WebUI.delay(3)
 			println("Clicked InstantImpact")
 			action.WaitVisible(metatagingitemmaintenance)
-			action.MouseHoverOnElement(metatagingitemmaintenance)
-			action.WaitVisible(metataggingcategoryitemmaintenance)
-			action.MouseHoverAndClick(metataggingcategoryitemmaintenance)
+			action.Click(metatagingitemmaintenance)
+			action.WaitVisible(metataggingcategoryitemmaintenancesubmenu)
+			action.Click(metataggingcategoryitemmaintenancesubmenu)
 			action.WaitForPageToLoad()
 		}
 		catch(Exception e)
@@ -443,26 +443,26 @@ public class HomePage {
 			Assert.fail("Navigate To Product Shot Removal Tool Page failed due to "+ e)
 		}
 	}
-	
-	
+
+
 	@Keyword
 	public void NavigateToII4CrossCorpAssociation()
 	{
 		try
 		{
-			
-		
-		 action.WaitVisible(instantimpact)
-		 action.MouseHoverOnElement(instantimpact)
-		 WebUI.delay(3)
-		 action.WaitVisible(ii4crosscorp)
-		 action.MouseHoverOnElement(ii4crosscorp)
-		 WebUI.delay(2)
-		 action.WaitVisible(ii4crosscorpadmin)
-		 action.WaitVisible(ii4crosscorpassociation)
-		 action.Click(ii4crosscorpassociation)
-		 action.WaitForPageToLoad()
-		 
+
+
+			action.WaitVisible(instantimpact)
+			action.MouseHoverOnElement(instantimpact)
+			WebUI.delay(3)
+			action.WaitVisible(ii4crosscorp)
+			action.MouseHoverOnElement(ii4crosscorp)
+			WebUI.delay(2)
+			action.WaitVisible(ii4crosscorpadmin)
+			action.WaitVisible(ii4crosscorpassociation)
+			action.Click(ii4crosscorpassociation)
+			action.WaitForPageToLoad()
+
 		}
 		catch(Exception e)
 		{
@@ -743,6 +743,7 @@ public class HomePage {
 	}
 
 
+	
 	/*CategoryItemEditDelete.aspx*/
 	public void NavigateToMetaTaggingEditDeletePage()
 	{
@@ -767,6 +768,21 @@ public class HomePage {
 			action.MouseHoverOnElement(instantimpact)
 			action.MouseHoverOnElement(metataggingcategoryitemmaintenance)
 			action.Click(globalmetataggingmaintenance)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Navigate To Global Meta Tagging Maintenance Page failed due to "+ e)
+		}
+	}
+	
+	@Keyword
+	public void NavigateToCategoryItemMaint()
+	{
+		try{
+			action.MouseHoverOnElement(instantimpact)
+			action.MouseHoverOnElement(metataggingcategoryitemmaintenance)
+			action.Click(metataggingcategoryitemmaintenancesubmenu)
 			action.WaitForPageToLoad()
 		}
 		catch(Exception e)

@@ -56,10 +56,10 @@ public class QuoteItemSearch
 
 	By corpddn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_GeneralInfoControl_CorporationEditor_Arrow']")
 	By corpddntextbox = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_GeneralInfoControl_CorporationEditor_Input']")
-	
+
 	By firstquotelink = By.xpath("(//*[contains(@href,'QuoteDetails.aspx?quoteid=')])[1]")
-	
-	By quoteeditlink = By.
+
+	//By quoteeditlink = By.
 
 
 	@Keyword
@@ -124,7 +124,7 @@ public class QuoteItemSearch
 			Assert.fail("ValidateTimeout Failed Due to "+e)
 		}
 	}
-	
+
 	@Keyword
 	public void SearchQuote()
 	{
@@ -136,12 +136,12 @@ public class QuoteItemSearch
 			while (it.hasNext()) {
 				String parentwindowid = it.next()
 				println ("Parent Window id is "+ parentwindowid)
-				
+
 				String childwidowid = it.next()
 				println ("Child Window id is "+ childwidowid)
-				
+
 				driver.switchTo().window(childwidowid)
-				
+
 				println ("Child window url ------"+ action.GetCurrentURL())
 			}
 		}

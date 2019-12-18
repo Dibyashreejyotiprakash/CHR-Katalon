@@ -1,5 +1,4 @@
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
-
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
@@ -14,21 +13,14 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamedesigntracker, GlobalVariable.testtyperegression, 
+    GlobalVariable.environment)
 
-CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamewswadmin, GlobalVariable.testtypesmoke,GlobalVariable.environment)
+CustomKeywords.'com.designtracker.LoginPage.LoginToDesignTarcker'('dibyashree.jyoti@brandmuscle.com', 'chr@123456')
 
-CustomKeywords.'com.wswadmin.LoginPage.VerifyLoginPage'()
+CustomKeywords.'com.designtracker.HomePage.ClickOnNewJob'()
 
-CustomKeywords.'com.wswadmin.LoginPage.WSWlogin'(GlobalVariable.wswadminusername, GlobalVariable.wswpassword)
+String id = CustomKeywords.'com.designtracker.JobNewPage.CreateNewJob'()
 
-CustomKeywords.'com.wswadmin.HomePage.ClickOnOLOFII4Configuration'()
+CustomKeywords.'com.designtracker.JobDetailsPage.AddDDPart'()
 
-CustomKeywords.'com.wswadmin.II4ConfigurationPage.VerifyII4ConfigurationPage'()
-
-CustomKeywords.'com.wswadmin.II4ConfigurationPage.VerifyAllFieldsOnOLOFII4ConfigurationPage'()
-
-WebUI.delay(10)
-
-CustomKeywords.'com.wswadmin.II4ConfigurationPage.SelectCorpAndMarkets'()
-
-CustomKeywords.'com.wswadmin.II4ConfigurationPage.VerifyWelComeScreenConfigurationSelection'()
