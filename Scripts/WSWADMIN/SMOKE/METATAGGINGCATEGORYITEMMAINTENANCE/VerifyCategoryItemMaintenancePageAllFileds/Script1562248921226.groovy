@@ -19,7 +19,7 @@ WebUI.maximizeWindow()
 
 CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamewswadmin, GlobalVariable.testtypesmoke, GlobalVariable.environment)
 
-CustomKeywords.'com.wswadmin.HomePage.NavigateToCategoryItemMaintenancePage'()
+CustomKeywords.'com.wswadmin.HomePage.NavigateToCategoryItemMaint'()
 
 CustomKeywords.'com.wswadmin.CategoryItemMaintenancePage.VerifyAllFileds'()
 
