@@ -630,7 +630,7 @@ public  class Interaction {
 		{
 			WaitVisible(by)
 			boolean selected = driver.findElement(by).isSelected();
-			
+
 			println ("****************"+selected + "*************")
 			return selected;
 		}
@@ -1055,6 +1055,28 @@ public  class Interaction {
 		else
 		{
 			throw new Exception("Page is not verified")
+		}
+	}
+
+
+	@Keyword
+	public String CheckEnvironmentAndQuit(){
+		String currentenvironment = GlobalVariable.environment
+		try{
+			if(currentenvironment.equals("UAT")){
+				driver.quit()
+			}
+			else if(currentenvironment.equals("STAGE"))
+			{
+				driver.quit()
+			}
+			else{
+				println ("Executing For Production")
+			}
+			return currentenvironment
+		}
+		catch(Exception e){
+			println ("Check Environment And Quit failed due to "+ e)
 		}
 	}
 

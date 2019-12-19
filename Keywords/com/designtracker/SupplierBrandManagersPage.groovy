@@ -50,15 +50,12 @@ public class SupplierBrandManagersPage {
 			boolean statusofcorpddn  =     action.IsElementDisplayed(corporationddn)
 			Assert.assertTrue(statusofcorpddn, "Corporation dropdown visible")
 			action.SelectByText(corporationddn, "Demo Distributor (QA)")
-
-			WebUI.delay(10)
 			boolean statusofmarketddn  =     action.IsElementDisplayed(marketddn)
 			Assert.assertTrue(statusofmarketddn, "Market dropdown visible")
 			action.SelectByText(marketddn, "Demo Dist. 1 QA")
 		}
 		catch(Exception e) {
-			println ("Verify All DropDown Failed due to "+ e)
-			Assert.fail(e)
+			Assert.fail("Verify All DropDown Failed due to "+ e)
 		}
 	}
 
@@ -66,16 +63,9 @@ public class SupplierBrandManagersPage {
 	public void VerifyAddingSupplierBrandManager() {
 		try {
 			action.SelectByText(corporationddn, "Demo Distributor (QA)")
-
-			WebUI.delay(8)
 			action.SelectByText(marketddn, "Demo Dist. 1 QA")
-
-			WebUI.delay(5)
 			action.SelectByText(salesPerson, "ADMIN, ADMIN (demoqa@brandmuscle.com)")
-
-			WebUI.delay(5)
 			action.SelectByText(supplier, "Demo Dist. 1 QA")
-
 			if(action.IsDisplayed(delLink)) {
 				WebUI.delay(3)
 				action.Click(delLink)
@@ -102,8 +92,7 @@ public class SupplierBrandManagersPage {
 			Assert.assertTrue(statusofDelMsg, "statusofDelMsg is visible")
 		}
 		catch(Exception e) {
-			println ("VerifyAddingSupplierBrandManager Failed due to "+ e)
-			Assert.fail(e)
+			Assert.fail("VerifyAddingSupplierBrandManager Failed due to "+ e)
 		}
 	}
 
@@ -111,21 +100,14 @@ public class SupplierBrandManagersPage {
 	public void VerifyAddingMultipleSupplierBrandManagers() {
 		try {
 			action.SelectByText(corporationddn, "Demo Distributor (QA)")
-
-			WebUI.delay(8)
 			action.SelectByText(marketddn, "Demo Dist. 1 QA")
-
-			WebUI.delay(5)
 			action.SelectByText(salesPerson, "ADMIN, ADMIN (demoqa@brandmuscle.com)")
-
-			WebUI.delay(5)
 			action.SelectByText(supplier, "Demo Dist. 1 QA")
 
 			List<WebElement> elements = driver.findElements(delLink);
 			for (int i=0; i<elements.size();i++){
 
 				if(action.IsDisplayed(elements[i])) {
-					WebUI.delay(3)
 					action.Click(elements[i])
 					action.AcceptAlert()
 					boolean statusofDelMsg  =     action.IsElementDisplayed(DelMsg)
@@ -134,7 +116,6 @@ public class SupplierBrandManagersPage {
 				else {
 					break
 				}
-				
 			}
 
 			WebUI.delay(2)
@@ -156,7 +137,7 @@ public class SupplierBrandManagersPage {
 			WebUI.delay(3)
 			//boolean statusofSuccessMsg  =     action.IsElementDisplayed(successSubmitMsg)
 			Assert.assertTrue(action.IsElementDisplayed(successSubmitMsg), "successSubmitMsg is visible")
-			
+
 			List<WebElement> elements1 = driver.findElements(delLink);
 			for (int i=0; i<elements1.size();i++){
 
@@ -170,7 +151,7 @@ public class SupplierBrandManagersPage {
 				else {
 					break
 				}
-				
+
 			}
 		}
 		catch(Exception e) {

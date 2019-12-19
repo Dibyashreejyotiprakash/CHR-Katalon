@@ -13,9 +13,6 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.openBrowser('')
-
-WebUI.maximizeWindow()
 
 CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamedesigntracker, GlobalVariable.testtypesmoke, GlobalVariable.environment)
 
@@ -29,23 +26,15 @@ CustomKeywords.'com.designtracker.HomePage.VerifyREPORTSTab'()
 
 CustomKeywords.'com.designtracker.HomePage.SelectCorporationAndMarcket'()
 
- String JobID =   CustomKeywords.'com.designtracker.HomePage.SelectFirstJobID'()
- 
- println ("Job id is "+ JobID)
+String JobID =   CustomKeywords.'com.designtracker.HomePage.SelectFirstJobID'()
 
 CustomKeywords.'com.designtracker.HomePage.ClickOnJobStatus'()
-
-WebUI.delay(5)
 
 CustomKeywords.'com.designtracker.HomePage.WindowHandle'()
 
 CustomKeywords.'com.designtracker.JobStatusInformation.EnterJobID'(JobID)
 
-CustomKeywords.'com.designtracker.JobStatusInformation.ClickOnViewReportBtn'()
-
-CustomKeywords.'com.designtracker.JobStatusInformation.VerifyJobStatusReportFields'()
 
 
 
-CustomKeywords.'com.designtracker.JobActivityTracking.CloseAllBrowser'()
 

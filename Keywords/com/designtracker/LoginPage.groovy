@@ -15,6 +15,7 @@ import com.kms.katalon.core.testdata.TestData
 import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import org.testng.Assert
 
 import internal.GlobalVariable
 
@@ -36,10 +37,15 @@ public class LoginPage {
 	@Keyword
 	public void LoginToDesignTarcker(String txtusername,String txtpassword) {
 
-		action.Type(username, txtusername)
-		action.Type(password, txtpassword)
-		action.WaitVisible(loginbtn)
-		action.Click(loginbtn)
-		action.WaitForPageToLoad()
+		try{
+			action.Type(username, txtusername)
+			action.Type(password, txtpassword)
+			action.WaitVisible(loginbtn)
+			action.Click(loginbtn)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e){
+			Assert.fail("Login To Design Tarcker failed due to "+ e)
+		}
 	}
 }

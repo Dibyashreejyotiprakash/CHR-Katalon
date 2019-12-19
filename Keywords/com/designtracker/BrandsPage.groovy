@@ -75,19 +75,10 @@ public class BrandsPage {
 	@Keyword
 	public void VerifyBrandsPage() {
 		try {
-			action.WaitVisible(brandsheader)
-			boolean statusofbrandsheader = action.IsElementDisplayed(brandsheader)
-			Assert.assertTrue(statusofbrandsheader, "Brands Header is present")
-
-			action.IsElementDisplayed(corpddn)
-			action.IsElementDisplayed(marketddn)
-			action.IsElementDisplayed(supplierddn)
-			action.IsElementDisplayed(brandname)
-			action.IsElementDisplayed(searchbtn)
+					action.VerifyCurrentPage("Brands.aspx")
 		}
 		catch(Exception e) {
-			println ("Verify Brand page failed due to "+ e)
-			Assert.fail("VerifyBrandsPage Failed")
+			Assert.fail("Verify Brand Page Failed")
 		}
 	}
 
