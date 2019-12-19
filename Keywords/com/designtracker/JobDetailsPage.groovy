@@ -127,7 +127,7 @@ public class JobDetailsPage {
 	By extendedsearch = By.xpath("//legend[contains(text(),'Extended Search')]")
 	By searchpart = By.xpath("//select[@id = 'ctl00_ctl00_cphMain_cphMain_lbxParts']")
 	By commetinnoteinformation = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_lvJobs_ctrl0_gvJobNotes_ctl03_lblNoteText']")
-
+	By returntojob = By.xpath("//input[@id='ctl00_ctl00_cphMain_cphMain_btnReturn']")
 
 	@Keyword
 	public void ClickOnDetailsBtn() {
@@ -653,9 +653,9 @@ public class JobDetailsPage {
 			action.Type(quantity, "1")
 			action.Click(partsearchbtn)
 			action.WaitVisible(searchpart)
-			action.SelectByIndex(searchpart, 2)
+			action.SelectByIndex(searchpart, 1)
 			action.Click(insertbtn)
-			action.Click(re)
+			action.Click(returntojob)
 
 		}
 		catch(Exception e)
