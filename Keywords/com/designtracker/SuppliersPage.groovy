@@ -81,12 +81,12 @@ public class SuppliersPage {
 	@Keyword
 	public void VerifySupplierNameShowAllSuppliersAndAddNewSuppliersCheckBox() {
 		try {
-			
+
 			action.SelectByText(corpddn, "Instant Impact 4.0 Demo Corp (Dist.)")
 			WebUI.delay(5)
 			action.SelectByText(marketddn, "Chicago Beverage Systems")
 			WebUI.delay(5)
-			
+
 			boolean statusofsuppliertextbox = action.IsElementDisplayed(suppliernametextbox)
 			Assert.assertTrue(statusofsuppliertextbox)
 
@@ -107,14 +107,10 @@ public class SuppliersPage {
 		String newsuppliername = null;
 		try {
 			action.SelectByText(corpddn, "Instant Impact 4.0 Demo Corp (Dist.)")
-			WebUI.delay(5)
 			action.SelectByText(marketddn, "Chicago Beverage Systems")
-			WebUI.delay(5)
 			action.Click(addnewsuppliercheckbox)
-			WebUI.delay(5)
 			newsuppliername = action.GenerateRandomAplphabaticString(6)
 			String newclientsupplierid = action.GenerateRandomAplphabaNeumericString(5)
-
 			action.Type(nexsuppliernametextbox, newsuppliername)
 			action.Type(address1, "Lane-1")
 			action.Type(address2, "Lane-2")
@@ -123,17 +119,11 @@ public class SuppliersPage {
 			action.Type(zip, "12345")
 			action.Type(phone, "111-111-1111")
 			action.Type(clientsupplierid, newclientsupplierid)
-			WebUI.delay(5)
 			action.Click(insertbutton)
-			WebUI.delay(5)
-			/*String statusofmsg = action.IsElementDisplayed(supplieraddedmsg)
-			Assert.assertTrue(statusofmsg)
-*/
 			return newsuppliername;
 		}
 		catch(Exception e) {
-			println ("Add New Suppliers failed due to "+ e)
-			Assert.fail()
+			Assert.fail("Add New Suppliers failed due to "+ e)
 		}
 	}
 
@@ -143,14 +133,10 @@ public class SuppliersPage {
 		String newsuppliername = null;
 		try {
 			action.SelectByText(corpddn, "Instant Impact 4.0 Demo Corp (Dist.)")
-			WebUI.delay(5)
 			action.SelectByText(marketddn, "Chicago Beverage Systems")
-			WebUI.delay(5)
 			action.Click(addnewsuppliercheckbox)
-			WebUI.delay(5)
 			newsuppliername = action.GenerateRandomAplphabaticString(6)
 			String newclientsupplierid = action.GenerateRandomAplphabaNeumericString(5)
-
 			action.Type(nexsuppliernametextbox, newsuppliername)
 			action.Type(address1, "Lane-1")
 			action.Type(address2, "Lane-2")
@@ -159,15 +145,9 @@ public class SuppliersPage {
 			action.Type(zip, "12345")
 			action.Type(phone, "111-111-1111")
 			action.Type(clientsupplierid, newclientsupplierid)
-			WebUI.delay(5)
 			action.Click(insertbutton)
-			WebUI.delay(5)
-			
 			action.Click(showallsupliercheckbox)
-			WebUI.delay(5)
-
 			action.SelectByText(suppliernameddn, newsuppliername)
-			WebUI.delay(5)
 		}
 		catch(Exception e) {
 			println ("Verify Newly Added Supplier failed due to "+ e)

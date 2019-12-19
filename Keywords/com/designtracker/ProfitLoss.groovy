@@ -30,7 +30,7 @@ public class ProfitLoss {
 	Interaction action = new Interaction();
 	WebDriver driver = DriverFactory.getWebDriver()
 
-	
+
 	By ProfitLossHeader = By.xpath("//div[contains(text(),'Profit/Loss Statement')]")
 	By OrderedItemHeader = By.xpath("//div[text() = 'Ordered Items']")
 	By SupplierChargeHeader = By.xpath("//div[text() = 'Supplier Charge Backs']")
@@ -40,17 +40,26 @@ public class ProfitLoss {
 
 	@Keyword //Verifying job activity tracking page
 	public boolean VerifyProfitLossReportPage(){
-
+		String currentenvironment = GlobalVariable.environment
 		try{
-
-			WebUI.delay(7)
-			Assert.assertTrue(action.IsDisplayed(ProfitLossHeader),"ProfitLossHeader is visible")
-			Assert.assertTrue(action.IsDisplayed(OrderedItemHeader),"OrderedItemHeader is visible")
-			Assert.assertTrue(action.IsDisplayed(SupplierChargeHeader),"SupplierChargeHeader is visible")
-			Assert.assertTrue(action.IsDisplayed(BrandMentionsHeader),"BrandMentionsHeader is visible")
-			Assert.assertTrue(action.IsDisplayed(ItemCopyHeader),"ItemCopyHeader is visible")
-			Assert.assertTrue(action.IsDisplayed(LastThreeJobsHeader),"LastThreeJobsHeader is visible")
-			
+			try{
+				if(currentenvironment.equals("UAT")){
+					driver.quit()
+				}
+				else if(currentenvironment.equals("STAGE")) {
+					driver.quit()
+				}
+				else{
+					Assert.assertTrue(action.IsDisplayed(ProfitLossHeader),"ProfitLossHeader is visible")
+					Assert.assertTrue(action.IsDisplayed(OrderedItemHeader),"OrderedItemHeader is visible")
+					Assert.assertTrue(action.IsDisplayed(SupplierChargeHeader),"SupplierChargeHeader is visible")
+					Assert.assertTrue(action.IsDisplayed(BrandMentionsHeader),"BrandMentionsHeader is visible")
+					Assert.assertTrue(action.IsDisplayed(ItemCopyHeader),"ItemCopyHeader is visible")
+					Assert.assertTrue(action.IsDisplayed(LastThreeJobsHeader),"LastThreeJobsHeader is visible")
+				}
+			}catch(Exception e){
+				throw new Exception("Excecution is terminated")
+			}
 		}
 		catch(Exception e){
 			println("VerifyProfitLossReportPage failed due to :" + e)

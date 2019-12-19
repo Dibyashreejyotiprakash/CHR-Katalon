@@ -41,21 +41,31 @@ public class StatusSummery {
 	@Keyword //Verifying job activity tracking page
 	public boolean VerifyStatusSummeryPage(){
 
+		String currentenvironment = GlobalVariable.environment
 		try{
-			action.SelectByText(corporationddn, "Demo Distributor (QA)")
+			try{
+				if(currentenvironment.equals("UAT")){
+					driver.quit()
+				}
+				else if(currentenvironment.equals("STAGE"))
+				{
+					driver.quit()
+				}
+				else{
+					println ("****************************************Executing For Production******************************")
+					action.SelectByText(corporationddn, "Demo Distributor (QA)")
+					action.SelectByText(marketddn, "Demo Dist. 1 QA")
+					action.SelectByText(statusddn, "Created")
+					action.Click(btnViewReport)
+					Assert.assertTrue(action.IsDisplayed(colMarketName),"colMarketName Column is visible")
+					Assert.assertTrue(action.IsDisplayed(colJobId), "colJobId Column is visible")
 
-			WebUI.delay(7)
-			action.SelectByText(marketddn, "Demo Dist. 1 QA")
-
-			WebUI.delay(7)
-			action.SelectByText(statusddn, "Created")
-
-			WebUI.delay(7)
-			action.Click(btnViewReport)
-
-			WebUI.delay(10)
-			Assert.assertTrue(action.IsDisplayed(colMarketName),"colMarketName Column is visible")
-			Assert.assertTrue(action.IsDisplayed(colJobId), "colJobId Column is visible")
+				}
+				return currentenvironment
+			}
+			catch(Exception e1){
+				throw new Exception("Excetion Terminated")
+			}
 		}
 		catch(Exception e){
 			Assert.fail("VerifyStatusSummeryPage failed due to :" + e)

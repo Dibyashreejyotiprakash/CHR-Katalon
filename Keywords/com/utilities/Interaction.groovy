@@ -1059,6 +1059,28 @@ public  class Interaction {
 	}
 
 
+	@Keyword
+	public String CheckEnvironmentAndQuit(){
+		String currentenvironment = GlobalVariable.environment
+		try{
+			if(currentenvironment.equals("UAT")){
+				driver.quit()
+			}
+			else if(currentenvironment.equals("STAGE"))
+			{
+				driver.quit()
+			}
+			else{
+				println ("Executing For Production")
+			}
+			return currentenvironment
+		}
+		catch(Exception e){
+			println ("Check Environment And Quit failed due to "+ e)
+		}
+	}
+
+
 
 
 }

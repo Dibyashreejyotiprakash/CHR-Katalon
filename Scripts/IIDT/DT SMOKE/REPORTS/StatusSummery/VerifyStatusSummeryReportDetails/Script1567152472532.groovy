@@ -13,28 +13,14 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.openBrowser('')
-
-WebUI.maximizeWindow()
-
 CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamedesigntracker, GlobalVariable.testtypesmoke, GlobalVariable.environment)
-
-WebUI.waitForPageLoad(300)
 
 CustomKeywords.'com.designtracker.LoginPage.LoginToDesignTarcker'(GlobalVariable.dtusername, GlobalVariable.dtpassowrd)
 
-//CustomKeywords.'com.designtracker.HomePage.SelectCorporationAndMarcket'()
-//String JobID =   CustomKeywords.'com.designtracker.HomePage.SelectFirstJobID'()
-//println ("Job id is "+ JobID)
 CustomKeywords.'com.designtracker.HomePage.ClickOnStatusSummary'()
-
-WebUI.delay(5)
 
 CustomKeywords.'com.designtracker.HomePage.WindowHandle'()
 
-//CustomKeywords.'com.designtracker.JobStatusInformation.EnterJobID'(JobID)
-//CustomKeywords.'com.designtracker.JobStatusInformation.ClickOnViewReportBtn'()
 CustomKeywords.'com.designtracker.StatusSummery.VerifyStatusSummeryPage'()
 
-CustomKeywords.'com.utilities.Interaction.CloseAllBrowser'()
 
