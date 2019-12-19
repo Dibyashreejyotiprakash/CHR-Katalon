@@ -25,7 +25,7 @@ CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.posusername, Globa
 
 CustomKeywords.'com.poswm.Homepage.ClickOnItemSearch'()
 
-CustomKeywords.'com.poswm.WarehouseItemInventory.VeriyItemSearchPage'()
+CustomKeywords.'com.poswm.WarehouseItemInventory.VerifyItemSearchPage'()
 
 WebUI.closeBrowser()
 

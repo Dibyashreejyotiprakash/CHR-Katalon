@@ -78,8 +78,9 @@ class HomePage {
 	@Keyword
 	public void ClickOnOrderForm() {
 		try {
-			action.ScrollToBottomOfPage()
-			action.WaitVisible(orderform)
+			//action.ScrollToBottomOfPage()
+			action.ScrollToViewElement(orderform)
+			//action.WaitVisible(orderform)
 			action.Click(orderform)
 			action.WaitForPageToLoad()
 		}

@@ -52,13 +52,13 @@ public class II4ConfigurationPage {
 	By itemdetailssection = By.xpath("//*[text()='ITEM DETAILS']")
 	By brandmentions = By.xpath("//*[@id='collapseEight']")
 	By pricebreakyesbtn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_rbDivPriceBreaksTrue']/span[1]")
-	By pricebreaknobtn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_rbDivPriceBreaksFalse']/span[1]")	
+	By pricebreaknobtn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_rbDivPriceBreaksFalse']/span[1]")
 	By IIDemoCOrpDist = By.xpath("//*[text()='Instant Impact 4.0 Demo Corp (Dist.)']")
 	By ChicagoBeverageMarket = By.xpath("//*[text()='Chicago Beverage Systems (296)']")
 	By priceDisclaimerYesCheckBox = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_rbPnlPriceDisclaimerTrue']/span[1]")
 	By priceDisclaimerNoCheckBox = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_rbPnlPriceDisclaimerFalse']/span[1]")
-	
-	
+
+
 	@Keyword
 	public void SelectIICorpAndMarkets() {
 		try {
@@ -77,23 +77,18 @@ public class II4ConfigurationPage {
 			Assert.fail()
 		}
 	}
-	
+
 	@Keyword
-	public String EnableAndDisablePriceDisclaimer(String Disclaimer)
-	{
-		try
-		{
-			if (Disclaimer.equalsIgnoreCase("Enable"))
-			{
+	public String EnableAndDisablePriceDisclaimer(String Disclaimer) {
+		try {
+			if (Disclaimer.equalsIgnoreCase("Enable")) {
 				action.ScrollToBottomOfPage()
 				action.Click(priceDisclaimerYesCheckBox)
 				action.Click(savebtn)
 				WebUI.delay(5)
 				return Disclaimer
-				
 			}
-			else
-			{
+			else {
 				action.ScrollToBottomOfPage()
 				action.Click(priceDisclaimerNoCheckBox)
 				action.Click(savebtn)
@@ -101,12 +96,11 @@ public class II4ConfigurationPage {
 				return Disclaimer
 			}
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("EnableAndDisablePriceDisclaimer failed due to :" + e)
 		}
 	}
-	
+
 
 	@Keyword
 	public void VerifyII4ConfigurationPage() {
@@ -366,17 +360,15 @@ public class II4ConfigurationPage {
 	public void UpdatePriceBreakVisiblity() {
 		try{
 			action.ScrollToViewelement(brandmentions)
-		    boolean statusofpricebreakyesbtn = action.IsElementSelected(pricebreakyesbtn)
-			if(statusofpricebreakyesbtn == true)
-			{
+			boolean statusofpricebreakyesbtn = action.IsElementSelected(pricebreakyesbtn)
+			if(statusofpricebreakyesbtn == true) {
 				action.ScrollToBottomOfPage()
 				action.Click(savebtn)
 			}
-			else
-			{
-			action.Click(pricebreakyesbtn)
-			action.ScrollToBottomOfPage()
-			action.Click(savebtn)
+			else {
+				action.Click(pricebreakyesbtn)
+				action.ScrollToBottomOfPage()
+				action.Click(savebtn)
 			}
 		}
 		catch(Exception e) {
@@ -384,7 +376,7 @@ public class II4ConfigurationPage {
 			Assert.fail()
 		}
 	}
-	
+
 	@Keyword
 	public void AddVerbiageTextForItemDetailsPage() {
 		try{

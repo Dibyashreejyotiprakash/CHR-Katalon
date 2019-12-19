@@ -99,8 +99,14 @@ public class OrderFormItemDetails1Page {
 
 	@Keyword
 	public void LogOutII4() {
+		try {
 		action.Click(logout)
 		action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			Assert.fail("Logout is failing because : "+e)
+		}
+		
 	}
 
 	@Keyword

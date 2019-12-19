@@ -523,7 +523,7 @@ public  class Interaction {
 	{
 		WaitVisible(element)
 		//WebUI.delay(1)
-		js.executeScript("arguments[0].scrolSlIntoView(true);", element);
+		js.executeScript("arguments[0].scrollIntoView(true);", element);
 	}
 
 
@@ -630,7 +630,7 @@ public  class Interaction {
 		{
 			WaitVisible(by)
 			boolean selected = driver.findElement(by).isSelected();
-			
+
 			println ("****************"+selected + "*************")
 			return selected;
 		}
@@ -644,7 +644,7 @@ public  class Interaction {
 	public void WaitVisible(By by)
 	{
 		WebUI.delay(1)
-		WebDriverWait wait = new WebDriverWait(driver, 60)
+		WebDriverWait wait = new WebDriverWait(driver, 300)
 		wait.until(ExpectedConditions.visibilityOfElementLocated(by))
 
 		/*println('Entering into Explicit wait statements')
