@@ -41,8 +41,7 @@ public class JobDetailsPage {
 			Assert.assertTrue(statusofjobcreatedforfield)
 		}
 		catch(Exception e) {
-			println ("Verify job Created For field failed due to "+ e)
-			Assert.fail()
+			Assert.fail ("Verify job Created For field failed due to "+ e)
 		}
 	}
 
@@ -54,11 +53,10 @@ public class JobDetailsPage {
 			Assert.assertTrue(statusofjobstatusfield)
 		}
 		catch(Exception e) {
-			println ("Verify job status field failed due to "+ e)
-			Assert.fail()
+			Assert.fail ("Verify job status field failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
 	public void VerifyCopyPredesign() {
 		try{
@@ -70,6 +68,4 @@ public class JobDetailsPage {
 			Assert.fail("VerifyCopyPredesign failed due to "+ e)
 		}
 	}
-	
-	
 }

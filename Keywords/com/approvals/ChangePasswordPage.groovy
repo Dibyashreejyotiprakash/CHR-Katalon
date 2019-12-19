@@ -24,14 +24,12 @@ import com.kms.katalon.core.webui.driver.DriverFactory
 import internal.GlobalVariable
 
 public class ChangePasswordPage {
-	
+
 	WebDriver driver = DriverFactory.getWebDriver();
 	Interaction action = new Interaction();
-	
-	public void VerifyChangePasswordPage()
-	{
-		try
-		{
+
+	public void VerifyChangePasswordPage() {
+		try {
 			String actualurl = action.GetCurrentURL()
 			if(actualurl.contains("ChangePassword.aspx")) {
 				println ("Change Password Page Verified")
@@ -40,10 +38,8 @@ public class ChangePasswordPage {
 				throw new Exception("Verify Approval Login Page ")
 			}
 		}
-		catch(Exception e)
-		{
-			println ("Verify Change Password Page failed due to "+ e)
-			Assert.fail()
+		catch(Exception e) {
+			Assert.fail ("Verify Change Password Page failed due to "+ e)
 		}
 	}
 }

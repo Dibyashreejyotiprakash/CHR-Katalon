@@ -50,8 +50,7 @@ public class LoginPage {
 			}
 		}
 		catch(Exception e) {
-			println ("Verify Approval login page failed due to "+ e)
-			Assert.fail()
+			Assert.fail("Verify Approval login page failed due to "+ e)
 		}
 	}
 
@@ -71,8 +70,7 @@ public class LoginPage {
 			Assert.assertTrue(statusofforgotlink)
 		}
 		catch(Exception e) {
-			println ("Verify Approval login page failed due to "+ e)
-			Assert.fail()
+			Assert.fail ("Verify Approval login page failed due to "+ e)
 		}
 	}
 
@@ -93,8 +91,7 @@ public class LoginPage {
 			WebUI.delay(10)
 		}
 		catch(Exception e) {
-			println ("Approval login page failed due to "+ e)
-			Assert.fail()
+			Assert.fail ("Approval login page failed due to "+ e)
 		}
 	}
 }
