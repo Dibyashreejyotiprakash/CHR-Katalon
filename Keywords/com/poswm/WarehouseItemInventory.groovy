@@ -62,7 +62,7 @@ public class WarehouseItemInventory {
 	//By allbrandsnameingrid = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00']//tr//td[13]")
 	By allbrandsnameingrid = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00']/tbody/tr/td[5]")
 	By allitemname = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00']//tr//td[11]/a")
-    By firstitemname = By.xpath("//a[@id='ctl00_MainContent_rgItemSearch_ctl00_ctl04_lblItemName']")
+	By firstitemname = By.xpath("//a[@id='ctl00_MainContent_rgItemSearch_ctl00_ctl04_lblItemName']")
 	By itemsearchtextbox = By.xpath("//*[@id='ctl00_MainContent_rsbItemSearch_Input']")
 	By itemsearchbtn = By.xpath("//*[@id='ctl00_MainContent_rsbItemSearch_Input']/following-sibling::button")
 	By searchiteminventorybtn = By.xpath("//*[@id='MainContent_btnBackToSearch']")
@@ -432,10 +432,10 @@ public class WarehouseItemInventory {
 
 	//verify item seach page
 	@Keyword
-	public void VeriyItemSearchPage()
+	public void VerifyItemSearchPage()
 	{
-			String expectedUATUrl = "https://csg.v5qa.brandmuscle.net/Warehouse/Admin/UserTransfer.aspx";
-			String expectedSTAGEUrl ="https://csg.v5stgae.brandmuscle.net/Warehouse/Admin/UserTransfer.aspx"
+		String expectedUATUrl = "https://csg.v5qa.brandmuscle.net/Warehouse/Admin/UserTransfer.aspx";
+		String expectedSTAGEUrl ="https://csg.v5stgae.brandmuscle.net/Warehouse/Admin/UserTransfer.aspx"
 
 		try{
 			action.VerifyCurrentPage("WarehouseItemInventory.aspx")
@@ -476,25 +476,25 @@ public class WarehouseItemInventory {
 	{
 		try{
 			/*List<WebElement> allitemnames = action.GetElements(allitemname)
-			int totalitems = allitemnames.size()
-			println ("Number of ietms -----------"+ totalitems)
-			if(totalitems>0)
+			 int totalitems = allitemnames.size()
+			 println ("Number of ietms -----------"+ totalitems)
+			 if(totalitems>0)
+			 {
+			 for(int i=0;i< totalitems;i++)
+			 {
+			 allitemnames.get(i).click()
+			 break
+			 }*/
+			action.Click(firstitemname)
+			Set<String> windowids = driver.getWindowHandles()
+			Iterator<String> it = windowids.iterator()
+			while(it.hasNext())
 			{
-				for(int i=0;i< totalitems;i++)
-				{
-					allitemnames.get(i).click()
-					break
-				}*/
-			    action.Click(firstitemname)
-				Set<String> windowids = driver.getWindowHandles()
-				Iterator<String> it = windowids.iterator()
-				while(it.hasNext())
-				{
-					String parentwindowid = it.next()
-					String childwindowid = it.next()
-					driver.switchTo().window(childwindowid)
-					//WebUI.delay(10)
-				}
+				String parentwindowid = it.next()
+				String childwindowid = it.next()
+				driver.switchTo().window(childwindowid)
+				//WebUI.delay(10)
+			}
 			//}
 
 		}

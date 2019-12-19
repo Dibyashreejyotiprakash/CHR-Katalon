@@ -83,6 +83,8 @@ public class LoginPage {
 			action.WaitVisible(loginbtn)
 			action.Click(loginbtn)
 			action.WaitForPageToLoad()
+			
+			SelectEmpireMerchantBU()
 		}
 		catch(Exception e) {
 			println ("Posw login failed ue to "+ e)

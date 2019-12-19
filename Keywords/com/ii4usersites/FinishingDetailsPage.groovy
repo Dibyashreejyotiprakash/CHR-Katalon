@@ -33,22 +33,32 @@ public class FinishingDetailsPage {
 	By addnewtextarea = By.xpath("//*[@id='ctl00_Body_JobLineNotes1_grdNotes_ctl00_ctl02_ctl02_txtNotesTextArea']")
 	By sabebtn = By.xpath("//*[@id='ctl00_Body_JobLineNotes1_grdNotes_ctl00_ctl02_ctl02_btnUpdate_input']")
 	By nextbtn = By.xpath("//*[@id='ctl00_Body_BrandMentionsButton']")
+	By quantityTxtBox = By.xpath("//input[@id='ctl00_Body_QuantityEditor']")
 
 	@Keyword
 	public void AddNewNote() {
+		
+		try{
+			
 		action.WaitForPageToLoad()
 		//action.ScrollToBottomOfPage()
-		//action.ScrollToViewelement(addnewnotebtn)
+		action.ScrollToViewElement(quantityTxtBox)
 		action.WaitUntilElementClickable(addnewnotebtn)
-		WebUI.delay(5)
+		WebUI.delay(3)
 		action.Click(addnewnotebtn)
 		//WebUI.delay(10)
 		action.Type(addnewtextarea, "Test")
 		//WebUI.delay(10)
+		action.ScrollToViewElement(addnewtextarea)
 		action.Click(sabebtn)
 		//WebUI.delay(10)
 		action.ScrollToBottomOfPage()
 		action.Click(nextbtn)
 		action.WaitForPageToLoad()
+		}
+		catch(Exception e)
+		{
+			Assert.fail("AddNewNote failed due to : "+e)
+		}
 	}
 }
