@@ -644,7 +644,7 @@ public  class Interaction {
 	public void WaitVisible(By by)
 	{
 		WebUI.delay(1)
-		WebDriverWait wait = new WebDriverWait(driver, 300)
+		WebDriverWait wait = new WebDriverWait(driver, 60)
 		wait.until(ExpectedConditions.visibilityOfElementLocated(by))
 
 		/*println('Entering into Explicit wait statements')
