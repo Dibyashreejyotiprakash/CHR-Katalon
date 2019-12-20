@@ -630,7 +630,7 @@ public  class Interaction {
 		{
 			WaitVisible(by)
 			boolean selected = driver.findElement(by).isSelected();
-			
+
 			println ("****************"+selected + "*************")
 			return selected;
 		}
@@ -643,7 +643,7 @@ public  class Interaction {
 
 	public void WaitVisible(By by)
 	{
-		WebUI.delay(1)
+		WebUI.delay(5)
 		WebDriverWait wait = new WebDriverWait(driver, 60)
 		wait.until(ExpectedConditions.visibilityOfElementLocated(by))
 

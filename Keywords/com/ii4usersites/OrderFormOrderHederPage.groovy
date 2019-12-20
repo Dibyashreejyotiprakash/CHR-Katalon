@@ -46,13 +46,15 @@ public class OrderFormOrderHederPage {
 			action.WaitVisible(newaccountname)
 			action.ScrollToViewElement(newaccountname)
 			action.Type(newaccountname, "test")
+			//action.WaitVisible(jobTittleTextField)
 			//action.WaitVisible(jobtypeddn)
 			//action.Click(jobtypeddn)
 			//action.Click(jobtypeddnvalue)
-			
-			action.Type(jobTittleTextField,"testTittle")
-			action.WaitVisible(continuetoitemsbtn)
+
+			//action.Type(jobTittleTextField,"testTittle")
 			action.ScrollToBottomOfPage()
+			action.WaitVisible(continuetoitemsbtn)
+			//action.ScrollToBottomOfPage()
 			action.Click(continuetoitemsbtn)
 			action.WaitForPageToLoad()
 		}

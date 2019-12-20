@@ -150,7 +150,7 @@ public class AccountPage {
 			break;
 		}
 	}
-	
+
 	@Keyword
 	public void VerifyLogoLockerResourceMsg() {
 		String expectedlogolockerlable = GlobalVariable.resourcemsglogolocker
