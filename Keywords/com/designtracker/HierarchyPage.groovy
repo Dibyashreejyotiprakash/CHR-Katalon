@@ -39,15 +39,13 @@ public class HierarchyPage {
 	By testemail = By.xpath("(//span[contains(text(),'test')])[1]")
 	By mobiletesthierarchy = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_trvOrganizations_trvOrganizationt2']")
 	By assigneduserssection = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_dlSelectedUsers']")
-	
+
 	@Keyword
-	public void VerifyHierarchyPage()
-	{
+	public void VerifyHierarchyPage() {
 		try{
 			action.VerifyCurrentPage("OrganizationStructure.aspx")
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("Verify Hierarchy Page Failed Due to "+e)
 		}
 	}
@@ -146,10 +144,9 @@ public class HierarchyPage {
 			Assert.fail("ValidateNewAddedSalesPersonInHierarchyPage Failed Due to "+e)
 		}
 	}
-	
+
 	@Keyword
-	public void VerifyVisibiltyOfAssignedUsersToHierarchy()
-	{
+	public void VerifyVisibiltyOfAssignedUsersToHierarchy() {
 		try{
 			action.WaitVisible(corpName)
 			WebUI.delay(4)
@@ -159,21 +156,20 @@ public class HierarchyPage {
 			WebUI.delay(4)
 			action.Click(mobiletesthierarchy)
 			WebUI.delay(4)
-			
+
 			boolean statusofassigneduserssection = action.IsElementDisplayed(assigneduserssection)
 			Assert.assertTrue(statusofassigneduserssection)
-			
+
 			WebUI.delay(4)
-			
+
 			action.Click(mobiletesthierarchy)
-			
+
 			WebUI.delay(4)
-			
+
 			boolean statusofassigneduserssectionafterclickingonmobiletesthierarchy = action.IsElementDisplayed(assigneduserssection)
 			Assert.assertTrue(statusofassigneduserssection)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("Verify Visibilty Of Assigned Users To Hierarchy failed due to "+ e)
 		}
 	}

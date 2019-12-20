@@ -45,52 +45,35 @@ public class JobDiagnostic {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	@Keyword
 	public void EnterJobID(String jobid) {
-
+		String currentenvironment = GlobalVariable.environment
+		println ("Current env is ----------------------------"+ currentenvironment)
+		ProfitLoss profitlosspage = new ProfitLoss()
 		try {
-			action.WaitVisible(txtJobID)
-			action.Type(txtJobID,jobid)
-			println ("Job Id is "+jobid )
+			try{
+				if(currentenvironment.equalsIgnoreCase("UAT")){
+					driver.quit()
+				}
+				else if(currentenvironment.equalsIgnoreCase("STAGING")) {
+					driver.quit()
+				}
+				else{
+					action.VerifyCurrentPage("Reports/JobDiagnostic.aspx")
+					WebUI.delay(1)
+					action.Type(txtJobID, jobid)
+					action.WaitVisible(btnViewReport)
+					action.Click(btnViewReport)
+					action.WaitForPageToLoad()
+				}
+			}catch(Exception e){
+				throw new Exception("Excecution is terminated")
+			}
 		}
 		catch(Exception e) {
 			println ("EnterJobID method failed due to :"+ e)
 		}
 	}
-
-
 
 
 

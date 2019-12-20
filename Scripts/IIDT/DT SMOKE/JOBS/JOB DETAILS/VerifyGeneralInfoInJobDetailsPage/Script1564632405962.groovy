@@ -13,9 +13,6 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.openBrowser('')
-
-WebUI.maximizeWindow()
 
 CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamedesigntracker, GlobalVariable.testtypesmoke, GlobalVariable.environment)
 
@@ -23,15 +20,11 @@ CustomKeywords.'com.designtracker.LoginPage.LoginToDesignTarcker'(GlobalVariable
 
 CustomKeywords.'com.designtracker.HomePage.VerifyExistingJobSearch'()
 
-//WebUI.delay(10)
-
 CustomKeywords.'com.designtracker.JobDetailsPage.VerifyJobDetailsPage'()
 
 CustomKeywords.'com.designtracker.JobDetailsPage.VerifyJobNumberInJobDetailsPage'()
 
 CustomKeywords.'com.designtracker.JobDetailsPage.VerifyGeneralInfo'()
-
-WebUI.closeBrowser()
 
 
 

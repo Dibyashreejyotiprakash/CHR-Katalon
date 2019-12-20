@@ -26,13 +26,13 @@ CustomKeywords.'com.designtracker.JobNewPage.VerifyNewJobPage'()
 
 String dtjob = CustomKeywords.'com.designtracker.JobNewPage.CreateNewJob'()
 
-CustomKeywords.'com.designtracker.JobDetailsPage.ClickOnDetailsBtn'()
+String jobname = CustomKeywords.'com.designtracker.JobDetailsPage.AddJobNameJobTicketNameAndAssignDesigner'()
 
-CustomKeywords.'com.designtracker.JobDetailsPage.VerifyJobDetailsPage'()
+WebUI.closeBrowser()
 
-CustomKeywords.'com.designtracker.JobDetailsPage.VerifyJobNameAndJobTicketNoteAreMandatory'()
+WebUI.openBrowser('')
 
-CustomKeywords.'com.designtracker.HomePage.DTLogOut'()
+WebUI.maximizeWindow()
 
 CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameapprovals, GlobalVariable.testtypesmoke, GlobalVariable.environment)
 
@@ -42,6 +42,4 @@ CustomKeywords.'com.approvals.LoginPage.ApprovalLogin'(GlobalVariable.approvalus
 
 CustomKeywords.'com.approvals.HomePage.VerifyApprovalHomePage'()
 
-//CustomKeywords.'com.approvals.HomePage.VerifyJobNameField'()
-
-CustomKeywords.'com.approvals.HomePage.VerifyDTSearchByJobName'()
+CustomKeywords.'com.approvals.HomePage.VerifyDTSearchByJobName'(jobname)

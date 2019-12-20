@@ -31,8 +31,8 @@ public class MarketJobNoteNotificationPage {
 
 	By corpddn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_CorpsAndMarkets_ddlCorporation']")
 	By marketddn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_CorpsAndMarkets_ddlMarket']")
-	By insertlink = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_gvJobNotesNotification_ctl04_lbtnInsert']")
-	By userddn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_gvJobNotesNotification_ctl04_ddlUsers']")
+	By insertlink = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_gvJobNotesNotification_ctl01_lbtnInsert']")
+	By userddn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_gvJobNotesNotification_ctl01_ddlUsers']")
 
 	@Keyword
 	public void VerifyJobNoteNotifyPage() {
@@ -51,13 +51,11 @@ public class MarketJobNoteNotificationPage {
 			Assert.assertTrue(statusofcorpddn)
 
 			action.SelectByText(corpddn, "Instant Impact 4.0 Demo Corp (Dist.)")
-			//WebUI.delay(3)
 
 			boolean statusofmarketddn = action.IsElementDisplayed(marketddn)
 			Assert.assertTrue(statusofmarketddn)
 
 			action.SelectByText(marketddn, "Chicago Beverage Systems")
-			//WebUI.delay(3)
 
 			boolean statusofinsertlink = action.IsElementDisplayed(insertlink)
 			Assert.assertTrue(statusofinsertlink)

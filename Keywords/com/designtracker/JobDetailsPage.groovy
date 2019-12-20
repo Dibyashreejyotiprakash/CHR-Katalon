@@ -129,6 +129,8 @@ public class JobDetailsPage {
 	By commetinnoteinformation = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_lvJobs_ctrl0_gvJobNotes_ctl03_lblNoteText']")
 	By returntojob = By.xpath("//input[@id='ctl00_ctl00_cphMain_cphMain_btnReturn']")
 
+	By salespersonddn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_lvJobs_ctrl0_ddlJobSalesPerson']")
+
 	@Keyword
 	public void ClickOnDetailsBtn() {
 		try {
@@ -282,12 +284,20 @@ public class JobDetailsPage {
 
 	@Keyword
 	public String AddJobNameJobTicketNameAndAssignDesigner() {
-		action.Type(jobnametxtbox, "Test Job Name")
-		action.Type(jobticketnote, "Test Job Ticket Note")
-		action.SelectByText(designerddn, "ABERLE, JASON")
-		action.ScrollToBottomOfPage()
-		action.WaitUntilElementClickable(savejobinfobtn)
-		action.Click(savejobinfobtn)
+		String jobname = "Test Job Name"
+		try{
+			action.Type(jobnametxtbox, jobname)
+			action.Type(jobticketnote, "Test Job Ticket Note")
+			action.SelectByText(designerddn, "CROTTY, JEREMY")
+			action.ScrollToBottomOfPage()
+			action.WaitUntilElementClickable(savejobinfobtn)
+			action.Click(savejobinfobtn)
+
+			return jobname
+		}
+		catch(Exception e){
+			Assert.fail("Add Job Name Job Ticket Name And Assign Designer failed due to "+ e)
+		}
 	}
 
 	@Keyword
@@ -661,6 +671,19 @@ public class JobDetailsPage {
 		catch(Exception e)
 		{
 			Assert.fail("AddDDPart Job failed due to :"+e)
+		}
+	}
+
+
+	@Keyword
+	public String GetSelectedSalesPersonName(){
+		String selectedsalespersonname = null
+		try{
+			selectedsalespersonname = action.GetselectedText(salespersonddn)
+			return selectedsalespersonname
+		}
+		catch(Exception e){
+			Assert.fail("Get Selected Sales Person Name failed due to :"+e)
 		}
 	}
 }

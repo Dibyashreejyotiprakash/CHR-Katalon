@@ -222,25 +222,14 @@ public class JobNewPage {
 		try
 		{
 			action.SelectByText(corporationddn, "Instant Impact 4.0 Demo Corp (Dist.)")
-			WebUI.delay(10)
 			action.SelectByText(marketddn, "Chicago Beverage Systems")
-			WebUI.delay(10)
 			action.SelectByText(salespersonddn, "ADMIN1, TEST (testadmin1@brandmuscle.com)")
-			WebUI.delay(10)
 			action.SelectByIndex(accountddn, 1)
-			WebUI.delay(10)
 			action.SelectByText(jobtypeddn, "Print Only")
-			WebUI.delay(10)
 			action.Click(createjobbtn)
-			WebUI.delay(10)
 			action.WaitForPageToLoad()
-			action.WaitForPageToLoad()
-			WebUI.delay(10)
 			jobIdValue = action.GetText(jobid)
 			return jobIdValue
-			/*WebUI.delay(10)
-			 action.GetText(jobid)
-			 return jobid*/
 		}
 		catch(Exception e)
 		{

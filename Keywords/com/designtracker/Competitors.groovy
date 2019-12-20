@@ -44,7 +44,7 @@ public class Competitors {
 	@Keyword
 	public void VerifyCompetitorsPage() {
 		try {
-			
+
 			boolean statusofheader = action.IsElementDisplayed(marketcompetitorsheader)
 			Assert.assertTrue(statusofheader)
 		}
@@ -91,7 +91,7 @@ public class Competitors {
 	public void CreateNewCompetitors() {
 
 		try {
-			
+
 			action.Type(competitorstextbox, "Test Competitor")
 			action.Click(createbtn)
 		}
