@@ -44,7 +44,7 @@ public class CategoriesMaintenancePage {
 
 
 	By addnewcorporatesetting = By.xpath("//*[@id='ctl00_cphMain_RadCategorySetting_ctl00_ctl02_ctl00_AddNewRecordButton']")
-	By externalitemtypeddn = By.cssSelector(".rgHeaderDiv table:nth-child(2) > tbody:nth-of-type(1) > tr:nth-of-type(1) a")
+	By externalitemtypeddn = By.xpath("//input[@id='ctl00_cphMain_RadCategorySetting_ctl00_ctl02_ctl04_radExternalItemID_Input']")
 	By desriptionoveride = By.xpath("//*[@id='ctl00_cphMain_RadCategorySetting_ctl00_ctl02_ctl04_radDescription']")
 	By exteritemtypeddnvalue = By.xpath("(//*[text()='Accolades'])[1]")
 	By distributorddn = By.xpath("//*[@id='ctl00_cphMain_RadCategorySetting_ctl00_ctl02_ctl04_radDistributerID_Input']")
