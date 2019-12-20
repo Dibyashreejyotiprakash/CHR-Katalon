@@ -17,12 +17,6 @@
       <testCaseId>Test Cases/IIDT/DT SMOKE/JOBS/JOB DETAILS/VerifyGeneralInfoInJobDetailsPage</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>b62b96d2-c821-4c39-ac0a-cc14635bf633</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/DT SMOKE/JOBS/JOB DETAILS/VerifyInactiveDesigner</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
       <guid>2791a576-c52c-4004-aef1-058b9e60a61a</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
@@ -320,6 +314,6 @@
       <guid>7289ce05-0b97-47bd-ad98-4464f212a420</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/DT SMOKE/LOGIN/VerifyDTLoginLogout1</testCaseId>
+      <testCaseId>Test Cases/IIDT/DT SMOKE/LOGIN/VerifyDTLoginLogout</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>

@@ -43,34 +43,159 @@ public class JobActivityTracking {
 	By reportColumns = By.xpath("//*[@class='A871a6f9c976a49079b0041b71197852067']/tbody/tr[2]/td/div")
 
 
+	By headerJobStatus = By.xpath("//*[@class='Ac1c35776da844c27ac1063e328ca73e83']")
+	By salesPerson = By.xpath("//*[text()='Sales Person:']")
+	By accountName = By.xpath("//*[text()='Account Name:']")
+	By dateCreated = By.xpath("//*[text()='Date Created:']")
+	By dueDate = By.xpath("//*[text()='Due Date:']")
+	By jobName = By.xpath("//*[text()='Job Name:']")
+	By designer = By.xpath("//*[text()='Designer:']")
+	By createdFor = By.xpath("//*[text()='Created For:']")
+	By statusName = By.xpath("//*[text()='Status Name']")
+	By dateSubmitted = By.xpath("//*[text()='Date Submitted']")
+	By colValueCreated = By.xpath("//*[text()='Created']")
+	By statusColValues = By.xpath("//*[@class='Aece577693d56479f87115d8f29045b4790']/tbody/tr/td[1]")
+	By colJobLineName = By.xpath("//*[text()='Job Line Name']")
+	By colPart = By.xpath("//*[text()='Part #']")
+	By colQTY = By.xpath("//*[text()='Qty']")
+	By colSO = By.xpath("//*[text()='SO #']")
+	By colPO = By.xpath("//*[text()='PO #']")
+	By colWebID = By.xpath("//*[text()='Web ID']")
+	By colPrintLocation = By.xpath("//*[text()='Print Location']")
+	By colOverPackID = By.xpath("//*[text()='OverPack ID']")
+	By colComments = By.xpath("//*[text()='Comments']")
+	By colShipStatus = By.xpath("//*[text()='Ship Status']")
+	By colShipDate = By.xpath("//*[text()='Ship Date']")
+	By colTrackingNumber = By.xpath("//*[text()='Tracking Number']")
+	By colAddrLine1 = By.xpath("//*[text()='Addr Line 1']")
+	By colAddrLine2 = By.xpath("//*[text()='Addr Line 2']")
+	By colAddrLine3 = By.xpath("//*[text()='Addr Line 3']")
+	By colCity = By.xpath("//*[text()='City']")
+	By colState = By.xpath("//*[text()='State']")
+	By colZip = By.xpath("//*[text()='Zip']")
+
+
+
 
 	@Keyword
 	public void EnterJobID(String jobid) {
-
+		String currentenvironment = GlobalVariable.environment
+		println ("Current env is ----------------------------"+ currentenvironment)
+		ProfitLoss profitlosspage = new ProfitLoss()
 		try {
-			action.WaitVisible(txtJobID)
-			action.Type(txtJobID,jobid)
-			println ("Job Id is "+jobid )
+			try{
+				if(currentenvironment.equalsIgnoreCase("UAT")){
+					driver.quit()
+				}
+				else if(currentenvironment.equalsIgnoreCase("STAGING")) {
+					driver.quit()
+				}
+				else{
+					action.VerifyCurrentPage("Reports/JobDiagnostic.aspx")
+					WebUI.delay(1)
+					action.Type(txtJobID, jobid)
+					action.WaitVisible(btnViewReport)
+					action.Click(btnViewReport)
+					action.WaitForPageToLoad()
+				}
+			}catch(Exception e){
+				throw new Exception("Excecution is terminated")
+			}
 		}
 		catch(Exception e) {
 			println ("EnterJobID method failed due to :"+ e)
 		}
 	}
 
-
-	@Keyword//Clicking on View report button
-	public void ClickOnViewReportBtn() {
+	@Keyword //Verifying Reports columns
+	public void VerifyJobStatusReportFields(){
+		String currentenvironment = GlobalVariable.environment
 		try{
-			action.WaitVisible(btnViewReport)
-			action.Click(btnViewReport)
-			action.WaitForPageToLoad()
-			//action.WaitVisible(DivisionReport)
-			WebUI.delay(10)
+			try{
+				if(currentenvironment.equals("UAT")){
+					driver.quit()
+				}
+				else if(currentenvironment.equals("STAGE"))
+				{
+					driver.quit()
+				}
+				else{
+					String ExpectedFirstField = "Job Name:"
+					String ExpectedSecondField = "Sales Person:"
+					String ExpectedThirdField = "Account Name:"
+					String ExpectedFourthField = "Date Created:"
+					String ExpectedFifthField = "Due Date:"
+					String ExpectedSixthField = "Created For:"
+					String ExpectedSeventhField = "Designer:"
+
+					String jobName = action.GetText(jobName)
+					String salespersion = action.GetText(salesPerson)
+					String accountname = action.GetText(accountName)
+					String datecreated = action.GetText(dateCreated)
+					String duedate = action.GetText(dueDate)
+					String createdFor = action.GetText(createdFor)
+					String designer = action.GetText(designer)
+
+					Assert.assertEquals(ExpectedFirstField, jobName)
+					println("First Field Name----->"+ jobName)
+
+					Assert.assertEquals(ExpectedSecondField, salespersion)
+					println("Second Field Name----->"+ salespersion)
+
+					Assert.assertEquals(ExpectedThirdField, accountname)
+					println("Third Field Name----->"+ accountname)
+
+					Assert.assertEquals(ExpectedFourthField, datecreated)
+					println("Fourth Field Name----->"+ datecreated)
+
+					Assert.assertEquals(ExpectedFifthField, duedate)
+					println("Fifth Field Name----->"+ duedate)
+
+					Assert.assertEquals(ExpectedSixthField, createdFor)
+					println("Sixth Field Name----->"+ createdFor)
+
+					Assert.assertEquals(ExpectedSeventhField, designer)
+					println("Seventh Field Name----->"+ designer)
+				}
+			}
+			catch(Exception e){
+				throw new Exception("Execution Terminated")
+
+			}
 		}
-		catch(Exception e){
-			println("ClickOnViewReportBtn method failed due to :" + e)
+		catch(Exception e)
+		{
+			println("VerifyJobStatusReportFields method failed due to :" + e)
 		}
 	}
+
+
+	@Keyword
+	public void ClickOnViewReportBtn() {
+		String currentenvironment = GlobalVariable.environment
+		try{
+			try{
+				if(currentenvironment.equals("UAT")){
+					driver.quit()
+				}
+				else if(currentenvironment.equals("STAGE")) {
+					driver.quit()
+				}
+				else{
+					action.WaitVisible(btnViewReport)
+					action.Click(btnViewReport)
+					action.WaitForPageToLoad()
+					VerifyJobActivityTrackingReportColumns()
+				}
+			}catch(Exception e){
+				throw new Exception("Excecution is terminated")
+			}
+		}
+		catch(Exception e){
+			Assert.fail("Click On View Report Btn failed due to "+ e)
+		}
+	}
+
 
 	@Keyword//Verifying view report button
 	public void VerifyViewReportBtn(){
@@ -125,11 +250,6 @@ public class JobActivityTracking {
 			println("Third Column Name----->"+ dateOccuredCol)
 			Assert.assertEquals(ExpectedFourthCol, agentNameCol)
 			println("First Column Name----->"+ agentNameCol)
-
-
-
-
-
 		}
 		catch(Exception e){
 			println("VerifyJobActivityTrackingReportColumns method failed due to :" + e)

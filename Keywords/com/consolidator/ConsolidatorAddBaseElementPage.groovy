@@ -114,9 +114,9 @@ public class ConsolidatorAddBaseElementPage {
 
 			WebUI.delay(2)
 			/*statusofaddelementbtn = action.IsElementEnabled(addelementbtn)
-			Assert.assertFalse(statusofaddelementbtn)
-			println(action.IsElementEnabled(statusofaddelementbtn))*/
-			
+			 Assert.assertFalse(statusofaddelementbtn)
+			 println(action.IsElementEnabled(statusofaddelementbtn))*/
+
 			action.Type(price, "100")
 			action.Type(qtyperpack, "12")
 

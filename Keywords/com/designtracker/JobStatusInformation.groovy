@@ -70,17 +70,19 @@ public class JobStatusInformation {
 	@Keyword
 	public void EnterJobID(String jobid) {
 		String currentenvironment = GlobalVariable.environment
+		println ("Current env is ----------------------------"+ currentenvironment)
 		ProfitLoss profitlosspage = new ProfitLoss()
 		try {
 			try{
-				if(currentenvironment.equals("UAT")){
+				if(currentenvironment.equalsIgnoreCase("UAT")){
 					driver.quit()
 				}
-				else if(currentenvironment.equals("STAGE")) {
+				else if(currentenvironment.equalsIgnoreCase("STAGING")) {
 					driver.quit()
 				}
 				else{
-					action.VerifyCurrentPage("ProfitLossReport.aspx")
+					action.VerifyCurrentPage("Reports/JobStatusInformation.aspx")
+					WebUI.delay(1)
 					action.Type(txtJobID, jobid)
 					action.WaitVisible(btnViewReport)
 					action.Click(btnViewReport)

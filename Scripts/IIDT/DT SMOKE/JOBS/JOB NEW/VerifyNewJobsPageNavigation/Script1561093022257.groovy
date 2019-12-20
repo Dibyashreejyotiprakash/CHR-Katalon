@@ -13,14 +13,9 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.openBrowser('')
-
-WebUI.maximizeWindow()
 
 CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamedesigntracker, GlobalVariable.testtypesmoke, 
     GlobalVariable.environment)
-
-WebUI.waitForPageLoad(300)
 
 CustomKeywords.'com.designtracker.LoginPage.LoginToDesignTarcker'(GlobalVariable.dtusername, GlobalVariable.dtpassowrd)
 
@@ -31,6 +26,4 @@ CustomKeywords.'com.designtracker.HomePage.ClickOnNewJob'()
 CustomKeywords.'com.designtracker.JobNewPage.VerifyNewJobPage'()
 
 CustomKeywords.'com.designtracker.JobNewPage.VerifyBackToHomePageFromNewJobsPage'()
-
-WebUI.closeBrowser()
 

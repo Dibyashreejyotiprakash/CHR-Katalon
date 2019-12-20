@@ -105,7 +105,7 @@ public class HomePage {
 	By suppliers = By.xpath("//*[text()='SUPPLIERS']")
 	By salespeople = By.xpath("//*[text()='SALES PEOPLE']")
 	By jobnotenotify = By.xpath("//*[text()='JOB NOTE NOTIFY']")
-	
+
 
 	@Keyword
 	public void VerifyHomePage() {
@@ -443,16 +443,10 @@ public class HomePage {
 			List<WebElement> lst =	action.GetElements(jobIds)
 
 			for(int i=0; i<=lst.size();i++){
-
 				String jobID = lst[i].getText()
 				println("-------------------->>>>>>>>" +jobID)
 				getjobid = jobID;
 				break;
-
-
-
-
-
 			}
 			return getjobid
 		}
@@ -467,7 +461,7 @@ public class HomePage {
 		try {
 			action.WaitVisible(corporationddn)
 			action.SelectByText(corporationddn, "Demo Distributor (QA)")
-			action.ScrollToViewelement(searchbtn)
+			action.ScrollToViewElement(searchbtn)
 			action.WaitUntilElementClickable(searchbtn)
 			action.Click(searchbtn)
 			WebUI.delay(10)
@@ -738,7 +732,7 @@ public class HomePage {
 			Assert.fail()
 		}
 	}
-	
+
 	@Keyword
 	public void ValidateGexOrderStatusBtn()
 	{
@@ -762,5 +756,5 @@ public class HomePage {
 			Assert.fail()
 		}
 	}
-	
+
 }

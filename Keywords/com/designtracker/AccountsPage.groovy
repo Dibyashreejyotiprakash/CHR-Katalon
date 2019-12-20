@@ -83,7 +83,15 @@ public class AccountsPage
 	By allsalespeoplebtn = By.xpath("//input[@id='ctl00_ctl00_cphMain_cphMain_fvAccount_btnAssociateAllSalesPerson']")
 	By allsalespeoplesuccessmssg = By.xpath("//li[contains(text(),'All Sales People were associated to the account')]")
 
-
+	@Keyword
+	public void VerifyAccountsPage(){
+		try{
+			action.VerifyCurrentPage("Account/Account.aspx")
+		}
+		catch(Exception e){
+			Assert.fail("Verify Accounts page failed due to "+ e)
+		}
+	}
 
 	@Keyword
 	public void validaterequiredfields()
@@ -146,55 +154,34 @@ public class AccountsPage
 
 			action.WaitVisible(siteadmintab)
 			action.MouseHoverOnElement(siteadmintab)
-			WebUI.delay(3)
 			action.WaitVisible(accounts)
 			action.Click(accounts)
 			action.WaitVisible(insertbtn)
 			action.SelectByText(corpDropDown, "Instant Impact 4.0 Demo Corp (Dist.)")
-			WebUI.delay(4)
 			action.SelectByText(marketDropDown, "Chicago Beverage Systems")
-			WebUI.delay(2)
 			String acc_name = "QATest"+dateTime
 			println("DATE TIME -"+acc_name)
 			action.Type(description, acc_name)
-			WebUI.delay(1)
 			action.Type(city,"Cleveland")
-			WebUI.delay(1)
 			action.Type(state, "OH")
-			WebUI.delay(1)
 			action.Type(zip, "44114")
-			WebUI.delay(1)
 			action.Type(phonenumber, "976-767-6768")
-			WebUI.delay(1)
 			String id = "123"+dateTime
 			action.Type(clientaccountid,id)
-			WebUI.delay(1)
 			action.Click(insertbtn)
 			action.IsElementDisplayed(newrecordmssg)
-			WebUI.delay(1)
 			action.WaitVisible(addsalespersonbtn)
-
-			WebUI.delay(2)
 			action.SelectByText(salespersonddn,"ADMIN1, TEST (testadmin1@brandmuscle.com)")
-			WebUI.delay(1)
 			action.Click(addsalespersonbtn)
-			WebUI.delay(3)
 			action.Click(lookupaccount)
-			WebUI.delay(5)
 			action.SelectByText(lookupcorp,"Instant Impact 4.0 Demo Corp (Dist.)")
-			WebUI.delay(5)
 			action.SelectByText(lookupmarket, "Chicago Beverage Systems")
-			WebUI.delay(2)
 			action.Type(lookupsearchtext, acc_name)
-			WebUI.delay(4)
 			action.Click(lookupaccountbtn)
-			WebUI.delay(2)
 			action.IsElementDisplayed(lookupname)
 
 			String account_name = action.GetText(lookupname)
 			Assert.assertEquals(account_name, acc_name)
-
-
 		}
 		catch(Exception e)
 		{
