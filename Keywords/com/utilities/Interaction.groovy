@@ -523,7 +523,7 @@ public  class Interaction {
 	{
 		WaitVisible(element)
 		//WebUI.delay(1)
-		js.executeScript("arguments[0].scrolSlIntoView(true);", element);
+		js.executeScript("arguments[0].scrollIntoView(true);", element);
 	}
 
 
@@ -643,7 +643,7 @@ public  class Interaction {
 
 	public void WaitVisible(By by)
 	{
-		WebUI.delay(5)
+		WebUI.delay(1)
 		WebDriverWait wait = new WebDriverWait(driver, 60)
 		wait.until(ExpectedConditions.visibilityOfElementLocated(by))
 
@@ -1055,6 +1055,28 @@ public  class Interaction {
 		else
 		{
 			throw new Exception("Page is not verified")
+		}
+	}
+
+
+	@Keyword
+	public String CheckEnvironmentAndQuit(){
+		String currentenvironment = GlobalVariable.environment
+		try{
+			if(currentenvironment.equals("UAT")){
+				driver.quit()
+			}
+			else if(currentenvironment.equals("STAGE"))
+			{
+				driver.quit()
+			}
+			else{
+				println ("Executing For Production")
+			}
+			return currentenvironment
+		}
+		catch(Exception e){
+			println ("Check Environment And Quit failed due to "+ e)
 		}
 	}
 

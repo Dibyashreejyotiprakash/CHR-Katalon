@@ -50,7 +50,6 @@ public class OrderFormOrderHederPage {
 			//action.WaitVisible(jobtypeddn)
 			//action.Click(jobtypeddn)
 			//action.Click(jobtypeddnvalue)
-
 			//action.Type(jobTittleTextField,"testTittle")
 			action.ScrollToBottomOfPage()
 			action.WaitVisible(continuetoitemsbtn)
@@ -60,6 +59,8 @@ public class OrderFormOrderHederPage {
 		}
 		catch(Exception e) {
 			println ("Enter Values To Fileds In Order Page failed due to "+ e)
+			Assert.fail()
+			
 		}
 	}
 
@@ -83,6 +84,7 @@ public class OrderFormOrderHederPage {
 		}
 		catch(Exception e) {
 			println ("Enter Values To Fileds In Order Page failed due to "+ e)
+			Assert.fail()
 		}
 
 		return accountname
