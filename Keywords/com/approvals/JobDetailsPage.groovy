@@ -58,7 +58,7 @@ public class JobDetailsPage {
 			Assert.fail()
 		}
 	}
-	
+
 	@Keyword
 	public void VerifyCopyPredesign() {
 		try{
@@ -70,6 +70,4 @@ public class JobDetailsPage {
 			Assert.fail("VerifyCopyPredesign failed due to "+ e)
 		}
 	}
-	
-	
 }

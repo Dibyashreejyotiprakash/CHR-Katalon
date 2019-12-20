@@ -27,27 +27,24 @@ public class Reports {
 	Interaction action = new Interaction();
 
 	By reportsddn = By.xpath("//*[@id='ctl00_cphBody_ddlPortalReports']")
-	
+
 	@Keyword
 	public void VerifyReportsPage() {
 		try{
-			action.VerifyCurrentPage("Reports.aspx")
+			action.VerifyCurrentPage("/Reports.aspx")
 		}
 		catch(Exception e) {
 			println ("Verify Reports Page failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
-	public void VerifyAvailableReport()
-	{
+	public void VerifyAvailableReport() {
 		try{
 			action.SelectByIndex(reportsddn, 1)
 			action.WaitForPageToLoad()
 		}
-		catch(Exception e)
-		{
-			
+		catch(Exception e) {
 		}
 	}
 }
