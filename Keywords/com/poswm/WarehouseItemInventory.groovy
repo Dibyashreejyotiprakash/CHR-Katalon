@@ -115,10 +115,69 @@ public class WarehouseItemInventory {
 	By deleteCheckBox = By.xpath("//*[@id='ctl00_MainContent_rpbSearch_i10_i0_rlbOtherFilters_i2']/label/input")
 	By itemNameColValiue = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00']/tbody/tr/td[3]")
 	By approverColVal = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00__0']/td[7]")
+	By adsLabelName = By.xpath("//*[@id='ctl00_MainContent_rpbSearch_i6_i0_rlbWarehouseSalesDivision_i0']/label")
+	By salesDivLebelOnEditItemPage = By.xpath("//*[@id='ctl00_MainContent_ucItemOverView_radListItemProperties_ctrl0_lblSalesDivisions']")
 
 
 
 
+	@Keyword
+	public void SelectFirstItem()
+	{
+		try
+		{
+			action.Click(firstItem)
+			action.WindowHandle()
+			WebUI.delay(15)
+
+
+		}
+		catch(Exception e)
+		{
+			Assert.fail("SelectFirstItem failed due to :" + e)
+		}
+	}
+	@Keyword
+	public String GetAdsSalesDivName()
+	{
+		try
+		{
+			String SalesDivName = action.GetText(adsLabelName)
+			return SalesDivName
+		}
+		catch(Exception e)
+		{
+			Assert.fail("GetAdsSalesDivName failed due to :" + e)
+		}
+	}
+	
+	@Keyword
+	public boolean VerifySalesDiv(String SalesDivName)
+	{
+		try
+		{
+			boolean IsSalesDivVerified = false
+			 String SalesDivNameOnItemPage = action.GetText(salesDivLebelOnEditItemPage)
+			 
+			 println ("----------->" + SalesDivNameOnItemPage)
+			
+			if(SalesDivName.equalsIgnoreCase(SalesDivNameOnItemPage))
+			{
+				
+				println("Sales Div verified successfully")
+				return IsSalesDivVerified = true
+			}
+		}
+		catch(Exception e)
+		{
+			Assert.fail("VerifySalesDiv failed due to :" + e)
+		}
+	}
+	
+	
+	
+	
+	
 	@Keyword
 	public void VerifyApproverCol(String ApproverNameExpected)
 	{
@@ -426,8 +485,8 @@ public class WarehouseItemInventory {
 	@Keyword
 	public void VeriyItemSearchPage()
 	{
-			String expectedUATUrl = "https://csg.v5qa.brandmuscle.net/Warehouse/Admin/UserTransfer.aspx";
-			String expectedSTAGEUrl ="https://csg.v5stgae.brandmuscle.net/Warehouse/Admin/UserTransfer.aspx"
+		String expectedUATUrl = "https://csg.v5qa.brandmuscle.net/Warehouse/Admin/UserTransfer.aspx";
+		String expectedSTAGEUrl ="https://csg.v5stgae.brandmuscle.net/Warehouse/Admin/UserTransfer.aspx"
 
 		try{
 			action.VerifyCurrentPage("WarehouseItemInventory.aspx")

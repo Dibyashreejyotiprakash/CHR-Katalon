@@ -104,6 +104,26 @@ public class WarehouseItem {
 	By itemInfoSaveBtnAfterSave = By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_btnUpdate']")
 	By salesDivDropDownArrowBtn = By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_radSalesDivision_Arrow']")
 	By iteminfogrid = By.xpath("//*[text()='Step 1: Item Information']")
+	
+	
+	By bigAppleLebelName = By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_radSalesDivision_DropDown']/div/ul/li[2]/label")
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	@Keyword
 	public void VerifyWareHouseItemPage()
@@ -165,7 +185,7 @@ public class WarehouseItem {
 			}
 			if(action.IsDisplayed(salesDivisionDropDown))
 			{
-				SelectSalesDivision()
+				SelectSalesDiv("ReturnType")
 			}
 			if(action.IsDisplayed(seasonalType))
 			{
@@ -381,10 +401,49 @@ public class WarehouseItem {
 				action.Click(salesDivisionDropDown)
 				//action.WaitVisible(salesDivisionListDiv)
 				////action.WaitTime(3)
-				action.Click(salesDivisionSecondOption)
-				action.Click(salesDivDropDownArrowBtn)
-				String selectedSalesDiv = action.GetText(salesDivisionDropDown)
-				println "+++++++++++++++" + selectedSalesDiv
+				action.Click(salesDivisionThirdOption)
+				//action.Click(salesDivDropDownArrowBtn)
+				/*String selectedSalesDiv = action.GetText(salesDivisionDropDown)
+				println "+++++++++++++++" + selectedSalesDiv*/
+				
+				
+				String bigApple = action.GetText(bigAppleLebelName)
+				
+				println("************-------------->" + bigApple)
+			}
+			else
+			{
+				throw new Exception("Sales Division  Drop Down is not present")
+			}
+		}
+		catch(Exception e)
+		{
+			println("SelectMultipleSalesDivision method failed due to : "+ e)
+			Assert.fail()
+		}
+	}
+
+	@Keyword
+	public String SelectAndReturnSalesDivision()
+	{
+		try
+		{
+			if(action.IsElementDisplayed(salesDivisionDropDown))
+			{
+				////WebUI.delay(3)
+				action.Click(salesDivisionDropDown)
+				//action.WaitVisible(salesDivisionListDiv)
+				////action.WaitTime(3)
+				action.Click(salesDivisionThirdOption)
+				//action.Click(salesDivDropDownArrowBtn)
+				/*String selectedSalesDiv = action.GetText(salesDivisionDropDown)
+				println "+++++++++++++++" + selectedSalesDiv*/
+				
+				
+				String bigApple = action.GetText(bigAppleLebelName)
+				
+				println("************-------------->" + bigApple)
+				return bigApple
 			}
 			else
 			{
@@ -399,7 +458,30 @@ public class WarehouseItem {
 	}
 
 
-
+	@Keyword
+	public String SelectSalesDiv(String SalesDivType)
+	{
+		try
+		{
+			if(SalesDivType.equalsIgnoreCase("SingleSelect"))
+			{
+				SelectSalesDivision()
+			}
+			else if(SalesDivType.equalsIgnoreCase("multiselect"))
+			{
+				SelectMultipleSalesDivision()
+			}
+			else if(SalesDivType.equalsIgnoreCase("returntype"))
+			{
+				SelectAndReturnSalesDivision()
+			}
+			return salesDivName
+		}
+		catch(Exception e)
+		{
+			Assert.fail("SelectSalesDivi method failed due to" + e)
+		}
+	}
 
 	@Keyword
 	public void SelectSeasonalType()
@@ -613,163 +695,163 @@ public class WarehouseItem {
 			}
 		}
 		catch(Exception e){
-				println("FillBrandSection method failed due to :" + e)
-				Assert.fail()
-	    }
+			println("FillBrandSection method failed due to :" + e)
+			Assert.fail()
+		}
 	}
 
-		@Keyword
-		public void FillTransactionsSection()
+	@Keyword
+	public void FillTransactionsSection()
+	{
+		try
 		{
-			try
+			if(action.IsElementDisplayed(selectWarehouseDropDown))
 			{
-				if(action.IsElementDisplayed(selectWarehouseDropDown))
-				{
-					//action.WaitVisible(selectWarehouseDropDown)
-					action.Click(selectWarehouseDropDown)
-					//action.WaitVisible(selectWarehouseFirstValue)
-					////action.WaitTime(2)
-					action.Click(selectWarehouseFirstValue)
-					////action.WaitTime(5)
-				}
-				else
-				{
-					println ("Selelct warehouse drop down not present/failed")
-				}
-
-				if(action.IsElementDisplayed(selectBinDropDown))
-				{
-					action.Click(selectBinDropDown)
-					////action.WaitTime(3)
-					action.Click(selectBinFirstValue)
-					////action.WaitTime(3)
-					action.Type(QtyTextField, "5")
-				}
-				else
-				{
-					println ("Selelct Bin drop down not present/failed")
-				}
-				if(action.IsElementDisplayed(SaveBtn)){
-					action.Click(SaveBtn)
-					////action.WaitTime(10)
-
-				}
-				else{
-					println ("Save button not present/failed")
-				}
-
+				//action.WaitVisible(selectWarehouseDropDown)
+				action.Click(selectWarehouseDropDown)
+				//action.WaitVisible(selectWarehouseFirstValue)
+				////action.WaitTime(2)
+				action.Click(selectWarehouseFirstValue)
+				////action.WaitTime(5)
 			}
-			catch(Exception e)
+			else
 			{
-				println("FillTransactionsSection method failed due to :" + e)
-				Assert.fail()
+				println ("Selelct warehouse drop down not present/failed")
+			}
+
+			if(action.IsElementDisplayed(selectBinDropDown))
+			{
+				action.Click(selectBinDropDown)
+				////action.WaitTime(3)
+				action.Click(selectBinFirstValue)
+				////action.WaitTime(3)
+				action.Type(QtyTextField, "5")
+			}
+			else
+			{
+				println ("Selelct Bin drop down not present/failed")
+			}
+			if(action.IsElementDisplayed(SaveBtn)){
+				action.Click(SaveBtn)
+				////action.WaitTime(10)
 
 			}
-		}
-
-		@Keyword
-		public void ClickOnCloseEditMode()
-		{
-			try{
-				action.ScrollToTopOgPage()
-				if(action.IsElementDisplayed(CloseEditModeBtn)){
-					action.Click(CloseEditModeBtn)
-					action.WaitForPageToLoad()
-					//action.WaitTime(10)
-				}
-				else{
-					println ("Close Edit Mode button not present/failed")
-				}
-
-			}
-			catch(Exception e){
-				println("ClickOnCloseEditMode method failed due to :" + e)
-				Assert.fail()
+			else{
+				println ("Save button not present/failed")
 			}
 
 		}
-
-		/*@Keyword
-		 public String SelectSpecificProductTypeAndVerifyUnitCost(String itemPropertyName,String defaultPrice)
-		 {
-		 String unitCostValue = null
-		 try
-		 {
-		 Actions act = new Actions(Driver)
-		 action.Click(productType)
-		 //WebUI.delay(3)
-		 action.Type(productType, itemPropertyName)
-		 //WebUI.delay(3)
-		 act.sendKeys(Keys.ENTER)
-		 //WebUI.delay(5)
-		 unitCostValue = action.GetText(txbUnitCost)
-		 Assert.assertTrue(unitCostValue.equals(defaultPrice))
-		 return unitCostValue
-		 }
-		 catch(Exception e)
-		 {
-		 Assert.fail("SelectProductType method failed due to :" + e)
-		 }
-		 }*/
-
-
-		@Keyword
-		public void SelectSpecificProductType(String itemPropertyName)
+		catch(Exception e)
 		{
-			try
-			{
-				action.Type(txbName, "Test")
+			println("FillTransactionsSection method failed due to :" + e)
+			Assert.fail()
 
-				SelectSuplier()
-
-				SelectPremiseType()
-
-				SelectSalesDivision()
-
-				SelectSeasonalType()
-
-				EnterUnitOfMeasure()
-
-				action.Click(productType)
-				//WebUI.delay(3)
-				action.Type(productType, itemPropertyName)
-				//WebUI.delay(5)
-
-				action.Enter(productType)
-				//WebUI.delay(5)
-				action.Click(saveIconItemInfo)
-				//WebUI.delay(8)
-				/*action.ScrollToBottomOfPage()
-				 action.Click(itemInfoSaveBtnAfterSave)*/
-				//WebUI.delay(5)
-			}
-			catch(Exception e)
-			{
-				Assert.fail("SelectSpecificProductType method failed due to :" + e)
-			}
 		}
+	}
 
-		@Keyword
-		public void VerifyUnitCostPrice(String actualDefoultPrice)
-		{
-			try
-			{
-				String unitCostValue = driver.findElement(By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_radUnitCost']")).getAttribute("value")
-				//WebUI.delay(5)
-				println("**********" + unitCostValue)
-				Assert.assertTrue(unitCostValue.equals(actualDefoultPrice))
+	@Keyword
+	public void ClickOnCloseEditMode()
+	{
+		try{
+			action.ScrollToTopOgPage()
+			if(action.IsElementDisplayed(CloseEditModeBtn)){
+				action.Click(CloseEditModeBtn)
+				action.WaitForPageToLoad()
+				//action.WaitTime(10)
+			}
+			else{
+				println ("Close Edit Mode button not present/failed")
+			}
 
-			}
-			catch(Exception e)
-			{
-				Assert.fail("VerifyUnitCostPrice method failed due to :" + e)
-			}
 		}
-
-
-
-
-
-
+		catch(Exception e){
+			println("ClickOnCloseEditMode method failed due to :" + e)
+			Assert.fail()
+		}
 
 	}
+
+	/*@Keyword
+	 public String SelectSpecificProductTypeAndVerifyUnitCost(String itemPropertyName,String defaultPrice)
+	 {
+	 String unitCostValue = null
+	 try
+	 {
+	 Actions act = new Actions(Driver)
+	 action.Click(productType)
+	 //WebUI.delay(3)
+	 action.Type(productType, itemPropertyName)
+	 //WebUI.delay(3)
+	 act.sendKeys(Keys.ENTER)
+	 //WebUI.delay(5)
+	 unitCostValue = action.GetText(txbUnitCost)
+	 Assert.assertTrue(unitCostValue.equals(defaultPrice))
+	 return unitCostValue
+	 }
+	 catch(Exception e)
+	 {
+	 Assert.fail("SelectProductType method failed due to :" + e)
+	 }
+	 }*/
+
+
+	@Keyword
+	public void SelectSpecificProductType(String itemPropertyName)
+	{
+		try
+		{
+			action.Type(txbName, "Test")
+
+			SelectSuplier()
+
+			SelectPremiseType()
+
+			SelectSalesDivision()
+
+			SelectSeasonalType()
+
+			EnterUnitOfMeasure()
+
+			action.Click(productType)
+			//WebUI.delay(3)
+			action.Type(productType, itemPropertyName)
+			//WebUI.delay(5)
+
+			action.Enter(productType)
+			//WebUI.delay(5)
+			action.Click(saveIconItemInfo)
+			//WebUI.delay(8)
+			/*action.ScrollToBottomOfPage()
+			 action.Click(itemInfoSaveBtnAfterSave)*/
+			//WebUI.delay(5)
+		}
+		catch(Exception e)
+		{
+			Assert.fail("SelectSpecificProductType method failed due to :" + e)
+		}
+	}
+
+	@Keyword
+	public void VerifyUnitCostPrice(String actualDefoultPrice)
+	{
+		try
+		{
+			String unitCostValue = driver.findElement(By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_radUnitCost']")).getAttribute("value")
+			//WebUI.delay(5)
+			println("**********" + unitCostValue)
+			Assert.assertTrue(unitCostValue.equals(actualDefoultPrice))
+
+		}
+		catch(Exception e)
+		{
+			Assert.fail("VerifyUnitCostPrice method failed due to :" + e)
+		}
+	}
+
+
+
+
+
+
+
+}
