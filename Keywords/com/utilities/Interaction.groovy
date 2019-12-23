@@ -401,6 +401,7 @@ public  class Interaction {
 				throw new Exception("Test type is not correct")
 				WebUI.closeBrowser()
 			}
+			println ("TestType---BU---Env are : "+TestType+"---"+BuName+"---"+EnvironmentName)
 		}
 
 		catch (Exception e) {
