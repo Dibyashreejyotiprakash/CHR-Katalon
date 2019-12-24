@@ -74,6 +74,16 @@ public class HomePage {
 
 
 	@Keyword
+	public void VerifyHomePage() {
+		try{
+			action.VerifyCurrentPage("/GraphicMaintenance/GraphicMaintenance.aspx")
+		}
+		catch(Exception e) {
+			Assert.fail("VerifyHomePage failed due to "+ e)
+		}
+	}
+
+	@Keyword
 	public void ClickOnShippinAgents() {
 		try{
 			action.MouseHoverOnElement(systemsetupandmaintenance)

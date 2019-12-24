@@ -110,9 +110,9 @@ public class ManageProgramElementPage {
 			println ("Total Program element Name is ----"+ totalprogramelement)
 			if(totalprogramelement >0) {
 				//for(int i=0;i< allprogramelementsnames.size();i++) {
-					String firstprogramelementname =allprogramelementsnames.get(0).getText()
-					println ("Program Element Name is ------"+ firstprogramelementname)
-					action.Type(searchtxtbox, firstprogramelementname)
+				String firstprogramelementname =allprogramelementsnames.get(0).getText()
+				println ("Program Element Name is ------"+ firstprogramelementname)
+				action.Type(searchtxtbox, firstprogramelementname)
 				//}
 			}
 			else{
@@ -152,30 +152,27 @@ public class ManageProgramElementPage {
 			Assert.fail("Click On Edit failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
-	public void VerifyDownloadPopUp()
-	{
+	public void VerifyDownloadPopUp() {
 		try{
 			action.Click(firstcheckbox)
 			action.Click(downloadlink)
 			action.WaitVisible(downloadprogramslabel)
 			boolean statusofdownloadprogramslabel = action.IsElementDisplayed(downloadprogramslabel)
 			Assert.assertTrue(statusofdownloadprogramslabel)
-			if(statusofdownloadprogramslabel == true)
-			{
+			if(statusofdownloadprogramslabel == true) {
 				boolean statusofyesbtn = action.IsElementEnabled(yesbtn)
 				println ("Status of Yes Button ---"+ statusofyesbtn)
 				Assert.assertTrue(statusofyesbtn)
 				action.Click(yesbtn)
-				
+
 				boolean statusofnobtn = action.IsElementEnabled(nobtn)
 				println ("Status of No Button ---"+ statusofnobtn)
 				Assert.assertTrue(statusofyesbtn)
 			}
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("Verify Download PopUp failed due to "+ e)
 		}
 	}

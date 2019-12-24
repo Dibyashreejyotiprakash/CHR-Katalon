@@ -56,7 +56,7 @@ public class ConsolidatorAddBaseElementPage {
 	public void SearchElementAndAdd() {
 		try{
 			action.Type(searchtextbox, "Test")
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.Click(firstsugestedelement)
 			action.Type(price, "100")
 			action.Type(qtyperpack, "12")
@@ -83,7 +83,7 @@ public class ConsolidatorAddBaseElementPage {
 	public void AddNewElementWithoutAddingOptionalDetails() {
 		try{
 			action.Type(searchtextbox, "Test")
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.Click(firstsugestedelement)
 			action.Type(price, "100")
 			action.Type(qtyperpack, "12")
@@ -109,14 +109,14 @@ public class ConsolidatorAddBaseElementPage {
 
 			boolean statusofaddelementbtn = false
 			action.Type(searchtextbox, "Test")
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.Click(firstsugestedelement)
 
-			WebUI.delay(2)
+			//WebUI.delay(2)
 			/*statusofaddelementbtn = action.IsElementEnabled(addelementbtn)
-			Assert.assertFalse(statusofaddelementbtn)
-			println(action.IsElementEnabled(statusofaddelementbtn))*/
-			
+			 Assert.assertFalse(statusofaddelementbtn)
+			 println(action.IsElementEnabled(statusofaddelementbtn))*/
+
 			action.Type(price, "100")
 			action.Type(qtyperpack, "12")
 
@@ -145,7 +145,7 @@ public class ConsolidatorAddBaseElementPage {
 
 		if(statusofsearchbox == true) {
 			action.Type(searchtextbox, "Test")
-			WebUI.delay(2)
+			//WebUI.delay(2)
 		}
 	}
 }

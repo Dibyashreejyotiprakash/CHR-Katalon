@@ -38,10 +38,10 @@ public class UserSetUpEditPage {
 	public void SearchForDemoUserAndUpdateWithForceCC() {
 		try{
 			action.Type(usermailtextbox, GlobalVariable.iiusersiteusername)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.Enter(usermailtextbox)
 			action.Click(selectlinkfordemodist)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			boolean statusofforcecccheckbox = action.IsElementSelected(forcecccheckbox)
 			if(statusofforcecccheckbox == true) {
 				action.ScrollToBottomOfPage()
