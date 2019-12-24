@@ -59,7 +59,7 @@ public class HomePage {
 	By newpasswordsubmitbtn = By.xpath("//*[@id='ctl00_cphBody_passChange_ChangePasswordContainerID_ChangePasswordPushButton']")
 
 	By jobname = By.xpath("//*[@id='ctl00_cphBody_txtJobName']")
-	
+
 	By salespersonddnvalue = By.xpath("//*[text()='Admin1, Test Name']")
 
 

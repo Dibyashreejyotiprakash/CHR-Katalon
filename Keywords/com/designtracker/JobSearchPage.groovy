@@ -67,7 +67,6 @@ public class JobSearchPage {
 		}
 		catch(Exception e){
 			println("SelectFirstJobID failed due to :"+ e)
-
 		}
 	}
 
@@ -82,7 +81,6 @@ public class JobSearchPage {
 		catch(Exception e){
 			Assert.fail("Click On Select Job Link failed due to "+ e)
 		}
-		
 	}
 
 	@Keyword

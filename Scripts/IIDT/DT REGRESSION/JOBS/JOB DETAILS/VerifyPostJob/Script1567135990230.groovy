@@ -17,8 +17,6 @@ import internal.GlobalVariable as GlobalVariable
 CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamedesigntracker, GlobalVariable.testtyperegression,
 	GlobalVariable.environment)
 
-WebUI.waitForPageLoad(300)
-
 CustomKeywords.'com.designtracker.LoginPage.LoginToDesignTarcker'(GlobalVariable.dtusername, GlobalVariable.dtpassowrd)
 
 CustomKeywords.'com.designtracker.HomePage.VerifyHomePage'()
@@ -30,8 +28,6 @@ CustomKeywords.'com.designtracker.JobNewPage.VerifyNewJobPage'()
 CustomKeywords.'com.designtracker.JobNewPage.CreateNewJob'()
 
 CustomKeywords.'com.designtracker.JobDetailsPage.AddJobNameJobTicketNameAndAssignDesigner'()
-
-WebUI.delay(20)
 
 CustomKeywords.'com.designtracker.JobDetailsPage.AddPartAndBackToJobDetailsPage'()
 

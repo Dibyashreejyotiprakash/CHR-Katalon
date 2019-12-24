@@ -17,18 +17,6 @@
       <testCaseId>Test Cases/IIDT/DT SMOKE/APP ADMIN/Job NoteNotification/VerifyJobNoteNotifyPage</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>13915ca3-f001-4969-a113-1ad82eef4d88</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/DT REGRESSION/JOBS/JOB DETAILS/VerifyCreateJobAndVerifyInDt</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>fe4804b4-3090-465d-ba1e-7162c252add5</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/DT REGRESSION/JOBS/JOB DETAILS/VerifyAssignDesignerToNewlyCreatedJob</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
       <guid>6fee6444-d981-4879-a467-f274328ae03a</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>

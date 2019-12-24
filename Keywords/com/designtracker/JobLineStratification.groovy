@@ -45,8 +45,8 @@ public class JobLineStratification {
 	By updatebtn = By.xpath("//a[@id='ctl00_ctl00_cphMain_cphMain_fvStratificationDetail_UpdateButton']")
 	By updatestrat = By.xpath("//input[@id='ctl00_ctl00_cphMain_cphMain_fvStratificationDetail_STRATIFICATIONTextBox']")
 	By updatesuccess = By.xpath("//li[contains(text(),'Update Succeeded')]")
-	
-	
+
+
 	@Keyword
 	public void JobStratificationValidateFields() {
 
@@ -68,10 +68,8 @@ public class JobLineStratification {
 			action.IsElementDisplayed(corpName)
 			action.SelectByText(corpName, "Instant Impact 4.0 Demo Corp (Dist.)")
 			action.IsElementDisplayed(progressIndicator)
-			WebUI.delay(10)
 			action.SelectByText(market, "Chicago Beverage Systems")
 			action.IsElementDisplayed(progressIndicator)
-			WebUI.delay(7)
 			action.Click(searchbtn)
 			action.WaitVisible(insertbtn)
 			action.Click(insertbtn)
@@ -86,7 +84,6 @@ public class JobLineStratification {
 			action.Click(stratInsert)
 			action.WaitVisible(progressIndicator)
 			action.WaitVisible(searchbtn)
-			WebUI.delay(2)
 		}
 		catch(Exception e) {
 			Assert.fail("AddNewStratification Failed due to "+e)
@@ -97,20 +94,16 @@ public class JobLineStratification {
 	public void ValidateNewStratificationInList(String name) {
 		try {
 			List<WebElement>strat_list =   action.GetElements(stratificationlist)
-
 			List<String> strat_name_List = new ArrayList<String>()
-
 			for (int i=0;i<strat_list.size();i++) {
 				println(strat_list[i].getText())
 				strat_name_List.add(strat_list[i].getText())
 			}
-			
-			if(strat_name_List.contains(name))
-			{
+
+			if(strat_name_List.contains(name)) {
 				println("Strat is present")
 			}
-			else
-			{
+			else {
 				throw new Exception("Strat not present")
 			}
 		}
@@ -118,28 +111,22 @@ public class JobLineStratification {
 			Assert.fail("ValidateNewStratificationInList Failed due to "+e)
 		}
 	}
-	
-	
+
+
 	@Keyword
-	public void ValidateInList()
-	{
-		try
-		{
+	public void ValidateInList() {
+		try {
 			action.IsElementDisplayed(corpName)
 			action.SelectByText(corpName, "Instant Impact 4.0 Demo Corp (Dist.)")
 			action.IsElementDisplayed(progressIndicator)
-			WebUI.delay(10)
 			action.SelectByText(market, "Chicago Beverage Systems")
 			action.IsElementDisplayed(progressIndicator)
-			WebUI.delay(7)
 			action.Click(searchbtn)
 			action.WaitVisible(insertbtn)
 			action.Click(insertbtn)
 			action.WaitVisible(newstratification)
 			action.Click(newstratification)
-
 			String s = action.GenerateRandomAplphabaticString(4)
-
 			String strat_name = "TestStrat"+s
 
 			action.Type(newstratification, strat_name)
@@ -148,70 +135,52 @@ public class JobLineStratification {
 			action.WaitVisible(searchbtn)
 			WebUI.delay(5)
 			ValidateNewStratificationInList(strat_name)
-			
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("ValidateInList Failed due to "+e)
 		}
 	}
-	
-	
+
+
 	@Keyword
-	public void EditStratification()
-	{
-		try
-		{
+	public void EditStratification() {
+		try {
 			action.IsElementDisplayed(corpName)
 			action.SelectByText(corpName, "Instant Impact 4.0 Demo Corp (Dist.)")
 			action.IsElementDisplayed(progressIndicator)
-			WebUI.delay(10)
 			action.SelectByText(market, "Chicago Beverage Systems")
 			action.IsElementDisplayed(progressIndicator)
-			WebUI.delay(7)
 			action.Click(searchbtn)
 			action.WaitVisible(editStrat)
-			WebUI.delay(3)
 			action.Click(editStrat)
 			action.WaitVisible(retiredcheckbox)
 			action.Click(retiredcheckbox)
 			action.Click(updatebtn)
 			action.WaitVisible(updatesuccess)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("EditStratification Failed due to "+e)
 		}
 	}
-	
+
 	@Keyword
-	public void UpdateStratification()
-	{
-		try
-		{
+	public void UpdateStratification() {
+		try {
 			action.IsElementDisplayed(corpName)
 			action.SelectByText(corpName, "Instant Impact 4.0 Demo Corp (Dist.)")
 			action.IsElementDisplayed(progressIndicator)
-			WebUI.delay(10)
 			action.SelectByText(market, "Chicago Beverage Systems")
 			action.IsElementDisplayed(progressIndicator)
-			WebUI.delay(7)
 			action.Click(searchbtn)
 			action.WaitVisible(editStrat)
-			WebUI.delay(3)
 			action.Click(editStrat)
 			action.WaitVisible(retiredcheckbox)
 			action.Clear(updatestrat)
 			action.Type(updatestrat, "TestStrat")
 			action.Click(updatebtn)
 			action.WaitVisible(updatesuccess)
-			
-			
-			
-			
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("UpdateStratification Failed due to "+e)
 		}
 	}

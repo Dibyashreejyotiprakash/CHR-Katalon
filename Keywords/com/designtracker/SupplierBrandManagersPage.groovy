@@ -46,7 +46,6 @@ public class SupplierBrandManagersPage {
 	@Keyword
 	public void VerifyAllFieldsOnPage() {
 		try {
-			WebUI.delay(2)
 			boolean statusofcorpddn  =     action.IsElementDisplayed(corporationddn)
 			Assert.assertTrue(statusofcorpddn, "Corporation dropdown visible")
 			action.SelectByText(corporationddn, "Demo Distributor (QA)")
@@ -64,28 +63,21 @@ public class SupplierBrandManagersPage {
 		try {
 			action.SelectByText(corporationddn, "Demo Distributor (QA)")
 			action.SelectByText(marketddn, "Demo Dist. 1 QA")
-			action.SelectByText(salesPerson, "ADMIN, ADMIN (demoqa@brandmuscle.com)")
+			action.SelectByText(salesPerson, "TESTADMIN, TESTADMIN (demoqa@brandmuscle.com)")
 			action.SelectByText(supplier, "Demo Dist. 1 QA")
+			action.Click(addBtn)
 			if(action.IsDisplayed(delLink)) {
-				WebUI.delay(3)
 				action.Click(delLink)
 				action.AcceptAlert()
 				boolean statusofDelMsg  =     action.IsElementDisplayed(DelMsg)
 				Assert.assertTrue(statusofDelMsg, "statusofDelMsg is visible")
-
-				WebUI.delay(2)
 				action.Click(addBtn)
 			}
 			else {
-				WebUI.delay(2)
 				action.Click(addBtn)
 			}
-
-			WebUI.delay(3)
 			boolean statusofSuccessMsg  =     action.IsElementDisplayed(successSubmitMsg)
 			Assert.assertTrue(statusofSuccessMsg, "successSubmitMsg is visible")
-
-			WebUI.delay(3)
 			action.Click(delLink)
 			action.AcceptAlert()
 			boolean statusofDelMsg  =     action.IsElementDisplayed(DelMsg)
@@ -101,7 +93,7 @@ public class SupplierBrandManagersPage {
 		try {
 			action.SelectByText(corporationddn, "Demo Distributor (QA)")
 			action.SelectByText(marketddn, "Demo Dist. 1 QA")
-			action.SelectByText(salesPerson, "ADMIN, ADMIN (demoqa@brandmuscle.com)")
+			action.SelectByText(salesPerson, "TESTADMIN, TESTADMIN (demoqa@brandmuscle.com)")
 			action.SelectByText(supplier, "Demo Dist. 1 QA")
 
 			List<WebElement> elements = driver.findElements(delLink);

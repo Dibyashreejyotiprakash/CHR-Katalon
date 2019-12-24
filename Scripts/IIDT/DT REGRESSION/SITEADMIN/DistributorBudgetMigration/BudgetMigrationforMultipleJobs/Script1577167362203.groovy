@@ -13,37 +13,26 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.openBrowser('')
-
-WebUI.maximizeWindow()
-
-CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamedesigntracker, GlobalVariable.testtyperegression,
-	GlobalVariable.environment)
-
-WebUI.waitForPageLoad(300)
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamedesigntracker, GlobalVariable.testtyperegression, GlobalVariable.environment)
 
 CustomKeywords.'com.designtracker.LoginPage.LoginToDesignTarcker'(GlobalVariable.dtusername, GlobalVariable.dtpassowrd)
 
 CustomKeywords.'com.designtracker.HomePage.ClickOnNewJob'()
 
-//Create a job
-String jobId = CustomKeywords.'com.designtracker.JobNewPage.VerifyCreateNewJobs1'()
+CustomKeywords.'com.designtracker.JobNewPage.VerifyNewJobPage'()
 
-CustomKeywords.'com.designtracker.jobDetailsPage.AddPartAndBackToJobDetailsPage'()
+CustomKeywords.'com.designtracker.JobNewPage.VerifyCreateNewJobs1'()
 
-CustomKeywords.'com.designtracker.jobDetailsPage.AssignBudgetAndSaveBrands'()
+CustomKeywords.'com.designtracker.JobDetailsPage.AddPartAndBackToJobDetailsPage'()
 
 CustomKeywords.'com.designtracker.HomePage.ClickOnNewJob'()
 
-//Create a job
-String jobId = CustomKeywords.'com.designtracker.JobNewPage.VerifyCreateNewJobs1'()
+CustomKeywords.'com.designtracker.JobNewPage.VerifyCreateNewJobs1'()
 
-CustomKeywords.'com.designtracker.jobDetailsPage.AddPartAndBackToJobDetailsPage'()
+CustomKeywords.'com.designtracker.JobDetailsPage.AddPartAndBackToJobDetailsPage'()
 
-CustomKeywords.'com.designtracker.jobDetailsPage.AssignBudgetAndSaveBrands'()
+CustomKeywords.'com.designtracker.JobDetailsPage.AssignBudgetAndSaveBrands'()
 
 CustomKeywords.'com.designtracker.HomePage.ClickOnDistrBudgetMigration'()
 
 CustomKeywords.'com.designtracker.DistributorBudgetMigrationPage.VerifyBudgetMigrationForMultipleJobs'()
-
-WebUI.closeBrowser()

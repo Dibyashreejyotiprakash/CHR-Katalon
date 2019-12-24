@@ -36,10 +36,8 @@ public class JobSameBrands {
 
 	@Keyword //Verifying job activity tracking page
 	public boolean VerifyJobsSameBrandsReportFields(String jobId){
-
 		try{
 
-			WebUI.delay(8)
 			String actualheader = action.GetText(headerJobsSameBrands)
 			Assert.assertEquals("Jobs With Matching Brands for Job "+jobId, actualheader)
 

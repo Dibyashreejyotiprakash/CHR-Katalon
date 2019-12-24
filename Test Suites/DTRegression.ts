@@ -23,18 +23,6 @@
       <testCaseId>Test Cases/IIDT/DT REGRESSION/SITEADMIN/COMPETITORS/CreateNewCompetitors</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>3e20627f-d459-42b8-90d1-48924f23175f</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/DT REGRESSION/JOBS/JOB DETAILS/VerifyAssignDesignerToNewlyCreatedJob</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>02810cd5-bc19-406f-979f-528d1ff10ad7</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/DT REGRESSION/JOBS/JOB DETAILS/VerifyCreateJobAndVerifyInDt</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
       <guid>1603ee34-b767-4aab-a8b0-414e417e9e06</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
@@ -45,12 +33,6 @@
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/IIDT/DT REGRESSION/JOBS/JOB DETAILS/VerifyJobNameAndJobticketNoteAreManadatory</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>f72869ac-f506-44c6-9d6e-cfbfb3540856</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/DT REGRESSION/JOBS/JOB DETAILS/VerifyNewlyCreateJobStatus</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>3ebc6e41-0172-46e7-8c22-81512d0ee4ff</guid>
@@ -195,12 +177,6 @@
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/IIDT/DT REGRESSION/SITEADMIN/DistributorBudgetMigration/BudgetMigrationforAJob</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>9d93d87f-d855-4007-87ad-a1103294f9d0</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/DT REGRESSION/SITEADMIN/DistributorBudgetMigration/BudgetMigrationforMultipleJobs</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>e126c0bf-dcde-4958-873c-2e1f6b047fc9</guid>

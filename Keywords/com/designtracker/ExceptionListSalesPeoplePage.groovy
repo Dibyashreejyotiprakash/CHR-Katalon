@@ -63,12 +63,9 @@ class ExceptionListSalesPeoplePage {
 	@Keyword
 	public void VerifyAllDropDown() {
 		try {
-			//WebUI.delay(2)
 			boolean statusofcorpddn  =     action.IsElementDisplayed(corporationddn)
 			Assert.assertTrue(statusofcorpddn, "Corporation dropdown visible")
 			action.SelectByText(corporationddn, "Demo Distributor (QA)")
-
-			//WebUI.delay(2)
 			boolean statusofmarketddn  =     action.IsElementDisplayed(corporationddn)
 			Assert.assertTrue(statusofmarketddn, "Market dropdown visible")
 			action.SelectByText(marketddn, "Demo Dist. 1 QA")
@@ -83,20 +80,12 @@ class ExceptionListSalesPeoplePage {
 	public void VerifyInsertSalesPerson() {
 		try {
 			action.SelectByText(corporationddn, "Demo Distributor (QA)")
-
-			//WebUI.delay(3)
 			action.WaitVisible(marketddn)
 			action.SelectByText(marketddn, "Demo Dist. 1 QA")
-
-			//WebUI.delay(3)
 			action.WaitVisible(salespersonddn)
-			action.SelectByText(salespersonddn, "ADMINTEST, ADMIN (demoqa@brandmuscle.com)")
-
-			//WebUI.delay(3)
+			action.SelectByText(salespersonddn, "TESTADMIN, TESTADMIN (demoqa@brandmuscle.com)")
 			action.WaitVisible(insertSelSalesPerBtn)
 			action.Click(insertSelSalesPerBtn)
-
-			//WebUI.delay(3)
 			action.WaitVisible(successInsertMsg)
 			boolean statusofSuccessMsg  =     action.IsElementDisplayed(successInsertMsg)
 			Assert.assertTrue(statusofSuccessMsg, "Success msg for insert is visible")
@@ -127,7 +116,7 @@ class ExceptionListSalesPeoplePage {
 
 			//WebUI.delay(3)
 			action.WaitVisible(salespersonddn)
-			action.SelectByText(salespersonddn, "ADMINTEST, ADMIN (demoqa@brandmuscle.com)")
+			action.SelectByText(salespersonddn, "TESTADMIN, TESTADMIN (demoqa@brandmuscle.com)")
 
 			//WebUI.delay(3)
 			action.WaitVisible(insertSelSalesPerBtn)
@@ -169,7 +158,7 @@ class ExceptionListSalesPeoplePage {
 
 			//WebUI.delay(3)
 			action.WaitVisible(salespersonddn)
-			action.SelectByText(salespersonddn, "ADMINTEST, ADMIN (demoqa@brandmuscle.com)")
+			action.SelectByText(salespersonddn, "TESTADMIN, TESTADMIN (demoqa@brandmuscle.com)")
 
 			//WebUI.delay(3)
 			action.WaitVisible(insertSelSalesPerBtn)
@@ -182,7 +171,7 @@ class ExceptionListSalesPeoplePage {
 
 			//WebUI.delay(3)
 			action.WaitVisible(salespersonddn)
-			action.SelectByText(salespersonddn, "ADMIN, ADMIN (demoqa@brandmuscle.com)")
+			action.SelectByText(salespersonddn, "TESTADMIN, TESTADMIN (demoqa@brandmuscle.com)")
 
 			//WebUI.delay(3)
 			action.WaitVisible(insertSelSalesPerBtn)

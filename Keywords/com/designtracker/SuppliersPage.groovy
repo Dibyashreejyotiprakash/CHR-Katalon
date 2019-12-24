@@ -83,9 +83,7 @@ public class SuppliersPage {
 		try {
 
 			action.SelectByText(corpddn, "Instant Impact 4.0 Demo Corp (Dist.)")
-			WebUI.delay(5)
 			action.SelectByText(marketddn, "Chicago Beverage Systems")
-			WebUI.delay(5)
 
 			boolean statusofsuppliertextbox = action.IsElementDisplayed(suppliernametextbox)
 			Assert.assertTrue(statusofsuppliertextbox)

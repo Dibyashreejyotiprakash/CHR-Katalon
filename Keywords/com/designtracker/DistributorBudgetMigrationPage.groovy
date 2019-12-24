@@ -44,19 +44,19 @@ public class DistributorBudgetMigrationPage {
 	@Keyword
 	public void VerifyAllDropDownInBudgetMigrationPage() {
 		try {
-			WebUI.delay(2)
+
+			action.VerifyCurrentPage("Administration/Market/BudgetMigration.aspx")
+
 			boolean statusofcorpddn  =     action.IsElementDisplayed(corporationddn)
 			Assert.assertTrue(statusofcorpddn, "Corporation dropdown visible")
 			action.SelectByText(corporationddn, "Demo Distributor (QA)")
 
-			WebUI.delay(10)
 			boolean statusofmarketddn  =     action.IsElementDisplayed(marketddn)
 			Assert.assertTrue(statusofmarketddn, "Market dropdown visible")
 			action.SelectByText(marketddn, "Demo Dist. 1 QA")
 		}
 		catch(Exception e) {
-			println ("Verify All DropDown Failed due to "+ e)
-			Assert.fail(e)
+			Assert.fail ("Verify All DropDown Failed due to "+ e)
 		}
 	}
 
@@ -65,23 +65,13 @@ public class DistributorBudgetMigrationPage {
 		try {
 
 			action.SelectByText(corporationddn, "Demo Distributor (QA)")
-
-			WebUI.delay(10)
 			action.SelectByText(marketddn, "Demo Dist. 1 QA")
-
-			WebUI.delay(10)
-			action.SelectByText(fromBudget, "TestBudget1")
-
-			WebUI.delay(5)
+			action.SelectByText(fromBudget, "Test Budget 1")
 			action.Click(checkBoxFirstJobId)
-
-			WebUI.delay(10)
-			action.SelectByText(toBudget, "TestBudget4")
-
-			WebUI.delay(2)
+			action.SelectByText(toBudget, "Test Budget 2")
 			action.Click(submitBtn)
-
 			WebUI.delay(3)
+			action.ScrollToTopOgPage()
 			boolean statusofSuccessMsg  =     action.IsElementDisplayed(successSubmitMsg)
 			Assert.assertTrue(statusofSuccessMsg, "successSubmitMsg is visible")
 		}
@@ -94,23 +84,11 @@ public class DistributorBudgetMigrationPage {
 	public void VerifyBudgetMigrationForMultipleJobs() {
 		try {
 			action.SelectByText(corporationddn, "Demo Distributor (QA)")
-
-			WebUI.delay(10)
 			action.SelectByText(marketddn, "Demo Dist. 1 QA")
-
-			WebUI.delay(10)
-			action.SelectByText(fromBudget, "TestBudget1")
-
-			WebUI.delay(5)
+			action.SelectByText(fromBudget, "Test Budget 1")
 			action.Click(checkBoxAllJobId)
-
-			WebUI.delay(10)
-			action.SelectByText(toBudget, "TestBudget4")
-
-			WebUI.delay(2)
+			action.SelectByText(toBudget, "Test Budget 2")
 			action.Click(submitBtn)
-
-			WebUI.delay(3)
 			boolean statusofSuccessMsg  =     action.IsElementDisplayed(successSubmitMsg)
 			Assert.assertTrue(statusofSuccessMsg, "successSubmitMsg is visible")
 		}
@@ -122,24 +100,12 @@ public class DistributorBudgetMigrationPage {
 	@Keyword
 	public void VerifyBudgetMigrationFailureCase() {
 		try {
-			action.SelectByText(corporationddn, "Instant Impact 4.0 Demo Corp (Dist.)")
-
-			WebUI.delay(10)
-			action.SelectByText(marketddn, "Chicago Beverage Systems")
-
-			WebUI.delay(10)
+			action.SelectByText(corporationddn, "Demo Distributor (QA)")
+			action.SelectByText(marketddn, "Demo Dist. 1 QA")
 			action.SelectByIndex(fromBudget, 1)
-
-			WebUI.delay(5)
 			action.Click(checkBoxFirstJobId)
-
-			WebUI.delay(10)
 			action.SelectByIndex(toBudget, 2)
-
-			WebUI.delay(2)
 			action.Click(submitBtn)
-
-			WebUI.delay(3)
 			boolean statusofSuccessMsg  =     action.IsElementDisplayed(FailedSubmitMsg)
 			Assert.assertTrue(statusofSuccessMsg, "FailedSubmitMsg is visible")
 		}

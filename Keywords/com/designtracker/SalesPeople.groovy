@@ -100,10 +100,8 @@ public class SalesPeople {
 			action.IsElementDisplayed(corpName)
 			action.SelectByText(corpName, "Instant Impact 4.0 Demo Corp (Dist.)")
 			action.WaitVisible(progressIndicator)
-			WebUI.delay(2)
 			action.SelectByText(market, "Chicago Beverage Systems")
 			action.WaitVisible(progressIndicator)
-			WebUI.delay(2)
 			action.Click(addnewsalepersonbtn)
 			action.IsElementDisplayed(insertbtn)
 			action.Click(insertbtn)
@@ -120,10 +118,9 @@ public class SalesPeople {
 			action.IsElementDisplayed(corpName)
 			action.SelectByText(corpName, "Instant Impact 4.0 Demo Corp (Dist.)")
 			action.WaitVisible(progressIndicator)
-			WebUI.delay(5)
+			
 			action.SelectByText(market, "Chicago Beverage Systems")
 			action.WaitVisible(progressIndicator)
-			WebUI.delay(2)
 
 			action.Click(addnewsalepersonbtn)
 			action.WaitVisible(firstname)
@@ -145,7 +142,6 @@ public class SalesPeople {
 			action.Type(zip, "44114")
 			action.Type(phone, "976-976-7676")
 			action.Type(emailaddress, email)
-			WebUI.delay(2)
 			action.Type(password, "go2web")
 			action.Type(salespersonid,id)
 			action.Click(brandmanagerrole)
@@ -169,11 +165,9 @@ public class SalesPeople {
 			action.IsElementDisplayed(corpName)
 			action.SelectByText(corpName, "Instant Impact 4.0 Demo Corp (Dist.)")
 			action.WaitVisible(progressIndicator)
-			WebUI.delay(5)
+			
 			action.SelectByText(market, "Chicago Beverage Systems")
 			action.WaitVisible(progressIndicator)
-			WebUI.delay(2)
-
 			action.Click(addnewsalepersonbtn)
 			action.WaitVisible(firstname)
 
@@ -193,7 +187,6 @@ public class SalesPeople {
 			action.SelectByText(state, "OH")
 			action.Type(zip, "44114")
 			action.Type(emailaddress, email)
-			WebUI.delay(2)
 			action.Type(password, "go2web")
 			action.Type(salespersonid,id)
 			action.Click(brandmanagerrole)
@@ -203,23 +196,17 @@ public class SalesPeople {
 			action.SelectByText(salespersondropdown,"Default - 6250 N. River Rd Suite 9000, Rosemont, IL 60018")
 			action.Click(insertbtn)
 			action.IsElementDisplayed(updatebtn)
-
-
-
 			action.MouseHoverOnElement(siteadmin)
-			WebUI.delay(3)
 			action.Click(salespeople)
 			action.WaitForPageToLoad()
 			action.IsDisplayed(salespeople)
 			action.IsElementDisplayed(corpName)
 			action.SelectByText(corpName, "Instant Impact 4.0 Demo Corp (Dist.)")
 			action.WaitVisible(progressIndicator)
-			WebUI.delay(5)
+			
 			action.SelectByText(market, "Chicago Beverage Systems")
 			action.WaitVisible(progressIndicator)
-			WebUI.delay(2)
 			action.Click(saleperson)
-			WebUI.delay(2)
 			/*List<WebElement>person_list =   action.GetElements(salepersonList)
 			 List<String> person_name_List = new ArrayList<String>()
 			 for (int i=0;i<person_list.size();i++)
@@ -263,7 +250,7 @@ public class SalesPeople {
 			action.IsElementDisplayed(corpName)
 			action.SelectByText(corpName, "Instant Impact 4.0 Demo Corp (Dist.)")
 			action.WaitVisible(progressIndicator)
-			//WebUI.delay(5)
+			//
 			action.SelectByText(market, "Chicago Beverage Systems")
 			action.WaitVisible(progressIndicator)
 			//WebUI.delay(2)

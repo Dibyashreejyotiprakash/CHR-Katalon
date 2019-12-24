@@ -88,7 +88,7 @@ public class JobDetailsPage {
 	By jobbtn = By.xpath("//*[text()=''JOB]")
 	By pricingTab = By.xpath("//span[contains(text(),'PRICING')]")
 	By budgetddn = By.xpath("//input[@id='ctl00_ctl00_cphMain_cphMain_gvBrands_ctl02_ddlBrandBudget_Input']")
-	By budgetname = By.xpath("//li[text()='TestBudget1']")
+	By budgetname = By.xpath("//*[text()='Test Budget 1']")
 	By saveBrandsBtn = By.xpath("//input[@id='ctl00_ctl00_cphMain_cphMain_btnSaveBrandCB']")
 	By succMsgBudgetSaving = By.xpath("//li[contains(text(),'Budget data has been updated successfully.')]")
 	By brandMentionTab = By.xpath("//span[contains(text(),'BRAND MENTIONS')]")
@@ -103,7 +103,6 @@ public class JobDetailsPage {
 	By popupupdateshippinglable = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_lvJobs_ctrl0_JobLine_lblMassShipping']")
 	By popupshippingtypeforjobddn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_lvJobs_ctrl0_JobLine_ddlMSJobShippingType']")
 	By updatebtnforjob = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_lvJobs_ctrl0_JobLine_btnMSJobSubmit']")
-	By popupshippingtypeforjoblineddn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_lvJobs_ctrl0_JobLine_ddlMSJobLineShippingType']")
 	By updatebtnforjobline = By.xpath("ctl00_ctl00_cphMain_cphMain_lvJobs_ctrl0_JobLine_btnMSJobLineSubmit")
 
 	By fisrtshippingtype = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_lvJobs_ctrl0_JobLine_rptrJobLines_ctl00_gvJobShippingLocations_ctl02_lblJobShippingType']")
@@ -322,10 +321,8 @@ public class JobDetailsPage {
 			action.SelectByIndex(printformatddn, 3)
 			action.Type(quantity, "123")
 			action.Click(partsearchbtn)
-			WebUI.delay(2)
 			action.Click(part1)
 			action.Click(insertbtn)
-			WebUI.delay(2)
 			action.Click(jobdetailsbtn)
 			action.WaitForPageToLoad()
 		}
@@ -502,30 +499,16 @@ public class JobDetailsPage {
 	@Keyword
 	public void AssignBudgetAndSaveBrands() {
 		try {
-			action.WaitVisibleDup(brandMentionTab)
 			action.Click(brandMentionTab)
-			action.WaitVisibleDup(jobSearchString)
-			action.Type(jobSearchString,"a")
-			action.WaitVisibleDup(jobSearchBtn)
 			action.Click(jobSearchBtn)
-			action.WaitVisibleDup(availableBrandsddn)
-			//action.SelectByText(availableBrandsddn, "TestBrand")
 			action.Click(availableBrandsddn)
-			action.WaitVisibleDup(addBrandBtn)
 			action.Click(addBrandBtn)
-			action.WaitVisibleDup(saveToAllJobLinesBtn)
 			action.Click(saveToAllJobLinesBtn)
-			action.WaitVisibleDup(pricingTab)
 			action.Click(pricingTab)
 			action.ScrollToBottomOfPage()
-			action.WaitVisibleDup(budgetddn)
 			action.Click(budgetddn)
-			action.WaitVisibleDup(budgetname)
 			action.Click(budgetname)
-			//action.SelectByText(budgetddn, "TestBudget1")
-			action.WaitVisibleDup(saveBrandsBtn)
 			action.Click(saveBrandsBtn)
-			action.WaitVisibleDup(succMsgBudgetSaving)
 			action.Click(succMsgBudgetSaving)
 		}
 		catch(Exception e) {

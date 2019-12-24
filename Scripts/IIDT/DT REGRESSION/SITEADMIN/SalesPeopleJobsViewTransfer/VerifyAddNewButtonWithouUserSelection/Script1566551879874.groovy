@@ -13,14 +13,9 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.openBrowser('')
 
-WebUI.maximizeWindow()
-
-CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameapprovalsdesigntracker, GlobalVariable.testtypesmoke,
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamedesigntracker, GlobalVariable.testtypesmoke,
 	GlobalVariable.environment)
-
-WebUI.waitForPageLoad(300)
 
 CustomKeywords.'com.designtracker.LoginPage.LoginToDesignTarcker'(GlobalVariable.dtusername, GlobalVariable.dtpassowrd)
 
@@ -31,7 +26,5 @@ CustomKeywords.'com.designtracker.HomePage.ClickOnSalesPeopleViewTransferButton'
 CustomKeywords.'com.designtracker.SalesPeopleJobsViewOrTransferPage.VerifyViewTransferPage'()
 
 CustomKeywords.'com.designtracker.SalesPeopleJobsViewOrTransferPage.VerifyAddNewBtnWithoutSelectingUser'()
-
-WebUI.closeBrowser()
 
 

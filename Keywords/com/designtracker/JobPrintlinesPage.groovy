@@ -27,20 +27,20 @@ import com.kms.katalon.core.webui.driver.DriverFactory
 import org.testng.Assert
 
 public class JobPrintlinesPage {
-	
+
 	WebDriver driver = DriverFactory.getWebDriver();
 	Interaction action = new Interaction();
 
-    
+
 	By printLineInfoddn = By.xpath("//img[@id='ctl00_ctl00_cphMain_cphMain_lvJobs_ctrl0_JobLine_rptrJobLines_ctl00_imgJobLineCopy']")
 	By addEditPrintLineLink = By.xpath("//a[@id='ctl00_ctl00_cphMain_cphMain_lvJobs_ctrl0_JobLine_rptrJobLines_ctl00_lbtnCopyLine']")
 	By addPrintLineNameTxtBox = By.xpath("//input[@id='ctl00_ctl00_cphMain_cphMain_fvJobPrintLineDetail_NameTextBox']")
 	By addDescriptionTxtBox = By.xpath("//textarea[@id='ctl00_ctl00_cphMain_cphMain_fvJobPrintLineDetail_txtDescription']")
 	By addPrintLineNameInsertBtn = By.xpath("//input[@id='ctl00_ctl00_cphMain_cphMain_fvJobPrintLineDetail_InsertButton']")
 	By newRecordMsg = By.xpath("//li[contains(text(),'New Record Created!')]")
-	
-	
-	
+
+
+
 	@Keyword
 	public void AddingPrintline() {
 		try {
@@ -50,12 +50,10 @@ public class JobPrintlinesPage {
 			action.Type(addPrintLineNameTxtBox, "testPrintlinename"+action.GenerateRandomAplphabaticString(5))
 			action.Type(addDescriptionTxtBox, "testPrintlinendesc"+action.GenerateRandomAplphabaticString(5))
 			action.Click(addPrintLineNameInsertBtn)
-			Assert.assertTrue(action.IsElementDisplayed(newRecordMsg))	
+			Assert.assertTrue(action.IsElementDisplayed(newRecordMsg))
 		}
 		catch(Exception e) {
 			Assert.fail("Verify Job Details Page failed due to "+ e)
 		}
 	}
-	
-	
 }

@@ -75,7 +75,7 @@ public class BrandsPage {
 	@Keyword
 	public void VerifyBrandsPage() {
 		try {
-					action.VerifyCurrentPage("Brands.aspx")
+			action.VerifyCurrentPage("Brands.aspx")
 		}
 		catch(Exception e) {
 			Assert.fail("Verify Brand Page Failed")

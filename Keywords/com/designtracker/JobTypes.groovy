@@ -67,7 +67,6 @@ public class JobTypes {
 		try {
 			action.SelectByText(corpddn, "Instant Impact 4.0 Demo Corp (Dist.)")
 			action.SelectByText(marketddn, "Chicago Beverage Systems")
-			WebUI.delay(5)
 			boolean statusofvisibiltyoflink = action.IsElementDisplayed(startnewjoblink)
 			Assert.assertTrue(statusofvisibiltyoflink)
 
@@ -87,13 +86,9 @@ public class JobTypes {
 		String newjobtypename = null;
 		try {
 			action.SelectByText(corpddn, "Instant Impact 4.0 Demo Corp (Dist.)")
-			WebUI.delay(10)
 			action.SelectByText(marketddn, "Chicago Beverage Systems")
-			WebUI.delay(5)
 			newjobtypename = action.GenerateRandomAplphabaticString(5)
-			//println ("New Job Type name "+ newjobtypename)
 			action.Type(jobtypename, newjobtypename)
-			WebUI.delay(5)
 			action.Click(createbtn)
 			return newjobtypename;
 		}
@@ -107,10 +102,7 @@ public class JobTypes {
 	public void VerifyNewlyCreatedJobTypeInJobTypesgrid() {
 		try {
 			action.SelectByText(corpddn, "Instant Impact 4.0 Demo Corp (Dist.)")
-			WebUI.delay(10)
 			action.SelectByText(marketddn, "Chicago Beverage Systems")
-			WebUI.delay(5)
-
 			List<WebElement> alljobtype = action.GetElements(jobtypenames)
 			for(int i=0;i< alljobtype.size();i++) {
 				String expectedjobtype = CreateNewJobType()
