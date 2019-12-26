@@ -44,24 +44,53 @@ public class OrderFormItemDetails2Page {
 	By previousbtn = By.id("ctl00_Body_btnPrevious")
 	By myitemsbtn = By.id("ctl00_Body_btnItems")
 	By nextbtn = By.xpath("//*[@id='ctl00_Body_btnNext']")
-
+	By quantityTxtBox = By.xpath("//input[@id='ctl00_Body_txtQuantity']")
+	By quantityTxtEditor = By.xpath("//input[@id='ctl00_Body_QuantityEditor']")
 
 	@Keyword
 	public void AddNewNoteAndClickOnNextBtn() {
 		try {
+			action.ScrollToViewElement(quantityTxtBox)
 			action.WaitUntilElementClickable(addnewnotebtn)
 			action.Click(addnewnotebtn)
-			WebUI.delay(10)
+			//WebUI.delay(10)
 			action.Click(addnewnotetextbox)
 			action.Type(addnewnotetextbox, "Test")
-			WebUI.delay(10)
-			action.ScrollToBottomOfPage()
+			//WebUI.delay(10)
+			action.ScrollToViewElement(addnewnotetextbox)
 			action.WaitVisible(savebtn)
 			action.WaitUntilElementClickable(savebtn)
 			action.Click(savebtn)
-			WebUI.delay(10)
+			//WebUI.delay(10)
+			action.ScrollToViewElement(nextbtn)
 			action.WaitUntilElementClickable(nextbtn)
-			WebUI.delay(10)
+			//WebUI.delay(10)
+			action.Click(nextbtn)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("Add New Note And Click On NextBtn failed due to "+ e)
+		}
+	}
+
+	@Keyword
+	public void AddNewNoteAndClickOnNextBtn1() {
+		try {
+			action.ScrollToViewElement(quantityTxtEditor)
+			action.WaitUntilElementClickable(addnewnotebtn)
+			action.Click(addnewnotebtn)
+			//WebUI.delay(10)
+			action.Click(addnewnotetextbox)
+			action.Type(addnewnotetextbox, "Test")
+			//WebUI.delay(10)
+			action.ScrollToViewElement(addnewnotetextbox)
+			action.WaitVisible(savebtn)
+			action.WaitUntilElementClickable(savebtn)
+			action.Click(savebtn)
+			//WebUI.delay(10)
+			//action.ScrollToViewElement(nextbtn)
+			//action.WaitUntilElementClickable(nextbtn)
+			//WebUI.delay(10)
 			action.Click(nextbtn)
 			action.WaitForPageToLoad()
 		}

@@ -64,9 +64,9 @@ public class OrderFormOrderSumaryPage {
 	@Keyword
 	public void PlaceOrder() {
 		action.ScrollToBottomOfPage()
-		WebUI.delay(10)
+		//WebUI.delay(10)
 		action.WaitUntilElementClickable(completeorderbtn)
-		WebUI.delay(10)
+		//WebUI.delay(10)
 		action.Click(completeorderbtn)
 		action.WaitForPageToLoad()
 	}

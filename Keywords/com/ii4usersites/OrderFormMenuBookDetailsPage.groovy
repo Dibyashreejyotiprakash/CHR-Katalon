@@ -45,7 +45,7 @@ public class OrderFormMenuBookDetailsPage {
 			action.Click(productgroupddn)
 			action.Click(productgroupddnvalue)
 			//action.ScrollToBottomOfPage()
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.ScrollToViewElement(nextbtn)
 			boolean statusofnextbtn = action.IsElementDisplayed(nextbtn)
 			//WebUI.delay(5)
@@ -53,7 +53,7 @@ public class OrderFormMenuBookDetailsPage {
 			if(statusofnextbtn == true) {
 				action.WaitUntilElementClickable(nextbtn)
 				action.Click(nextbtn)
-				WebUI.delay(5)
+				//WebUI.delay(5)
 			}
 		    }
 		catch(Exception e) {

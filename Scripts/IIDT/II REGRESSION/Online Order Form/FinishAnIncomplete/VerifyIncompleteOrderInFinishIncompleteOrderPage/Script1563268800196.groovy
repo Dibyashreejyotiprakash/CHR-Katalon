@@ -13,10 +13,6 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.openBrowser('')
-
-WebUI.maximizeWindow()
-
 CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameiiusersite, GlobalVariable.testtyperegression, GlobalVariable.environment)
 
 CustomKeywords.'com.ii4usersites.LoginPage.LoginToDemoCorp'(GlobalVariable.iiusersiteusername, GlobalVariable.iiusersitepassword)
@@ -27,8 +23,6 @@ CustomKeywords.'com.ii4usersites.OrderFormDefaultPage.ClickonCreateNewCustomOrde
 
 CustomKeywords.'com.ii4usersites.OrderFormOrderHederPage.EnterValuesToFiledsInOrderPageForIncopmleteOrder'()
 
-WebUI.delay(10)
-
 CustomKeywords.'com.ii4usersites.OrderFormItemDetails1Page.LogOutII4'()
 
 CustomKeywords.'com.ii4usersites.LoginPage.LoginToDemoCorp'(GlobalVariable.iiusersiteusername, GlobalVariable.iiusersitepassword)
@@ -38,6 +32,4 @@ CustomKeywords.'com.ii4usersites.HomePage.VerifyHomePage'()
 CustomKeywords.'com.ii4usersites.HomePage.ClickOnOrderForm'()
 
 CustomKeywords.'com.ii4usersites.OrderFormDefaultPage.ClickOnFinishInCompleteButton'()
-
-WebUI.closeBrowser()
 

@@ -87,10 +87,11 @@ public class OrderFormItemDetails1Page {
 	@Keyword
 	public void ClickOnNextBtn() {
 		try {
+			action.ScrollToViewElement(nextbtn)
 			action.WaitUntilElementClickable(nextbtn)
 			action.Click(nextbtn)
 			action.WaitForPageToLoad()
-			WebUI.delay(10)
+			//WebUI.delay(10)
 		}
 		catch(Exception e) {
 			println ("Click On Next Btn failed due to "+ e)
