@@ -119,15 +119,15 @@ public class SalesPeopleJobsViewOrTransferPage {
 	public void TransferJob() {
 		try {
 			action.SelectByText(corpddn, "Instant Impact 4.0 Demo Corp (Dist.)")
-			
+
 			action.SelectByText(marketddn, "Chicago Beverage Systems")
-			
+
 			action.SelectByText(actionddn, "View Jobs")
-			
+
 			action.SelectByText(grantforddn, "ADMIN1, QA (qaadmin1@brandmuscle.com)")
-			
+
 			action.SelectByText(toviewjobfor, "ADMIN1, TEST (testadmin1@brandmuscle.com)")
-			
+
 			boolean statusofaddnewjob = action.IsElementEnabled(addnewbtn)
 			Assert.assertTrue(statusofaddnewjob)
 			action.Click(addnewbtn)
@@ -143,19 +143,18 @@ public class SalesPeopleJobsViewOrTransferPage {
 	public void VerifyUserDisplayOnceAdded() {
 		try {
 			action.SelectByText(corpddn, "Instant Impact 4.0 Demo Corp (Dist.)")
-			
+
 			action.SelectByText(marketddn, "Chicago Beverage Systems")
-			
+
 			action.SelectByText(actionddn, "View Jobs")
-			
+
 			action.SelectByText(grantforddn, "ADMIN2, TEST (testadmin2@brandmuscle.com)")
-			
+
 			action.SelectByText(toviewjobfor, "ADMIN1, TEST (testadmin1@brandmuscle.com)")
-			
+
 			boolean statusofaddnewjob = action.IsElementEnabled(addnewbtn)
 			Assert.assertTrue(statusofaddnewjob)
 			action.Click(addnewbtn)
-			action.WaitVisible(deletebtn)
 			action.Click(deletebtn)
 		}
 		catch(Exception e) {

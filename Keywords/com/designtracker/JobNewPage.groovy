@@ -59,7 +59,7 @@ public class JobNewPage {
 	@Keyword
 	public void VerifyCreateJobBtnWithoutAnySelection() {
 		try {
-			action.WaitVisible(createjobbtn)
+
 			boolean statusofceratejobbtn = action.IsElementEnabled(createjobbtn)
 			Assert.assertTrue(statusofceratejobbtn, "Create New Job Button disabeled")
 		}
@@ -71,23 +71,18 @@ public class JobNewPage {
 	@Keyword
 	public void VerifyAllDropDown() {
 		try {
-			action.WaitVisible(corporationddn)
 			boolean statusofcorpddn  =     action.IsElementDisplayed(corporationddn)
 			Assert.assertTrue(statusofcorpddn, "Corporation dropdown visible")
 
-			action.WaitVisible(marketddn)
 			boolean statusofmarketddn  =     action.IsElementDisplayed(corporationddn)
 			Assert.assertTrue(statusofmarketddn, "Market dropdown visible")
 
-			action.WaitVisible(salespersonddn)
 			boolean statusofsalespersonddn  =     action.IsElementDisplayed(salespersonddn)
 			Assert.assertTrue(statusofsalespersonddn, "Sales Person dropdown visible")
 
-			action.WaitVisible(accountddn)
 			boolean statusofaccountddn  =     action.IsElementDisplayed(accountddn)
 			Assert.assertTrue(statusofsalespersonddn, "Account dropdown dropdown visible")
 
-			action.WaitVisible(jobtypeddn)
 			boolean statusofjobtypeddn  =     action.IsElementDisplayed(jobtypeddn)
 			Assert.assertTrue(statusofsalespersonddn, "Job  dropdown dropdown visible")
 		}
@@ -101,16 +96,16 @@ public class JobNewPage {
 	public void VerifyCreateBtnStatusWithAllSelection() {
 		try {
 			action.WaitVisible(corporationddn)
-			action.SelectByText(corporationddn, "Athens")
+			action.SelectByText(corporationddn, "Demo Distributor (QA)")
 
 			action.WaitVisible(marketddn)
-			action.SelectByText(marketddn, "Athens ")
+			action.SelectByText(marketddn, "Demo Dist. 1 QA")
 
 			action.WaitVisible(salespersonddn)
-			action.SelectByText(salespersonddn, "BUCHANAN, MICKEY (mbuchanana@athensdistributing.com)")
+			action.SelectByText(salespersonddn, "TESTADMIN, TESTADMIN (demoqa@brandmuscle.com)")
 
 			action.WaitVisible(accountddn)
-			action.SelectByText(accountddn, "Angels (NEW ANGELS)")
+			action.SelectByIndex(accountddn, 1)
 
 			action.WaitVisible(jobtypeddn)
 			action.SelectByText(jobtypeddn, "Print Only")
@@ -160,13 +155,13 @@ public class JobNewPage {
 	public void VerifyCreatedNewJobType(String jobtype) {
 
 		action.SelectByText(corporationddn, "Instant Impact 4.0 Demo Corp (Dist.)")
-		
+
 		action.SelectByText(marketddn, "Chicago Beverage Systems")
-		
+
 		action.SelectByText(salespersonddn, "ADMIN1, TEST (testadmin1@brandmuscle.com)")
-		
+
 		action.SelectByIndex(accountddn, 1)
-		
+
 		WebElement wb = driver.findElement(By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_fvNewJob_CorpsAndMarkets_ddlJobType']"))
 		Select sc = new Select(wb);
 		action.SelectByText(jobtypeddn, jobtype)
@@ -203,15 +198,15 @@ public class JobNewPage {
 		try
 		{
 			action.SelectByText(corporationddn, "Instant Impact 4.0 Demo Corp (Dist.)")
-			
+
 			action.SelectByText(marketddn, "Chicago Beverage Systems")
-			
+
 			action.SelectByText(salespersonddn, "ADMIN2, TEST (testadmin2@brandmuscle.com)")
-			
+
 			action.SelectByIndex(accountddn, 1)
-			
+
 			action.SelectByText(jobtypeddn, "Print Only")
-			
+
 			action.Click(createjobbtn)
 		}
 		catch(Exception e)

@@ -109,7 +109,7 @@ public class JobTypes {
 				println ("Newly created job "+ expectedjobtype)
 				String actualjobtype = alljobtype.get(i).getText()
 				println ("Actual Job Type is "+ actualjobtype)
-				WebUI.delay(5)
+				//WebUI.delay(5)
 				if(actualjobtype.contains(expectedjobtype)) {
 					println ("Newly Created Job Type is found "+ expectedjobtype)
 					break

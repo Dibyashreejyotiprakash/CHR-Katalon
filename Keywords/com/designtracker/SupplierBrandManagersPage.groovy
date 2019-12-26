@@ -44,6 +44,18 @@ public class SupplierBrandManagersPage {
 
 
 	@Keyword
+	public void VerifySupplierBrandManagerPage() {
+		try {
+			action.VerifyCurrentPage("Administration/Market/SupplierBrandManagers.aspx")
+		}
+		catch(Exception e) {
+			Assert.fail("Verify Supplier Brand Manager Page Failed due to "+ e)
+		}
+	}
+
+
+
+	@Keyword
 	public void VerifyAllFieldsOnPage() {
 		try {
 			boolean statusofcorpddn  =     action.IsElementDisplayed(corporationddn)
@@ -95,46 +107,29 @@ public class SupplierBrandManagersPage {
 			action.SelectByText(marketddn, "Demo Dist. 1 QA")
 			action.SelectByText(salesPerson, "TESTADMIN, TESTADMIN (demoqa@brandmuscle.com)")
 			action.SelectByText(supplier, "Demo Dist. 1 QA")
-
-			List<WebElement> elements = driver.findElements(delLink);
-			for (int i=0; i<elements.size();i++){
-
-				if(action.IsDisplayed(elements[i])) {
-					action.Click(elements[i])
-					action.AcceptAlert()
-					boolean statusofDelMsg  =     action.IsElementDisplayed(DelMsg)
-					Assert.assertTrue(statusofDelMsg, "statusofDelMsg is visible")
-				}
-				else {
-					break
-				}
+			action.Click(addBtn)
+			if(action.IsDisplayed(delLink)) {
+				action.Click(delLink)
+				action.AcceptAlert()
+				boolean statusofDelMsg  =     action.IsElementDisplayed(DelMsg)
+				Assert.assertTrue(statusofDelMsg, "statusofDelMsg is visible")
+				action.Click(addBtn)
+			}
+			else {
+				action.Click(addBtn)
 			}
 
-			WebUI.delay(2)
-			action.Click(addBtn)
-
-			WebUI.delay(3)
 			boolean statusofSuccessMsg  =     action.IsElementDisplayed(successSubmitMsg)
 			Assert.assertTrue(statusofSuccessMsg, "successSubmitMsg is visible")
-
-			WebUI.delay(5)
 			action.SelectByIndex(salesPerson, 1)
-
-			WebUI.delay(5)
 			action.SelectByText(supplier, "Demo Dist. 1 QA")
-
-			WebUI.delay(2)
 			action.Click(addBtn)
-
-			WebUI.delay(3)
-			//boolean statusofSuccessMsg  =     action.IsElementDisplayed(successSubmitMsg)
 			Assert.assertTrue(action.IsElementDisplayed(successSubmitMsg), "successSubmitMsg is visible")
 
 			List<WebElement> elements1 = driver.findElements(delLink);
 			for (int i=0; i<elements1.size();i++){
 
 				if(action.IsDisplayed(elements1[i])) {
-					WebUI.delay(3)
 					action.Click(elements1[i])
 					action.AcceptAlert()
 					boolean statusofDelMsg  =     action.IsElementDisplayed(DelMsg)
@@ -143,11 +138,10 @@ public class SupplierBrandManagersPage {
 				else {
 					break
 				}
-
 			}
 		}
 		catch(Exception e) {
-			println ("VerifyAddingMultipleSupplierBrandManagers Failed due to "+ e)
+			println ("Verify Adding Multiple Supplier Brand Managers Failed due to "+ e)
 			Assert.fail(e)
 		}
 	}
@@ -157,44 +151,29 @@ public class SupplierBrandManagersPage {
 	public void VerifyDeleteSupplierBrandManager() {
 		try {
 			action.SelectByText(corporationddn, "Demo Distributor (QA)")
-
-			WebUI.delay(8)
 			action.SelectByText(marketddn, "Demo Dist. 1 QA")
-
-			WebUI.delay(5)
-			action.SelectByText(salesPerson, "ADMIN, ADMIN (demoqa@brandmuscle.com)")
-
-			WebUI.delay(5)
+			action.SelectByText(salesPerson, "TESTADMIN, TESTADMIN (demoqa@brandmuscle.com)")
 			action.SelectByText(supplier, "Demo Dist. 1 QA")
-
+			action.Click(addBtn)
 			if(action.IsDisplayed(delLink)) {
-				WebUI.delay(3)
 				action.Click(delLink)
 				action.AcceptAlert()
 				boolean statusofDelMsg  =     action.IsElementDisplayed(DelMsg)
 				Assert.assertTrue(statusofDelMsg, "statusofDelMsg is visible")
-
-				WebUI.delay(2)
 				action.Click(addBtn)
 			}
 			else {
-				WebUI.delay(2)
 				action.Click(addBtn)
 			}
-
-			WebUI.delay(3)
 			boolean statusofSuccessMsg  =     action.IsElementDisplayed(successSubmitMsg)
 			Assert.assertTrue(statusofSuccessMsg, "successSubmitMsg is visible")
-
-			WebUI.delay(3)
 			action.Click(delLink)
 			action.AcceptAlert()
 			boolean statusofDelMsg  =     action.IsElementDisplayed(DelMsg)
 			Assert.assertTrue(statusofDelMsg, "statusofDelMsg is visible")
 		}
 		catch(Exception e) {
-			println ("VerifyDeleteSupplierBrandManager Failed due to "+ e)
-			Assert.fail(e)
+			Assert.fail("VerifyAddingSupplierBrandManager Failed due to "+ e)
 		}
 	}
 
@@ -202,46 +181,30 @@ public class SupplierBrandManagersPage {
 	public void VerifyErrorOnAddingDupSupplierBrandManager() {
 		try {
 			action.SelectByText(corporationddn, "Demo Distributor (QA)")
-
-			WebUI.delay(8)
 			action.SelectByText(marketddn, "Demo Dist. 1 QA")
-
-			WebUI.delay(5)
-			action.SelectByText(salesPerson, "ADMIN, ADMIN (demoqa@brandmuscle.com)")
-
-			WebUI.delay(5)
+			action.SelectByText(salesPerson, "TESTADMIN, TESTADMIN (demoqa@brandmuscle.com)")
 			action.SelectByText(supplier, "Demo Dist. 1 QA")
-
+			action.Click(addBtn)
 			if(action.IsDisplayed(delLink)) {
-				WebUI.delay(3)
 				action.Click(delLink)
 				action.AcceptAlert()
 				boolean statusofDelMsg  =     action.IsElementDisplayed(DelMsg)
 				Assert.assertTrue(statusofDelMsg, "statusofDelMsg is visible")
-
-				WebUI.delay(2)
 				action.Click(addBtn)
 			}
 			else {
-				WebUI.delay(2)
 				action.Click(addBtn)
 			}
 
-			WebUI.delay(3)
 			boolean statusofSuccessMsg  =     action.IsElementDisplayed(successSubmitMsg)
 			Assert.assertTrue(statusofSuccessMsg, "successSubmitMsg is visible")
 
-			WebUI.delay(5)
 			action.SelectByText(supplier, "Demo Dist. 1 QA")
-
-			WebUI.delay(2)
 			action.Click(addBtn)
 
-			WebUI.delay(3)
 			boolean statusofFailedMsg  =     action.IsElementDisplayed(FailedMsgOnDup)
 			Assert.assertTrue(statusofFailedMsg, "statusofFailedMsg is visible")
 
-			WebUI.delay(3)
 			action.Click(delLink)
 			action.AcceptAlert()
 			boolean statusofDelMsg  =     action.IsElementDisplayed(DelMsg)

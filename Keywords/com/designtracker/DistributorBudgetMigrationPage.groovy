@@ -70,7 +70,7 @@ public class DistributorBudgetMigrationPage {
 			action.Click(checkBoxFirstJobId)
 			action.SelectByText(toBudget, "Test Budget 2")
 			action.Click(submitBtn)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.ScrollToTopOgPage()
 			boolean statusofSuccessMsg  =     action.IsElementDisplayed(successSubmitMsg)
 			Assert.assertTrue(statusofSuccessMsg, "successSubmitMsg is visible")

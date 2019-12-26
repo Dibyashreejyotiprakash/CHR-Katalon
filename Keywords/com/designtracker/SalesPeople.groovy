@@ -81,6 +81,17 @@ public class SalesPeople {
 	By uploadaddresslistbtn = By.xpath("//input[@id='ctl00_ctl00_cphMain_cphMain_btnSaveAddressList']")
 
 
+
+	@Keyword
+	public void VerifySalesPeoplePage() {
+		try {
+			action.VerifyCurrentPage("Administration/Market/SalesPeople.aspx")
+		}
+		catch(Exception e) {
+			Assert.fail("Verify Sales People Page Failed due to "+e)
+		}
+	}
+
 	@Keyword
 	public void ValidateSalesPeopleFields() {
 		try {
@@ -115,18 +126,14 @@ public class SalesPeople {
 	@Keyword
 	public void AddNewSalesPeople() {
 		try {
-			action.IsElementDisplayed(corpName)
 			action.SelectByText(corpName, "Instant Impact 4.0 Demo Corp (Dist.)")
-			action.WaitVisible(progressIndicator)
-			
 			action.SelectByText(market, "Chicago Beverage Systems")
-			action.WaitVisible(progressIndicator)
 
 			action.Click(addnewsalepersonbtn)
-			action.WaitVisible(firstname)
 
-			String s = action.GenerateRandomAplphabaNeumericString(4)
-			String id = action.GenerateRandomNumericString(6)
+			String s = action.GenerateRandomAplphabaNeumericString(10)
+			String id = action.GenerateRandomNumericString(10)
+
 			String name1 = "Test" + s
 			String name2 = "Auto" + s
 			String email = "test"+s+"@brandmuscle.com"
@@ -146,14 +153,12 @@ public class SalesPeople {
 			action.Type(salespersonid,id)
 			action.Click(brandmanagerrole)
 			action.Click(chicagobeveragegroup)
-			action.IsElementDisplayed(progressIndicator)
-			action.IsElementDisplayed(testemail)
+			action.ScrollToBottomOfPage()
 			action.SelectByText(salespersondropdown,"Default - 6250 N. River Rd Suite 9000, Rosemont, IL 60018")
 			action.Click(insertbtn)
-			action.IsElementDisplayed(updatebtn)
 		}
 		catch(Exception e) {
-			Assert.fail("AddNewSalesPeople Failed due to "+e)
+			Assert.fail("Add New Sales People Failed due to "+e)
 		}
 	}
 
@@ -162,14 +167,9 @@ public class SalesPeople {
 	public void ValidateNewSalePersonInSalePersonDD() {
 
 		try {
-			action.IsElementDisplayed(corpName)
 			action.SelectByText(corpName, "Instant Impact 4.0 Demo Corp (Dist.)")
-			action.WaitVisible(progressIndicator)
-			
 			action.SelectByText(market, "Chicago Beverage Systems")
-			action.WaitVisible(progressIndicator)
 			action.Click(addnewsalepersonbtn)
-			action.WaitVisible(firstname)
 
 			String s = action.GenerateRandomAplphabaNeumericString(4)
 			String id = action.GenerateRandomNumericString(6)
@@ -191,43 +191,17 @@ public class SalesPeople {
 			action.Type(salespersonid,id)
 			action.Click(brandmanagerrole)
 			action.Click(chicagobeveragegroup)
-			action.IsElementDisplayed(progressIndicator)
-			action.IsElementDisplayed(testemail)
+
 			action.SelectByText(salespersondropdown,"Default - 6250 N. River Rd Suite 9000, Rosemont, IL 60018")
 			action.Click(insertbtn)
-			action.IsElementDisplayed(updatebtn)
 			action.MouseHoverOnElement(siteadmin)
 			action.Click(salespeople)
-			action.WaitForPageToLoad()
-			action.IsDisplayed(salespeople)
-			action.IsElementDisplayed(corpName)
 			action.SelectByText(corpName, "Instant Impact 4.0 Demo Corp (Dist.)")
-			action.WaitVisible(progressIndicator)
-			
 			action.SelectByText(market, "Chicago Beverage Systems")
-			action.WaitVisible(progressIndicator)
 			action.Click(saleperson)
-			/*List<WebElement>person_list =   action.GetElements(salepersonList)
-			 List<String> person_name_List = new ArrayList<String>()
-			 for (int i=0;i<person_list.size();i++)
-			 {
-			 println(person_list[i].getText())
-			 person_name_List.add(person_list[i].getText())
-			 }
-			 for(int j=0;j<person_name_List.size();j++)
-			 {
-			 if(person_name_List)
-			 {
-			 println("User is present")
-			 }
-			 else
-			 {
-			 throw new Exception("User Not Present")
-			 }
-			 }*/
 		}
 		catch(Exception e) {
-			Assert.fail("ValidateNewSalePersonInSalePersonDD Failed due to "+e)
+			Assert.fail("Validate New Sale Person In Sale Person DD Failed due to "+e)
 		}
 	}
 
@@ -236,8 +210,10 @@ public class SalesPeople {
 	public void updateUser() {
 		try {
 			action.Click(budgetmanagerrole)
+			action.ScrollToBottomOfPage()
 			action.Click(updatebtn)
-			action.IsElementDisplayed(updatesuccessmssg)
+			boolean statuofupdatemsg = action.IsElementDisplayed(updatesuccessmssg)
+			Assert.assertTrue(statuofupdatemsg)
 		}
 		catch(Exception e) {
 			Assert.fail("updateUser Failed due to "+e)
@@ -247,25 +223,14 @@ public class SalesPeople {
 	@Keyword
 	public void InsertAddressList() {
 		try {
-			action.IsElementDisplayed(corpName)
 			action.SelectByText(corpName, "Instant Impact 4.0 Demo Corp (Dist.)")
-			action.WaitVisible(progressIndicator)
-			//
 			action.SelectByText(market, "Chicago Beverage Systems")
-			action.WaitVisible(progressIndicator)
-			//WebUI.delay(2)
 			action.SelectByText(saleperson, "ADMIN2, TEST (testadmin2@brandmuscle.com)")
-			action.WaitVisible(updatebtn)
 			action.ScrollToViewElement(insertnewaddresslistlink)
-			action.WaitVisible(insertnewaddresslistlink)
 			action.Click(insertnewaddresslistlink)
-			action.WaitVisible(progressIndicator)
-			action.WaitVisible(listname)
-			action.WaitVisible(selectfilebtn)
 			action.Type(listname, "TestFile")
 			action.Click(selectfilebtn)
 			uploadFile("D:\\Jeremy_Address_List.xls")
-
 		}
 		catch(Exception e) {
 			Assert.fail("InsertAddressList Failed due to "+e)

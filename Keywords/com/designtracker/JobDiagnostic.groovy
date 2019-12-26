@@ -60,7 +60,7 @@ public class JobDiagnostic {
 				}
 				else{
 					action.VerifyCurrentPage("Reports/JobDiagnostic.aspx")
-					WebUI.delay(1)
+					//WebUI.delay(1)
 					action.Type(txtJobID, jobid)
 					action.WaitVisible(btnViewReport)
 					action.Click(btnViewReport)
@@ -84,7 +84,7 @@ public class JobDiagnostic {
 			action.Click(btnViewReport)
 			action.WaitForPageToLoad()
 			//action.WaitVisible(DivisionReport)
-			WebUI.delay(10)
+			//WebUI.delay(10)
 		}
 		catch(Exception e){
 			println("ClickOnViewReportBtn method failed due to :" + e)
@@ -113,7 +113,7 @@ public class JobDiagnostic {
 		try{
 
 			String expectedPageHeader = "Job Diagnostic"
-			WebUI.delay(10)
+			//WebUI.delay(10)
 			String actualheader = action.GetText(headerJobDiagnostic)
 			Assert.assertEquals(expectedPageHeader, actualheader)
 		}

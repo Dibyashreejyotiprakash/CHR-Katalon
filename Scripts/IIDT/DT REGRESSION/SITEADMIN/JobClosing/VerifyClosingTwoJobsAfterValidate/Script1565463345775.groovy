@@ -22,15 +22,11 @@ CustomKeywords.'com.designtracker.LoginPage.LoginToDesignTarcker'(GlobalVariable
 CustomKeywords.'com.designtracker.HomePage.ClickOnNewJob'()
 
 String jobId1 = CustomKeywords.'com.designtracker.JobNewPage.VerifyCreateNewJobs1'()
-println("++++++++++++++"+ jobId1);
 
 CustomKeywords.'com.designtracker.HomePage.ClickOnNewJob'()
 
 String jobId2 = CustomKeywords.'com.designtracker.JobNewPage.VerifyCreateNewJobs1'()
-println("++++++++++++++"+ jobId2);
 
 CustomKeywords.'com.designtracker.HomePage.ClickOnjobclosing'()
 
 CustomKeywords.'com.designtracker.BatchJobClosingPage.VerifyClosingTwoJobs'(jobId1,jobId2)
-
-WebUI.closeBrowser()

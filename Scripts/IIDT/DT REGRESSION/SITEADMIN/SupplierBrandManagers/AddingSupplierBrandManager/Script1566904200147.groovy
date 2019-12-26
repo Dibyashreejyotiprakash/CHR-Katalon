@@ -21,4 +21,6 @@ CustomKeywords.'com.designtracker.LoginPage.LoginToDesignTarcker'(GlobalVariable
 
 CustomKeywords.'com.designtracker.HomePage.ClickOnSupplierBrandManagers'()
 
+CustomKeywords.'com.designtracker.SupplierBrandManagersPage.VerifySupplierBrandManagerPage'()
+
 CustomKeywords.'com.designtracker.SupplierBrandManagersPage.VerifyAddingSupplierBrandManager'()

@@ -66,6 +66,15 @@ public class JobStatusInformation {
 	By colZip = By.xpath("//*[text()='Zip']")
 
 
+	@Keyword
+	public void VerifyJobStatusInfoPage(){
+		try{
+			action.VerifyCurrentPage("Reports/JobStatusInformation.aspx")
+		}
+		catch(Exception e){
+			Assert.fail("Verify Job Status Information Page failed due to "+ e)
+		}
+	}
 
 	@Keyword
 	public void EnterJobID(String jobid) {
@@ -82,9 +91,7 @@ public class JobStatusInformation {
 				}
 				else{
 					action.VerifyCurrentPage("Reports/JobStatusInformation.aspx")
-					WebUI.delay(1)
 					action.Type(txtJobID, jobid)
-					action.WaitVisible(btnViewReport)
 					action.Click(btnViewReport)
 					action.WaitForPageToLoad()
 					VerifyJobStatusReportFields()
@@ -112,7 +119,6 @@ public class JobStatusInformation {
 					driver.quit()
 				}
 				else{
-					action.WaitVisible(btnViewReport)
 					action.Click(btnViewReport)
 					action.WaitForPageToLoad()
 					VerifyJobStatusReportFields()

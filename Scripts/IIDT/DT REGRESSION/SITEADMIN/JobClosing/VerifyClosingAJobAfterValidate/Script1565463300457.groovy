@@ -23,7 +23,6 @@ CustomKeywords.'com.designtracker.HomePage.ClickOnNewJob'()
 
 String jobId = CustomKeywords.'com.designtracker.JobNewPage.VerifyCreateNewJobs1'()
 
-println("++++++++++++++"+jobId);
 CustomKeywords.'com.designtracker.HomePage.ClickOnjobclosing'()
 
 CustomKeywords.'com.designtracker.BatchJobClosingPage.VerifyClosingValidJob'(jobId)

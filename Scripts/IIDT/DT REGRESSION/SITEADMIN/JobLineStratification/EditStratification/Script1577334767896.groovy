@@ -13,24 +13,17 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.openBrowser('')
 
-WebUI.maximizeWindow()
-
-CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamedesigntracker, GlobalVariable.testtyperegression,
-	GlobalVariable.environment)
-
-WebUI.waitForPageLoad(300)
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamedesigntracker, GlobalVariable.testtyperegression, 
+    GlobalVariable.environment)
 
 CustomKeywords.'com.designtracker.LoginPage.LoginToDesignTarcker'(GlobalVariable.dtusername, GlobalVariable.dtpassowrd)
 
-CustomKeywords.'com.designtracker.HomePage.ClickOnNewJob'()
+CustomKeywords.'com.designtracker.HomePage.ClickOnjoblinestratification'()
 
-String jobId = CustomKeywords.'com.designtracker.JobNewPage.VerifyCreateNewJobs1'()
+CustomKeywords.'com.designtracker.JobLineStratification.VerifyJobLineStratificationPage'()
 
-println("++++++++++++++"+jobId);
-CustomKeywords.'com.designtracker.HomePage.ClickOnjobclosing'()
+CustomKeywords.'com.designtracker.JobLineStratification.JobStratificationValidateFields'()
 
-CustomKeywords.'com.designtracker.BatchJobClosingPage.VerifyJobNotEligibleForClose'(jobId)
+CustomKeywords.'com.designtracker.JobLineStratification.EditStratification'()
 
-WebUI.closeBrowser()

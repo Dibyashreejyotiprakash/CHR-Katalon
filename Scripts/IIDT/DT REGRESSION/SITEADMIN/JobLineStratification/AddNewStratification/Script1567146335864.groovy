@@ -21,5 +21,9 @@ CustomKeywords.'com.designtracker.LoginPage.LoginToDesignTarcker'(GlobalVariable
 
 CustomKeywords.'com.designtracker.HomePage.ClickOnjoblinestratification'()
 
+CustomKeywords.'com.designtracker.JobLineStratification.VerifyJobLineStratificationPage'()
+
+CustomKeywords.'com.designtracker.JobLineStratification.JobStratificationValidateFields'()
+
 CustomKeywords.'com.designtracker.JobLineStratification.AddNewStratification'()
 

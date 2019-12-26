@@ -223,9 +223,9 @@ public class JobDetailsPage {
 			action.ScrollToViewElement(designerddn)
 			action.WaitVisible(designerddn)
 			action.SelectByIndex(designerddn, 1)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(savejobinfobtn)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			boolean statusofsuccessmsg = action.IsElementDisplayed(sccessfullupdatemsg)
 			Assert.assertTrue(statusofsuccessmsg)
 			String msg = action.GetText(sccessfullupdatemsg)
@@ -365,7 +365,7 @@ public class JobDetailsPage {
 		try{
 
 			expectedaddonprice = action.GetText(firstaddonprice)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 
 			return expectedaddonprice
 		}
@@ -521,12 +521,12 @@ public class JobDetailsPage {
 	{
 		try{
 			action.ScrollToViewElement(updateshippinglink)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(updateshippinglink)
 			action.WaitVisible(popupupdateshippinglable)
 			action.SelectByIndex(popupshippingtypeforjobddn, 2)
 			action.Click(updatebtnforjob)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.ScrollToViewElement(fisrtshippingtype)
 			String firstshippingtypetext = action.GetText(fisrtshippingtype)
 
@@ -552,13 +552,13 @@ public class JobDetailsPage {
 	{
 		try{
 			action.ScrollToViewElement(updateshippinglink)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(updateshippinglink)
 			action.WaitVisible(popupupdateshippinglable)
 
 			action.SelectByIndex(popupshippingtypeforjoblineddn, 2)
 			action.Click(updatebtnforjobline)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 
 			action.ScrollToViewElement(fisrtshippingtype)
 			String firstshippingtypetext = action.GetText(fisrtshippingtype)

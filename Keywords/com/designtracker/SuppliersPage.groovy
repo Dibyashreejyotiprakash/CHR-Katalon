@@ -50,6 +50,7 @@ public class SuppliersPage {
 	@Keyword
 	public void VerifySuppliersPage() {
 		try {
+			action.VerifyCurrentPage("Administration/Market/MarketSupplier.aspx")
 			String currenturl = action.GetCurrentURL();
 			if(currenturl.contains("MarketSupplier.aspx")) {
 				println ("Suppliers page is verified");

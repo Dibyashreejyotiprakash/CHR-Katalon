@@ -92,7 +92,7 @@ public class JobActivityTracking {
 				}
 				else{
 					action.VerifyCurrentPage("Reports/JobDiagnostic.aspx")
-					WebUI.delay(1)
+					//WebUI.delay(1)
 					action.Type(txtJobID, jobid)
 					action.WaitVisible(btnViewReport)
 					action.Click(btnViewReport)
@@ -219,7 +219,7 @@ public class JobActivityTracking {
 		try{
 
 			String expectedPageHeader = "Job Activity Tracking"
-			WebUI.delay(10)
+			//WebUI.delay(10)
 			String actualheader = action.GetText(headerJobActivityTracking)
 			Assert.assertEquals(expectedPageHeader, actualheader)
 		}

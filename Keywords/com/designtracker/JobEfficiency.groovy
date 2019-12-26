@@ -28,17 +28,8 @@ import com.kms.katalon.core.webui.driver.DriverFactory
 
 public class JobEfficiency {
 
-
-
-
 	Interaction action = new Interaction();
 	WebDriver driver = DriverFactory.getWebDriver()
-
-
-
-
-
-
 
 	By txtJobID = By.xpath("//*[@id='txtJobId']")
 	By btnViewReport = By.xpath("//*[@id='btnSubmit']")
@@ -51,14 +42,6 @@ public class JobEfficiency {
 	By dueDate = By.xpath("//*[text()='Due Date:']")
 	By coordinator = By.xpath("//*[text()='Coordinator:']")
 	By designer = By.xpath("//*[text()='Designer:']")
-
-
-
-
-
-
-
-
 
 
 
@@ -79,7 +62,6 @@ public class JobEfficiency {
 					action.VerifyCurrentPage("Reports/JobEfficiency.aspx")
 					WebUI.delay(1)
 					action.Type(txtJobID, jobid)
-					action.WaitVisible(btnViewReport)
 					action.Click(btnViewReport)
 					action.WaitForPageToLoad()
 				}
@@ -101,7 +83,6 @@ public class JobEfficiency {
 			action.Click(btnViewReport)
 			action.WaitForPageToLoad()
 			action.WaitVisible(headerJobEfficiency)
-			WebUI.delay(10)
 		}
 		catch(Exception e){
 			println("ClickOnViewReportBtn method failed due to :" + e)
@@ -125,14 +106,10 @@ public class JobEfficiency {
 
 
 	@Keyword //Verifying job activity tracking page
-	public boolean VerifyJobEfficiencyPage(){
+	public void VerifyJobEfficiencyPage(){
 
 		try{
-
-			String expectedPageHeader = "Job Efficiency"
-			WebUI.delay(10)
-			String actualheader = action.GetText(headerJobEfficiency)
-			Assert.assertEquals(expectedPageHeader, actualheader)
+			action.VerifyCurrentPage("Reports/JobEfficiency.aspx")
 		}
 		catch(Exception e){
 			println("VerifyJobEfficiencyPage method failed due to :" + e)
