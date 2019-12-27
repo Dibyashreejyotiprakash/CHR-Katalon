@@ -21,7 +21,7 @@ CustomKeywords.'com.ii4usersites.HomePage.ClickOnPosTemplate'()
 
 CustomKeywords.'com.ii4usersites.ItemSearchPage.ClickOnVariableTemplate'()
 
-CustomKeywords.'com.ii4usersites.ItemDetailsPage.SetVariableTemplateLayout'()
+CustomKeywords.'com.ii4usersites.ItemDetailsPage.ClickOnCreateYourOwnDesign'()
 
-CustomKeywords.'com.ii4usersites.ItemDetailsPage.SelectItemType'()
+CustomKeywords.'com.ii4usersites.CreateDesignPage.ClickOnPreviewChangesButton'()
 

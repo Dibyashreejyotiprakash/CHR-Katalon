@@ -19,5 +19,5 @@ CustomKeywords.'com.iiadmin.LoginPage.LoginToIIAdmin'(GlobalVariable.iiadminuser
 
 CustomKeywords.'com.iiadmin.EditItemsPage.NavigateToCorp300'()
 
-CustomKeywords.'com.iiadmin.EditItemsPage.AddLogoForDistributor'()
+
 

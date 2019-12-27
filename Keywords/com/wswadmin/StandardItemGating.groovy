@@ -36,12 +36,14 @@ public class StandardItemGating {
 	LoginPage l = new LoginPage()
 	HomePage hm = new HomePage()
 	ItemSearchpage im = new ItemSearchpage()
-	
+
 
 
 	By corpddn = By.xpath(".//*[@id='ctl00_cphMain_rcbCorporation']/span/button")
+	By corpddnvalue = By.xpath("//*[text()='300 - Instant Impact 4.0 Demo Corp (Dist.)']")
 	By distributorddn = By.xpath(".//*[@id='ctl00_cphMain_rcbDistributor']/span/button")
 	By groupddn = By.xpath(".//*[@id='ctl00_cphMain_rcbUserGroups']/span/button")
+	By addnewgroupvalue = By.xpath("//*[text()='+ Add New']")
 	By chicagobeverage = By.xpath("//span[contains(text(),'Chicago Beverage Systems')]")
 	By email = By.xpath("//label[contains(text(),'(test123@brandmuscle.com)')]")
 	By distributorcorpval = By.xpath("//li[contains(text(),'300 - Instant Impact')]")
@@ -56,7 +58,9 @@ public class StandardItemGating {
 	By brandnamemetatagcount = By.xpath("//div[@id='10']")
 	By itemgatingcategory = By.xpath("//span[text()='Item Gating']")
 	
-	
+	By groupnametextbox = By.xpath("//*[@id='ctl00_cphMain_txtGroupName']")
+	By savebtn = By.xpath("//*[@id='ctl00_cphMain_rbtnSave']")
+
 	@Keyword
 	public void ValidateUserOnWswAdminForDistributor() {
 		try {
@@ -106,35 +110,24 @@ public class StandardItemGating {
 	}
 
 	@Keyword
-	public void CreateItemGatingGroupMetatag() 
-	{
+	public void CreateItemGatingGroupMetatag() {
 		try {
-			action.WaitVisible(corpddn)
-			action.WaitVisible(distributorddn)
-			WebUI.delay(2)
 			action.Click(corpddn)
-			WebUI.delay(2)
-			action.Click(distributorcorpval)
-			WebUI.delay(6)
+			action.Type(corpddn, "300 - Instant Impact 4.0 Demo Corp (Dist.)")
 			action.Click(distributorddn)
-			WebUI.delay(2)
 			action.Click(distributorval)
-			WebUI.delay(4)
 			action.Click(groupddn)
-			WebUI.delay(4)
 
 			List<WebElement> listname = action.GetElements(groupmetataglist)
 
 			List<String> metatag_names = new ArrayList<String>()
 
-			for (int i=0;i <listname.size();i++) 
-			{
+			for (int i=0;i <listname.size();i++) {
 				metatag_names.add(listname[i].getText())
 			}
 
 			/*action.GetUrl(GlobalVariable.bunamewswadmin, GlobalVariable.testtyperegression, GlobalVariable.environment)
-			
-			l.WSWlogin(GlobalVariable.wswadminusername,GlobalVariable.wswpassword)*/
+			 l.WSWlogin(GlobalVariable.wswadminusername,GlobalVariable.wswpassword)*/
 			WebUI.delay(3)
 			hm.NavigateToItemSearchPage()
 			WebUI.delay(3)
@@ -145,27 +138,45 @@ public class StandardItemGating {
 			WebUI.delay(8)
 			List<WebElement> itemgatingmetatag = action.GetElements(itemgatingmetatags)
 			println("Below List")
-			
+
 			for (int j=0;j<itemgatingmetatag.size();j++)
 			{
-				   //println("Gorup Name -->"+metatag_names[j])
-				   println("Metatag name-->"+itemgatingmetatag[j].getText())
-				
-					
+				//println("Gorup Name -->"+metatag_names[j])
+				println("Metatag name-->"+itemgatingmetatag[j].getText())
 
-             }
-			
-			
-			
-								
+
+
+			}
+
+
+
+
 		}
-			
-		
-				
-	
-		catch(Exception e) 
+
+
+
+
+		catch(Exception e)
 		{
 			Assert.fail("CreateItemGatingGroupMetatag Failed due to"+e)
+		}
+	}
+	
+	@Keyword
+	public void VerifyCreateItemGatingGroup(){
+		try{
+			action.Click(corpddn)
+			action.Click(corpddnvalue)
+			action.Click(distributorddn)
+			action.Click(distributorval)
+			action.Click(groupddn)
+			action.Click(addnewgroupvalue)
+			String newgroup = action.GenerateRandomAplphabaticString(10)
+			action.Type(groupnametextbox,newgroup)
+			action.Click(savebtn)
+		}
+		catch(Exception e){
+			Assert.fail("Verify Create Item Gating Group failed due to "+ e)
 		}
 	}
 }

@@ -19,5 +19,5 @@ CustomKeywords.'com.wswadmin.LoginPage.WSWlogin'(GlobalVariable.wswadminusername
 
 CustomKeywords.'com.wswadmin.HomePage.NavigateToItemGatingGroupManagement'()
 
-CustomKeywords.'com.wswadmin.StandardItemGating.CreateItemGatingGroupMetatag'()
+CustomKeywords.'com.wswadmin.StandardItemGating.VerifyCreateItemGatingGroup'()
 

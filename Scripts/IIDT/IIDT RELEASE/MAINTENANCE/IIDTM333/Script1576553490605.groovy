@@ -16,7 +16,7 @@ import internal.GlobalVariable as GlobalVariable
 CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamedesigntracker, GlobalVariable.testtyperegression, 
     GlobalVariable.environment)
 
-CustomKeywords.'com.designtracker.LoginPage.LoginToDesignTarcker'('dibyashree.jyoti@brandmuscle.com', 'chr@123456')
+CustomKeywords.'com.designtracker.LoginPage.LoginToDesignTarcker'(GlobalVariable.dtusername, GlobalVariable.dtpassowrd)
 
 CustomKeywords.'com.designtracker.HomePage.ClickOnNewJob'()
 

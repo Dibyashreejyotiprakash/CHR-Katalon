@@ -306,12 +306,10 @@ public class EditItemsPage {
 			Assert.fail("AssociateDDPartToTemplate failed due to "+e)
 		}
 	}
-	
+
 	@Keyword
-	public void MakeTemplateAsStaticCoupon()
-	{
-		try
-		{
+	public void MakeTemplateAsStaticCoupon() {
+		try {
 			action.WaitVisible(edittemplate)
 			action.Click(edittemplate)
 			action.WaitVisible(templatesavebtn)
@@ -320,10 +318,8 @@ public class EditItemsPage {
 			action.Click(templatesavebtn)
 			action.WaitVisible(updatetempsuccessmssg)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("MakeTemplateAsStaticCoupon failed due to "+e)
 		}
-		
 	}
 }
