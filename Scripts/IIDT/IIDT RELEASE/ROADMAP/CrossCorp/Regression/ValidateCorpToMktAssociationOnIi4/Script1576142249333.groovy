@@ -19,9 +19,11 @@ CustomKeywords.'com.wswadmin.LoginPage.WSWlogin'(GlobalVariable.wswadminusername
 
 CustomKeywords.'com.wswadmin.HomePage.NavigateToII4CrossCorp'()
 
-CustomKeywords.'com.wswadmin.ii4crosscorpadmin.CreateCorpToCorpAssociation'()
+CustomKeywords.'com.wswadmin.ii4crosscorpadmin.CreateCorpToMarketAssociation'()
 
-CustomKeywords.'com.ii4usersites.LoginPage.LoginToInstantImpactDist'('testadmin2@brandmuscle.com', 'go2web')
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameiiusersite, GlobalVariable.testtyperegression, GlobalVariable.environment)
+
+CustomKeywords.'com.ii4usersites.LoginPage.LoginToInstantImpactDist'('testadmin1@brandmuscle.com', 'go2web')
 
 CustomKeywords.'com.ii4usersites.HomePage.ClickOnPosTemplate'()
 

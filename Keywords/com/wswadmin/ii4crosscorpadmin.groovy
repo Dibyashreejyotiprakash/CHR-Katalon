@@ -243,8 +243,10 @@ public class ii4crosscorpadmin
 				action.WaitVisible(templatesearchbox)
 				action.Click(selectallchkbox)
 				action.Type(templatesearchbox, "132061")
-				action.WaitVisible(ddtemplatetoclick)
+				//action.WaitVisible(ddtemplatetoclick)
+				action.ScrollToViewElement(selectallchkbox)
 				action.Click(ddtemplatetoclick)
+				//action.ScrollToViewElement(saveandexitbtn)
 				action.Click(saveandexitbtn)
 			}
 
@@ -456,7 +458,8 @@ public class ii4crosscorpadmin
 			{
 				action.Click(corptocorpchkbox)
 				action.Click(choosetemplatebtn)
-				action.WaitVisible(templatesearchbox)
+				//action.WaitVisible(templatesearchbox)
+				action.ScrollToViewElement(selectallchkbox)
 				action.Click(selectallchkbox)
 				action.Type(templatesearchbox, "132061")
 				action.WaitVisible(ddtemplatetoclick)
@@ -527,7 +530,8 @@ public class ii4crosscorpadmin
 				action.WaitVisible(templatesearchbox)
 				action.Click(selectallchkbox)
 				action.Type(templatesearchbox, "132061")
-				action.WaitVisible(ddtemplatetoclick)
+				//action.WaitVisible(ddtemplatetoclick)
+				action.ScrollToViewElement(selectallchkbox)
 				action.Click(ddtemplatetoclick)
 				action.Click(saveandexitbtn)
 

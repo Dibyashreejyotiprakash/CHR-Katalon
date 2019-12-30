@@ -72,9 +72,10 @@ public class CloneJobSearchPage {
 		boolean statusofexpandbtn = action.IsElementEnabled(expandbtn)
 		if(statusofexpandbtn == true) {
 			action.Click(expandbtn)
-			WebUI.delay(10)
+			//WebUI.delay(10)
+			action.ScrollToViewElement(selectcheckbox)
 			action.Click(selectcheckbox)
-			WebUI.delay(10)
+			//WebUI.delay(10)
 			action.Click(addselecteditems)
 		}
 	}
@@ -84,9 +85,10 @@ public class CloneJobSearchPage {
 		boolean statusofexpandbtn = action.IsElementEnabled(expandbtn)
 		if(statusofexpandbtn == true) {
 			action.Click(expandbtn)
-			WebUI.delay(10)
+			//WebUI.delay(10)
+			action.ScrollToViewElement(addselecteditems)
 			action.Click(addselecteditems)
-			WebUI.delay(10)
+			//WebUI.delay(10)
 			boolean statusoferrormsg = action.IsElementDisplayed(withoutselectionitemerrormsg)
 			if(statusoferrormsg == true) {
 				println ("Error message is appearing")

@@ -39,8 +39,9 @@ public class OrderFormShiipingDetailsPage {
 	public void ClickOnNextBtn() {
 		try {
 			action.Refresh()
+			action.ScrollToViewElement(nextbtn)
 			action.WaitUntilElementClickable(nextbtn)
-			WebUI.delay(10)
+			//WebUI.delay(10)
 			action.Click(nextbtn)
 			action.WaitForPageToLoad()
 		}

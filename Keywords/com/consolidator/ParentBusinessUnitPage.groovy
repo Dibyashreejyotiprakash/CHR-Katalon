@@ -34,20 +34,20 @@ public class ParentBusinessUnitPage {
 	By childBUDropdown = By.xpath("//*[@id='MainContent_MainContent_drpChildBusinessUnit']")
 	By SiteConfigSettingMenu = By.xpath("//*[text()='Site Configuration']")
 	By ConfigurationSetting = By.xpath("//*[text()='Configuration Settings']")
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	@Keyword
 	public void SelectParentBusinessUnit() {
@@ -63,13 +63,11 @@ public class ParentBusinessUnitPage {
 			throw e;
 		}
 	}
-	
+
 	@Keyword
-	public void SelectParentAndChildBU()
-	{
-		try
-		{
-			
+	public void SelectParentAndChildBU() {
+		try {
+
 			action.WaitVisible(ParentBuDropDown);
 			action.SelectByValue(ParentBuDropDown, "296")
 			action.WaitVisible(childBUDropdown)
@@ -77,44 +75,40 @@ public class ParentBusinessUnitPage {
 			action.WaitVisible(SubmitBtn);
 			action.Click(SubmitBtn);
 			action.WaitForPageToLoad();
-			
-			
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			println ("SelectParentAndChildBU method failed due to :" + e)
 			Assert.fail()
-			
 		}
 	}
-	
-	
-	
+
+
+
 	//@Keyword
 	//public void SelectConfigurationSetting(){
 	//	try{
 	//		action.MouseHoverOnElement(SiteConfigSettingMenu)
 	//		action.Click(ConfigurationSetting)
-	//		
+	//
 	//	}
 	//	catch(Exception e){
 	//		println ("SelectConfigurationSetting method failed due to :" + e)
 	//		Assert.fail()
-	//		
+	//
 	//	}
 	//}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

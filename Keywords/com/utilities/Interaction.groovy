@@ -927,6 +927,7 @@ public  class Interaction {
 	public void SelectByIndex(By by, int index)
 	{
 		WaitVisible(by);
+		WaitVisibleDup(by);
 		WebElement elementToHover = driver.findElement(by);
 		Select select = new Select(elementToHover)
 		select.selectByIndex(index)

@@ -13,9 +13,20 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.openBrowser('')
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamedesigntracker, GlobalVariable.testtyperegression, 
+    GlobalVariable.environment)
 
-WebUI.maximizeWindow()
+CustomKeywords.'com.designtracker.LoginPage.LoginToDesignTarcker'(GlobalVariable.dtusername, GlobalVariable.dtpassowrd)
+
+CustomKeywords.'com.designtracker.HomePage.VerifyHomePage'()
+
+CustomKeywords.'com.designtracker.HomePage.ClickOnNewJob'()
+
+CustomKeywords.'com.designtracker.JobNewPage.VerifyNewJobPage'()
+
+String dtJobId = CustomKeywords.'com.designtracker.JobNewPage.VerifyCreateNewJobs1'()
+
+CustomKeywords.'com.designtracker.JobDetailsPage.AddPartAndBackToJobDetailsPage'()
 
 CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameiiusersite, GlobalVariable.testtyperegression, GlobalVariable.environment)
 
@@ -29,7 +40,5 @@ CustomKeywords.'com.ii4usersites.CloneOrderHeaderPage.EnterValuesToFiledsInOrder
 
 CustomKeywords.'com.ii4usersites.CloneJobSearchPage.VerifyJobSearchPage'()
 
-CustomKeywords.'com.ii4usersites.CloneJobSearchPage.VeriftDtJobSearch'(GlobalVariable.dtjobidforcloning)
-
-WebUI.closeBrowser()
+CustomKeywords.'com.ii4usersites.CloneJobSearchPage.VeriftDtJobSearch'(dtJobId)
 

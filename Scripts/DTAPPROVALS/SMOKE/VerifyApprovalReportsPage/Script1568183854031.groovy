@@ -10,6 +10,8 @@ CustomKeywords.'com.approvals.LoginPage.ApprovalLogin'(GlobalVariable.approvalus
 
 CustomKeywords.'com.approvals.HomePage.VerifyApprovalHomePage'()
 
+CustomKeywords.'com.approvals.HomePage.ClickOnReportsButton'()
+
 CustomKeywords.'com.approvals.Reports.VerifyReportsPage'()
 
 

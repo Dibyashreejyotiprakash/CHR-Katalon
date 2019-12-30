@@ -95,10 +95,10 @@ class ItemSearchPage {
 	By chkbxVariabletype = By.id("ctl00_Body_rptFilterGroups_ctrl4_cblFilterList_1")
 
 	By template = By.xpath("(//*[@href='/POS/ItemDetails.aspx?tid=130722'])[1]")
-	By variabletemplate = By.xpath("(//*[@href='/POS/ItemDetails.aspx?tid=130719'])[1]")
+	By variabletemplate = By.xpath("(//*[@href='/POS/ItemDetails.aspx?tid=130719'])[2]")
 	By ordernowbtn = By.xpath("//*[@id='Body_btnOrderNow']")
 	By createdesignbtn = By.xpath("//*[@id='Body_btnProductDesign']")
-	By splseemorebtn = By.xpath("//a[@id = 'ctl00_Body_rptFilterGroups_ctrl5_lbtnFilterListExpand']")
+	By splseemorebtn = By.xpath("//a[@id='ctl00_Body_rptFilterGroups_ctrl4_lbtnFilterListExpand']")
 	By digitaldownloadcheckbox = By.xpath("(//label[contains(text(),'Digital Download')])[1]//preceding-sibling::input")
 	By savebtn = By.xpath("//input[@id='ctl00_Body_RadWindow1_C_btnSave']")
 	By ddtemplate = By.xpath("//span[contains(text(),'108477')]//preceding-sibling::a")
@@ -112,6 +112,7 @@ class ItemSearchPage {
 	By savedesignnobtn = By.xpath("//div[@class = 'confirmInnerBox']//div[2]/a[2]")
 	By templatetype = By.xpath("//span[contains(text(),'Template Type')]")
 	By templateimage = By.xpath("//img[@id='ctl00_Body_rlvSearchResults_ctrl1_imgThumbnail']")
+	By itemCountTxt = By.xpath("//span[@id='Body_lblItemCount']")
 
 
 
@@ -232,7 +233,8 @@ class ItemSearchPage {
 		try
 		{
 
-			action.WaitVisible(variabletemplate)
+			//action.WaitVisible(variabletemplate)
+			action.ScrollToViewElement(itemCountTxt)
 			action.Click(variabletemplate)
 			action.WaitForPageToLoad()
 		}
@@ -308,17 +310,17 @@ class ItemSearchPage {
 	{
 		try
 		{
-			action.WaitVisible(splseemorebtn)
+			//action.WaitVisible(splseemorebtn)
 			action.ScrollToViewElement(templatetype)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(splseemorebtn)
-			action.WaitVisible(digitaldownloadcheckbox)
-			action.ScrollToViewElement(digitaldownloadcheckbox)
-			WebUI.delay(3)
+			//action.WaitVisible(digitaldownloadcheckbox)
+			//action.ScrollToViewElement(digitaldownloadcheckbox)
+			//WebUI.delay(3)
 			action.Click(digitaldownloadcheckbox)
-			action.WaitVisible(savebtn)
-			action.ScrollToViewElement(savebtn)
-			WebUI.delay(3)
+			//action.WaitVisible(savebtn)
+			//action.ScrollToViewElement(savebtn)
+			//WebUI.delay(3)
 			action.Click(savebtn)
 			action.WaitVisible(ddtemplate)
 		}
@@ -410,9 +412,9 @@ class ItemSearchPage {
 			action.WaitVisible(previewimgbtn)
 			//action.ScrollToViewElement(previewimgbtn)
 			action.ScrollToBottomOfPage()
-			WebUI.delay(2)
+			//WebUI.delay(2)
 			action.Click(previewimgbtn)
-			WebUI.delay(20)
+			//WebUI.delay(20)
 			action.Click(nextstepbtn)
 			action.WaitVisible(savedesignnobtn)
 			action.Click(savedesignnobtn)

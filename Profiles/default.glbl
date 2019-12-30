@@ -436,7 +436,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'https://proofs.brandmuscle.net/Login.aspx'</initValue>
+      <initValue>'https://proofgallery.brandmuscle.net/Login.aspx'</initValue>
       <name>proofgalleryPROD</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
