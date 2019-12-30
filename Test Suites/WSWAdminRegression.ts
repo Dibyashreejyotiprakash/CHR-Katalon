@@ -35,36 +35,6 @@
       <testCaseId>Test Cases/WSWADMIN/REGRESSION/Fulfillment/LowStcokNotification/AddAdditionalMail</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>619df6ae-4692-42af-bb04-a15ab90640c6</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/WSWADMIN/REGRESSION/METATAGGINGCATEGORYITEMMAINTENANCE/VerifyCategoryItemMaintenancePage</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>7551dcb6-ad5f-4e7f-8bff-de572dedf43a</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/WSWADMIN/REGRESSION/METATAGGINGCATEGORYITEMMAINTENANCE/VerifyCreatingNewExternalItemType</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>4c120982-2bba-41cd-acf6-bdb432f59d9e</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/WSWADMIN/REGRESSION/METATAGGINGCATEGORYITEMMAINTENANCE/VerifyExternalItemTypeInMetatagConfigurationPage</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>5666f0a5-c3a2-4b4f-b4e1-d6a1310c41f8</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/WSWADMIN/REGRESSION/METATAGGINGCATEGORYMAINTENANCE/VerifyCreateExternalItemType</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>330e2c9f-293d-4d04-92eb-917b22680f00</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/WSWADMIN/REGRESSION/METATAGGINGCATEGORYMAINTENANCE/VerifyCreateNewCorpSetting</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
       <guid>4598e164-ad9f-4c4c-b31a-3991fc60793b</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
