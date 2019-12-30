@@ -29,7 +29,7 @@ CustomKeywords.'com.ii4usersites.OrderFormOrderHederPage.EnterValuesToFiledsInOr
 
 CustomKeywords.'com.ii4usersites.OrderFormItemDetails1Page.ClickOnSmallPrintBtn'()
 
-CustomKeywords.'com.ii4usersites.OrderFormPrintDetails1Page.EnterAllVauesInPrintDetails1Page'()
+CustomKeywords.'com.ii4usersites.OrderFormPrintDetails1Page.EnterAllVauesInPrintDetails1PageForSmallPrint'()
 
 CustomKeywords.'com.ii4usersites.OrderFormItemDetails2Page.AddNewNoteAndClickOnNextBtn'()
 
@@ -40,6 +40,4 @@ CustomKeywords.'com.ii4usersites.OrderFormShiipingDetailsPage.ClickOnNextBtn'()
 CustomKeywords.'com.ii4usersites.OrderFormItemDetails1Page.ClickOnNextBtn'()
 
 CustomKeywords.'com.ii4usersites.OrderFormOrderSumaryPage.PlaceOrder'()
-
-WebUI.closeBrowser()
 

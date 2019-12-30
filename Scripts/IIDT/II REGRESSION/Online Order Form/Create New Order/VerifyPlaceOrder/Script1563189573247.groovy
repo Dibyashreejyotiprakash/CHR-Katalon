@@ -13,8 +13,6 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-
-
 CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameiiusersite, GlobalVariable.testtyperegression, GlobalVariable.environment)
 
 CustomKeywords.'com.ii4usersites.LoginPage.LoginToDemoCorp'(GlobalVariable.iiusersiteusername, GlobalVariable.iiusersitepassword)
@@ -29,7 +27,7 @@ CustomKeywords.'com.ii4usersites.OrderFormItemDetails1Page.ClickOnMenuBookBtn'()
 
 CustomKeywords.'com.ii4usersites.OrderFormMenuBookDetailsPage.EnterValuesToJobDetailspage'()
 
-CustomKeywords.'com.ii4usersites.OrderFormItemDetails2Page.AddNewNoteAndClickOnNextBtn'()
+CustomKeywords.'com.ii4usersites.OrderFormItemDetails2Page.AddNewNoteAndClickOnNextBtn1'()
 
 CustomKeywords.'com.ii4usersites.OrderFormBrandMentionPage.ClickOnNoBrandmentionAndClickonNextBtn'()
 

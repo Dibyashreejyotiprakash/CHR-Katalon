@@ -31,7 +31,7 @@ public class Reports {
 	@Keyword
 	public void VerifyReportsPage() {
 		try{
-			action.VerifyCurrentPage("Reports.aspx")
+			action.VerifyCurrentPage("/Reports.aspx")
 		}
 		catch(Exception e) {
 			Assert.fail ("Verify Reports Page failed due to "+ e)

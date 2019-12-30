@@ -69,9 +69,9 @@ public class CorpListPage {
 	public void VerifyTemplateSearch() {
 		try{
 			action.Type(templatesearchtextbox, "130722")
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(filterbtn)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			String firstrowtemplateid = action.GetText(firsttemplateid)
 			Assert.assertEquals(firstrowtemplateid, "130722")
 		}
@@ -84,11 +84,11 @@ public class CorpListPage {
 	public void VerifyFilterByStatusOfTemplate() {
 		try{
 			action.SelectByIndex(statusddn, 0)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			List<WebElement> allstatus = action.GetElements(allstatus)
 			for(int i=0;i< allstatus.size();i++) {
 				String status = allstatus.get(i).getText()
-				WebUI.delay(3)
+				//WebUI.delay(3)
 				if(status.equalsIgnoreCase("Active")) {
 					println ("Status verified")
 				}else{
@@ -105,14 +105,14 @@ public class CorpListPage {
 	public void VerifyEditTemplate() {
 		try{
 			action.Type(templatesearchtextbox, "130722")
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(filterbtn)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			String firstrowtemplateid = action.GetText(firsttemplateid)
 			Assert.assertEquals(firstrowtemplateid, "130722")
 
 			action.Click(firsteditlink)
-			WebUI.delay(10)
+			//WebUI.delay(10)
 			action.WaitForPageToLoad()
 
 			action.VerifyCurrentPage("EditItems.aspx?CorpID=339")

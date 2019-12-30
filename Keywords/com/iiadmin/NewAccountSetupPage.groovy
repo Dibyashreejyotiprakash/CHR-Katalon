@@ -55,8 +55,8 @@ public class NewAccountSetupPage {
 			Assert.fail("ValidateDDPaymentOptions User failed due to "+ e)
 		}
 	}
-	
-	
+
+
 	@Keyword
 	public void ValidateDDPaymentOptionsForDist() {
 		try {

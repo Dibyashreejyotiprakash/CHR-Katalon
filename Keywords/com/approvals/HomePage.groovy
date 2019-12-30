@@ -79,9 +79,9 @@ public class HomePage {
 	public void VerifySearchByDTJob(String dtjobid) {
 		try {
 			action.Type(dtsearchtextbox,dtjobid)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.Click(searchbtn)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 		}
 		catch(Exception e) {
 			Assert.fail ("Verify Search DT Job failed due to "+ e)
@@ -187,7 +187,6 @@ public class HomePage {
 	public void VerifyDTSearchByJobName(String givenjobname) {
 		try{
 			action.Click(statusddn)
-			action.WaitVisibleDup(createdstatus)
 			action.Click(createdstatus)
 			action.Type(jobname, givenjobname)
 			action.Click(searchbtn)
@@ -209,7 +208,6 @@ public class HomePage {
 	@Keyword
 	public void VerifyDTJobsAfterSearchBySalesperson() {
 		try{
-
 			action.Click(salespersonddn)
 			action.Click(salespersonddnvalue)
 			action.Click(searchbtn)
