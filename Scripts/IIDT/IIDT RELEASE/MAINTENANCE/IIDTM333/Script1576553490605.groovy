@@ -22,5 +22,7 @@ CustomKeywords.'com.designtracker.HomePage.ClickOnNewJob'()
 
 String id = CustomKeywords.'com.designtracker.JobNewPage.CreateNewJob'()
 
-CustomKeywords.'com.designtracker.JobDetailsPage.AddDDPart'()
+CustomKeywords.'com.designtracker.JobDetailsPage.VerifyJobDetailsPage'()
+
+CustomKeywords.'com.designtracker.JobDetailsPage.AddPartAddonsAndBackToJobDetailsPage'()
 

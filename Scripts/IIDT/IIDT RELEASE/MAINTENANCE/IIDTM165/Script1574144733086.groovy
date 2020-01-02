@@ -20,3 +20,5 @@ CustomKeywords.'com.designtracker.LoginPage.LoginToDesignTarcker'(GlobalVariable
 
 CustomKeywords.'com.designtracker.HomePage.ClickOnSalesPeople'()
 
+CustomKeywords.'com.designtracker.SalesPeople.VerifySalesPeoplePage'()
+

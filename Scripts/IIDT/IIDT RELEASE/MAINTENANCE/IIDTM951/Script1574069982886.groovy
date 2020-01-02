@@ -15,7 +15,7 @@ import internal.GlobalVariable as GlobalVariable
 
 CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameiiusersite, GlobalVariable.testtypesmoke, GlobalVariable.environment)
 
-CustomKeywords.'com.ii4usersites.LoginPage.LoginToDemoCorp'('demoQA@brandmuscle.com', 'go2web')
+CustomKeywords.'com.ii4usersites.LoginPage.LoginToDemoCorp'(GlobalVariable.iiusersiteusername, GlobalVariable.iiusersitepassword)
 
 CustomKeywords.'com.ii4usersites.HomePage.ClickOnPosTemplate'()
 

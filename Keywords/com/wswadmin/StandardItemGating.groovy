@@ -57,7 +57,7 @@ public class StandardItemGating {
 	By itemgatingmetatags = By.xpath("//table[@typeid = '44']//label[@class = 'checkbox dropdown-text checkbox-padding']//div")
 	By brandnamemetatagcount = By.xpath("//div[@id='10']")
 	By itemgatingcategory = By.xpath("//span[text()='Item Gating']")
-	
+
 	By groupnametextbox = By.xpath("//*[@id='ctl00_cphMain_txtGroupName']")
 	By savebtn = By.xpath("//*[@id='ctl00_cphMain_rbtnSave']")
 
@@ -161,7 +161,7 @@ public class StandardItemGating {
 			Assert.fail("CreateItemGatingGroupMetatag Failed due to"+e)
 		}
 	}
-	
+
 	@Keyword
 	public void VerifyCreateItemGatingGroup(){
 		try{
@@ -171,7 +171,7 @@ public class StandardItemGating {
 			action.Click(distributorval)
 			action.Click(groupddn)
 			action.Click(addnewgroupvalue)
-			String newgroup = action.GenerateRandomAplphabaticString(10)
+			String newgroup = "Test Group "+ action.GenerateRandomAplphabaticString(10)
 			action.Type(groupnametextbox,newgroup)
 			action.Click(savebtn)
 		}

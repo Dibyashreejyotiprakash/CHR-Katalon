@@ -1081,6 +1081,14 @@ public  class Interaction {
 	}
 
 
-
+	public boolean isElementPresent(By by){
+		try{
+			driver.findElement(by);
+			return true;
+		}
+		catch(NoSuchElementException e){
+			throw new Exception ("Element is not present "+ by)
+		}
+	}
 
 }

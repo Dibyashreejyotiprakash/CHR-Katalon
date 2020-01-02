@@ -151,11 +151,10 @@ class HomePage {
 			action.Clear(pagebox)
 			action.Type(pagebox, "12")
 			action.Enter(pagebox)
-			//action.WaitUntilElementClickable(resultpage60)
-			action.ScrollToViewElement(resultpage60)
-			action.Click(resultpage60)
-			action.WaitUntilElementClickable(pagebox)
-			action.GetText(pagebox)
+			//action.ScrollToViewElement(resultpage60)
+			//action.ScrollToBottomOfPage()
+			//action.Click(resultpage60)
+			//action.WaitUntilElementClickable(pagebox)
 		}
 
 		catch(Exception e)
