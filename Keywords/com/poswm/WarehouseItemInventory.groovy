@@ -56,9 +56,9 @@ public class WarehouseItemInventory {
 	By filterDivision = By.xpath("//*[@id='ctl00_MainContent_rpbSearch']//ul")
 	By clearallfilter = By.xpath("//*[text()='Clear All Filters']")
 	By supplierfilter = By.xpath("//*[@id='ctl00_MainContent_rpbSearch_i0_i0_rlbSupplier_i2']")
-	By allsuppliersnameingrid = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00']//tr//td[12]")
+	By allsuppliersnameingrid = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00']//tr//td[4]")
 	By brandfilter = By.xpath("//*[@id='ctl00_MainContent_rpbSearch_i1_i0_rlbBrands_i2']")
-	By allbrandsnameingrid = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00']//tr//td[13]")
+	By allbrandsnameingrid = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00']//tr//td[5]")
 	By allitemname = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00']//tr//td[11]/a")
 
 	By itemsearchtextbox = By.xpath("//*[@id='ctl00_MainContent_rsbItemSearch_Input']")
@@ -117,7 +117,7 @@ public class WarehouseItemInventory {
 	By approverColVal = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00__0']/td[7]")
 	By adsLabelName = By.xpath("//*[@id='ctl00_MainContent_rpbSearch_i6_i0_rlbWarehouseSalesDivision_i0']/label")
 	By salesDivLebelOnEditItemPage = By.xpath("//*[@id='ctl00_MainContent_ucItemOverView_radListItemProperties_ctrl0_lblSalesDivisions']")
-
+	By imageLoader = By.xpath("//*[@id='MainContent_Image2']")
 
 
 
@@ -150,20 +150,20 @@ public class WarehouseItemInventory {
 			Assert.fail("GetAdsSalesDivName failed due to :" + e)
 		}
 	}
-	
+
 	@Keyword
 	public boolean VerifySalesDiv(String SalesDivName)
 	{
 		try
 		{
 			boolean IsSalesDivVerified = false
-			 String SalesDivNameOnItemPage = action.GetText(salesDivLebelOnEditItemPage)
-			 
-			 println ("----------->" + SalesDivNameOnItemPage)
-			
+			String SalesDivNameOnItemPage = action.GetText(salesDivLebelOnEditItemPage)
+
+			println ("----------->" + SalesDivNameOnItemPage)
+
 			if(SalesDivName.equalsIgnoreCase(SalesDivNameOnItemPage))
 			{
-				
+
 				println("Sales Div verified successfully")
 				return IsSalesDivVerified = true
 			}
@@ -173,11 +173,11 @@ public class WarehouseItemInventory {
 			Assert.fail("VerifySalesDiv failed due to :" + e)
 		}
 	}
-	
-	
-	
-	
-	
+
+
+
+
+
 	@Keyword
 	public void VerifyApproverCol(String ApproverNameExpected)
 	{
@@ -418,6 +418,7 @@ public class WarehouseItemInventory {
 			//action.Click(linkSupplier)
 			//WebUI.delay(10)
 			action.Click(supplierfilter)
+			action.WaitTillNotVisible(imageLoader, 0)
 			//WebUI.delay(20)
 			String suppliername = action.GetText(supplierfilter)
 			List<WebElement> allsuppliersname = action.GetElements(allsuppliersnameingrid)
@@ -454,6 +455,7 @@ public class WarehouseItemInventory {
 			//action.Click(linkBrands)
 			//WebUI.delay(10)
 			action.Click(brandfilter)
+			action.WaitTillNotVisible(imageLoader, 0)
 			//WebUI.delay(20)
 			String brandnamename = action.GetText(brandfilter)
 			List<WebElement> allbrandsname = action.GetElements(allbrandsnameingrid)

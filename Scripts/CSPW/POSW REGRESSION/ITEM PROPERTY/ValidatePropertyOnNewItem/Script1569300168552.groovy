@@ -15,7 +15,10 @@ import internal.GlobalVariable as GlobalVariable
 
 CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameposw, GlobalVariable.testtyperegression, GlobalVariable.environment)
 
-CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.posusername, GlobalVariable.pospassword)
+//Enter credential
+CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.PoswTestUserName, GlobalVariable.PoswTestPassword)
+//select BU as Empire Marchent 
+CustomKeywords.'com.poswm.LoginPage.SelectEmpireMerchantBU'()
 
 CustomKeywords.'com.poswm.Homepage.ClickOnItemProperties'()
 

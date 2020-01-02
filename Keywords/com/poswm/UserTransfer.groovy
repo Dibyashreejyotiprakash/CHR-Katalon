@@ -50,6 +50,7 @@ public class UserTransfer {
 	By transferItemsBtn = By.xpath("//*[@id='MainContent_btnTransferItems']")
 	By firstCheckBix = By.xpath("//*[@id='ctl00_MainContent_rgApprovalItems_ctl00']/tbody/tr[1]/td[1]/input")
 	By firstItemName = By.xpath("//*[@id='ctl00_MainContent_rgApprovalItems_ctl00']/tbody/tr[1]/td[3]")
+	By transferToSearchField = By.xpath("//*[@id='ctl00_MainContent_ddlTransferUser_Input']")
 	
 	
 	
@@ -61,7 +62,7 @@ public class UserTransfer {
 		try
 		{
 			action.Click(transferFromDropDown)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(transferFromUsernameList)
 			WebUI.delay(30)
 			
@@ -80,7 +81,7 @@ public class UserTransfer {
 		try
 		{
 			action.Click(transferToDropDown)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(transferToUserNameList)
 			WebUI.delay(8)
 			String UserName = driver.findElement(By.xpath("//*[@id='ctl00_MainContent_ddlTransferUser_Input']")).getAttribute("value")
@@ -149,19 +150,19 @@ public class UserTransfer {
 		try{
 			boolean statusoftransferfromddn  = action.IsElementDisplayed(transferform)
 			Assert.assertTrue(statusoftransferfromddn)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(transferform)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(transferfromddnvalue)
-			WebUI.delay(3)
-			
+			//WebUI.delay(3)
+			action.WaitUntilElementClickable(transferToSearchField)
 			boolean statusoffromto = action.IsElementDisplayed(transferto)
 			Assert.assertTrue(statusoffromto)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(transferto)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(transfertoddnvalue)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			
 			boolean statusoftransferbtn = action.IsElementEnabled(transferitemsbtn)
 			Assert.assertTrue(statusoftransferfromddn)
@@ -178,19 +179,21 @@ public class UserTransfer {
 		try{
 			boolean statusoftransferfromddn  = action.IsElementDisplayed(transferform)
 			Assert.assertTrue(statusoftransferfromddn)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(transferform)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(transferfromddnvalue)
-			WebUI.delay(3)
+			//WebUI.delay(10)
+			action.WaitUntilElementClickable(transferToSearchField)
 			
 			boolean statusoffromto = action.IsElementDisplayed(transferto)
 			Assert.assertTrue(statusoffromto)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(transferto)
-			WebUI.delay(3)
+			/*action.WaitUntilElementClickable(transferto)*/
+			/*WebUI.delay(10)*/
 			action.Click(transfertoddnvalue)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			
 			boolean statusoftransferbtn = action.IsElementEnabled(transferitemsbtn)
 			Assert.assertTrue(statusoftransferfromddn)

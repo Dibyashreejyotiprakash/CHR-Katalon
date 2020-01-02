@@ -57,23 +57,43 @@ public class WarehouseAdminItemProperty {
 	By seasonaltypelist = By.xpath("//div[@id = 'ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_radSeasonalType_DropDown']//ul/li")
 	By deletesuccess = By.xpath("//span[contains(text(),'Item Property has successfully been deleted')]")
 	By editpropertyname = By.xpath("//input[@id='ctl00_MainContent_rgAdminTypes_ctl00_ctl05_TB_SearchPropertyOptionValue']")
+	By itemPropertySearchField = By.xpath("//*[@id='ctl00_MainContent_ddlTypes_Input']")
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 
 
 	@Keyword
-	public void CreateItemProperty() {
+	public String CreateItemProperty() {
 		try {
 			//WebUI.delay(2)
+			action.Click(itemPropertySearchField)   
 			action.WaitVisible(itempropertydropdown)
 			action.WaitVisible(seasonaltype)
 			action.Click(seasonaltype)
 			action.WaitVisible(itempropertysearch)
 			action.Click(addnewpropertyplus)
 			action.WaitVisible(newpropertyname)
-			String name = "TestProperty"
+			String name = action.GenerateRandomAplphabaticString(5)
+			//String name = "TestProperty"
 			action.Type(newpropertyname,name)
 			action.Click(insertbtn)
 			action.WaitVisible(insertsuccessmssg)
+			return name
 		}
 		catch(Exception e) {
 			Assert.fail("CreateItemProperty Failed due to "+e)
@@ -81,7 +101,7 @@ public class WarehouseAdminItemProperty {
 	}
 
 	@Keyword
-	public void DeleteItemProperty() {
+	public void DeleteItemProperty(String propNme) {
 		try {
 			action.WaitVisible(itempropertydropdown)
 			action.Click(itempropertydropdown)
@@ -90,7 +110,7 @@ public class WarehouseAdminItemProperty {
 			action.WaitVisible(itempropertysearch)
 			action.Click(addnewpropertyplus)
 
-			action.Type(itempropertysearch,"TestProperty")
+			action.Type(itempropertysearch,propNme)
 			action.Click(searchbtn)
 			action.WaitVisible(deletebtn)
 			action.Click(deletebtn)

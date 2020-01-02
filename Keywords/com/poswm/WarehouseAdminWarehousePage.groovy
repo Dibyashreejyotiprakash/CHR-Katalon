@@ -42,11 +42,13 @@ public class WarehouseAdminWarehousePage {
 	By selectbin = By.xpath("//li[contains(text(),'Bin')]")
 	By warehousedropdown = By.xpath("//a[@id='ctl00_MainContent_ddlWarehouse_Arrow']")
 	By selectwarehouse = By.xpath("//li[contains(text(),'Breakthru Beverage Nevada')]")
+	//By selectwarehouse = By.xpath("//li[contains(text(),'POS')]")
 	By addbinplus = By.xpath("//input[@id='ctl00_MainContent_rgBins_ctl00_ctl02_ctl00_AddNewRecordButton']")
 	By binname = By.xpath("//input[@id='ctl00_MainContent_rgBins_ctl00_ctl02_ctl03_TB_WarehouseBinName']")
 	By insertbtn = By.xpath("//a[@id='ctl00_MainContent_rgBins_ctl00_ctl02_ctl03_PerformInsertButton']")
 	By binsuccessmssg = By.xpath("//span[contains(text(),'Warehouse Bin saved successfully')]")
-	By selectitem = By.xpath("//tr[@id='ctl00_MainContent_rgItemSearch_ctl00__0']/td[11]/a")
+	//By selectitem = By.xpath("//tr[@id='ctl00_MainContent_rgItemSearch_ctl00__0']/td[11]/a")
+	By selectitem = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00']/tbody/tr[1]/td[3]/a")
 	By edititem = By.xpath("//input[@id='MainContent_btnEditItemWizard']")
 	By itemheading = By.xpath("//span[@id = 'ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_lblItemName']")
 	By transcationdropdown = By.xpath(".//*[@id = 'ctl00_MainContent_radWizardBar']/ul/li[4]/a/span/span[1]")
@@ -95,14 +97,17 @@ public class WarehouseAdminWarehousePage {
 	}
 
 	@Keyword
-	public void AddBin() {
+	public String AddBin() {
 		try {
 			action.Click(addbinplus)
 			action.WaitVisible(binname)
-			action.Type(binname, "000-000-001")
-			WebUI.delay(2)
+			String binName = "000-000-002"
+			
+			action.Type(binname, binName)
+			//WebUI.delay(2)
 			action.Click(insertbtn)
 			action.WaitVisible(binsuccessmssg)
+			return binName
 		}
 		catch(Exception e) {
 			Assert.fail("AddBin Failed due to "+e)
@@ -110,7 +115,7 @@ public class WarehouseAdminWarehousePage {
 	}
 	
 	@Keyword
-	public void AssociateBinWithItem()
+	public void AssociateBinWithItem(String binName)
 	{
 		try
 		{
@@ -159,14 +164,15 @@ public class WarehouseAdminWarehousePage {
 		  {
 			  String name = item_list.get(i).getText()
 			  //item_name_list.add(name)
-			  println("NAME IS -->"+name)
+			 // println("NAME IS -->"+name)
 			  
-			  if(name.equalsIgnoreCase("000-000-001"))
+			  if(name.equalsIgnoreCase(binName))
 			  {
-				  item_list[i].click()
+				  println ("----------> Bin Verified Successfully---------")
+				  /*item_list[i].click()
 				  WebUI.delay(2)
 				  action.Type(selectedbinqnty, "10")
-				  action.Click(savebtn)
+				  action.Click(savebtn)*/
 				  break
 			  }
 			  

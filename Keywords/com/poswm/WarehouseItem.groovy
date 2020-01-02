@@ -185,7 +185,7 @@ public class WarehouseItem {
 			}
 			if(action.IsDisplayed(salesDivisionDropDown))
 			{
-				SelectSalesDiv("ReturnType")
+				SelectSalesDiv("SingleSelect")
 			}
 			if(action.IsDisplayed(seasonalType))
 			{
@@ -462,7 +462,9 @@ public class WarehouseItem {
 	public String SelectSalesDiv(String SalesDivType)
 	{
 		try
+		
 		{
+			String salesDivName = null
 			if(SalesDivType.equalsIgnoreCase("SingleSelect"))
 			{
 				SelectSalesDivision()
