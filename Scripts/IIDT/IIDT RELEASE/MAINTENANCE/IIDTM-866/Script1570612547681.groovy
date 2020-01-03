@@ -25,6 +25,5 @@ CustomKeywords.'com.iiadmin.EditItemsPage.ClickOnLogosLink'()
 
 CustomKeywords.'com.iiadmin.EditItemsPage.EditFisrtLogoAndUpdte'()
 
-WebUI.delay(100)
 
 

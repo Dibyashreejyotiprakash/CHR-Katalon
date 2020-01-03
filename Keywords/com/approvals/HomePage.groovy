@@ -59,7 +59,7 @@ public class HomePage {
 	By newpasswordsubmitbtn = By.xpath("//*[@id='ctl00_cphBody_passChange_ChangePasswordContainerID_ChangePasswordPushButton']")
 
 	By jobname = By.xpath("//*[@id='ctl00_cphBody_txtJobName']")
-	
+
 	By salespersonddnvalue = By.xpath("//*[text()='Admin1, Test Name']")
 
 
@@ -79,9 +79,7 @@ public class HomePage {
 	public void VerifySearchByDTJob(String dtjobid) {
 		try {
 			action.Type(dtsearchtextbox,dtjobid)
-			//WebUI.delay(5)
 			action.Click(searchbtn)
-			//WebUI.delay(5)
 		}
 		catch(Exception e) {
 			Assert.fail ("Verify Search DT Job failed due to "+ e)

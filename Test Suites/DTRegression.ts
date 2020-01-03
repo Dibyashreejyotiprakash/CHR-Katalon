@@ -23,18 +23,6 @@
       <testCaseId>Test Cases/IIDT/DT REGRESSION/SITEADMIN/COMPETITORS/CreateNewCompetitors</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>3e20627f-d459-42b8-90d1-48924f23175f</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/DT REGRESSION/JOBS/JOB DETAILS/VerifyAssignDesignerToNewlyCreatedJob</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>02810cd5-bc19-406f-979f-528d1ff10ad7</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/DT REGRESSION/JOBS/JOB DETAILS/VerifyCreateJobAndVerifyInDt</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
       <guid>1603ee34-b767-4aab-a8b0-414e417e9e06</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
@@ -45,12 +33,6 @@
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/IIDT/DT REGRESSION/JOBS/JOB DETAILS/VerifyJobNameAndJobticketNoteAreManadatory</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>f72869ac-f506-44c6-9d6e-cfbfb3540856</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/DT REGRESSION/JOBS/JOB DETAILS/VerifyNewlyCreateJobStatus</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>3ebc6e41-0172-46e7-8c22-81512d0ee4ff</guid>
@@ -197,12 +179,6 @@
       <testCaseId>Test Cases/IIDT/DT REGRESSION/SITEADMIN/DistributorBudgetMigration/BudgetMigrationforAJob</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>9d93d87f-d855-4007-87ad-a1103294f9d0</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/DT REGRESSION/SITEADMIN/DistributorBudgetMigration/BudgetMigrationforMultipleJobs</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
       <guid>e126c0bf-dcde-4958-873c-2e1f6b047fc9</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
@@ -251,40 +227,10 @@
       <testCaseId>Test Cases/IIDT/DT REGRESSION/SITEADMIN/ExceptionListSalesPerson/VerifyInsertExpListSalesPerson</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>f283afa6-aa84-41ba-af25-e6f929fec7d9</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/DT REGRESSION/SITEADMIN/ExceptionListSalesPerson/VerifyInsertExpListwithTwoSalesPerson</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>3495d4b7-e991-4393-aedb-7078463098dc</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/DT REGRESSION/SITEADMIN/Hierarchy/AssociateUserForDistributorCorp</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>feb36a9f-ece0-4326-83ea-745fe5d94192</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/DT REGRESSION/SITEADMIN/Hierarchy/AssociateUserForSupplierCorp</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
       <guid>8f54c138-560a-441b-a128-49429a73968b</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/IIDT/DT REGRESSION/SITEADMIN/Hierarchy/ValidateFields</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>20a86278-c7ae-4109-a1f0-83dbef6f3a5d</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/DT REGRESSION/SITEADMIN/Hierarchy/ValidateUserOnWSWAdminForDistr</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>ec34f4bc-8bd9-4acf-aba2-af48540ede8e</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/DT REGRESSION/SITEADMIN/Hierarchy/ValidateUserOnWSWAdminForSupp</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>d859fb76-61d9-46e4-a18b-6c03ce318481</guid>
@@ -305,12 +251,6 @@
       <testCaseId>Test Cases/IIDT/DT REGRESSION/SITEADMIN/JobClosing/VerifyErrorOnClosingInvalidJob</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>66521943-afd7-47b7-acee-7b04563e50be</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/DT REGRESSION/SITEADMIN/JobClosing/VerifyJobNotEligibleForCloseWithoutReleaseForProd</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
       <guid>77f3d0c4-7630-450a-93bf-8c7f0e10b64f</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
@@ -320,13 +260,7 @@
       <guid>f11fc1ca-2906-46f9-b25f-90c2c6862491</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/DT REGRESSION/SITEADMIN/JobLineStratification/RetiringJobType</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>e31c8901-141b-4849-803f-ffd6ff0669f9</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/DT REGRESSION/SITEADMIN/JobLineStratification/UpdateStratification</testCaseId>
+      <testCaseId>Test Cases/IIDT/DT REGRESSION/SITEADMIN/JobLineStratification/EditStratification</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>9efc151c-10e5-463e-88e0-8fa6c3cec31b</guid>
@@ -351,12 +285,6 @@
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/IIDT/DT REGRESSION/SITEADMIN/SalesPeople/ValidateAddedSalePersonInSalesPersonDropdown</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>0387e883-fbe2-456c-a539-0d018d74c0da</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/DT REGRESSION/SITEADMIN/SalesPeople/ValidateDisableAccount</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>78cf5e15-dfa2-4809-8727-16480d6513e9</guid>
@@ -411,12 +339,6 @@
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/IIDT/DT REGRESSION/SITEADMIN/Supplier/VerifyNewlyAddedSupplier</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>293ac3cc-a113-4161-8b84-6bc5cbbc34a8</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/DT REGRESSION/SITEADMIN/SupplierBrandManagers/AddingMultipleSupplierBrandManagers</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>8749f2b3-ea1a-47a3-8b5e-3cf4ea8c4c52</guid>

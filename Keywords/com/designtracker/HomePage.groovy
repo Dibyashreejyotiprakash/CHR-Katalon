@@ -738,17 +738,7 @@ public class HomePage {
 	{
 		try
 		{
-			action.MouseHoverOnElement(reports)
-			//WebUI.delay(5)
-			try{
-				action.WaitVisible(gexorderstatus)
-				boolean statusofgexstatusbtn = action.IsElementDisplayed(gexOrderStatus)
-				println ("Gex status ------"+ statusofgexstatusbtn)
-				Assert.assertFalse(statusofgexstatusbtn)
-			}
-			catch(Exception e){
-				throw new Exception("Gex odrer status is not present")
-			}
+			action.isElementPresent(gexOrderStatus)
 		}
 		catch(Exception e)
 		{

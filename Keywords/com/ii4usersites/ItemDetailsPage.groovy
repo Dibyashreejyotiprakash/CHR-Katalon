@@ -14,7 +14,7 @@ import com.kms.katalon.core.testcase.TestCase
 import com.kms.katalon.core.testdata.TestData
 import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
-import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUISetVariableTemplateLayout
 
 import internal.GlobalVariable
 
@@ -38,8 +38,7 @@ public class ItemDetailsPage {
 	By choosefont = By.xpath("//select[@id='Body_ddlChooseFont']")
 	By choosecolor = By.xpath("//select[@id='Body_ddlChooseColor']")
 	By chooselayout = By.xpath("//select[@id='Body_ddlChooseLayout']")
-	//By previewchangebtn = By.xpath("//input[@id='btnRepaintImage']")
-	By previewchangebtn = By.xpath("//input[@id='Body_repaintImageTopButton']")
+	By previewchangebtn = By.xpath("//input[@id='btnRepaintImage']")
 	By nextstepbtn = By.xpath("//input[@id='btnNextStep']")
 	By nobtn = By.xpath("//span[(text()='No')]")
 	By itemtypedropdown = By.xpath("//input[@id='ctl00_Body_ItemTypeDropDownList1_Input']")
@@ -67,8 +66,8 @@ public class ItemDetailsPage {
 	By descriptionfield = By.xpath("//div[@id = 'ctl00_Body_radAjaxPanel']//h4[1]")
 	By showpricebreak = By.xpath("//a[@id='priceBreakA1']")
 	By unitprice = By.xpath("//th[contains(text(),'Unit Price')]")
-	
-	
+
+
 	@Keyword
 	public void ClickCreateDesignBtn() {
 		try {
@@ -100,32 +99,49 @@ public class ItemDetailsPage {
 	public void SetVariableTemplateLayout() {
 		try {
 
-			//WebUI.delay(5)
 			boolean status = action.IsElementEnabled(createdesignbtn)
 			println("Status Is "+status)
-			action.ScrollToViewElement(createdesignbtn)
-			//WebUI.delay(3)
+			action.ScrollToBottomOfPage()
 			action.Click(createdesignbtn)
 			action.WaitVisible(selectheadline)
 			action.SelectByText(selectheadline, "Cheers to your Valentine")
 			action.SelectByText(choosefont, "Block")
 			action.SelectByText(choosecolor, "Pink")
 			action.SelectByText(chooselayout, "Menu")
-			action.ScrollToViewElement(previewchangebtn)
-			//action.WaitVisible(previewchangebtn)
-			//WebUI.delay(10)
+			action.WaitVisible(previewchangebtn)
 			action.WaitUntilElementClickable(previewchangebtn)
-			//WebUI.delay(5)
+			action.ScrollToBottomOfPage()
 			action.Click(previewchangebtn)
-			action.ScrollToViewElement(nextstepbtn)
-			action.WaitUntilElementClickable(nextstepbtn)
 			action.Click(nextstepbtn)
 			action.WaitVisible(nobtn)
 			action.Click(nobtn)
 		}
 		catch(Exception e) {
-			println ("SetVariableTemplateLayout failed due to "+ e)
-			Assert.fail("SetVariableTemplateLayout failed")
+			Assert.fail ("Set Variable Template Layout failed due to "+ e)
+		}
+	}
+	
+	
+	@Keyword
+	public void ValidateItemTypeDropdown() {
+		try {
+
+			boolean status = action.IsElementEnabled(createdesignbtn)
+			println("Status Is "+status)
+			action.ScrollToBottomOfPage()
+			action.Click(createdesignbtn)
+			action.WaitVisible(selectheadline)
+			action.SelectByText(selectheadline, "Cheers to your Valentine")
+			action.SelectByText(choosefont, "Block")
+			action.SelectByText(choosecolor, "Pink")
+			action.SelectByText(chooselayout, "Menu")
+			action.WaitVisible(previewchangebtn)
+			action.WaitUntilElementClickable(previewchangebtn)
+			action.ScrollToBottomOfPage()
+			action.Click(previewchangebtn)
+		}
+		catch(Exception e) {
+			Assert.fail ("Validate Item Type Drop down failed due to "+ e)
 		}
 	}
 
@@ -142,10 +158,9 @@ public class ItemDetailsPage {
 			action.IsElementDisplayed(qntyrequiredmssg)
 			action.Click(quantity)
 			action.Type(quantity, "6")
-			action.ScrollToViewElement(productselectionnobtn)
 			action.WaitUntilElementClickable(productselectionnobtn)
 			action.Click(productselectionnobtn)
-			//WebUI.delay(5)
+			WebUI.delay(5)
 			action.WaitUntilElementClickable(addtocartbtn)
 			action.Click(addtocartbtn)
 		}
@@ -285,11 +300,7 @@ public class ItemDetailsPage {
 	@Keyword
 	public void ClickOnCreateYourOwnDesign() {
 		try {
-			action.WaitVisible(designnumber)
-			//action.WaitVisible(diecutframe)
-			//action.ScrollToViewElement(diecutframe)
 			action.ScrollToBottomOfPage()
-			WebUI.delay(2)
 			action.Click(createdesignbtn)
 		}
 		catch(Exception e) {

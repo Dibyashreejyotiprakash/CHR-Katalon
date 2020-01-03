@@ -67,7 +67,6 @@ public class JobSearchPage {
 		}
 		catch(Exception e){
 			println("SelectFirstJobID failed due to :"+ e)
-
 		}
 	}
 
@@ -82,7 +81,6 @@ public class JobSearchPage {
 		catch(Exception e){
 			Assert.fail("Click On Select Job Link failed due to "+ e)
 		}
-		
 	}
 
 	@Keyword
@@ -91,7 +89,13 @@ public class JobSearchPage {
 			action.Click(confirmationradiobtn)
 			action.Type(searchtxtbox, jobcreatedinusersite)
 			action.ScrollToBottomOfPage()
+			WebUI.delay(10)
+			action.WaitForPageToLoad()
+			action.WaitVisible(selectjoblink)
 			action.Click(searchbtn)
+			WebUI.delay(10)
+			action.WaitForPageToLoad()
+			action.WaitVisible(selectjoblink)
 		}
 		catch(Exception e) {
 			println ("Verify Created Job In DT Search Page")

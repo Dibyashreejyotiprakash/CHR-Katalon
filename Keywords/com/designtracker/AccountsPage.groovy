@@ -98,16 +98,14 @@ public class AccountsPage
 	{
 		try
 		{
-			action.WaitVisible(siteadmintab)
 			action.MouseHoverOnElement(siteadmintab)
-			action.WaitVisible(accounts)
 			action.Click(accounts)
-			action.WaitVisible(insertbtn)
 			action.Click(insertbtn)
-			action.IsElementDisplayed(corprequiredmssg)
-			action.IsElementDisplayed(marketrequiredmssg)
-			action.IsElementDisplayed(descrequiredmssg)
-			action.IsElementDisplayed(clientidrequiredmssg)
+			
+			Assert.assertTrue(action.IsElementDisplayed(corprequiredmssg))
+			Assert.assertTrue(action.IsElementDisplayed(marketrequiredmssg))
+			Assert.assertTrue(action.IsElementDisplayed(descrequiredmssg))
+			Assert.assertTrue(action.IsElementDisplayed(clientidrequiredmssg))
 		}
 		catch(Exception e)
 		{
@@ -122,19 +120,17 @@ public class AccountsPage
 	{
 		try
 		{
-			action.WaitVisible(siteadmintab)
 			action.MouseHoverOnElement(siteadmintab)
-			action.WaitVisible(accounts)
 			action.Click(accounts)
-			action.WaitVisible(insertbtn)
-			action.IsElementDisplayed(corpDropDown)
-			action.IsElementDisplayed(marketDropDown)
-			action.IsElementDisplayed(description)
-			action.IsElementDisplayed(city)
-			action.IsElementDisplayed(state)
-			action.IsElementDisplayed(zip)
-			action.IsElementDisplayed(phonenumber)
-			action.IsElementDisplayed(clientaccountid)
+			
+			Assert.assertTrue(action.IsElementDisplayed(corpDropDown))
+			Assert.assertTrue(action.IsElementDisplayed(marketDropDown))
+			Assert.assertTrue(action.IsElementDisplayed(description))
+			Assert.assertTrue(action.IsElementDisplayed(city))
+			Assert.assertTrue(action.IsElementDisplayed(state))
+			Assert.assertTrue(action.IsElementDisplayed(zip))
+			Assert.assertTrue(action.IsElementDisplayed(phonenumber))
+			Assert.assertTrue(action.IsElementDisplayed(clientaccountid))
 
 		}
 		catch(Exception e)
@@ -152,11 +148,8 @@ public class AccountsPage
 		{
 			LocalDateTime dateTime = LocalDateTime.now()
 
-			action.WaitVisible(siteadmintab)
 			action.MouseHoverOnElement(siteadmintab)
-			action.WaitVisible(accounts)
 			action.Click(accounts)
-			action.WaitVisible(insertbtn)
 			action.SelectByText(corpDropDown, "Instant Impact 4.0 Demo Corp (Dist.)")
 			action.SelectByText(marketDropDown, "Chicago Beverage Systems")
 			String acc_name = "QATest"+dateTime
@@ -170,7 +163,6 @@ public class AccountsPage
 			action.Type(clientaccountid,id)
 			action.Click(insertbtn)
 			action.IsElementDisplayed(newrecordmssg)
-			action.WaitVisible(addsalespersonbtn)
 			action.SelectByText(salespersonddn,"ADMIN1, TEST (testadmin1@brandmuscle.com)")
 			action.Click(addsalespersonbtn)
 			action.Click(lookupaccount)
@@ -197,72 +189,58 @@ public class AccountsPage
 		try
 		{
 			LocalDateTime dateTime = LocalDateTime.now()
-
-			action.WaitVisible(siteadmintab)
 			action.MouseHoverOnElement(siteadmintab)
-			WebUI.delay(3)
-			action.WaitVisible(accounts)
 			action.Click(accounts)
-			action.WaitVisible(insertbtn)
+
 			action.SelectByText(corpDropDown, "Instant Impact 4.0 Demo Corp (Dist.)")
-			WebUI.delay(4)
+	
 			action.SelectByText(marketDropDown, "Chicago Beverage Systems")
-			WebUI.delay(2)
+			
 			String acc_name = "QATest"+dateTime
-			println("DATE TIME -"+acc_name)
 			action.Type(description, acc_name)
-			WebUI.delay(1)
+
 			action.Type(city,"Cleveland")
-			WebUI.delay(1)
+
 			action.Type(state, "OH")
-			WebUI.delay(1)
+
 			action.Type(zip, "44114")
-			WebUI.delay(1)
+
 			action.Type(phonenumber, "976-767-6768")
-			WebUI.delay(1)
+			//WebUI.delay(1)
 			String id = "123"+dateTime
 			action.Type(clientaccountid,id)
-			WebUI.delay(1)
+			//WebUI.delay(1)
 			action.Click(insertbtn)
 			action.IsElementDisplayed(newrecordmssg)
-			WebUI.delay(1)
+			//WebUI.delay(1)
 			action.WaitVisible(addsalespersonbtn)
 
-			WebUI.delay(2)
+			//WebUI.delay(2)
 			action.SelectByText(salespersonddn,"ADMIN2, TEST (testadmin2@brandmuscle.com)")
-			WebUI.delay(1)
+			//WebUI.delay(1)
 			action.Click(addsalespersonbtn)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(headerjobtab)
 			action.WaitVisible(newjob)
 			action.Click(newjob)
 			action.WaitVisible(jobpagecorporationddn)
 			action.SelectByText(jobpagecorporationddn, "Instant Impact 4.0 Demo Corp (Dist.)")
-			WebUI.delay(2)
+			//WebUI.delay(2)
 			action.SelectByText(jobpagemarketddn, "Chicago Beverage Systems")
-			WebUI.delay(2)
+			//WebUI.delay(2)
 			action.IsElementDisplayed(jobpagesalespersonddn)
 
 			action.SelectByValue(jobpagesalespersonddn,"ADMIN2, TEST (testadmin2@brandmuscle.com)")
-			WebUI.delay(2)
+			//WebUI.delay(2)
 
 			action.Click(notlistedlink)
 			action.WaitVisible(lookuptext)
 			action.Click(lookuptext)
 			action.Type(lookuptext,acc_name)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(lookupaccountbtn1)
 			action.WaitVisible(lookupaccountname)
 			String acc_name_txt =  action.GetText(lookupaccountname)
-
-			/*action.Click(accountddn)
-			 WebUI.delay(2)
-			 List <WebElement> acc_name_option = action.GetAllOption(accountddn)
-			 List<String> acc_name_txt = new ArrayList<String>()
-			 for(int i=0;i< acc_name_option.size();i++ )
-			 {
-			 acc_name_txt.add(acc_name_option[i].getText())
-			 }*/
 
 			if (acc_name_txt == acc_name)
 			{
@@ -289,77 +267,60 @@ public class AccountsPage
 		try
 		{
 			LocalDateTime dateTime = LocalDateTime.now()
-
-			action.WaitVisible(siteadmintab)
 			action.MouseHoverOnElement(siteadmintab)
-			WebUI.delay(3)
-			action.WaitVisible(accounts)
 			action.Click(accounts)
-			action.WaitVisible(insertbtn)
 			action.SelectByText(corpDropDown, "Instant Impact 4.0 Demo Corp (Dist.)")
-			WebUI.delay(2)
 			action.SelectByText(marketDropDown, "Chicago Beverage Systems")
-			WebUI.delay(2)
 			String acc_name = "QATest"+dateTime
 			action.Type(description, acc_name)
-			WebUI.delay(2)
 			action.Type(city,"Cleveland")
 			action.Type(state, "OH")
 			action.Type(zip, "44114")
 			action.Type(phonenumber, "976-767-6768")
 			String id = "123"+dateTime
-			WebUI.delay(2)
 			action.Type(clientaccountid,id)
-			WebUI.delay(2)
 			action.Click(insertbtn)
-			WebUI.delay(1)
 			action.IsElementDisplayed(newrecordmssg)
-			action.WaitVisible(addsalespersonbtn)
-
-			WebUI.delay(2)
 			action.SelectByText(salespersonddn,"ADMIN1, TEST (testadmin1@brandmuscle.com)")
-			WebUI.delay(1)
 			action.Click(addsalespersonbtn)
-			WebUI.delay(2)
 			action.Click(lookupaccount)
-			WebUI.delay(2)
+			
 			action.SelectByText(lookupcorp,"Instant Impact 4.0 Demo Corp (Dist.)")
-			WebUI.delay(3)
+			
 			action.SelectByText(lookupmarket, "Chicago Beverage Systems")
-			WebUI.delay(2)
+			
 			action.Type(lookupsearchtext, acc_name)
-			WebUI.delay(2)
+			
 			action.Click(lookupaccountbtn)
-			//WebUI.delay(3)
-			action.WaitVisible(lookupname)
+			////WebUI.delay(3)
 			action.IsElementDisplayed(lookupname)
 			action.WaitVisible(acc_select_btn)
 			action.Click(acc_select_btn)
 			action.WaitVisible(acc_retire_btn)
 			action.Click(acc_retire_btn)
 			action.Click(updatebtn)
-			WebUI.delay(2)
+			//WebUI.delay(2)
 			action.IsElementDisplayed(update_success_mssg)
 			action.Click(headerjobtab)
 			action.WaitVisible(newjob)
 			action.Click(newjob)
 			action.WaitVisible(jobpagecorporationddn)
 			action.Type(jobpagecorporationddn, "Instant Impact 4.0 Demo Corp (Dist.)")
-			WebUI.delay(2)
+			//WebUI.delay(2)
 			action.WaitVisible(jobpagecorporationddn)
 			action.SelectByText(jobpagemarketddn, "Chicago Beverage Systems")
-			WebUI.delay(2)
+			//WebUI.delay(2)
 			action.IsElementDisplayed(jobpagesalespersonddn)
 
 			action.SelectByValue(jobpagesalespersonddn,"ADMIN1, TEST (testadmin1@brandmuscle.com)")
-			WebUI.delay(2)
+			//WebUI.delay(2)
 
 
 			action.Click(notlistedlink)
 			action.WaitVisible(lookuptext)
 			action.Click(lookuptext)
 			action.Type(lookuptext,acc_name)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(lookupaccountbtn1)
 			action.IsElementDisplayed(lookupaccountname)
 
@@ -383,38 +344,38 @@ public class AccountsPage
 
 			action.WaitVisible(siteadmintab)
 			action.MouseHoverOnElement(siteadmintab)
-			WebUI.delay(3)
+			
 			action.WaitVisible(accounts)
 			action.Click(accounts)
 			action.WaitVisible(insertbtn)
 			action.SelectByText(corpDropDown, "Instant Impact 4.0 Demo Corp (Dist.)")
-			WebUI.delay(4)
+			
 			action.SelectByText(marketDropDown, "Chicago Beverage Systems")
-			WebUI.delay(2)
+
 			String acc_name = "QATest"+dateTime
 			println("DATE TIME -"+acc_name)
 			action.Type(description, acc_name)
-			WebUI.delay(1)
+			//WebUI.delay(1)
 			action.Type(city,"Cleveland")
-			WebUI.delay(1)
+			//WebUI.delay(1)
 			action.Type(state, "OH")
-			WebUI.delay(1)
+			//WebUI.delay(1)
 			action.Type(zip, "44114")
-			WebUI.delay(1)
+			//WebUI.delay(1)
 			action.Type(phonenumber, "976-767-6768")
-			WebUI.delay(1)
+			//WebUI.delay(1)
 			String id = "123"+dateTime
 			action.Type(clientaccountid,id)
-			WebUI.delay(1)
+			//WebUI.delay(1)
 			action.Click(insertbtn)
 			action.IsElementDisplayed(newrecordmssg)
-			WebUI.delay(1)
+			//WebUI.delay(1)
 			action.IsElementDisplayed(newrecordmssg)
 			action.WaitVisible(addsalespersonbtn)
 
-			WebUI.delay(2)
+			//WebUI.delay(2)
 			action.SelectByText(salespersonddn,"ADMIN1, TEST (testadmin1@brandmuscle.com)")
-			WebUI.delay(2)
+			//WebUI.delay(2)
 			action.Click(addsalespersonbtn)
 
 		}
@@ -436,39 +397,36 @@ public class AccountsPage
 
 			action.WaitVisible(siteadmintab)
 			action.MouseHoverOnElement(siteadmintab)
-			WebUI.delay(3)
+			
 			action.WaitVisible(accounts)
 			action.Click(accounts)
 			action.WaitVisible(insertbtn)
 			action.SelectByText(corpDropDown, "Instant Impact 4.0 Demo Corp (Dist.)")
-			WebUI.delay(2)
+			
 			action.SelectByText(marketDropDown, "Chicago Beverage Systems")
-			WebUI.delay(2)
+			
 			String acc_name = "QATest"+dateTime
 			action.Type(description, acc_name)
-			WebUI.delay(2)
+			
 			action.Type(city,"Cleveland")
 			action.Type(state, "OH")
 			action.Type(zip, "44114")
 			action.Type(phonenumber, "976-767-6768")
 			String id = "123"+dateTime
-			WebUI.delay(2)
+			
 			action.Type(clientaccountid,id)
-			WebUI.delay(2)
+			
 			action.Click(insertbtn)
-			WebUI.delay(1)
+			
 			action.IsElementDisplayed(newrecordmssg)
 			action.WaitVisible(addsalespersonbtn)
-			WebUI.delay(2)
+			
 			action.SelectByText(salespersonddn,"ADMIN1, TEST (testadmin1@brandmuscle.com)")
-			WebUI.delay(2)
+			
 			action.Click(addsalespersonbtn)
 
 			action.WaitVisible(deletesalespersonbtn)
 			action.Click(deletesalespersonbtn)
-			action.WaitVisible(deletesuccessmssg)
-			action.IsElementDisplayed(deletesuccessmssg)
-
 
 		}
 		catch(Exception e)
@@ -488,36 +446,36 @@ public class AccountsPage
 
 			action.WaitVisible(siteadmintab)
 			action.MouseHoverOnElement(siteadmintab)
-			WebUI.delay(3)
+			
 			action.WaitVisible(accounts)
 			action.Click(accounts)
 			action.WaitVisible(insertbtn)
 			action.SelectByText(corpDropDown, "Instant Impact 4.0 Demo Corp (Dist.)")
-			WebUI.delay(2)
+			
 			action.SelectByText(marketDropDown, "Chicago Beverage Systems")
-			WebUI.delay(2)
+			
 			String acc_name = "QATest"+dateTime
 			action.Type(description, acc_name)
-			WebUI.delay(2)
+			
 			action.Type(city,"Cleveland")
 			action.Type(state, "OH")
 			action.Type(zip, "44114")
 			action.Type(phonenumber, "976-767-6768")
 			String id = "123"+dateTime
-			WebUI.delay(2)
+			
 			action.Type(clientaccountid,id)
-			WebUI.delay(2)
+			
 			action.Click(insertbtn)
-			WebUI.delay(1)
+			
 			action.IsElementDisplayed(newrecordmssg)
 			action.WaitVisible(addsalespersonbtn)
-			WebUI.delay(2)
+			
 			action.Click(allsalespeoplebtn)
-			WebUI.delay(2)
+			
 			Robot r = new Robot();
 			r.keyPress(KeyEvent.VK_ENTER);
 			r.keyRelease(KeyEvent.VK_ENTER);
-			WebUI.delay(2)
+			//WebUI.delay(2)
 			action.IsElementDisplayed(allsalespeoplesuccessmssg)
 		}
 		catch(Exception e)

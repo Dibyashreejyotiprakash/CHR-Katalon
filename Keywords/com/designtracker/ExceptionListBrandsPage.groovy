@@ -85,27 +85,13 @@ class ExceptionListBrandsPage {
 	public void VerifyInsertBrandInExceptionList() {
 		try {
 			action.SelectByText(corporationddn, "Demo Distributor (QA)")
-
-			//action.WaitVisible(marketddn)
 			action.SelectByText(marketddn, "Demo Dist. 1 QA")
-
-			////WebUI.delay(7)
 			action.SelectByText(marketSupplierddn, "Demo Dist. 1 QA")
-
-			////WebUI.delay(7)
-			action.SelectByText(brandsddn, "TestBrand")
-
-			////WebUI.delay(5)
+			action.SelectByText(brandsddn, "Brand 1")
 			action.Click(insertSelBrandBtn)
-
-			////WebUI.delay(3)
 			boolean statusofSuccessMsg  =     action.IsElementDisplayed(successInsertMsg)
 			Assert.assertTrue(statusofSuccessMsg, "Success msg for insert is visible")
-
-			////WebUI.delay(2)
 			action.Click(checkBoxToBrand)
-
-			////WebUI.delay(2)
 			action.Click(delSelBrandBtn)
 		}
 		catch(Exception e) {
@@ -118,31 +104,16 @@ class ExceptionListBrandsPage {
 	public void VerifyDeleteBrandFromExceptionList() {
 		try {
 			action.SelectByText(corporationddn, "Demo Distributor (QA)")
-
-			//WebUI.delay(7)
-			action.WaitVisibleDup(marketddn)
 			action.SelectByText(marketddn, "Demo Dist. 1 QA")
-
-			//WebUI.delay(7)
 			action.SelectByText(marketSupplierddn, "Demo Dist. 1 QA")
-
-			//WebUI.delay(10)
-			action.SelectByText(brandsddn, "TestBrand")
-
-			//WebUI.delay(5)
+			action.SelectByText(brandsddn, "Brand 1")
 			action.Click(insertSelBrandBtn)
-
-			//WebUI.delay(5)
 			boolean statusofSuccessMsg  =     action.IsElementDisplayed(successInsertMsg)
 			Assert.assertTrue(statusofSuccessMsg, "Success msg for insert is visible")
-
-			//WebUI.delay(5)
 			action.Click(checkBoxToBrand)
-
-			//WebUI.delay(5)
 			action.Click(delSelBrandBtn)
-
-			//WebUI.delay(5)
+			action.ScrollToTopOgPage()
+			WebUI.delay(1)
 			boolean statusofDeleteMsg  =     action.IsElementDisplayed(successDelMsg)
 			Assert.assertTrue(statusofDeleteMsg, "Success msg for delete is visible")
 		}
@@ -156,36 +127,17 @@ class ExceptionListBrandsPage {
 	public void VerifyErrorOnInsertingDuplicateBrand() {
 		try {
 			action.SelectByText(corporationddn, "Demo Distributor (QA)")
-
-			//WebUI.delay(7)
 			action.SelectByText(marketddn, "Demo Dist. 1 QA")
-
-			//WebUI.delay(7)
 			action.SelectByText(marketSupplierddn, "Demo Dist. 1 QA")
-			//WebUI.delay(10)
-			action.SelectByText(brandsddn, "TestBrand")
-
-			//WebUI.delay(5)
+			action.SelectByText(brandsddn, "Brand 1")
 			action.Click(insertSelBrandBtn)
-
-			//WebUI.delay(5)
 			boolean statusofSuccessMsg  =     action.IsElementDisplayed(successInsertMsg)
 			Assert.assertTrue(statusofSuccessMsg, "Success msg for insert is visible")
-
-			//WebUI.delay(5)
 			action.Click(insertSelBrandBtn)
-
-			//WebUI.delay(5)
 			boolean statusofErrorMsgOnInsertingDuplidate  =     action.IsElementDisplayed(ErrorMsgOnInsertingDuplidateBrand)
 			Assert.assertTrue(statusofErrorMsgOnInsertingDuplidate, "Error msg for inserting duplicate is visible")
-
-			//WebUI.delay(5)
 			action.Click(checkBoxToBrand)
-
-			//WebUI.delay(5)
 			action.Click(delSelBrandBtn)
-
-			//WebUI.delay(5)
 			boolean statusofDeleteMsg  =     action.IsElementDisplayed(successDelMsg)
 			Assert.assertTrue(statusofDeleteMsg, "Success msg for delete is visible")
 		}
@@ -199,27 +151,13 @@ class ExceptionListBrandsPage {
 	public void VerifyInsertingTwoBrandsInList() {
 		try {
 			action.SelectByText(corporationddn, "Demo Distributor (QA)")
-
-			//WebUI.delay(7)
 			action.SelectByText(marketddn, "Demo Dist. 1 QA")
-
-			//WebUI.delay(7)
 			action.SelectByText(marketSupplierddn, "Demo Dist. 1 QA")
-
-			//WebUI.delay(10)
-			action.SelectByText(brandsddn, "TestBrand")
-
-			//WebUI.delay(5)
+			action.SelectByText(brandsddn, "Brand 1")
 			action.Click(insertSelBrandBtn)
-
-			//WebUI.delay(5)
 			boolean statusofSuccessMsg  =     action.IsElementDisplayed(successInsertMsg)
 			Assert.assertTrue(statusofSuccessMsg, "Success msg for insert is visible")
-
-			//WebUI.delay(5)
 			action.SelectByText(brandsddn, "TestBrand1")
-
-			//WebUI.delay(5)
 			action.Click(insertSelBrandBtn)
 
 			//WebUI.delay(5)

@@ -17,18 +17,6 @@
       <testCaseId>Test Cases/IIDT/DT SMOKE/APP ADMIN/Job NoteNotification/VerifyJobNoteNotifyPage</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>13915ca3-f001-4969-a113-1ad82eef4d88</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/DT REGRESSION/JOBS/JOB DETAILS/VerifyCreateJobAndVerifyInDt</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>fe4804b4-3090-465d-ba1e-7162c252add5</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/DT REGRESSION/JOBS/JOB DETAILS/VerifyAssignDesignerToNewlyCreatedJob</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
       <guid>6fee6444-d981-4879-a467-f274328ae03a</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
@@ -81,18 +69,6 @@
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/IIDT/DT REGRESSION/SITEADMIN/ExceptionListSalesPerson/VerifyInsertExpListSalesPerson</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>532ababa-c88f-47f3-89ea-6efe70471eaa</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/DT REGRESSION/SITEADMIN/Hierarchy/ValidateUserOnWSWAdminForDistr</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>cf3b5c91-144d-44e1-bb28-6aed6623be2a</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/DT REGRESSION/SITEADMIN/Hierarchy/ValidateUserOnWSWAdminForSupp</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>b6c6dc69-16d6-42e9-b024-4000b4b0451c</guid>

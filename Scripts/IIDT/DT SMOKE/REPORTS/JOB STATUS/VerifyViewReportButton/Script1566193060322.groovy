@@ -24,6 +24,8 @@ CustomKeywords.'com.designtracker.HomePage.ClickOnJobStatus'()
 
 CustomKeywords.'com.designtracker.HomePage.WindowHandle'()
 
+CustomKeywords.'com.designtracker.JobStatusInformation.VerifyJobStatusInfoPage'()
+
 CustomKeywords.'com.designtracker.JobStatusInformation.VerifyViewReportBtn'()
 
 
