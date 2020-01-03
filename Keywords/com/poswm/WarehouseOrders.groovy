@@ -5,6 +5,8 @@ import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
+import java.text.DateFormat
+import java.text.SimpleDateFormat
 import java.time.LocalDate
 
 import org.openqa.selenium.WebDriver
@@ -90,6 +92,26 @@ public class WarehouseOrders {
 	By updateLink = By.xpath("//*[text()='Update']")
 	By calanderIcon = By.xpath("//*[@id='ctl00_MainContent_dockShippingInformation_C_calShipDate_popupButton']")
 	By popCalander = By.xpath("//*[@id='ctl00_MainContent_rwInstaller_C_rdInstallationDate_popupButton']")
+	By addedToCartConfirmationMsg = By.xpath("//*[text()='Item added to order.']")
+	By modifyCustomerBtn = By.xpath("(//*[text()='Modify Customer'])[1]")
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	@Keyword
 	public boolean Verifydate() {
@@ -134,7 +156,7 @@ public class WarehouseOrders {
 		try {
 			if(action.IsDisplayed(updateLink)) {
 				action.Click(updateLink)
-				WebUI.delay(5)
+				//WebUI.delay()(5)
 			}
 			else {
 				println ("Reject link is not present  " + shipDate)
@@ -148,7 +170,7 @@ public class WarehouseOrders {
 	public void ClickOnAddanItemIcon() {
 		try {
 			action.Click(plusIcon)
-			//WebUI.delay(10)
+			//////WebUI.delay()(10)
 		}
 		catch(Exception e) {
 			Assert.fail("ClickOnAddanItemLink method failed due to :" + e)
@@ -160,7 +182,7 @@ public class WarehouseOrders {
 		try {
 			if(action.IsDisplayed(rejectLink)) {
 				action.Click(rejectLink)
-				WebUI.delay(5)
+				//WebUI.delay()(5)
 			}
 			else {
 				println ("Reject link is not present  " + shipDate)
@@ -176,7 +198,7 @@ public class WarehouseOrders {
 		try {
 			if(action.IsDisplayed(approveLink)) {
 				action.Click(approveLink)
-				WebUI.delay(5)
+				//WebUI.delay()(5)
 			}
 			else {
 				println ("Approve link is not present  " + shipDate)
@@ -227,7 +249,7 @@ public class WarehouseOrders {
 	public void ClickOnShipLink() {
 		try {
 			action.Click(shipLink)
-			WebUI.delay(10)
+			////WebUI.delay()(10)
 		}
 		catch(Exception e) {
 			Assert.fail("ClickOnShipLink method failed due to :" + e)
@@ -238,7 +260,7 @@ public class WarehouseOrders {
 	public void ClickOnAddanItemLink() {
 		try {
 			action.Click(addanItemLink)
-			//WebUI.delay(10)
+			//////WebUI.delay()(10)
 		}
 		catch(Exception e) {
 			Assert.fail("ClickOnAddanItemLink method failed due to :" + e)
@@ -249,7 +271,7 @@ public class WarehouseOrders {
 	public void ClickOnAddLink() {
 		try {
 			action.Click(addBtn)
-			//WebUI.delay(10)
+			//////WebUI.delay()(10)
 
 		}
 		catch(Exception e) {
@@ -266,7 +288,6 @@ public class WarehouseOrders {
 
 			/*String env = GlobalVariable.environment
 			 String actualUrl = action.GetCurrentURL();
-			 WebUI.delay(5)
 			 if(env.equalsIgnoreCase("uat")) {
 			 Assert.assertEquals(expectedUATUrl, actualUrl)
 			 }
@@ -330,8 +351,9 @@ public class WarehouseOrders {
 			action.Type(firstaddtextbox, "10")
 			action.Click(addlinkforfirstitem)
 			action.ScrollToTopOgPage()
-			boolean statusofiteminfobar = action.IsElementDisplayed(iteminfobar)
+			boolean statusofiteminfobar = action.IsElementDisplayed(addedToCartConfirmationMsg)
 			Assert.assertTrue(statusofiteminfobar)
+			println ("---------------> verified successfully ")
 		}
 		catch(Exception e) {
 			Assert.fail("Add Item failed due to "+ e)
@@ -341,10 +363,9 @@ public class WarehouseOrders {
 	@Keyword
 	public void AddCustomerAndVerifyMsg() {
 		try{
-			action.ScrollToViewElement(addcustomerbtn)
-			action.WaitUntilElementClickable(addcustomerbtn)
+			//action.ScrollToViewElement(addcustomerbtn)
+			//action.WaitUntilElementClickable(addcustomerbtn)
 			action.Click(addcustomerbtn)
-			//WebUI.delay(10)
 			action.Type(customertextbox, "st")
 			action.Click(customername)
 			action.ScrollToTopOgPage()
@@ -359,18 +380,32 @@ public class WarehouseOrders {
 	@Keyword
 	public void AddDesiredShippingDateAndVerifyMsg() {
 		try{
-			action.ScrollToViewElement(desiredshipdatetextbox)
+			//action.ScrollToViewElement(desiredshipdatetextbox)
 			//LocalDate date = new LocalDate()
 			//String todaydate = date.now()
 			//println (todaydate)
 			//LocalDate todaydate = LocalDate.now()
+			//Date date = new Date();
+			//SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
+			//String todaydate = formatter.format(date);
+			//action.Type(desiredshipdatetextbox, todaydate)
+			action.ScrollToViewElement(modifyCustomerBtn)
+			action.Click(desiredshipdatetextbox)
+			
+			DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+			
+			//get current date time with Date()
 			Date date = new Date();
-			SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
-			String todaydate = formatter.format(date);
-			action.Type(desiredshipdatetextbox, todaydate)
+			
+			// Now format the date
+			String dateFormatted= dateFormat.format(date);			
+			
+			println ("---------------------->" + dateFormatted)
+			action.Type(desiredshipdatetextbox, dateFormatted)
+			/*action.Click(shippingmethodddn)
 			action.ScrollToTopOgPage()
 			boolean statusofaddedshimethodmsg = action.IsElementDisplayed(desiredshipdateaddedmsg)
-			Assert.assertTrue(statusofaddedshimethodmsg)
+			Assert.assertTrue(statusofaddedshimethodmsg)*/
 		}
 		catch(Exception e) {
 			Assert.fail("Add Desired Shipping Date and verify failed due to "+ e)
@@ -380,11 +415,11 @@ public class WarehouseOrders {
 	@Keyword
 	public void AddShipingMethodAndVerifyMsg() {
 		try{
-			action.ScrollToViewElement(shippingmethodddn)
-			action.WaitUntilElementClickable(shippingmethodddn)
-			WebUI.delay(10)
+			//action.ScrollToViewelement(shippingmethodddn)
+			//action.WaitUntilElementClickable(shippingmethodddn)
+			////WebUI.delay()(10)
 			action.Click(shippingmethodddn)
-			WebUI.delay(10)
+			//WebUI.delay()(10)
 			action.Click(shipingmethodddnvalue)
 			action.ScrollToTopOgPage()
 			boolean statusofshipingmethodaddedmsg = action.IsElementDisplayed(shipingmethodaddedmsg)
@@ -398,7 +433,7 @@ public class WarehouseOrders {
 	@Keyword
 	public void ClickOnSubmitOrderBtnAndevrifyMsg() {
 		try{
-			action.ScrollToViewElement(submitbtn)
+			//action.ScrollToViewelement(submitbtn)
 			action.Click(submitbtn)
 			action.ScrollToTopOgPage()
 			boolean statusofsubmitordermsg = action.IsElementDisplayed(submitordermsg)
@@ -456,7 +491,7 @@ public class WarehouseOrders {
 	public void ClickOnCancelBtnAndVerifyMsg() {
 		try {
 			action.Click(cancelbtn)
-			WebUI.delay(10)
+			////WebUI.delay()(10)
 			action.AcceptAlert()
 			boolean statusofcancelationmsg = action.IsElementDisplayed(cancelationmsg)
 			Assert.assertTrue(statusofcancelationmsg)
@@ -481,18 +516,18 @@ public class WarehouseOrders {
 	public void ClickOnEditThisItem() {
 		try {
 			action.WindowHandle()
-			//WebUI.delay(3)
+			////WebUI.delay()(3)
 			action.Click(EditThisItem)
 			action.WaitForPageToLoad()
 			action.Click(salesDivisionDropDown)
 			action.WaitTime(3)
 			action.Click(salesDivisionThirdOption)
 			action.Click(itemInfoSaveIcon)
-			//WebUI.delay(5)
+			////WebUI.delay()(5)
 			action.Click(ItemInfonextButton)
-			//WebUI.delay(2)
+			////WebUI.delay()(2)
 			action.Click(imageNextBtn)
-			//WebUI.delay(2)
+			////WebUI.delay()(2)
 			action.Click(brandNextBtn)
 		}
 		catch(Exception e) {
@@ -520,7 +555,7 @@ public class WarehouseOrders {
 			LocalDate date = new LocalDate()
 			String todaydate = date.now()
 			action.Type(desiredshipdatetextbox, todaydate)
-			WebUI.delay(3)
+			//WebUI.delay()(3)
 			//return todaydate
 		}
 		catch(Exception e) {
