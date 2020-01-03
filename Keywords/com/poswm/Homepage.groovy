@@ -157,9 +157,9 @@ public class Homepage {
 	@Keyword
 	public void ClickOnItemProperties() {
 		action.MouseHoverOnElement(menuWarehouse)
-		WebUI.delay(2)
+		//WebUI.delay(2)
 		action.MouseHoverOnElement(adminbtn)
-		WebUI.delay(2)
+		//WebUI.delay(2)
 		action.Click(subMenuitemProperties)
 		//action.WaitForPageToLoad()
 	}

@@ -26,12 +26,11 @@ import internal.GlobalVariable
 
 
 
-public class MyDownloadsPage extends ConfirmationPage
-{
-	
+public class MyDownloadsPage extends ConfirmationPage {
+
 	WebDriver driver = DriverFactory.getWebDriver();
 	Interaction action = new Interaction();
-	
+
 	By ddSearch = By.xpath("(//input[@id='txtSearch'])[2]")
 	By Searchbtn = By.xpath("//input[@id='ctl00_Body_btnSearch']")
 	By ddrecord = By.xpath("(//label[contains(text(),'Pass Through')])[1]")
@@ -43,30 +42,23 @@ public class MyDownloadsPage extends ConfirmationPage
 	By statuscolumn = By.xpath("//th[contains(text(),'Status')]")
 	By actioncolumn = By.xpath("//th[contains(text(),'Actions')]")
 	By unavailablerecord = By.xpath("(//label[contains(text(),'Unavailable')])[1]")
-	
+
 	@Keyword
-	public void ValidateOrder()
-	{
-		try
-		{
+	public void ValidateOrder() {
+		try {
 			String check_Order_num = GetConfNumAndValidateOrderOnMyDownloads()
 			action.Type(ddSearch, check_Order_num)
 			action.Click(Searchbtn)
 			action.IsDisplayed(ddrecord)
-			
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("ValidateOrder Failed Due to "+e)
 		}
-		
 	}
-	
+
 	@Keyword
-	public void ValidateMyDownloadsField()
-	{
-		try
-		{
+	public void ValidateMyDownloadsField() {
+		try {
 			action.IsElementDisplayed(showunavailablechkbox)
 			action.IsElementDisplayed(imagecolumn)
 			action.IsElementDisplayed(dtcolumn)
@@ -77,10 +69,8 @@ public class MyDownloadsPage extends ConfirmationPage
 			action.Click(showunavailablechkbox)
 			action.IsElementDisplayed(unavailablerecord)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("ValidateMyDownloadsField Failed Due to "+e)
 		}
 	}
-
 }

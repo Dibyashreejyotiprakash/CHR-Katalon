@@ -33,11 +33,11 @@ public class LoginPage {
 	By loginbtn = By.xpath("//*[@id='MainContent_LoginCentiv_btnLogin']");
 	By buselectionddn = By.id("MainContent_ddlBusinessUnit")
 	By Logout = By.xpath("//*[text()='Logout']");
-	
-	
-	
-	
-	
+
+
+
+
+
 
 
 	@Keyword
@@ -51,8 +51,8 @@ public class LoginPage {
 		action.SelectByText(buselectionddn, "Admin Tool")
 		action.WaitForPageToLoad();
 	}
-	
-	
+
+
 	@Keyword
 	public void LogoutFromV5AdminTool(){
 		try{
@@ -60,26 +60,10 @@ public class LoginPage {
 				action.Click(Logout)
 				action.WaitForPageToLoad();
 				action.WaitVisible(loginbtn)
-				
 			}
 		}
 		catch(Exception e){
 			println("LogoutFromV5AdminTool method failed due to : "+ e)
-			
 		}
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }

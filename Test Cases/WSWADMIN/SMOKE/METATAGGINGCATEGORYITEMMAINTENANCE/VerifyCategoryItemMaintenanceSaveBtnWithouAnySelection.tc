@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description></description>
-   <name>VerifyCategoryItemMaintenanceSaveBtnWithouAnySelection</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>c2038e4a-7a9a-4677-bb36-c2555bd40d6c</testCaseGuid>
-</TestCaseEntity>

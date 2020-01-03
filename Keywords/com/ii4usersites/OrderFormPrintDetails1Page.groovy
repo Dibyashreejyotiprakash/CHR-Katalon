@@ -33,56 +33,90 @@ public class OrderFormPrintDetails1Page {
 
 	By allitemsddn = By.xpath("//*[@id='ctl00_Body_ddlItems_Arrow']")
 	By allitemsvalue = By.xpath("//*[@id='ctl00_Body_ddlItems_DropDown']//li[2]")
+	By dropdownSize = By.xpath("//*[@id='ctl00_Body_ddlSize_Input']")
 	By sizeddn = By.xpath("//*[@id='ctl00_Body_ddlSize_Arrow']")
 	By sizevalue = By.xpath("//*[@id='ctl00_Body_ddlSize_DropDown']//li[2]")
 	By paperddn = By.xpath("//*[@id='ctl00_Body_ddlMedia_Arrow']")
 	By paperddnvalue = By.xpath("//*[@id='ctl00_Body_ddlMedia_DropDown']//li[2]")
 	By accesoriesddn = By.id("ctl00_Body_ddlAccessory_Input")
-	By accesoriesddnvalue = By.xpath("//*[text()='Scored']")
+	By accesoriesddnvalue = By.xpath("//*[text()='None']")
 	By nextbtn = By.xpath("//*[@id='ctl00_Body_btnNext']")
 	By myitemsbtn = By.xpath("//*[text()='My Items']")
 	By previousbtn = By.xpath("//*[text()='Previous']")
 	By allitemslabel = By.xpath("//*[text()='All Items']")
-
+	By orderLineName = By.xpath("//*[@id='ctl00_Body_txtJobLineName']")
+	By allitemsvalueforSmallPrint = By.xpath("//li[contains(text(),'Counter Card')]")
+	
 	@Keyword
 	public void EnterAllVauesInPrintDetails1Page() {
 		try {
 			WebUI.scrollToPosition(500, 500)
 			action.WaitVisible(allitemsddn)
-			WebUI.delay(5)
+			//WebUI.delay(15)
 			action.Click(allitemsddn)
-			WebUI.delay(5)
-			action.WaitVisible(allitemsvalue)
-			WebUI.delay(5)
+			//WebUI.delay(5)
+			//action.WaitVisible(allitemsvalue)
+			//WebUI.delay(5)
 			action.Click(allitemsvalue)
-			WebUI.delay(5)
-			action.WaitUntilElementClickable(sizeddn)
-			action.Click(sizeddn)
-			WebUI.delay(10)
-			action.WaitUntilElementClickable(sizevalue)
-			action.WaitVisible(sizevalue)
-			WebUI.delay(10)
+			//WebUI.delay(10)
+			//action.WaitUntilElementClickable(sizeddn)
+			action.ScrollToViewElement(orderLineName)
+			action.Click(dropdownSize)
+			//WebUI.delay(5)
+			//action.WaitUntilElementClickable(sizevalue)
+
+			//action.WaitVisible(sizevalue)
+			//WebUI.delay(10)
 			action.Click(sizevalue)
-			WebUI.delay(5)
-			action.ScrollToBottomOfPage()
-			action.WaitUntilElementClickable(paperddn)
-			WebUI.delay(10)
+			//WebUI.delay(10)
+			//action.ScrollToViewElement(dropdownSize)
+			//action.ScrollToViewElement(paperddn)
+			//action.WaitUntilElementClickable(paperddn)
+			//WebUI.delay(10)
 			action.Click(paperddn)
-			WebUI.delay(10)
-			action.WaitUntilElementClickable(paperddnvalue)
-			WebUI.delay(10)
+			//WebUI.delay(10)
+			//action.WaitUntilElementClickable(paperddnvalue)
+			//WebUI.delay(10)
 			action.Click(paperddnvalue)
-			WebUI.delay(10)
-			WebUI.delay(10)
+			//WebUI.delay(10)
+			//WebUI.delay(10)
+			action.ScrollToBottomOfPage()
 			action.Click(accesoriesddn)
-			WebUI.delay(10)
+			//WebUI.delay(10)
 			action.Click(accesoriesddnvalue)
-			WebUI.delay(10)
+			//WebUI.delay(10)
+			//action.WaitUntilElementClickable(nextbtn)
+			action.Click(nextbtn)
+			//WebUI.delay(10)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("Enter All Vaues In Print Details1 Page failed due to "+ e)
+		}
+	}
+	
+	@Keyword
+	public void EnterAllVauesInPrintDetails1PageForSmallPrint() {
+		try {
+			WebUI.scrollToPosition(500, 500)
+			action.Click(allitemsddn)
+			action.Click(allitemsvalueforSmallPrint)
+			action.ScrollToViewElement(nextbtn)
 			action.Click(nextbtn)
 			action.WaitForPageToLoad()
 		}
 		catch(Exception e) {
 			println ("Enter All Vaues In Print Details1 Page failed due to "+ e)
+		}
+	}
+
+
+	@Keyword
+	public void ValidateAutoPopulationOfFieldsWithOneValueInDdn() {
+
+		try {
+		}
+		catch(Exception e) {
 		}
 	}
 }

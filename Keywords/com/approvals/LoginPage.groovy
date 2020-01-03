@@ -50,8 +50,7 @@ public class LoginPage {
 			}
 		}
 		catch(Exception e) {
-			println ("Verify Approval login page failed due to "+ e)
-			Assert.fail()
+			Assert.fail("Verify Approval login page failed due to "+ e)
 		}
 	}
 
@@ -71,8 +70,7 @@ public class LoginPage {
 			Assert.assertTrue(statusofforgotlink)
 		}
 		catch(Exception e) {
-			println ("Verify Approval login page failed due to "+ e)
-			Assert.fail()
+			Assert.fail ("Verify Approval login page failed due to "+ e)
 		}
 	}
 
@@ -83,18 +81,13 @@ public class LoginPage {
 			action.Type(password, pwd)
 			action.Click(submitbtn)
 			action.WaitForPageToLoad()
-
 			action.Click(accountddn)
-			WebUI.delay(3)
 			action.Click(accountvalue)
-			WebUI.delay(3)
 			action.Click(accountlogintbtn)
 			action.WaitForPageToLoad()
-			WebUI.delay(10)
 		}
 		catch(Exception e) {
-			println ("Approval login page failed due to "+ e)
-			Assert.fail()
+			Assert.fail ("Approval login page failed due to "+ e)
 		}
 	}
 }

@@ -14,7 +14,7 @@ import com.kms.katalon.core.testcase.TestCase
 import com.kms.katalon.core.testdata.TestData
 import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
-import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUISetVariableTemplateLayout
 
 import internal.GlobalVariable
 
@@ -63,6 +63,22 @@ public class ItemDetailsPage {
 	By shoppingcartqty = By.xpath("//input[@id='ctl00_Body_shopCartItemsListView_ctrl0_qtyNumTextBox']")
 	By designnumber = By.xpath("//span[@id='Body_lblDesignNumber']")
 	By diecutframe = By.xpath("//li[contains(text(),'Die-Cut A-Frame Table Tent 4x6')]")
+	By descriptionfield = By.xpath("//div[@id = 'ctl00_Body_radAjaxPanel']//h4[1]")
+	By showpricebreak = By.xpath("//a[@id='priceBreakA1']")
+	By unitprice = By.xpath("//th[contains(text(),'Unit Price')]")
+
+
+	@Keyword
+	public void ClickCreateDesignBtn() {
+		try {
+			action.ScrollToBottomOfPage()
+			action.Click(createdesignbtn)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e) {
+			println ("Click On Order Now failed due to "+ e)
+		}
+	}
 
 
 
@@ -83,11 +99,9 @@ public class ItemDetailsPage {
 	public void SetVariableTemplateLayout() {
 		try {
 
-			WebUI.delay(5)
 			boolean status = action.IsElementEnabled(createdesignbtn)
 			println("Status Is "+status)
-			action.ScrollToViewElement(createdesignbtn)
-			WebUI.delay(3)
+			action.ScrollToBottomOfPage()
 			action.Click(createdesignbtn)
 			action.WaitVisible(selectheadline)
 			action.SelectByText(selectheadline, "Cheers to your Valentine")
@@ -95,17 +109,39 @@ public class ItemDetailsPage {
 			action.SelectByText(choosecolor, "Pink")
 			action.SelectByText(chooselayout, "Menu")
 			action.WaitVisible(previewchangebtn)
-			WebUI.delay(10)
 			action.WaitUntilElementClickable(previewchangebtn)
+			action.ScrollToBottomOfPage()
 			action.Click(previewchangebtn)
-			action.WaitUntilElementClickable(nextstepbtn)
 			action.Click(nextstepbtn)
 			action.WaitVisible(nobtn)
 			action.Click(nobtn)
 		}
 		catch(Exception e) {
-			println ("SetVariableTemplateLayout failed due to "+ e)
-			Assert.fail("SetVariableTemplateLayout failed")
+			Assert.fail ("Set Variable Template Layout failed due to "+ e)
+		}
+	}
+	
+	
+	@Keyword
+	public void ValidateItemTypeDropdown() {
+		try {
+
+			boolean status = action.IsElementEnabled(createdesignbtn)
+			println("Status Is "+status)
+			action.ScrollToBottomOfPage()
+			action.Click(createdesignbtn)
+			action.WaitVisible(selectheadline)
+			action.SelectByText(selectheadline, "Cheers to your Valentine")
+			action.SelectByText(choosefont, "Block")
+			action.SelectByText(choosecolor, "Pink")
+			action.SelectByText(chooselayout, "Menu")
+			action.WaitVisible(previewchangebtn)
+			action.WaitUntilElementClickable(previewchangebtn)
+			action.ScrollToBottomOfPage()
+			action.Click(previewchangebtn)
+		}
+		catch(Exception e) {
+			Assert.fail ("Validate Item Type Drop down failed due to "+ e)
 		}
 	}
 
@@ -152,6 +188,9 @@ public class ItemDetailsPage {
 			WebUI.delay(5)
 			action.WaitUntilElementClickable(addtocartbtn)
 			action.Click(addtocartbtn)
+			action.WaitVisible(showpricebreak)
+			action.Click(showpricebreak)
+			action.WaitVisible(unitprice)
 		}
 		catch(Exception e) {
 			println("SelectItemType Failed")
@@ -257,23 +296,28 @@ public class ItemDetailsPage {
 			println("Enter values To Production Selection Page failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
-	public void ClickOnCreateYourOwnDesign()
-	{
-		try
-		{
-			action.WaitVisible(designnumber)
-			//action.WaitVisible(diecutframe)
-			//action.ScrollToViewElement(diecutframe)
+	public void ClickOnCreateYourOwnDesign() {
+		try {
 			action.ScrollToBottomOfPage()
-			WebUI.delay(2)
 			action.Click(createdesignbtn)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("ClickOnCreateYourOwnDesign Failed due to "+e)
 		}
 	}
-	
+
+	@Keyword
+	public void ValidateNAinDescription() {
+		try {
+			action.WaitVisible(descriptionfield)
+			String s = action.GetText(descriptionfield)
+			boolean val = s.contains("N/A")
+			Assert.assertEquals(val, "false")
+		}
+		catch(Exception e) {
+			Assert.fail("ValidateNAinDescription Failed due to "+e)
+		}
+	}
 }

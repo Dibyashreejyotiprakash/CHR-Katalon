@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>DeleteBannedPhrase</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>a5ee3ecf-e8e0-4169-959a-99fc27ccdb4a</testCaseGuid>
+</TestCaseEntity>

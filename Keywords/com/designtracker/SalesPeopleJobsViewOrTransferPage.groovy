@@ -35,6 +35,9 @@ public class SalesPeopleJobsViewOrTransferPage {
 	By toviewjobfor = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_CorpsAndMarkets_ddlToSalesPerson']")
 	By includeinactiveusercheckbox = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_CorpsAndMarkets_chkInactive']")
 	By addnewbtn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_btnTransfer']")
+	By addedrecord = By.xpath("//tr[@class = 'GridViewRow']//td[contains(text(),'ADMIN2, TEST')]")
+	By deletebtn = By.xpath("(//a[contains(text(),'Delete')])[1]")
+
 
 
 	@Keyword
@@ -69,13 +72,10 @@ public class SalesPeopleJobsViewOrTransferPage {
 			Assert.assertTrue(statusofactionddn)
 
 			action.SelectByText(corpddn, "Instant Impact 4.0 Demo Corp (Dist.)")
-			WebUI.delay(5)
 
 			action.SelectByText(marketddn, "Chicago Beverage Systems")
-			WebUI.delay(5)
 
 			action.SelectByText(marketddn, "View Jobs")
-			WebUI.delay(5)
 		}
 		catch(Exception e) {
 			println ("Verify All Fileds In View Transfer Page failed due to "+ e)
@@ -87,9 +87,7 @@ public class SalesPeopleJobsViewOrTransferPage {
 	public void VerifyAddNewBtnWithoutSelectingUser() {
 		try {
 			action.SelectByText(corpddn, "Instant Impact 4.0 Demo Corp (Dist.)")
-			WebUI.delay(5)
 			action.SelectByText(marketddn, "Chicago Beverage Systems")
-			WebUI.delay(5)
 			action.SelectByText(actionddn, "View Jobs")
 			boolean statusofaddnewjob = action.IsElementEnabled(addnewbtn)
 			Assert.assertFalse(statusofaddnewjob)
@@ -104,15 +102,10 @@ public class SalesPeopleJobsViewOrTransferPage {
 	public void VerifyAddNewBtnAfterSelectingUser() {
 		try {
 			action.SelectByText(corpddn, "Instant Impact 4.0 Demo Corp (Dist.)")
-			WebUI.delay(5)
 			action.SelectByText(marketddn, "Chicago Beverage Systems")
-			WebUI.delay(5)
 			action.SelectByText(actionddn, "View Jobs")
-			WebUI.delay(5)
 			action.SelectByText(grantforddn, "ADMIN1, QA (qaadmin1@brandmuscle.com)")
-			WebUI.delay(5)
 			action.SelectByText(toviewjobfor, "ADMIN1, TEST (testadmin1@brandmuscle.com)")
-			WebUI.delay(5)
 			boolean statusofaddnewjob = action.IsElementEnabled(addnewbtn)
 			Assert.assertTrue(statusofaddnewjob)
 		}
@@ -126,21 +119,46 @@ public class SalesPeopleJobsViewOrTransferPage {
 	public void TransferJob() {
 		try {
 			action.SelectByText(corpddn, "Instant Impact 4.0 Demo Corp (Dist.)")
-			WebUI.delay(5)
+
 			action.SelectByText(marketddn, "Chicago Beverage Systems")
-			WebUI.delay(5)
+
 			action.SelectByText(actionddn, "View Jobs")
-			WebUI.delay(5)
+
 			action.SelectByText(grantforddn, "ADMIN1, QA (qaadmin1@brandmuscle.com)")
-			WebUI.delay(5)
+
 			action.SelectByText(toviewjobfor, "ADMIN1, TEST (testadmin1@brandmuscle.com)")
-			WebUI.delay(5)
+
 			boolean statusofaddnewjob = action.IsElementEnabled(addnewbtn)
 			Assert.assertTrue(statusofaddnewjob)
 			action.Click(addnewbtn)
 		}
 		catch(Exception e) {
 			println ("Transfer Job failed due to "+ e)
+			Assert.fail()
+		}
+	}
+
+
+	@Keyword
+	public void VerifyUserDisplayOnceAdded() {
+		try {
+			action.SelectByText(corpddn, "Instant Impact 4.0 Demo Corp (Dist.)")
+
+			action.SelectByText(marketddn, "Chicago Beverage Systems")
+
+			action.SelectByText(actionddn, "View Jobs")
+
+			action.SelectByText(grantforddn, "ADMIN2, TEST (testadmin2@brandmuscle.com)")
+
+			action.SelectByText(toviewjobfor, "ADMIN1, TEST (testadmin1@brandmuscle.com)")
+
+			boolean statusofaddnewjob = action.IsElementEnabled(addnewbtn)
+			Assert.assertTrue(statusofaddnewjob)
+			action.Click(addnewbtn)
+			action.Click(deletebtn)
+		}
+		catch(Exception e) {
+			println ("VerifyUserDisplayOnceAdded failed due to "+ e)
 			Assert.fail()
 		}
 	}

@@ -42,8 +42,8 @@ public class CloneJobSearchPage {
 	By selectcheckbox = By.xpath("//*[@id='ctl00_Body_rdgrdSearchResults_ctl00_ctl06_Detail10']//td/input")
 
 	By withoutselectionitemerrormsg =By.xpath("//*[@id='Body_lblError']")
-	
-	
+
+
 	@Keyword
 	public void VerifyJobSearchPage() {
 		boolean statusofdtserachtxtbox = action.IsElementDisplayed(searchbydtnumber)
@@ -66,38 +66,34 @@ public class CloneJobSearchPage {
 		boolean statusofdtjob = action.IsElementDisplayed(dtnoincloneserchresultspage)
 		println ("Status of dt job ************"+ statusofdtjob)
 	}
-	
+
 	@Keyword
-	public void SelectItemAndAddSelectedItem()
-	{
+	public void SelectItemAndAddSelectedItem() {
 		boolean statusofexpandbtn = action.IsElementEnabled(expandbtn)
-		if(statusofexpandbtn == true)
-		{
+		if(statusofexpandbtn == true) {
 			action.Click(expandbtn)
-			WebUI.delay(10)
+			//WebUI.delay(10)
+			action.ScrollToViewElement(selectcheckbox)
 			action.Click(selectcheckbox)
-			WebUI.delay(10)
+			//WebUI.delay(10)
 			action.Click(addselecteditems)
 		}
 	}
-	
+
 	@Keyword
-	public void WithoutSelectItemAndAddSelectedItem()
-	{
+	public void WithoutSelectItemAndAddSelectedItem() {
 		boolean statusofexpandbtn = action.IsElementEnabled(expandbtn)
-		if(statusofexpandbtn == true)
-		{
+		if(statusofexpandbtn == true) {
 			action.Click(expandbtn)
-			WebUI.delay(10)
+			//WebUI.delay(10)
+			action.ScrollToViewElement(addselecteditems)
 			action.Click(addselecteditems)
-			WebUI.delay(10)
+			//WebUI.delay(10)
 			boolean statusoferrormsg = action.IsElementDisplayed(withoutselectionitemerrormsg)
-			if(statusoferrormsg == true)
-			{
+			if(statusoferrormsg == true) {
 				println ("Error message is appearing")
 			}
-			else
-			{
+			else {
 				Assert.fail()
 			}
 		}

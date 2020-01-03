@@ -31,7 +31,7 @@ CustomKeywords.'com.wswadmin.II4ConfigurationPage.VerifyAllFieldsOnOLOFII4Config
 
 CustomKeywords.'com.wswadmin.II4ConfigurationPage.SelectCorpAndMarkets'()
 
-CustomKeywords.'com.wswadmin.II4ConfigurationPage.VerifyWelComeScreenConfigurationSection'()
+CustomKeywords.'com.wswadmin.II4ConfigurationPage.VerifyWelComeScreenConfigurationSelection'()
 
 CustomKeywords.'com.wswadmin.II4ConfigurationPage.VerifyCreateNewOrderVisibility'()
 

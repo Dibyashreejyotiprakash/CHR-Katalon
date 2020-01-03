@@ -104,6 +104,8 @@ public class HomePage {
 	By salespeopleviewtransferjob = By.xpath("//*[text()='SALES PEOPLE JOBS VIEW/TRANSFER']")
 	By suppliers = By.xpath("//*[text()='SUPPLIERS']")
 	By salespeople = By.xpath("//*[text()='SALES PEOPLE']")
+	By jobnotenotify = By.xpath("//*[text()='JOB NOTE NOTIFY']")
+
 
 	@Keyword
 	public void VerifyHomePage() {
@@ -272,7 +274,7 @@ public class HomePage {
 			action.WaitVisible(jobActivityTracking)
 			action.Click(jobactivitytracking)
 			action.WaitForPageToLoad(300)
-			WebUI.delay(6)
+			//WebUI.delay(6)
 		}
 		catch(Exception e) {
 			println ("ClickOnJobActivityTracking method failed due to :" + e)
@@ -287,7 +289,7 @@ public class HomePage {
 			action.WaitVisible(jobdiagnostic)
 			action.Click(jobdiagnostic)
 			action.WaitForPageToLoad(300)
-			WebUI.delay(6)
+			//WebUI.delay(6)
 		}
 		catch(Exception e) {
 			println ("ClickOnJobDaignostic method failed due to :" + e)
@@ -302,7 +304,7 @@ public class HomePage {
 			action.WaitVisible(jobEfficiency)
 			action.Click(jobEfficiency)
 			action.WaitForPageToLoad(300)
-			WebUI.delay(6)
+			//WebUI.delay(6)
 		}
 		catch(Exception e) {
 			println ("ClickOnJobEfficiency method failed due to :" + e)
@@ -317,7 +319,7 @@ public class HomePage {
 			action.WaitVisible(jobstatus)
 			action.Click(jobstatus)
 			action.WaitForPageToLoad(300)
-			WebUI.delay(6)
+			//WebUI.delay(6)
 		}
 		catch(Exception e) {
 			println ("ClickOnJobStatus method failed due to :" + e)
@@ -333,7 +335,7 @@ public class HomePage {
 			action.WaitVisible(jobsamebrand)
 			action.Click(jobsamebrand)
 			action.WaitForPageToLoad(300)
-			WebUI.delay(6)
+			//WebUI.delay(6)
 		}
 		catch(Exception e) {
 			println ("ClickOnJobsSameBrands method failed due to :" + e)
@@ -348,7 +350,7 @@ public class HomePage {
 			action.WaitVisible(profitLoss)
 			action.Click(profitLoss)
 			action.WaitForPageToLoad(300)
-			WebUI.delay(6)
+			//WebUI.delay(6)
 		}
 		catch(Exception e) {
 			println ("ClickOnProfirLoss method failed due to :" + e)
@@ -363,7 +365,7 @@ public class HomePage {
 			action.WaitVisible(statussummary)
 			action.Click(statussummary)
 			action.WaitForPageToLoad(300)
-			WebUI.delay(6)
+			//WebUI.delay(6)
 		}
 		catch(Exception e) {
 			println ("ClickOnStatusSummary method failed due to :" + e)
@@ -376,7 +378,7 @@ public class HomePage {
 			action.WaitVisible(gexorderstatus)
 			action.Click(gexorderstatus)
 			action.WaitForPageToLoad(300)
-			WebUI.delay(6)
+			//WebUI.delay(6)
 		}
 		catch(Exception e) {
 			println ("ClickOnGEXOrderStatus method failed due to :" + e)
@@ -417,15 +419,15 @@ public class HomePage {
 			action.Click(ddlCorporation)
 			action.SelectByText(ddlCorporation, "Instant Impact 4.0 Demo Corp (Dist.)")
 			//action.SelectByIndex(ddlCorporation, 300)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.Click(ddlMarcket)
 			action.SelectByText(ddlMarcket, "Chicago Beverage Systems")
 			//action.SelectByIndex(ddlMarcket, 296)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.ScrollToViewElement(jobSearchButton)
 			action.Click(jobSearchButton)
 			action.WaitVisible(SearchJobResultDiv)
-			//WebUI.delay(5)
+			////WebUI.delay(5)
 		}
 		catch(Exception e){
 			println("SelectCorporationAndMarcket method failed due to "+ e)
@@ -441,16 +443,10 @@ public class HomePage {
 			List<WebElement> lst =	action.GetElements(jobIds)
 
 			for(int i=0; i<=lst.size();i++){
-
 				String jobID = lst[i].getText()
 				println("-------------------->>>>>>>>" +jobID)
 				getjobid = jobID;
 				break;
-
-
-
-
-
 			}
 			return getjobid
 		}
@@ -465,10 +461,10 @@ public class HomePage {
 		try {
 			action.WaitVisible(corporationddn)
 			action.SelectByText(corporationddn, "Demo Distributor (QA)")
-			action.ScrollToViewelement(searchbtn)
+			action.ScrollToViewElement(searchbtn)
 			action.WaitUntilElementClickable(searchbtn)
 			action.Click(searchbtn)
-			WebUI.delay(10)
+			//WebUI.delay(10)
 			action.WaitUntilElementClickable(resetbtn)
 			action.Click(resetbtn)
 			action.WaitVisible(corporationddn)
@@ -485,7 +481,7 @@ public class HomePage {
 		try {
 			//action.WaitVisible(corporationddn)
 			action.SelectByText(corporationddn, "Demo Distributor (QA)")
-			//WebUI.delay(5)
+			////WebUI.delay(5)
 			action.ScrollToBottomOfPage()
 			action.WaitUntilElementClickable(searchbtn)
 			action.Click(searchbtn)
@@ -514,7 +510,7 @@ public class HomePage {
 			action.Type(searchallbtn, jobnumber)
 			action.WaitVisible(corporationddn)
 			action.SelectByText(corporationddn, "Demo Distributor (QA)")
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.ScrollToBottomOfPage()
 			action.WaitUntilElementClickable(searchbtn)
 			action.Click(searchbtn)
@@ -529,7 +525,7 @@ public class HomePage {
 				break
 			}
 			action.WaitForPageToLoad()
-			WebUI.delay(5)
+			//WebUI.delay(5)
 		}
 		catch(Exception e) {
 			println ("Verify existing job search failed due to "+ e)
@@ -542,7 +538,7 @@ public class HomePage {
 			action.WaitVisible(siteadmin)
 			action.MouseHoverOnElement(siteadmin)
 			//action.WaitVisible(exceptionlistsalespeople)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(exceptionlistsalespeople)
 			action.WaitForPageToLoad()
 		}
@@ -557,7 +553,7 @@ public class HomePage {
 			action.WaitVisible(siteadmin)
 			action.MouseHoverOnElement(siteadmin)
 			action.WaitVisible(highrarchy)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.MouseHoverAndClick(highrarchy)
 			action.WaitForPageToLoad()
 		}
@@ -572,7 +568,7 @@ public class HomePage {
 			action.WaitVisible(siteadmin)
 			action.MouseHoverOnElement(siteadmin)
 			//action.WaitVisible(jobclosing)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(jobclosing)
 			action.WaitForPageToLoad()
 		}
@@ -587,7 +583,7 @@ public class HomePage {
 			action.WaitVisible(siteadmin)
 			action.MouseHoverOnElement(siteadmin)
 			action.WaitVisible(joblinestratification)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.MouseHoverAndClick(joblinestratification)
 			action.WaitForPageToLoad()
 		}
@@ -613,9 +609,9 @@ public class HomePage {
 	public void ClickOnJobTypes() {
 		try {
 			action.MouseHoverOnElement(siteadmin)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.Click(jobtypes)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 		}
 		catch(Exception e) {
 			println ("Click on Job Types failed due to "+ e)
@@ -627,9 +623,9 @@ public class HomePage {
 	public void ClickOnSuppliers() {
 		try {
 			action.MouseHoverOnElement(siteadmin)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.Click(suppliers)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 		}
 		catch(Exception e) {
 			println ("Click on Suppliers failed due to "+ e)
@@ -640,7 +636,7 @@ public class HomePage {
 	public void ClickOnExceptionlistBrands() {
 		try {
 			action.MouseHoverOnElement(siteadmin)
-			//WebUI.delay(3)
+			////WebUI.delay(3)
 			action.Click(exceptionlistbrands)
 			action.WaitForPageToLoad()
 		}
@@ -654,7 +650,7 @@ public class HomePage {
 	{
 		try {
 			action.MouseHoverOnElement(siteadmin)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(salespeopleviewtransferjob)
 			action.WaitForPageToLoad()
 		}
@@ -668,7 +664,7 @@ public class HomePage {
 	{
 		try {
 			action.MouseHoverOnElement(siteadmin)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(distributorbudgetmigration)
 			action.WaitForPageToLoad()
 		}
@@ -682,7 +678,7 @@ public class HomePage {
 	{
 		try {
 			action.MouseHoverOnElement(siteadmin)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(supplierBrandManagers)
 			action.WaitForPageToLoad()
 		}
@@ -696,7 +692,7 @@ public class HomePage {
 	public void ClickOnSalesPeople() {
 		try {
 			action.MouseHoverOnElement(siteadmin)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(salespeople)
 			action.WaitForPageToLoad()
 		}
@@ -718,4 +714,37 @@ public class HomePage {
 			Assert.fail()
 		}
 	}
+
+
+	@Keyword
+	public void NavigateToJobNoteNotificationPage()
+	{
+		try
+		{
+			action.MouseHoverOnElement(applicationadmin)
+			//WebUI.delay(5)
+			action.Click(jobnotenotify)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e)
+		{
+			println ("Navigate To Job Note Notification Page failed due to "+ e)
+			Assert.fail()
+		}
+	}
+
+	@Keyword
+	public void ValidateGexOrderStatusBtn()
+	{
+		try
+		{
+			action.isElementPresent(gexOrderStatus)
+		}
+		catch(Exception e)
+		{
+			println ("Navigate To Job Note Notification Page failed due to "+ e)
+			Assert.fail()
+		}
+	}
+
 }

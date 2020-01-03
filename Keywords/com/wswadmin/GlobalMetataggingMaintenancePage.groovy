@@ -34,7 +34,7 @@ public class GlobalMetataggingMaintenancePage {
 	Interaction action = new Interaction()
 
 
-	By addnewmetatagbtn = By.xpath("//button[contains(text(),'Add New Meta Tag')]")
+	By addnewmetatagbtn = By.xpath("//*[@id='btnAdd']")
 	By addmetatagbtn = By.xpath("//input[@id='btnaddnew']")
 	By newmetatagnamefield = By.xpath("//input[@id='txtaddmetatag']")
 	By canceladdmetatagbtn = By.xpath("(//input[@class = 'btn-primary cancel-btn'])[2]")
@@ -45,7 +45,7 @@ public class GlobalMetataggingMaintenancePage {
 	By elipssys = By.xpath("//span[@id='spnMenuIcon_506']")
 	By globalsearchbox = By.xpath("//input[@id='txtSearch']")
 	By renameoption = By.xpath("//div[@id='divMenu']/div[contains(text(),'Rename')]")
-	By searchcategoryfield = By.xpath("//input[@placeholder = 'Search or Select Category']")
+	By searchcategoryfield = By.xpath("//*[@id='select2-cphMain_ddlCategories-container']")
 	By selectbrandcategory = By.xpath("//li[contains(text(),'Brand Name')]")
 	By categorydropdown = By.xpath("//span[@id='select2-cphMain_ddlCategories-container']")
 	By metatagcount = By.xpath("//label[@id='lblMetatagCount']")
@@ -53,10 +53,31 @@ public class GlobalMetataggingMaintenancePage {
 	By addmetatagsuccessmssg = By.xpath("//div[contains(text(),'has been added successfully')]")
 	By specialcharactermetatag = By.xpath("//label[contains(text(),'Te@t')]")
 	By specialmetatagelipssys = By.xpath("//span[@name = 'Te@t']")
+	By newlycreatedexternalitemcategory = By.xpath("//*[text()='11-A- External Item-89768hgfhggh']")
+	By globalmettagmenu = By.xpath("//*[contains(@id,'spnMenuIcon')]")
+	By globalmetatagsearchbox = By.xpath("//*[@id='txtSearch']")
+	By deletesubmenulink = By.xpath("//*[@id='menuDelete']")
+	By deletecheckbox = By.cssSelector("div#deletemodal > .image-modal-dialog.modal-dialog > .image-modal-content.modal-content .check")
+	By deletebtn = By.cssSelector("div#deletemodal > .image-modal-dialog.modal-dialog input[value='Delete']")
+	By renamelink = By.xpath("//*[@id='menuRename']")
+	By renametextbox = By.xpath("//*[@id='txtrenamemetatag']")
+	By renamecheckbox = By.cssSelector(".rename-checkbox .check")
+	By renamesavechangesbtn = By.cssSelector("input[value='Save Changes']")
 
 	LocalTime currenttime = LocalTime.now()
 	String newmetatagname = "Test"+ currenttime
 
+	@Keyword
+	public void VerifyGlobalMetaTaggingMaintenancePage()
+	{
+		try{
+			action.VerifyCurrentPage("GlobalMetaTaggingMaintenance.aspx")
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Verify Global MetaTagging Maintenance Page failed due "+ e)
+		}
+	}
 
 	@Keyword
 	public void selectCategory(){
@@ -156,6 +177,71 @@ public class GlobalMetataggingMaintenancePage {
 		}
 		catch(Exception e) {
 			Assert.fail("ValidateDeleteSpecialCharacterGlobalMetatag "+e)
+		}
+	}
+
+	/********************************************************************/
+
+	@Keyword
+	public String CreteGlobalMetatag()
+	{
+		String newlycreatedglobalmetatag = null
+		try {
+			action.Click(searchcategoryfield)
+			action.Click(newlycreatedexternalitemcategory)
+			action.Click(addnewmetatagbtn)
+			newlycreatedglobalmetatag = "Test Global Metatag "+action.GenerateRandomAplphabaticString(10)
+			action.Type(newmetatagnamefield, newlycreatedglobalmetatag)
+			action.Click(addmetatagbtn)
+
+			return newlycreatedglobalmetatag
+		}
+		catch(Exception e) {
+			Assert.fail( "Create Global Meta tag"+e)
+		}
+	}
+
+	@Keyword
+	public void DeleteNewlyCreatedGlobalMetaTag(String newlycreatedglobalmetatag)
+	{
+		try{
+			action.Click(searchcategoryfield)
+			action.Click(newlycreatedexternalitemcategory)
+			action.Enter(searchcategoryfield)
+			action.Type(globalmetatagsearchbox, newlycreatedglobalmetatag)
+			action.Enter(globalmetatagsearchbox)
+			action.Click(globalmettagmenu)
+			action.Click(deletesubmenulink)
+			action.Click(deletecheckbox)
+			action.Click(deletebtn)
+		}
+		catch(Exception e)
+		{
+			Assert.fail( "Delete Newly Created Global MetaTag"+e)
+		}
+	}
+
+	@Keyword
+	public void RenameNewlyCreatedGlobalMetaTag(String newlycreatedglobalmetatag)
+	{
+		try{
+			action.Click(searchcategoryfield)
+			action.Click(newlycreatedexternalitemcategory)
+			action.WaitVisible(searchcategoryfield)
+			action.Enter(searchcategoryfield)
+			action.Type(globalmetatagsearchbox, newlycreatedglobalmetatag)
+			action.Enter(globalmetatagsearchbox)
+			action.Click(globalmettagmenu)
+			action.Click(renamelink)
+			String renamedglobalmetatagname = "Override Global Metatag "+ newlycreatedglobalmetatag
+			action.TypeClear(renametextbox, renamedglobalmetatagname)
+			action.Click(renamecheckbox)
+			action.Click(renamesavechangesbtn)
+			DeleteNewlyCreatedGlobalMetaTag(renamedglobalmetatagname)
+		}
+		catch(Exception e)
+		{
+			Assert.fail( "Rename Newly Created Global MetaTag"+e)
 		}
 	}
 }

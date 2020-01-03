@@ -61,7 +61,7 @@ public class ConsolidatorEditProgramPage {
 				if(isenabale == true) {
 					action.Click(addnewelementbtn)
 					action.WaitForPageToLoad()
-					WebUI.delay(10)
+					//WebUI.delay(10)
 				}
 			}
 			else{
@@ -83,7 +83,7 @@ public class ConsolidatorEditProgramPage {
 				Assert.assertTrue(statusofenablebacklink)
 				action.Click(backbtn)
 				action.WaitForPageToLoad()
-				WebUI.delay(5)
+				//WebUI.delay(5)
 			}
 		}
 		catch(Exception e) {
@@ -104,7 +104,7 @@ public class ConsolidatorEditProgramPage {
 			if(statusenablelink == true) {
 				action.Click(firsteditlink)
 				action.WaitForPageToLoad()
-				WebUI.delay(5)
+				//WebUI.delay(5)
 			}
 		}
 		catch(Exception e) {
@@ -141,7 +141,7 @@ public class ConsolidatorEditProgramPage {
 			action.Click(firsteditlink)
 			action.WaitForPageToLoad()
 			action.TypeClear(pricetextbox, "10001")
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.ScrollToBottomOfPage()
 			boolean statusofsavechangesbtn = action.IsElementEnabled(savechangesbtn)
 			Assert.assertTrue(statusofsavechangesbtn)
@@ -168,9 +168,9 @@ public class ConsolidatorEditProgramPage {
 			Assert.assertTrue(statusofdeletelink)
 			if(statusofdeletelink == true) {
 				action.Click(deletelink)
-				WebUI.delay(5)
+				//WebUI.delay(5)
 				action.Click(deletecheckbox)
-				WebUI.delay(5)
+				//WebUI.delay(5)
 				action.Click(deletebtn)
 			}
 		}

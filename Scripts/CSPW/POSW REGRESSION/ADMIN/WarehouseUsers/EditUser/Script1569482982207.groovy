@@ -18,8 +18,6 @@ CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameposw, Glo
 
 CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.posusername, GlobalVariable.pospassword)
 
-CustomKeywords.'com.poswm.Homepage.HoverOnWareHouseMenu'()
-
 CustomKeywords.'com.poswm.Homepage.ClickOnWarehouseUser'()
 
 CustomKeywords.'com.poswm.WarehouseUsersPage.VerifyWarehouseUsersPage'()

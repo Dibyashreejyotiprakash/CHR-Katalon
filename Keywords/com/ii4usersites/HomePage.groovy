@@ -40,6 +40,8 @@ class HomePage {
 	By accountlink = By.xpath("//*[text()='Account']")
 	By projects = By.xpath("//*[text()='Projects']")
 	By helpMenu = By.xpath("//li[@class='rmItem rmLast']//span[@class='rmToggle']")
+	By pagebox = By.xpath("//input[@id='ctl00_Body_rntbPage']")
+	By resultpage60 = By.xpath("//input[@id='ctl00_Body_btn60']")
 
 	@Keyword
 	public boolean VerifyHomePage() {
@@ -69,14 +71,16 @@ class HomePage {
 		action.ScrollToBottomOfPage()
 		action.WaitVisible(imgPOSTemplates)
 		action.Click(imgPOSTemplates)
+		WebUI.delay(5)
 		action.WaitForPageToLoad()
 	}
 
 	@Keyword
 	public void ClickOnOrderForm() {
 		try {
-			action.ScrollToBottomOfPage()
-			action.WaitVisible(orderform)
+			//action.ScrollToBottomOfPage()
+			action.ScrollToViewElement(orderform)
+			//action.WaitVisible(orderform)
 			action.Click(orderform)
 			action.WaitForPageToLoad()
 		}
@@ -136,4 +140,28 @@ class HomePage {
 			throw e;
 		}
 	}
+
+	@Keyword
+	public void ValidatePagination()
+	{
+		try
+		{
+			action.WaitVisible(pagebox)
+			action.ScrollToViewElement(pagebox)
+			action.Clear(pagebox)
+			action.Type(pagebox, "12")
+			action.Enter(pagebox)
+			//action.ScrollToViewElement(resultpage60)
+			//action.ScrollToBottomOfPage()
+			//action.Click(resultpage60)
+			//action.WaitUntilElementClickable(pagebox)
+		}
+
+		catch(Exception e)
+		{
+			Assert.fail("ValidatePagination failed due to :"+e)
+		}
+
+	}
+
 }

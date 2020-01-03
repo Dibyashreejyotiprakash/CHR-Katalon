@@ -65,6 +65,7 @@ public class WarehouseAdminItemProperty {
 		try {
 			//WebUI.delay(2)
 			action.WaitVisible(itempropertydropdown)
+			action.Click(itempropertydropdown)
 			action.WaitVisible(seasonaltype)
 			action.Click(seasonaltype)
 			action.WaitVisible(itempropertysearch)

@@ -29,18 +29,18 @@ public class ItemListOptionPage {
 	Interaction action = new Interaction();
 
 	By bindingsbtn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_BindingButton_input']")
-	By colorbtn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_ColorButton_input']")
-	By coloraddnewbtn = By.xpath("//*[@id='ctl00_cphMain_ColorGrid_ctl00_ctl02_ctl00_AddNewRecordButton']")
+	By colorbtn = By.xpath("//span[@id='ctl00_ctl00_cphMain_cphMain_ColorButton']")
+	By coloraddnewbtn = By.xpath("//input[@id = 'ctl00_cphMain_ColorGrid_ctl00_ctl02_ctl00_AddNewRecordButton']")
 	By cuttypesbtn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_CutTypeButton_input']")
-	By formatmaterialbtn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_FormatMaterialButton_input']")
+	By formatmaterialbtn = By.xpath("//span[@id = 'ctl00_ctl00_cphMain_cphMain_FormatMaterialButton']")
 	By formatmaterialtype = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_FormatMaterialTypeButton_input']")
-	By formatmaterialtypeaddnewbtn = By.xpath("//*[@id='ctl00_cphMain_MaterialTypeGrid_ctl00_ctl02_ctl00_AddNewRecordButton']")
+	By formatmaterialtypeaddnewbtn = By.xpath("//input[@id='ctl00_cphMain_MaterialGrid_ctl00_ctl02_ctl00_AddNewRecordButton']")
 	By gluebtn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_GlueButton_input']")
 	By laminationsbtn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_LaminationButton_input']")
 	By shipswithbaneersbtn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_ShipsWithBannerButton_input']")
 	By shipwithmarketskitsbtn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_ShipsWithMarkerKitButton_input']")
 	By shipswithshelfclipsbtn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_ShipsWithShelfClipButton_input']")
-	By addnewrecordbtn = By.xpath("//*[@id='BindingGrid_ctl00_ctl02_ctl00_AddNewRecordButton']")
+	By addnewrecordbtn = By.xpath("//input[@id='BindingGrid_ctl00_ctl02_ctl00_AddNewRecordButton']")
 	By nametextbox = By.xpath("//*[@id='BindingGrid_ctl00_ctl02_ctl02_NameEditor']")
 	By insertbtn = By.xpath("//*[@id='BindingGrid_ctl00_ctl02_ctl02_btnUpdate']")
 
@@ -60,12 +60,13 @@ public class ItemListOptionPage {
 		try{
 			boolean statusofbindingbtn = action.IsElementEnabled(bindingsbtn)
 			Assert.assertTrue(statusofbindingbtn)
-			
+
 			println ("Status of bindings button ----"+ statusofbindingbtn)
 
 			if(statusofbindingbtn == true) {
 				action.Click(bindingsbtn)
 				WebUI.delay(3)
+				driver.switchTo().frame(0)
 				action.Click(addnewrecordbtn)
 				WebUI.delay(3)
 				action.Type(nametextbox,"Test")
@@ -77,21 +78,21 @@ public class ItemListOptionPage {
 			Assert.fail("Verify Bindings Btn failed due to "+ e)
 		}
 	}
-	
-	
+
+
 	@Keyword
 	public void VerifyColoresbtn() {
 		try{
 			boolean statusofcolorbtn = action.IsElementEnabled(colorbtn)
 			Assert.assertTrue(statusofcolorbtn)
-			
+
 			println ("Status of bindings button ----"+ statusofcolorbtn)
 
 			if(statusofcolorbtn == true) {
 				action.Click(colorbtn)
 				WebUI.delay(3)
-				
-				//driver.switchTo().frame("ItemColorGrid.aspx")
+
+				driver.switchTo().frame(0)
 				Assert.assertTrue(action.IsDisplayed(coloraddnewbtn))
 			}
 			else{
@@ -102,13 +103,13 @@ public class ItemListOptionPage {
 			Assert.fail("Verify Colors Btn failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
 	public void VerifyFormatMaterialTypebtnAndDeleteMatrailType() {
 		try{
 			boolean statusofmaterialsbtn = action.IsElementEnabled(formatmaterialbtn)
 			Assert.assertTrue(statusofmaterialsbtn)
-			
+
 			println ("Status of bindings button ----"+ statusofmaterialsbtn)
 
 			if(statusofmaterialsbtn == true) {
@@ -126,5 +127,4 @@ public class ItemListOptionPage {
 			Assert.fail("Verify Format Material Type button and Delete failed due to "+ e)
 		}
 	}
-	
 }

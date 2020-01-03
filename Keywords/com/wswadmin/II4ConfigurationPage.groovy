@@ -50,7 +50,56 @@ public class II4ConfigurationPage {
 	By booksverbiage = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_rtbBooksLbl']")
 	By accessoriesverbiage = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_rtbAccessoriesLbl']")
 	By itemdetailssection = By.xpath("//*[text()='ITEM DETAILS']")
+	By brandmentions = By.xpath("//*[@id='collapseEight']")
+	By pricebreakyesbtn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_rbDivPriceBreaksTrue']/span[1]")
+	By pricebreaknobtn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_rbDivPriceBreaksFalse']/span[1]")
+	By IIDemoCOrpDist = By.xpath("//*[text()='Instant Impact 4.0 Demo Corp (Dist.)']")
+	By ChicagoBeverageMarket = By.xpath("//*[text()='Chicago Beverage Systems (296)']")
+	By priceDisclaimerYesCheckBox = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_rbPnlPriceDisclaimerTrue']/span[1]")
+	By priceDisclaimerNoCheckBox = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_rbPnlPriceDisclaimerFalse']/span[1]")
 
+
+	@Keyword
+	public void SelectIICorpAndMarkets() {
+		try {
+			action.Click(corpddn)
+			//WebUI.delay(10)
+			//action.ScrollToViewelement(corpddnvalue)
+			action.Click(IIDemoCOrpDist)
+			//WebUI.delay(20)
+			action.Click(marketddn)
+			//WebUI.delay(10)
+			action.Click(ChicagoBeverageMarket)
+			//WebUI.delay(10)
+		}
+		catch(Exception e) {
+			println ("SelectIICorpAndMarkets method failed due to "+ e)
+			Assert.fail()
+		}
+	}
+
+	@Keyword
+	public String EnableAndDisablePriceDisclaimer(String Disclaimer) {
+		try {
+			if (Disclaimer.equalsIgnoreCase("Enable")) {
+				action.ScrollToBottomOfPage()
+				action.Click(priceDisclaimerYesCheckBox)
+				action.Click(savebtn)
+				WebUI.delay(5)
+				return Disclaimer
+			}
+			else {
+				action.ScrollToBottomOfPage()
+				action.Click(priceDisclaimerNoCheckBox)
+				action.Click(savebtn)
+				WebUI.delay(5)
+				return Disclaimer
+			}
+		}
+		catch(Exception e) {
+			Assert.fail("EnableAndDisablePriceDisclaimer failed due to :" + e)
+		}
+	}
 
 
 	@Keyword
@@ -78,7 +127,7 @@ public class II4ConfigurationPage {
 			//WebUI.delay(20)
 			//action.ScrollToViewelement(corpddnvalue)
 			action.Click(corpddnvalue)
-			//WebUI.delay(20)
+			WebUI.delay(10)
 			action.Click(marketddn)
 			//WebUI.delay(20)
 			action.Click(marketddnvalue)
@@ -306,55 +355,70 @@ public class II4ConfigurationPage {
 			Assert.fail()
 		}
 	}
-	
+
 	@Keyword
-	public void AddVerbiageTextForItemDetailsPage()
-	{
+	public void UpdatePriceBreakVisiblity() {
 		try{
-			
+			action.ScrollToViewelement(brandmentions)
+			boolean statusofpricebreakyesbtn = action.IsElementSelected(pricebreakyesbtn)
+			if(statusofpricebreakyesbtn == true) {
+				action.ScrollToBottomOfPage()
+				action.Click(savebtn)
+			}
+			else {
+				action.Click(pricebreakyesbtn)
+				action.ScrollToBottomOfPage()
+				action.Click(savebtn)
+			}
+		}
+		catch(Exception e) {
+			println ("Update Price Break Visibility failed due to "+ e)
+			Assert.fail()
+		}
+	}
+
+	@Keyword
+	public void AddVerbiageTextForItemDetailsPage() {
+		try{
 			//action.ScrollToViewelement(itemdetailssection)
 			action.ScrollToBottomOfPage()
-			
+
 			action.Clear(smallprintverbiage)
 			action.Type(smallprintverbiage, "Small Text For Testing")
-			
+
 			action.Clear(largeprintverbiage)
 			action.Type(largeprintverbiage, "Large Text For Testing")
-			
+
 			action.Clear(booksverbiage)
 			action.Type(booksverbiage, "Books Text For Testing")
-			
+
 			action.Clear(accessoriesverbiage)
 			action.Type(accessoriesverbiage, "Accessories Text For Testing")
-			
+
 			action.ScrollToBottomOfPage()
-			
+
 			WebUI.delay(10)
 			action.Click(savebtn)
 		}
-		catch(Exception e)
-		{
-		   Assert.fail("Add Verbiage Text for Item Details Page failed due to "+ e)	
+		catch(Exception e) {
+			Assert.fail("Add Verbiage Text for Item Details Page failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
-	public void VerifyItemDetailsSection()
-	{
+	public void VerifyItemDetailsSection() {
 		try{
 			boolean statusofitemdetailssection = action.IsElementDisplayed(itemdetailssection)
 			Assert.assertTrue(statusofitemdetailssection)
-			
-			if(statusofitemdetailssection ==true)
-			{
+
+			if(statusofitemdetailssection ==true) {
 				println ("Item Details section verified")
 			}
 			else{
 				throw new Exception ("Item Details section is not appearing")
 			}
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("Verify Item Details Selection failed due to "+ e)
 		}
 	}

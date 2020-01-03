@@ -33,11 +33,11 @@ public class ConsolidatorEditBaseElementPage {
 	By backbtn = By.xpath("//*[@href='ConsolidatorManageBaseElement.aspx?']")
 	By deletelementbtn = By.xpath("//*[@class='remove full-width']")
 	By price = By.xpath("//*[@id='MainContent_MainContent_txtprice']")
-	 By qtyperpack = By.xpath("//*[@id='MainContent_MainContent_txtquantity']")
-	 By estimatednoofversion = By.xpath("//*[@id='MainContent_MainContent_txtestversion']")
-	 By estimatedtotalqty = By.xpath("//*[@id='MainContent_MainContent_txtestquantity']")
-	 By savechangesbutton = By.xpath("//*[@id='btnEdit']")
- 
+	By qtyperpack = By.xpath("//*[@id='MainContent_MainContent_txtquantity']")
+	By estimatednoofversion = By.xpath("//*[@id='MainContent_MainContent_txtestversion']")
+	By estimatedtotalqty = By.xpath("//*[@id='MainContent_MainContent_txtestquantity']")
+	By savechangesbutton = By.xpath("//*[@id='btnEdit']")
+
 
 	@Keyword
 	public void VerifyEditElementpage() {
@@ -73,8 +73,8 @@ public class ConsolidatorEditBaseElementPage {
 		boolean statusofenablityofdeletebtn = action.IsElementEnabled(deletelementbtn)
 		Assert.assertTrue(statusofenablityofdeletebtn)
 	}
-	
-	
+
+
 	@Keyword
 	public void EditDetailsAndSave() {
 		try{
@@ -85,7 +85,6 @@ public class ConsolidatorEditBaseElementPage {
 			Assert.assertTrue(statusofsavechangesbtn)
 			if(statusofsavechangesbtn == true) {
 				action.Click(savechangesbutton)
-				
 			}
 			else{
 				throw new Exception ("Add New element is disabled")

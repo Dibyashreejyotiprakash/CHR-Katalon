@@ -41,7 +41,8 @@ public class BannedPhrasePage {
 	By popupcancelbtn = By.xpath("//*[@id='ctl00_cphMain_RadGridTemplate_ctl00_ctl02_ctl03_btnCancel_input']")
 	By allbannedwordsingrid = By.xpath("//*[@id='ctl00_cphMain_RadGridTemplate']//tr//td[4]")
 	By successfulmsg = By.xpath("//*[@id='cphMain_lblMessage']")
-	By deletebtn = By.xpath("//*[@id='ctl00_cphMain_RadGridTemplate']//tr//td[text()='TestBannedWord']/preceding-sibling::td/a[@id='ctl00_cphMain_RadGridTemplate_ctl00_ctl04_lnkDelete']")
+	By firstdeletebtn = By.xpath("ctl00_cphMain_RadGridTemplate_ctl00_ctl04_lnkDelete")
+	By deletemsg = By.xpath("//*[@id='cphMain_lblMessage']")
 
 	@Keyword
 	public void VerifyBannedPhrasesPage() {
@@ -68,25 +69,14 @@ public class BannedPhrasePage {
 	@Keyword
 	public void AddNewBannedWordAndVerify() {
 		try {
-			/*boolean statusofbannedwordeletelink = action.IsElementDisplayed(deletebtn)
-			 List<WebElement> allbannedwords = action.GetElements(allbannedwordsingrid)
-			 for(int i=0;i< allbannedwords.size();i++)
-			 {
-			 String expectedbannedword = GlobalVariable.bannedword
-			 if(allbannedwords.get(i).getText().equalsIgnoreCase(expectedbannedword))
-			 {
-			 println ("Banned word found ")
-			 action.Click(deletebtn)
-			 action.AcceptAlert()
-			 }
-			 }		*/
 			action.WaitUntilElementClickable(addnewwordbtn)
 			boolean statusofaddnewbtn = action.IsElementEnabled(addnewwordbtn)
 			if(statusofaddnewbtn == true) {
 				action.Click(addnewwordbtn)
 				boolean sttausofpopup = action.IsElementDisplayed(wordpopup)
 				if(sttausofpopup == true) {
-					action.Type(popupdesc, GlobalVariable.bannedword)
+					String bannedword = action.GenerateRandomAplphabaticString(8)
+					action.Type(popupdesc, bannedword)
 					WebUI.delay(5)
 					action.Click(popupaddbtn)
 					WebUI.delay(10)
@@ -108,6 +98,51 @@ public class BannedPhrasePage {
 			else {
 				Assert.fail()
 			}
+		}
+		catch(Exception e) {
+			println ("Add new word failed due to "+ e)
+		}
+	}
+	
+	
+	@Keyword
+	public void DeleteBannedPhrases() {
+		try {
+			action.WaitUntilElementClickable(addnewwordbtn)
+			boolean statusofaddnewbtn = action.IsElementEnabled(addnewwordbtn)
+			if(statusofaddnewbtn == true) {
+				action.Click(addnewwordbtn)
+				boolean sttausofpopup = action.IsElementDisplayed(wordpopup)
+				if(sttausofpopup == true) {
+					String bannedword = action.GenerateRandomAplphabaticString(8)
+					action.Type(popupdesc, bannedword)
+					WebUI.delay(5)
+					action.Click(popupaddbtn)
+					WebUI.delay(10)
+					boolean statusofmsg = action.IsElementDisplayed(successfulmsg)
+					Assert.assertTrue(statusofmsg)
+					List<WebElement> allbannedword = action.GetElements(allbannedwordsingrid)
+					for(int i=0;i< allbannedword.size();i++) {
+						String expectedbannedword = GlobalVariable.bannedword
+						if(allbannedword.get(i).getText().equalsIgnoreCase(expectedbannedword)) {
+							println ("Banned word found ")
+							break
+						}
+					}
+				}
+				else {
+					Assert.fail()
+				}
+			}
+			else {
+				Assert.fail()
+			}
+			
+			action.Click(firstdeletebtn)
+			action.AcceptAlert()
+			
+			boolean statusofdeletemsg = action.IsElementDisplayed(deletemsg)
+			Assert.assertTrue(statusofdeletemsg)
 		}
 		catch(Exception e) {
 			println ("Add new word failed due to "+ e)

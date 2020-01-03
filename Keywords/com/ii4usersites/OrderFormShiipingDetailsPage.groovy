@@ -33,18 +33,33 @@ public class OrderFormShiipingDetailsPage {
 	By nextbtn = By.xpath("//*[@id='ctl00_Body_btnNext']")
 	By myitemsbtn = By.xpath("//*[text()='My Items']")
 	By previousbtn = By.xpath("//*[text()='Previous']")
+	By imagesection = By.xpath("//th[contains(text(),'Image')]")
 
 	@Keyword
 	public void ClickOnNextBtn() {
 		try {
 			action.Refresh()
+			action.ScrollToViewElement(nextbtn)
 			action.WaitUntilElementClickable(nextbtn)
-			WebUI.delay(10)
+			//WebUI.delay(10)
 			action.Click(nextbtn)
 			action.WaitForPageToLoad()
 		}
 		catch(Exception e) {
 			println ("Click On Next Btn failed due to "+ e)
+		}
+	}
+	
+	@Keyword
+	public void ValidateImageSectionForNewOLOFOrder()
+	{
+		try
+		{
+			action.IsElementDisplayed(imagesection)
+		}
+		catch(Exception e)
+		{
+			Assert.fail("ValidateImageSectionForNewOLOFOrder Failed due to "+e)
 		}
 	}
 }

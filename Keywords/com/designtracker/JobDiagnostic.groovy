@@ -45,52 +45,35 @@ public class JobDiagnostic {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	@Keyword
 	public void EnterJobID(String jobid) {
-
+		String currentenvironment = GlobalVariable.environment
+		println ("Current env is ----------------------------"+ currentenvironment)
+		ProfitLoss profitlosspage = new ProfitLoss()
 		try {
-			action.WaitVisible(txtJobID)
-			action.Type(txtJobID,jobid)
-			println ("Job Id is "+jobid )
+			try{
+				if(currentenvironment.equalsIgnoreCase("UAT")){
+					driver.quit()
+				}
+				else if(currentenvironment.equalsIgnoreCase("STAGING")) {
+					driver.quit()
+				}
+				else{
+					action.VerifyCurrentPage("Reports/JobDiagnostic.aspx")
+					//WebUI.delay(1)
+					action.Type(txtJobID, jobid)
+					action.WaitVisible(btnViewReport)
+					action.Click(btnViewReport)
+					action.WaitForPageToLoad()
+				}
+			}catch(Exception e){
+				throw new Exception("Excecution is terminated")
+			}
 		}
 		catch(Exception e) {
 			println ("EnterJobID method failed due to :"+ e)
 		}
 	}
-
-
 
 
 
@@ -101,7 +84,7 @@ public class JobDiagnostic {
 			action.Click(btnViewReport)
 			action.WaitForPageToLoad()
 			//action.WaitVisible(DivisionReport)
-			WebUI.delay(10)
+			//WebUI.delay(10)
 		}
 		catch(Exception e){
 			println("ClickOnViewReportBtn method failed due to :" + e)
@@ -130,7 +113,7 @@ public class JobDiagnostic {
 		try{
 
 			String expectedPageHeader = "Job Diagnostic"
-			WebUI.delay(10)
+			//WebUI.delay(10)
 			String actualheader = action.GetText(headerJobDiagnostic)
 			Assert.assertEquals(expectedPageHeader, actualheader)
 		}

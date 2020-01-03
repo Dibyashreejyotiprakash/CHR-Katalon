@@ -11,211 +11,229 @@
    <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
    <testSuiteGuid>491144dd-2b61-4979-85d6-1fca140449f9</testSuiteGuid>
    <testCaseLink>
-      <guid>f707ea45-5b08-461e-85b9-32ccf3edd77d</guid>
+      <guid>46f027e3-5f8e-44e9-99a8-6bf6ff5367b6</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/WSWADMIN/REGRESSION/BannedWords/CreateNewQuote</testCaseId>
+      <testCaseId>Test Cases/WSWADMIN/REGRESSION/ClientManagement/VerifyCreatingNewUserAndLogin</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>b99b778e-f979-48db-ba15-e48fa1d77fd5</guid>
+      <guid>004cf1ee-e270-4154-9fa7-60729aab5cc3</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/WSWADMIN/REGRESSION/ClientManagement/VerifyExistingUserDetail</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>2d753b7a-2712-4415-8bec-59a6317150a2</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/WSWADMIN/REGRESSION/ClientManagement/VerifyPwdChangeForExistingUser</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>40200acf-0afd-4c65-b4e9-4878ec088a6c</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WSWADMIN/REGRESSION/Fulfillment/LowStcokNotification/AddAdditionalMail</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>15f77ce2-5d6c-4e68-aea7-cab532f3dd7b</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/WSWADMIN/REGRESSION/METATAGGINGCATEGORYITEMMAINTENANCE/VerifyCategoryItemMaintenancePage</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>e57d56b3-9dcc-4d7f-a173-b134fdfb597a</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/WSWADMIN/REGRESSION/METATAGGINGCATEGORYITEMMAINTENANCE/VerifyCreatingNewExternalItemType</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>31567dfc-166b-4afa-ad6b-fcc8c091a058</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/WSWADMIN/REGRESSION/METATAGGINGCATEGORYITEMMAINTENANCE/VerifyExternalItemTypeInMetatagConfigurationPage</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>abccac9f-078b-4740-8742-c780a246d233</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/WSWADMIN/REGRESSION/METATAGGINGCATEGORYMAINTENANCE/VerifyCreateExternalItemType</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>a461660f-7d68-4c80-88bd-9d8cabc17a20</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/WSWADMIN/REGRESSION/METATAGGINGCATEGORYMAINTENANCE/VerifyCreateNewCorpSetting</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>c8680746-148e-4a02-9460-407b57d5c424</guid>
+      <guid>4598e164-ad9f-4c4c-b31a-3991fc60793b</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WSWADMIN/REGRESSION/OLOFII4Configuration/VerifyItemTypeVerbiage</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>c5bcfe58-2128-4123-8691-620aacfe96d4</guid>
+      <guid>bfea1c0f-15b9-4330-aba7-d6aa5bb60d30</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WSWADMIN/REGRESSION/OLOFII4Configuration/VerifyVisibilityOfCloneOrderButton</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>c5100b57-9736-479a-8e87-4c69e60ada4d</guid>
+      <guid>46b22635-0c87-49fd-819c-8a4b46c9cca6</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WSWADMIN/REGRESSION/OLOFII4Configuration/VerifyVisibilityOfCreateNewOrderButton</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>0e6b26ca-9aa3-4798-91a0-432e050fa93b</guid>
+      <guid>60de6ca8-3a67-4ca6-8137-3433ffb23764</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WSWADMIN/REGRESSION/OLOFII4Configuration/VerifyVisibilityOfFinishincompleteOrderButton</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>76574cf5-b0f5-4967-b3bf-05c0864b8089</guid>
+      <guid>744448ee-141a-4af6-80b4-f504e46c6314</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/WSWADMIN/REGRESSION/OLOFII4Configuration/VerifyVisibilityofGLBerviage</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>0c64dd43-b7f9-42aa-a30b-7ba4518e0a0f</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/WSWADMIN/REGRESSION/OLOFII4Configuration/VerifyVisibilityofGLNumber</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>8c422b5f-2c47-4464-b65e-9079eafc1398</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/WSWADMIN/REGRESSION/OLOFII4Configuration/VerifyVisibilityofIOBerviage</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>5fe08588-b6a4-4aac-87c4-e51e862a853e</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/WSWADMIN/REGRESSION/OLOFII4Configuration/VerifyVisibilityofIOCode</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>b8d9954b-9f40-4962-9423-464ae625ff29</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/WSWADMIN/REGRESSION/OLOFII4Configuration/VerifyVisibilityofPOBerviage</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>64010ffa-377d-4533-80b0-39df8723f6b5</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/WSWADMIN/REGRESSION/OLOFII4Configuration/VerifyVisibilityofPONumber</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>7c219306-33f9-4b45-bdb7-3e60f39941f1</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WSWADMIN/REGRESSION/ProductShotsRemovalTool/VerifyProductShotsRemovalToolPage</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>5ab38e9f-6f0a-463e-a0eb-76d806044489</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/WSWADMIN/REGRESSION/QuoteTracker/CreateNewQuote</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>07b89385-9b6e-45cb-abe0-8af025cd2f0b</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/WSWADMIN/REGRESSION/QuoteTracker/VerifyColorsBtn</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>9289b0ca-af91-4727-a127-2dbc4e411050</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/WSWADMIN/REGRESSION/QuoteTracker/VerifyMaterialTypeBtnAndDeleteItemType</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>1f91ac10-855f-4a0a-b00f-a9b944939bab</guid>
+      <guid>355814cf-9612-4b90-b601-aa870b89c936</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WSWADMIN/REGRESSION/QuoteTracker/CreateNewBindings</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>c1519fea-dc59-4e58-9cab-a3d23fb24427</guid>
+      <guid>f6692d61-c680-44fd-b951-6b0cbf471e5b</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/WSWADMIN/REGRESSION/QuoteTracker/CreateNewQuote</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>68bf6078-47ae-4252-a1f6-f774f1f0a6c3</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/WSWADMIN/REGRESSION/QuoteTracker/VerifyColorsBtn</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>452c22ff-f3a5-49b7-8c49-ddabd350bc18</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/WSWADMIN/REGRESSION/QuoteTracker/VerifyMaterialTypeBtnAndDeleteItemType</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>867ddf9f-a9e4-47ca-b9cd-ab58b69aaf67</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WSWADMIN/REGRESSION/RESOURCEMESSAGE/VerifyAccountsLabelInII4UserSites</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>4250ac7c-a5fd-41b0-8c5b-c90b0fb85fa1</guid>
+      <guid>cb55e966-fad9-48f5-bbf4-e9f4f0479332</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WSWADMIN/REGRESSION/RESOURCEMESSAGE/VerifyAddressBookLabelInII4UserSites</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>f27331b2-36ae-400f-ab0a-80aa607e04b7</guid>
+      <guid>d51de48f-1822-4241-a651-84112d379d8e</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WSWADMIN/REGRESSION/RESOURCEMESSAGE/VerifyAddressListLabelInII4UserSites</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>8a3e3e45-da54-4fc1-b867-9577f8d5181d</guid>
+      <guid>4974428a-b381-4d2f-ba99-87ff13857c2b</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WSWADMIN/REGRESSION/RESOURCEMESSAGE/VerifyDeleteAddressBookLabelInII4UserSites</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>c574aad8-8353-42f1-9cbf-68f62331a108</guid>
+      <guid>c796e503-9872-4801-861a-6634ebda93c4</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WSWADMIN/REGRESSION/RESOURCEMESSAGE/VerifyDeleteAddressListLabelInII4UserSites</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>42a800f7-61bd-4dd9-8c74-2bc584aa68ee</guid>
+      <guid>776f59b2-18d9-413f-93cf-4008f227e49d</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WSWADMIN/REGRESSION/RESOURCEMESSAGE/VerifyDeleteLogoLockerLabelInII4UserSites</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>e1f69d56-5ae7-43b8-ad33-e2b04c542b7b</guid>
+      <guid>4bd6e66f-cc3e-4be7-8119-9af613b7e30b</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WSWADMIN/REGRESSION/RESOURCEMESSAGE/VerifyDeleteProfileLabelInII4UserSites</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>69017689-239f-4be6-ac1f-4b7e916bca62</guid>
+      <guid>79cb99b2-4edd-490c-a1a4-f0c2ffb53eb3</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WSWADMIN/REGRESSION/RESOURCEMESSAGE/VerifyDeleteProjectsLabeInII4UserSites</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>6bb9dbad-b215-4610-b252-736c86adedd0</guid>
+      <guid>31f6628e-96ff-4928-86bb-211c1c2fbc73</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WSWADMIN/REGRESSION/RESOURCEMESSAGE/VerifyDeleteReportsLabelInII4UserSites</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>8d47b159-fda6-499b-8c23-43a9ca32f5ef</guid>
+      <guid>8da2552e-9b72-491e-873d-9d13bf731b6e</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WSWADMIN/REGRESSION/RESOURCEMESSAGE/VerifyLogoLockerLabelInII4UserSites</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>1fd48024-76ef-4f62-8d3f-ba892ef1d275</guid>
+      <guid>500b1d7e-e47f-469b-b64f-041eb8e94320</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WSWADMIN/REGRESSION/RESOURCEMESSAGE/VerifyModifyResourceMessageForAccounts</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>294e043c-9c60-4dac-bf1a-58c7664427be</guid>
+      <guid>84c0e6a7-ce50-4151-8e03-a84c28862a6a</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WSWADMIN/REGRESSION/RESOURCEMESSAGE/VerifyModifyResourceMessageForAddressBook</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>2df2a2cc-44d0-46d7-ac96-ef4122919fee</guid>
+      <guid>1df12aee-dba6-4aa1-9795-bb6c12908a89</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WSWADMIN/REGRESSION/RESOURCEMESSAGE/VerifyModifyResourceMessageForAddressList</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>3d3693bd-a53d-4a8c-88ff-d4b23c6aae23</guid>
+      <guid>d0923657-7052-42b5-b76c-c234cae3482f</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WSWADMIN/REGRESSION/RESOURCEMESSAGE/VerifyModifyResourceMessageForProfile</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>4b88599f-c1f5-4b6f-ba57-79c59aadd024</guid>
+      <guid>babff977-9358-42b5-95ad-156a78391433</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WSWADMIN/REGRESSION/RESOURCEMESSAGE/VerifyModifyResourceMessageForProjects</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>f6e859b0-716b-4c66-b1e7-32dbc7614f7f</guid>
+      <guid>c290a182-f426-41b3-a2d8-1c2dcddd5d5d</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WSWADMIN/REGRESSION/RESOURCEMESSAGE/VerifyModifyResourceMessageForReports</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>f71bbc02-4b58-4cd3-ad3f-11b6a6bbdb62</guid>
+      <guid>f89edb95-8d59-4ee0-a48e-9a6d2c58a42c</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WSWADMIN/REGRESSION/RESOURCEMESSAGE/VerifyProfileLabelInII4UserSites</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>5d7c6c79-9286-4d84-bfef-2e32a02e5043</guid>
+      <guid>97c5e374-b2a5-490f-baa9-ca0006de4674</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WSWADMIN/REGRESSION/RESOURCEMESSAGE/VerifyProjectsLabelInII4UserSites</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>c1d580bf-f09d-4450-a7ee-4c12886be378</guid>
+      <guid>52e953e6-469f-4cd1-8c71-e62e3c16c8af</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/WSWADMIN/REGRESSION/RESOURCEMESSAGE/VerifyReportsLabelInII4UserSites</testCaseId>

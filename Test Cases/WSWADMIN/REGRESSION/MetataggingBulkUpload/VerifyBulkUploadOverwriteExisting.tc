@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description></description>
-   <name>VerifyBulkUploadOverwriteExisting</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>3f787aea-114e-4736-9edd-369565a6d8c2</testCaseGuid>
-</TestCaseEntity>

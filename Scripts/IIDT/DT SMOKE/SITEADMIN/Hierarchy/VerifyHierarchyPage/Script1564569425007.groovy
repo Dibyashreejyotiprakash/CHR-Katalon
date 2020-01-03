@@ -13,3 +13,12 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamedesigntracker, GlobalVariable.testtyperegression,
+	GlobalVariable.environment)
+
+CustomKeywords.'com.designtracker.LoginPage.LoginToDesignTarcker'(GlobalVariable.dtusername, GlobalVariable.dtpassowrd)
+
+CustomKeywords.'com.designtracker.HomePage.ClickOnhighrarchy'()
+
+CustomKeywords.'com.designtracker.HierarchyPage.VerifyHierarchyPage'()
+

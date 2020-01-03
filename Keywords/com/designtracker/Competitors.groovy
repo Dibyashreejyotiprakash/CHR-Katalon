@@ -44,7 +44,7 @@ public class Competitors {
 	@Keyword
 	public void VerifyCompetitorsPage() {
 		try {
-			
+
 			boolean statusofheader = action.IsElementDisplayed(marketcompetitorsheader)
 			Assert.assertTrue(statusofheader)
 		}
@@ -58,9 +58,9 @@ public class Competitors {
 	public void VerifyStartNewCompetitorLink() {
 		try {
 			action.SelectByText(corpddn, "Instant Impact 4.0 Demo Corp (Dist.)")
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.SelectByText(distddn, "Chicago Beverage Systems")
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			boolean statusofnewcompetitorslink = action.IsElementEnabled(newcompetotorslink)
 			Assert.assertTrue(statusofnewcompetitorslink)
 		}
@@ -91,7 +91,7 @@ public class Competitors {
 	public void CreateNewCompetitors() {
 
 		try {
-			
+
 			action.Type(competitorstextbox, "Test Competitor")
 			action.Click(createbtn)
 		}

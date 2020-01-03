@@ -66,17 +66,15 @@ public class ConsolidatorAddNewItemPage {
 			Assert.fail("Verify Add New Element Page failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
-	public void SearchAndAddNewElement()
-	{
+	public void SearchAndAddNewElement() {
 		try{
 			action.Type(searchelementtxtbox, "st")
 			WebUI.delay(5)
 			action.Click(firstsuggestedelement)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("Search And Add New Element failed due to "+ e)
 		}
 	}

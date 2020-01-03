@@ -71,7 +71,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'adminnv@brandmuscle.com'</initValue>
+      <initValue>'cspwadmin@brandmuscle.com'</initValue>
       <name>posusername</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -418,5 +418,60 @@
       <description></description>
       <initValue>'password'</initValue>
       <name>posPass59</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'http://proofs.dev.brandmuscle.net/Login.aspx'</initValue>
+      <name>proofgalleryDEV</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'http://proofs.uat.brandmuscle.net/Login.aspx'</initValue>
+      <name>proofgalleryUAT</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://proofs.stage.brandmuscle.net/Login.aspx'</initValue>
+      <name>proofgallerySTAGE</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://proofgallery.brandmuscle.net/Login.aspx'</initValue>
+      <name>proofgalleryPROD</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'jcrotty@brandmuscle.com'</initValue>
+      <name>proofgalleryun</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'password'</initValue>
+      <name>proofgallerypwd</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'cspwadmin@brandmuscle.com'</initValue>
+      <name>PoswTestUserName</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'password'</initValue>
+      <name>PoswTestPassword</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'testadmin1@brandmuscle.com'</initValue>
+      <name>distcorpusername</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'go2web'</initValue>
+      <name>distcorppassword</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'132933'</initValue>
+      <name>distcorptemplateid</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>

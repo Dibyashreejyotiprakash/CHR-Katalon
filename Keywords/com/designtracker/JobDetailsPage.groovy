@@ -88,7 +88,7 @@ public class JobDetailsPage {
 	By jobbtn = By.xpath("//*[text()=''JOB]")
 	By pricingTab = By.xpath("//span[contains(text(),'PRICING')]")
 	By budgetddn = By.xpath("//input[@id='ctl00_ctl00_cphMain_cphMain_gvBrands_ctl02_ddlBrandBudget_Input']")
-	By budgetname = By.xpath("//li[text()='TestBudget1']")
+	By budgetname = By.xpath("//*[text()='Test Budget 1']")
 	By saveBrandsBtn = By.xpath("//input[@id='ctl00_ctl00_cphMain_cphMain_btnSaveBrandCB']")
 	By succMsgBudgetSaving = By.xpath("//li[contains(text(),'Budget data has been updated successfully.')]")
 	By brandMentionTab = By.xpath("//span[contains(text(),'BRAND MENTIONS')]")
@@ -103,7 +103,6 @@ public class JobDetailsPage {
 	By popupupdateshippinglable = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_lvJobs_ctrl0_JobLine_lblMassShipping']")
 	By popupshippingtypeforjobddn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_lvJobs_ctrl0_JobLine_ddlMSJobShippingType']")
 	By updatebtnforjob = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_lvJobs_ctrl0_JobLine_btnMSJobSubmit']")
-	By popupshippingtypeforjoblineddn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_lvJobs_ctrl0_JobLine_ddlMSJobLineShippingType']")
 	By updatebtnforjobline = By.xpath("ctl00_ctl00_cphMain_cphMain_lvJobs_ctrl0_JobLine_btnMSJobLineSubmit")
 
 	By fisrtshippingtype = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_lvJobs_ctrl0_JobLine_rptrJobLines_ctl00_gvJobShippingLocations_ctl02_lblJobShippingType']")
@@ -117,15 +116,19 @@ public class JobDetailsPage {
 	By removecheckbox = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_gvRemove_ctl02_ckRemovePart']")
 	By removeselectedpartbtn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_btnRemoveParts']")
 	By partrow = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_gvRemove']//tr[2]")
-	
+
 	By firstaddoncheckbox = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_gvAddOns_ctl03_chkSelectedAddOns']")
 	By firstaddonqty = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_gvAddOns_ctl03_txtAddonQty']")
 	By attachaddons = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_btnAttachAddOns']")
 	By firstaddonprice = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_gvAddOns']//tr[2]//td[5]")
 	By attachaddonsbtn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_btnAttachAddOns']")
 	By addonspriceinjobdetailspage = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_lvJobs_ctrl0_cpPricingSummary_rptrPriceSummary_ctl01_lblLinePrice']")
-	
+	By extendedsearch = By.xpath("//legend[contains(text(),'Extended Search')]")
+	By searchpart = By.xpath("//select[@id = 'ctl00_ctl00_cphMain_cphMain_lbxParts']")
+	By commetinnoteinformation = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_lvJobs_ctrl0_gvJobNotes_ctl03_lblNoteText']")
+	By returntojob = By.xpath("//input[@id='ctl00_ctl00_cphMain_cphMain_btnReturn']")
 
+	By salespersonddn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_lvJobs_ctrl0_ddlJobSalesPerson']")
 
 	@Keyword
 	public void ClickOnDetailsBtn() {
@@ -135,23 +138,30 @@ public class JobDetailsPage {
 			action.WaitForPageToLoad()
 		}
 		catch(Exception e) {
-			println ("Click On DetailsPage failed due to "+ e)
+			Assert.fail("Click On Details Btn failed due to "+ e)
+		}
+	}
+
+	@Keyword
+	public void VerifyUpdateJobNameForPosTemplate()
+	{
+		try {
+			action.TypeAndClear(jobnametxtbox, "Updated Job Name For POS Template")
+			action.ScrollToViewElement(savejobinfobtn)
+			action.Click(savejobinfobtn)
+		}
+		catch(Exception e) {
+			Assert.fail ("Verify Update Job Name For Pos Template failed due to "+ e)
 		}
 	}
 
 	@Keyword
 	public void VerifyJobDetailsPage() {
 		try {
-			String currenturl = action.GetCurrentURL()
-			if(currenturl.concat("JobDetail.aspx")) {
-				println ("Job Details Page verified")
-			}
-			else {
-				Assert.fail()
-			}
+			action.VerifyCurrentPage("JobDetail.aspx")
 		}
 		catch(Exception e) {
-			println ("Verify Job Details Page failed due to "+ e)
+			Assert.fail("Verify Job Details Page failed due to "+ e)
 		}
 	}
 
@@ -164,7 +174,7 @@ public class JobDetailsPage {
 			println (action.GetText(jobdetailswithjonumber))
 		}
 		catch(Exception e) {
-			println ("Verify Job Number In Job Details Page failed due to "+ e)
+			Assert.fail ("Verify Job Number In Job Details Page failed due to "+ e)
 		}
 	}
 
@@ -178,7 +188,7 @@ public class JobDetailsPage {
 			Assert.assertTrue(statusofvisisblityofgeneralinfo, "General Information")
 		}
 		catch(Exception e) {
-			println ("Verify General Info failed due to "+ e)
+			Assert.fail ("Verify General Info failed due to "+ e)
 		}
 	}
 
@@ -202,7 +212,7 @@ public class JobDetailsPage {
 			Assert.assertTrue(statusofvisisblityofjoblineinfolink)
 		}
 		catch(Exception e) {
-			println ("Verify Section Links failed due to "+ e)
+			Assert.fail ("Verify Section Links failed due to "+ e)
 		}
 	}
 
@@ -210,12 +220,12 @@ public class JobDetailsPage {
 	@Keyword
 	public void AssignDesignerToTheJob() {
 		try {
-			action.ScrollToViewelement(designerddn)
+			action.ScrollToViewElement(designerddn)
 			action.WaitVisible(designerddn)
 			action.SelectByIndex(designerddn, 1)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(savejobinfobtn)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			boolean statusofsuccessmsg = action.IsElementDisplayed(sccessfullupdatemsg)
 			Assert.assertTrue(statusofsuccessmsg)
 			String msg = action.GetText(sccessfullupdatemsg)
@@ -227,7 +237,7 @@ public class JobDetailsPage {
 			}
 		}
 		catch(Exception e) {
-			println ("Assign designer to job failed due to "+ e)
+			Assert.fail ("Assign designer to job failed due to "+ e)
 		}
 	}
 
@@ -249,42 +259,44 @@ public class JobDetailsPage {
 		}
 	}
 
+
 	@Keyword
 	public void VerifyJobNameAndJobTicketNoteAreMandatory() {
 		try {
 			action.Click(savejobinfobtn)
-			WebUI.delay(5)
 			boolean statusofjobsavemsg = action.IsDisplayed(sccessfullupdatemsg)
 			if(statusofjobsavemsg == false) {
 				action.Type(jobnametxtbox, "Test Job Name")
-				WebUI.delay(3)
 				action.Type(jobticketnote, "Test Ticket Note")
-				WebUI.delay(3)
 				action.Click(savejobinfobtn)
-				WebUI.delay(5)
 				boolean statusofmsg = action.IsElementDisplayed(sccessfullupdatemsg)
 				Assert.assertTrue(statusofmsg)
 			}
 			else {
-				Assert.fail()
+				throw new Exception("Save Job msg is not appearing")
 			}
 		}
 		catch(Exception e) {
-			println ("Verify Job Name And Job Ticket Note Are Mandatory failed due to "+ e)
+			Assert.fail ("Verify Job Name And Job Ticket Note Are Mandatory failed due to "+ e)
 		}
 	}
 
 	@Keyword
 	public String AddJobNameJobTicketNameAndAssignDesigner() {
-		action.Type(jobnametxtbox, "Test Job Name")
-		WebUI.delay(5)
-		action.Type(jobticketnote, "Test Job Ticket Note")
-		WebUI.delay(5)
-		action.SelectByText(designerddn, "ABERLE, JASON")
-		WebUI.delay(10)
-		action.ScrollToBottomOfPage()
-		action.WaitUntilElementClickable(savejobinfobtn)
-		action.Click(savejobinfobtn)
+		String jobname = "Test Job Name"
+		try{
+			action.Type(jobnametxtbox, jobname)
+			action.Type(jobticketnote, "Test Job Ticket Note")
+			action.SelectByText(designerddn, "CROTTY, JEREMY")
+			action.ScrollToBottomOfPage()
+			action.WaitUntilElementClickable(savejobinfobtn)
+			action.Click(savejobinfobtn)
+
+			return jobname
+		}
+		catch(Exception e){
+			Assert.fail("Add Job Name Job Ticket Name And Assign Designer failed due to "+ e)
+		}
 	}
 
 	@Keyword
@@ -304,70 +316,57 @@ public class JobDetailsPage {
 	public void AddPartAndBackToJobDetailsPage() {
 		try {
 			action.ScrollToBottomOfPage()
-			WebUI.delay(7)
 			action.Click(addpartlink)
-			WebUI.delay(10)
 			action.WaitForPageToLoad()
 			action.SelectByIndex(printformatddn, 3)
 			action.Type(quantity, "123")
 			action.Click(partsearchbtn)
-			WebUI.delay(10)
 			action.Click(part1)
 			action.Click(insertbtn)
-			WebUI.delay(10)
 			action.Click(jobdetailsbtn)
 			action.WaitForPageToLoad()
 		}
 		catch(Exception e) {
-			println ("Add Part failed due to "+ e)
-			Assert.fail()
+			Assert.fail ("Add Part failed due to "+ e)
 		}
 	}
-	
+
 
 	@Keyword
 	public String AddPartAddonsAndBackToJobDetailsPage() {
 		String expectedaddonprice = null
 		try {
 			action.ScrollToBottomOfPage()
-			WebUI.delay(7)
 			action.Click(addpartlink)
-			WebUI.delay(5)
 			action.WaitForPageToLoad()
 			action.SelectByIndex(printformatddn, 1)
 			action.Type(quantity, "123")
 			action.Click(partsearchbtn)
-			WebUI.delay(5)
 			action.Click(part1)
 			action.Click(insertbtn)
-			WebUI.delay(5)
-			
 			action.Type(firstaddonqty, "1")
-			WebUI.delay(5)
 			action.Click(firstaddoncheckbox)
-			
 			expectedaddonprice = action.GetText(firstaddonprice)
-			WebUI.delay(5)
 			action.Click(attachaddonsbtn)
-			WebUI.delay(5)			
-			
+
+
 			return expectedaddonprice
 		}
 		catch(Exception e) {
 			Assert.fail("Add Part failed due to "+ e)
 		}
 	}
-	
-	
+
+
 	@Keyword
 	public String GetDisplayedPrice()
 	{
 		String expectedaddonprice = null
 		try{
-			
+
 			expectedaddonprice = action.GetText(firstaddonprice)
-			WebUI.delay(5)
-			
+			//WebUI.delay(5)
+
 			return expectedaddonprice
 		}
 		catch(Exception e)
@@ -376,7 +375,7 @@ public class JobDetailsPage {
 		}
 	}
 
-	
+
 	@Keyword
 	public void VerifyAddOnsPriceInJobDetailsPage()
 	{
@@ -387,7 +386,7 @@ public class JobDetailsPage {
 			println ("Displayed Add-Ons Priec -----"+ displayedaddonsprice)
 			String expectedaddonsprice = GetDisplayedPrice()
 			println ("Expected Addons Price --------"+ expectedaddonsprice)
-			
+
 		}
 		catch(Exception e)
 		{
@@ -399,7 +398,7 @@ public class JobDetailsPage {
 	public void DeletePart()
 	{
 		try{
-			action.ScrollToViewelement(removepartlink)
+			action.ScrollToViewElement(removepartlink)
 			action.Click(removepartlink)
 			action.WaitForPageToLoad()
 			action.Click(removecheckbox)
@@ -419,25 +418,16 @@ public class JobDetailsPage {
 	{
 		try{
 			action.Click(addpartlink)
-			WebUI.delay(10)
 			action.WaitForPageToLoad()
 			action.SelectByIndex(printformatddn, 3)
-			WebUI.delay(10)
 			action.Type(quantity, "123")
-			WebUI.delay(10)
 			action.Click(partsearchbtn)
-			WebUI.delay(10)
 			action.Click(part1)
-			WebUI.delay(10)
 			action.Click(insertbtn)
 			action.SelectByIndex(printformatddn, 3)
-			WebUI.delay(10)
 			action.Type(quantity, "123")
-			WebUI.delay(10)
 			action.Click(partsearchbtn)
-			WebUI.delay(10)
 			action.Click(part2)
-			WebUI.delay(10)
 			action.Click(insertbtn)
 		}
 		catch(Exception e)
@@ -450,8 +440,7 @@ public class JobDetailsPage {
 	@Keyword
 	public void InsertImage() {
 		try {
-			action.ScrollToViewelement(jobdetailsbtn)
-			WebUI.delay(10)
+			action.ScrollToViewElement(jobdetailsbtn)
 			Set<String> windowids = driver.getWindowHandles()
 
 			Iterator<String> it = windowids.iterator()
@@ -471,8 +460,8 @@ public class JobDetailsPage {
 			}
 		}
 		catch(Exception e) {
-			println ("Insert Job Failed due to "+ e)
-			Assert.fail()
+			Assert.fail("Insert Job Failed due to "+ e)
+
 		}
 	}
 
@@ -490,11 +479,9 @@ public class JobDetailsPage {
 			action.Click(savejobinfobtn)
 			action.SelectByText(jobstatusddn, "Release for Production")
 			action.Click(savejobinfobtn)
-			WebUI.delay(10)
 		}
 		catch(Exception e) {
-			println ("Change Status For Posting Job Failed due to "+ e)
-			Assert.fail()
+			Assert.fail ("Change Status For Posting Job Failed due to "+ e)
 		}
 	}
 
@@ -505,38 +492,23 @@ public class JobDetailsPage {
 			action.Click(jobbtn)
 		}
 		catch(Exception e) {
-			println ("Click on post job failed due to "+ e)
-			Assert.fail()
+			Assert.fail ("Click on post job failed due to "+ e)
 		}
 	}
 
 	@Keyword
 	public void AssignBudgetAndSaveBrands() {
 		try {
-			action.WaitVisibleDup(brandMentionTab)
 			action.Click(brandMentionTab)
-			action.WaitVisibleDup(jobSearchString)
-			action.Type(jobSearchString,"a")
-			action.WaitVisibleDup(jobSearchBtn)
 			action.Click(jobSearchBtn)
-			action.WaitVisibleDup(availableBrandsddn)
-			//action.SelectByText(availableBrandsddn, "TestBrand")
 			action.Click(availableBrandsddn)
-			action.WaitVisibleDup(addBrandBtn)
 			action.Click(addBrandBtn)
-			action.WaitVisibleDup(saveToAllJobLinesBtn)
 			action.Click(saveToAllJobLinesBtn)
-			action.WaitVisibleDup(pricingTab)
 			action.Click(pricingTab)
 			action.ScrollToBottomOfPage()
-			action.WaitVisibleDup(budgetddn)
 			action.Click(budgetddn)
-			action.WaitVisibleDup(budgetname)
 			action.Click(budgetname)
-			//action.SelectByText(budgetddn, "TestBudget1")
-			action.WaitVisibleDup(saveBrandsBtn)
 			action.Click(saveBrandsBtn)
-			action.WaitVisibleDup(succMsgBudgetSaving)
 			action.Click(succMsgBudgetSaving)
 		}
 		catch(Exception e) {
@@ -548,17 +520,17 @@ public class JobDetailsPage {
 	public void VerifyUpdateShippingLinkAndUpdateShippingForJob()
 	{
 		try{
-			action.ScrollToViewelement(updateshippinglink)
-			WebUI.delay(3)
+			action.ScrollToViewElement(updateshippinglink)
+			//WebUI.delay(3)
 			action.Click(updateshippinglink)
 			action.WaitVisible(popupupdateshippinglable)
 			action.SelectByIndex(popupshippingtypeforjobddn, 2)
 			action.Click(updatebtnforjob)
-			WebUI.delay(3)
-			action.ScrollToViewelement(fisrtshippingtype)
+			//WebUI.delay(3)
+			action.ScrollToViewElement(fisrtshippingtype)
 			String firstshippingtypetext = action.GetText(fisrtshippingtype)
 
-			action.ScrollToViewelement(secondshippingtype)
+			action.ScrollToViewElement(secondshippingtype)
 			String secondshippingtypetext = action.GetText(secondshippingtype)
 			if ((firstshippingtypetext.equalsIgnoreCase("UPS Ground")) && (secondshippingtypetext.equalsIgnoreCase("UPS Ground")))
 			{
@@ -579,16 +551,16 @@ public class JobDetailsPage {
 	public void VerifyUpdateShippingLinkAndUpdateShippingForSingleJobLine()
 	{
 		try{
-			action.ScrollToViewelement(updateshippinglink)
-			WebUI.delay(3)
+			action.ScrollToViewElement(updateshippinglink)
+			//WebUI.delay(3)
 			action.Click(updateshippinglink)
 			action.WaitVisible(popupupdateshippinglable)
 
 			action.SelectByIndex(popupshippingtypeforjoblineddn, 2)
 			action.Click(updatebtnforjobline)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 
-			action.ScrollToViewelement(fisrtshippingtype)
+			action.ScrollToViewElement(fisrtshippingtype)
 			String firstshippingtypetext = action.GetText(fisrtshippingtype)
 
 			if(firstshippingtypetext.equalsIgnoreCase("UPS Ground"))
@@ -596,7 +568,7 @@ public class JobDetailsPage {
 				println ("Only job line shipping type updated")
 			}
 
-			action.ScrollToViewelement(secondshippingtype)
+			action.ScrollToViewElement(secondshippingtype)
 			String secondshippingtypetext = action.GetText(secondshippingtype)
 
 			if(secondshippingtypetext.equalsIgnoreCase("UPS Ground"))
@@ -604,7 +576,7 @@ public class JobDetailsPage {
 				Assert.fail("Second shipping type is updated also")
 			}
 			else{
-				println ("Second job type is not updated as expected")
+				throw new Exception ("Second job type is not updated as expected")
 			}
 		}
 		catch(Exception e)
@@ -613,4 +585,88 @@ public class JobDetailsPage {
 		}
 	}
 
+	@Keyword
+	public void VerifyMessage(String givencommentinii4){
+		try{
+			boolean statusofcomment = action.IsElementDisplayed(commetinnoteinformation)
+			Assert.assertTrue(statusofcomment)
+
+			String appearingcomment = action.GetText(commetinnoteinformation)
+			if(appearingcomment.equals(appearingcomment)){
+				println ("Comment is appearing")
+			}else{
+				throw new Exception("Comment is not matched")
+			}
+		}catch(Exception e){
+			Assert.fail("Verify Message In Note Information failed due to :"+e)
+		}
+
+	}
+
+	@Keyword
+	public void ValidateDDInPrintFormatDdn()
+	{
+		try
+		{
+			action.ScrollToBottomOfPage()
+			action.Click(addpartlink)
+			action.WaitForPageToLoad()
+			action.SelectByIndex(printformatddn, 5)
+			action.Type(quantity, "1")
+		}
+		catch(Exception e)
+		{
+			Assert.fail("ValidateDDInPrintFormatDdn Job failed due to :"+e)
+		}
+	}
+
+	@Keyword
+	public void ValidatedExtendedSearchForDD()
+	{
+		try
+		{
+			String s = action.IsDisplayed(extendedsearch)
+			Assert.assertEquals(s, "False")
+		}
+		catch(Exception e)
+		{
+			Assert.fail("ValidatedExtendedSearchForDD Job failed due to :"+e)
+		}
+	}
+
+	@Keyword
+	public void AddDDPart()
+	{
+		try
+		{
+			action.ScrollToBottomOfPage()
+			action.Click(addpartlink)
+			action.WaitForPageToLoad()
+			action.SelectByIndex(printformatddn, 5)
+			action.Type(quantity, "1")
+			action.Click(partsearchbtn)
+			action.WaitVisible(searchpart)
+			action.SelectByIndex(searchpart, 1)
+			action.Click(insertbtn)
+			action.Click(returntojob)
+
+		}
+		catch(Exception e)
+		{
+			Assert.fail("AddDDPart Job failed due to :"+e)
+		}
+	}
+
+
+	@Keyword
+	public String GetSelectedSalesPersonName(){
+		String selectedsalespersonname = null
+		try{
+			selectedsalespersonname = action.GetselectedText(salespersonddn)
+			return selectedsalespersonname
+		}
+		catch(Exception e){
+			Assert.fail("Get Selected Sales Person Name failed due to :"+e)
+		}
+	}
 }

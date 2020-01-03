@@ -59,9 +59,9 @@ public class CampaignPage {
 		try {
 
 			action.SelectByText(corpddn, "Instant Impact 4.0 Demo Corp (Dist.)")
-			WebUI.delay(5)
+			////WebUI.delay(5)
 			action.SelectByText(distddn, "Chicago Beverage Systems")
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			boolean statusofnewcampaignlink = action.IsElementEnabled(newcampaignlink)
 			Assert.assertTrue(statusofnewcampaignlink)
 		}
@@ -100,16 +100,16 @@ public class CampaignPage {
 
 		try {
 			action.SelectByText(corpddn, "Instant Impact 4.0 Demo Corp (Dist.)")
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.SelectByText(distddn, "Chicago Beverage Systems")
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.Type(newcampaignname, "Test Campaign")
 			action.Click(startdatetextbox)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.Click(startdate)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.Click(enddatetextbox)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.Click(enddate)
 			action.Click(createbtn)
 		}

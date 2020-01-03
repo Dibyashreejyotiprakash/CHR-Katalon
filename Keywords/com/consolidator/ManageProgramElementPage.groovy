@@ -32,12 +32,17 @@ public class ManageProgramElementPage {
 	By manageprogramelementsheader = By.xpath("//*[text()='Manage Program Elements']")
 	By searchtxtbox = By.xpath("//*[@id='searchAddressforCompany']")
 	By statusddn = By.xpath("//*[@class='btn btn-default full-width dropdown-toggle myStatusDropdown']")
-	By programcoloumn = By.xpath("//*[@id='allProgramsList_wrapper']//thead/tr/th[2]")
-	By startdatecolumn = By.xpath("//*[@id='allProgramsList_wrapper']//thead/tr/th[3]")
+	By programcoloumn = By.xpath("//th[@class='no-padding-left-right col-xs-3 manage-users sorting_asc']")
+	By startdatecolumn = By.xpath("//th[contains(text(),'Start Date')]")
 	By enddatecolumn = By.xpath("//*[@id='allProgramsList_wrapper']//thead/tr/th[4]")
 	By statuscolumn = By.xpath("//*[@id='allProgramsList_wrapper']//thead/tr/th[5]")
 	By firsteditlink = By.xpath("//*[@id='allProgramsList_wrapper']//tr[1]/td[6]/a")
 	By allprogramelement = By.xpath("//*[@id='allProgramsList']//tr//td[2]//span[1]")
+	By firstcheckbox = By.cssSelector("tbody > tr:nth-of-type(1) .check")
+	By downloadlink = By.cssSelector("th#headerDownload > .btn-download")
+	By yesbtn = By.xpath("//*[@id='ctl00_ctl00_MainContent_MainContent_rwSelectAlternate_C_btnAccept']")
+	By nobtn = By.xpath("//*[@id='ctl00_ctl00_MainContent_MainContent_rwSelectAlternate_C_btnDeny']")
+	By downloadprogramslabel = By.xpath("//*[text()='Download Programs']")
 
 
 
@@ -104,11 +109,11 @@ public class ManageProgramElementPage {
 			int totalprogramelement = allprogramelementsnames.size()
 			println ("Total Program element Name is ----"+ totalprogramelement)
 			if(totalprogramelement >0) {
-				for(int i=0;i< allprogramelementsnames.size();i++) {
-					String firstprogramelementname =allprogramelementsnames.get(i).getText()
-					println ("Program Element Name is ------"+ firstprogramelementname)
-					action.Type(searchtxtbox, firstprogramelementname)
-				}
+				//for(int i=0;i< allprogramelementsnames.size();i++) {
+				String firstprogramelementname =allprogramelementsnames.get(0).getText()
+				println ("Program Element Name is ------"+ firstprogramelementname)
+				action.Type(searchtxtbox, firstprogramelementname)
+				//}
 			}
 			else{
 				throw new Exception("Program element is not present")
@@ -145,6 +150,30 @@ public class ManageProgramElementPage {
 		}
 		catch(Exception e) {
 			Assert.fail("Click On Edit failed due to "+ e)
+		}
+	}
+
+	@Keyword
+	public void VerifyDownloadPopUp() {
+		try{
+			action.Click(firstcheckbox)
+			action.Click(downloadlink)
+			action.WaitVisible(downloadprogramslabel)
+			boolean statusofdownloadprogramslabel = action.IsElementDisplayed(downloadprogramslabel)
+			Assert.assertTrue(statusofdownloadprogramslabel)
+			if(statusofdownloadprogramslabel == true) {
+				boolean statusofyesbtn = action.IsElementEnabled(yesbtn)
+				println ("Status of Yes Button ---"+ statusofyesbtn)
+				Assert.assertTrue(statusofyesbtn)
+				action.Click(yesbtn)
+
+				boolean statusofnobtn = action.IsElementEnabled(nobtn)
+				println ("Status of No Button ---"+ statusofnobtn)
+				Assert.assertTrue(statusofyesbtn)
+			}
+		}
+		catch(Exception e) {
+			Assert.fail("Verify Download PopUp failed due to "+ e)
 		}
 	}
 }

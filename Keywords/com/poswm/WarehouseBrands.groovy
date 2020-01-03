@@ -116,8 +116,8 @@ public class WarehouseBrands {
 			//WebUI.delay(3)
 			String brnadNameActual  = action.GetText(BrandNameColumn)
 			println "======"+brnadNameActual
-			Assert.assertEquals(brandNameExp, brnadNameActual, )
-
+			//Assert.assertEquals(brandNameExp, brnadNameActual, )
+			Assert.assertEquals(brnadNameActual, brandNameExp)
 
 		}
 		catch(Exception e){

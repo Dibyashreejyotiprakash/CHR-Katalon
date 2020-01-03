@@ -67,6 +67,9 @@ public class EditItemsPage {
 	By ddpartinLHSbox = By.xpath(".//*[@id='ctl00_Body_SelectionBoxFinGoods_lstAvailable']/option[contains(text(),'ET11')]")
 	By rightarrow = By.xpath("//input[@id='btnAdd']")
 	By updatesuccess = By.xpath("//span[contains(text(),'Update Succeeded!')]")
+	By templatesavebtn = By.xpath("//input[@id='ctl00_Body_fvItems_Button1']")
+	By staticcouponchkbox = By.xpath("//input[@id='ctl00_Body_fvItems_chkStaticCoupon']")
+	By updatetempsuccessmssg = By.xpath("//span[contains(text(),'Update Succeeded')]")
 
 	@Keyword
 	public void NavigateToCorp300() {
@@ -87,7 +90,7 @@ public class EditItemsPage {
 			action.Click(logotab)
 			action.Click(addnewlogo)
 			action.Click(browsefilebtn)
-			WebUI.delay(2)
+			//WebUI.delay(2)
 			uploadfile()
 			action.Click(logoname)
 			action.Type(logoname,"00000")
@@ -96,42 +99,42 @@ public class EditItemsPage {
 			action.Click(insertbtn)
 			action.WaitVisible(addlogosuccessmssg)
 			action.Click(logolistbtn)
-			WebUI.delay(15)
+			//WebUI.delay(15)
 
 			//action.Click(pagetobeclicked)
 
 
 			action.Click(logodeletebtn)
-			WebUI.delay(2)
+			//WebUI.delay(2)
 			Robot robot = new Robot();
 			robot.keyPress(KeyEvent.VK_ENTER);
 			robot.keyRelease(KeyEvent.VK_ENTER);
 
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.WaitVisible(deletesuccessmssg)
 			action.Click(addnewlogo)
 			action.Type(logoname,"00000")
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.Click(alldistributorchkbox)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.Click(browsefilebtn)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			uploadfile()
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(insertbtn)
 			action.WaitVisible(addlogosuccessmssg)
 			action.Click(logolistbtn)
-			WebUI.delay(10)
+			//WebUI.delay(10)
 			//action.Click(pagetobeclicked)
 
 
 			action.Click(logodeletebtn)
-			WebUI.delay(2)
+			//WebUI.delay(2)
 			//Robot robot = new Robot();
 			robot.keyPress(KeyEvent.VK_ENTER);
 			robot.keyRelease(KeyEvent.VK_ENTER);
 
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.WaitVisible(deletesuccessmssg)
 
 
@@ -177,7 +180,7 @@ public class EditItemsPage {
 			action.Click(logotab)
 			action.Click(addnewlogo)
 			action.Click(browsefilebtn)
-			WebUI.delay(2)
+			//WebUI.delay(2)
 			uploadfile()
 			action.Click(logoname)
 			action.Type(logoname,"00000")
@@ -196,44 +199,44 @@ public class EditItemsPage {
 			action.Click(updatesuccessmssg)
 
 
-			WebUI.delay(10)
+			//WebUI.delay(10)
 			//action.Click(pagetobeclicked)
 
 
 			action.Click(logodeletebtn)
-			WebUI.delay(2)
+			//WebUI.delay(2)
 			Robot robot = new Robot();
 			robot.keyPress(KeyEvent.VK_ENTER);
 			robot.keyRelease(KeyEvent.VK_ENTER);
 
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.WaitVisible(deletesuccessmssg)
 			action.Click(addnewlogo)
 			action.Type(logoname,"00000")
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.Click(alldistributorchkbox)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.Click(browsefilebtn)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			uploadfile()
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(insertbtn)
 			action.WaitVisible(addlogosuccessmssg)
 
 
 
 			action.Click(logolistbtn)
-			WebUI.delay(10)
+			//WebUI.delay(10)
 			//action.Click(pagetobeclicked)
 
 
 			action.Click(logodeletebtn)
-			WebUI.delay(2)
+			//WebUI.delay(2)
 			//Robot robot = new Robot();
 			robot.keyPress(KeyEvent.VK_ENTER);
 			robot.keyRelease(KeyEvent.VK_ENTER);
 
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.WaitVisible(deletesuccessmssg)
 
 
@@ -286,9 +289,9 @@ public class EditItemsPage {
 			action.WaitVisible(finishedgoodstab)
 			action.Click(finishedgoodstab)
 			action.WaitVisible(savebtn)
-			
+
 			boolean checkpart = action.IsDisplayed(ddpartinRHSbox)
-			
+
 			println("VALUE "+checkpart)
 
 			if(!checkpart) {
@@ -301,6 +304,22 @@ public class EditItemsPage {
 		}
 		catch(Exception e) {
 			Assert.fail("AssociateDDPartToTemplate failed due to "+e)
+		}
+	}
+
+	@Keyword
+	public void MakeTemplateAsStaticCoupon() {
+		try {
+			action.WaitVisible(edittemplate)
+			action.Click(edittemplate)
+			action.WaitVisible(templatesavebtn)
+			action.ScrollToViewElement(staticcouponchkbox)
+			action.Click(staticcouponchkbox)
+			action.Click(templatesavebtn)
+			action.WaitVisible(updatetempsuccessmssg)
+		}
+		catch(Exception e) {
+			Assert.fail("MakeTemplateAsStaticCoupon failed due to "+e)
 		}
 	}
 }

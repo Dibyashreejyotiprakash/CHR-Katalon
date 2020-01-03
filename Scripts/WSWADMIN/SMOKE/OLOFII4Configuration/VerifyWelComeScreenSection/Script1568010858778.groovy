@@ -31,4 +31,4 @@ WebUI.delay(10)
 
 CustomKeywords.'com.wswadmin.II4ConfigurationPage.SelectCorpAndMarkets'()
 
-CustomKeywords.'com.wswadmin.II4ConfigurationPage.VerifyWelComeScreenConfigurationSection'()
+CustomKeywords.'com.wswadmin.II4ConfigurationPage.VerifyWelComeScreenConfigurationSelection'()

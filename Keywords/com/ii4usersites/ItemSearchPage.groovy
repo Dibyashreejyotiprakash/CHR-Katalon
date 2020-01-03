@@ -115,8 +115,100 @@ class ItemSearchPage {
 
 
 
+	By searchTextField = By.xpath("//*[@id='Body_txtSearch']")
+	By searchBtn = By.xpath("//*[@id='ctl00_Body_btnSearch']")
+	By templateID = By.xpath("//*[@id='ctl00_Body_rlvSearchResults_ctrl0_Label1']")
+	By adminApprovalCheckBox = By.xpath("//*[@id='ctl00_Body_rptFilterGroups_ctrl0_cblFilterList_0']")
+	By ApprovalCheckBox = By.xpath("//*[@id='ctl00_Body_rptFilterGroups_ctrl0_cblFilterList_1']")
+
+
+
+	By newlycreatedmetatagcheckbox = By.xpath("ctl00_Body_rptFilterGroups_ctrl0_cblFilterList_0")
+	By metatagsearchtemplate = By.xpath("(//*[@href='/POS/ItemDetails.aspx?tid=130722'])[2]")
+
+	By testtemplate = By.xpath("(//*[@href='/POS/ItemDetails.aspx?tid=132933'])[1]")
+
+
 	WebDriver driver = DriverFactory.getWebDriver();
 	Interaction action = new Interaction();
+
+
+	@Keyword
+	public boolean ClickOnAdminApprovalAndVerifyTemplate()
+	{
+		try
+		{
+			boolean IsTemplateVerified = false
+			action.Click(adminApprovalCheckBox)
+			WebUI.delay(5)
+			String TemplateID= action.GetText(templateID)
+			if(action.IsElementDisplayed(templateID))
+			{
+				println TemplateID +" present and verified."
+				return IsTemplateVerified = true
+			}
+
+		}
+		catch(Exception e)
+		{
+			Assert.fail("ClickOnAdminApprovalAndVerifyTemplate Failed due to" +e)
+		}
+	}
+
+	@Keyword
+	public boolean ClickOnApprovalAndVerifyTemplate()
+	{
+		try
+		{
+			boolean IsTemplateVerified = false
+			action.Click(ApprovalCheckBox)
+			WebUI.delay(5)
+			String TemplateID= action.GetText(templateID)
+			if(action.IsElementDisplayed(templateID))
+			{
+				println TemplateID +" present and verified."
+				return IsTemplateVerified = true
+			}
+
+		}
+		catch(Exception e)
+		{
+			Assert.fail("ClickOnAdminApprovalAndVerifyTemplate Failed due to" +e)
+		}
+	}
+
+
+
+	@Keyword
+	public void SearchTemplate()
+	{
+		try
+		{
+			action.Click(searchTextField)
+			action.Type(searchTextField, "130718")
+			action.Click(searchBtn)
+			WebUI.delay(5)
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Searchtemplate Failed due to" +e)
+		}
+	}
+
+
+
+
+	@Keyword
+	public void VerifytemplateFulfillmentPage()
+	{
+		try{
+			action.VerifyCurrentPage("TemplateFulfillment.aspx")
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Verify template Fulfillment Page failed due to "+ e)
+		}
+	}
 
 
 
@@ -139,7 +231,6 @@ class ItemSearchPage {
 	public void ClickOnVariableTemplate(){
 		try
 		{
-
 			action.WaitVisible(variabletemplate)
 			action.Click(variabletemplate)
 			action.WaitForPageToLoad()
@@ -147,6 +238,22 @@ class ItemSearchPage {
 		catch(Exception e)
 		{
 			println ("ClickOnVariableTemplate failed due to "+ e)
+		}
+	}
+
+	@Keyword
+	public void ClickOnTestTemplate(String testtemplateid)
+	{
+		try{
+			action.Type(txbSearch, testtemplateid)
+			action.Click(btnSearch)
+			WebUI.delay(10)
+			action.ScrollToBottomOfPage()
+			action.Click(testtemplate)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e){
+			Assert.fail("Click On TestTemplate failed due to "+ e)
 		}
 	}
 
@@ -178,6 +285,20 @@ class ItemSearchPage {
 		{
 			println ("ClickOnVariableTemplate failed due to "+ e)
 		}
+	}
+
+	@Keyword
+	public void ClickOnNewlyCreatedMetatagAndVerify()
+	{
+		try{
+			action.Click(newlycreatedmetatagcheckbox)
+			boolean statusoftemplatesearch = action.IsElementDisplayed(metatagsearchtemplate)
+			Assert.assertTrue(statusoftemplatesearch)
+		}
+		catch(Exception e){
+			Assert.fail("Click On Newly Created Metatag failed due to "+ e)
+		}
+
 	}
 
 
@@ -271,7 +392,7 @@ class ItemSearchPage {
 		{
 
 			action.Click(templateimage)
-			
+
 		}
 		catch(Exception e)
 		{

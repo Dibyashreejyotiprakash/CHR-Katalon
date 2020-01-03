@@ -18,7 +18,7 @@ import com.kms.katalon.core.testdata.TestData
 import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
-
+import org.testng.Assert
 import internal.GlobalVariable
 
 public class Reports {
@@ -27,27 +27,25 @@ public class Reports {
 	Interaction action = new Interaction();
 
 	By reportsddn = By.xpath("//*[@id='ctl00_cphBody_ddlPortalReports']")
-	
+
 	@Keyword
 	public void VerifyReportsPage() {
 		try{
-			action.VerifyCurrentPage("Reports.aspx")
+			action.VerifyCurrentPage("/Reports.aspx")
 		}
 		catch(Exception e) {
-			println ("Verify Reports Page failed due to "+ e)
+			Assert.fail ("Verify Reports Page failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
-	public void VerifyAvailableReport()
-	{
+	public void VerifyAvailableReport() {
 		try{
 			action.SelectByIndex(reportsddn, 1)
 			action.WaitForPageToLoad()
 		}
-		catch(Exception e)
-		{
-			
+		catch(Exception e) {
+			Assert.fail ("Verify Available Report failed due to "+ e)
 		}
 	}
 }

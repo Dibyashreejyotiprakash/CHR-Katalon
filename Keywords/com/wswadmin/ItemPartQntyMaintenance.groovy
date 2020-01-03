@@ -43,7 +43,7 @@ public class ItemPartQntyMaintenance {
 	public void ValidatePart(){
 
 		try {
-			WebUI.delay(10)
+			//WebUI.delay(10)
 			boolean grid_status = action.IsDisplayed(norecords)
 			println("Grid Status "+grid_status)
 

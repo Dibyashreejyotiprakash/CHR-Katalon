@@ -36,10 +36,11 @@ public class CloneItemDetailPage {
 
 	@Keyword
 	public void VerifyEditLink() {
+		action.ScrollToViewElement(editlink)
 		boolean statusofvisibilityofeditlink = action.IsElementDisplayed(editlink)
 		Assert.assertTrue(statusofvisibilityofeditlink)
 		if(statusofvisibilityofeditlink == true) {
-			boolean statusofenabilityofeditlink = action.IsElementDisplayed(editlink)
+			boolean statusofenabilityofeditlink = action.IsElementEnabled(editlink)
 			Assert.assertTrue(statusofenabilityofeditlink)
 			if(statusofenabilityofeditlink == true) {
 				action.Click(editlink)
@@ -51,14 +52,16 @@ public class CloneItemDetailPage {
 
 	@Keyword
 	public void VerifyDeleteLink() {
+		
+		action.ScrollToViewElement(deletelink)
 		boolean statusofvisibilityofdeletelink = action.IsElementDisplayed(deletelink)
-		Assert.assertTrue(statusofvisibilityofdeletelink)
+		//Assert.assertTrue(statusofvisibilityofdeletelink)
 		if(statusofvisibilityofdeletelink == true) {
-			boolean statusofenabilityofdeletelink = action.IsElementDisplayed(deletelink)
+			boolean statusofenabilityofdeletelink = action.IsElementEnabled(deletelink)
 			Assert.assertTrue(statusofenabilityofdeletelink)
 			if(statusofenabilityofdeletelink == true) {
 				action.Click(deletelink)
-				WebUI.delay(5)
+				//WebUI.delay(5)
 				action.AcceptAlert()
 			}
 		}

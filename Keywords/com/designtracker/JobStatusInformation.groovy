@@ -66,37 +66,39 @@ public class JobStatusInformation {
 	By colZip = By.xpath("//*[text()='Zip']")
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	@Keyword
+	public void VerifyJobStatusInfoPage(){
+		try{
+			action.VerifyCurrentPage("Reports/JobStatusInformation.aspx")
+		}
+		catch(Exception e){
+			Assert.fail("Verify Job Status Information Page failed due to "+ e)
+		}
+	}
 
 	@Keyword
 	public void EnterJobID(String jobid) {
-
+		String currentenvironment = GlobalVariable.environment
+		println ("Current env is ----------------------------"+ currentenvironment)
+		ProfitLoss profitlosspage = new ProfitLoss()
 		try {
-			action.WaitVisible(txtJobID)
-			action.Type(txtJobID,jobid)
-			println ("Job Id is "+jobid )
+			try{
+				if(currentenvironment.equalsIgnoreCase("UAT")){
+					driver.quit()
+				}
+				else if(currentenvironment.equalsIgnoreCase("STAGING")) {
+					driver.quit()
+				}
+				else{
+					action.VerifyCurrentPage("Reports/JobStatusInformation.aspx")
+					action.Type(txtJobID, jobid)
+					action.Click(btnViewReport)
+					action.WaitForPageToLoad()
+					VerifyJobStatusReportFields()
+				}
+			}catch(Exception e){
+				throw new Exception("Excecution is terminated")
+			}
 		}
 		catch(Exception e) {
 			println ("EnterJobID method failed due to :"+ e)
@@ -104,17 +106,30 @@ public class JobStatusInformation {
 	}
 
 
-	@Keyword//Clicking on View report button
+	@Keyword
 	public void ClickOnViewReportBtn() {
+		ProfitLoss profitlosspage = new ProfitLoss()
+		String currentenvironment = GlobalVariable.environment
 		try{
-			action.WaitVisible(btnViewReport)
-			action.Click(btnViewReport)
-			action.WaitForPageToLoad()
-			//action.WaitVisible(headerJobStatus)
-			WebUI.delay(10)
+			try{
+				if(currentenvironment.equals("UAT")){
+					driver.quit()
+				}
+				else if(currentenvironment.equals("STAGE")) {
+					driver.quit()
+				}
+				else{
+					action.Click(btnViewReport)
+					action.WaitForPageToLoad()
+					VerifyJobStatusReportFields()
+					profitlosspage.VerifyProfitLossReportPage()
+				}
+			}catch(Exception e){
+				throw new Exception("Excecution is terminated")
+			}
 		}
 		catch(Exception e){
-			println("ClickOnViewReportBtn method failed due to :" + e)
+			Assert.fail("Click On View Report Btn failed due to "+ e)
 		}
 	}
 
@@ -135,15 +150,24 @@ public class JobStatusInformation {
 
 	@Keyword //Verifying job status page
 	public boolean VerifyJobStatusPage(){
-
+		String currentenvironment = GlobalVariable.environment
 		try{
+			try{
+				if(currentenvironment.equals("UAT")){
+					driver.quit()
+				}
+				else if(currentenvironment.equals("STAGE"))
+				{
+					driver.quit()
+				}
+				else{
+					action.VerifyCurrentPage("JobStatusInformation.aspx")
 
-			String expectedPageURL = "https://designtracker.brandmuscle.net/Reports/JobStatusInformation.aspx"
-			WebUI.delay(10)
-			String actualPageURL = action.GetCurrentURL();
-			println("------------------>>>>>>>>>>>>>>>" + actualPageURL)
-			//String actualheader = action.GetText(headerJobActivityTracking)
-			Assert.assertEquals(actualPageURL,expectedPageURL)
+				}
+			}
+			catch(Exception ex){
+				throw new Exception("Execution Terminated")
+			}
 		}
 		catch(Exception e){
 			println("VerifyJobStatusPage method failed due to :" + e)
@@ -152,45 +176,59 @@ public class JobStatusInformation {
 
 	@Keyword //Verifying Reports columns
 	public void VerifyJobStatusReportFields(){
+		String currentenvironment = GlobalVariable.environment
 		try{
+			try{
+				if(currentenvironment.equals("UAT")){
+					driver.quit()
+				}
+				else if(currentenvironment.equals("STAGE"))
+				{
+					driver.quit()
+				}
+				else{
+					String ExpectedFirstField = "Job Name:"
+					String ExpectedSecondField = "Sales Person:"
+					String ExpectedThirdField = "Account Name:"
+					String ExpectedFourthField = "Date Created:"
+					String ExpectedFifthField = "Due Date:"
+					String ExpectedSixthField = "Created For:"
+					String ExpectedSeventhField = "Designer:"
 
-			String ExpectedFirstField = "Job Name:"
-			String ExpectedSecondField = "Sales Person:"
-			String ExpectedThirdField = "Account Name:"
-			String ExpectedFourthField = "Date Created:"
-			String ExpectedFifthField = "Due Date:"
-			String ExpectedSixthField = "Created For:"
-			String ExpectedSeventhField = "Designer:"
+					String jobName = action.GetText(jobName)
+					String salespersion = action.GetText(salesPerson)
+					String accountname = action.GetText(accountName)
+					String datecreated = action.GetText(dateCreated)
+					String duedate = action.GetText(dueDate)
+					String createdFor = action.GetText(createdFor)
+					String designer = action.GetText(designer)
 
-			String jobName = action.GetText(jobName)
-			String salespersion = action.GetText(salesPerson)
-			String accountname = action.GetText(accountName)
-			String datecreated = action.GetText(dateCreated)
-			String duedate = action.GetText(dueDate)
-			String createdFor = action.GetText(createdFor)
-			String designer = action.GetText(designer)
+					Assert.assertEquals(ExpectedFirstField, jobName)
+					println("First Field Name----->"+ jobName)
 
-			Assert.assertEquals(ExpectedFirstField, jobName)
-			println("First Field Name----->"+ jobName)
+					Assert.assertEquals(ExpectedSecondField, salespersion)
+					println("Second Field Name----->"+ salespersion)
 
-			Assert.assertEquals(ExpectedSecondField, salespersion)
-			println("Second Field Name----->"+ salespersion)
+					Assert.assertEquals(ExpectedThirdField, accountname)
+					println("Third Field Name----->"+ accountname)
 
-			Assert.assertEquals(ExpectedThirdField, accountname)
-			println("Third Field Name----->"+ accountname)
+					Assert.assertEquals(ExpectedFourthField, datecreated)
+					println("Fourth Field Name----->"+ datecreated)
 
-			Assert.assertEquals(ExpectedFourthField, datecreated)
-			println("Fourth Field Name----->"+ datecreated)
+					Assert.assertEquals(ExpectedFifthField, duedate)
+					println("Fifth Field Name----->"+ duedate)
 
-			Assert.assertEquals(ExpectedFifthField, duedate)
-			println("Fifth Field Name----->"+ duedate)
+					Assert.assertEquals(ExpectedSixthField, createdFor)
+					println("Sixth Field Name----->"+ createdFor)
 
-			Assert.assertEquals(ExpectedSixthField, createdFor)
-			println("Sixth Field Name----->"+ createdFor)
+					Assert.assertEquals(ExpectedSeventhField, designer)
+					println("Seventh Field Name----->"+ designer)
+				}
+			}
+			catch(Exception e){
+				throw new Exception("Execution Terminated")
 
-			Assert.assertEquals(ExpectedSeventhField, designer)
-			println("Seventh Field Name----->"+ designer)
-
+			}
 		}
 		catch(Exception e)
 		{
@@ -309,14 +347,6 @@ public class JobStatusInformation {
 
 			Assert.assertEquals(twentyCol, zip)
 			println("Twenty Column Name----->"+ zip)
-
-
-
-
-
-
-
-
 
 		}
 		catch(Exception e)

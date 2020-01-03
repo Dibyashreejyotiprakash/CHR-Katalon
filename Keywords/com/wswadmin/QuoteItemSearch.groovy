@@ -56,10 +56,10 @@ public class QuoteItemSearch
 
 	By corpddn = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_GeneralInfoControl_CorporationEditor_Arrow']")
 	By corpddntextbox = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_GeneralInfoControl_CorporationEditor_Input']")
-	
+
 	By firstquotelink = By.xpath("(//*[contains(@href,'QuoteDetails.aspx?quoteid=')])[1]")
-	
-	By quoteeditlink = By.
+
+	//By quoteeditlink = By.
 
 
 	@Keyword
@@ -81,50 +81,30 @@ public class QuoteItemSearch
 
 		try
 		{
-			action.WaitVisible(mypendingitem)
-			action.WaitVisible(allitems)
-			action.WaitVisible(allpendingitem)
-
 			action.Click(mypendingitem)
-			WebUI.delay(100)
-
 			action.Click(mypendingestimationitem)
-			WebUI.delay(300)
-
 			action.Click(allpendingitem)
-			WebUI.delay(100)
-
 			action.Click(clearbtn)
-			WebUI.delay(100)
-
 			action.Click(quoteid)
 			action.Type(quoteid, "230397")
 			action.Click(performsearch)
-			WebUI.delay(100)
 			action.IsElementDisplayed(quoterecord)
-
 			action.Click(clearbtn)
-			WebUI.delay(100)
-
 			action.Click(dtjobid)
 			action.Type(dtjobid, "2402881")
 			action.Click(performsearch)
-			WebUI.delay(100)
 			action.IsElementDisplayed(dtrecord)
-
 			action.Clear(clearbtn)
-			WebUI.delay(100)
 
 			action.Click(checkallchkbox)
 			action.Click(performsearch)
-			WebUI.delay(100)
 		}
 		catch(Exception e)
 		{
 			Assert.fail("ValidateTimeout Failed Due to "+e)
 		}
 	}
-	
+
 	@Keyword
 	public void SearchQuote()
 	{
@@ -136,12 +116,12 @@ public class QuoteItemSearch
 			while (it.hasNext()) {
 				String parentwindowid = it.next()
 				println ("Parent Window id is "+ parentwindowid)
-				
+
 				String childwidowid = it.next()
 				println ("Child Window id is "+ childwidowid)
-				
+
 				driver.switchTo().window(childwidowid)
-				
+
 				println ("Child window url ------"+ action.GetCurrentURL())
 			}
 		}

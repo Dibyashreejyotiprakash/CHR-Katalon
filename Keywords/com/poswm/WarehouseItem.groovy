@@ -140,6 +140,7 @@ public class WarehouseItem {
 		try
 		{
 			//String itemname = null
+
 			if(action.IsDisplayed(txbName))
 			{
 				itemname = EnterUniqueItemName()
@@ -188,9 +189,15 @@ public class WarehouseItem {
 			{
 				EnterUnitOfMeasure()
 			}
+			action.ScrollToViewElement(saveIcon)
 			if(action.IsDisplayed(saveIcon))
 			{
 				action.Click(saveIcon)
+			}
+			action.ScrollToViewElement(nextButton)
+			if(action.IsDisplayed(nextButton))
+			{
+				action.Click(nextButton)
 			}
 			else{
 				throw new Exception("Fill Item Information Section   is falied")
@@ -579,10 +586,21 @@ public class WarehouseItem {
 	{
 
 		try{
+			
 			action.ScrollToViewElement(saveIconImage)
 			action.Click(saveIconImage)
+			
+			for(int i=0; i<=2;i++){
+				try{
+				   action.Click(imageNextBtn)
+				   break;
+				}
+				catch(Exception e){
+				   println(e.getMessage());
+				}
+			  }
+			
 			//action.WaitTime(2)
-			action.Click(imageNextBtn)
 			//action.WaitTime(5)
 			//action.WaitVisible(divBrands)
 		}
@@ -616,6 +634,7 @@ public class WarehouseItem {
 				println("FillBrandSection method failed due to :" + e)
 				Assert.fail()
 	    }
+
 	}
 
 		@Keyword
@@ -625,12 +644,10 @@ public class WarehouseItem {
 			{
 				if(action.IsElementDisplayed(selectWarehouseDropDown))
 				{
-					//action.WaitVisible(selectWarehouseDropDown)
 					action.Click(selectWarehouseDropDown)
-					//action.WaitVisible(selectWarehouseFirstValue)
-					////action.WaitTime(2)
+					action.WaitVisibleDup(selectWarehouseFirstValue)
 					action.Click(selectWarehouseFirstValue)
-					////action.WaitTime(5)
+					//action.WaitTime(5)
 				}
 				else
 				{
@@ -640,19 +657,19 @@ public class WarehouseItem {
 				if(action.IsElementDisplayed(selectBinDropDown))
 				{
 					action.Click(selectBinDropDown)
-					////action.WaitTime(3)
+					//action.WaitTime(3)
+					action.WaitVisibleDup(selectBinFirstValue)
 					action.Click(selectBinFirstValue)
-					////action.WaitTime(3)
+					//action.WaitTime(3)
 					action.Type(QtyTextField, "5")
 				}
 				else
 				{
 					println ("Selelct Bin drop down not present/failed")
 				}
-				if(action.IsElementDisplayed(SaveBtn)){
+				if(action.IsElementEnabled(SaveBtn)){
 					action.Click(SaveBtn)
-					////action.WaitTime(10)
-
+					//action.WaitTime(10)
 				}
 				else{
 					println ("Save button not present/failed")
@@ -661,32 +678,28 @@ public class WarehouseItem {
 			}
 			catch(Exception e)
 			{
-				println("FillTransactionsSection method failed due to :" + e)
-				Assert.fail()
+				Assert.fail("FillTransactionsSection method failed due to :" + e)
 
 			}
 		}
 
 		@Keyword
-		public void ClickOnCloseEditMode()
-		{
+		public void ClickOnCloseEditMode(){
 			try{
 				action.ScrollToTopOgPage()
 				if(action.IsElementDisplayed(CloseEditModeBtn)){
 					action.Click(CloseEditModeBtn)
 					action.WaitForPageToLoad()
-					//action.WaitTime(10)
+					action.WaitTime(10)
 				}
 				else{
 					println ("Close Edit Mode button not present/failed")
 				}
-
 			}
 			catch(Exception e){
 				println("ClickOnCloseEditMode method failed due to :" + e)
 				Assert.fail()
 			}
-
 		}
 
 		/*@Keyword
@@ -765,11 +778,4 @@ public class WarehouseItem {
 				Assert.fail("VerifyUnitCostPrice method failed due to :" + e)
 			}
 		}
-
-
-
-
-
-
-
-	}
+}

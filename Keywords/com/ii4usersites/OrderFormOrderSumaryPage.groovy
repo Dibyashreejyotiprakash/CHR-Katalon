@@ -32,17 +32,42 @@ public class OrderFormOrderSumaryPage {
 
 	By completeorderbtn = By.xpath("//*[@id='ctl00_Body_btnContinue']")
 	By paymentsection = By.xpath("//*[text()='Payment']")
+	By priceDisclaimerMsg = By.xpath("//*[@id='ctl00_Body_rlvOrderSummary_ctrl0_ucOST_lblPriceDisclaimer']") 
 	
+	
+	@Keyword
+	public boolean VerifyPriceDisclaimerMsg(String Disclaimer)
+	{
+		try
+		{
+			Boolean IsDisclaimerVerify = false
+			if (Disclaimer.equalsIgnoreCase("Enable"))
+			{
+				
+				String PriceDisclaimerMsg =	 action.GetText(priceDisclaimerMsg)
+				println("********** Price disclaimer enable -->" + PriceDisclaimerMsg + "**************") 
+				return IsDisclaimerVerify = true
+			}
+			else
+			{
+				println("********** Price disclaimer set to Disable **************")
+				IsDisclaimerVerify = false
+			}
+		}
+		catch(Exception e)
+		{
+			Assert.fail("VerifyPriceDisclaimerMsg method failed due to : "+ e)
+		}
+	}
+
 
 	@Keyword
 	public void PlaceOrder() {
 		action.ScrollToBottomOfPage()
-		WebUI.delay(10)
+		//WebUI.delay(10)
 		action.WaitUntilElementClickable(completeorderbtn)
-		WebUI.delay(10)
+		//WebUI.delay(10)
 		action.Click(completeorderbtn)
 		action.WaitForPageToLoad()
 	}
-	
-	
 }
