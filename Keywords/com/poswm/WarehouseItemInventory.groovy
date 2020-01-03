@@ -57,10 +57,12 @@ public class WarehouseItemInventory {
 	By clearallfilter = By.xpath("//*[text()='Clear All Filters']")
 	By supplierfilter = By.xpath("//*[@id='ctl00_MainContent_rpbSearch_i0_i0_rlbSupplier_i2']")
 	//By allsuppliersnameingrid = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00']//tr//td[12]")
-	By allsuppliersnameingrid = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00']/tbody/tr/td[4]")
+	//By allsuppliersnameingrid = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00']/tbody/tr/td[4]")
+	By allsuppliersnameingrid = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00']//tr//td[4]")
 	By brandfilter = By.xpath("//*[@id='ctl00_MainContent_rpbSearch_i1_i0_rlbBrands_i2']")
 	//By allbrandsnameingrid = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00']//tr//td[13]")
-	By allbrandsnameingrid = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00']/tbody/tr/td[5]")
+	//By allbrandsnameingrid = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00']/tbody/tr/td[5]")
+	By allbrandsnameingrid = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00']//tr//td[5]")
 	By allitemname = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00']//tr//td[11]/a")
 	By firstitemname = By.xpath("//a[@id='ctl00_MainContent_rgItemSearch_ctl00_ctl04_lblItemName']")
 	By itemsearchtextbox = By.xpath("//*[@id='ctl00_MainContent_rsbItemSearch_Input']")
@@ -118,6 +120,67 @@ public class WarehouseItemInventory {
 	By itemNameColValiue = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00']/tbody/tr/td[3]")
 	By approverColVal = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00__0']/td[7]")
 	By loadmaskerPosw = By.xpath("//img[@id='MainContent_Image2']")
+	By adsLabelName = By.xpath("//*[@id='ctl00_MainContent_rpbSearch_i6_i0_rlbWarehouseSalesDivision_i0']/label")
+	By salesDivLebelOnEditItemPage = By.xpath("//*[@id='ctl00_MainContent_ucItemOverView_radListItemProperties_ctrl0_lblSalesDivisions']")
+	By imageLoader = By.xpath("//*[@id='MainContent_Image2']")
+
+
+
+	@Keyword
+	public void SelectFirstItem()
+	{
+		try
+		{
+			action.Click(firstItem)
+			action.WindowHandle()
+			WebUI.delay(15)
+
+
+		}
+		catch(Exception e)
+		{
+			Assert.fail("SelectFirstItem failed due to :" + e)
+		}
+	}
+	
+	@Keyword
+	public String GetAdsSalesDivName()
+	{
+		try
+		{
+			String SalesDivName = action.GetText(adsLabelName)
+			return SalesDivName
+		}
+		catch(Exception e)
+		{
+			Assert.fail("GetAdsSalesDivName failed due to :" + e)
+		}
+	}
+
+	@Keyword
+	public boolean VerifySalesDiv(String SalesDivName)
+	{
+		try
+		{
+			boolean IsSalesDivVerified = false
+			String SalesDivNameOnItemPage = action.GetText(salesDivLebelOnEditItemPage)
+
+			println ("----------->" + SalesDivNameOnItemPage)
+
+			if(SalesDivName.equalsIgnoreCase(SalesDivNameOnItemPage))
+			{
+
+				println("Sales Div verified successfully")
+				return IsSalesDivVerified = true
+			}
+		}
+		catch(Exception e)
+		{
+			Assert.fail("VerifySalesDiv failed due to :" + e)
+		}
+	}
+
+
 
 
 
@@ -361,6 +424,7 @@ public class WarehouseItemInventory {
 			//action.Click(linkSupplier)
 			//WebUI.delay(10)
 			action.Click(supplierfilter)
+			action.WaitTillNotVisible(imageLoader, 0)
 			//WebUI.delay(20)
 			String suppliername = action.GetText(supplierfilter)
 			//WebUI.delay(8)
@@ -399,6 +463,7 @@ public class WarehouseItemInventory {
 			//action.Click(linkBrands)
 			//WebUI.delay(10)
 			action.Click(brandfilter)
+			action.WaitTillNotVisible(imageLoader, 0)
 			//WebUI.delay(20)
 			String brandnamename = action.GetText(brandfilter)
 			println(brandnamename+"++++++++")
