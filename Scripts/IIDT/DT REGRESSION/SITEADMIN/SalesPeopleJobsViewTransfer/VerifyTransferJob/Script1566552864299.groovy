@@ -16,13 +16,8 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.openBrowser('')
-
-WebUI.maximizeWindow()
 
 CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamedesigntracker, GlobalVariable.testtypesmoke, GlobalVariable.environment)
-
-WebUI.waitForPageLoad(300)
 
 CustomKeywords.'com.designtracker.LoginPage.LoginToDesignTarcker'(GlobalVariable.dtusername, GlobalVariable.dtpassowrd)
 
@@ -44,14 +39,15 @@ CustomKeywords.'com.designtracker.SalesPeopleJobsViewOrTransferPage.VerifyAddNew
 
 WebUI.closeBrowser()
 
+WebUI.openBrowser('')
+
 CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameapprovals, GlobalVariable.testtypesmoke, GlobalVariable.environment)
 
-WebUI.waitForPageLoad(300)
+WebUI.maximizeWindow()
 
 CustomKeywords.'com.approvals.LoginPage.VerifyApprovalLoginPage'()
 
-CustomKeywords.'com.approvals.HomePage.VerifyApprovalsHomePage'()
+CustomKeywords.'com.approvals.LoginPage.ApprovalLogin'(GlobalVariable.approvalusername, GlobalVariable.approvalpassword)
 
-CustomKeywords.'com.approvals.HomePage.VerifySearchDTJob'(jobid)
+CustomKeywords.'com.approvals.HomePage.VerifySearchByDTJob'(jobid)
 
-WebUI.closeBrowser()

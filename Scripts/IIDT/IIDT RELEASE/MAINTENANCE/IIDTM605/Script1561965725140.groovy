@@ -19,8 +19,6 @@ CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamewswadmin,
 
 CustomKeywords.'com.wswadmin.LoginPage.WSWlogin'(GlobalVariable.wswadminusername, GlobalVariable.wswpassword)
 
-WebUI.waitForPageLoad(300)
-
 CustomKeywords.'com.wswadmin.HomePage.NavigateToItemSearchPage'()
 
 CustomKeywords.'com.wswadmin.ItemSearchpage.openTemplateConfigurationPage'()

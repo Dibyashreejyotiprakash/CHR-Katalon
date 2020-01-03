@@ -13,32 +13,11 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.openBrowser('')
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameiiadmin, GlobalVariable.testtyperegression, GlobalVariable.environment)
 
-WebUI.maximizeWindow()
+CustomKeywords.'com.iiadmin.LoginPage.LoginToIIAdmin'(GlobalVariable.iiadminusername, GlobalVariable.iiadminpassword)
 
-WebUI.waitForPageLoad(300)
+CustomKeywords.'com.iiadmin.EditItemsPage.NavigateToCorp300'()
 
-CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamedesigntracker, GlobalVariable.testtyperegression, 
-    GlobalVariable.environment)
 
-CustomKeywords.'com.designtracker.LoginPage.LoginToDesignTarcker'('dibyashree.jyoti@brandmuscle.com', 'chr@1234')
-
-CustomKeywords.'com.designtracker.HomePage.ClickOnhighrarchy'()
-
-CustomKeywords.'com.designtracker.HierarchyPage.AssociateUserForSupplier'()
-
-WebUI.closeBrowser()
-
-WebUI.openBrowser('')
-
-WebUI.maximizeWindow()
-
-WebUI.waitForPageLoad(300)
-
-CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamewswadmin, GlobalVariable.testtyperegression, GlobalVariable.environment)
-
-CustomKeywords.'com.wswadmin.HomePage.NavigateToItemGatingGroupManagement'()
-
-CustomKeywords.'com.wswadmin.StandardItemGating.ValidateUserOnWswAdminForSupplier'()
 

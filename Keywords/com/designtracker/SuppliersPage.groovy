@@ -50,6 +50,7 @@ public class SuppliersPage {
 	@Keyword
 	public void VerifySuppliersPage() {
 		try {
+			action.VerifyCurrentPage("Administration/Market/MarketSupplier.aspx")
 			String currenturl = action.GetCurrentURL();
 			if(currenturl.contains("MarketSupplier.aspx")) {
 				println ("Suppliers page is verified");
@@ -83,9 +84,7 @@ public class SuppliersPage {
 		try {
 
 			action.SelectByText(corpddn, "Instant Impact 4.0 Demo Corp (Dist.)")
-			WebUI.delay(5)
 			action.SelectByText(marketddn, "Chicago Beverage Systems")
-			WebUI.delay(5)
 
 			boolean statusofsuppliertextbox = action.IsElementDisplayed(suppliernametextbox)
 			Assert.assertTrue(statusofsuppliertextbox)

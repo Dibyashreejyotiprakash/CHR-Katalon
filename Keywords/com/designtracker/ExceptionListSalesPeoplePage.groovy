@@ -60,22 +60,29 @@ class ExceptionListSalesPeoplePage {
 	By successDelMsg = By.xpath("//li[contains(text(),'The selected sales people have been deleted succes')]")
 	By ErrorMsgOnInsertingDuplidateSalesPerson = By.xpath("//li[contains(.,'The selected sales person already exists in the exception list.')]")
 
+
+	@Keyword
+	public void VerifyExceptionListSalesPeoplePage(){
+		try{
+			action.VerifyCurrentPage("VerifyExceptioListSalesPeoplePage")
+		}
+		catch(Exception e){
+			Assert.fail ("Verify Exception List Sales People Page Failed due to "+ e)
+		}
+	}
+
 	@Keyword
 	public void VerifyAllDropDown() {
 		try {
-			//WebUI.delay(2)
 			boolean statusofcorpddn  =     action.IsElementDisplayed(corporationddn)
 			Assert.assertTrue(statusofcorpddn, "Corporation dropdown visible")
 			action.SelectByText(corporationddn, "Demo Distributor (QA)")
-
-			//WebUI.delay(2)
 			boolean statusofmarketddn  =     action.IsElementDisplayed(corporationddn)
 			Assert.assertTrue(statusofmarketddn, "Market dropdown visible")
 			action.SelectByText(marketddn, "Demo Dist. 1 QA")
 		}
 		catch(Exception e) {
-			println ("Verify All DropDown Failed due to "+ e)
-			Assert.fail()
+			Assert.fail ("Verify All DropDown Failed due to "+ e)
 		}
 	}
 
@@ -83,127 +90,56 @@ class ExceptionListSalesPeoplePage {
 	public void VerifyInsertSalesPerson() {
 		try {
 			action.SelectByText(corporationddn, "Demo Distributor (QA)")
-
-			//WebUI.delay(3)
-			action.WaitVisible(marketddn)
 			action.SelectByText(marketddn, "Demo Dist. 1 QA")
-
-			//WebUI.delay(3)
-			action.WaitVisible(salespersonddn)
-			action.SelectByText(salespersonddn, "ADMINTEST, ADMIN (demoqa@brandmuscle.com)")
-
-			//WebUI.delay(3)
-			action.WaitVisible(insertSelSalesPerBtn)
+			action.SelectByText(salespersonddn, "TESTADMIN, TESTADMIN (demoqa@brandmuscle.com)")
 			action.Click(insertSelSalesPerBtn)
-
-			//WebUI.delay(3)
-			action.WaitVisible(successInsertMsg)
 			boolean statusofSuccessMsg  =     action.IsElementDisplayed(successInsertMsg)
 			Assert.assertTrue(statusofSuccessMsg, "Success msg for insert is visible")
-
-			//WebUI.delay(2)
-			action.WaitVisible(checkBoxToSelSalesPerson)
 			action.Click(checkBoxToSelSalesPerson)
-
-			//WebUI.delay(2)
-			action.WaitVisible(delSelSalesPerBtn)
 			action.Click(delSelSalesPerBtn)
 		}
 		catch(Exception e) {
-			println ("Verify InsertSalesPerson Failed due to "+ e)
-			Assert.fail()
+			Assert.fail ("Verify InsertSalesPerson Failed due to "+ e)
 		}
 	}
 
 	@Keyword
 	public void VerifyDeleteSalesPerson() {
 		try {
-			action.WaitVisible(corporationddn)
 			action.SelectByText(corporationddn, "Demo Distributor (QA)")
-
-			//WebUI.delay(3)
-			action.WaitVisible(marketddn)
 			action.SelectByText(marketddn, "Demo Dist. 1 QA")
-
-			//WebUI.delay(3)
-			action.WaitVisible(salespersonddn)
-			action.SelectByText(salespersonddn, "ADMINTEST, ADMIN (demoqa@brandmuscle.com)")
-
-			//WebUI.delay(3)
-			action.WaitVisible(insertSelSalesPerBtn)
+			action.SelectByText(salespersonddn, "TESTADMIN, TESTADMIN (demoqa@brandmuscle.com)")
 			action.Click(insertSelSalesPerBtn)
-
-			//WebUI.delay(3)
-			action.WaitVisible(successInsertMsg)
 			boolean statusofSuccessMsg  =     action.IsElementDisplayed(successInsertMsg)
 			Assert.assertTrue(statusofSuccessMsg, "Success msg for insert is visible")
-
-			//WebUI.delay(3)
-			action.WaitVisible(checkBoxToSelSalesPerson)
 			action.Click(checkBoxToSelSalesPerson)
-
-			//WebUI.delay(3)
-			action.WaitVisible(delSelSalesPerBtn)
 			action.Click(delSelSalesPerBtn)
-
-			//WebUI.delay(3)
-			action.WaitVisible(successDelMsg)
 			boolean statusofDeleteMsg  =     action.IsElementDisplayed(successDelMsg)
 			Assert.assertTrue(statusofDeleteMsg, "Success msg for delete is visible")
 		}
 		catch(Exception e) {
-			println ("Verify DeleteSalesPerson Failed due to "+ e)
-			Assert.fail()
+			Assert.fail ("Verify DeleteSalesPerson Failed due to "+ e)
 		}
 	}
 
 	@Keyword
 	public void VerifyErrorOnInsertingDuplicateSalesPerson() {
 		try {
-			action.WaitVisible(corporationddn)
 			action.SelectByText(corporationddn, "Demo Distributor (QA)")
-
-			//WebUI.delay(3)
-			action.WaitVisible(marketddn)
 			action.SelectByText(marketddn, "Demo Dist. 1 QA")
-
-			//WebUI.delay(3)
-			action.WaitVisible(salespersonddn)
-			action.SelectByText(salespersonddn, "ADMINTEST, ADMIN (demoqa@brandmuscle.com)")
-
-			//WebUI.delay(3)
-			action.WaitVisible(insertSelSalesPerBtn)
+			action.SelectByText(salespersonddn, "TESTADMIN, TESTADMIN (demoqa@brandmuscle.com)")
 			action.Click(insertSelSalesPerBtn)
-
-			//WebUI.delay(3)
-			action.WaitVisible(successInsertMsg)
 			boolean statusofSuccessMsg  =     action.IsElementDisplayed(successInsertMsg)
 			Assert.assertTrue(statusofSuccessMsg, "Success msg for insert is visible")
-
-			//WebUI.delay(3)
-			action.WaitVisible(salespersonddn)
-			action.SelectByText(salespersonddn, "ADMIN, ADMIN (demoqa@brandmuscle.com)")
-
-			//WebUI.delay(3)
-			action.WaitVisible(insertSelSalesPerBtn)
+			action.SelectByText(salespersonddn, "TESTADMIN, TESTADMIN (demoqa@brandmuscle.com)")
 			action.Click(insertSelSalesPerBtn)
-
-			//WebUI.delay(3)
-			action.WaitVisible(ErrorMsgOnInsertingDuplidateSalesPerson)
 			boolean statusofErrorMsgOnInsertingDuplidateSalesPerson  =     action.IsElementDisplayed(ErrorMsgOnInsertingDuplidateSalesPerson)
 			Assert.assertTrue(statusofErrorMsgOnInsertingDuplidateSalesPerson, "Error msg for InsertingDuplicateSalesPerson is visible")
-
-			//WebUI.delay(3)
-			action.WaitVisible(checkBoxToSelSalesPerson)
 			action.Click(checkBoxToSelSalesPerson)
-
-			//WebUI.delay(3)
-			action.WaitVisible(delSelSalesPerBtn)
 			action.Click(delSelSalesPerBtn)
 		}
 		catch(Exception e) {
-			println ("Verify ErrorOnInsertingDuplicateSalesPerson Failed due to "+ e)
-			Assert.fail()
+			Assert.fail ("Verify ErrorOnInsertingDuplicateSalesPerson Failed due to "+ e)
 		}
 	}
 }

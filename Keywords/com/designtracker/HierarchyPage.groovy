@@ -43,7 +43,7 @@ public class HierarchyPage {
 	@Keyword
 	public void VerifyHierarchyPage() {
 		try{
-			action.VerifyCurrentPage("OrganizationStructure.aspx")
+			action.VerifyCurrentPage("Administration/Market/OrganizationStructure.aspx")
 		}
 		catch(Exception e) {
 			Assert.fail("Verify Hierarchy Page Failed Due to "+e)
@@ -65,16 +65,9 @@ public class HierarchyPage {
 	public void AssociateUser() {
 
 		try {
-			action.WaitVisible(corpName)
 			action.SelectByText(corpName, "Instant Impact 4.0 Demo Corp (Dist.)")
-			action.WaitVisible(progressIndicator)
-			WebUI.delay(2)
 			action.SelectByText(market, "Chicago Beverage Systems")
-			action.WaitVisible(progressIndicator)
-			WebUI.delay(2)
 			action.Click(chicago_market_hierarchy)
-			action.WaitVisible(testusercheckbox)
-			action.IsElementDisplayed(testusercheckbox)
 			String val = action.Attribute(testusercheckbox, "checked")
 			println("Checkbox value is "+val)
 
@@ -83,8 +76,6 @@ public class HierarchyPage {
 			}
 			else {
 				action.Click(testusercheckbox)
-				WebUI.delay(5)
-				println("inside else")
 				action.Click(associateuserbtn)
 			}
 		}
@@ -98,16 +89,9 @@ public class HierarchyPage {
 	public void AssociateUserForSupplier() {
 
 		try {
-			action.WaitVisible(corpName)
 			action.SelectByText(corpName, "Demo Supplier (QA)")
-			action.WaitVisible(progressIndicator)
-			WebUI.delay(7)
 			action.SelectByText(market, "Demo Supplier (QA)")
-			action.WaitVisible(progressIndicator)
-			WebUI.delay(2)
 			action.Click(chicago_market_hierarchy)
-			action.WaitVisible(testusersuppcheckbox)
-			action.IsElementDisplayed(testusersuppcheckbox)
 			String val = action.Attribute(testusersuppcheckbox, "checked")
 			println("Checkbox value is "+val)
 
@@ -116,8 +100,6 @@ public class HierarchyPage {
 			}
 			else {
 				action.Click(testusercheckbox)
-				WebUI.delay(5)
-				println("inside else")
 				action.Click(associateuserbtn)
 			}
 		}
@@ -130,15 +112,11 @@ public class HierarchyPage {
 	@Keyword
 	public void ValidateNewAddedSalesPersonInHierarchyPage() {
 		try {
-			action.WaitVisible(corpName)
 			action.SelectByText(corpName, "Instant Impact 4.0 Demo Corp (Dist.)")
-			action.WaitVisible(progressIndicator)
-			WebUI.delay(2)
 			action.SelectByText(market, "Chicago Beverage Systems")
-			action.WaitVisible(progressIndicator)
-			WebUI.delay(2)
 			action.Click(chicago_market_hierarchy)
-			action.IsElementDisplayed(testemail)
+			boolean statusoftestemial = action.IsElementDisplayed(testemail)
+			Assert.assertTrue(statusoftestemial)
 		}
 		catch(Exception e) {
 			Assert.fail("ValidateNewAddedSalesPersonInHierarchyPage Failed Due to "+e)
@@ -148,24 +126,12 @@ public class HierarchyPage {
 	@Keyword
 	public void VerifyVisibiltyOfAssignedUsersToHierarchy() {
 		try{
-			action.WaitVisible(corpName)
-			WebUI.delay(4)
 			action.SelectByText(corpName, "Instant Impact 4.0 Demo Corp (Dist.)")
-			WebUI.delay(4)
 			action.SelectByText(market, "Chicago Beverage Systems")
-			WebUI.delay(4)
 			action.Click(mobiletesthierarchy)
-			WebUI.delay(4)
-
 			boolean statusofassigneduserssection = action.IsElementDisplayed(assigneduserssection)
 			Assert.assertTrue(statusofassigneduserssection)
-
-			WebUI.delay(4)
-
 			action.Click(mobiletesthierarchy)
-
-			WebUI.delay(4)
-
 			boolean statusofassigneduserssectionafterclickingonmobiletesthierarchy = action.IsElementDisplayed(assigneduserssection)
 			Assert.assertTrue(statusofassigneduserssection)
 		}

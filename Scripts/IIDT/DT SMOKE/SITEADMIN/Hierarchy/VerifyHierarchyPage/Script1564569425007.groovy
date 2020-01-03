@@ -18,6 +18,7 @@ CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamedesigntra
 
 CustomKeywords.'com.designtracker.LoginPage.LoginToDesignTarcker'(GlobalVariable.dtusername, GlobalVariable.dtpassowrd)
 
-CustomKeywords.'com.designtracker.HomePage.ClickOnExceptionlistBrands'()
+CustomKeywords.'com.designtracker.HomePage.ClickOnhighrarchy'()
 
 CustomKeywords.'com.designtracker.HierarchyPage.VerifyHierarchyPage'()
+

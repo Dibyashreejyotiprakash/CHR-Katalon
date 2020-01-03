@@ -39,15 +39,15 @@ public class StatusSummery {
 	By colJobId = By.xpath("//div[text()='Job Id']")
 
 	@Keyword //Verifying job activity tracking page
-	public boolean VerifyStatusSummeryPage(){
+	public void VerifyStatusSummeryPage(){
 
 		String currentenvironment = GlobalVariable.environment
 		try{
 			try{
-				if(currentenvironment.equals("UAT")){
+				if(currentenvironment.equalsIgnoreCase("UAT")){
 					driver.quit()
 				}
-				else if(currentenvironment.equals("STAGE"))
+				else if(currentenvironment.equalsIgnoreCase("STAGING"))
 				{
 					driver.quit()
 				}
@@ -61,7 +61,7 @@ public class StatusSummery {
 					Assert.assertTrue(action.IsDisplayed(colJobId), "colJobId Column is visible")
 
 				}
-				return currentenvironment
+				
 			}
 			catch(Exception e1){
 				throw new Exception("Excetion Terminated")

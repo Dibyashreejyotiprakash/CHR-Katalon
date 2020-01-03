@@ -20,8 +20,6 @@ import internal.GlobalVariable as GlobalVariable
 CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamedesigntracker, GlobalVariable.testtyperegression,
 	GlobalVariable.environment)
 
-WebUI.waitForPageLoad(300)
-
 CustomKeywords.'com.designtracker.LoginPage.LoginToDesignTarcker'(GlobalVariable.dtusername, GlobalVariable.dtpassowrd)
 
 CustomKeywords.'com.designtracker.HomePage.VerifyHomePage'()

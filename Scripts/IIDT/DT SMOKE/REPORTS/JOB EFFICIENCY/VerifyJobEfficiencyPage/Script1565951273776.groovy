@@ -25,8 +25,15 @@ CustomKeywords.'com.designtracker.HomePage.SelectCorporationAndMarcket'()
 
 CustomKeywords.'com.designtracker.HomePage.ClickOnJobEfficiency'()
 
+CustomKeywords.'com.designtracker.JobEfficiency.VerifyJobEfficiencyPage'()
+
 CustomKeywords.'com.designtracker.HomePage.WindowHandle'()
 
+CustomKeywords.'com.designtracker.JobEfficiency.VerifyViewReportBtn'()
+
 CustomKeywords.'com.designtracker.JobEfficiency.EnterJobID'(JobID)
+
+
+
 
 
