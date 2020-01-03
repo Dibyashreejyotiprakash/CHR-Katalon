@@ -21,17 +21,15 @@ CustomKeywords.'com.poswm.Homepage.ClickOnWarehouse'()
 
 CustomKeywords.'com.poswm.WarehouseAdminWarehousePage.NavigatetoBinlist'()
 
- String binName = CustomKeywords.'com.poswm.WarehouseAdminWarehousePage.AddBin'()
- println ("----------> " + binName )
+CustomKeywords.'com.poswm.WarehouseAdminWarehousePage.AddBin'()
 
 CustomKeywords.'com.poswm.Homepage.ClickOnItemSearch'()
 
-CustomKeywords.'com.poswm.WarehouseAdminWarehousePage.AssociateBinWithItem'(binName)
-//println ("----------> " + binName )
+//CustomKeywords.'com.poswm.WarehouseAdminWarehousePage.AssociateBinWithItem'()
 
 CustomKeywords.'com.poswm.Homepage.ClickOnWarehouse'()
 
-//CustomKeywords.'com.poswm.WarehouseAdminWarehousePage.NavigatetoBinlist'()
+CustomKeywords.'com.poswm.WarehouseAdminWarehousePage.NavigatetoBinlist'()
 
 CustomKeywords.'com.poswm.WarehouseAdminWarehousePage.deletebin'()
 

@@ -25,11 +25,11 @@ import com.utilities.Interaction
 
 import com.utilities.Interaction
 import internal.GlobalVariable
-import java.time.LocalDate
 import org.openqa.selenium.WebDriver
 import org.testng.Assert
 import org.openqa.selenium.Alert
 import org.openqa.selenium.By
+import java.text.SimpleDateFormat;
 import java.util.Date
 import com.kms.katalon.core.webui.driver.DriverFactory
 
@@ -287,16 +287,14 @@ public class WarehouseOrders {
 			String expectedPRODUrl = "https://csg.v5prod.brandmuscle.net/Warehouse/WarehouseOrders.aspx";
 
 			/*String env = GlobalVariable.environment
-			String actualUrl = action.GetCurrentURL();
-			//WebUI.delay()(5)
-
-			if(env.equalsIgnoreCase("uat")) {
-				Assert.assertEquals(expectedUATUrl, actualUrl)
-			}
-			else if(env.equalsIgnoreCase("staging")) {
-				Assert.assertEquals(expectedSTAGEUrl, actualUrl)
-			}*/
-		    action.VerifyCurrentPage("WarehouseOrders.aspx")
+			 String actualUrl = action.GetCurrentURL();
+			 if(env.equalsIgnoreCase("uat")) {
+			 Assert.assertEquals(expectedUATUrl, actualUrl)
+			 }
+			 else if(env.equalsIgnoreCase("staging")) {
+			 Assert.assertEquals(expectedSTAGEUrl, actualUrl)
+			 }*/
+			action.VerifyCurrentPage("WarehouseOrders.aspx")
 		}
 		catch(Exception e) {
 			Assert.fail("Verify New Order page failed due to "+ e)
@@ -368,7 +366,6 @@ public class WarehouseOrders {
 			//action.ScrollToViewElement(addcustomerbtn)
 			//action.WaitUntilElementClickable(addcustomerbtn)
 			action.Click(addcustomerbtn)
-			//////WebUI.delay()(10)
 			action.Type(customertextbox, "st")
 			action.Click(customername)
 			action.ScrollToTopOgPage()
@@ -383,6 +380,15 @@ public class WarehouseOrders {
 	@Keyword
 	public void AddDesiredShippingDateAndVerifyMsg() {
 		try{
+			//action.ScrollToViewElement(desiredshipdatetextbox)
+			//LocalDate date = new LocalDate()
+			//String todaydate = date.now()
+			//println (todaydate)
+			//LocalDate todaydate = LocalDate.now()
+			//Date date = new Date();
+			//SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
+			//String todaydate = formatter.format(date);
+			//action.Type(desiredshipdatetextbox, todaydate)
 			action.ScrollToViewElement(modifyCustomerBtn)
 			action.Click(desiredshipdatetextbox)
 			
@@ -413,7 +419,7 @@ public class WarehouseOrders {
 			//action.WaitUntilElementClickable(shippingmethodddn)
 			////WebUI.delay()(10)
 			action.Click(shippingmethodddn)
-			////WebUI.delay()(10)
+			//WebUI.delay()(10)
 			action.Click(shipingmethodddnvalue)
 			action.ScrollToTopOgPage()
 			boolean statusofshipingmethodaddedmsg = action.IsElementDisplayed(shipingmethodaddedmsg)
@@ -533,7 +539,7 @@ public class WarehouseOrders {
 	@Keyword
 	public void GetDesiredShipDate() {
 		try {
-			action.ScrollToViewelement(desiredShipDateTestBox)
+			action.ScrollToViewElement(desiredShipDateTestBox)
 			String shipDate = action.GetText(desiredShipDateTestBox)
 			println ("**********" + shipDate)
 		}
@@ -545,7 +551,7 @@ public class WarehouseOrders {
 	@Keyword
 	public void AddDesiredShipDate() {
 		try{
-			action.ScrollToViewelement(desiredshipdatetextbox)
+			action.ScrollToViewElement(desiredshipdatetextbox)
 			LocalDate date = new LocalDate()
 			String todaydate = date.now()
 			action.Type(desiredshipdatetextbox, todaydate)
@@ -562,7 +568,7 @@ public class WarehouseOrders {
 	public void VerifyNewItemPage() {
 		try{
 			action.VerifyCurrentPage("WarehouseItem.aspx")
-			
+
 		}
 		catch(Exception e) {
 			Assert.fail("VerifyNewItemPage failed due to "+ e)

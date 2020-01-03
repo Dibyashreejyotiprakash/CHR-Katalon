@@ -56,11 +56,15 @@ public class WarehouseItemInventory {
 	By filterDivision = By.xpath("//*[@id='ctl00_MainContent_rpbSearch']//ul")
 	By clearallfilter = By.xpath("//*[text()='Clear All Filters']")
 	By supplierfilter = By.xpath("//*[@id='ctl00_MainContent_rpbSearch_i0_i0_rlbSupplier_i2']")
+	//By allsuppliersnameingrid = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00']//tr//td[12]")
+	//By allsuppliersnameingrid = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00']/tbody/tr/td[4]")
 	By allsuppliersnameingrid = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00']//tr//td[4]")
 	By brandfilter = By.xpath("//*[@id='ctl00_MainContent_rpbSearch_i1_i0_rlbBrands_i2']")
+	//By allbrandsnameingrid = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00']//tr//td[13]")
+	//By allbrandsnameingrid = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00']/tbody/tr/td[5]")
 	By allbrandsnameingrid = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00']//tr//td[5]")
 	By allitemname = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00']//tr//td[11]/a")
-
+	By firstitemname = By.xpath("//a[@id='ctl00_MainContent_rgItemSearch_ctl00_ctl04_lblItemName']")
 	By itemsearchtextbox = By.xpath("//*[@id='ctl00_MainContent_rsbItemSearch_Input']")
 	By itemsearchbtn = By.xpath("//*[@id='ctl00_MainContent_rsbItemSearch_Input']/following-sibling::button")
 	By searchiteminventorybtn = By.xpath("//*[@id='MainContent_btnBackToSearch']")
@@ -115,6 +119,7 @@ public class WarehouseItemInventory {
 	By deleteCheckBox = By.xpath("//*[@id='ctl00_MainContent_rpbSearch_i10_i0_rlbOtherFilters_i2']/label/input")
 	By itemNameColValiue = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00']/tbody/tr/td[3]")
 	By approverColVal = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00__0']/td[7]")
+	By loadmaskerPosw = By.xpath("//img[@id='MainContent_Image2']")
 	By adsLabelName = By.xpath("//*[@id='ctl00_MainContent_rpbSearch_i6_i0_rlbWarehouseSalesDivision_i0']/label")
 	By salesDivLebelOnEditItemPage = By.xpath("//*[@id='ctl00_MainContent_ucItemOverView_radListItemProperties_ctrl0_lblSalesDivisions']")
 	By imageLoader = By.xpath("//*[@id='MainContent_Image2']")
@@ -137,6 +142,7 @@ public class WarehouseItemInventory {
 			Assert.fail("SelectFirstItem failed due to :" + e)
 		}
 	}
+	
 	@Keyword
 	public String GetAdsSalesDivName()
 	{
@@ -421,6 +427,8 @@ public class WarehouseItemInventory {
 			action.WaitTillNotVisible(imageLoader, 0)
 			//WebUI.delay(20)
 			String suppliername = action.GetText(supplierfilter)
+			//WebUI.delay(8)
+			action.WaitTillNotVisible(loadmaskerPosw,30)
 			List<WebElement> allsuppliersname = action.GetElements(allsuppliersnameingrid)
 			if(allsuppliersname.size()>0)
 			{
@@ -458,11 +466,15 @@ public class WarehouseItemInventory {
 			action.WaitTillNotVisible(imageLoader, 0)
 			//WebUI.delay(20)
 			String brandnamename = action.GetText(brandfilter)
+			println(brandnamename+"++++++++")
+			//WebUI.delay(8)
+			action.WaitTillNotVisible(loadmaskerPosw,30)
 			List<WebElement> allbrandsname = action.GetElements(allbrandsnameingrid)
 			if(allbrandsname.size()>0)
 			{
 				for(int i=0;i< allbrandsname.size();i++)
 				{
+					println(allbrandsname.get(i).getText()+"++++++++")
 					if(allbrandsname.get(i).getText().contains(brandnamename))
 					{
 						println ("Filter by brand verified")
@@ -485,7 +497,7 @@ public class WarehouseItemInventory {
 
 	//verify item seach page
 	@Keyword
-	public void VeriyItemSearchPage()
+	public void VerifyItemSearchPage()
 	{
 		String expectedUATUrl = "https://csg.v5qa.brandmuscle.net/Warehouse/Admin/UserTransfer.aspx";
 		String expectedSTAGEUrl ="https://csg.v5stgae.brandmuscle.net/Warehouse/Admin/UserTransfer.aspx"
@@ -528,26 +540,27 @@ public class WarehouseItemInventory {
 	public void SwichToWareHouseItemPageVerifyWareHouseItemDetails()
 	{
 		try{
-			List<WebElement> allitemnames = action.GetElements(allitemname)
-			int totalitems = allitemnames.size()
-			println ("Number of ietms -----------"+ totalitems)
-			if(totalitems>0)
+			/*List<WebElement> allitemnames = action.GetElements(allitemname)
+			 int totalitems = allitemnames.size()
+			 println ("Number of ietms -----------"+ totalitems)
+			 if(totalitems>0)
+			 {
+			 for(int i=0;i< totalitems;i++)
+			 {
+			 allitemnames.get(i).click()
+			 break
+			 }*/
+			action.Click(firstitemname)
+			Set<String> windowids = driver.getWindowHandles()
+			Iterator<String> it = windowids.iterator()
+			while(it.hasNext())
 			{
-				for(int i=0;i< totalitems;i++)
-				{
-					allitemnames.get(i).click()
-					break
-				}
-				Set<String> windowids = driver.getWindowHandles()
-				Iterator<String> it = windowids.iterator()
-				while(it.hasNext())
-				{
-					String parentwindowid = it.next()
-					String childwindowid = it.next()
-					driver.switchTo().window(childwindowid)
-					//WebUI.delay(10)
-				}
+				String parentwindowid = it.next()
+				String childwindowid = it.next()
+				driver.switchTo().window(childwindowid)
+				//WebUI.delay(10)
 			}
+			//}
 
 		}
 		catch(Exception e)

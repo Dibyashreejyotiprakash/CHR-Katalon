@@ -37,6 +37,7 @@ import org.openqa.selenium.WebDriver.Timeouts;
 import java.util.concurrent.TimeUnit;
 import java.text.DateFormat
 import java.text.SimpleDateFormat
+//import internal.GlobalVariable
 import java.time.LocalTime
 
 public  class Interaction {
@@ -177,16 +178,41 @@ public  class Interaction {
 						WebUI.closeBrowser()
 					}
 				}
-				else {
-					throw new Exception("Environment is not correct")
+				else if (BuName.equalsIgnoreCase("PROOFGALLERY"))
+				{
+
+					if (EnvironmentName.equalsIgnoreCase("UAT"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.proofgalleryUAT)
+					}
+					else if (EnvironmentName.equalsIgnoreCase("STAGING"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.proofgallerySTAGE)
+					}
+					else if (EnvironmentName.equalsIgnoreCase("PROD"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.proofgalleryPROD)
+					}
+					else
+					{
+						throw new Exception("Environment is not correct")
+						WebUI.closeBrowser()
+					}
+				}
+				else
+				{
+					throw new Exception("BU is not correct")
 					WebUI.closeBrowser()
 				}
 			}
 
-			else if(TestType.equalsIgnoreCase("REGRESSION")) {
-				if (BuName.equalsIgnoreCase("CONSOLIDATOR")) {
+			else if(TestType.equalsIgnoreCase("REGRESSION"))
+			{
+				if (BuName.equalsIgnoreCase("CONSOLIDATOR"))
+				{
 
-					if (EnvironmentName.equalsIgnoreCase("UAT")) {
+					if (EnvironmentName.equalsIgnoreCase("UAT"))
+					{
 						WebUI.navigateToUrl(GlobalVariable.consolidatorurlUAT)
 					}
 					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
@@ -277,7 +303,28 @@ public  class Interaction {
 						WebUI.closeBrowser()
 					}
 				}
-				else {
+				else if (BuName.equalsIgnoreCase("PROOFGALLERY"))
+				{
+					if (EnvironmentName.equalsIgnoreCase("DEV"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.proofgalleryDEV)
+					}
+					else if (EnvironmentName.equalsIgnoreCase("UAT"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.proofgalleryUAT)
+					}
+					else if (EnvironmentName.equalsIgnoreCase("STAGING"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.proofgallerySTAGE)
+					}
+					else
+					{
+						throw new Exception("Environment is not correct")
+						WebUI.closeBrowser()
+					}
+				}
+				else
+				{
 					throw new Exception("BU is not correct")
 					WebUI.closeBrowser()
 				}
@@ -286,8 +333,8 @@ public  class Interaction {
 				throw new Exception("Test type is not correct")
 				WebUI.closeBrowser()
 			}
+			println ("TestType---BU---Env are : "+TestType+"---"+BuName+"---"+EnvironmentName)
 		}
-
 		catch (Exception e) {
 			Assert.fail("Ge tUrl failed due to"+e)
 			println ("Failed due to "+ e)
@@ -392,12 +439,13 @@ public  class Interaction {
 	}
 
 
-
+	//Scroll upto element to be visible
 	public void  ScrollToViewElement(By by) {
+
 		WebUI.delay(1)
 		WebElement element = driver.findElement(by);
 		js.executeScript("arguments[0].scrollIntoView(true);", element);
-		WaitVisible(by)
+		//WaitVisible(by)
 	}
 
 
@@ -406,17 +454,17 @@ public  class Interaction {
 	{
 		WaitVisible(element)
 		//WebUI.delay(1)
-		js.executeScript("arguments[0].scrolSlIntoView(true);", element);
+		js.executeScript("arguments[0].scrollIntoView(true);", element);
 	}
 
 
 	//Scroll upto element to be visible
-	public void  ScrollToViewelement(By by)
-	{
-		WebUI.delay(1)
-		js.executeScript("arguments[0].scrolSlIntoView(true);", by);
-		WaitVisible(by)
-	}
+	/*public void  ScrollToViewelement(By by)
+	 {
+	 WebUI.delay(1)
+	 js.executeScript("arguments[0].scrollIntoView(true);", by);
+	 WaitVisible(by)
+	 }*/
 
 
 	//Scroll to bottom of page
@@ -809,6 +857,7 @@ public  class Interaction {
 	public void SelectByIndex(By by, int index)
 	{
 		WaitVisible(by);
+		WaitVisibleDup(by);
 		WebElement elementToHover = driver.findElement(by);
 		Select select = new Select(elementToHover)
 		select.selectByIndex(index)
@@ -942,6 +991,39 @@ public  class Interaction {
 	}
 
 
+	@Keyword
+	public String CheckEnvironmentAndQuit(){
+		String currentenvironment = GlobalVariable.environment
+		try{
+			if(currentenvironment.equals("UAT")){
+				driver.quit()
+			}
+			else if(currentenvironment.equals("STAGE"))
+			{
+				driver.quit()
+			}
+			else{
+				println ("Executing For Production")
+			}
+			return currentenvironment
+		}
+		catch(Exception e){
+			println ("Check Environment And Quit failed due to "+ e)
+		}
+	}
+
+
+	public boolean isElementPresent(By by){
+		try{
+			driver.findElement(by);
+			return true;
+		}
+		catch(NoSuchElementException e){
+			throw new Exception ("Element is not present "+ by)
+		}
+	}
+
+
 	//get current local date
 	@Keyword
 	public String GetCurrentDate(String Format)
@@ -1003,28 +1085,5 @@ public  class Interaction {
 			Assert.fail("GetCurrentDate failed due to : " + e)
 		}
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }

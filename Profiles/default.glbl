@@ -46,17 +46,17 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'atlas@1234'</initValue>
+      <initValue>'chr@123456'</initValue>
       <name>dtpassowrd</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'chandan.kumar@brandmuscle.com'</initValue>
+      <initValue>'dibyashree.jyoti@brandmuscle.com'</initValue>
       <name>wswadminusername</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'Python@2019'</initValue>
+      <initValue>'chr@123456'</initValue>
       <name>wswpassword</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -71,7 +71,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'adminnv@brandmuscle.com'</initValue>
+      <initValue>'cspwadmin@brandmuscle.com'</initValue>
       <name>posusername</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -341,16 +341,6 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'dibyashree.jyoti@brandmuscle.com'</initValue>
-      <name>iiadminusername</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description></description>
-      <initValue>'atlas@1234'</initValue>
-      <name>iiadminpassword</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description></description>
       <initValue>'http://iiadmin.uat.brandmuscle.net/GraphicMaintenance/EditItems.aspx?CorpID=300'</initValue>
       <name>iiadmincorpurl</name>
    </GlobalVariableEntity>
@@ -401,7 +391,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'atlas@1234'</initValue>
+      <initValue>'chr@123456'</initValue>
       <name>iiadminpassword</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -431,6 +421,36 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
+      <initValue>'http://proofs.dev.brandmuscle.net/Login.aspx'</initValue>
+      <name>proofgalleryDEV</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'http://proofs.uat.brandmuscle.net/Login.aspx'</initValue>
+      <name>proofgalleryUAT</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://proofs.stage.brandmuscle.net/Login.aspx'</initValue>
+      <name>proofgallerySTAGE</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://proofgallery.brandmuscle.net/Login.aspx'</initValue>
+      <name>proofgalleryPROD</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'jcrotty@brandmuscle.com'</initValue>
+      <name>proofgalleryun</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'password'</initValue>
+      <name>proofgallerypwd</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
       <initValue>'cspwadmin@brandmuscle.com'</initValue>
       <name>PoswTestUserName</name>
    </GlobalVariableEntity>
@@ -438,5 +458,20 @@
       <description></description>
       <initValue>'password'</initValue>
       <name>PoswTestPassword</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'testadmin1@brandmuscle.com'</initValue>
+      <name>distcorpusername</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'go2web'</initValue>
+      <name>distcorppassword</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'132933'</initValue>
+      <name>distcorptemplateid</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>
