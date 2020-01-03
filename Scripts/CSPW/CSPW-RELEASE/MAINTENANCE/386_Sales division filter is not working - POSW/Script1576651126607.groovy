@@ -15,14 +15,36 @@ import internal.GlobalVariable as GlobalVariable
 
 CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameposw, GlobalVariable.testtyperegression, GlobalVariable.environment)
 
-//Enter credential
+WebUI.waitForPageLoad(300)
+
 CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.PoswTestUserName, GlobalVariable.PoswTestPassword)
-//select BU as Empire Marchent 
+
 CustomKeywords.'com.poswm.LoginPage.SelectEmpireMerchantBU'()
+/*
+CustomKeywords.'com.poswm.Homepage.ClickOnNewItem'()
 
-CustomKeywords.'com.poswm.Homepage.ClickOnItemProperties'()
+String ItemName = CustomKeywords.'com.poswm.WarehouseItem.FillItemInformationSection'()
 
-String PropName = CustomKeywords.'com.poswm.WarehouseAdminItemProperty.CreateItemProperty'()
+String salesDivName = CustomKeywords.'com.poswm.WarehouseItem.SelectAndReturnSalesDivision'()
 
-CustomKeywords.'com.poswm.WarehouseAdminItemProperty.DeleteItemProperty'(PropName)
+CustomKeywords.'com.poswm.WarehouseItem.ClickOnItemInfoSaveIcon'()
+
+CustomKeywords.'com.poswm.WarehouseItem.FillBrandSection'()
+
+CustomKeywords.'com.poswm.WarehouseItem.FillTransactionsSection'()
+
+CustomKeywords.'com.poswm.WarehouseItem.ClickOnCloseEditMode'()*/
+
+CustomKeywords.'com.poswm.Homepage.ClickOnItemSearch'()
+
+CustomKeywords.'com.poswm.WarehouseItemInventory.SelectSalesDivisionForEmpireMerchant'()
+
+String salesDivName = CustomKeywords.'com.poswm.WarehouseItemInventory.GetAdsSalesDivName'()
+println("--------------> " + salesDivName)
+
+CustomKeywords.'com.poswm.WarehouseItemInventory.SelectFirstItem'()
+
+CustomKeywords.'com.poswm.WarehouseItemInventory.VerifySalesDiv'(salesDivName)
+
+
 
