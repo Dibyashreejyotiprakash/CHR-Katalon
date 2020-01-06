@@ -49,16 +49,13 @@ public class OrderFormShiipingDetailsPage {
 			println ("Click On Next Btn failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
-	public void ValidateImageSectionForNewOLOFOrder()
-	{
-		try
-		{
+	public void ValidateImageSectionForNewOLOFOrder() {
+		try {
 			action.IsElementDisplayed(imagesection)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("ValidateImageSectionForNewOLOFOrder Failed due to "+e)
 		}
 	}

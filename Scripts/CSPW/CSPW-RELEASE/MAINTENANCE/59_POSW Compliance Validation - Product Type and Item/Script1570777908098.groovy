@@ -15,23 +15,13 @@ import internal.GlobalVariable as GlobalVariable
 
 CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameposw, GlobalVariable.testtyperegression, GlobalVariable.environment)
 
-WebUI.waitForPageLoad(300)
-
-CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.posUN59, GlobalVariable.posPass59)
-
-CustomKeywords.'com.poswm.LoginPage.SelectEmpireMerchantBU'()
+CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.posusername, GlobalVariable.pospassword)
 
 CustomKeywords.'com.poswm.Homepage.HoverOnWareHouseMenu'()
 
 CustomKeywords.'com.poswm.Homepage.ClickOnNewItem'()
 
 String itemName = CustomKeywords.'com.poswm.WarehouseItem.FillItemInformationSection'()
-
-WebUI.delay(5)
-
-println('++++++++++++++' + itemName)
-
-CustomKeywords.'com.poswm.WarehouseItem.ClickOnItemInfoSaveIcon'()
 
 CustomKeywords.'com.poswm.WarehouseItem.FillImageSection'()
 
@@ -43,7 +33,7 @@ CustomKeywords.'com.poswm.WarehouseItem.ClickOnCloseEditMode'()
 
 CustomKeywords.'com.poswm.Homepage.ClickOnWarehouseSpendLimits'()
 
-CustomKeywords.'com.poswm.WarehouseSpendingLimits.ClickOn2019Compliance'()
+CustomKeywords.'com.poswm.WarehouseSpendingLimits.ClickOn2020Compliance'()
 
 CustomKeywords.'com.poswm.WarehouseSpendingLimits.AddItemTotheComplianceLevel'(itemName)
 
@@ -63,7 +53,7 @@ CustomKeywords.'com.poswm.WarehouseItemInventory.ClickOnSubmitOrderBtn'()
 
 CustomKeywords.'com.poswm.Homepage.ClickOnWarehouseSpendLimits'()
 
-CustomKeywords.'com.poswm.WarehouseSpendingLimits.ClickOn2019Compliance'()
+CustomKeywords.'com.poswm.WarehouseSpendingLimits.ClickOn2020Compliance'()
 
 CustomKeywords.'com.poswm.WarehouseSpendingLimits.RemoveItemTotheComplianceLevel'()
 

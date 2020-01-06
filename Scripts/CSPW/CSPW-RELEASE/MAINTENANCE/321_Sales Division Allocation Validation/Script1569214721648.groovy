@@ -13,19 +13,17 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-//CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameposw, GlobalVariable.testtyperegression, GlobalVariable.environment)
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameposw, GlobalVariable.testtyperegression, GlobalVariable.environment)
 
-WebUI.navigateToUrl("https://empire.v5qa.brandmuscle.net")
+//WebUI.navigateToUrl("https://empire.v5qa.brandmuscle.net")
 
-CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.Username321, GlobalVariable.password321)
+CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.posusername, GlobalVariable.pospassword)
 
 CustomKeywords.'com.poswm.Homepage.HoverOnWareHouseMenu'()
 
 CustomKeywords.'com.poswm.Homepage.ClickOnNewItem'()
 
 String itemname = CustomKeywords.'com.poswm.WarehouseItem.FillItemInformationSection'()
-
-CustomKeywords.'com.poswm.WarehouseItem.ClickOnItemInfoSaveIcon'()
 
 CustomKeywords.'com.poswm.WarehouseItem.FillImageSection'()
 
@@ -38,8 +36,6 @@ CustomKeywords.'com.poswm.WarehouseItem.ClickOnCloseEditMode'()
 CustomKeywords.'com.poswm.Homepage.HoverOnWareHouseMenu'()
 
 CustomKeywords.'com.poswm.Homepage.ClickOnItemSearch'()
-
-CustomKeywords.'com.poswm.WarehouseItemInventory.SelectSalesDivision'()
 
 CustomKeywords.'com.poswm.WarehouseItemInventory.SearchSpecificItem'(itemname)
 

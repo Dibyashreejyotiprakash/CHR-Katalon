@@ -100,7 +100,7 @@ public class WarehouseItemInventory {
 	By FirstSalesDivOptionEM = By.xpath("//*[@id='ctl00_MainContent_rpbSearch_i6_i0_rlbWarehouseSalesDivision_i0']/label/input")
 
 
-	By otherFiltersExpandBtn = By.xpath("//*[@id='ctl00_MainContent_rpbSearch']/ul/li[9]/a/span/span[1]")
+	By otherFiltersExpandBtn = By.xpath("//*[text()='Other Filters']")
 	By availableToOrderCheckBox = By.xpath("//*[@id='ctl00_MainContent_rpbSearch_i10_i0_rlbOtherFilters_i0']/label/input")
 	By ApprovalRequiredCheckBox = By.xpath("//*[@id='ctl00_MainContent_rpbSearch_i10_i0_rlbOtherFilters_i1']/label/input")
 	By clearSelectionLink = By.xpath("//*[text()='Clear Selection']")
@@ -142,7 +142,7 @@ public class WarehouseItemInventory {
 			Assert.fail("SelectFirstItem failed due to :" + e)
 		}
 	}
-	
+
 	@Keyword
 	public String GetAdsSalesDivName()
 	{
@@ -802,6 +802,7 @@ public class WarehouseItemInventory {
 	{
 		try
 		{
+			action.ScrollToBottomOfPage()
 			action.Click(otherFiltersExpandBtn)
 			//WebUI.delay(3)
 

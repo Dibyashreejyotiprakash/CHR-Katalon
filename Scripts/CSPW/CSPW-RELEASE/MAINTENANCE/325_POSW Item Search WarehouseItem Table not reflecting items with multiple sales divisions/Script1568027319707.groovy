@@ -13,13 +13,8 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.openBrowser('')
-
-WebUI.maximizeWindow()
 
 CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameposw, GlobalVariable.testtyperegression, GlobalVariable.environment)
-
-WebUI.waitForPageLoad(0)
 
 CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.posusername, GlobalVariable.pospassword)
 
@@ -28,8 +23,6 @@ CustomKeywords.'com.poswm.Homepage.HoverOnWareHouseMenu'()
 CustomKeywords.'com.poswm.Homepage.ClickOnNewItem'()  
 
 CustomKeywords.'com.poswm.WarehouseItem.FillItemInformationSection'()
-
-CustomKeywords.'com.poswm.WarehouseItem.ClickOnItemInfoSaveIcon'() 
 
 CustomKeywords.'com.poswm.WarehouseItem.FillImageSection'()
 

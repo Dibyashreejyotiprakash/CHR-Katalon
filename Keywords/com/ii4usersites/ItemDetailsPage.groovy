@@ -120,8 +120,8 @@ public class ItemDetailsPage {
 			Assert.fail ("Set Variable Template Layout failed due to "+ e)
 		}
 	}
-	
-	
+
+
 	@Keyword
 	public void ValidateItemTypeDropdown() {
 		try {

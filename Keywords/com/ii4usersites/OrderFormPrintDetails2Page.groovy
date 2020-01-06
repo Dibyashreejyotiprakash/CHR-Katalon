@@ -181,12 +181,10 @@ public class OrderFormPrintDetails2Page {
 			println ("Verify PO berviage visibilty failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
-	public void addnotes()
-	{
-		try
-		{
+	public void addnotes() {
+		try {
 			action.WaitVisible(addnotesbtn)
 			action.Click(addnotesbtn)
 			action.WaitVisible(textarea)
@@ -196,22 +194,17 @@ public class OrderFormPrintDetails2Page {
 			action.Click(savebtn)
 			action.Click(nextbtn)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("addnotes failed due to "+e)
 		}
 	}
-	
+
 	@Keyword
-	public void ClicOnNoBrand()
-	{
-		
-		try
-		{
-			
+	public void ClicOnNoBrand() {
+
+		try {
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("ClicOnNoBrand failed due to "+e)
 		}
 	}

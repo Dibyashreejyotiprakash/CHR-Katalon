@@ -104,26 +104,26 @@ public class WarehouseItem {
 	By itemInfoSaveBtnAfterSave = By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_btnUpdate']")
 	By salesDivDropDownArrowBtn = By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_radSalesDivision_Arrow']")
 	By iteminfogrid = By.xpath("//*[text()='Step 1: Item Information']")
-	
-	
+
+
 	By bigAppleLebelName = By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_radSalesDivision_DropDown']/div/ul/li[2]/label")
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	@Keyword
 	public void VerifyWareHouseItemPage()
@@ -411,11 +411,11 @@ public class WarehouseItem {
 				action.Click(salesDivisionThirdOption)
 				//action.Click(salesDivDropDownArrowBtn)
 				/*String selectedSalesDiv = action.GetText(salesDivisionDropDown)
-				println "+++++++++++++++" + selectedSalesDiv*/
-				
-				
+				 println "+++++++++++++++" + selectedSalesDiv*/
+
+
 				String bigApple = action.GetText(bigAppleLebelName)
-				
+
 				println("************-------------->" + bigApple)
 			}
 			else
@@ -444,11 +444,11 @@ public class WarehouseItem {
 				action.Click(salesDivisionThirdOption)
 				//action.Click(salesDivDropDownArrowBtn)
 				/*String selectedSalesDiv = action.GetText(salesDivisionDropDown)
-				println "+++++++++++++++" + selectedSalesDiv*/
-				
-				
+				 println "+++++++++++++++" + selectedSalesDiv*/
+
+
 				String bigApple = action.GetText(bigAppleLebelName)
-				
+
 				println("************-------------->" + bigApple)
 				return bigApple
 			}
@@ -469,7 +469,7 @@ public class WarehouseItem {
 	public String SelectSalesDiv(String SalesDivType)
 	{
 		try
-		
+
 		{
 			String salesDivName = null
 			if(SalesDivType.equalsIgnoreCase("SingleSelect"))
@@ -670,23 +670,24 @@ public class WarehouseItem {
 	{
 
 		try{
-			
-			action.ScrollToViewElement(saveIconImage)
+
+			//action.ScrollToViewElement(saveIconImage)
 			action.Click(saveIconImage)
-			
-			for(int i=0; i<=2;i++){
-				try{
-				   action.Click(imageNextBtn)
-				   break;
-				}
-				catch(Exception e){
-				   println(e.getMessage());
-				}
-			  }
-			
+
+			/*for(int i=0; i<=2;i++){
+			 try{
+			 action.Click(imageNextBtn)
+			 break;
+			 }
+			 catch(Exception e){
+			 println(e.getMessage());
+			 }
+			 }*/
+
 			//action.WaitTime(2)
 			//action.WaitTime(5)
 			//action.WaitVisible(divBrands)
+			action.Click(imageNextBtn)
 		}
 		catch(Exception e){
 			println("FillImageSection method failed due to :" + e)
@@ -729,7 +730,7 @@ public class WarehouseItem {
 			if(action.IsElementDisplayed(selectWarehouseDropDown))
 			{
 				action.Click(selectWarehouseDropDown)
-                action.Click(selectWarehouseFirstValue)
+				action.Click(selectWarehouseFirstValue)
 			}
 			else
 			{
@@ -756,7 +757,7 @@ public class WarehouseItem {
 		}
 		catch(Exception e)
 		{
-				Assert.fail("FillTransactionsSection method failed due to :" + e)
+			Assert.fail("FillTransactionsSection method failed due to :" + e)
 		}
 	}
 

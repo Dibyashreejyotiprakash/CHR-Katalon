@@ -43,8 +43,6 @@ CustomKeywords.'com.poswm.WarehouseItemInventory.AddCustomer'()
 
 CustomKeywords.'com.poswm.WarehouseItemInventory.SelectShipMethod'()
 
-
-
 CustomKeywords.'com.poswm.WarehouseItemInventory.ClickOnSubmitOrderBtn'()
 
 CustomKeywords.'com.poswm.WarehouseOrders.GetShipDate'()

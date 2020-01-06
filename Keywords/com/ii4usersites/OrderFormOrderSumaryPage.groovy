@@ -32,30 +32,25 @@ public class OrderFormOrderSumaryPage {
 
 	By completeorderbtn = By.xpath("//*[@id='ctl00_Body_btnContinue']")
 	By paymentsection = By.xpath("//*[text()='Payment']")
-	By priceDisclaimerMsg = By.xpath("//*[@id='ctl00_Body_rlvOrderSummary_ctrl0_ucOST_lblPriceDisclaimer']") 
-	
-	
+	By priceDisclaimerMsg = By.xpath("//*[@id='ctl00_Body_rlvOrderSummary_ctrl0_ucOST_lblPriceDisclaimer']")
+
+
 	@Keyword
-	public boolean VerifyPriceDisclaimerMsg(String Disclaimer)
-	{
-		try
-		{
+	public boolean VerifyPriceDisclaimerMsg(String Disclaimer) {
+		try {
 			Boolean IsDisclaimerVerify = false
-			if (Disclaimer.equalsIgnoreCase("Enable"))
-			{
-				
+			if (Disclaimer.equalsIgnoreCase("Enable")) {
+
 				String PriceDisclaimerMsg =	 action.GetText(priceDisclaimerMsg)
-				println("********** Price disclaimer enable -->" + PriceDisclaimerMsg + "**************") 
+				println("********** Price disclaimer enable -->" + PriceDisclaimerMsg + "**************")
 				return IsDisclaimerVerify = true
 			}
-			else
-			{
+			else {
 				println("********** Price disclaimer set to Disable **************")
 				IsDisclaimerVerify = false
 			}
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("VerifyPriceDisclaimerMsg method failed due to : "+ e)
 		}
 	}

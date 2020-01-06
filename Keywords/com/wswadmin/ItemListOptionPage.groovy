@@ -65,12 +65,12 @@ public class ItemListOptionPage {
 
 			if(statusofbindingbtn == true) {
 				action.Click(bindingsbtn)
-				WebUI.delay(3)
+				//WebUI.delay(3)
 				driver.switchTo().frame(0)
 				action.Click(addnewrecordbtn)
-				WebUI.delay(3)
+				//WebUI.delay(3)
 				action.Type(nametextbox,"Test")
-				WebUI.delay(3)
+				//WebUI.delay(3)
 				action.Click(insertbtn)
 			}
 		}
@@ -90,7 +90,7 @@ public class ItemListOptionPage {
 
 			if(statusofcolorbtn == true) {
 				action.Click(colorbtn)
-				WebUI.delay(3)
+				//WebUI.delay(3)
 
 				driver.switchTo().frame(0)
 				Assert.assertTrue(action.IsDisplayed(coloraddnewbtn))
@@ -114,10 +114,10 @@ public class ItemListOptionPage {
 
 			if(statusofmaterialsbtn == true) {
 				action.Click(formatmaterialbtn)
-				WebUI.delay(3)
+				//WebUI.delay(3)
 				driver.switchTo().frame(0)
 				action.Click(formatmaterialtypeaddnewbtn)
-				WebUI.delay(3)
+				//WebUI.delay(3)
 			}
 			else{
 				throw new Exception("Verify Format Material Type btn failed")

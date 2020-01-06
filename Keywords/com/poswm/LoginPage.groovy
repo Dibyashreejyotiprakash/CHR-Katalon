@@ -83,7 +83,7 @@ public class LoginPage {
 			action.WaitVisible(loginbtn)
 			action.Click(loginbtn)
 			action.WaitForPageToLoad()
-			
+
 			SelectEmpireMerchantBU()
 		}
 		catch(Exception e) {

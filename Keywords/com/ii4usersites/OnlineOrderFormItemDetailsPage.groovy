@@ -26,29 +26,26 @@ import org.openqa.selenium.By
 import com.kms.katalon.core.webui.driver.DriverFactory
 
 public class OnlineOrderFormItemDetailsPage {
-	
-	
+
+
 	Interaction action = new Interaction();
 	WebDriver driver = DriverFactory.getWebDriver()
-	
+
 	By continuetoOrderSummaryBtn = By.xpath("//*[text()='Continue to Order Summary']")
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
 	@Keyword
-	public void ClickOnContinuetoOrderSummaryBtn()
-	{
-		try
-		{
+	public void ClickOnContinuetoOrderSummaryBtn() {
+		try {
 			action.ScrollToBottomOfPage()
 			action.Click(continuetoOrderSummaryBtn)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("ClickOnContinuetoOrderSummaryBtn method failed due to :" + e)
 		}
 	}

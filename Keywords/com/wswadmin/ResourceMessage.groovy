@@ -162,12 +162,12 @@ public class ResourceMessage {
 		action.Click(corporationddnvalue)
 		action.WaitVisible(distributorddn)
 		action.WaitUntilElementClickable(distributorddn)
-		//WebUI.delay(10)
+		////WebUI.delay(10)
 		action.Click(distributorddn)
 		action.Click(distributorvalue)
 		if(action.IsElementEnabled(accountseditlink)) {
 			action.Click(accountseditlink)
-			//WebUI.delay(10)
+			////WebUI.delay(10)
 			action.WaitVisible(acccountresorcespopup)
 			if(action.IsElementDisplayed(acccountresorcespopup)) {
 				println ("Resorce message pop up is verified for Account")
@@ -185,11 +185,11 @@ public class ResourceMessage {
 
 		action.WaitVisible(accountoverridetextbox)
 		action.Clear(accountoverridetextbox)
-		WebUI.delay(3)
+		//WebUI.delay(3)
 		action.Type(accountoverridetextbox, GlobalVariable.resourcemsgaccount)
 		action.WaitUntilElementClickable(accountupdatebtn)
 		action.Click(accountupdatebtn)
-		WebUI.delay(10)
+		//WebUI.delay(10)
 	}
 
 	@Keyword
@@ -199,12 +199,12 @@ public class ResourceMessage {
 		action.Click(corporationddnvalue)
 		action.WaitVisible(distributorddn)
 		action.WaitUntilElementClickable(distributorddn)
-		WebUI.delay(10)
+		//WebUI.delay(10)
 		action.Click(distributorddn)
 		action.Click(distributorvalue)
 		if(action.IsElementEnabled(addressbookeditlink)) {
 			action.Click(addressbookeditlink)
-			WebUI.delay(10)
+			//WebUI.delay(10)
 			action.WaitVisible(addressbookresourcespopup)
 			if(action.IsElementDisplayed(addressbookresourcespopup)) {
 				println ("Resorce message pop up is verified for Address Book")
@@ -222,11 +222,11 @@ public class ResourceMessage {
 
 		action.WaitVisible(addressbookoverridetextbox)
 		action.Clear(addressbookoverridetextbox)
-		WebUI.delay(3)
+		//WebUI.delay(3)
 		action.Type(addressbookoverridetextbox, GlobalVariable.resourcemsgaddressbook)
 		action.WaitUntilElementClickable(addressbookupdatebtn)
 		action.Click(addressbookupdatebtn)
-		WebUI.delay(10)
+		//WebUI.delay(10)
 	}
 
 
@@ -237,12 +237,12 @@ public class ResourceMessage {
 		action.Click(corporationddnvalue)
 		action.WaitVisible(distributorddn)
 		action.WaitUntilElementClickable(distributorddn)
-		WebUI.delay(10)
+		//WebUI.delay(10)
 		action.Click(distributorddn)
 		action.Click(distributorvalue)
 		if(action.IsElementEnabled(addresslisteditlink)) {
 			action.Click(addresslisteditlink)
-			WebUI.delay(10)
+			//WebUI.delay(10)
 			action.WaitVisible(addresslistresourcespopup)
 			if(action.IsElementDisplayed(addresslistresourcespopup)) {
 				println ("Resorce message pop up is verified for Address List")
@@ -261,11 +261,11 @@ public class ResourceMessage {
 
 		action.WaitVisible(addresslistoverridetextbox)
 		action.Clear(addresslistoverridetextbox)
-		WebUI.delay(3)
+		//WebUI.delay(3)
 		action.Type(addresslistoverridetextbox, GlobalVariable.resourcemsgaddressList)
 		action.WaitUntilElementClickable(addresslistupdatebtn)
 		action.Click(addresslistupdatebtn)
-		WebUI.delay(10)
+		//WebUI.delay(10)
 	}
 
 
@@ -276,12 +276,12 @@ public class ResourceMessage {
 		action.Click(corporationddnvalue)
 		action.WaitVisible(distributorddn)
 		action.WaitUntilElementClickable(distributorddn)
-		WebUI.delay(10)
+		//WebUI.delay(10)
 		action.Click(distributorddn)
 		action.Click(distributorvalue)
 		if(action.IsElementEnabled(logolockereditlink)) {
 			action.Click(logolockereditlink)
-			WebUI.delay(10)
+			//WebUI.delay(10)
 			action.WaitVisible(logolockerresourcespopup)
 			if(action.IsElementDisplayed(logolockerresourcespopup)) {
 				println ("Resorce message pop up is verified for Logo Locker")
@@ -299,11 +299,11 @@ public class ResourceMessage {
 
 		action.WaitVisible(logolockeroverridetextbox)
 		action.Clear(logolockeroverridetextbox)
-		WebUI.delay(3)
+		//WebUI.delay(3)
 		action.Type(logolockeroverridetextbox, GlobalVariable.resourcemsglogolocker)
 		action.WaitUntilElementClickable(logolockerupdatebtn)
 		action.Click(logolockerupdatebtn)
-		WebUI.delay(10)
+		//WebUI.delay(10)
 	}
 
 
@@ -315,12 +315,12 @@ public class ResourceMessage {
 		action.Click(corporationddnvalue)
 		action.WaitVisible(distributorddn)
 		action.WaitUntilElementClickable(distributorddn)
-		WebUI.delay(10)
+		//WebUI.delay(10)
 		action.Click(distributorddn)
 		action.Click(distributorvalue)
 		if(action.IsElementEnabled(profileeditlink)) {
 			action.Click(profileeditlink)
-			WebUI.delay(10)
+			//WebUI.delay(10)
 			action.WaitVisible(profileresourcespopup)
 			if(action.IsElementDisplayed(profileresourcespopup)) {
 				println ("Resorce message pop up is verified for Profile")
@@ -339,11 +339,11 @@ public class ResourceMessage {
 
 		action.WaitVisible(profileoverridetextbox)
 		action.Clear(profileoverridetextbox)
-		WebUI.delay(3)
+		//WebUI.delay(3)
 		action.Type(profileoverridetextbox, GlobalVariable.resorcemsgprofile)
 		action.WaitUntilElementClickable(profileupdatebtn)
 		action.Click(profileupdatebtn)
-		WebUI.delay(10)
+		//WebUI.delay(10)
 	}
 
 
@@ -354,12 +354,12 @@ public class ResourceMessage {
 		action.Click(corporationddnvalue)
 		action.WaitVisible(distributorddn)
 		action.WaitUntilElementClickable(distributorddn)
-		WebUI.delay(10)
+		//WebUI.delay(10)
 		action.Click(distributorddn)
 		action.Click(distributorvalue)
 		if(action.IsElementEnabled(projectseditlink)) {
 			action.Click(projectseditlink)
-			WebUI.delay(10)
+			//WebUI.delay(10)
 			action.WaitVisible(projectsresourcespopup)
 			if(action.IsElementDisplayed(projectsresourcespopup)) {
 				println ("Resorce message pop up is verified for Projects")
@@ -378,11 +378,11 @@ public class ResourceMessage {
 
 		action.WaitVisible(projectsoverridetextbox)
 		action.Clear(projectsoverridetextbox)
-		WebUI.delay(3)
+		//WebUI.delay(3)
 		action.Type(projectsoverridetextbox, GlobalVariable.resourcemsgprojects)
 		action.WaitUntilElementClickable(projectsupdatebtn)
 		action.Click(projectsupdatebtn)
-		WebUI.delay(10)
+		//WebUI.delay(10)
 	}
 
 
@@ -393,12 +393,12 @@ public class ResourceMessage {
 		action.Click(corporationddnvalue)
 		action.WaitVisible(distributorddn)
 		action.WaitUntilElementClickable(distributorddn)
-		WebUI.delay(10)
+		//WebUI.delay(10)
 		action.Click(distributorddn)
 		action.Click(distributorvalue)
 		if(action.IsElementEnabled(reportseditlink)) {
 			action.Click(reportseditlink)
-			WebUI.delay(10)
+			//WebUI.delay(10)
 			action.WaitVisible(reportsresourcespopup)
 			if(action.IsElementDisplayed(reportsresourcespopup)) {
 				println ("Resorce message pop up is verified for Reports")
@@ -417,11 +417,11 @@ public class ResourceMessage {
 
 		action.WaitVisible(reportsoverridetextbox)
 		action.Clear(reportsoverridetextbox)
-		WebUI.delay(3)
+		//WebUI.delay(3)
 		action.Type(reportsoverridetextbox, GlobalVariable.resourcemsgreports)
 		action.WaitUntilElementClickable(reportsupdatebtn)
 		action.Click(reportsupdatebtn)
-		WebUI.delay(10)
+		//WebUI.delay(10)
 	}
 
 
@@ -432,9 +432,9 @@ public class ResourceMessage {
 
 		if(action.IsElementEnabled(profiledeletelink)) {
 			action.Click(profiledeletelink)
-			WebUI.delay(10)
+			//WebUI.delay(10)
 			action.AcceptAlert()
-			WebUI.delay(10)
+			//WebUI.delay(10)
 		}
 	}
 
@@ -444,9 +444,9 @@ public class ResourceMessage {
 
 		if(action.IsElementEnabled(reportsdeletelink)) {
 			action.Click(reportsdeletelink)
-			WebUI.delay(10)
+			//WebUI.delay(10)
 			action.AcceptAlert()
-			WebUI.delay(10)
+			//WebUI.delay(10)
 		}
 	}
 
@@ -457,9 +457,9 @@ public class ResourceMessage {
 
 		if(action.IsElementEnabled(logolockerdeletelink)) {
 			action.Click(logolockerdeletelink)
-			WebUI.delay(10)
+			//WebUI.delay(10)
 			action.AcceptAlert()
-			WebUI.delay(10)
+			//WebUI.delay(10)
 		}
 	}
 
@@ -469,9 +469,9 @@ public class ResourceMessage {
 
 		if(action.IsElementEnabled(projectsdeletelink)) {
 			action.Click(projectsdeletelink)
-			WebUI.delay(10)
+			//WebUI.delay(10)
 			action.AcceptAlert()
-			WebUI.delay(10)
+			//WebUI.delay(10)
 		}
 	}
 
@@ -481,9 +481,9 @@ public class ResourceMessage {
 
 		if(action.IsElementEnabled(addressbookdeletelink)) {
 			action.Click(addressbookdeletelink)
-			WebUI.delay(10)
+			//WebUI.delay(10)
 			action.AcceptAlert()
-			WebUI.delay(10)
+			//WebUI.delay(10)
 		}
 	}
 
@@ -493,9 +493,9 @@ public class ResourceMessage {
 
 		if(action.IsElementEnabled(addresslistdeletelink)) {
 			action.Click(addresslistdeletelink)
-			WebUI.delay(10)
+			//WebUI.delay(10)
 			action.AcceptAlert()
-			WebUI.delay(10)
+			//WebUI.delay(10)
 		}
 	}
 }

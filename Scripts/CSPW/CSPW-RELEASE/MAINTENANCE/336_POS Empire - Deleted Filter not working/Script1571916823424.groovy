@@ -23,8 +23,6 @@ CustomKeywords.'com.poswm.Homepage.ClickOnNewItem'()
 
 String itemname = CustomKeywords.'com.poswm.WarehouseItem.FillItemInformationSection'()
 
-CustomKeywords.'com.poswm.WarehouseItem.ClickOnItemInfoSaveIcon'()
-
 CustomKeywords.'com.poswm.WarehouseItem.FillImageSection'()
 
 CustomKeywords.'com.poswm.WarehouseItem.FillBrandSection'()

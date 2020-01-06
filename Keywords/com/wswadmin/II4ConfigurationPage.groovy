@@ -17,6 +17,7 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.utilities.Interaction
 import org.openqa.selenium.By
+import org.openqa.selenium.JavascriptExecutor
 import org.openqa.selenium.WebDriver
 import org.testng.Assert
 
@@ -57,20 +58,21 @@ public class II4ConfigurationPage {
 	By ChicagoBeverageMarket = By.xpath("//*[text()='Chicago Beverage Systems (296)']")
 	By priceDisclaimerYesCheckBox = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_rbPnlPriceDisclaimerTrue']/span[1]")
 	By priceDisclaimerNoCheckBox = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_rbPnlPriceDisclaimerFalse']/span[1]")
+	By additionalinfoyesbtn = By.xpath("//*[@id='collapseSix']/div[1]/div[1]/div[4]/div/span[1]/span[1]")
 
 
 	@Keyword
 	public void SelectIICorpAndMarkets() {
 		try {
 			action.Click(corpddn)
-			//WebUI.delay(10)
+			////WebUI.delay(10)
 			//action.ScrollToViewelement(corpddnvalue)
 			action.Click(IIDemoCOrpDist)
-			//WebUI.delay(20)
+			////WebUI.delay(20)
 			action.Click(marketddn)
-			//WebUI.delay(10)
+			////WebUI.delay(10)
 			action.Click(ChicagoBeverageMarket)
-			//WebUI.delay(10)
+			////WebUI.delay(10)
 		}
 		catch(Exception e) {
 			println ("SelectIICorpAndMarkets method failed due to "+ e)
@@ -85,14 +87,14 @@ public class II4ConfigurationPage {
 				action.ScrollToBottomOfPage()
 				action.Click(priceDisclaimerYesCheckBox)
 				action.Click(savebtn)
-				WebUI.delay(5)
+				//WebUI.delay(5)
 				return Disclaimer
 			}
 			else {
 				action.ScrollToBottomOfPage()
 				action.Click(priceDisclaimerNoCheckBox)
 				action.Click(savebtn)
-				WebUI.delay(5)
+				//WebUI.delay(5)
 				return Disclaimer
 			}
 		}
@@ -124,14 +126,14 @@ public class II4ConfigurationPage {
 	public void SelectCorpAndMarkets() {
 		try {
 			action.Click(corpddn)
-			//WebUI.delay(20)
+			////WebUI.delay(20)
 			//action.ScrollToViewelement(corpddnvalue)
 			action.Click(corpddnvalue)
-			WebUI.delay(10)
+			//WebUI.delay(10)
 			action.Click(marketddn)
-			//WebUI.delay(20)
+			////WebUI.delay(20)
 			action.Click(marketddnvalue)
-			//WebUI.delay(20)
+			////WebUI.delay(20)
 		}
 		catch(Exception e) {
 			println ("Select Corp And Markets failed due to "+ e)
@@ -173,7 +175,7 @@ public class II4ConfigurationPage {
 			println ("Status of createneworder failed due to ----------"+ statusofcreateneworder)
 			if(statusofcreateneworder == true) {
 				action.ScrollToBottomOfPage()
-				WebUI.delay(10)
+				//WebUI.delay(10)
 				action.Click(savebtn)
 			}
 			else{
@@ -194,7 +196,7 @@ public class II4ConfigurationPage {
 			println ("Status of createneworder failed due to ----------"+ statusofcloneorderbtn)
 			if(statusofcloneorderbtn == true) {
 				action.ScrollToBottomOfPage()
-				WebUI.delay(10)
+				//WebUI.delay(10)
 				action.ScrollToBottomOfPage()
 				action.Click(savebtn)
 			}
@@ -218,7 +220,7 @@ public class II4ConfigurationPage {
 			println ("Status of createneworder failed due to ----------"+ statusoffinishincompleteorderbtn)
 			if(statusoffinishincompleteorderbtn == true) {
 				action.ScrollToBottomOfPage()
-				WebUI.delay(10)
+				//WebUI.delay(10)
 				action.ScrollToBottomOfPage()
 				action.Click(savebtn)
 			}
@@ -253,7 +255,7 @@ public class II4ConfigurationPage {
 			println ("Status of io button  due to ----------"+ statusofioyesbtn)
 			if(statusofioyesbtn == true) {
 				action.ScrollToBottomOfPage()
-				WebUI.delay(10)
+				//WebUI.delay(10)
 				action.ScrollToBottomOfPage()
 				action.Click(savebtn)
 			}
@@ -277,7 +279,7 @@ public class II4ConfigurationPage {
 			println ("Status of gl failed due to ----------"+ statusofglyesbtn)
 			if(statusofglyesbtn == true) {
 				action.ScrollToBottomOfPage()
-				WebUI.delay(10)
+				//WebUI.delay(10)
 				action.ScrollToBottomOfPage()
 				action.Click(savebtn)
 			}
@@ -301,7 +303,7 @@ public class II4ConfigurationPage {
 			println ("Status of gl failed due to ----------"+ statusofpoyesbtn)
 			if(statusofpoyesbtn == true) {
 				action.ScrollToBottomOfPage()
-				WebUI.delay(10)
+				//WebUI.delay(10)
 				action.ScrollToBottomOfPage()
 				action.Click(savebtn)
 			}
@@ -397,7 +399,7 @@ public class II4ConfigurationPage {
 
 			action.ScrollToBottomOfPage()
 
-			WebUI.delay(10)
+			//WebUI.delay(10)
 			action.Click(savebtn)
 		}
 		catch(Exception e) {
@@ -420,6 +422,29 @@ public class II4ConfigurationPage {
 		}
 		catch(Exception e) {
 			Assert.fail("Verify Item Details Selection failed due to "+ e)
+		}
+	}
+
+
+	@Keyword
+	public void EnableAdditionalInfo(String Disclaimer) {
+		try {
+			if (Disclaimer.equalsIgnoreCase("Enable")) {
+				/*JavascriptExecutor js = (JavascriptExecutor) driver
+				js.executeScript("window.scrollBy(1000,1000)")
+				WebUI.delay(100)*/
+				action.ScrollToBottomOfPage()
+				action.Click(additionalinfoyesbtn)
+				action.Click(savebtn)
+			}
+			else {
+				action.ScrollToBottomOfPage()
+				action.Click(priceDisclaimerNoCheckBox)
+				action.Click(savebtn)
+			}
+		}
+		catch(Exception e) {
+			Assert.fail("EnableAndDisablePriceDisclaimer failed due to :" + e)
 		}
 	}
 }
