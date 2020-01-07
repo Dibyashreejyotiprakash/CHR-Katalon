@@ -106,4 +106,70 @@
       <isRun>true</isRun>
       <testCaseId>Test Cases/II3-UserSite/OLOF Smoke/VerifyOLOFAllThreeButtons</testCaseId>
    </testCaseLink>
+   <testCaseLink>
+      <guid>2aa4e9d3-8b4b-4c3b-a16f-eb7b1eea3906</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/IIDT/IIDT RELEASE/ROADMAP/DigitalDownload/Regression/1376_ValidateMyDownloadsPage</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>75c54f57-7584-42bb-9cbe-9548a0675d3d</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/IIDT/IIDT RELEASE/ROADMAP/DigitalDownload/Regression/1383_ValidatedMyDownloadsSection</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>58d89b9c-78f0-4d46-95cd-88620aae8023</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/IIDT/II REGRESSION/II4 UserSite/ValidateFreezeMenu</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>c1515fc7-83ec-4c96-82c9-342af0d3be30</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/IIDT/II REGRESSION/II4 UserSite/VerifyNavigationFromItemConfigurationPageWithOutPreview</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>a217d5a1-b189-4d26-810c-5ed92578a449</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/IIDT/II REGRESSION/CouponMaker/VerifyLoginLogout</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>ea7591f8-aa38-4e4f-9707-9995f1baa14b</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/IIDT/II REGRESSION/CouponMaker/BackToCreateDesignPageFromProductionSelectionPage</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>805d6917-1783-42a4-8dcf-7232924e9a57</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/IIDT/II REGRESSION/CouponMaker/VerifyCancelBtn</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>537a9272-1f48-4f09-a644-a3063181fab0</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/IIDT/II REGRESSION/CouponMaker/VerifyAllFieldsInCouponMakerPage</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>cf81ac96-8b01-4c88-91d4-02c57a2fdca8</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/IIDT/II REGRESSION/CouponMaker/VerifyCouponSearch</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>a318aa66-fa39-489d-afb9-ba5a063740fc</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/IIDT/II REGRESSION/ItemConfiguration/VerifyRetainationOfValuesInItemConfigurationPage</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>8dde310b-adbe-4557-b24b-f4a882c25c41</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/IIDT/II REGRESSION/Online Order Form/ClonePreviousDTOrder/VerifyDeleteLinkOnCloneItemDetailsPage</testCaseId>
+   </testCaseLink>
 </TestSuiteEntity>
