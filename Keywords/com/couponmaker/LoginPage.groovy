@@ -69,7 +69,7 @@ public class LoginPage {
 			action.WaitForPageToLoad();
 			action.SelectByText(ddlCorporation, "Instant Impact 4.0 Demo Corp (Supp.)");
 			action.Click(loginButton);
-			WebUI.delay(15)
+			//WebUI.delay(15)
 			action.WaitForPageToLoad()
 		}
 		catch (Exception e) {

@@ -21,8 +21,6 @@ CustomKeywords.'com.couponmaker.LoginPage.VerifyLoginPage'()
 
 CustomKeywords.'com.couponmaker.LoginPage.LoginToCouponDemoCorp'()
 
-WebUI.delay(5)
-
 CustomKeywords.'com.couponmaker.HomePage.Logout'()
 
 

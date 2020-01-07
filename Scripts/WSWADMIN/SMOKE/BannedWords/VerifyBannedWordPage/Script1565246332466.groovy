@@ -24,7 +24,7 @@ CustomKeywords.'com.wswadmin.BannedPhrasePage.VerifyBannedWordsGrid'()
 
 //WebUI.delay(10)
 
-CustomKeywords.'com.wswadmin.BannedPhrasePage.AddNewBannedWordAndVerify'()
+//CustomKeywords.'com.wswadmin.BannedPhrasePage.AddNewBannedWordAndVerify'()
 
 CustomKeywords.'com.wswadmin.BannedPhrasePage.VerifyBannedPhrasesPage'()
 
