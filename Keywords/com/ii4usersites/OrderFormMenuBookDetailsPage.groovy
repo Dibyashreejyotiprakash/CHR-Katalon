@@ -55,7 +55,7 @@ public class OrderFormMenuBookDetailsPage {
 				action.Click(nextbtn)
 				//WebUI.delay(5)
 			}
-		    }
+		}
 		catch(Exception e) {
 			println ("Enter Values To Job Details page failed due to "+ e)
 			Assert.fail()

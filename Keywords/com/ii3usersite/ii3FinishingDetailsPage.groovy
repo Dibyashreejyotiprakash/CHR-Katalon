@@ -24,7 +24,7 @@ import com.kms.katalon.core.webui.driver.DriverFactory
 import internal.GlobalVariable
 
 public class ii3FinishingDetailsPage {
-	
+
 	Interaction action = new Interaction();
 	WebDriver driver = DriverFactory.getWebDriver()
 

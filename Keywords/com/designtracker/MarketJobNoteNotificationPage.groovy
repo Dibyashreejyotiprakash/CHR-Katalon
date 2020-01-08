@@ -57,11 +57,10 @@ public class MarketJobNoteNotificationPage {
 
 			action.SelectByText(marketddn, "Chicago Beverage Systems")
 
-			boolean statusofinsertlink = action.IsElementDisplayed(insertlink)
-			Assert.assertTrue(statusofinsertlink)
-
-			boolean statusofuserddn = action.IsElementDisplayed(userddn)
-			Assert.assertTrue(statusofuserddn)
+			/*boolean statusofinsertlink = action.IsElementDisplayed(insertlink)
+			 Assert.assertTrue(statusofinsertlink)
+			 boolean statusofuserddn = action.IsElementDisplayed(userddn)
+			 Assert.assertTrue(statusofuserddn)*/
 		}
 		catch(Exception e) {
 			Assert.fail("Verify Fields failed due to "+ e)

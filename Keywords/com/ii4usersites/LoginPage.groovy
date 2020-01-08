@@ -106,7 +106,7 @@ class LoginPage {
 			action.Click(loginButton);
 			action.WaitForPageToLoad();
 			action.SelectByText(ddlCorporation, "Instant Impact 4.0 Demo Corp (Dist.)");
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.SelectByText(ddlDistributor, "Chicago Beverage Systems");
 			action.Click(loginButton);
 

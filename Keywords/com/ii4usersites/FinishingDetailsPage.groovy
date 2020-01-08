@@ -37,27 +37,26 @@ public class FinishingDetailsPage {
 
 	@Keyword
 	public void AddNewNote() {
-		
+
 		try{
-			
-		action.WaitForPageToLoad()
-		//action.ScrollToBottomOfPage()
-		action.ScrollToViewElement(quantityTxtBox)
-		action.WaitUntilElementClickable(addnewnotebtn)
-		WebUI.delay(3)
-		action.Click(addnewnotebtn)
-		//WebUI.delay(10)
-		action.Type(addnewtextarea, "Test")
-		//WebUI.delay(10)
-		action.ScrollToViewElement(addnewtextarea)
-		action.Click(sabebtn)
-		//WebUI.delay(10)
-		action.ScrollToBottomOfPage()
-		action.Click(nextbtn)
-		action.WaitForPageToLoad()
+
+			action.WaitForPageToLoad()
+			//action.ScrollToBottomOfPage()
+			action.ScrollToViewElement(quantityTxtBox)
+			action.WaitUntilElementClickable(addnewnotebtn)
+			//WebUI.delay(3)
+			action.Click(addnewnotebtn)
+			////WebUI.delay(10)
+			action.Type(addnewtextarea, "Test")
+			////WebUI.delay(10)
+			action.ScrollToViewElement(addnewtextarea)
+			action.Click(sabebtn)
+			////WebUI.delay(10)
+			action.ScrollToBottomOfPage()
+			action.Click(nextbtn)
+			action.WaitForPageToLoad()
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("AddNewNote failed due to : "+e)
 		}
 	}
