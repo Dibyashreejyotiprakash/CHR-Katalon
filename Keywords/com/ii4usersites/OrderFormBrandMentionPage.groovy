@@ -41,12 +41,12 @@ public class OrderFormBrandMentionPage {
 		try {
 			//action.WaitUntilElementClickable(nobarndmentionbtn)
 			action.ScrollToViewElement(headerItemDetails)
-			//WebUI.delay(5)
+			////WebUI.delay(5)
 			action.Click(nobarndmentionbtn)
 			action.ScrollToBottomOfPage()
 			//action.WaitUntilElementClickable(nextbtn)
 			action.Click(nextbtn)
-			//WebUI.delay(10)
+			////WebUI.delay(10)
 			action.WaitForPageToLoad()
 		}
 		catch(Exception e) {

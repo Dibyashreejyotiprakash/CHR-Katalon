@@ -91,7 +91,7 @@ public class OrderFormItemDetails1Page {
 			action.WaitUntilElementClickable(nextbtn)
 			action.Click(nextbtn)
 			action.WaitForPageToLoad()
-			//WebUI.delay(10)
+			////WebUI.delay(10)
 		}
 		catch(Exception e) {
 			println ("Click On Next Btn failed due to "+ e)
@@ -101,13 +101,12 @@ public class OrderFormItemDetails1Page {
 	@Keyword
 	public void LogOutII4() {
 		try {
-		action.Click(logout)
-		action.WaitForPageToLoad()
+			action.Click(logout)
+			action.WaitForPageToLoad()
 		}
 		catch(Exception e) {
 			Assert.fail("Logout is failing because : "+e)
 		}
-		
 	}
 
 	@Keyword
@@ -126,7 +125,7 @@ public class OrderFormItemDetails1Page {
 	@Keyword
 	public void VerifyVerbiageForAllItemType() {
 		try{
-			
+
 			action.WaitVisible(smallprintverbiage)
 			action.WaitVisible(largeprintverviage)
 			String smallitemtext = action.GetText(smallprintverbiage)

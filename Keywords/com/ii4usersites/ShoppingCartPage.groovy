@@ -580,6 +580,7 @@ class ShoppingCartPage {
 		try
 		{
 			action.ScrollToBottomOfPage()
+			action.WaitUntilElementClickable(btnContinueToCheckout)
 			action.Click(btnContinueToCheckout)
 			action.WaitForPageToLoad()
 		}

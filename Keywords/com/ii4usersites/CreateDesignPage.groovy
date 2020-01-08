@@ -71,7 +71,7 @@ class CreateDesignPage {
 			action.ScrollToBottomOfPage()
 			action.Click(cancelbtn)
 			action.WaitForPageToLoad()
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.VerifyCurrentPage("ItemSearch.aspx")
 		}
 		catch(Exception e) {
@@ -84,7 +84,7 @@ class CreateDesignPage {
 		String selectedHeadLine = null;
 		try{
 			action.SelectByIndex(divHeadline, 1)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			selectedHeadLine = action.GetselectedText(divHeadline)
 			println ("Selected Head Line is----------- "+ selectedHeadLine)
 			return selectedHeadLine
@@ -110,7 +110,7 @@ class CreateDesignPage {
 	public void ClickOnPreviewChangesButton() {
 		try{
 			action.Click(btnPreviewChanges)
-			WebUI.delay(20)
+			action.WaitTillNotVisible(imgLoading, 30)
 		}
 		catch(Exception e) {
 			Assert.fail("Click on Preview Changes Button failed due to "+ e)
@@ -121,7 +121,7 @@ class CreateDesignPage {
 	public void ClickOnNextStepBtnAndNavigateToProductSelectionPage() {
 		try{
 			action.ScrollToBottomOfPage()
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(btnNextStep)
 			action.WaitUntilElementClickable(btnNo)
 			action.Click(btnNo)

@@ -60,7 +60,6 @@ public class OrderFormOrderHederPage {
 		catch(Exception e) {
 			println ("Enter Values To Fileds In Order Page failed due to "+ e)
 			Assert.fail()
-			
 		}
 	}
 
@@ -97,7 +96,7 @@ public class OrderFormOrderHederPage {
 			action.WaitVisible(accountname)
 			action.Click(accountname)
 			action.Type(accountname, "QATest2019")
-			WebUI.delay(2)
+			//WebUI.delay(2)
 			action.IsElementDisplayed(accountnametobevalidated)
 		}
 		catch(Exception e) {

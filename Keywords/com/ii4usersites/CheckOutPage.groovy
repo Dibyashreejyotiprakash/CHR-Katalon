@@ -46,7 +46,7 @@ public class CheckOutPage {
 			action.Type(commentsbox, comment)
 			action.Click(continuetoreview)
 			action.WaitForPageToLoad()
-			
+
 			return comment;
 		}
 		catch(Exception e) {

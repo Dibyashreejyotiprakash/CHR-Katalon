@@ -140,7 +140,7 @@ class ItemSearchPage {
 		{
 			boolean IsTemplateVerified = false
 			action.Click(adminApprovalCheckBox)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			String TemplateID= action.GetText(templateID)
 			if(action.IsElementDisplayed(templateID))
 			{
@@ -162,7 +162,7 @@ class ItemSearchPage {
 		{
 			boolean IsTemplateVerified = false
 			action.Click(ApprovalCheckBox)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			String TemplateID= action.GetText(templateID)
 			if(action.IsElementDisplayed(templateID))
 			{
@@ -187,7 +187,7 @@ class ItemSearchPage {
 			action.Click(searchTextField)
 			action.Type(searchTextField, "130718")
 			action.Click(searchBtn)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 		}
 		catch(Exception e)
 		{
@@ -247,7 +247,7 @@ class ItemSearchPage {
 		try{
 			action.Type(txbSearch, testtemplateid)
 			action.Click(btnSearch)
-			WebUI.delay(10)
+			//WebUI.delay(10)
 			action.ScrollToBottomOfPage()
 			action.Click(testtemplate)
 			action.WaitForPageToLoad()
@@ -309,15 +309,15 @@ class ItemSearchPage {
 		{
 			action.WaitVisible(splseemorebtn)
 			action.ScrollToViewElement(templatetype)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(splseemorebtn)
 			action.WaitVisible(digitaldownloadcheckbox)
 			action.ScrollToViewElement(digitaldownloadcheckbox)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(digitaldownloadcheckbox)
 			action.WaitVisible(savebtn)
 			action.ScrollToViewElement(savebtn)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(savebtn)
 			action.WaitVisible(ddtemplate)
 		}
@@ -352,7 +352,7 @@ class ItemSearchPage {
 			action.WaitVisible(txbSearch)
 			action.WaitVisible(splseemorebtn)
 			action.Click(splseemorebtn)
-			WebUI.delay(4)
+			//WebUI.delay(4)
 			boolean val = 	action.IsDisplayed(digitaldownloadcheckbox)
 			Assert.assertEquals(false, val)
 			action.Type(txbSearch, "132061")
@@ -409,9 +409,9 @@ class ItemSearchPage {
 			action.WaitVisible(previewimgbtn)
 			//action.ScrollToViewElement(previewimgbtn)
 			action.ScrollToBottomOfPage()
-			WebUI.delay(2)
+			//WebUI.delay(2)
 			action.Click(previewimgbtn)
-			WebUI.delay(20)
+			//WebUI.delay(20)
 			action.Click(nextstepbtn)
 			action.WaitVisible(savedesignnobtn)
 			action.Click(savedesignnobtn)

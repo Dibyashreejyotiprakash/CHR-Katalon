@@ -71,7 +71,7 @@ class HomePage {
 		action.ScrollToBottomOfPage()
 		action.WaitVisible(imgPOSTemplates)
 		action.Click(imgPOSTemplates)
-		WebUI.delay(5)
+		//WebUI.delay(5)
 		action.WaitForPageToLoad()
 	}
 

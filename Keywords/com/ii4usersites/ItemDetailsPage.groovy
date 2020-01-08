@@ -120,8 +120,8 @@ public class ItemDetailsPage {
 			Assert.fail ("Set Variable Template Layout failed due to "+ e)
 		}
 	}
-	
-	
+
+
 	@Keyword
 	public void ValidateItemTypeDropdown() {
 		try {
@@ -160,7 +160,7 @@ public class ItemDetailsPage {
 			action.Type(quantity, "6")
 			action.WaitUntilElementClickable(productselectionnobtn)
 			action.Click(productselectionnobtn)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.WaitUntilElementClickable(addtocartbtn)
 			action.Click(addtocartbtn)
 		}
@@ -185,7 +185,7 @@ public class ItemDetailsPage {
 			action.Type(quantity, "10")
 			action.WaitUntilElementClickable(productselectionnobtn)
 			action.Click(productselectionnobtn)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.WaitUntilElementClickable(addtocartbtn)
 			action.Click(addtocartbtn)
 			action.WaitVisible(showpricebreak)
@@ -203,7 +203,7 @@ public class ItemDetailsPage {
 	@Keyword
 	public void Checkout() {
 		try {
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.WaitUntilElementClickable(continuetocheckoutbtn)
 			action.Click(continuetocheckoutbtn)
 		}
@@ -268,7 +268,7 @@ public class ItemDetailsPage {
 	@Keyword
 	public void EditShoppingCartQty() {
 		try {
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(shoppingcartqty)
 			action.Clear(shoppingcartqty)
 			action.Type(shoppingcartqty, "15")
@@ -284,10 +284,10 @@ public class ItemDetailsPage {
 		try {
 			action.Type(quantity, "10")
 			action.ScrollToBottomOfPage()
-			WebUI.delay(10)
+			//WebUI.delay(10)
 			action.WaitUntilElementClickable(nobtn)
 			action.Click(nobtn)
-			WebUI.delay(10)
+			//WebUI.delay(10)
 			action.WaitUntilElementClickable(addtocartbtn)
 			action.Click(addtocartbtn)
 			action.WaitForPageToLoad()
