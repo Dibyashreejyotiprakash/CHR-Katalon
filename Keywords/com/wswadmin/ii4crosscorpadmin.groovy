@@ -330,11 +330,29 @@ public class ii4crosscorpadmin
 	{
 		try
 		{
-			action.ScrollToViewElement(viewbatchbtn)
-			action.WaitVisible(viewbatchbtn)
-			action.Click(viewbatchbtn)
-			action.WaitVisible(viewbatchcorptocorpassociation)
-			action.IsElementDisplayed(viewbatchcorptocorpassociation)
+			if(action.IsDisplayed(corptocorpchkbox))
+			{
+			 action.Click(corptocorpchkbox)
+			 action.Click(choosetemplatebtn)
+			 action.WaitVisible(templatesearchbox)
+			 action.Type(templatesearchbox, "132061")
+			 action.ScrollToViewElement(viewbatchbtn)
+			 action.WaitVisible(viewbatchbtn)
+			 action.Click(viewbatchbtn)
+			 action.WaitVisible(viewbatchcorptocorpassociation)
+			 action.IsElementDisplayed(viewbatchcorptocorpassociation)
+			}
+			else
+			{
+				action.ScrollToViewElement(viewbatchbtn)
+				action.WaitVisible(viewbatchbtn)
+				action.Click(viewbatchbtn)
+				action.WaitVisible(viewbatchcorptocorpassociation)
+				action.IsElementDisplayed(viewbatchcorptocorpassociation)
+				
+			}
+			
+			
 		}
 		catch(Exception e)
 		{
@@ -408,10 +426,24 @@ public class ii4crosscorpadmin
 	{
 		try
 		{
+			if(action.IsDisplayed(market))
+			{
+			
+				action.ScrollToBottomOfPage()	
+				action.Click(market)
+				action.Click(choosetemplatebtn)
+				action.WaitVisible(templatesearchbox)
+				action.Type(templatesearchbox, "132061")
+				action.ScrollToBottomOfPage()
+				action.WaitVisible(viewbatchbtn)
+				action.Click(viewbatchbtn)
+				action.WaitVisible(viewbatchcorptomktassociation)
+			}
+			
 			action.ScrollToBottomOfPage()
 			action.WaitVisible(viewbatchbtn)
 			action.Click(viewbatchbtn)
-			action.WaitVisible(viewbatchcorptomktassociation)
+			//action.WaitVisible(viewbatchcorptomktassociation)
 
 		}
 		catch(Exception e)
@@ -655,7 +687,7 @@ public class ii4crosscorpadmin
 		}
 
 	}
-	
+
 	@Keyword
 	public void ValidateSearchInAssociationPage()
 	{
@@ -665,15 +697,15 @@ public class ii4crosscorpadmin
 			action.WaitVisible(associationpagesearchbox)
 			action.Type(associationpagesearchbox, "300")
 			action.IsDisplayed(association)
-			
+
 		}
 		catch(Exception e)
 		{
 			Assert.fail("ValidateSearchInAssociationPage Failed Due to "+e)
 		}
-		
+
 	}
-	
+
 	@Keyword
 	public void ValidateStaticouponTemplateInCrossCorp()
 	{

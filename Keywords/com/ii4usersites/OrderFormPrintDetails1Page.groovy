@@ -46,7 +46,7 @@ public class OrderFormPrintDetails1Page {
 	By allitemslabel = By.xpath("//*[text()='All Items']")
 	By orderLineName = By.xpath("//*[@id='ctl00_Body_txtJobLineName']")
 	By allitemsvalueforSmallPrint = By.xpath("//li[contains(text(),'Counter Card')]")
-	
+
 	@Keyword
 	public void EnterAllVauesInPrintDetails1Page() {
 		try {
@@ -94,7 +94,7 @@ public class OrderFormPrintDetails1Page {
 			println ("Enter All Vaues In Print Details1 Page failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
 	public void EnterAllVauesInPrintDetails1PageForSmallPrint() {
 		try {

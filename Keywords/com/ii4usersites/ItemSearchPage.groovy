@@ -94,7 +94,7 @@ class ItemSearchPage {
 	By inputSortBy = By.id("ctl00_Body_rcbSort_Input")
 	By chkbxVariabletype = By.id("ctl00_Body_rptFilterGroups_ctrl4_cblFilterList_1")
 
-	By template = By.xpath("(//*[@href='/POS/ItemDetails.aspx?tid=130722'])[1]")
+	By template = By.xpath("(//*[@href='/POS/ItemDetails.aspx?tid=114876'])[1]")
 	By variabletemplate = By.xpath("(//*[@href='/POS/ItemDetails.aspx?tid=130719'])[2]")
 	By ordernowbtn = By.xpath("//*[@id='Body_btnOrderNow']")
 	By createdesignbtn = By.xpath("//*[@id='Body_btnProductDesign']")
@@ -126,8 +126,12 @@ class ItemSearchPage {
 
 	By newlycreatedmetatagcheckbox = By.xpath("ctl00_Body_rptFilterGroups_ctrl0_cblFilterList_0")
 	By metatagsearchtemplate = By.xpath("(//*[@href='/POS/ItemDetails.aspx?tid=130722'])[2]")
-	
+
 	By testtemplate = By.xpath("(//*[@href='/POS/ItemDetails.aspx?tid=132933'])[1]")
+
+	By crosscorpseemore = By.xpath("//a[@id='ctl00_Body_rptFilterGroups_ctrl8_lbtnFilterListExpand']")
+
+	By salesproductlineheading = By.xpath("//span[contains(text(),'Sales Product Line')]")
 
 
 	WebDriver driver = DriverFactory.getWebDriver();
@@ -155,6 +159,11 @@ class ItemSearchPage {
 			Assert.fail("ClickOnAdminApprovalAndVerifyTemplate Failed due to" +e)
 		}
 	}
+
+
+
+
+
 
 	@Keyword
 	public boolean ClickOnApprovalAndVerifyTemplate()
@@ -217,6 +226,9 @@ class ItemSearchPage {
 	public void ClickOnTemplate(){
 		try
 		{
+			action.WaitVisible(txbSearch)
+			action.Type(txbSearch, "114876")
+			action.Click(SearchButton)
 			action.WaitVisible(template)
 			action.Click(template)
 			action.WaitForPageToLoad()
@@ -243,7 +255,7 @@ class ItemSearchPage {
 			println ("ClickOnVariableTemplate failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
 	public void ClickOnTestTemplate(String testtemplateid)
 	{
@@ -310,17 +322,17 @@ class ItemSearchPage {
 	{
 		try
 		{
-			//action.WaitVisible(splseemorebtn)
+			action.WaitVisible(splseemorebtn)
 			action.ScrollToViewElement(templatetype)
-			//WebUI.delay(3)
+			WebUI.delay(3)
 			action.Click(splseemorebtn)
-			//action.WaitVisible(digitaldownloadcheckbox)
-			//action.ScrollToViewElement(digitaldownloadcheckbox)
+			action.WaitVisible(digitaldownloadcheckbox)
+			action.ScrollToViewElement(digitaldownloadcheckbox)
 			//WebUI.delay(3)
 			action.Click(digitaldownloadcheckbox)
-			//action.WaitVisible(savebtn)
-			//action.ScrollToViewElement(savebtn)
-			//WebUI.delay(3)
+			action.WaitVisible(savebtn)
+			action.ScrollToViewElement(savebtn)
+			WebUI.delay(3)
 			action.Click(savebtn)
 			action.WaitVisible(ddtemplate)
 		}
@@ -352,12 +364,19 @@ class ItemSearchPage {
 	{
 		try
 		{
+			/*action.WaitVisible(txbSearch)
+			 action.ScrollToViewElement(salesproductlineheading)
+			 action.WaitVisible(crosscorpseemore)
+			 //WebUI.delay(4)
+			 action.Click(crosscorpseemore)
+			 action.WaitVisible(digitaldownloadcheckbox)
+			 boolean val = 	action.IsDisplayed(digitaldownloadcheckbox)
+			 Assert.assertEquals(false, val)
+			 action.Click(digitaldownloadcheckbox)
+			 action.WaitVisible(savebtn)
+			 action.ScrollToViewElement(savebtn)
+			 action.Click(savebtn)*/
 			action.WaitVisible(txbSearch)
-			action.WaitVisible(splseemorebtn)
-			action.Click(splseemorebtn)
-			WebUI.delay(4)
-			boolean val = 	action.IsDisplayed(digitaldownloadcheckbox)
-			Assert.assertEquals(false, val)
 			action.Type(txbSearch, "132061")
 			action.Click(btnSearch)
 			action.IsDisplayed(crosscorpedtemplate)
@@ -414,7 +433,7 @@ class ItemSearchPage {
 			action.ScrollToBottomOfPage()
 			//WebUI.delay(2)
 			action.Click(previewimgbtn)
-			//WebUI.delay(20)
+			WebUI.delay(60)
 			action.Click(nextstepbtn)
 			action.WaitVisible(savedesignnobtn)
 			action.Click(savedesignnobtn)

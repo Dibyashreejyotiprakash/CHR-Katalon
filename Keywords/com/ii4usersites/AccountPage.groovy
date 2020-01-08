@@ -33,8 +33,9 @@ public class AccountPage {
 	By allbuttons = By.xpath("//*[@class='helpPage']/div[2]/div/div/div/h2")
 	By profilelbel = By.xpath("//*[@id='Body_lblAccountPageProfile']")
 	By accountlabel = By.xpath("//*[contains(text(),'AccountTest')]")
-
-
+	By mydownloadssec = By.xpath("//h2[@id='Body_lblMyDownloads']")
+	By mydownloadlink = By.xpath("//a[contains(text(),'View My Downloads')]")
+	
 
 	List<WebElement> alltabslables = action.GetElements(allbuttons)
 
@@ -281,6 +282,25 @@ public class AccountPage {
 			}
 			break;
 		}
+	}
+	
+	@Keyword
+	public void NavigateToMyDownloadsPage()
+	{
+		try
+		{
+			action.WaitVisible(mydownloadssec)
+			action.ScrollToViewElement(mydownloadssec)
+			action.WaitVisible(mydownloadlink)
+			action.Click(mydownloadlink)
+			
+		}
+		catch(Exception e)
+		{
+			
+			
+		}
+		
 	}
 }
 

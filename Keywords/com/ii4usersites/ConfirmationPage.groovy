@@ -31,13 +31,14 @@ public class ConfirmationPage {
 	By orderid = By.xpath("//*[@id='Body_lblInvoiceNumber']")
 	By downloadpagelink = By.xpath("//a[contains(text(),'Click here to download your Template')]")
 	By confirmationnumber = By.xpath("//span[@id='Body_lblInvoiceNumber']")
-	
+
 
 	@Keyword
 	public String GetConfirmationId() {
 
 		try {
 			action.WaitVisible(orderid)
+			WebUI.delay(5)
 			String confirmationnumber = action.GetText(orderid)
 			println ("*********"+confirmationnumber+"***********************")
 			return confirmationnumber
@@ -46,20 +47,18 @@ public class ConfirmationPage {
 			println ("Get confirmation number "+ e)
 		}
 	}
-	
-	
+
+
 	@Keyword
-	public void GetConfNumAndValidateOrderOnMyDownloads()
-	{
-		try
-		{
+	public String GetConfNumAndValidateOrderOnMyDownloads() {
+		try {
 			action.WaitVisible(confirmationnumber)
 			String conf_num = action.GetText(confirmationnumber)
+			println ("*********"+conf_num+"***********************")
+			return conf_num
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("GetConfNumAndValidateOrderOnMyDownloads Failed due to "+e)
 		}
 	}
-	
 }

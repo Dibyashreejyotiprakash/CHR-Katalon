@@ -45,8 +45,8 @@ public class CheckOutPage {
 			WebUI.delay(5)
 			action.Type(commentsbox, comment)
 			action.Click(continuetoreview)
-			action.WaitForPageToLoad()
-			
+			//action.WaitForPageToLoad()
+
 			return comment;
 		}
 		catch(Exception e) {
