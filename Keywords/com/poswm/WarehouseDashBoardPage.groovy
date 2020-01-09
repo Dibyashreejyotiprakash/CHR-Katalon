@@ -88,13 +88,21 @@ public class WarehouseDashBoardPage {
 	By myOrderCancelOrderLink = By.xpath(" //*[@id='ctl00_MainContent_rdMyOrders_C_rgMyOrders_ctl00']//following-sibling::tbody/tr[1]/td[2]")
 	By OrderPcakListLink = By.xpath("//*[text()='Order Pack List']")
 	//By PrintIcon = By.xpath("//*[@name='ctl00$MainContent$tlrkReportViewer$ReportToolbar$PrintGr$Print$ctl00']")
-	By warehouse = By.xpath("//*[text()='Warehouse']")
+	By warehouse = By.xpath("(//*[text()='Warehouse'])[1]")
+	//By warehouse = By.xpath("//*[@id='ctl00_PageMenu1_rmMain']/ul/li[2]/a")
 	By newitem = By.xpath("//*[text()='New Item']")
+	By itemSearch = By.xpath("//*[text()='Item Search']")
 	By neworder = By.xpath("//*[text()='New Order']")
 	By ordersearch = By.xpath("//*[text()='Order Search']")
 	By admin = By.xpath("//*[text()='Administration']")
 	By useritemapprovaltransfer = By.xpath("//*[text()='User Item Approval Transfer']")
 	By warehouseusers = By.xpath("//*[text()='Warehouse Users']")
+	By headerOnItemSearchPage = By.xpath("//*[@id='ctl00_MainContent_rmItemCommands']")
+	
+	
+	
+	
+	
 
 	@Keyword
 	public void ClickOnNewItem()
@@ -111,6 +119,21 @@ public class WarehouseDashBoardPage {
 		}
 	}
 
+	@Keyword
+	public void ClickOnItemSearch()
+	{
+		try{
+			action.MouseHoverOnElement(warehouse)
+			action.WaitVisible(itemSearch)
+			action.Click(itemSearch) 
+			action.WaitVisible(headerOnItemSearchPage)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Click on new item failed due to "+ e)
+		}
+	}
 	@Keyword
 	public void ClickOnNewOrder()
 	{

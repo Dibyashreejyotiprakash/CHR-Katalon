@@ -15,33 +15,64 @@ import internal.GlobalVariable as GlobalVariable
 
 CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameposw, GlobalVariable.testtyperegression, GlobalVariable.environment)
 
-WebUI.waitForPageLoad(300)
-
-CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.posUN59, GlobalVariable.posPass59)
-
-CustomKeywords.'com.poswm.LoginPage.SelectEmpireMerchantBU'()
-
-CustomKeywords.'com.poswm.Homepage.HoverOnWareHouseMenu'()
-
-CustomKeywords.'com.poswm.Homepage.ClickOnNewItem'()
-
-String itemName = CustomKeywords.'com.poswm.WarehouseItem.FillItemInformationSection'()
-
-WebUI.delay(5)
-
-println('++++++++++++++' + itemName)
-
-CustomKeywords.'com.poswm.WarehouseItem.ClickOnItemInfoSaveIcon'()
-
+//Enter credential
+CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.PoswTestUserName, GlobalVariable.PoswTestPassword)
+//Click on new item 
+CustomKeywords.'com.poswm.WarehouseDashBoardPage.ClickOnNewItem'()
+//vcreate item with unique name
+String ItemName = CustomKeywords.'com.poswm.WarehouseItem.FillItemInformationSection'()
+// fill image section
 CustomKeywords.'com.poswm.WarehouseItem.FillImageSection'()
-
+//Fill brand section
 CustomKeywords.'com.poswm.WarehouseItem.FillBrandSection'()
-
+// Fill transaction section
 CustomKeywords.'com.poswm.WarehouseItem.FillTransactionsSection'()
-
+//  Save item name
 CustomKeywords.'com.poswm.WarehouseItem.ClickOnCloseEditMode'()
-
+//navigate to spen limit page
 CustomKeywords.'com.poswm.Homepage.ClickOnWarehouseSpendLimits'()
+// select 2020 compliance name
+CustomKeywords.'com.poswm.WarehouseSpendingLimits.ClickOn2020Compliance'()
+//add item to the compliance
+CustomKeywords.'com.poswm.WarehouseSpendingLimits.AddItemTotheComplianceLevel'(ItemName)
+//navigate to item search page
+CustomKeywords.'com.poswm.WarehouseDashBoardPage.ClickOnItemSearch'()
+//select sales divsion as Big Apple
+CustomKeywords.'com.poswm.WarehouseItemInventory.SelectBigAppleSalesDivisionForEmpireMerchant'()
+//search for the newly created item
+CustomKeywords.'com.poswm.WarehouseItemInventory.SearchSpecificItem'(ItemName)
+// add item  to cart
+CustomKeywords.'com.poswm.WarehouseItemInventory.AddToCart'()
+//add customer
+CustomKeywords.'com.poswm.WarehouseItemInventory.AddCustomer'()
+// select ship method
+CustomKeywords.'com.poswm.WarehouseItemInventory.SelectShipMethod'()
+//place order
+CustomKeywords.'com.poswm.WarehouseItemInventory.ClickOnSubmitOrderBtn'()
+//navigate to spen limit page
+CustomKeywords.'com.poswm.Homepage.ClickOnWarehouseSpendLimits'()
+// select 2020 compliance name
+CustomKeywords.'com.poswm.WarehouseSpendingLimits.ClickOn2020Compliance'()
+
+CustomKeywords.'com.poswm.WarehouseSpendingLimits.RemoveItemFromtheComplianceLevel'(ItemName)
+
+String warningMsg = CustomKeywords.'com.poswm.WarehouseSpendingLimits.VerifySpendLimitWarningMsg'()
+
+println(('**************' + warningMsg) + '****************')
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*CustomKeywords.'com.poswm.Homepage.ClickOnWarehouseSpendLimits'()
 
 CustomKeywords.'com.poswm.WarehouseSpendingLimits.ClickOn2019Compliance'()
 
@@ -63,11 +94,7 @@ CustomKeywords.'com.poswm.WarehouseItemInventory.ClickOnSubmitOrderBtn'()
 
 CustomKeywords.'com.poswm.Homepage.ClickOnWarehouseSpendLimits'()
 
-CustomKeywords.'com.poswm.WarehouseSpendingLimits.ClickOn2019Compliance'()
+CustomKeywords.'com.poswm.WarehouseSpendingLimits.ClickOn2019Compliance'()*/
 
-CustomKeywords.'com.poswm.WarehouseSpendingLimits.RemoveItemTotheComplianceLevel'()
 
-String warningMsg = CustomKeywords.'com.poswm.WarehouseSpendingLimits.VerifySpendLimitWarningMsg'()
-
-println(('**************' + warningMsg) + '****************')
 

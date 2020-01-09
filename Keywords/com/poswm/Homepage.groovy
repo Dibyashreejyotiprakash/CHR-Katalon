@@ -27,7 +27,8 @@ import org.openqa.selenium.Alert
 import org.openqa.selenium.By
 import com.kms.katalon.core.webui.driver.DriverFactory
 
-public class Homepage {
+public class Homepage
+ {
 
 	Interaction action = new Interaction();
 	WebDriver driver = DriverFactory.getWebDriver()
@@ -88,7 +89,7 @@ public class Homepage {
 	@Keyword
 	public void HoverOnWareHouseMenu() {
 		action.MouseHoverOnElement(menuWarehouse);
-		action.WaitTime(3);
+		//action.WaitTime(3);
 	}
 
 
