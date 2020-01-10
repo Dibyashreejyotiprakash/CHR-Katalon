@@ -105,25 +105,10 @@ public class WarehouseItem {
 	By itemInfoSaveBtnAfterSave = By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_btnUpdate']")
 	By salesDivDropDownArrowBtn = By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_radSalesDivision_Arrow']")
 	By iteminfogrid = By.xpath("//*[text()='Step 1: Item Information']")
-
-
 	By bigAppleLebelName = By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_radSalesDivision_DropDown']/div/ul/li[2]/label")
 	By deleteItemBtn = By.xpath("//*[@id='MainContent_btnDeleteItem']")
 	By popupDeleteBtn = By.xpath("//*[@id='ctl00_MainContent_rwDeleteItemSettings_C_btnDeleteItemAndResetQuantities_input']")
 	By step1ConfirmationMsg = By.xpath("//*[@id='ctl00_MainContent_radNotifyMessage_simpleContentDiv']")
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 	@Keyword
@@ -250,7 +235,6 @@ public class WarehouseItem {
 	}
 
 
-
 	@Keyword
 	public String FillItemInformationSectionWithoutApprover()
 	{
@@ -327,8 +311,6 @@ public class WarehouseItem {
 		}
 
 	}
-
-
 
 
 	@Keyword
@@ -762,23 +744,21 @@ public class WarehouseItem {
 	{
 
 		try{
-
 			action.ScrollToViewElement(saveIconImage)
 			action.Click(saveIconImage)
-
 			for(int i=0; i<=2;i++){
-				try{
+			 try{
 					action.Click(imageNextBtn)
 					break;
-				}
-				catch(Exception e){
+			 }
+			 catch(Exception e){
 					println(e.getMessage());
-				}
-			}
-
+			 }
+		     }
 			//action.WaitTime(2)
 			//action.WaitTime(5)
 			//action.WaitVisible(divBrands)
+			action.Click(imageNextBtn)
 		}
 		catch(Exception e){
 			println("FillImageSection method failed due to :" + e)

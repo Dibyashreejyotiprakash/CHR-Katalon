@@ -17,9 +17,11 @@ CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameposw, Glo
 
 //Enter credential
 CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.PoswTestUserName, GlobalVariable.PoswTestPassword)
+
 CustomKeywords.'com.poswm.WarehouseDashBoardPage.ClickOnNewItem'()
 
 String ItemName = CustomKeywords.'com.poswm.WarehouseItem.FillItemInformationSection'()
+
 CustomKeywords.'com.poswm.WarehouseItem.FillImageSection'()
 CustomKeywords.'com.poswm.WarehouseItem.FillBrandSection'()
 CustomKeywords.'com.poswm.WarehouseItem.FillTransactionsSection'()
