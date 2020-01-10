@@ -38,6 +38,7 @@ public class ConfirmationPage {
 
 		try {
 			action.WaitVisible(orderid)
+			WebUI.delay(5)
 			String confirmationnumber = action.GetText(orderid)
 			println ("*********"+confirmationnumber+"***********************")
 			return confirmationnumber
@@ -49,10 +50,12 @@ public class ConfirmationPage {
 
 
 	@Keyword
-	public void GetConfNumAndValidateOrderOnMyDownloads() {
+	public String GetConfNumAndValidateOrderOnMyDownloads() {
 		try {
 			action.WaitVisible(confirmationnumber)
 			String conf_num = action.GetText(confirmationnumber)
+			println ("*********"+conf_num+"***********************")
+			return conf_num
 		}
 		catch(Exception e) {
 			Assert.fail("GetConfNumAndValidateOrderOnMyDownloads Failed due to "+e)

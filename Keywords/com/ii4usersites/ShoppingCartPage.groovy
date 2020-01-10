@@ -593,17 +593,55 @@ class ShoppingCartPage {
 	}
 
 	@Keyword
+	public void ClickOnbottomCheckOutBtn()
+	{
+
+		try
+		{
+			WebUI.delay(3)
+			action.ScrollToBottomOfPage()
+			action.WaitVisible(btnContinueToCheckout)
+			action.WaitUntilElementClickable(btnContinueToCheckout)
+			action.Click(btnContinueToCheckout)
+			action.WaitForPageToLoad()
+		}
+		catch (Exception e)
+		{
+			println("Click On Check Out Btn failed due ");
+			throw e;
+		}
+
+	}
+
+	@Keyword
 	public void CheckoutDDitem()
 	{
 		try
 		{
+			WebUI.delay(5)
+			action.ScrollToBottomOfPage()
 			action.WaitVisible(btnContinueToCheckout)
+			action.WaitUntilElementClickable(btnContinueToCheckout)
 			action.Click(btnContinueToCheckout)
 		}
 		catch(Exception e)
 		{
 			Assert.fail("CheckoutDDitem failed due to "+e)
 		}
+	}
+
+	@Keyword
+	public void WaitForCheckoutBtn()
+	{
+		try
+		{
+			action.WaitVisible(btnContinueToCheckout)
+		}
+		catch(Exception e)
+		{
+			Assert.fail("WaitForCheckoutBtn failed due to "+e)
+		}
+
 	}
 
 
