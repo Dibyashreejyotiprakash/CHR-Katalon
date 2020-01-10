@@ -23,7 +23,7 @@ CustomKeywords.'com.wswadmin.ii4crosscorpadmin.CrossCorpDDTemplate'()
 
 CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameiiusersite, GlobalVariable.testtyperegression, GlobalVariable.environment)
 
-CustomKeywords.'com.ii4usersites.LoginPage.LoginToDemoCorp'('demoQa@brandmuscle.com', 'go2web')
+CustomKeywords.'com.ii4usersites.LoginPage.LoginToInstantImpactSupp'('testadmin2@brandmuscle.com', 'go2web')
 
 CustomKeywords.'com.ii4usersites.HomePage.ClickOnPosTemplate'()
 

@@ -193,4 +193,31 @@ class ProductionSelectionPage {
 			Assert.fail("AddDDItemToCart failed due to "+e)
 		}
 	}
+	
+	@Keyword
+	public void AddItemToCart()
+	{
+		try
+		{
+			WebUI.delay(3)
+			/*action.WaitVisible(itemTypeDrpDownArrow)
+			action.Click(itemTypeDrpDownArrow)
+			action.WaitVisible(digitaldownloaditemtype)
+			action.Click(digitaldownloaditemtype)
+			WebUI.delay(7)*/
+			action.ScrollToBottomOfPage()
+			WebUI.delay(2)
+			action.Click(nobtn)
+			//action.WaitVisible(imgLoading)
+			WebUI.delay(5)
+			//action.ScrollToViewElement(AddToCart)
+			//WebUI.delay(2)
+			action.Click(AddToCart)
+		}
+		catch(Exception e)
+		{
+			Assert.fail("AddDDItemToCart failed due to "+e)
+		}
+	}
+	
 }

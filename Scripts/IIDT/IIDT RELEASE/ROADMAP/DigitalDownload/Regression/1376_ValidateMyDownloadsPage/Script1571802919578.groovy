@@ -19,5 +19,7 @@ CustomKeywords.'com.ii4usersites.LoginPage.LoginToInstantImpactDist'('testadmin1
 
 CustomKeywords.'com.ii4usersites.HomePage.ClickOnAccount'()
 
+CustomKeywords.'com.ii4usersites.AccountPage.NavigateToMyDownloadsPage'()
+
 CustomKeywords.'com.ii4usersites.MyDownloadsPage.ValidateMyDownloadsField'()
 

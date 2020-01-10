@@ -626,7 +626,7 @@ public class JobDetailsPage {
 		try
 		{
 			String s = action.IsDisplayed(extendedsearch)
-			Assert.assertEquals(s, "False")
+			Assert.assertEquals(s, "false")
 		}
 		catch(Exception e)
 		{

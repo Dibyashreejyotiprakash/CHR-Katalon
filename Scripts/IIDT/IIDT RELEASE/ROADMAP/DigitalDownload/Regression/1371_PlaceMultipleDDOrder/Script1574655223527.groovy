@@ -29,7 +29,9 @@ CustomKeywords.'com.ii4usersites.ItemSearchPage.PreviewTemplate'()
 
 CustomKeywords.'com.ii4usersites.ProductionSelectionPage.AddDDItemToCart'()
 
-CustomKeywords.'com.ii4usersites.ShoppingCartPage.CheckoutDDitem'()
+CustomKeywords.'com.ii4usersites.ShoppingCartPage.WaitForCheckoutBtn'()
+
+CustomKeywords.'com.ii4usersites.HomePage.NavigateToPosTemplate'()
 
 CustomKeywords.'com.ii4usersites.HomePage.ClickOnPosTemplate'()
 
@@ -39,9 +41,9 @@ CustomKeywords.'com.ii4usersites.ItemSearchPage.ClickOnOrderNowButton'()
 
 CustomKeywords.'com.ii4usersites.ProductionSelectionPage.SetQuantity'()
 
-CustomKeywords.'com.ii4usersites.ProductionSelectionPage.AddDDItemToCart'()
+CustomKeywords.'com.ii4usersites.ProductionSelectionPage.AddItemToCart'()
 
-CustomKeywords.'com.ii4usersites.ShoppingCartPage.ClickOnCheckOutBtn'()
+CustomKeywords.'com.ii4usersites.ShoppingCartPage.ClickOnbottomCheckOutBtn'()
 
 CustomKeywords.'com.ii4usersites.CheckOutPage.ClickOnContinueToReview'()
 
