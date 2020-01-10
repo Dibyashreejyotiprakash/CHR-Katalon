@@ -51,7 +51,7 @@ public class AdminItemGating {
 	@Keyword
 	public void SelectAdminAndAdminApprovalCheckBox() {
 		try {
-			
+
 			if(action.IsElementSelected(adminApprovalCheckBox))
 			{
 				println "Admin Approval  Check box already selected"
@@ -59,9 +59,9 @@ public class AdminItemGating {
 			else
 			{
 				action.Click(adminApprovalCheckBox)
-				//WebUI.delay(3)
+				////WebUI.delay(3)
 			}
-			
+
 			if(action.IsElementSelected(approvalCheckBox))
 			{
 				println " Approval CheckBox  already selected"
@@ -69,14 +69,14 @@ public class AdminItemGating {
 			else
 			{
 				action.Click(approvalCheckBox)
-				//WebUI.delay(3)
+				////WebUI.delay(3)
 			}
-			
-			
+
+
 			/*action.Click(adminApprovalCheckBox)
-			WebUI.delay(2)
-			action.Click(approvalCheckBox)
-			WebUI.delay(2)*/
+			 //WebUI.delay(2)
+			 action.Click(approvalCheckBox)
+			 //WebUI.delay(2)*/
 		}
 		catch(Exception e) {
 			Assert.fail("SelectAdminAndAdminApprovalCheckBox method failed due to "+ e)
@@ -87,7 +87,7 @@ public class AdminItemGating {
 	public void ClickOnSaveBtn() {
 		try {
 			action.Click(saveBtn)
-			WebUI.delay(2)
+			//WebUI.delay(2)
 		}
 		catch(Exception e) {
 			Assert.fail("SelectCorporation method failed due to "+ e)
@@ -102,14 +102,14 @@ public class AdminItemGating {
 		try
 		{
 			action.Click(AddEditBtn)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(AddEditUserGroupsDropDown)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			//action.Click(availableUsername)
 			//action.TypeClear(AddEditUserGroupsDropDown, "demoQA@brandmuscle.com")
-			//WebUI.delay(3)
+			////WebUI.delay(3)
 			action.Click(availableUsername)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 
 		}
 		catch(Exception e)
@@ -126,7 +126,7 @@ public class AdminItemGating {
 
 			String actualHeader = "Brandmuscle - Administrative Item Gating User Groups"
 			String expectedHeader = action.GetText(administrativeHeader)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			if(expectedHeader.equals(actualHeader))
 			{
 				println("************" + expectedHeader + "page varified successfully"+ "***************")
@@ -147,11 +147,11 @@ public class AdminItemGating {
 		try
 		{
 			action.Click(corporationDropDown)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.TypeClear(corporationDropDown, "339")
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(DemoDistributor_339)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 
 		}
 		catch(Exception e)
@@ -166,11 +166,11 @@ public class AdminItemGating {
 		try
 		{
 			action.Click(distributorDropDown)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.TypeClear(distributorDropDown, "Demo Dist. Market #1 (QA)")
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(DemoDistMarket_1)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 
 		}
 		catch(Exception e)

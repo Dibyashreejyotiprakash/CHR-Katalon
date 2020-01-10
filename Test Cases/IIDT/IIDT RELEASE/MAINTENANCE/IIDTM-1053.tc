@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>222_AddingNEWTypeoptionforPOSWarehouse</name>
+   <name>IIDTM-1053</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>f1f2a194-2095-4c93-a1a3-3072be098767</testCaseGuid>
+   <testCaseGuid>ac8a2590-69f7-478a-be12-18eea201d359</testCaseGuid>
 </TestCaseEntity>

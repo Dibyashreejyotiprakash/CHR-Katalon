@@ -78,7 +78,7 @@ public class ii4crosscorpadmin
 			action.WaitVisible(searchcorpfield)
 			action.Type(searchcorpfield, "300")
 			action.Click(FromCorpVal)
-			WebUI.delay(2)
+			//WebUI.delay(2)
 			action.Click(ToCorp)
 			action.WaitVisible(searchcorpfield)
 			action.Type(searchcorpfield, "320")
@@ -87,12 +87,12 @@ public class ii4crosscorpadmin
 			action.WaitVisible(corptocorpchkbox)
 			action.Click(corptocorpchkbox)
 			action.Click(choosetemplatebtn)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.WaitVisible(selectallchkbox)
 			action.Click(selectallchkbox)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.Click(firstchkbox)
-			WebUI.delay(4)
+			//WebUI.delay(4)
 
 			if(action.IsDisplayed(saveandexitbtn))
 			{
@@ -122,7 +122,7 @@ public class ii4crosscorpadmin
 			action.WaitVisible(searchcorpfield)
 			action.Type(searchcorpfield, "300")
 			action.Click(FromCorpVal)
-			WebUI.delay(2)
+			//WebUI.delay(2)
 			action.Click(ToCorp)
 			action.WaitVisible(searchcorpfield)
 			action.Type(searchcorpfield, "320")
@@ -207,7 +207,7 @@ public class ii4crosscorpadmin
 			action.WaitVisible(searchcorpfield)
 			action.Type(searchcorpfield, "300")
 			action.Click(FromCorpVal)
-			WebUI.delay(2)
+			//WebUI.delay(2)
 			action.Click(ToCorp)
 			action.WaitVisible(searchcorpfield)
 			action.Type(searchcorpfield, "320")
@@ -271,7 +271,7 @@ public class ii4crosscorpadmin
 			action.WaitVisible(searchcorpfield)
 			action.Type(searchcorpfield, "300")
 			action.Click(FromCorpVal)
-			WebUI.delay(2)
+			//WebUI.delay(2)
 			action.Click(ToCorp)
 			action.WaitVisible(searchcorpfield)
 			action.Type(searchcorpfield, "320")
@@ -303,7 +303,7 @@ public class ii4crosscorpadmin
 			action.WaitVisible(searchcorpfield)
 			action.Type(searchcorpfield, "300")
 			action.Click(FromCorpVal)
-			WebUI.delay(2)
+			//WebUI.delay(2)
 			action.Click(ToCorp)
 			action.WaitVisible(searchcorpfield)
 			action.Type(searchcorpfield, "320")
@@ -354,7 +354,7 @@ public class ii4crosscorpadmin
 			action.WaitVisible(searchcorpfield)
 			action.Type(searchcorpfield, "300")
 			action.Click(FromCorpVal)
-			WebUI.delay(2)
+			//WebUI.delay(2)
 			action.Click(ToCorp)
 			action.WaitVisible(searchcorpfield)
 			action.Type(searchcorpfield, "339")
@@ -433,7 +433,7 @@ public class ii4crosscorpadmin
 			action.WaitVisible(searchcorpfield)
 			action.Type(searchcorpfield, "300")
 			action.Click(FromCorpVal)
-			WebUI.delay(2)
+			//WebUI.delay(2)
 			action.Click(ToCorp)
 			action.WaitVisible(searchcorpfield)
 			action.Type(searchcorpfield, "320")
@@ -493,7 +493,7 @@ public class ii4crosscorpadmin
 			action.WaitVisible(searchcorpfield)
 			action.Type(searchcorpfield, "300")
 			action.Click(FromCorpVal)
-			WebUI.delay(2)
+			//WebUI.delay(2)
 			action.Click(ToCorp)
 			action.WaitVisible(searchcorpfield)
 			action.Type(searchcorpfield, "339")
@@ -655,7 +655,7 @@ public class ii4crosscorpadmin
 		}
 
 	}
-	
+
 	@Keyword
 	public void ValidateSearchInAssociationPage()
 	{
@@ -665,15 +665,15 @@ public class ii4crosscorpadmin
 			action.WaitVisible(associationpagesearchbox)
 			action.Type(associationpagesearchbox, "300")
 			action.IsDisplayed(association)
-			
+
 		}
 		catch(Exception e)
 		{
 			Assert.fail("ValidateSearchInAssociationPage Failed Due to "+e)
 		}
-		
+
 	}
-	
+
 	@Keyword
 	public void ValidateStaticouponTemplateInCrossCorp()
 	{
@@ -685,7 +685,7 @@ public class ii4crosscorpadmin
 			action.WaitVisible(searchcorpfield)
 			action.Type(searchcorpfield, "300")
 			action.Click(FromCorpVal)
-			WebUI.delay(2)
+			//WebUI.delay(2)
 			action.Click(ToCorp)
 			action.WaitVisible(searchcorpfield)
 			action.Type(searchcorpfield, "320")

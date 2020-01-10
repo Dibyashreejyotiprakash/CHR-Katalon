@@ -100,21 +100,21 @@ public class CategoriesMaintenancePage {
 
 		action.WaitVisible(externalitemtypeddn)
 		action.Type(externalitemtypeddn, newcategoryname)
-		WebUI.delay(3)
+		//WebUI.delay(3)
 	}
 
 	@Keyword
 	public void CreateNewExternalItemCorpSetting() {
 		action.Click(externalitemtypeddn)
 		action.Click(externalitemtypeddn)
-		WebUI.delay(4)
+		//WebUI.delay(4)
 		action.Click(exteritemtypeddnvalue)
-		WebUI.delay(4)
+		//WebUI.delay(4)
 		action.Type(desriptionoveride, "test")
 		action.Click(distributorddn)
-		WebUI.delay(4)
+		//WebUI.delay(4)
 		action.Click(distribuotrddnvalue)
-		WebUI.delay(4)
+		//WebUI.delay(4)
 		action.Click(insertbtn)
 	}
 
@@ -142,7 +142,7 @@ public class CategoriesMaintenancePage {
 	public void VerifyAddNewCorpSettingBtn() {
 		action.WaitVisible(corporationddn)
 		SelectCorporation()
-		WebUI.delay(5)
+		//WebUI.delay(5)
 		boolean statusofvisibilityofaddnewcorpsettingbtn = action.IsElementEnabled(addnewcorporatesetting)
 		Assert.assertTrue(statusofvisibilityofaddnewcorpsettingbtn)
 	}
@@ -151,16 +151,16 @@ public class CategoriesMaintenancePage {
 	public void SelectCorporation() {
 		action.Click(corporationddn)
 		action.Type(corporationtxtbx, "300")
-		WebUI.delay(5)
+		//WebUI.delay(5)
 		action.Click(corporationddnvalue)
-		WebUI.delay(5)
+		//WebUI.delay(5)
 	}
 
 	@Keyword
 	public void VerifyExternalCorpSettingPopup() {
 		action.WaitVisible(addnewcorporatesetting)
 		action.Click(addnewcorporatesetting)
-		WebUI.delay(3)
+		//WebUI.delay(3)
 
 		boolean statusofexternalitemtypeddn = action.IsElementDisplayed(externalitemtypeddn)
 		Assert.assertTrue(statusofexternalitemtypeddn)
@@ -173,7 +173,7 @@ public class CategoriesMaintenancePage {
 	public void VerifyCancelBtnForPopup() {
 		action.WaitVisible(addnewcorporatesetting)
 		action.Click(addnewcorporatesetting)
-		WebUI.delay(3)
+		//WebUI.delay(3)
 
 		action.WaitVisible(cancelbtn)
 		boolean statusofcancelbtn = action.IsElementEnabled(cancelbtn)
@@ -188,7 +188,7 @@ public class CategoriesMaintenancePage {
 	public void VerifyInsertbtnForPopup() {
 		action.WaitVisible(addnewcorporatesetting)
 		action.Click(addnewcorporatesetting)
-		WebUI.delay(3)
+		//WebUI.delay(3)
 
 		action.WaitVisible(insertbtn)
 		boolean statusofinsertbtn = action.IsElementEnabled(insertbtn)
@@ -198,7 +198,7 @@ public class CategoriesMaintenancePage {
 	@Keyword
 	public void AddNewCorpoateSetting() {
 		action.Click(addnewcorporatesetting)
-		WebUI.delay(5)
+		//WebUI.delay(5)
 		action.Click(externalitemtypeddn)
 		action.Click(exteritemtypeddnvalue)
 		action.Type(desriptionoveride, "test")
@@ -381,7 +381,7 @@ public class CategoriesMaintenancePage {
 		try{
 			action.Type(corporationtxtbx, "339 - Demo Distributor (QA)")
 			action.Click(categorymaintenaceheader)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(firstdelete)
 			action.AcceptAlert()
 		}

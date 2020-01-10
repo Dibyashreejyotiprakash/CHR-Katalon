@@ -57,45 +57,45 @@ public class FulfillmentSizeToCorpPage {
 		try{
 			action.Type(corptextbox, "300 - Instant Impact 4.0 Demo Corp (Dist.)")
 			action.Click(header)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			String firstavailablesize_name = action.GetText(firstavailablesizename)
 			action.Click(firstsizebar)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.Click(addbtn)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.Type(assignedsizetextbox, firstavailablesize_name)
 			action.Click(availablesizesearchbtn)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			/*String newassignedfirstsize = action.GetText(firstasignedsizename)
-			Assert.assertEquals(firstavailablesize_name, newassignedfirstsize)*/
+			 Assert.assertEquals(firstavailablesize_name, newassignedfirstsize)*/
 		}
 		catch(Exception e) {
 			Assert.fail("Add Size To Corp failed due to "+ e)
 		}
 	}
-	
-	
+
+
 	@Keyword
 	public void RemoveSize() {
 		try{
 			action.Type(corptextbox, "300 - Instant Impact 4.0 Demo Corp (Dist.)")
 			action.Click(header)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			String firstavailablesize_name = action.GetText(firstavailablesizename)
 			action.Click(firstsizebar)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.Click(addbtn)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.Type(assignedsizetextbox, firstavailablesize_name)
 			action.Click(availablesizesearchbtn)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			/*String newassignedfirstsize = action.GetText(firstasignedsizename)
-			Assert.assertEquals(firstavailablesize_name, newassignedfirstsize)*/
-			
-			
+			 Assert.assertEquals(firstavailablesize_name, newassignedfirstsize)*/
+
+
 			action.Click(firstasignedsizename)
 			action.Click(removebtn)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 		}
 		catch(Exception e) {
 			Assert.fail("Remove Color failed due to "+ e)

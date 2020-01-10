@@ -16,11 +16,7 @@ import internal.GlobalVariable as GlobalVariable
 
 CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameposw, GlobalVariable.testtyperegression, GlobalVariable.environment)
 
-WebUI.waitForPageLoad(300)
-
-CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.posUN59, GlobalVariable.posPass59)
-
-CustomKeywords.'com.poswm.LoginPage.SelectEmpireMerchantBU'()
+CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.posusername, GlobalVariable.pospassword)
 
 CustomKeywords.'com.poswm.Homepage.HoverOnWareHouseMenu'()
 

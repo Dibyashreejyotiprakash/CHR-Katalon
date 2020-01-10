@@ -23,21 +23,17 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable
 
 public class FulfillmentCorpPage {
-	
+
 	WebDriver driver = DriverFactory.getWebDriver();
 	Interaction action = new Interaction();
 
 	@Keyword
-	public void VerifyFulfillmentCorpPage()
-	{
+	public void VerifyFulfillmentCorpPage() {
 		try{
 			action.VerifyCurrentPage("FulfillmentCorp.aspx")
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("Verify FulfillmentCorp Page failed due to "+ e)
 		}
 	}
-	
-	
 }

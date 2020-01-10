@@ -58,15 +58,15 @@ public class QuoteRequestPage {
 	public void CreateNewQuote() {
 		try{
 			action.Click(corpddn)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.TypeAndClear(corptextbox, "Instant Impact 4.0 Demo Corp (Dist.)")
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(corptddnvalue)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(accontddn)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(accountddnvalue)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(lockcorpbtn)
 		}
 		catch(Exception e) {

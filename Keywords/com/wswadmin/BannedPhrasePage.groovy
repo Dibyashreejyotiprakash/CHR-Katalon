@@ -77,9 +77,9 @@ public class BannedPhrasePage {
 				if(sttausofpopup == true) {
 					String bannedword = action.GenerateRandomAplphabaticString(8)
 					action.Type(popupdesc, bannedword)
-					WebUI.delay(5)
+					//WebUI.delay(5)
 					action.Click(popupaddbtn)
-					WebUI.delay(10)
+					//WebUI.delay(10)
 					boolean statusofmsg = action.IsElementDisplayed(successfulmsg)
 					Assert.assertTrue(statusofmsg)
 					List<WebElement> allbannedword = action.GetElements(allbannedwordsingrid)
@@ -103,8 +103,8 @@ public class BannedPhrasePage {
 			println ("Add new word failed due to "+ e)
 		}
 	}
-	
-	
+
+
 	@Keyword
 	public void DeleteBannedPhrases() {
 		try {
@@ -116,9 +116,9 @@ public class BannedPhrasePage {
 				if(sttausofpopup == true) {
 					String bannedword = action.GenerateRandomAplphabaticString(8)
 					action.Type(popupdesc, bannedword)
-					WebUI.delay(5)
+					//WebUI.delay(5)
 					action.Click(popupaddbtn)
-					WebUI.delay(10)
+					//WebUI.delay(10)
 					boolean statusofmsg = action.IsElementDisplayed(successfulmsg)
 					Assert.assertTrue(statusofmsg)
 					List<WebElement> allbannedword = action.GetElements(allbannedwordsingrid)
@@ -137,10 +137,10 @@ public class BannedPhrasePage {
 			else {
 				Assert.fail()
 			}
-			
+
 			action.Click(firstdeletebtn)
 			action.AcceptAlert()
-			
+
 			boolean statusofdeletemsg = action.IsElementDisplayed(deletemsg)
 			Assert.assertTrue(statusofdeletemsg)
 		}

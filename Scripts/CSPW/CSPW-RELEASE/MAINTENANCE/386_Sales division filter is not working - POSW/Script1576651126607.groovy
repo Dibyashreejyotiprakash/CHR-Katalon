@@ -17,9 +17,9 @@ CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameposw, Glo
 
 WebUI.waitForPageLoad(300)
 
-CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.PoswTestUserName, GlobalVariable.PoswTestPassword)
+CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.posusername, GlobalVariable.pospassword)
 
-CustomKeywords.'com.poswm.LoginPage.SelectEmpireMerchantBU'()
+
 /*
 CustomKeywords.'com.poswm.Homepage.ClickOnNewItem'()
 

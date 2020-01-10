@@ -79,7 +79,7 @@ public class InvoiceLineItems
 			println ("designTrackerLast10days --------------"+ designTrackerLast10days)
 			Assert.assertTrue(designTrackerLast10days)
 			println ("*************** Design Tracker- Last 10 days btn Verified successfully ***********")
-			WebUI.delay(3)
+			//WebUI.delay(3)
 		}
 		catch(Exception e)
 		{
@@ -97,7 +97,7 @@ public class InvoiceLineItems
 			println ("instantImpactLast10days --------------"+ instantImpactLast10days)
 			Assert.assertTrue(instantImpactLast10days)
 			println ("*************** Instant Impact  last 10 days btn Verified successfully ***********")
-			WebUI.delay(3)
+			//WebUI.delay(3)
 		}
 		catch(Exception e)
 		{
@@ -114,7 +114,7 @@ public class InvoiceLineItems
 			boolean consolidatorlast30days = action.IsElementEnabled(consolidatorlast30days)
 			Assert.assertTrue(consolidatorlast30days)
 			println ("*************** Consolidator- Last 30 days   btn Verified successfully ***********")
-			WebUI.delay(3)
+			//WebUI.delay(3)
 		}
 		catch(Exception e)
 		{
@@ -132,7 +132,7 @@ public class InvoiceLineItems
 			boolean dtJobNumber = action.IsElementEnabled(dtJobNumber)
 			Assert.assertTrue(dtJobNumber)
 			println ("*************** DT job number  btn Verified successfully ***********")
-			WebUI.delay(3)
+			//WebUI.delay(3)
 		}
 		catch(Exception e)
 		{
@@ -150,7 +150,7 @@ public class InvoiceLineItems
 			boolean statusinvoiceNumber = action.IsElementEnabled(invoiceNumber)
 			Assert.assertTrue(statusinvoiceNumber)
 			println ("*************** Invoice Number btn Verified successfully ***********")
-			WebUI.delay(3)
+			//WebUI.delay(3)
 		}
 		catch(Exception e)
 		{
@@ -167,7 +167,7 @@ public class InvoiceLineItems
 			boolean statussalesOrderSoNumber = action.IsElementEnabled(salesOrderSoNumber)
 			Assert.assertTrue(statussalesOrderSoNumber)
 			println ("*************** sales Order So Number  btn Verified successfully ***********")
-			WebUI.delay(3)
+			//WebUI.delay(3)
 		}
 		catch(Exception e)
 		{
@@ -194,7 +194,7 @@ public class InvoiceLineItems
 			boolean statusfilterExplanation = action.IsElementEnabled(filterExplanation)
 			Assert.assertTrue(statusfilterExplanation)
 			println ("*************** Filter Explanation btn Verified successfully ***********")
-			WebUI.delay(3)
+			//WebUI.delay(3)
 		}
 		catch(Exception e)
 		{
@@ -210,7 +210,7 @@ public class InvoiceLineItems
 			boolean statusfilterExplanation = action.IsElementEnabled(filterExplanation)
 			Assert.assertTrue(statusfilterExplanation)
 			println ("*************** Filter Explanation btn Verified successfully ***********")
-			WebUI.delay(3)
+			//WebUI.delay(3)
 		}
 		catch(Exception e)
 		{
@@ -226,7 +226,7 @@ public class InvoiceLineItems
 			boolean statusExportExplanation = action.IsElementEnabled(exportExplanation)
 			Assert.assertTrue(statusExportExplanation)
 			println ("*************** Export Explanation btn Verified successfully ***********")
-			WebUI.delay(3)
+			//WebUI.delay(3)
 		}
 		catch(Exception e)
 		{
@@ -243,7 +243,7 @@ public class InvoiceLineItems
 			boolean statusapplyBtn = action.IsElementEnabled(applyBtn)
 			Assert.assertTrue(statusapplyBtn)
 			println ("***************  Apply btn Verified successfully ***********")
-			WebUI.delay(3)
+			//WebUI.delay(3)
 		}
 		catch(Exception e)
 		{

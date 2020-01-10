@@ -42,8 +42,8 @@ public class WarehouseSpendingLimits {
 
 
 
-	By StateComplianceLebel2019 = By.xpath("//*[text()='2019 State Compliance']")
-	By complianceLevelEditBtn = By.xpath("(//*[text()='Edit'])[2]")
+	By StateComplianceLebel2020 = By.xpath("//*[text()='2020 State Compliance']")
+	By complianceLevelEditBtn = By.xpath("//*[@id='ctl00_MainContent_rgBudgetLevel_ctl00']/tbody/tr[1]/td[1]/a")
 	By ITEMStextBox = By.xpath("//*[@id='ctl00_MainContent_rgBudgetLevel_ctl00_ctl05_rcbWarehouseItems']/div/input")
 	By UPDATEbtn = By.xpath("//*[@id='ctl00_MainContent_rgBudgetLevel_ctl00_ctl05_btnUpdateBL']")
 	By FirstItemName = By.xpath("//*[@class='racSlide']/div/ul/li[1]")
@@ -61,59 +61,63 @@ public class WarehouseSpendingLimits {
 
 
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
+
+
+
+
+
 	@Keyword
-	public boolean VerifyShowLessLink()
-	{
+	public boolean VerifyShowLessLink() {
 		boolean Status = null
 		//boolean IsShowMoreLnkVerified = false
 		try
 		{
-			
-			  Status= action.IsElementDisplayed(showLessLink)
-			 if (Status ==true)
-			 {
-				 action.ScrollToViewElement(FirstShowLessLink)
-				 action.Click(FirstShowLessLink)
-				 WebUI.delay(10)
-				 println("************ Show Less link is present and verified*************"  + Status)
-				 
-				 return Status = true
-			 }
-			 else
-			 {
-				 println("Show Less link is not present")
-			 }
-						 
+			try{
+				
+				Status= action.IsElementDisplayed(showLessLink)
+				if (Status ==true)
+				{
+					action.ScrollToViewElement(FirstShowLessLink)
+					action.Click(FirstShowLessLink)
+					WebUI.delay(10)
+					println("************ Show Less link is present and verified*************"  + Status)
+	
+					return Status = true
+				}
+				else
+				{
+					println("Show Less link is not present")
+				}
+			}
+			catch(Exception e){
+				throw new Exception("Show Less Link is not present")
+			}
+
 		}
 		catch(Exception e)
 		{
-			Assert.fail("VerifyShowLessLink method failed due to : "+ e)
+			println("VerifyShowLessLink method failed due to : "+ e)
 		}
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
+
+
+
 	@Keyword
 	public boolean VerifyShowMoreLink()
 	{
@@ -121,34 +125,39 @@ public class WarehouseSpendingLimits {
 		//boolean IsShowMoreLnkVerified = false
 		try
 		{
-			
-			  Status= action.IsElementDisplayed(showMoreLink)
-			 if (Status ==true)
-			 {
-				 action.ScrollToViewElement(FirstshowMoreLink)
-				 action.Click(FirstshowMoreLink)
-				 WebUI.delay(10)
-				 println("************ Show Less link is present and verified*************"  + Status)
-				 return Status = true
-			 }
-			 else
-			 {
-				 println("Show More link is not present")
-			 }			 
-			 			
+
+			try{
+				Status= action.IsElementDisplayed(showMoreLink)
+				if (Status ==true)
+				{
+					action.ScrollToViewElement(FirstshowMoreLink)
+					action.Click(FirstshowMoreLink)
+					WebUI.delay(10)
+					println("************ Show Less link is present and verified*************"  + Status)
+					return Status = true
+				}
+				else
+				{
+					println("Show More link is not present")
+				}
+			}
+			catch(Exception e){
+				throw new Exception("Less Items are present")
+			}
+
 		}
 		catch(Exception e)
 		{
-			Assert.fail("VerifyShowMoreLink method failed due to : "+ e)
+			println ("VerifyShowMoreLink method failed due to : "+ e)
 		}
 	}
-	
-	
-	
+
+
+
 	@Keyword
-	public void ClickOn2019Compliance() {
+	public void ClickOn2020Compliance() {
 		try {
-			action.Click(StateComplianceLebel2019)
+			action.Click(StateComplianceLebel2020)
 			WebUI.delay(5)
 		}
 		catch(Exception e) {

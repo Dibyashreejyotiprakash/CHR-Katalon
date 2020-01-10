@@ -4,7 +4,6 @@ import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
-import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 import com.utilities.Interaction
 import org.openqa.selenium.By
 import org.openqa.selenium.WebDriver
@@ -20,7 +19,6 @@ import com.kms.katalon.core.testdata.TestData
 import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
-import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable
 
 public class TemplateFulfillmentPage {
@@ -69,7 +67,7 @@ public class TemplateFulfillmentPage {
 			try{
 				//Selected Demo Template-Do Not Touch
 				action.Type(templateidsearchtextbox, "130722")
-				WebUI.delay(10)
+				//WebUI.delay(10)
 				action.Click(searchbtn)
 				action.WaitVisible(templatefirstentry)
 				boolean statusoffirstentry = action.IsElementDisplayed(templatefirstentry)
@@ -103,7 +101,7 @@ public class TemplateFulfillmentPage {
 				boolean statusoffirstentry = action.IsElementDisplayed(templatefirstentry)
 				if(statusoffirstentry == true) {
 					action.Type(templateidsearchtextbox, "130722")
-					WebUI.delay(10)
+					//WebUI.delay(10)
 					action.Click(searchbtn)
 					action.Click(templatefirstselectdatalink)
 					action.WaitForPageToLoad()
