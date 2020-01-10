@@ -93,12 +93,13 @@ class ItemSearchPage {
 	By btnTemplate = By.xpath("//a[@href='/POS/ItemDetails.aspx?tid=130725]")
 	By inputSortBy = By.id("ctl00_Body_rcbSort_Input")
 	By chkbxVariabletype = By.id("ctl00_Body_rptFilterGroups_ctrl4_cblFilterList_1")
-
+	//By template = By.xpath("(//*[@href='/POS/ItemDetails.aspx?tid=130722'])[1]")
+	By variabletemplate = By.xpath("(//*[@href='/POS/ItemDetails.aspx?tid=130719'])[1]")
 	By template = By.xpath("(//*[@href='/POS/ItemDetails.aspx?tid=114876'])[1]")
-	By variabletemplate = By.xpath("(//*[@href='/POS/ItemDetails.aspx?tid=130719'])[2]")
+	//By variabletemplate = By.xpath("(//*[@href='/POS/ItemDetails.aspx?tid=130719'])[2]")
 	By ordernowbtn = By.xpath("//*[@id='Body_btnOrderNow']")
 	By createdesignbtn = By.xpath("//*[@id='Body_btnProductDesign']")
-	By splseemorebtn = By.xpath("//a[@id='ctl00_Body_rptFilterGroups_ctrl4_lbtnFilterListExpand']")
+	By splseemorebtn = By.xpath("//a[@id = 'ctl00_Body_rptFilterGroups_ctrl5_lbtnFilterListExpand']")
 	By digitaldownloadcheckbox = By.xpath("(//label[contains(text(),'Digital Download')])[1]//preceding-sibling::input")
 	By savebtn = By.xpath("//input[@id='ctl00_Body_RadWindow1_C_btnSave']")
 	By ddtemplate = By.xpath("//span[contains(text(),'108477')]//preceding-sibling::a")
@@ -112,7 +113,6 @@ class ItemSearchPage {
 	By savedesignnobtn = By.xpath("//div[@class = 'confirmInnerBox']//div[2]/a[2]")
 	By templatetype = By.xpath("//span[contains(text(),'Template Type')]")
 	By templateimage = By.xpath("//img[@id='ctl00_Body_rlvSearchResults_ctrl1_imgThumbnail']")
-	By itemCountTxt = By.xpath("//span[@id='Body_lblItemCount']")
 
 
 
@@ -145,7 +145,7 @@ class ItemSearchPage {
 		{
 			boolean IsTemplateVerified = false
 			action.Click(adminApprovalCheckBox)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			String TemplateID= action.GetText(templateID)
 			if(action.IsElementDisplayed(templateID))
 			{
@@ -172,7 +172,7 @@ class ItemSearchPage {
 		{
 			boolean IsTemplateVerified = false
 			action.Click(ApprovalCheckBox)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			String TemplateID= action.GetText(templateID)
 			if(action.IsElementDisplayed(templateID))
 			{
@@ -197,7 +197,7 @@ class ItemSearchPage {
 			action.Click(searchTextField)
 			action.Type(searchTextField, "130718")
 			action.Click(searchBtn)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 		}
 		catch(Exception e)
 		{
@@ -244,9 +244,7 @@ class ItemSearchPage {
 	public void ClickOnVariableTemplate(){
 		try
 		{
-
-			//action.WaitVisible(variabletemplate)
-			action.ScrollToViewElement(itemCountTxt)
+			action.WaitVisible(variabletemplate)
 			action.Click(variabletemplate)
 			action.WaitForPageToLoad()
 		}
@@ -262,7 +260,7 @@ class ItemSearchPage {
 		try{
 			action.Type(txbSearch, testtemplateid)
 			action.Click(btnSearch)
-			WebUI.delay(10)
+			//WebUI.delay(10)
 			action.ScrollToBottomOfPage()
 			action.Click(testtemplate)
 			action.WaitForPageToLoad()

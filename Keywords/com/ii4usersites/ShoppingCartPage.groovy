@@ -579,7 +579,7 @@ class ShoppingCartPage {
 
 		try
 		{
-			WebUI.delay(3)
+			action.ScrollToBottomOfPage()
 			action.WaitUntilElementClickable(btnContinueToCheckout)
 			action.Click(btnContinueToCheckout)
 			action.WaitForPageToLoad()
