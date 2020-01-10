@@ -41,7 +41,8 @@ public class WarehouseItem {
 	By txbName = By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_radShortDescription']")
 	By ApproverDropDown = By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_radApprover_Input']")
 	By approverListDivision = By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_radApprover_DropDown']")
-	By approverFirst = By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_radApprover_DropDown']/div/ul/li[3]")
+	//By approverFirst = By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_radApprover_DropDown']/div/ul/li[3]")
+	By approverFirst = By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_radApprover_DropDown']/div/ul/li[2]/label/input")
 	By productType = By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_radProductType_Input']")
 	By divProductType = By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_radProductType_DropDown']")
 	By firstProductType = By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_radProductType_DropDown']/div/ul/li[2]")
@@ -104,25 +105,10 @@ public class WarehouseItem {
 	By itemInfoSaveBtnAfterSave = By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_btnUpdate']")
 	By salesDivDropDownArrowBtn = By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_radSalesDivision_Arrow']")
 	By iteminfogrid = By.xpath("//*[text()='Step 1: Item Information']")
-
-
 	By bigAppleLebelName = By.xpath("//*[@id='ctl00_MainContent_radWizardBar_i0_i0_ucItemCreate_radSalesDivision_DropDown']/div/ul/li[2]/label")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	By deleteItemBtn = By.xpath("//*[@id='MainContent_btnDeleteItem']")
+	By popupDeleteBtn = By.xpath("//*[@id='ctl00_MainContent_rwDeleteItemSettings_C_btnDeleteItemAndResetQuantities_input']")
+	By step1ConfirmationMsg = By.xpath("//*[@id='ctl00_MainContent_radNotifyMessage_simpleContentDiv']")
 
 
 	@Keyword
@@ -137,6 +123,22 @@ public class WarehouseItem {
 		}
 	}
 
+	@Keyword
+	public void DeleteItem()
+	{
+		try{
+			action.Click(deleteItemBtn)
+			action.AcceptAlert()
+			action.Click(popupDeleteBtn)
+			action.WaitForPageToLoad()
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Verify ware house item page failed due to "+ e)
+		}
+	}
+	
+	
 	@Keyword
 	public void VerifyItemInformationFields()
 	{
@@ -233,10 +235,82 @@ public class WarehouseItem {
 	}
 
 
+	@Keyword
+	public String FillItemInformationSectionWithoutApprover()
+	{
+		String itemname = null
+		try
+		{
+			//String itemname = null
 
+			if(action.IsDisplayed(txbName))
+			{
+				itemname = EnterUniqueItemName()
+			}
+			else{
 
+			}
 
+			if(action.IsDisplayed(productType))
+			{
+				SelectProductType()
+			}
+			if(action.IsDisplayed(supplierDropDown))
+			{
+				SelectSuplier()
+			}
+			if(action.IsDisplayed(PremiseTypeDropDown))
+			{
+				SelectPremiseType()
+			}
+			if(action.IsDisplayed(salesDivisionDropDown))
+			{
+				SelectSalesDiv("SingleSelect")
+			}
+			if(action.IsDisplayed(seasonalType))
+			{
+				SelectSeasonalType()
+			}
 
+			if(action.IsDisplayed(txbDescription))
+			{
+				EnterDecription()
+			}
+			if(action.IsDisplayed(txbNotes))
+			{
+				EnterNotes()
+			}
+			/*if(action.IsDisplayed(txbUnitCost))
+			 {
+			 EnterUnitCost()
+			 }*/
+			if(action.IsDisplayed(txbUnitOfMeasure))
+			{
+				EnterUnitOfMeasure()
+			}
+			action.ScrollToViewElement(saveIcon)
+			if(action.IsDisplayed(saveIcon))
+			{
+				action.Click(saveIcon)
+				action.WaitTillNotVisible(step1ConfirmationMsg, 0)
+			}
+			action.ScrollToViewElement(nextButton)
+			if(action.IsDisplayed(nextButton))
+			{
+				action.Click(nextButton)
+			}
+			else{
+				throw new Exception("Fill Item Information Section   is falied")
+			}
+
+			return itemname
+		}
+		catch(Exception e)
+		{
+			println("FillItemInformationSection method failed due to :"+ e)
+		}
+
+	}
 
 
 	@Keyword
@@ -670,20 +744,17 @@ public class WarehouseItem {
 	{
 
 		try{
-
-			//action.ScrollToViewElement(saveIconImage)
+			action.ScrollToViewElement(saveIconImage)
 			action.Click(saveIconImage)
-
-			/*for(int i=0; i<=2;i++){
+			for(int i=0; i<=2;i++){
 			 try{
-			 action.Click(imageNextBtn)
-			 break;
+					action.Click(imageNextBtn)
+					break;
 			 }
 			 catch(Exception e){
-			 println(e.getMessage());
+					println(e.getMessage());
 			 }
-			 }*/
-
+		     }
 			//action.WaitTime(2)
 			//action.WaitTime(5)
 			//action.WaitVisible(divBrands)

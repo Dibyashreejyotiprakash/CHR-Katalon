@@ -95,12 +95,11 @@ public class WarehouseItemInventory {
 	By FirstShipOption = By.xpath("(//*[@id='ctl00_MainContent_dockShippingInformation_C_ddlShippingMethod_DropDown'])/div/ul/li[1]")
 	By SubmitOrderBtn = By.xpath("(//*[@id='ctl00_MainContent_btnSubmitOrder'])")
 	By HeaderItemSearchPage = By.xpath("//*[@id='ctl00_MainContent_rmItemCommands']")
-
 	By SelectSalesDivEM = By.xpath("//*[text()='Sales Division']")
 	By FirstSalesDivOptionEM = By.xpath("//*[@id='ctl00_MainContent_rpbSearch_i6_i0_rlbWarehouseSalesDivision_i0']/label/input")
-
-
 	By otherFiltersExpandBtn = By.xpath("//*[text()='Other Filters']")
+	By SecondSalesDivOptionEM = By.xpath("//*[@id='ctl00_MainContent_rpbSearch_i6_i0_rlbWarehouseSalesDivision_i1']/label/input")
+	//By otherFiltersExpandBtn = By.xpath("//*[@id='ctl00_MainContent_rpbSearch']/ul/li[10]/a/span/span[1]")
 	By availableToOrderCheckBox = By.xpath("//*[@id='ctl00_MainContent_rpbSearch_i10_i0_rlbOtherFilters_i0']/label/input")
 	By ApprovalRequiredCheckBox = By.xpath("//*[@id='ctl00_MainContent_rpbSearch_i10_i0_rlbOtherFilters_i1']/label/input")
 	By clearSelectionLink = By.xpath("//*[text()='Clear Selection']")
@@ -123,6 +122,8 @@ public class WarehouseItemInventory {
 	By adsLabelName = By.xpath("//*[@id='ctl00_MainContent_rpbSearch_i6_i0_rlbWarehouseSalesDivision_i0']/label")
 	By salesDivLebelOnEditItemPage = By.xpath("//*[@id='ctl00_MainContent_ucItemOverView_radListItemProperties_ctrl0_lblSalesDivisions']")
 	By imageLoader = By.xpath("//*[@id='MainContent_Image2']")
+	By deleteConfirmationMessage = By.xpath("//*[@id='ctl00_MainContent_radNotifyMessage_simpleContentDiv']")
+	
 
 
 
@@ -134,6 +135,7 @@ public class WarehouseItemInventory {
 			action.Click(firstItem)
 			action.WindowHandle()
 			WebUI.delay(15)
+			action.WindowHandle()
 
 
 		}
@@ -211,12 +213,15 @@ public class WarehouseItemInventory {
 			String itemName = action.GetText(itemName)
 			action.ScrollToBottomOfPage()
 			action.Click(deleteItemLink)
-			WebUI.delay(5)
+			//WebUI.delay(5)
+			
 			action.AcceptAlert()
-			WebUI.delay(3)
+			//WebUI.delay(3)
+			action.WaitVisible(DeleteItemBtn)
 			action.ScrollToTopOgPage()
 			action.Click(DeleteItemBtn)
-			WebUI.delay(3)
+			//WebUI.delay(3)
+			action.WaitVisible(deleteConfirmationMessage)
 
 			return 	itemName
 
@@ -256,7 +261,8 @@ public class WarehouseItemInventory {
 			action.Click(SelectSalesDivEM)
 			//WebUI.delay(2)
 			action.Click(FirstSalesDivOptionEM)
-			WebUI.delay(5)
+			//WebUI.delay(5)
+			action.WaitTillNotVisible(imageLoader, 0)
 
 
 		}
@@ -267,6 +273,29 @@ public class WarehouseItemInventory {
 	}
 
 
+	@Keyword
+	public void SelectBigAppleSalesDivisionForEmpireMerchant()
+	{
+		try
+		{
+			action.Click(SuplierAccordian)
+			//WebUI.delay(2)
+			action.Click(BrandAccordian)
+			//WebUI.delay(2)
+			//action.ScrollToViewelement(SalesDivisionDivision)
+			action.Click(SelectSalesDivEM)
+			//WebUI.delay(2)
+			action.Click(SecondSalesDivOptionEM)
+			//WebUI.delay(5)
+			action.WaitTillNotVisible(imageLoader, 0)
+
+
+		}
+		catch(Exception e)
+		{
+			Assert.fail("SelectSalesDivision failed due to :" + e)
+		}
+	}
 
 	@Keyword
 	public void SelectSalesDivisionForNV()
@@ -665,7 +694,9 @@ public class WarehouseItemInventory {
 			action.WaitVisible(itemsearchtextbox)
 			action.Type(itemsearchtextbox, itemName)
 			action.Click(itemsearchbtn)
-			WebUI.delay(5)
+			//WebUI.delay(5)
+			action.WaitTillNotVisible(imageLoader, 0)
+			
 
 		}
 		catch(Exception e)
@@ -682,12 +713,17 @@ public class WarehouseItemInventory {
 		{
 			action.Click(OrderPlusIcon)
 			//WebUI.delay(3)
+			action.WaitTillNotVisible(imageLoader, 0)
 			action.Click(UpdateQuantityBtn)
+			action.WaitTillNotVisible(imageLoader, 0)
 			//WebUI.delay(3)
 			action.Click(NewOrder)
+			action.WaitTillNotVisible(imageLoader, 0)
 			//WebUI.delay(5)
 			action.Click(ClickHeretogotothisorderlink)
-			WebUI.delay(10)
+			//WebUI.delay(10)
+			action.WaitForPageToLoad()
+			action.WaitVisible(addanItemLink)
 
 
 		}
@@ -745,8 +781,8 @@ public class WarehouseItemInventory {
 		{
 			action.WaitVisible(SubmitOrderBtn)
 			action.Click(SubmitOrderBtn)
-			WebUI.delay(5)
-			action.ScrollToTopOgPage()
+			WebUI.delay(10)
+			//action.ScrollToTopOgPage()
 
 
 		}
@@ -852,7 +888,8 @@ public class WarehouseItemInventory {
 		try
 		{
 			action.Click(deleteCheckBox)
-			WebUI.delay(10)
+			//WebUI.delay(10)
+			action.WaitTillNotVisible(imageLoader, 0)
 
 		}
 		catch(Exception e)

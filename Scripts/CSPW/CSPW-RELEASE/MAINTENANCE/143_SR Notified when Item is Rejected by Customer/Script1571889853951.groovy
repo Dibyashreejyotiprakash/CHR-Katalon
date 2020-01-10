@@ -15,44 +15,28 @@ import internal.GlobalVariable as GlobalVariable
 
 CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameposw, GlobalVariable.testtyperegression, GlobalVariable.environment)
 
-CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.posusername, GlobalVariable.pospassword)
+//Enter credential
+CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.PoswTestUserName, GlobalVariable.PoswTestPassword)
 
-CustomKeywords.'com.poswm.Homepage.HoverOnWareHouseMenu'()
+CustomKeywords.'com.poswm.WarehouseDashBoardPage.ClickOnNewItem'()
 
-CustomKeywords.'com.poswm.Homepage.ClickOnNewItem'()
-
-String itemname = CustomKeywords.'com.poswm.WarehouseItem.FillItemInformationSection'()
-
-//CustomKeywords.'com.poswm.WarehouseItem.ClickOnItemInfoSaveIcon'()
+String ItemName = CustomKeywords.'com.poswm.WarehouseItem.FillItemInformationSection'()
 
 CustomKeywords.'com.poswm.WarehouseItem.FillImageSection'()
-
 CustomKeywords.'com.poswm.WarehouseItem.FillBrandSection'()
-
 CustomKeywords.'com.poswm.WarehouseItem.FillTransactionsSection'()
-
 CustomKeywords.'com.poswm.WarehouseItem.ClickOnCloseEditMode'()
-
-CustomKeywords.'com.poswm.Homepage.HoverOnWareHouseMenu'()
-
-CustomKeywords.'com.poswm.Homepage.ClickOnItemSearch'()
-
-CustomKeywords.'com.poswm.WarehouseItemInventory.SelectSalesDivisionForNV'()
-
-CustomKeywords.'com.poswm.WarehouseItemInventory.SearchSpecificItem'(itemname)
-
+CustomKeywords.'com.poswm.Homepage.ClickOnWarehouseSpendLimits'()
+CustomKeywords.'com.poswm.WarehouseSpendingLimits.ClickOn2020Compliance'()
+CustomKeywords.'com.poswm.WarehouseSpendingLimits.AddItemTotheComplianceLevel'(ItemName)
+CustomKeywords.'com.poswm.WarehouseDashBoardPage.ClickOnItemSearch'()
+CustomKeywords.'com.poswm.WarehouseItemInventory.SelectBigAppleSalesDivisionForEmpireMerchant'()
+CustomKeywords.'com.poswm.WarehouseItemInventory.SearchSpecificItem'(ItemName)
 CustomKeywords.'com.poswm.WarehouseItemInventory.AddToCart'()
-
 CustomKeywords.'com.poswm.WarehouseItemInventory.AddCustomer'()
-
-//CustomKeywords.'com.poswm.WarehouseOrders.AddDesiredShipDate'()
-
 CustomKeywords.'com.poswm.WarehouseItemInventory.SelectShipMethod'()
-
 CustomKeywords.'com.poswm.WarehouseItemInventory.ClickOnSubmitOrderBtn'()
-
 CustomKeywords.'com.poswm.WarehouseOrders.ClickOnRejectLink'()
-
 CustomKeywords.'com.poswm.WarehouseOrders.WriteRejectNote'()
 
 

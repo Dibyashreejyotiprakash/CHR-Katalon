@@ -56,8 +56,10 @@ public class WarehouseSpendingLimits {
 	By FirstshowMoreLink = By.xpath("(//*[text()='Show More'])[1]")
 	By showLessLink = By.xpath("//*[text()='Show Less']")
 	By FirstShowLessLink = By.xpath("//*[text()='Show Less']")
-
-
+	By addCompliancePlusIcon = By.xpath("//*[@id='ctl00_MainContent_rgBudgetLevel_ctl00_ctl02_ctl00_AddNewRecordButton']")
+	By itemName = By.xpath("//*[@id='ctl00_MainContent_rgBudgetLevel_ctl00_ctl07_rcbWarehouseItems']/div[1]/span")
+	By itemCrossIcon = By.xpath("//*[@id='ctl00_MainContent_rgBudgetLevel_ctl00_ctl07_rcbWarehouseItems']/div[1]/span/a")
+	By loadMaskerOnSpendLimitPage = By.xpath("//*[@id='MainContent_Image2']")
 
 
 
@@ -75,36 +77,62 @@ public class WarehouseSpendingLimits {
 
 
 	@Keyword
+	public void RemoveItemFromtheComplianceLevel(String returnitemname) {
+		try {
+			List<WebElement>allitemnames  = action.GetElements(itemName)
+			List<WebElement>allitemcrosslinks  = action.GetElements(itemCrossIcon)
+			for(int i=0;i< allitemnames.size();i++){
+				String itemname = allitemnames.get(i).getText()
+				println ("--------------"+ itemname+"----------------")
+				WebUI.delay(5)
+				if(returnitemname.equals(itemname)){
+					for(int j=0;j< allitemcrosslinks.size();j++){
+						allitemcrosslinks.get(i).click()
+					}
+				}
+			}
+					
+		/*	action.Click(complianceLevelEditBtn)
+			WebUI.delay(5)
+			action.Click(ITEMStextBox)
+			action.PreseLeftArrow(ITEMStextBox)
+			action.PreseLeftArrow(ITEMStextBox)
+			action.PreseBackSpace(ITEMStextBox)
+
+			WebUI.delay(5)
+			action.Click(UPDATEbtn)
+			WebUI.delay(5)*/
+		}
+		catch(Exception e) {
+			Assert.fail("RemoveItemTotheComplianceLevel method failed due to : "+ e)
+		}
+	}
+	@Keyword
 	public boolean VerifyShowLessLink() {
 		boolean Status = null
 		//boolean IsShowMoreLnkVerified = false
 		try
 		{
-			try{
-				
-				Status= action.IsElementDisplayed(showLessLink)
-				if (Status ==true)
-				{
-					action.ScrollToViewElement(FirstShowLessLink)
-					action.Click(FirstShowLessLink)
-					WebUI.delay(10)
-					println("************ Show Less link is present and verified*************"  + Status)
-	
-					return Status = true
-				}
-				else
-				{
-					println("Show Less link is not present")
-				}
+
+			Status= action.IsElementDisplayed(showLessLink)
+			if (Status ==true)
+			{
+				action.ScrollToViewElement(FirstShowLessLink)
+				action.Click(FirstShowLessLink)
+				WebUI.delay(10)
+				println("************ Show Less link is present and verified*************"  + Status)
+
+				return Status = true
 			}
-			catch(Exception e){
-				throw new Exception("Show Less Link is not present")
+			else
+			{
+				println("Show Less link is not present")
 			}
 
 		}
 		catch(Exception e)
 		{
-			println("VerifyShowLessLink method failed due to : "+ e)
+			Assert.fail("VerifyShowLessLink method failed due to : "+ e)
 		}
 	}
 
@@ -126,29 +154,24 @@ public class WarehouseSpendingLimits {
 		try
 		{
 
-			try{
-				Status= action.IsElementDisplayed(showMoreLink)
-				if (Status ==true)
-				{
-					action.ScrollToViewElement(FirstshowMoreLink)
-					action.Click(FirstshowMoreLink)
-					WebUI.delay(10)
-					println("************ Show Less link is present and verified*************"  + Status)
-					return Status = true
-				}
-				else
-				{
-					println("Show More link is not present")
-				}
+			Status= action.IsElementDisplayed(showMoreLink)
+			if (Status ==true)
+			{
+				action.ScrollToViewElement(FirstshowMoreLink)
+				action.Click(FirstshowMoreLink)
+				WebUI.delay(10)
+				println("************ Show Less link is present and verified*************"  + Status)
+				return Status = true
 			}
-			catch(Exception e){
-				throw new Exception("Less Items are present")
+			else
+			{
+				println("Show More link is not present")
 			}
 
 		}
 		catch(Exception e)
 		{
-			println ("VerifyShowMoreLink method failed due to : "+ e)
+			Assert.fail("VerifyShowMoreLink method failed due to : "+ e)
 		}
 	}
 
@@ -158,7 +181,8 @@ public class WarehouseSpendingLimits {
 	public void ClickOn2020Compliance() {
 		try {
 			action.Click(StateComplianceLebel2020)
-			WebUI.delay(5)
+			//WebUI.delay(5)
+			action.WaitVisible(addCompliancePlusIcon)
 		}
 		catch(Exception e) {
 			Assert.fail("ClickOn2019Compliance method failed due to : "+ e)
@@ -170,13 +194,15 @@ public class WarehouseSpendingLimits {
 		try {
 			action.Click(complianceLevelEditBtn)
 			WebUI.delay(5)
+			action.WaitTillNotVisible(loadMaskerOnSpendLimitPage, 0)
 			action.Click(ITEMStextBox)
 			action.Type(ITEMStextBox, ItemName)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.Click(FirstItemName)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.Click(UPDATEbtn)
-			WebUI.delay(5)
+			action.ScrollToTopOgPage()
+			//WebUI.delay(5)
 		}
 		catch(Exception e) {
 			Assert.fail("AddItemTotheComplianceLevel method failed due to : "+ e)

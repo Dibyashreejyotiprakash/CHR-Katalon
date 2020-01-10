@@ -15,29 +15,27 @@ import internal.GlobalVariable as GlobalVariable
 
 CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameposw, GlobalVariable.testtyperegression, GlobalVariable.environment)
 
-CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.posusername, GlobalVariable.pospassword)
-
-CustomKeywords.'com.poswm.Homepage.HoverOnWareHouseMenu'()
-
-CustomKeywords.'com.poswm.Homepage.ClickOnNewItem'()
-
-String itemname = CustomKeywords.'com.poswm.WarehouseItem.FillItemInformationSection'()
-
+//Enter credential
+CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.PoswTestUserName, GlobalVariable.PoswTestPassword)
+//Click on new item 
+CustomKeywords.'com.poswm.WarehouseDashBoardPage.ClickOnNewItem'()
+//vcreate item with unique name
+String ItemName = CustomKeywords.'com.poswm.WarehouseItem.FillItemInformationSection'()
+// fill image section
 CustomKeywords.'com.poswm.WarehouseItem.FillImageSection'()
-
+//Fill brand section
 CustomKeywords.'com.poswm.WarehouseItem.FillBrandSection'()
-
+// Fill transaction section
 CustomKeywords.'com.poswm.WarehouseItem.FillTransactionsSection'()
-
+//  Save item name
 CustomKeywords.'com.poswm.WarehouseItem.ClickOnCloseEditMode'()
 
-CustomKeywords.'com.poswm.Homepage.HoverOnWareHouseMenu'()
-
-CustomKeywords.'com.poswm.Homepage.ClickOnItemSearch'()
-
-CustomKeywords.'com.poswm.WarehouseItemInventory.SelectSalesDivisionForNV'()
-
-CustomKeywords.'com.poswm.WarehouseItemInventory.SearchSpecificItem'(itemname)
+//navigate to item search page
+CustomKeywords.'com.poswm.WarehouseDashBoardPage.ClickOnItemSearch'()
+//select sales divsion as Big Apple
+CustomKeywords.'com.poswm.WarehouseItemInventory.SelectBigAppleSalesDivisionForEmpireMerchant'()
+//search for the newly created item
+CustomKeywords.'com.poswm.WarehouseItemInventory.SearchSpecificItem'(ItemName)
 
 CustomKeywords.'com.poswm.WarehouseItemInventory.ClickOnFirstItemName'()
 
