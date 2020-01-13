@@ -46,7 +46,7 @@ public class ProductUnitDetailsPage {
 	public void CreateProductUnit() {
 		try{
 			action.Click(corpddn)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Type(corptextbox, "300 - Instant Impact 4.0 Demo Corp (Dist.)")
 			action.Click(corptextbox)
 			action.ScrollToBottomOfPage()

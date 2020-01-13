@@ -139,7 +139,7 @@ public class FinishInCompleteOrderHistoryPage {
 	@Keyword
 	public void VerifyNumberOfItemsAfterDelete(int i) {
 		try {
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.WaitVisible(numberOfIncompleteItems)
 			println(action.GetText(numberOfIncompleteItems))
 			Assert.assertEquals(i-1, Integer.parseInt(action.GetText(numberOfIncompleteItems)))
@@ -174,7 +174,7 @@ public class FinishInCompleteOrderHistoryPage {
 			action.Click(accountfiterddnbtn)
 			action.Click(accountddnvalue)
 			action.Click(filterBtn)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			List<WebElement> allaccountname = action.GetElements(accountype)
 			for(int i=0;i< allaccountname;i++) {
 				if((allaccountname.get(i).getText()).equalsIgnoreCase("test")) {
@@ -199,7 +199,7 @@ public class FinishInCompleteOrderHistoryPage {
 			action.Click(ordertypeddn)
 			action.Click(odrertypeddnvalue)
 			action.Click(filterBtn)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			List<WebElement> allordertype = action.GetElements(ordertype)
 			for(int i=0;i< allordertype;i++) {
 				if((allordertype.get(i).getText()).equalsIgnoreCase("Accessories Only")) {
@@ -224,7 +224,7 @@ public class FinishInCompleteOrderHistoryPage {
 			action.Click(ordertypeddn)
 			action.Click(odrertypeddnvalue)
 			action.Click(filterBtn)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.Click(clearBtn)
 		}
 		catch(Exception e) {

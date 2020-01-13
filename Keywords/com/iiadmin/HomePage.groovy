@@ -115,9 +115,9 @@ public class HomePage {
 	public void EditCorporation() {
 		try {
 			action.WaitVisible(systemsetup)
-			action.Click(systemsetup)
+			action.MouseHoverOnElement(systemsetup)
 			action.WaitVisible(corpsetup)
-			action.Click(corpsetup)
+			action.MouseHoverOnElement(corpsetup)
 			action.WaitVisible(editcorp)
 			action.Click(editcorp)
 		}
@@ -131,9 +131,9 @@ public class HomePage {
 	public void EditDistributor() {
 		try {
 			action.WaitVisible(systemsetup)
-			action.Click(systemsetup)
+			action.MouseHoverOnElement(systemsetup)
 			action.WaitVisible(distsetup)
-			action.Click(distsetup)
+			action.MouseHoverOnElement(distsetup)
 			action.WaitVisible(editdist)
 			action.Click(editdist)
 		}

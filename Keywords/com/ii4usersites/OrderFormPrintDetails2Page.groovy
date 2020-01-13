@@ -47,57 +47,46 @@ public class OrderFormPrintDetails2Page {
 	By savebtn = By.xpath("//input[@id='ctl00_Body_JobLineNotes1_grdNotes_ctl00_ctl02_ctl02_btnUpdate_input']")
 	By nobrandmentionbtn = By.xpath("//span[contains(text(),'NO BRAND MENTIONS')]")
 	By quantityTextField = By.xpath("//*[@id='ctl00_Body_txtQuantity']")
+	//By quantityTextField = By.xpath("//*[@id='ctl00_Body_txtQuantity']")
 	By addNotePlusIcon = By.xpath("//*[@id='ctl00_Body_JobLineNotes1_grdNotes_ctl00_ctl02_ctl00_AddNewRecordButton']")
 	By addNotesTextField = By.xpath("//*[@id='ctl00_Body_JobLineNotes1_grdNotes_ctl00_ctl02_ctl02_txtNotesTextArea']")
 	By saveNoteBtn = By.xpath("//*[@id='ctl00_Body_JobLineNotes1_grdNotes_ctl00_ctl02_ctl02_btnUpdate_input']")
 	By nextBtn = By.xpath("//*[@id='ctl00_Body_btnNext']/span")
-	
-	
+
+
 	@Keyword
-	public void EnterQty()
-	{
-		try
-		{
+	public void EnterQty() {
+		try {
 			action.TypeClear(quantityTextField, "1")
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("EnterQty method failed due to : " + e)
 		}
 	}
-	
+
 	@Keyword
-	public void AddNotes()
-	{
-		try
-		{
+	public void AddNotes() {
+		try {
 			action.ScrollToViewElement(quantityTextField)
 			action.Click(addNotePlusIcon)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.Type(addNotesTextField, "TestNotes")
 			action.ScrollToViewElement(addNotesTextField)
 			action.Click(saveNoteBtn)
-			
-			
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("AddNotes method failed due to : " + e)
 		}
 	}
 
 	@Keyword
-	public void ClickOnNextBtn()
-	{
-		try
-		{
+	public void ClickOnNextBtn() {
+		try {
 			action.ScrollToBottomOfPage()
 			action.Click(nextBtn)
-			WebUI.delay(5)
-			
+			//WebUI.delay(5)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("ClickOnNextBtn method failed due to : " + e)
 		}
 	}
@@ -192,12 +181,10 @@ public class OrderFormPrintDetails2Page {
 			println ("Verify PO berviage visibilty failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
-	public void addnotes()
-	{
-		try
-		{
+	public void addnotes() {
+		try {
 			action.WaitVisible(addnotesbtn)
 			action.Click(addnotesbtn)
 			action.WaitVisible(textarea)
@@ -207,22 +194,17 @@ public class OrderFormPrintDetails2Page {
 			action.Click(savebtn)
 			action.Click(nextbtn)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("addnotes failed due to "+e)
 		}
 	}
-	
+
 	@Keyword
-	public void ClicOnNoBrand()
-	{
-		
-		try
-		{
-			
+	public void ClicOnNoBrand() {
+
+		try {
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("ClicOnNoBrand failed due to "+e)
 		}
 	}

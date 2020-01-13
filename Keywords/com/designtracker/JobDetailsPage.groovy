@@ -222,7 +222,7 @@ public class JobDetailsPage {
 		try {
 			action.ScrollToViewElement(designerddn)
 			action.WaitVisible(designerddn)
-			action.SelectByIndex(designerddn, 1)
+			action.SelectByText(designerddn,"CROTTY, JEREMY")
 			//WebUI.delay(3)
 			action.Click(savejobinfobtn)
 			//WebUI.delay(5)
@@ -626,7 +626,7 @@ public class JobDetailsPage {
 		try
 		{
 			String s = action.IsDisplayed(extendedsearch)
-			Assert.assertEquals(s, "False")
+			Assert.assertEquals(s, "false")
 		}
 		catch(Exception e)
 		{

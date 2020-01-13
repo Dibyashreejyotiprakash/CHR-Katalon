@@ -138,9 +138,9 @@ class ProductionSelectionPage {
 	{
 		try{
 			action.Click(divItemType)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.Click(itemtypeddnvalue)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 		}
 		catch(Exception e)
 		{
@@ -155,7 +155,7 @@ class ProductionSelectionPage {
 			action.Click(acconutlink)
 			driver.switchTo().frame("confirm1570783968458")
 			action.Click(popupnobtn)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.Click(acconutlink)
 			driver.switchTo().frame("confirm1570783968458")
 			action.Click(popupyesbtn)
@@ -173,12 +173,38 @@ class ProductionSelectionPage {
 	{
 		try
 		{
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.WaitVisible(itemTypeDrpDownArrow)
 			action.Click(itemTypeDrpDownArrow)
 			action.WaitVisible(digitaldownloaditemtype)
 			action.Click(digitaldownloaditemtype)
-			WebUI.delay(7)
+			//WebUI.delay(7)
+			action.ScrollToBottomOfPage()
+			//WebUI.delay(2)
+			action.Click(nobtn)
+			//action.WaitVisible(imgLoading)
+			//WebUI.delay(5)
+			//action.ScrollToViewElement(AddToCart)
+			////WebUI.delay(2)
+			action.Click(AddToCart)
+		}
+		catch(Exception e)
+		{
+			Assert.fail("AddDDItemToCart failed due to "+e)
+		}
+	}
+	
+	@Keyword
+	public void AddItemToCart()
+	{
+		try
+		{
+			WebUI.delay(3)
+			/*action.WaitVisible(itemTypeDrpDownArrow)
+			action.Click(itemTypeDrpDownArrow)
+			action.WaitVisible(digitaldownloaditemtype)
+			action.Click(digitaldownloaditemtype)
+			WebUI.delay(7)*/
 			action.ScrollToBottomOfPage()
 			WebUI.delay(2)
 			action.Click(nobtn)
@@ -193,4 +219,5 @@ class ProductionSelectionPage {
 			Assert.fail("AddDDItemToCart failed due to "+e)
 		}
 	}
+	
 }

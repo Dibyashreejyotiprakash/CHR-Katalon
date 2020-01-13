@@ -91,17 +91,17 @@ public class FulfillmentReortsPage {
 	public void SearchByItemNameName() {
 		try{
 			action.Type(corpddntextbox, "300 - Instant Impact 4.0 Demo Corp (Dist.)")
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(searchbtn)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			boolean statusoffirstrecord = action.IsElementDisplayed(firstrecord)
 			Assert.assertTrue(statusoffirstrecord)
 
 			if(statusoffirstrecord == true) {
 				String firstdisplayeditemname = action.GetText(firstitemname)
-				WebUI.delay(3)
+				//WebUI.delay(3)
 				action.Type(itemname, firstdisplayeditemname)
-				WebUI.delay(3)
+				//WebUI.delay(3)
 				action.Click(searchbtn)
 			}
 		}
@@ -115,19 +115,19 @@ public class FulfillmentReortsPage {
 	public void SearchByProductUnitName() {
 		try{
 			action.Type(corpddntextbox, "300 - Instant Impact 4.0 Demo Corp (Dist.)")
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(searchbtn)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			boolean statusoffirstrecord = action.IsElementDisplayed(firstrecord)
 			Assert.assertTrue(statusoffirstrecord)
 
 			if(statusoffirstrecord == true) {
 				String firstdisplayedproductunitname  = action.GetText(firstproductunitname)
-				WebUI.delay(3)
+				//WebUI.delay(3)
 				action.Type(productunittextbox, firstdisplayedproductunitname)
-				WebUI.delay(3)
+				//WebUI.delay(3)
 				action.Click(reportslabel)
-				WebUI.delay(3)
+				//WebUI.delay(3)
 				action.Click(searchbtn)
 			}
 		}

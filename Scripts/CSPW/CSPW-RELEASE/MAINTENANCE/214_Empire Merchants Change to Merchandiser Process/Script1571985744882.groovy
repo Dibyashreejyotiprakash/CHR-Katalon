@@ -16,26 +16,39 @@ import internal.GlobalVariable as GlobalVariable
 
 CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameposw, GlobalVariable.testtyperegression, GlobalVariable.environment)
 
-WebUI.waitForPageLoad(300)
-
-CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.posUN59, GlobalVariable.posPass59)
-
-CustomKeywords.'com.poswm.LoginPage.SelectEmpireMerchantBU'()
-
-CustomKeywords.'com.poswm.Homepage.HoverOnWareHouseMenu'()
-
-CustomKeywords.'com.poswm.Homepage.ClickOnItemSearch'()
-
-CustomKeywords.'com.poswm.WarehouseItemInventory.SelectSalesDivisionForEmpireMerchant'()
-
+//Enter credential
+CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.PoswTestUserName, GlobalVariable.PoswTestPassword)
+//Click on new item 
+CustomKeywords.'com.poswm.WarehouseDashBoardPage.ClickOnNewItem'()
+//vcreate item with unique name
+String ItemName = CustomKeywords.'com.poswm.WarehouseItem.FillItemInformationSection'()
+// fill image section
+CustomKeywords.'com.poswm.WarehouseItem.FillImageSection'()
+//Fill brand section
+CustomKeywords.'com.poswm.WarehouseItem.FillBrandSection'()
+// Fill transaction section
+CustomKeywords.'com.poswm.WarehouseItem.FillTransactionsSection'()
+//  Save item name
+CustomKeywords.'com.poswm.WarehouseItem.ClickOnCloseEditMode'()
+//navigate to spen limit page
+CustomKeywords.'com.poswm.Homepage.ClickOnWarehouseSpendLimits'()
+// select 2020 compliance name
+CustomKeywords.'com.poswm.WarehouseSpendingLimits.ClickOn2020Compliance'()
+//add item to the compliance
+CustomKeywords.'com.poswm.WarehouseSpendingLimits.AddItemTotheComplianceLevel'(ItemName)
+//navigate to item search page
+CustomKeywords.'com.poswm.WarehouseDashBoardPage.ClickOnItemSearch'()
+//select sales divsion as Big Apple
+CustomKeywords.'com.poswm.WarehouseItemInventory.SelectBigAppleSalesDivisionForEmpireMerchant'()
+//search for the newly created item
+CustomKeywords.'com.poswm.WarehouseItemInventory.SearchSpecificItem'(ItemName)
+// add item  to cart
 CustomKeywords.'com.poswm.WarehouseItemInventory.AddToCart'()
-
+//add customer
 CustomKeywords.'com.poswm.WarehouseItemInventory.AddCustomer'()
-
-CustomKeywords.'com.poswm.WarehouseOrders.GetShipDate'()
-
+// select ship method
 CustomKeywords.'com.poswm.WarehouseItemInventory.SelectShipMethod'()
-
+//place order
 CustomKeywords.'com.poswm.WarehouseItemInventory.ClickOnSubmitOrderBtn'()
 
 CustomKeywords.'com.poswm.WarehouseOrders.ClickOnApproveLink'()
@@ -44,5 +57,18 @@ CustomKeywords.'com.poswm.WarehouseOrders.ClickOnShipLink'()
 
 //CustomKeywords.'com.poswm.WarehouseOrders.ClickOnUpdateLink'()
 
-CustomKeywords.'com.poswm.WarehouseOrders.Verifydate'()
+CustomKeywords.'com.poswm.WarehouseOrders.VerifyCalander'()
+
+CustomKeywords.'com.poswm.WarehouseOrders.VerifyUpdate'()
+
+//navigate to item search page
+CustomKeywords.'com.poswm.WarehouseDashBoardPage.ClickOnItemSearch'()
+//select sales divsion as Big Apple
+CustomKeywords.'com.poswm.WarehouseItemInventory.SelectBigAppleSalesDivisionForEmpireMerchant'()
+//search for the newly created item
+CustomKeywords.'com.poswm.WarehouseItemInventory.SearchSpecificItem'(ItemName)
+//select first item from the list
+CustomKeywords.'com.poswm.WarehouseItemInventory.SelectFirstItem'()
+// delete selected item
+CustomKeywords.'com.poswm.WarehouseItem.DeleteItem'()
 

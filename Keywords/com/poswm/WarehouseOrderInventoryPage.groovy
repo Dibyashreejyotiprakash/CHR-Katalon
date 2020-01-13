@@ -67,6 +67,26 @@ public class WarehouseOrderInventoryPage {
 	By clearbtn = By.xpath("//*[@id='ctl00_MainContent_btnClearSearchBox']")
 
 	By allordersearchresults = By.xpath("//*[@id='ctl00_MainContent_rgOrderSearch_GridData']//tr//td[2]/a")
+	By firstOrderID = By.xpath("//*[@id='ctl00_MainContent_rgOrderSearch_ctl00_ctl04_lblOrderID']")
+	By searchIcon = By.xpath("//*[@class='rsbButton rsbButtonSearch']/span")
+	By imageLoader = By.xpath("//*[@id='MainContent_Image2']")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 	@Keyword
@@ -111,8 +131,10 @@ public class WarehouseOrderInventoryPage {
 	{
 		try{
 			action.Type(ordersearchtextbox, orderid)
-			action.Click(ordersearchbtn)
-			WebUI.delay(30)
+			//action.Click(ordersearchbtn)
+			action.Click(searchIcon)
+			action.WaitTillNotVisible(imageLoader, 0)
+			//WebUI.delay(30)
 			List<WebElement> ordersearchresults = action.GetElements(allordersearchresults)
 			int totalordercount = ordersearchresults.size()
 			if(totalordercount != 0)
@@ -126,9 +148,9 @@ public class WarehouseOrderInventoryPage {
 					{
 						println ("Order id found ")
 					}
-					else{
-						throw new Exception("Order id not found")
-					}
+					/*else{
+					 throw new Exception("Order id not found")
+					 }*/
 				}
 			}
 			else{
@@ -150,24 +172,31 @@ public class WarehouseOrderInventoryPage {
 			int totalordercount = ordersearchresultsbeforesearch.size()
 			if(totalordercount != 0)
 			{
-				orderidbeforesearch =ordersearchresultsbeforesearch.get(i).getText()
+				//orderidbeforesearch =ordersearchresultsbeforesearch.get(i).getText()
+				orderidbeforesearch = action.GetText(firstOrderID)
 				action.Type(ordersearchtextbox, orderidbeforesearch)
 				action.Click(ordersearchbtn)
-				List<WebElement> ordersearchresultsaftersearch= action.GetElements(allordersearchresults)
-				int totalordercountaftersearch = ordersearchresultsaftersearch.size()
-				if(totalordercount != 0)
+				/*List<WebElement> ordersearchresultsaftersearch= action.GetElements(allordersearchresults)
+				 int totalordercountaftersearch = ordersearchresultsaftersearch.size()
+				 if(totalordercount != 0)
+				 {
+				 for(int i=0;i< totalordercount;i++ )
+				 {
+				 String orderidaftersearch=ordersearchresultsaftersearch.get(i).getText()
+				 if(orderidaftersearch.equals(orderidbeforesearch))
+				 {
+				 println ("Order id found ")
+				 }
+				 else{
+				 throw new Exception("Order id not found")
+				 }
+				 }
+				 }*/
+
+				String OrderIdAfterSearch = action.GetText(firstOrderID)
+				if(OrderIdAfterSearch.equals(orderidbeforesearch))
 				{
-					for(int i=0;i< totalordercount;i++ )
-					{
-						String orderidaftersearch=ordersearchresultsaftersearch.get(i).getText()
-						if(orderidaftersearch.equals(orderidbeforesearch))
-						{
-							println ("Order id found ")
-						}
-						else{
-							throw new Exception("Order id not found")
-						}
-					}
+					println ("Order id found ")
 				}
 			}
 			else{

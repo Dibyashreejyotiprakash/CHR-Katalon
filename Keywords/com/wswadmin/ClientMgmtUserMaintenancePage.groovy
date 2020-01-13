@@ -89,11 +89,15 @@ public class ClientMgmtUserMaintenancePage {
 
 		action.Click(toggelUserBtn)
 		String un = "Test"+action.GenerateRandomAplphabaNeumericString(5);
+		action.WaitVisible(newUsernameTxtBox)
 		action.Type(newUsernameTxtBox, un)
 		action.Type(pwdTxtBox,"password")
 		action.Click(applicationddn)
+		action.WaitVisible(proofGalleryCheckBox)
 		action.Click(proofGalleryCheckBox)
+		WebUI.delay(10)
 		action.Click(businessUnitddn)
+		action.WaitVisible(businessCheckBox)
 		action.Click(businessCheckBox)
 		action.Click(createUserBtn)
 		Assert.assertTrue(action.IsElementEnabled(newUserAddedSuccessfullyMsg))

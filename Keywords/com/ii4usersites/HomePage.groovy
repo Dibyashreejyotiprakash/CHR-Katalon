@@ -42,6 +42,9 @@ class HomePage {
 	By helpMenu = By.xpath("//li[@class='rmItem rmLast']//span[@class='rmToggle']")
 	By pagebox = By.xpath("//input[@id='ctl00_Body_rntbPage']")
 	By resultpage60 = By.xpath("//input[@id='ctl00_Body_btn60']")
+	By posondemand = By.xpath("//span[contains(text(),'POS On Demand')]")
+	By postemplate = By.xpath("//span[contains(text(),'POS Templates')]")
+	By logo = By.xpath("//div[@class = 'LogoImageContainer']/a")
 
 	@Keyword
 	public boolean VerifyHomePage() {
@@ -71,8 +74,25 @@ class HomePage {
 		action.ScrollToBottomOfPage()
 		action.WaitVisible(imgPOSTemplates)
 		action.Click(imgPOSTemplates)
-		WebUI.delay(5)
+		//WebUI.delay(5)
 		action.WaitForPageToLoad()
+	}
+
+	@Keyword
+	public void NavigateToPosTemplate() {
+
+		WebUI.delay(5)
+		//action.ScrollToTopOgPage()
+		/*action.WaitVisible(posondemand)
+		 action.WaitUntilElementClickable(posondemand)
+		 action.Click(posondemand)
+		 action.WaitVisible(postemplate)
+		 action.Click(postemplate)
+		 WebUI.delay(5)
+		 action.WaitForPageToLoad()*/
+		action.WaitUntilElementClickable(logo)
+		action.Click(logo)
+
 	}
 
 	@Keyword

@@ -18,39 +18,35 @@ import internal.GlobalVariable as GlobalVariable
 
 CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameposw, GlobalVariable.testtyperegression, GlobalVariable.environment)
 
-WebUI.waitForPageLoad(300)
+//Enter credential
+CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.PoswTestUserName, GlobalVariable.PoswTestPassword)
+CustomKeywords.'com.poswm.WarehouseDashBoardPage.ClickOnNewItem'()
 
-CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.posusername, GlobalVariable.pospassword)
-
-CustomKeywords.'com.poswm.Homepage.ClickOnItemSearch'()
-
-//CustomKeywords.'com.poswm.Homepage.HoverOnWareHouseMenu'()
-
-CustomKeywords.'com.poswm.WarehouseItemInventory.ClickOnSupplierAndBrandFilters'()
-
-CustomKeywords.'com.poswm.WarehouseItemInventory.ClickOnOtherFiltersExpandButton'()
-
-CustomKeywords.'com.poswm.WarehouseItemInventory.OtherFilterSecondOption'()
-//CustomKeywords.'com.poswm.Homepage.ClickOnNewOrder'()
-
+String ItemName = CustomKeywords.'com.poswm.WarehouseItem.FillItemInformationSection'()
+CustomKeywords.'com.poswm.WarehouseItem.FillImageSection'()
+CustomKeywords.'com.poswm.WarehouseItem.FillBrandSection'()
+CustomKeywords.'com.poswm.WarehouseItem.FillTransactionsSection'()
+CustomKeywords.'com.poswm.WarehouseItem.ClickOnCloseEditMode'()
+CustomKeywords.'com.poswm.Homepage.ClickOnWarehouseSpendLimits'()
+CustomKeywords.'com.poswm.WarehouseSpendingLimits.ClickOn2020Compliance'()
+CustomKeywords.'com.poswm.WarehouseSpendingLimits.AddItemTotheComplianceLevel'(ItemName)
+CustomKeywords.'com.poswm.WarehouseDashBoardPage.ClickOnItemSearch'()
+CustomKeywords.'com.poswm.WarehouseItemInventory.SelectBigAppleSalesDivisionForEmpireMerchant'()
+CustomKeywords.'com.poswm.WarehouseItemInventory.SearchSpecificItem'(ItemName)
 CustomKeywords.'com.poswm.WarehouseItemInventory.AddToCart'()
-
 CustomKeywords.'com.poswm.WarehouseItemInventory.AddCustomer'()
-
-//CustomKeywords.'com.poswm.WarehouseOrders.AddDesiredShipDate'()
-
-//CustomKeywords.'com.poswm.WarehouseOrders.GetDesiredShipDate'()
-
 CustomKeywords.'com.poswm.WarehouseItemInventory.SelectShipMethod'()
-
-
-
-CustomKeywords.'com.poswm.WarehouseItemInventory.ClickOnSubmitOrderBtn'()
-
 CustomKeywords.'com.poswm.WarehouseOrders.GetShipDate'()
-
+CustomKeywords.'com.poswm.WarehouseItemInventory.ClickOnSubmitOrderBtn'()
 CustomKeywords.'com.poswm.Homepage.NaviagteToDashBoard'()
 CustomKeywords.'com.poswm.Homepage.VerifyApproveDateColumn'()
+
+
+CustomKeywords.'com.poswm.WarehouseDashBoardPage.ClickOnItemSearch'()
+CustomKeywords.'com.poswm.WarehouseItemInventory.SelectBigAppleSalesDivisionForEmpireMerchant'()
+CustomKeywords.'com.poswm.WarehouseItemInventory.SearchSpecificItem'(ItemName)
+CustomKeywords.'com.poswm.WarehouseItemInventory.SelectFirstItem'()
+CustomKeywords.'com.poswm.WarehouseItem.DeleteItem'()
 
 
 

@@ -104,7 +104,7 @@ public class FulfillmentSearch {
 	{
 		try{
 			action.Click(corpoddnarrow)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Type(corptextbox, "300 - Instant Impact 4.0 Demo Corp (Dist.)")
 			action.Click(SkuTextField)
 			action.Click(SearchButton)
@@ -135,16 +135,16 @@ public class FulfillmentSearch {
 		String skuname = null
 		try{
 			action.Click(corpoddnarrow)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Type(corptextbox, "300 - Instant Impact 4.0 Demo Corp (Dist.)")
 			action.Click(SkuTextField)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(SearchButton)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			skuname = action.GetText(firstsku)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Type(SkuTextField, skuname)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(SearchButton)
 			List<WebElement> allskus = action.GetElements(skusearchallskus)
 			for(int i=0;i< allskus.size();i++)
@@ -172,11 +172,11 @@ public class FulfillmentSearch {
 		String firstproductname = null
 		try{
 			action.Click(corpoddnarrow)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Type(corptextbox, "300 - Instant Impact 4.0 Demo Corp (Dist.)")
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(SkuTextField)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(SearchButton)
 			firstproductname = action.GetText(firstproductdesc)
 			action.Type(ProductName, firstproductname)
@@ -207,7 +207,7 @@ public class FulfillmentSearch {
 	{
 		try{
 			action.Click(corpoddnarrow)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Type(corptextbox, "300 - Instant Impact 4.0 Demo Corp (Dist.)")
 			action.Click(SkuTextField)
 			action.Click(SearchButton)

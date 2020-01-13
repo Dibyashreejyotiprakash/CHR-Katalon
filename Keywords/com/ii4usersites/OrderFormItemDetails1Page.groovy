@@ -43,6 +43,8 @@ public class OrderFormItemDetails1Page {
 	By booksverbiage = By.xpath("//*[@id='Body_lblMenuBook']")
 	By accessoriesverbiage = By.xpath("//*[@id='Body_lblAccessories']")
 
+	By smallprintadditionalinfo = By.xpath("//*[@id='ctl00_Body_rbtnSmallPrintInfo']")
+
 	@Keyword
 	public void ClickOnSmallPrintBtn() {
 		try {
@@ -91,7 +93,7 @@ public class OrderFormItemDetails1Page {
 			action.WaitUntilElementClickable(nextbtn)
 			action.Click(nextbtn)
 			action.WaitForPageToLoad()
-			//WebUI.delay(10)
+			////WebUI.delay(10)
 		}
 		catch(Exception e) {
 			println ("Click On Next Btn failed due to "+ e)
@@ -101,13 +103,12 @@ public class OrderFormItemDetails1Page {
 	@Keyword
 	public void LogOutII4() {
 		try {
-		action.Click(logout)
-		action.WaitForPageToLoad()
+			action.Click(logout)
+			action.WaitForPageToLoad()
 		}
 		catch(Exception e) {
 			Assert.fail("Logout is failing because : "+e)
 		}
-		
 	}
 
 	@Keyword
@@ -126,7 +127,7 @@ public class OrderFormItemDetails1Page {
 	@Keyword
 	public void VerifyVerbiageForAllItemType() {
 		try{
-			
+
 			action.WaitVisible(smallprintverbiage)
 			action.WaitVisible(largeprintverviage)
 			String smallitemtext = action.GetText(smallprintverbiage)
@@ -143,6 +144,18 @@ public class OrderFormItemDetails1Page {
 		}
 		catch(Exception e) {
 			Assert.fail("Verify Verbiage For All Item Type failed due to "+ e)
+		}
+	}
+
+	@Keyword
+	public void ValidateAdditionalInfoForSmallPrint(){
+		try{
+			boolean statusofsmallprintadditionalinfo = action.IsElementDisplayed(smallprintadditionalinfo)
+			Assert.assertTrue(statusofsmallprintadditionalinfo)
+			action.Click(smallprintadditionalinfo)
+		}
+		catch(Exception e){
+			Assert.fail("Validate Additional Info For Small Print failed due to "+ e)
 		}
 	}
 }

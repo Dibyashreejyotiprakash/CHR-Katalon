@@ -80,11 +80,11 @@ public class ItemSearchpage {
 		action.Click(corporationtextbox)
 		action.Type(corporationtextbox, "300")
 		action.Click(selectcorp)
-		WebUI.delay(15)
+		//WebUI.delay(15)
 		action.Click(itemtypetextbox)
-		WebUI.delay(2)
+		//WebUI.delay(2)
 		action.Click(selectitemtemplate)
-		WebUI.delay(2)
+		//WebUI.delay(2)
 		action.Click(firstselectdata)
 		action.WaitVisible(corporationname)
 	}
@@ -112,7 +112,7 @@ public class ItemSearchpage {
 	@Keyword
 	public void validateBrandnameCategory(){
 		action.WaitVisible(brandnamecategory)
-		WebUI.delay(5)
+		//WebUI.delay(5)
 		action.ScrollToViewElement(brandnamemetatagcount)
 		action.WaitVisible(brandnamemetatagcount)
 		boolean status=action.IsElementDisplayed(brandnamemetatagcount)
@@ -126,7 +126,7 @@ public class ItemSearchpage {
 		action.Click(corporationtextbox)
 		action.Type(corporationtextbox, "276")
 		action.Click(selectcorp1)
-		WebUI.delay(10)
+		//WebUI.delay(10)
 		action.Click(itemtypetextbox)
 		action.Click(selectitemtemplate)
 		action.Click(firstselectdata)
@@ -145,7 +145,7 @@ public class ItemSearchpage {
 			action.Click(corporationtextbox)
 			action.Type(corporationtextbox, "339")
 			action.Click(corporationddnvalue)
-			WebUI.delay(2)
+			//WebUI.delay(2)
 			action.Click(itemtypetextbox)
 			action.Click(selectitemtemplate)
 			action.Click(firstselectdata)
@@ -165,7 +165,7 @@ public class ItemSearchpage {
 			action.Click(corporationtextbox)
 			action.Type(corporationtextbox, "300")
 			action.Click(selectcorp)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.Click(itemtypetextbox)
 			action.Click(selectitemtemplate)
 			action.Click(statusdropdown)
@@ -183,7 +183,7 @@ public class ItemSearchpage {
 	public void OpenBrandNameExpandedWindow() {
 		try {
 			action.WaitVisible(brandnamecategory)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.ScrollToViewElement(brandnamemetatagcount)
 			action.WaitVisible(brandnamemetatagcount)
 			action.Click(brandnamemetatagcount)
@@ -216,9 +216,9 @@ public class ItemSearchpage {
 		{
 			action.WaitVisible(brandnamemetatagcount)
 			action.ScrollToViewElement(brandnamemetatagcount)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(brandnamemetatagcount)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			List<WebElement> e = action.GetElements(checkboxlist)
 
 			if(e.size()>0)

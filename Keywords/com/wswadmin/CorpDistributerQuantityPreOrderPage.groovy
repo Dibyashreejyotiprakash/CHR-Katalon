@@ -24,7 +24,7 @@ import com.kms.katalon.core.webui.driver.DriverFactory
 import internal.GlobalVariable
 
 public class CorpDistributerQuantityPreOrderPage {
-	
+
 	WebDriver driver = DriverFactory.getWebDriver();
 	Interaction action = new Interaction();
 
@@ -36,35 +36,31 @@ public class CorpDistributerQuantityPreOrderPage {
 	By distributorgrid = By.xpath("//*[@id='cphMain_pnlDistributersGrid']")
 
 	@Keyword
-	public void VerifyCorpDistributerQuantityPreOrderPage()
-	{
+	public void VerifyCorpDistributerQuantityPreOrderPage() {
 		try{
 			action.VerifyCurrentPage("CorpDistributerQuantityPreOrder.aspx")
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("Verify CorpDistributerQuantityPreOrder Page failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
-	public void verifyAllFields()
-	{
+	public void verifyAllFields() {
 		try{
 			boolean statusofheader = action.IsElementDisplayed(header)
 			Assert.assertTrue(statusofheader)
-			
+
 			boolean statusofcorpddn = action.IsElementDisplayed(corptextbox)
 			Assert.assertTrue(statusofcorpddn)
-			
+
 			boolean statusofquantityconstraintddn = action.IsElementDisplayed(quantityconstraintddn)
 			Assert.assertTrue(statusofquantityconstraintddn)
-			
+
 			boolean statusofdistributorddn = action.IsElementDisplayed(distributorgrid)
 			Assert.assertTrue(statusofdistributorddn)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("verify All Fields failed due to "+ e)
 		}
 	}

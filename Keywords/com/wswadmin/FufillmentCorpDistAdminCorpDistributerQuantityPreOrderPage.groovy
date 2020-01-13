@@ -27,25 +27,23 @@ public class FufillmentCorpDistAdminPage {
 
 	Interaction action = new Interaction();
 	WebDriver driver = DriverFactory.getWebDriver()
-	
-	 By fulfillmentcorpdistadminheader = By.xpath("//*[@id='cphMain_ctl00_lblSectionHeader']")
-	 By corpddn = By.xpath("//*[@id='ctl00_cphMain_rcbCorporation_Arrow']")
-	 By corpddntextbox = By.xpath("//*[@id='ctl00_cphMain_rcbCorporation_Input']")
-	 By corpddnvalue = By.xpath("//*[@id='ctl00_cphMain_rcbCorporation_DropDown']//li[279]")
- 
-	
+
+	By fulfillmentcorpdistadminheader = By.xpath("//*[@id='cphMain_ctl00_lblSectionHeader']")
+	By corpddn = By.xpath("//*[@id='ctl00_cphMain_rcbCorporation_Arrow']")
+	By corpddntextbox = By.xpath("//*[@id='ctl00_cphMain_rcbCorporation_Input']")
+	By corpddnvalue = By.xpath("//*[@id='ctl00_cphMain_rcbCorporation_DropDown']//li[279]")
+
+
 	@Keyword
-	public void VerifyFufillmentCorpDistAdminPage()
-	{
+	public void VerifyFufillmentCorpDistAdminPage() {
 		try{
 			action.VerifyCurrentPage("CorpDistributerQuantityPreOrder.aspx")
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("Verify Fufillment CorpDist Admin Page failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
 	public void SelectDemoCorp() {
 		action.Click(corpddn)
@@ -54,6 +52,4 @@ public class FufillmentCorpDistAdminPage {
 		action.Click(corpddnvalue)
 		WebUI.delay(10)
 	}
-	
-	
 }

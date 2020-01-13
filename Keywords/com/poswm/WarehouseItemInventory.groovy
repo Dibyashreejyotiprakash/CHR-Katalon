@@ -57,10 +57,12 @@ public class WarehouseItemInventory {
 	By clearallfilter = By.xpath("//*[text()='Clear All Filters']")
 	By supplierfilter = By.xpath("//*[@id='ctl00_MainContent_rpbSearch_i0_i0_rlbSupplier_i2']")
 	//By allsuppliersnameingrid = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00']//tr//td[12]")
-	By allsuppliersnameingrid = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00']/tbody/tr/td[4]")
+	//By allsuppliersnameingrid = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00']/tbody/tr/td[4]")
+	By allsuppliersnameingrid = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00']//tr//td[4]")
 	By brandfilter = By.xpath("//*[@id='ctl00_MainContent_rpbSearch_i1_i0_rlbBrands_i2']")
 	//By allbrandsnameingrid = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00']//tr//td[13]")
-	By allbrandsnameingrid = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00']/tbody/tr/td[5]")
+	//By allbrandsnameingrid = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00']/tbody/tr/td[5]")
+	By allbrandsnameingrid = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00']//tr//td[5]")
 	By allitemname = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00']//tr//td[11]/a")
 	By firstitemname = By.xpath("//a[@id='ctl00_MainContent_rgItemSearch_ctl00_ctl04_lblItemName']")
 	By itemsearchtextbox = By.xpath("//*[@id='ctl00_MainContent_rsbItemSearch_Input']")
@@ -93,12 +95,11 @@ public class WarehouseItemInventory {
 	By FirstShipOption = By.xpath("(//*[@id='ctl00_MainContent_dockShippingInformation_C_ddlShippingMethod_DropDown'])/div/ul/li[1]")
 	By SubmitOrderBtn = By.xpath("(//*[@id='ctl00_MainContent_btnSubmitOrder'])")
 	By HeaderItemSearchPage = By.xpath("//*[@id='ctl00_MainContent_rmItemCommands']")
-
 	By SelectSalesDivEM = By.xpath("//*[text()='Sales Division']")
 	By FirstSalesDivOptionEM = By.xpath("//*[@id='ctl00_MainContent_rpbSearch_i6_i0_rlbWarehouseSalesDivision_i0']/label/input")
-
-
-	By otherFiltersExpandBtn = By.xpath("//*[@id='ctl00_MainContent_rpbSearch']/ul/li[9]/a/span/span[1]")
+	By otherFiltersExpandBtn = By.xpath("//*[text()='Other Filters']")
+	By SecondSalesDivOptionEM = By.xpath("//*[@id='ctl00_MainContent_rpbSearch_i6_i0_rlbWarehouseSalesDivision_i1']/label/input")
+	//By otherFiltersExpandBtn = By.xpath("//*[@id='ctl00_MainContent_rpbSearch']/ul/li[10]/a/span/span[1]")
 	By availableToOrderCheckBox = By.xpath("//*[@id='ctl00_MainContent_rpbSearch_i10_i0_rlbOtherFilters_i0']/label/input")
 	By ApprovalRequiredCheckBox = By.xpath("//*[@id='ctl00_MainContent_rpbSearch_i10_i0_rlbOtherFilters_i1']/label/input")
 	By clearSelectionLink = By.xpath("//*[text()='Clear Selection']")
@@ -118,6 +119,70 @@ public class WarehouseItemInventory {
 	By itemNameColValiue = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00']/tbody/tr/td[3]")
 	By approverColVal = By.xpath("//*[@id='ctl00_MainContent_rgItemSearch_ctl00__0']/td[7]")
 	By loadmaskerPosw = By.xpath("//img[@id='MainContent_Image2']")
+	By adsLabelName = By.xpath("//*[@id='ctl00_MainContent_rpbSearch_i6_i0_rlbWarehouseSalesDivision_i0']/label")
+	By salesDivLebelOnEditItemPage = By.xpath("//*[@id='ctl00_MainContent_ucItemOverView_radListItemProperties_ctrl0_lblSalesDivisions']")
+	By imageLoader = By.xpath("//*[@id='MainContent_Image2']")
+	By deleteConfirmationMessage = By.xpath("//*[@id='ctl00_MainContent_radNotifyMessage_simpleContentDiv']")
+	
+
+
+
+	@Keyword
+	public void SelectFirstItem()
+	{
+		try
+		{
+			action.Click(firstItem)
+			action.WindowHandle()
+			WebUI.delay(15)
+			action.WindowHandle()
+
+
+		}
+		catch(Exception e)
+		{
+			Assert.fail("SelectFirstItem failed due to :" + e)
+		}
+	}
+
+	@Keyword
+	public String GetAdsSalesDivName()
+	{
+		try
+		{
+			String SalesDivName = action.GetText(adsLabelName)
+			return SalesDivName
+		}
+		catch(Exception e)
+		{
+			Assert.fail("GetAdsSalesDivName failed due to :" + e)
+		}
+	}
+
+	@Keyword
+	public boolean VerifySalesDiv(String SalesDivName)
+	{
+		try
+		{
+			boolean IsSalesDivVerified = false
+			String SalesDivNameOnItemPage = action.GetText(salesDivLebelOnEditItemPage)
+
+			println ("----------->" + SalesDivNameOnItemPage)
+
+			if(SalesDivName.equalsIgnoreCase(SalesDivNameOnItemPage))
+			{
+
+				println("Sales Div verified successfully")
+				return IsSalesDivVerified = true
+			}
+		}
+		catch(Exception e)
+		{
+			Assert.fail("VerifySalesDiv failed due to :" + e)
+		}
+	}
+
+
 
 
 
@@ -148,12 +213,15 @@ public class WarehouseItemInventory {
 			String itemName = action.GetText(itemName)
 			action.ScrollToBottomOfPage()
 			action.Click(deleteItemLink)
-			WebUI.delay(5)
+			//WebUI.delay(5)
+			
 			action.AcceptAlert()
-			WebUI.delay(3)
+			//WebUI.delay(3)
+			action.WaitVisible(DeleteItemBtn)
 			action.ScrollToTopOgPage()
 			action.Click(DeleteItemBtn)
-			WebUI.delay(3)
+			//WebUI.delay(3)
+			action.WaitVisible(deleteConfirmationMessage)
 
 			return 	itemName
 
@@ -193,7 +261,8 @@ public class WarehouseItemInventory {
 			action.Click(SelectSalesDivEM)
 			//WebUI.delay(2)
 			action.Click(FirstSalesDivOptionEM)
-			WebUI.delay(5)
+			//WebUI.delay(5)
+			action.WaitTillNotVisible(imageLoader, 0)
 
 
 		}
@@ -204,6 +273,29 @@ public class WarehouseItemInventory {
 	}
 
 
+	@Keyword
+	public void SelectBigAppleSalesDivisionForEmpireMerchant()
+	{
+		try
+		{
+			action.Click(SuplierAccordian)
+			//WebUI.delay(2)
+			action.Click(BrandAccordian)
+			//WebUI.delay(2)
+			//action.ScrollToViewelement(SalesDivisionDivision)
+			action.Click(SelectSalesDivEM)
+			//WebUI.delay(2)
+			action.Click(SecondSalesDivOptionEM)
+			//WebUI.delay(5)
+			action.WaitTillNotVisible(imageLoader, 0)
+
+
+		}
+		catch(Exception e)
+		{
+			Assert.fail("SelectSalesDivision failed due to :" + e)
+		}
+	}
 
 	@Keyword
 	public void SelectSalesDivisionForNV()
@@ -361,6 +453,7 @@ public class WarehouseItemInventory {
 			//action.Click(linkSupplier)
 			//WebUI.delay(10)
 			action.Click(supplierfilter)
+			action.WaitTillNotVisible(imageLoader, 0)
 			//WebUI.delay(20)
 			String suppliername = action.GetText(supplierfilter)
 			//WebUI.delay(8)
@@ -399,6 +492,7 @@ public class WarehouseItemInventory {
 			//action.Click(linkBrands)
 			//WebUI.delay(10)
 			action.Click(brandfilter)
+			action.WaitTillNotVisible(imageLoader, 0)
 			//WebUI.delay(20)
 			String brandnamename = action.GetText(brandfilter)
 			println(brandnamename+"++++++++")
@@ -600,7 +694,9 @@ public class WarehouseItemInventory {
 			action.WaitVisible(itemsearchtextbox)
 			action.Type(itemsearchtextbox, itemName)
 			action.Click(itemsearchbtn)
-			WebUI.delay(5)
+			//WebUI.delay(5)
+			action.WaitTillNotVisible(imageLoader, 0)
+			
 
 		}
 		catch(Exception e)
@@ -617,12 +713,17 @@ public class WarehouseItemInventory {
 		{
 			action.Click(OrderPlusIcon)
 			//WebUI.delay(3)
+			action.WaitTillNotVisible(imageLoader, 0)
 			action.Click(UpdateQuantityBtn)
+			action.WaitTillNotVisible(imageLoader, 0)
 			//WebUI.delay(3)
 			action.Click(NewOrder)
+			action.WaitTillNotVisible(imageLoader, 0)
 			//WebUI.delay(5)
 			action.Click(ClickHeretogotothisorderlink)
-			WebUI.delay(10)
+			//WebUI.delay(10)
+			action.WaitForPageToLoad()
+			action.WaitVisible(addanItemLink)
 
 
 		}
@@ -680,8 +781,8 @@ public class WarehouseItemInventory {
 		{
 			action.WaitVisible(SubmitOrderBtn)
 			action.Click(SubmitOrderBtn)
-			WebUI.delay(5)
-			action.ScrollToTopOgPage()
+			WebUI.delay(10)
+			//action.ScrollToTopOgPage()
 
 
 		}
@@ -737,6 +838,7 @@ public class WarehouseItemInventory {
 	{
 		try
 		{
+			action.ScrollToBottomOfPage()
 			action.Click(otherFiltersExpandBtn)
 			//WebUI.delay(3)
 
@@ -786,7 +888,8 @@ public class WarehouseItemInventory {
 		try
 		{
 			action.Click(deleteCheckBox)
-			WebUI.delay(10)
+			//WebUI.delay(10)
+			action.WaitTillNotVisible(imageLoader, 0)
 
 		}
 		catch(Exception e)

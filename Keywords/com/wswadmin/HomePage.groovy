@@ -107,11 +107,11 @@ public class HomePage {
 		try
 		{
 			action.MouseHoverOnElement(brandmuscleMenu)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.MouseHoverOnElement(reportsSubMenu)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.Click(invoiceSubMenu)
-			WebUI.delay(10)
+			//WebUI.delay(10)
 
 		}
 		catch(Exception e)
@@ -127,9 +127,9 @@ public class HomePage {
 		{
 			boolean isPageVerified = false
 			String expectedUrl = "Invoices/InvoiceList.aspx"
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			String actualUrl = action.GetCurrentURL()
-			WebUI.delay(5)
+			//WebUI.delay(5)
 
 			if(actualUrl.contains(expectedUrl))
 			{
@@ -153,11 +153,11 @@ public class HomePage {
 		try
 		{
 			action.MouseHoverOnElement(brandmuscleMenu)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.MouseHoverOnElement(reportsSubMenu)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.Click(invoiceLineItem)
-			WebUI.delay(10)
+			//WebUI.delay(10)
 
 		}
 		catch(Exception e)
@@ -173,9 +173,9 @@ public class HomePage {
 		{
 			boolean isPageVerified = false
 			String expectedUrl = "Invoices/LineItemShipping.aspx"
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			String actualUrl = action.GetCurrentURL()
-			WebUI.delay(5)
+			//WebUI.delay(5)
 
 			if(actualUrl.contains(expectedUrl))
 			{
@@ -197,7 +197,7 @@ public class HomePage {
 	public void NavigateToItemSearchPage() {
 		action.WaitVisible(instantimpact)
 		action.Click(instantimpact)
-		WebUI.delay(3)
+		//WebUI.delay(3)
 		action.WaitVisible(metatagingitemmaintenance)
 		action.MouseHoverOnElement(metatagingitemmaintenance)
 		action.WaitVisible(itemsearchtagging)
@@ -216,7 +216,7 @@ public class HomePage {
 	public void NavigateToCategoryMaintenancePage() {
 		action.WaitVisible(instantimpact)
 		action.MouseHoverOnElement(instantimpact)
-		WebUI.delay(3)
+		//WebUI.delay(3)
 		action.WaitVisible(metatagingitemmaintenance)
 		action.MouseHoverOnElement(metatagingitemmaintenance)
 		action.WaitVisible(metatagingcategorymaintenance)
@@ -229,14 +229,14 @@ public class HomePage {
 		try
 		{
 			println("Inside NavigateToCategoryItemMaintenancePage ")
-			WebUI.delay(10)
+			//WebUI.delay(10)
 
 			//action.IsElementDisplayed(Heading)
 			println("VERIFIED HEADING")
 			//action.WaitVisible(instantimpact)
 			//action.MouseHoverOnElement(instantimpact)
 			action.Click(instantimpact)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			println("Clicked InstantImpact")
 			action.WaitVisible(metatagingitemmaintenance)
 			action.Click(metatagingitemmaintenance)
@@ -281,7 +281,7 @@ public class HomePage {
 	public void NavigateToItemPartQntyMaintenance() {
 		action.WaitVisible(instantimpact)
 		action.MouseHoverOnElement(instantimpact)
-		WebUI.delay(3)
+		//WebUI.delay(3)
 		action.WaitVisible(itempartquantitymaintenance)
 		action.Click(itempartquantitymaintenance)
 		action.WaitForPageToLoad()
@@ -292,7 +292,7 @@ public class HomePage {
 	public void NavigateToBannedPhrases() {
 		action.WaitVisible(instantimpact)
 		action.MouseHoverOnElement(instantimpact)
-		WebUI.delay(3)
+		//WebUI.delay(3)
 		action.WaitVisible(bannedphrasesbtn)
 		action.Click(bannedphrasesbtn)
 		action.WaitForPageToLoad()
@@ -304,7 +304,7 @@ public class HomePage {
 		action.MouseHoverOnElement(fulfillmentbtn)
 		action.Click(lowstocknotification)
 		action.WaitForPageToLoad()
-		WebUI.delay(10)
+		//WebUI.delay(10)
 	}
 
 	@Keyword
@@ -312,9 +312,9 @@ public class HomePage {
 	{
 		action.WaitVisible(instantimpact)
 		action.MouseHoverOnElement(instantimpact)
-		WebUI.delay(3)
+		//WebUI.delay(3)
 		action.MouseHoverOnElement(itemgatinggroupmanagement)
-		WebUI.delay(3)
+		//WebUI.delay(3)
 		action.WaitVisible(standarditemgating)
 		action.Click(standarditemgating)
 		action.WaitForPageToLoad()
@@ -328,7 +328,7 @@ public class HomePage {
 		{
 			action.WaitVisible(instantimpact)
 			action.MouseHoverOnElement(instantimpact)
-			//WebUI.delay(3)
+			////WebUI.delay(3)
 			action.MouseHoverOnElement(olof)
 			action.Click(olofii4configuration)
 			action.WaitForPageToLoad()
@@ -417,10 +417,10 @@ public class HomePage {
 	{
 		action.WaitVisible(instantimpact)
 		action.MouseHoverOnElement(instantimpact)
-		WebUI.delay(3)
+		//WebUI.delay(3)
 		action.WaitVisible(ii4crosscorp)
 		action.MouseHoverOnElement(ii4crosscorp)
-		WebUI.delay(2)
+		//WebUI.delay(2)
 		action.WaitVisible(ii4crosscorpadmin)
 		action.Click(ii4crosscorpadmin)
 		action.WaitForPageToLoad()
@@ -432,9 +432,9 @@ public class HomePage {
 	{
 		try{
 			action.MouseHoverOnElement(instantimpact)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.MouseHoverOnElement(productshots)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(productshotremovaltool)
 			action.WaitForPageToLoad()
 		}
@@ -454,10 +454,10 @@ public class HomePage {
 
 			action.WaitVisible(instantimpact)
 			action.MouseHoverOnElement(instantimpact)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.WaitVisible(ii4crosscorp)
 			action.MouseHoverOnElement(ii4crosscorp)
-			WebUI.delay(2)
+			//WebUI.delay(2)
 			action.WaitVisible(ii4crosscorpadmin)
 			action.WaitVisible(ii4crosscorpassociation)
 			action.Click(ii4crosscorpassociation)
@@ -479,9 +479,9 @@ public class HomePage {
 		{
 			action.WaitVisible(instantimpact)
 			action.MouseHoverOnElement(instantimpact)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.MouseHoverOnElement(ItemGatingGroupManagementSubMenu)
-			WebUI.delay(2)
+			//WebUI.delay(2)
 			//action.WaitVisible(ii4crosscorpadmin)
 			action.Click(administrativeItemTaggingSubMenu)
 			action.WaitForPageToLoad()
@@ -498,7 +498,7 @@ public class HomePage {
 	{
 		try{
 			action.MouseHoverOnElement(fulfillmentbtn)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.Click(fulfillmentsearchbtn)
 		}
 		catch(Exception e)
@@ -512,7 +512,7 @@ public class HomePage {
 	{
 		try{
 			action.MouseHoverOnElement(instantimpact)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(trainingresourcesbtn)
 			action.WaitForPageToLoad()
 		}
@@ -527,9 +527,9 @@ public class HomePage {
 	{
 		try{
 			action.MouseHoverOnElement(fulfillmentbtn)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.MouseHoverOnElement(fulfillmentproductunit)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(createfulfillmentproductunit)
 			action.WaitForPageToLoad()
 		}
@@ -545,9 +545,9 @@ public class HomePage {
 	{
 		try{
 			action.MouseHoverOnElement(fulfillmentbtn)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.MouseHoverOnElement(fulfillmentproductunit)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(associtaeitemstoproductunit)
 			action.WaitForPageToLoad()
 		}
@@ -562,9 +562,9 @@ public class HomePage {
 	{
 		try{
 			action.MouseHoverOnElement(fulfillmentbtn)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.MouseHoverOnElement(colormaintenance)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(color)
 		}
 		catch(Exception e)
@@ -579,9 +579,9 @@ public class HomePage {
 	{
 		try{
 			action.MouseHoverOnElement(fulfillmentbtn)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.MouseHoverOnElement(colormaintenance)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(colortocorporation)
 			action.WaitForPageToLoad()
 		}
@@ -597,9 +597,9 @@ public class HomePage {
 	{
 		try{
 			action.MouseHoverOnElement(fulfillmentbtn)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.MouseHoverOnElement(sizemaintenance)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(size)
 			action.WaitForPageToLoad()
 		}
@@ -614,9 +614,9 @@ public class HomePage {
 	{
 		try{
 			action.MouseHoverOnElement(fulfillmentbtn)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.MouseHoverOnElement(sizemaintenance)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(sizetocorporation)
 			action.WaitForPageToLoad()
 		}
@@ -631,9 +631,9 @@ public class HomePage {
 	{
 		try{
 			action.MouseHoverOnElement(fulfillmentbtn)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.MouseHoverOnElement(corpdistmaintenance)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(fulfillmentcorpdistadmin)
 			action.WaitForPageToLoad()
 		}
@@ -649,9 +649,9 @@ public class HomePage {
 	{
 		try{
 			action.MouseHoverOnElement(fulfillmentbtn)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.MouseHoverOnElement(corpdistmaintenance)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(fulfillmentcorpmaintenance)
 			action.WaitForPageToLoad()
 		}
@@ -667,9 +667,9 @@ public class HomePage {
 	{
 		try{
 			action.MouseHoverOnElement(fulfillmentbtn)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.MouseHoverOnElement(fulfillmentproductunit)
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(reports)
 			action.WaitForPageToLoad()
 		}
@@ -743,7 +743,7 @@ public class HomePage {
 	}
 
 
-	
+
 	/*CategoryItemEditDelete.aspx*/
 	public void NavigateToMetaTaggingEditDeletePage()
 	{
@@ -775,7 +775,7 @@ public class HomePage {
 			Assert.fail("Navigate To Global Meta Tagging Maintenance Page failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
 	public void NavigateToCategoryItemMaint()
 	{

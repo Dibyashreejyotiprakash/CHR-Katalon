@@ -27,7 +27,8 @@ import org.openqa.selenium.Alert
 import org.openqa.selenium.By
 import com.kms.katalon.core.webui.driver.DriverFactory
 
-public class Homepage {
+public class Homepage
+ {
 
 	Interaction action = new Interaction();
 	WebDriver driver = DriverFactory.getWebDriver()
@@ -88,7 +89,7 @@ public class Homepage {
 	@Keyword
 	public void HoverOnWareHouseMenu() {
 		action.MouseHoverOnElement(menuWarehouse);
-		action.WaitTime(3);
+		//action.WaitTime(3);
 	}
 
 
@@ -124,7 +125,7 @@ public class Homepage {
 	@Keyword
 	public void ClickOnItemSearch() {
 		action.MouseHoverOnElement(menuWarehouse)
-		WebUI.delay(3)
+		//WebUI.delay(3)
 		action.Click(itemsearchbtn)
 		//action.WaitForPageToLoad()
 	}
@@ -157,9 +158,7 @@ public class Homepage {
 	@Keyword
 	public void ClickOnItemProperties() {
 		action.MouseHoverOnElement(menuWarehouse)
-		//WebUI.delay(2)
 		action.MouseHoverOnElement(adminbtn)
-		//WebUI.delay(2)
 		action.Click(subMenuitemProperties)
 		//action.WaitForPageToLoad()
 	}

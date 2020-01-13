@@ -52,7 +52,7 @@ public class CloneItemDetailPage {
 
 	@Keyword
 	public void VerifyDeleteLink() {
-		
+
 		action.ScrollToViewElement(deletelink)
 		boolean statusofvisibilityofdeletelink = action.IsElementDisplayed(deletelink)
 		//Assert.assertTrue(statusofvisibilityofdeletelink)

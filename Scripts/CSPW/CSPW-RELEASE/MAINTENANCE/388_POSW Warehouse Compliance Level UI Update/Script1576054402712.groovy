@@ -17,13 +17,12 @@ CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameposw, Glo
 
 //Enter credential
 
-CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.PoswTestUserName, GlobalVariable.PoswTestPassword)
+CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.posusername, GlobalVariable.pospassword)
 //select BU as Empire Marchent 
-CustomKeywords.'com.poswm.LoginPage.SelectEmpireMerchantBU'()
 //navigate to spend limit page
 CustomKeywords.'com.poswm.Homepage.ClickOnWarehouseSpendLimits'()
 //click on 2019 State compliance 
-CustomKeywords.'com.poswm.WarehouseSpendingLimits.ClickOn2019Compliance'()
+CustomKeywords.'com.poswm.WarehouseSpendingLimits.ClickOn2020Compliance'()
 //Verify show more link
 CustomKeywords.'com.poswm.WarehouseSpendingLimits.VerifyShowMoreLink'()
 //Verify show less link

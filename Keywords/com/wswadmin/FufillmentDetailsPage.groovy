@@ -54,7 +54,7 @@ public class FufillmentDetailsPage {
 			Assert.fail("Update Item failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
 	public void SetLowStockAmount() {
 		try{

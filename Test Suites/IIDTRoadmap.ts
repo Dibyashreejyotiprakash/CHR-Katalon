@@ -145,67 +145,67 @@
    <testCaseLink>
       <guid>99351fca-3810-422e-a5e6-9fef01fd3ba9</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/IIDT/IIDT RELEASE/ROADMAP/DigitalDownload/Regression/75_ValidateCloneDDOrderInDT</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>377378c2-3c11-4891-a33a-de123b785ae2</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/IIDT/IIDT RELEASE/ROADMAP/CrossCorp/Regression/CreateAssociationFromAssociationPage</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>015c6e8a-4688-4ab0-b899-310f56bdbd2e</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/IIDT/IIDT RELEASE/ROADMAP/CrossCorp/Regression/CreateCorpToCorpAssociation</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>dbd78f8e-11dc-405a-bac0-61761956dbe2</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/IIDT/IIDT RELEASE/ROADMAP/CrossCorp/Regression/CreateCorpToMarketAssociation</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>a6022b1d-07ae-456f-906d-28d0a8639e63</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/IIDT/IIDT RELEASE/ROADMAP/CrossCorp/Regression/CrossCorpAdminField Validation</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>fce38eec-0948-4710-8edd-4cca3994eb60</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/IIDT/IIDT RELEASE/ROADMAP/CrossCorp/Regression/EditAssociationFromAssociationPage</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>91ce5991-648d-4e32-b235-870039d4e451</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/IIDT/IIDT RELEASE/ROADMAP/CrossCorp/Regression/RemoveAssociationFromAssociationPage</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>09ad493a-2a05-403c-8df6-8585cafcefd9</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/IIDT/IIDT RELEASE/ROADMAP/CrossCorp/Regression/ValidateAssociationPageSearchFunctionality</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>59ea75de-697a-4207-8f14-450698be9741</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/IIDT/IIDT RELEASE/ROADMAP/CrossCorp/Regression/ValidateCorpAssociatgionOnAssociationPage</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>de8066ad-6b1b-4ae4-a3b4-57caac200eb8</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/IIDT/IIDT RELEASE/ROADMAP/CrossCorp/Regression/ValidateCorpAssociationPage</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>f70cd313-259b-4f21-b2f7-5dae6af012d5</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/IIDT/IIDT RELEASE/ROADMAP/CrossCorp/Regression/ValidateCorpToCorpOnCrossCorpAssociationPage</testCaseId>
    </testCaseLink>
    <testCaseLink>
@@ -223,13 +223,13 @@
    <testCaseLink>
       <guid>8e49840a-951d-4c7a-87fd-ebde3f01ce5a</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/IIDT/IIDT RELEASE/ROADMAP/CrossCorp/Regression/ValidateCrossCorpFilter</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>2a2f8213-938c-4209-bb9a-83b644d37f3d</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/IIDT/IIDT RELEASE/ROADMAP/CrossCorp/Regression/ValidateCrossCorpShowAllFilter</testCaseId>
    </testCaseLink>
    <testCaseLink>
@@ -247,7 +247,7 @@
    <testCaseLink>
       <guid>c498cbbb-5576-4b50-ba08-4887eb09d72d</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/IIDT/IIDT RELEASE/ROADMAP/CrossCorp/Regression/ValidateViewBatchForCorptoCorp</testCaseId>
    </testCaseLink>
    <testCaseLink>
@@ -259,7 +259,7 @@
    <testCaseLink>
       <guid>f5964f74-bea9-408e-915b-b1615c826c22</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/IIDT/IIDT RELEASE/ROADMAP/CrossCorp/Smoke/test</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>
