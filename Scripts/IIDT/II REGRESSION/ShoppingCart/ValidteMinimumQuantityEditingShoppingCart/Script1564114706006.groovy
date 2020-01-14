@@ -33,27 +33,26 @@ WebUI.maximizeWindow()
 
 CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameiiusersite, GlobalVariable.testtypesmoke, GlobalVariable.environment)
 
-CustomKeywords.'com.ii4usersites.LoginPage.LoginToDemoCorp'('demoQA@brandmuscle.com', 'go2web')
+CustomKeywords.'com.ii4usersites.LoginPage.LoginToDemoCorp'(GlobalVariable.iiusersiteusername, GlobalVariable.iiusersitepassword)
+
+CustomKeywords.'com.ii4usersites.HomePage.VerifyHomePage'()
 
 CustomKeywords.'com.ii4usersites.HomePage.ClickOnPosTemplate'()
 
-CustomKeywords.'com.ii4usersites.ItemSearchPage.ClickOnVariableTemplate'()
+CustomKeywords.'com.ii4usersites.ItemSearchPage.ClickOnTestTemplate'("130718")
 
-CustomKeywords.'com.ii4usersites.ItemDetailsPage.SetVariableTemplateLayout'()
+CustomKeywords.'com.ii4usersites.ItemSearchPage.ClickOnCreateYourOwnDesignAndNavigateToCreateDesignPage'()
 
-CustomKeywords.'com.ii4usersites.ItemDetailsPage.SelectItemType'()
+CustomKeywords.'com.ii4usersites.CreateDesignPage.ClickOnPreviewChangesButton'()
 
-CustomKeywords.'com.ii4usersites.ItemDetailsPage.Checkout'()
+CustomKeywords.'com.ii4usersites.CreateDesignPage.ClickOnNextStepBtnAndNavigateToProductSelectionPage'()
 
-CustomKeywords.'com.ii4usersites.ItemDetailsPage.ValidateMinimumQuantity'()
+CustomKeywords.'com.ii4usersites.ProductionSelectionPage.SelectItemType'()
 
-CustomKeywords.'com.ii4usersites.ItemDetailsPage.EditShoppingCartQty'()
+CustomKeywords.'com.ii4usersites.ProductionSelectionPage.SetQuantity'()
 
-CustomKeywords.'com.ii4usersites.ItemDetailsPage.Checkout'()
+CustomKeywords.'com.ii4usersites.ProductionSelectionPage.ClickOnNo'()
 
-CustomKeywords.'com.ii4usersites.ItemDetailsPage.Checkout'()
+CustomKeywords.'com.ii4usersites.ProductionSelectionPage.ClickOnAddToKart'()
 
-CustomKeywords.'com.ii4usersites.ItemDetailsPage.CheckPaymentPage'()
-
-CustomKeywords.'com.ii4usersites.ItemDetailsPage.ClearShoppingCart'()
-
+CustomKeywords.'com.ii4usersites.ShoppingCartPage.ClearShoppingCart'()

@@ -75,6 +75,10 @@ class ShoppingCartPage {
 	By iconCrossBtn = By.xpath("//a[@id='ctl00_Body_shopCartItemsListView_ctrl0_delLineItemBtn']")
 
 	By firstitemeditlink = By.xpath("//*[@id='ctl00_Body_shopCartItemsListView_ctrl0_editItemDesignLink']")
+	By clearshoppingcartbtn = By.xpath("//a[@id='Body_lnkDeleteAll']")
+	By clearshoppingconfirm = By.xpath("(//span[contains(text(),'Yes')])[1]")
+	By shoppingCartEmptytext = By.xpath("//h4[contains(text(),'Your shopping cart is empty')]")
+
 
 	@Keyword
 	public void VerifyShoppingCartPage() {
@@ -642,6 +646,20 @@ class ShoppingCartPage {
 			Assert.fail("WaitForCheckoutBtn failed due to "+e)
 		}
 
+	}
+
+	@Keyword
+	public void ClearShoppingCart() {
+		try {
+			action.Click(clearshoppingcartbtn)
+			action.WaitVisible(clearshoppingconfirm)
+			action.Click(clearshoppingconfirm)
+			action.WaitVisible(shoppingCartEmptytext)
+		}
+		catch(Exception e) {
+			println("ClearShoppingCart Failed")
+			Assert.fail("ClearShoppingCart failed due to "+e)
+		}
 	}
 
 
