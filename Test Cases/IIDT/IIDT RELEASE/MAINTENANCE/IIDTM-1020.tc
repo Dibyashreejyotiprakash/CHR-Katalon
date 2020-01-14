@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Add Custom Message to Calendar Page on Custom Order Form</description>
+   <name>IIDTM-1020</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>d20a0a62-7786-4e58-bb5e-aa60af11f3c6</testCaseGuid>
+</TestCaseEntity>

@@ -431,8 +431,8 @@ public class II4ConfigurationPage {
 		try {
 			if (Disclaimer.equalsIgnoreCase("Enable")) {
 				/*JavascriptExecutor js = (JavascriptExecutor) driver
-				js.executeScript("window.scrollBy(1000,1000)")
-				WebUI.delay(100)*/
+				 js.executeScript("window.scrollBy(1000,1000)")
+				 WebUI.delay(100)*/
 				action.ScrollToBottomOfPage()
 				action.Click(additionalinfoyesbtn)
 				action.Click(savebtn)
@@ -445,6 +445,17 @@ public class II4ConfigurationPage {
 		}
 		catch(Exception e) {
 			Assert.fail("EnableAndDisablePriceDisclaimer failed due to :" + e)
+		}
+	}
+	
+	@Keyword
+	public void EnableJobDueDateCustomMessage(){
+		try{
+				action.ScrollToBottomOfPage()
+				action.Click(savebtn)
+		}
+		catch(Exception e){
+			Assert.fail("Enable Custom Message failed due to :" + e)
 		}
 	}
 }
