@@ -417,6 +417,8 @@ public class JobDetailsPage {
 	public void AddMultiplePartsToJobs()
 	{
 		try{
+			action.Refresh()
+			action.ScrollToBottomOfPage()
 			action.Click(addpartlink)
 			action.WaitForPageToLoad()
 			action.SelectByIndex(printformatddn, 3)

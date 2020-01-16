@@ -447,12 +447,12 @@ public class II4ConfigurationPage {
 			Assert.fail("EnableAndDisablePriceDisclaimer failed due to :" + e)
 		}
 	}
-	
+
 	@Keyword
 	public void EnableJobDueDateCustomMessage(){
 		try{
-				action.ScrollToBottomOfPage()
-				action.Click(savebtn)
+			action.ScrollToBottomOfPage()
+			action.Click(savebtn)
 		}
 		catch(Exception e){
 			Assert.fail("Enable Custom Message failed due to :" + e)
