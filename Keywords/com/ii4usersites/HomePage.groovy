@@ -116,6 +116,7 @@ class HomePage {
 			action.WaitVisible(accountlink)
 			action.Click(accountlink)
 			action.WaitForPageToLoad()
+		    WebUI.delay(3)
 		}
 		catch(Exception e) {
 			println ("Click On Account failed due to :"+ e);

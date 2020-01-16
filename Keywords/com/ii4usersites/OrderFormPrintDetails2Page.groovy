@@ -106,6 +106,7 @@ public class OrderFormPrintDetails2Page {
 	@Keyword
 	public void VerifyIOCodevisibilty() {
 		try {
+			action.ScrollToBottomOfPage()
 			boolean statusofiocode = action.IsElementDisplayed(iocodetextbox)
 			Assert.assertTrue(statusofiocode)
 		}
@@ -117,6 +118,7 @@ public class OrderFormPrintDetails2Page {
 	@Keyword
 	public void VerifyIOVerviagevisibilty() {
 		try {
+			action.ScrollToBottomOfPage()
 			boolean statusofiocode = action.IsElementDisplayed(iocodetextbox)
 			Assert.assertTrue(statusofiocode)
 		}
@@ -163,6 +165,7 @@ public class OrderFormPrintDetails2Page {
 	@Keyword
 	public void VerifyPOCodevisibilty() {
 		try {
+			action.ScrollToBottomOfPage()
 			boolean statusofpocode = action.IsElementDisplayed(ponumbertextbox)
 			Assert.assertTrue(statusofpocode)
 		}
@@ -174,6 +177,7 @@ public class OrderFormPrintDetails2Page {
 	@Keyword
 	public void VerifyPOBerviage() {
 		try {
+			//action.ScrollToBottomOfPage()
 			boolean statusofpoberviage = action.IsElementDisplayed(poverviage)
 			Assert.assertTrue(statusofpoberviage)
 		}

@@ -176,7 +176,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'LogoLockerTest'</initValue>
+      <initValue>'Logo Locker'</initValue>
       <name>resourcemsglogolocker</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>

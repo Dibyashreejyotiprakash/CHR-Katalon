@@ -160,6 +160,7 @@ public class AccountPage {
 		String actuallogolockerlable = null
 		for(int i=0;i<= alllables.size();i++) {
 			actuallogolockerlable = alllables.get(4).getText()
+			println ("@@@@ "+actuallogolockerlable)
 			if(actuallogolockerlable.equals(expectedlogolockerlable)) {
 				println ("Profile resource message is appearing "+ actuallogolockerlable )
 			}
