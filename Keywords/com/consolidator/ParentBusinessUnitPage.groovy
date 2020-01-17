@@ -63,6 +63,21 @@ public class ParentBusinessUnitPage {
 			throw e;
 		}
 	}
+	
+	@Keyword
+	public void SelectParentBusinessUnit1() {
+		try {
+			action.WaitVisible(ParentBuDropDown);
+			action.SelectByText(ParentBuDropDown,"Beam Global Spirits and Wine");
+			action.WaitVisible(SubmitBtn);
+			action.Click(SubmitBtn);
+			action.WaitForPageToLoad();
+		}
+		catch(Exception e) {
+			println ("Select Parent Bu failed due to " + e);
+			throw e;
+		}
+	}
 
 	@Keyword
 	public void SelectParentAndChildBU() {

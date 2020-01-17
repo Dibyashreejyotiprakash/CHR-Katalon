@@ -94,7 +94,10 @@ public class WarehouseOrders {
 	By popCalander = By.xpath("//*[@id='ctl00_MainContent_rwInstaller_C_rdInstallationDate_popupButton']")
 	By addedToCartConfirmationMsg = By.xpath("//*[text()='Item added to order.']")
 	By modifyCustomerBtn = By.xpath("(//*[text()='Modify Customer'])[1]")
-
+	By switchSalesDevisionBtn = By.xpath("//span[contains(text(),'Switch Sales Division')]")
+	By salesDevisionddn = By.xpath("//span[@class='rddlFakeInput']")
+	By salesdevisionValue = By.xpath("//li[text()='Big Apple']")
+	By selectedSalesDevisionTxt = By.xpath("//Span[text()='Big Apple']")
 
 
 
@@ -417,9 +420,9 @@ public class WarehouseOrders {
 
 				println ("---------------------->" + dateFormatted)
 				action.Type(desiredshipdatetextbox, dateFormatted)
-				/*action.Click(shippingmethodddn)
+				//action.Click(shippingmethodddn)
 				 action.ScrollToTopOgPage()
-				 boolean statusofaddedshimethodmsg = action.IsElementDisplayed(desiredshipdateaddedmsg)
+				 /*boolean statusofaddedshimethodmsg = action.IsElementDisplayed(desiredshipdateaddedmsg)
 				 Assert.assertTrue(statusofaddedshimethodmsg)*/
 			}
 			catch(Exception e) {
@@ -437,8 +440,8 @@ public class WarehouseOrders {
 				//WebUI.delay()(10)
 				action.Click(shipingmethodddnvalue)
 				action.ScrollToTopOgPage()
-				boolean statusofshipingmethodaddedmsg = action.IsElementDisplayed(shipingmethodaddedmsg)
-				Assert.assertTrue(statusofshipingmethodaddedmsg)
+				//boolean statusofshipingmethodaddedmsg = action.IsElementDisplayed(shipingmethodaddedmsg)
+				//Assert.assertTrue(statusofshipingmethodaddedmsg)
 			}
 			catch(Exception e) {
 				Assert.fail("Add Desired Shipping Method and verify failed due to "+ e)
@@ -448,11 +451,11 @@ public class WarehouseOrders {
 		@Keyword
 		public void ClickOnSubmitOrderBtnAndevrifyMsg() {
 			try{
-				//action.ScrollToViewelement(submitbtn)
+				action.ScrollToViewElement(submitbtn)
 				action.Click(submitbtn)
-				action.ScrollToTopOgPage()
-				boolean statusofsubmitordermsg = action.IsElementDisplayed(submitordermsg)
-				Assert.assertTrue(statusofsubmitordermsg)
+				//action.ScrollToTopOgPage()
+				//boolean statusofsubmitordermsg = action.IsElementDisplayed(submitordermsg)
+				//Assert.assertTrue(statusofsubmitordermsg)
 			}
 			catch(Exception e) {
 				Assert.fail("Add Desired Shipping Method and verify failed due to "+ e)
@@ -587,6 +590,20 @@ public class WarehouseOrders {
 			}
 			catch(Exception e) {
 				Assert.fail("VerifyNewItemPage failed due to "+ e)
+			}
+		}
+		
+		//VerifyNewItemPage
+		@Keyword
+		public void selectSalesDevision() {
+			try{
+				action.Click(switchSalesDevisionBtn)
+				action.Click(salesDevisionddn)
+				action.Click(salesdevisionValue)
+				action.IsDisplayed(selectedSalesDevisionTxt)
+			}
+			catch(Exception e) {
+				Assert.fail("selectSalesDevision failed due to "+ e)
 			}
 		}
 	}

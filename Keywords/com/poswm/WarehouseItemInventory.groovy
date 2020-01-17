@@ -123,7 +123,7 @@ public class WarehouseItemInventory {
 	By salesDivLebelOnEditItemPage = By.xpath("//*[@id='ctl00_MainContent_ucItemOverView_radListItemProperties_ctrl0_lblSalesDivisions']")
 	By imageLoader = By.xpath("//*[@id='MainContent_Image2']")
 	By deleteConfirmationMessage = By.xpath("//*[@id='ctl00_MainContent_radNotifyMessage_simpleContentDiv']")
-	
+
 
 
 
@@ -214,7 +214,7 @@ public class WarehouseItemInventory {
 			action.ScrollToBottomOfPage()
 			action.Click(deleteItemLink)
 			//WebUI.delay(5)
-			
+
 			action.AcceptAlert()
 			//WebUI.delay(3)
 			action.WaitVisible(DeleteItemBtn)
@@ -663,6 +663,26 @@ public class WarehouseItemInventory {
 	}
 
 	@Keyword
+	public String DeleteItem1()
+	{
+		try{
+			action.ScrollToBottomOfPage()
+			action.Click(deletethisitembtn)
+			//WebUI.delay(10)
+			action.AcceptAlert()
+			action.Click(deletebtn)
+			//WebUI.closeBrowser()
+			driver.switchTo().defaultContent()
+		}
+		catch(Exception e)
+		{
+			println ("Delete Item failed due to "+ e)
+			Assert.fail()
+		}
+	}
+
+
+	@Keyword
 	public void SelectSalesDivision()
 	{
 		try
@@ -696,7 +716,7 @@ public class WarehouseItemInventory {
 			action.Click(itemsearchbtn)
 			//WebUI.delay(5)
 			action.WaitTillNotVisible(imageLoader, 0)
-			
+
 
 		}
 		catch(Exception e)

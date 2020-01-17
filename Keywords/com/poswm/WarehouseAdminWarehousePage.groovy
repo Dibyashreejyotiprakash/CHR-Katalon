@@ -41,7 +41,7 @@ public class WarehouseAdminWarehousePage {
 	By sitedropdown = By.xpath("//a[@id='ctl00_MainContent_ddlSites_Arrow']")
 	By selectbin = By.xpath("//li[contains(text(),'Bin')]")
 	By warehousedropdown = By.xpath("//a[@id='ctl00_MainContent_ddlWarehouse_Arrow']")
-	By selectwarehouse = By.xpath("//li[contains(text(),'Breakthru Beverage Nevada')]")
+	By selectwarehouse = By.xpath("//li[contains(text(),'POS')]")
 	By addbinplus = By.xpath("//input[@id='ctl00_MainContent_rgBins_ctl00_ctl02_ctl00_AddNewRecordButton']")
 	By binname = By.xpath("//input[@id='ctl00_MainContent_rgBins_ctl00_ctl02_ctl03_TB_WarehouseBinName']")
 	By insertbtn = By.xpath("//a[@id='ctl00_MainContent_rgBins_ctl00_ctl02_ctl03_PerformInsertButton']")

@@ -60,7 +60,7 @@ public class HomePage {
 
 	By jobname = By.xpath("//*[@id='ctl00_cphBody_txtJobName']")
 
-	By salespersonddnvalue = By.xpath("//*[text()='Admin1, Test Name']")
+	By salespersonddnvalue = By.xpath("//*[text()='Admin1, Test']")
 
 
 	@Keyword
@@ -80,6 +80,7 @@ public class HomePage {
 		try {
 			action.Type(dtsearchtextbox,dtjobid)
 			action.Click(searchbtn)
+			WebUI.delay(4)
 		}
 		catch(Exception e) {
 			Assert.fail ("Verify Search DT Job failed due to "+ e)
@@ -142,7 +143,7 @@ public class HomePage {
 		try {
 			action.Click(statusddn)
 			action.Click(createdstatus)
-			action.Click(searchbtn)
+			//action.Click(searchbtn)
 		}
 		catch(Exception e) {
 			Assert.fail ("Verify Search By Status failed due to "+ e)
@@ -209,6 +210,7 @@ public class HomePage {
 			action.Click(salespersonddn)
 			action.Click(salespersonddnvalue)
 			action.Click(searchbtn)
+			WebUI.delay(4)
 			boolean statusofjobid = action.IsElementDisplayed(alldtjobid)
 			Assert.assertTrue(statusofjobid)
 			if(statusofjobid) {

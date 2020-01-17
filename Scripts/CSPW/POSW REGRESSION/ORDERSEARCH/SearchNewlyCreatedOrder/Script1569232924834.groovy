@@ -30,6 +30,8 @@ String orderid = CustomKeywords.'com.poswm.WarehouseOrders.GetOrderId'()
 
 CustomKeywords.'com.poswm.WarehouseOrders.VerifyAddItemLink'()
 
+CustomKeywords.'com.poswm.WarehouseOrders.selectSalesDevision'()
+
 CustomKeywords.'com.poswm.WarehouseOrders.AddItemAndVerifyMsg'()
 
 CustomKeywords.'com.poswm.WarehouseOrders.AddCustomerAndVerifyMsg'()
