@@ -33,5 +33,5 @@ CustomKeywords.'com.designtracker.JobDetailsPage.AddMultiplePartsToJobs'()
 
 CustomKeywords.'com.designtracker.JobDetailsPage.ClickOnDetailsBtn'()
 
-CustomKeywords.'com.designtracker.JobDetailsPage.UpdateShippingLocationsToAllJobLines'()
+CustomKeywords.'com.designtracker.JobDetailsPage.VerifyUpdateShippingLinkAndUpdateShippingForJob'()
 

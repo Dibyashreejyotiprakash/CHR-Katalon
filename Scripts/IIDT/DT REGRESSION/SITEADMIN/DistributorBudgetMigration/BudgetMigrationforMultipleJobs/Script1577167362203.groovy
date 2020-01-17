@@ -19,14 +19,6 @@ CustomKeywords.'com.designtracker.LoginPage.LoginToDesignTarcker'(GlobalVariable
 
 CustomKeywords.'com.designtracker.HomePage.ClickOnNewJob'()
 
-CustomKeywords.'com.designtracker.JobNewPage.VerifyNewJobPage'()
-
-CustomKeywords.'com.designtracker.JobNewPage.VerifyCreateNewJobs1'()
-
-CustomKeywords.'com.designtracker.JobDetailsPage.AddPartAndBackToJobDetailsPage'()
-
-CustomKeywords.'com.designtracker.HomePage.ClickOnNewJob'()
-
 CustomKeywords.'com.designtracker.JobNewPage.VerifyCreateNewJobs1'()
 
 CustomKeywords.'com.designtracker.JobDetailsPage.AddPartAndBackToJobDetailsPage'()

@@ -157,8 +157,8 @@ class ExceptionListBrandsPage {
 			action.Click(insertSelBrandBtn)
 			boolean statusofSuccessMsg  =     action.IsElementDisplayed(successInsertMsg)
 			Assert.assertTrue(statusofSuccessMsg, "Success msg for insert is visible")
-			action.SelectByText(brandsddn, "TestBrand1")
-			action.Click(insertSelBrandBtn)
+			/*action.SelectByText(brandsddn, "TestBrand1")
+			action.Click(insertSelBrandBtn)*/
 
 			//WebUI.delay(5)
 			boolean statusofSuccessMsgOnAddingBrand2  =     action.IsElementDisplayed(successInsertMsg)

@@ -38,7 +38,7 @@ public class DistributorBudgetMigrationPage {
 	By checkBoxAllJobId = By.xpath("//input[@id='ctl00_ctl00_cphMain_cphMain_gvBudgetJobs_ctl01_chkDeleteAllHeader']")
 	By submitBtn = By.xpath("//input[@id='ctl00_ctl00_cphMain_cphMain_btnBatchSubmit']")
 	By successSubmitMsg = By.xpath("//li[contains(text(),'Budgets migration has completed successfully.')]")
-	By FailedSubmitMsg = By.xpath("//li[contains(text(),'could not be migrated.')]")
+	By FailedSubmitMsg = By.xpath("//li[contains(text(),'Original Budget and New Budget cannot be the same.')]")
 
 
 	@Keyword

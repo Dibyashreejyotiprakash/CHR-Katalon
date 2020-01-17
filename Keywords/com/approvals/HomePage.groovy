@@ -60,7 +60,7 @@ public class HomePage {
 
 	By jobname = By.xpath("//*[@id='ctl00_cphBody_txtJobName']")
 
-	By salespersonddnvalue = By.xpath("//*[text()='Admin1, Test Name']")
+	By salespersonddnvalue = By.xpath("//*[text()='Admin1, Test']")
 
 
 	@Keyword
@@ -227,7 +227,7 @@ public class HomePage {
 	@Keyword
 	public void VerifyCreatedJobDetails() {
 		try{
-
+			WebUI.delay(5)
 			List<WebElement> alldtjobs = action.GetElements(alldtjobid)
 			for(int i=0;i< alldtjobs.size();i++) {
 				alldtjobs.get(i).click()
