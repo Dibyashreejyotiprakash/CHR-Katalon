@@ -27,7 +27,7 @@ CustomKeywords.'com.designtracker.JobNewPage.VerifyNewJobPage'()
 
 CustomKeywords.'com.designtracker.JobNewPage.CreateNewJob'()
 
-CustomKeywords.'com.designtracker.JobDetailsPage.AddPartAddonsAndBackToJobDetailsPage'()
+CustomKeywords.'com.designtracker.JobDetailsPage.AddPartAndBackToJobDetailsPage'()
 
 CustomKeywords.'com.designtracker.JobDetailsPage.DeletePart'()
 

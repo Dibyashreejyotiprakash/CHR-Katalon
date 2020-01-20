@@ -19,6 +19,7 @@ import com.utilities.Interaction
 import internal.GlobalVariable
 
 import org.openqa.selenium.WebDriver
+import org.openqa.selenium.WebElement
 import org.testng.Assert
 import org.openqa.selenium.Alert
 import org.openqa.selenium.By
@@ -70,6 +71,8 @@ public class BrandsPage {
 	By brandupdatemessage = By.xpath("//li[contains(text(),'Brands have been updated')]")
 	By chargebackapplybtn = By.xpath(".//*[@id='ctl00_ctl00_cphMain_cphMain_fvChargeBackBySupplier_btnChargeBackBySupplier']")
 	By showretiredcheckbox = By.xpath("//input[@id='ctl00_ctl00_cphMain_cphMain_ckRetired']")
+	
+	By existingnbrands = By.xpath("//*[@id='ctl00_ctl00_cphMain_cphMain_lbxBrandSearchResults']/option")
 
 
 	@Keyword
@@ -147,16 +150,21 @@ public class BrandsPage {
 	@Keyword
 	public void ValidateUpdateExistingBrand() {
 		try {
-
-			action.IsDisplayed(updateexistingbrand)
 			action.Click(updateexistingbrand)
-			//WebUI.delay(8)
-			action.IsElementDisplayed(corpddn)
-			action.IsElementDisplayed(marketddn)
-			action.IsElementDisplayed(supplierddn)
-			action.IsElementDisplayed(brandname)
-			action.IsElementDisplayed(searchbtn)
-			action.IsElementDisplayed(showretiredbrandchkbox)
+			action.SelectByText(corpddn, "Instant Impact 4.0 Demo Corp (Dist.)")
+			action.SelectByText(marketddn, "Chicago Beverage Systems")
+			action.SelectByText(supplierddn, "MILLER COORS BREWING COMPANY")
+			action.Type(updatebrandnamefield, "Brand")
+			action.Click(showretiredcheckbox)
+			action.Click(searchbtn)
+			
+			List<WebElement> availablebrands = action.GetElements(chargeBackBySupplier)
+			
+			if(availablebrands.size()>0){
+				println ("Brands are avilable")
+			}else{
+			throw new Exception("No brands are available")
+			}
 		}
 		catch(Exception e) {
 			println ("ValidateUpdateExistingBrand Failed due to "+ e)
@@ -388,25 +396,12 @@ public class BrandsPage {
 	@Keyword
 	public void ValidateShowRetireBrands() {
 		try {
-			action.IsDisplayed(updateexistingbrand)
-			// action.Click(updateexistingbrand)
-
-			action.IsElementDisplayed(corpddn)
 			action.SelectByText(corpddn, "Instant Impact 4.0 Demo Corp (Dist.)")
-			action.WaitVisible(progressIndicator)
-			//WebUI.delay(10)
-			action.IsElementDisplayed(marketddn)
 			action.SelectByText(marketddn, "Chicago Beverage Systems")
-			action.WaitVisible(progressIndicator)
-			//WebUI.delay(1)
 			action.SelectByText(supplierddn, "MILLER COORS BREWING COMPANY")
-			action.WaitVisible(progressIndicator)
-			//WebUI.delay(2)
 			action.Type(updatebrandnamefield, "Brand")
 			action.Click(showretiredcheckbox)
-			//WebUI.delay(1)
 			action.Click(searchbtn)
-			//action.WaitVisible(searchresult)
 		}
 		catch(Exception e) {
 			Assert.fail("ValidateShowRetireBrands failed due to "+e)

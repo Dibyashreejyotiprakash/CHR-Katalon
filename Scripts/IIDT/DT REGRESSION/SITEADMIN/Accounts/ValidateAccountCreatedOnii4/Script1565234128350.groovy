@@ -35,5 +35,5 @@ CustomKeywords.'com.ii4usersites.HomePage.ClickOnOrderForm'()
 
 CustomKeywords.'com.ii4usersites.OrderFormDefaultPage.ClickonCreateNewCustomOrder'()
 
-CustomKeywords.'com.ii4usersites.OrderFormOrderHederPage.ValidateAccountNameAddedInDT'()s
+CustomKeywords.'com.ii4usersites.OrderFormOrderHederPage.ValidateAccountNameAddedInDT'()
 

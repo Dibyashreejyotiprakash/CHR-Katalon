@@ -39,7 +39,7 @@ public class CloneJobSearchPage {
 	By backtosearchbtn = By.xpath("//*[@id='ctl00_Body_btnBack']")
 	By addselecteditems = By.xpath("//*[@id='ctl00_Body_btnContinue']")
 	By expandbtn = By.xpath("//*[@id='ctl00_Body_rdgrdSearchResults_ctl00_ctl04_GECBtnExpandColumn']")
-	By selectcheckbox = By.xpath("//*[@id='ctl00_Body_rdgrdSearchResults_ctl00_ctl06_Detail10']//td/input")
+	By selectcheckbox = By.cssSelector(".rgHeader [type]")
 
 	By withoutselectionitemerrormsg =By.xpath("//*[@id='Body_lblError']")
 

@@ -11,6 +11,4 @@ CustomKeywords.'com.approvals.LoginPage.ApprovalLogin'(GlobalVariable.approvalus
 
 CustomKeywords.'com.approvals.HomePage.VerifyApprovalHomePage'()
 
-CustomKeywords.'com.approvals.HomePage.VerifySearchByStatus'()
-
 CustomKeywords.'com.approvals.HomePage.VerifyDTJobsAfterSearchBySalesperson'()

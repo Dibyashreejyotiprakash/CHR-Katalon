@@ -30,11 +30,9 @@ CustomKeywords.'com.designtracker.JobNewPage.VerifyNewJobPage'()
 
 CustomKeywords.'com.designtracker.JobNewPage.CreateNewJob'()
 
-CustomKeywords.'com.designtracker.JobDetailsPage.AddPartAddonsAndBackToJobDetailsPage'()
+String displayedprice = CustomKeywords.'com.designtracker.JobDetailsPage.AddPartAddonsAndBackToJobDetailsPage'()
 
-String displayedprice =CustomKeywords.'com.designtracker.JobDetailsPage.GetDisplayedPrice'()
-
-CustomKeywords.'com.designtracker.JobDetailsPage.VerifyAddOnsPriceInJobDetailsPage'()
+CustomKeywords.'com.designtracker.JobDetailsPage.VerifyAddOnsPriceInJobDetailsPage'(displayedprice)
 
 
 
