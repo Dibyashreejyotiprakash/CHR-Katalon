@@ -77,14 +77,15 @@ public class OrderFormItemDetails2Page {
 	public void AddNewNoteAndClickOnNextBtn1() {
 		try {
 			action.ScrollToViewElement(quantityTxtEditor)
+			action.ScrollToViewElement(addnewnotebtn)
 			action.WaitUntilElementClickable(addnewnotebtn)
 			action.Click(addnewnotebtn)
 			////WebUI.delay(10)
 			action.Click(addnewnotetextbox)
 			action.Type(addnewnotetextbox, "Test")
 			////WebUI.delay(10)
-			action.ScrollToViewElement(addnewnotetextbox)
-			action.WaitVisible(savebtn)
+			/*action.ScrollToViewElement(addnewnotetextbox)
+			action.WaitVisible(savebtn)*/
 			action.WaitUntilElementClickable(savebtn)
 			action.Click(savebtn)
 			////WebUI.delay(10)

@@ -89,7 +89,7 @@ public class OrderFormItemDetails1Page {
 	@Keyword
 	public void ClickOnNextBtn() {
 		try {
-			action.ScrollToViewElement(nextbtn)
+			action.ScrollToBottomOfPage()
 			action.WaitUntilElementClickable(nextbtn)
 			action.Click(nextbtn)
 			action.WaitForPageToLoad()
