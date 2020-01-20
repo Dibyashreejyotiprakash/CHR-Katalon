@@ -129,7 +129,7 @@ public class II4ConfigurationPage {
 			////WebUI.delay(20)
 			//action.ScrollToViewelement(corpddnvalue)
 			action.Click(corpddnvalue)
-			//WebUI.delay(10)
+			WebUI.delay(3)
 			action.Click(marketddn)
 			////WebUI.delay(20)
 			action.Click(marketddnvalue)
@@ -431,8 +431,8 @@ public class II4ConfigurationPage {
 		try {
 			if (Disclaimer.equalsIgnoreCase("Enable")) {
 				/*JavascriptExecutor js = (JavascriptExecutor) driver
-				js.executeScript("window.scrollBy(1000,1000)")
-				WebUI.delay(100)*/
+				 js.executeScript("window.scrollBy(1000,1000)")
+				 WebUI.delay(100)*/
 				action.ScrollToBottomOfPage()
 				action.Click(additionalinfoyesbtn)
 				action.Click(savebtn)

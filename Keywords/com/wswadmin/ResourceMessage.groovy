@@ -343,6 +343,7 @@ public class ResourceMessage {
 		action.Type(profileoverridetextbox, GlobalVariable.resorcemsgprofile)
 		action.WaitUntilElementClickable(profileupdatebtn)
 		action.Click(profileupdatebtn)
+		action.WaitVisible(updateresourcesuccessmsg)
 		//WebUI.delay(10)
 	}
 
@@ -382,7 +383,7 @@ public class ResourceMessage {
 		action.Type(projectsoverridetextbox, GlobalVariable.resourcemsgprojects)
 		action.WaitUntilElementClickable(projectsupdatebtn)
 		action.Click(projectsupdatebtn)
-		//WebUI.delay(10)
+		WebUI.delay(6)
 	}
 
 
@@ -421,7 +422,8 @@ public class ResourceMessage {
 		action.Type(reportsoverridetextbox, GlobalVariable.resourcemsgreports)
 		action.WaitUntilElementClickable(reportsupdatebtn)
 		action.Click(reportsupdatebtn)
-		//WebUI.delay(10)
+		action.WaitVisible(updateresourcesuccessmsg)
+		WebUI.delay(6)
 	}
 
 
@@ -490,7 +492,8 @@ public class ResourceMessage {
 	@Keyword
 	public void VerifyDeleteResourceMessageAddressList() {
 
-
+        action.WaitVisible(addresslistdeletelink)
+		WebUI.delay(2)
 		if(action.IsElementEnabled(addresslistdeletelink)) {
 			action.Click(addresslistdeletelink)
 			//WebUI.delay(10)
