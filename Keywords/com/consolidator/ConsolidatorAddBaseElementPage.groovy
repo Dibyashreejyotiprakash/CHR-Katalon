@@ -38,6 +38,7 @@ public class ConsolidatorAddBaseElementPage {
 	By estimatednoofversion = By.xpath("//*[@id='txtVersion']")
 	By estimatedtotalqty = By.xpath("//*[@id='txtTotalQuantity']")
 	By addelementbtn = By.xpath("//*[@id='btnEditSelected']")
+	By consLoader = By.xpath("//div[@id='divLoading']")
 
 
 	@Keyword
@@ -55,8 +56,9 @@ public class ConsolidatorAddBaseElementPage {
 	@Keyword
 	public void SearchElementAndAdd() {
 		try{
-			action.Type(searchtextbox, "Test")
-			//WebUI.delay(5)
+			action.WaitTillNotVisible(consLoader, 30)
+			action.Type(searchtextbox, "AIR-M1")
+			WebUI.delay(2)
 			action.Click(firstsugestedelement)
 			action.Type(price, "100")
 			action.Type(qtyperpack, "12")
@@ -82,8 +84,10 @@ public class ConsolidatorAddBaseElementPage {
 	@Keyword
 	public void AddNewElementWithoutAddingOptionalDetails() {
 		try{
-			action.Type(searchtextbox, "Test")
-			//WebUI.delay(5)
+			//action.Type(searchtextbox, "Test")
+			action.WaitTillNotVisible(consLoader, 30)
+			action.Type(searchtextbox, "AIR-M1")
+			WebUI.delay(2)
 			action.Click(firstsugestedelement)
 			action.Type(price, "100")
 			action.Type(qtyperpack, "12")
@@ -108,8 +112,9 @@ public class ConsolidatorAddBaseElementPage {
 		try{
 
 			boolean statusofaddelementbtn = false
-			action.Type(searchtextbox, "Test")
-			//WebUI.delay(5)
+			action.WaitTillNotVisible(consLoader, 30)
+			action.Type(searchtextbox, "AIR-M1")
+			WebUI.delay(2)
 			action.Click(firstsugestedelement)
 
 			//WebUI.delay(2)

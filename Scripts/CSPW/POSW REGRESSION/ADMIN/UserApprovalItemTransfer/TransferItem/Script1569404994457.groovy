@@ -24,6 +24,6 @@ CustomKeywords.'com.poswm.WarehouseDashBoardPage.ClickOnUserItemApprovalTransfer
 
 CustomKeywords.'com.poswm.UserTransfer.VerifyUserItemApprovalTransferPage'()
 
-CustomKeywords.'com.poswm.UserTransfer.VerifyAllFields'()
+//CustomKeywords.'com.poswm.UserTransfer.VerifyAllFields'()
 
 CustomKeywords.'com.poswm.UserTransfer.TransferItem'()
