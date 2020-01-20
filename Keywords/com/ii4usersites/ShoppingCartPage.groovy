@@ -78,6 +78,8 @@ class ShoppingCartPage {
 	By clearshoppingcartbtn = By.xpath("//a[@id='Body_lnkDeleteAll']")
 	By clearshoppingconfirm = By.xpath("(//span[contains(text(),'Yes')])[1]")
 	By shoppingCartEmptytext = By.xpath("//h4[contains(text(),'Your shopping cart is empty')]")
+	
+	By jobduedatecalander = By.xpath("//*[@id='Body_txtDueDatePicker']")
 
 
 	@Keyword
@@ -660,6 +662,24 @@ class ShoppingCartPage {
 			println("ClearShoppingCart Failed")
 			Assert.fail("ClearShoppingCart failed due to "+e)
 		}
+	}
+	
+	@Keyword
+	public void ValidateJobDueCalendar()
+	{
+
+		try
+		{
+			action.ScrollToBottomOfPage()
+			boolean statusofduedatecalander = action.IsElementDisplayed(jobduedatecalander)
+			Assert.assertTrue(statusofduedatecalander)
+		}
+		catch (Exception e)
+		{
+			Assert.fail("Validate Job Due Calendar failed due ");
+			throw e;
+		}
+
 	}
 
 

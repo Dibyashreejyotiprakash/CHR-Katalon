@@ -37,6 +37,8 @@ CustomKeywords.'com.ii4usersites.ProductionSelectionPage.ClickOnNo'()
 
 CustomKeywords.'com.ii4usersites.ProductionSelectionPage.ClickOnAddToKart'()
 
+CustomKeywords.'com.ii4usersites.ProductionSelectionPage.ValidateJobDueCalendar'()
+
 CustomKeywords.'com.ii4usersites.ShoppingCartPage.ClickOnCheckOutBtn'()
 
 CustomKeywords.'com.ii4usersites.CheckOutPage.ClickOnContinueToReview'()
@@ -45,14 +47,14 @@ CustomKeywords.'com.ii4usersites.ReviewPage.ClickOnPlaceOrderBtn'()
 
 String confirmationno= CustomKeywords.'com.ii4usersites.ConfirmationPage.GetConfirmationId'()
 
-CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamedesigntracker, GlobalVariable.testtypesmoke, GlobalVariable.environment)
+WebUI.closeBrowser()
+
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamedesigntracker, GlobalVariable.testtyperegression, GlobalVariable.environment)
 
 CustomKeywords.'com.designtracker.LoginPage.LoginToDesignTarcker'(GlobalVariable.dtusername, GlobalVariable.dtpassowrd)
 
 CustomKeywords.'com.designtracker.HomePage.ClickOnJobSearch'()
 
 CustomKeywords.'com.designtracker.JobSearchPage.VerifyJobSearchPage'()
-
-WebUI.delay(300)
 
 CustomKeywords.'com.designtracker.JobSearchPage.VerifyCreatedJobInDTSearchPage'(confirmationno)

@@ -40,5 +40,5 @@ CustomKeywords.'com.ii4usersites.CloneOrderHeaderPage.EnterValuesToFiledsInOrder
 
 CustomKeywords.'com.ii4usersites.CloneJobSearchPage.VerifyJobSearchPage'()
 
-CustomKeywords.'com.ii4usersites.CloneJobSearchPage.VeriftDtJobSearch'(dtJobId)
+CustomKeywords.'com.ii4usersites.CloneJobSearchPage.VerifyDtJobSearch'(dtJobId)
 
