@@ -77,6 +77,9 @@ public  class Interaction {
 					else if (EnvironmentName.equalsIgnoreCase("PROD")) {
 						WebUI.navigateToUrl(GlobalVariable.ii3PROD)
 					}
+					else if (EnvironmentName.equalsIgnoreCase("DEV")) {
+						WebUI.navigateToUrl(GlobalVariable.ii3DEV)
+					}
 					else {
 						throw new Exception("Environment is not correct")
 						WebUI.closeBrowser()
@@ -92,6 +95,9 @@ public  class Interaction {
 					}
 					else if (EnvironmentName.equalsIgnoreCase("PROD")) {
 						WebUI.navigateToUrl(GlobalVariable.dtPROD)
+					}
+					else if (EnvironmentName.equalsIgnoreCase("DEV")) {
+						WebUI.navigateToUrl(GlobalVariable.dtDEV)
 					}
 					else {
 						throw new Exception("Environment is not correct")
@@ -126,6 +132,9 @@ public  class Interaction {
 					else if (EnvironmentName.equalsIgnoreCase("PROD")) {
 						WebUI.navigateToUrl(GlobalVariable.ii4PROD)
 					}
+					else if (EnvironmentName.equalsIgnoreCase("DEV")) {
+						WebUI.navigateToUrl(GlobalVariable.ii4DEV)
+					}
 					else {
 						throw new Exception("Environment is not correct")
 						WebUI.closeBrowser()
@@ -140,6 +149,9 @@ public  class Interaction {
 					}
 					else if (EnvironmentName.equalsIgnoreCase("PROD")) {
 						WebUI.navigateToUrl(GlobalVariable.wswadminPROD)
+					}
+					else if (EnvironmentName.equalsIgnoreCase("DEV")) {
+						WebUI.navigateToUrl(GlobalVariable.wswadminDEV)
 					}
 					else {
 						throw new Exception("Environment is not correct")
@@ -157,6 +169,9 @@ public  class Interaction {
 					else if (EnvironmentName.equalsIgnoreCase("PROD")) {
 						WebUI.navigateToUrl(GlobalVariable.iiadminPROD)
 					}
+					else if (EnvironmentName.equalsIgnoreCase("DEV")) {
+						WebUI.navigateToUrl(GlobalVariable.iiadminDEV)
+					}
 					else {
 						throw new Exception("Environment is not correct")
 						WebUI.closeBrowser()
@@ -172,6 +187,9 @@ public  class Interaction {
 					}
 					else if (EnvironmentName.equalsIgnoreCase("PROD")) {
 						WebUI.navigateToUrl(GlobalVariable.dtapprovalsPROD)
+					}
+					else if (EnvironmentName.equalsIgnoreCase("DEV")) {
+						WebUI.navigateToUrl(GlobalVariable.dtapprovalsDEV)
 					}
 					else {
 						throw new Exception("Environment is not correct")
@@ -192,6 +210,10 @@ public  class Interaction {
 					else if (EnvironmentName.equalsIgnoreCase("PROD"))
 					{
 						WebUI.navigateToUrl(GlobalVariable.proofgalleryPROD)
+					}
+					else if (EnvironmentName.equalsIgnoreCase("DEV"))
+					{
+						WebUI.navigateToUrl(GlobalVariable.proofgalleryDEV)
 					}
 					else
 					{
@@ -259,6 +281,9 @@ public  class Interaction {
 					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
 						WebUI.navigateToUrl(GlobalVariable.dtapprovalSTAGE)
 					}
+					else if (EnvironmentName.equalsIgnoreCase("DEV")) {
+						WebUI.navigateToUrl(GlobalVariable.dtapprovalsDEV)
+					}
 					else {
 						throw new Exception("Environment is not correct")
 						WebUI.closeBrowser()
@@ -271,6 +296,9 @@ public  class Interaction {
 					}
 					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
 						WebUI.navigateToUrl(GlobalVariable.wswadminSATGE)
+					}
+					else if (EnvironmentName.equalsIgnoreCase("DEV")) {
+						WebUI.navigateToUrl(GlobalVariable.wswadminDEV)
 					}
 					else {
 						throw new Exception("Environment is not correct")
@@ -285,6 +313,9 @@ public  class Interaction {
 					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
 						WebUI.navigateToUrl(GlobalVariable.iiadminSTAGE)
 					}
+					else if (EnvironmentName.equalsIgnoreCase("DEV")) {
+						WebUI.navigateToUrl(GlobalVariable.iiadminDEV)
+					}
 					else {
 						throw new Exception("Environment is not correct")
 						WebUI.closeBrowser()
@@ -297,6 +328,9 @@ public  class Interaction {
 					}
 					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
 						WebUI.navigateToUrl(GlobalVariable.dtSTAGE)
+					}
+					else if (EnvironmentName.equalsIgnoreCase("DEV")) {
+						WebUI.navigateToUrl(GlobalVariable.dtDEV)
 					}
 					else {
 						throw new Exception("Environment is not correct")

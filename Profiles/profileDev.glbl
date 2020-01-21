@@ -474,4 +474,14 @@
       <initValue>'132933'</initValue>
       <name>distcorptemplateid</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://csg.v5dev.brandmuscle.net/'</initValue>
+      <name>poswDEV</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://admintool.v5dev.brandmuscle.net/'</initValue>
+      <name>consolidatorDEV</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>
