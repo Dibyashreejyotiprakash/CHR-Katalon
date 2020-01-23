@@ -189,7 +189,9 @@ public class ResourceMessage {
 		action.Type(accountoverridetextbox, GlobalVariable.resourcemsgaccount)
 		action.WaitUntilElementClickable(accountupdatebtn)
 		action.Click(accountupdatebtn)
-		//WebUI.delay(10)
+		action.WaitVisible(updateresourcesuccessmsg)
+		WebUI.delay(10)
+		
 	}
 
 	@Keyword
@@ -226,7 +228,9 @@ public class ResourceMessage {
 		action.Type(addressbookoverridetextbox, GlobalVariable.resourcemsgaddressbook)
 		action.WaitUntilElementClickable(addressbookupdatebtn)
 		action.Click(addressbookupdatebtn)
-		//WebUI.delay(10)
+		WebUI.delay(10)
+		action.WaitVisible(updateresourcesuccessmsg)
+		WebUI.delay(10)
 	}
 
 
@@ -265,7 +269,9 @@ public class ResourceMessage {
 		action.Type(addresslistoverridetextbox, GlobalVariable.resourcemsgaddressList)
 		action.WaitUntilElementClickable(addresslistupdatebtn)
 		action.Click(addresslistupdatebtn)
-		//WebUI.delay(10)
+		WebUI.delay(10)
+		action.WaitVisible(updateresourcesuccessmsg)
+		
 	}
 
 
@@ -303,7 +309,8 @@ public class ResourceMessage {
 		action.Type(logolockeroverridetextbox, GlobalVariable.resourcemsglogolocker)
 		action.WaitUntilElementClickable(logolockerupdatebtn)
 		action.Click(logolockerupdatebtn)
-		//WebUI.delay(10)
+		WebUI.delay(10)
+		action.WaitVisible(updateresourcesuccessmsg)
 	}
 
 
@@ -343,8 +350,9 @@ public class ResourceMessage {
 		action.Type(profileoverridetextbox, GlobalVariable.resorcemsgprofile)
 		action.WaitUntilElementClickable(profileupdatebtn)
 		action.Click(profileupdatebtn)
+		WebUI.delay(10)
 		action.WaitVisible(updateresourcesuccessmsg)
-		//WebUI.delay(10)
+		
 	}
 
 
@@ -422,8 +430,9 @@ public class ResourceMessage {
 		action.Type(reportsoverridetextbox, GlobalVariable.resourcemsgreports)
 		action.WaitUntilElementClickable(reportsupdatebtn)
 		action.Click(reportsupdatebtn)
-		action.WaitVisible(updateresourcesuccessmsg)
 		WebUI.delay(6)
+		action.WaitVisible(updateresourcesuccessmsg)
+		
 	}
 
 

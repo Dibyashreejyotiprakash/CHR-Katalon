@@ -55,19 +55,19 @@
    <testCaseLink>
       <guid>d98838da-b8e0-4586-9d74-1a342d0abe26</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/CSPW/CS REGRESSION/ManageProgramElement/VerifyEditProgramElement</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>43a0237b-c5a7-495a-9eb3-2a93cbf50629</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/CSPW/CS REGRESSION/ManageProgramElement/VerifySearchProgramElement</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>b318fdad-fd03-41f6-93e9-45dd523beeb7</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/CSPW/CS REGRESSION/ManageProgramElement/VerifyViewDetailsLink</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>
