@@ -51,11 +51,14 @@ public class UserTransfer {
 	By firstCheckBix = By.xpath("//*[@id='ctl00_MainContent_rgApprovalItems_ctl00']/tbody/tr[1]/td[1]/input")
 	By firstItemName = By.xpath("//*[@id='ctl00_MainContent_rgApprovalItems_ctl00']/tbody/tr[1]/td[3]")
 	By transferToSearchField = By.xpath("//*[@id='ctl00_MainContent_ddlTransferUser_Input']")
+	By loaderEle = By.xpath("//img[@id='MainContent_Image2']") 
+	By successTransferMsg = By.xpath("//span[@id='MainContent_pnlMessage_lblSummary']")
+	By checkboxAllItems = By.xpath("//input[@id='ctl00_MainContent_rgApprovalItems_ctl00_ctl02_ctl00_headerChkbox']")
+	By checkboxFirstItem = By.xpath("//input[@id='ctl00_MainContent_rgApprovalItems_ctl00_ctl04_CheckBox1']")
+	By checkboxSecondItem = By.xpath("//input[@id='ctl00_MainContent_rgApprovalItems_ctl00_ctl06_CheckBox1']")
 	
 	
-	
-	
-	
+		
 	@Keyword
 	public void SelectTransferFromUser()
 	{
@@ -194,6 +197,7 @@ public class UserTransfer {
 			/*WebUI.delay(10)*/
 			action.Click(transfertoddnvalue)
 			//WebUI.delay(3)
+			action.Click(checkboxFirstItem)
 			
 			boolean statusoftransferbtn = action.IsElementEnabled(transferitemsbtn)
 			Assert.assertTrue(statusoftransferfromddn)
@@ -201,8 +205,94 @@ public class UserTransfer {
 			if(statusoftransferbtn == true)
 			{
 				action.Click(transferitemsbtn)
-				WebUI.delay(5)
+				//WebUI.delay(5)
 			}
+			action.WaitTillNotVisible(loaderEle, 30)
+			Assert.assertTrue(action.IsElementDisplayed(successTransferMsg))
+			
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Transfer Item failed due to "+ e)
+		}
+	}
+	
+	@Keyword
+	public void TransferMoreThanOneItem()
+	{
+		try{
+			boolean statusoftransferfromddn  = action.IsElementDisplayed(transferform)
+			Assert.assertTrue(statusoftransferfromddn)
+			//WebUI.delay(3)
+			action.Click(transferform)
+			//WebUI.delay(3)
+			action.Click(transferfromddnvalue)
+			//WebUI.delay(10)
+			action.WaitUntilElementClickable(transferToSearchField)
+			
+			boolean statusoffromto = action.IsElementDisplayed(transferto)
+			Assert.assertTrue(statusoffromto)
+			//WebUI.delay(3)
+			action.Click(transferto)
+			/*action.WaitUntilElementClickable(transferto)*/
+			/*WebUI.delay(10)*/
+			action.Click(transfertoddnvalue)
+			//WebUI.delay(3)
+			action.Click(checkboxFirstItem)
+			action.Click(checkboxSecondItem)
+			
+			boolean statusoftransferbtn = action.IsElementEnabled(transferitemsbtn)
+			Assert.assertTrue(statusoftransferfromddn)
+			
+			if(statusoftransferbtn == true)
+			{
+				action.Click(transferitemsbtn)
+				//WebUI.delay(5)
+			}
+			action.WaitTillNotVisible(loaderEle, 300)
+			Assert.assertTrue(action.IsElementDisplayed(successTransferMsg))
+			
+		}
+		catch(Exception e)
+		{
+			Assert.fail("Transfer Item failed due to "+ e)
+		}
+	}
+	
+	@Keyword
+	public void TransferAllItems()
+	{
+		try{
+			boolean statusoftransferfromddn  = action.IsElementDisplayed(transferform)
+			Assert.assertTrue(statusoftransferfromddn)
+			//WebUI.delay(3)
+			action.Click(transferform)
+			//WebUI.delay(3)
+			action.Click(transferfromddnvalue)
+			//WebUI.delay(10)
+			action.WaitUntilElementClickable(transferToSearchField)
+			
+			boolean statusoffromto = action.IsElementDisplayed(transferto)
+			Assert.assertTrue(statusoffromto)
+			//WebUI.delay(3)
+			action.Click(transferto)
+			/*action.WaitUntilElementClickable(transferto)*/
+			/*WebUI.delay(10)*/
+			action.Click(transfertoddnvalue)
+			//WebUI.delay(3)
+			action.Click(checkboxAllItems)
+			
+			boolean statusoftransferbtn = action.IsElementEnabled(transferitemsbtn)
+			Assert.assertTrue(statusoftransferfromddn)
+			
+			if(statusoftransferbtn == true)
+			{
+				action.Click(transferitemsbtn)
+				//WebUI.delay(5)
+			}
+			action.WaitTillNotVisible(loaderEle, 30)
+			Assert.assertTrue(action.IsElementDisplayed(successTransferMsg))
+			
 		}
 		catch(Exception e)
 		{

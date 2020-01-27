@@ -61,6 +61,9 @@ public  class Interaction {
 					else if (EnvironmentName.equalsIgnoreCase("PROD")) {
 						WebUI.navigateToUrl(GlobalVariable.consolidatorurlPROD)
 					}
+					else if (EnvironmentName.equalsIgnoreCase("DEV")) {
+						WebUI.navigateToUrl(GlobalVariable.consolidatorurlDEV)
+					}
 					else {
 						throw new Exception("Environment is not correct")
 						WebUI.closeBrowser()
@@ -655,8 +658,6 @@ public  class Interaction {
 		wait.until(ExpectedConditions.visibilityOf(element));
 	}
 
-
-
 	public void  WaitExist(By by)
 	{
 		WaitVisible(by)
@@ -689,7 +690,7 @@ public  class Interaction {
 
 	public void  WaitTillNotVisible(By by,int timeinsec)
 	{
-		boolean stillExists = true;
+		/*boolean stillExists = true;
 		while (stillExists)
 		{
 			try
@@ -700,7 +701,10 @@ public  class Interaction {
 			{
 				stillExists = false;
 			}
-		}
+		}*/
+		WebUI.delay(1)
+		WebDriverWait wait = new WebDriverWait(driver, timeinsec);
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(by));
 	}
 
 	public  WebElement WaitUntilElementClickable(WebElement element)
