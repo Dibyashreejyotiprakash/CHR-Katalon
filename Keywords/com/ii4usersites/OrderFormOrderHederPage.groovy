@@ -35,7 +35,7 @@ public class OrderFormOrderHederPage {
 	By jobtypeddnvalue = By.xpath("//*[text()='Accessories Only']")
 	By continuetoitemsbtn = By.xpath("//*[@id='ctl00_Body_btnContinue']")
 	By accountname = By.xpath("//input[@id='Body_txtAccount']")
-	By accountnametobevalidated = By.xpath("(//li[contains(text(),'QATest2019')])[1]")
+	By accountnametobevalidated = By.xpath("//*[@id='ui-id-1']//li[1]")
 	By nextbtn = By.xpath("//span[contains(text(),'Next')]")
 	By jobTittleTextField = By.xpath("//*[@id='ctl00_Body_rtbJobTitle']")
 	By jobduedatecustommsg = By.xpath("//*[@id='Body_lblCustomMessage']")
@@ -92,13 +92,19 @@ public class OrderFormOrderHederPage {
 
 
 	@Keyword
-	public void ValidateAccountNameAddedInDT() {
+	public void ValidateAccountNameAddedInDT(String newaccount) {
 		try {
 			action.WaitVisible(accountname)
 			action.Click(accountname)
-			action.Type(accountname, "QATest2019")
-			//WebUI.delay(2)
-			action.IsElementDisplayed(accountnametobevalidated)
+			action.Type(accountname, newaccount)
+			WebUI.delay(10)
+			boolean statusofnewaccount = action.IsElementDisplayed(accountnametobevalidated)
+			Assert.assertTrue(statusofnewaccount)
+			if(statusofnewaccount == true){
+				println ("Newly created Account is appearing")
+			}else{
+			throw new Exception("New account is not appearing")
+			}
 		}
 		catch(Exception e) {
 			Assert.fail("ValidateAccountNameAddedInDT failed "+e)

@@ -61,6 +61,9 @@ public  class Interaction {
 					else if (EnvironmentName.equalsIgnoreCase("PROD")) {
 						WebUI.navigateToUrl(GlobalVariable.consolidatorurlPROD)
 					}
+					else if (EnvironmentName.equalsIgnoreCase("DEV")) {
+						WebUI.navigateToUrl("https://admintool.v5dev.brandmuscle.net/")
+					}
 					else {
 						throw new Exception("Environment is not correct")
 						WebUI.closeBrowser()
@@ -115,6 +118,9 @@ public  class Interaction {
 					}
 					else if (EnvironmentName.equalsIgnoreCase("PROD")) {
 						WebUI.navigateToUrl(GlobalVariable.poswPROD)
+					}
+					else if (EnvironmentName.equalsIgnoreCase("DEV")) {
+						WebUI.navigateToUrl("https://csg.v5dev.brandmuscle.net")
 					}
 					else {
 						throw new Exception("Environment is not correct")
@@ -265,6 +271,9 @@ public  class Interaction {
 					}
 					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
 						WebUI.navigateToUrl(GlobalVariable.poswSTAGE)
+					}
+					else if (EnvironmentName.equalsIgnoreCase("DEV")) {
+						WebUI.navigateToUrl("https://csg.v5dev.brandmuscle.net")
 					}
 					else {
 						println ("Environment is not correct")

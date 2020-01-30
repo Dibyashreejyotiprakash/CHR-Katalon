@@ -142,8 +142,9 @@ public class AccountsPage
 
 
 	@Keyword
-	public void CreateAccountAndLookUp()
+	public String CreateAccountAndLookUp()
 	{
+		String acc_name = null;
 		try
 		{
 			LocalDateTime dateTime = LocalDateTime.now()
@@ -152,7 +153,7 @@ public class AccountsPage
 			action.Click(accounts)
 			action.SelectByText(corpDropDown, "Instant Impact 4.0 Demo Corp (Dist.)")
 			action.SelectByText(marketDropDown, "Chicago Beverage Systems")
-			String acc_name = "QATest"+dateTime
+			acc_name = "QATest"+dateTime
 			println("DATE TIME -"+acc_name)
 			action.Type(description, acc_name)
 			action.Type(city,"Cleveland")
@@ -174,6 +175,8 @@ public class AccountsPage
 
 			String account_name = action.GetText(lookupname)
 			Assert.assertEquals(account_name, acc_name)
+			
+			return account_name
 		}
 		catch(Exception e)
 		{
@@ -336,8 +339,9 @@ public class AccountsPage
 
 
 	@Keyword
-	public void CreateAccount()
+	public String CreateAccount()
 	{
+		String acc_name = null;
 		try
 		{
 			LocalDateTime dateTime = LocalDateTime.now()
@@ -352,7 +356,7 @@ public class AccountsPage
 			
 			action.SelectByText(marketDropDown, "Chicago Beverage Systems")
 
-			String acc_name = "QATest"+dateTime
+			acc_name = "QATest"+dateTime
 			println("DATE TIME -"+acc_name)
 			action.Type(description, acc_name)
 			//WebUI.delay(1)
@@ -377,7 +381,8 @@ public class AccountsPage
 			action.SelectByText(salespersonddn,"ADMIN1, TEST (testadmin1@brandmuscle.com)")
 			//WebUI.delay(2)
 			action.Click(addsalespersonbtn)
-
+			
+			return acc_name
 		}
 		catch(Exception e)
 		{

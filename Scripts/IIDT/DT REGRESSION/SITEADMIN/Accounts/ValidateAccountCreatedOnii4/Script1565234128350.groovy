@@ -19,7 +19,7 @@ CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunamedesigntra
 
 CustomKeywords.'com.designtracker.LoginPage.LoginToDesignTarcker'(GlobalVariable.dtusername, GlobalVariable.dtpassowrd)
 
-CustomKeywords.'com.designtracker.AccountsPage.CreateAccount'()
+String newlycreatedaccountname = CustomKeywords.'com.designtracker.AccountsPage.CreateAccount'()
 
 WebUI.closeBrowser()
 
@@ -35,5 +35,5 @@ CustomKeywords.'com.ii4usersites.HomePage.ClickOnOrderForm'()
 
 CustomKeywords.'com.ii4usersites.OrderFormDefaultPage.ClickonCreateNewCustomOrder'()
 
-CustomKeywords.'com.ii4usersites.OrderFormOrderHederPage.ValidateAccountNameAddedInDT'()
+CustomKeywords.'com.ii4usersites.OrderFormOrderHederPage.ValidateAccountNameAddedInDT'(newlycreatedaccountname)
 
