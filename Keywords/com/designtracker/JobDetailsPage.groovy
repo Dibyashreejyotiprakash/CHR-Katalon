@@ -542,12 +542,11 @@ public class JobDetailsPage {
 
 			action.ScrollToViewElement(secondshippingtype)
 			String secondshippingtypetext = action.GetText(secondshippingtype)
-			if ((firstshippingtypetext.equalsIgnoreCase("UPS Ground")) && (secondshippingtypetext.equalsIgnoreCase("UPS Ground")))
+			if(firstshippingtypetext.equals(secondshippingtypetext))
 			{
 				println ("Shipping type is updated successfully")
-			}
-			else{
-				throw new Exception("Shipping type is not updated")
+			}else{
+			throw new Exception("Shipping type is not updated")
 			}
 		}
 		catch(Exception e)

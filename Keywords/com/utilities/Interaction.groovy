@@ -659,7 +659,7 @@ public  class Interaction {
 
 	public void  WaitVisible(WebElement element,int timeinsec)
 	{
-		WaitVisible(element)
+		//WaitVisible(element)
 		WebDriverWait wait = new WebDriverWait(driver, timeinsec);
 		wait.until(ExpectedConditions.visibilityOf(element));
 	}
@@ -698,18 +698,9 @@ public  class Interaction {
 
 	public void  WaitTillNotVisible(By by,int timeinsec)
 	{
-		boolean stillExists = true;
-		while (stillExists)
-		{
-			try
-			{
-				WaitVisible(by,timeinsec);
-			}
-			catch(Exception e)
-			{
-				stillExists = false;
-			}
-		}
+		WebUI.delay(1)
+		WebDriverWait wait = new WebDriverWait(driver,300);
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(by));
 	}
 
 	public  WebElement WaitUntilElementClickable(WebElement element)
