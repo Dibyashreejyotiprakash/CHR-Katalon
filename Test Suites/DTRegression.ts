@@ -13,7 +13,7 @@
    <testCaseLink>
       <guid>c670860b-ecbf-443b-a4ba-c9c17392d52c</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/IIDT/DT REGRESSION/JOBS/JOB DETAILS/ApplyShippingLocationToMultipleJobLines</testCaseId>
    </testCaseLink>
    <testCaseLink>

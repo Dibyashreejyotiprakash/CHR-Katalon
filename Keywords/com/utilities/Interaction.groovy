@@ -119,6 +119,9 @@ public  class Interaction {
 					else if (EnvironmentName.equalsIgnoreCase("PROD")) {
 						WebUI.navigateToUrl(GlobalVariable.poswPROD)
 					}
+					else if (EnvironmentName.equalsIgnoreCase("DEV")) {
+						WebUI.navigateToUrl(GlobalVariable.poswDEV)
+					}
 					else {
 						throw new Exception("Environment is not correct")
 						WebUI.closeBrowser()
@@ -373,11 +376,9 @@ public  class Interaction {
 			println ("TestType---BU---Env are : "+TestType+"---"+BuName+"---"+EnvironmentName)
 		}
 		catch (Exception e) {
-			Assert.fail("Ge tUrl failed due to"+e)
-			println ("Failed due to "+ e)
+			Assert.fail("Get Url failed due to"+e)
 		}
 	}
-
 
 
 	public void  WaitTime(int seconds) throws InterruptedException {
@@ -691,17 +692,17 @@ public  class Interaction {
 	public void  WaitTillNotVisible(By by,int timeinsec)
 	{
 		/*boolean stillExists = true;
-		while (stillExists)
-		{
-			try
-			{
-				WaitVisible(by,timeinsec);
-			}
-			catch(Exception e)
-			{
-				stillExists = false;
-			}
-		}*/
+		 while (stillExists)
+		 {
+		 try
+		 {
+		 WaitVisible(by,timeinsec);
+		 }
+		 catch(Exception e)
+		 {
+		 stillExists = false;
+		 }
+		 }*/
 		WebUI.delay(1)
 		WebDriverWait wait = new WebDriverWait(driver, timeinsec);
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(by));
