@@ -62,7 +62,7 @@ public  class Interaction {
 						WebUI.navigateToUrl(GlobalVariable.consolidatorurlPROD)
 					}
 					else if (EnvironmentName.equalsIgnoreCase("DEV")) {
-						WebUI.navigateToUrl("https://admintool.v5dev.brandmuscle.net/")
+						WebUI.navigateToUrl(GlobalVariable.consolidatorurlDEV)
 					}
 					else {
 						throw new Exception("Environment is not correct")
@@ -118,9 +118,6 @@ public  class Interaction {
 					}
 					else if (EnvironmentName.equalsIgnoreCase("PROD")) {
 						WebUI.navigateToUrl(GlobalVariable.poswPROD)
-					}
-					else if (EnvironmentName.equalsIgnoreCase("DEV")) {
-						WebUI.navigateToUrl("https://csg.v5dev.brandmuscle.net")
 					}
 					else {
 						throw new Exception("Environment is not correct")
@@ -271,9 +268,6 @@ public  class Interaction {
 					}
 					else if (EnvironmentName.equalsIgnoreCase("STAGING")) {
 						WebUI.navigateToUrl(GlobalVariable.poswSTAGE)
-					}
-					else if (EnvironmentName.equalsIgnoreCase("DEV")) {
-						WebUI.navigateToUrl("https://csg.v5dev.brandmuscle.net")
 					}
 					else {
 						println ("Environment is not correct")
@@ -659,12 +653,10 @@ public  class Interaction {
 
 	public void  WaitVisible(WebElement element,int timeinsec)
 	{
-		//WaitVisible(element)
+		WaitVisible(element)
 		WebDriverWait wait = new WebDriverWait(driver, timeinsec);
 		wait.until(ExpectedConditions.visibilityOf(element));
 	}
-
-
 
 	public void  WaitExist(By by)
 	{
@@ -698,8 +690,20 @@ public  class Interaction {
 
 	public void  WaitTillNotVisible(By by,int timeinsec)
 	{
+		/*boolean stillExists = true;
+		while (stillExists)
+		{
+			try
+			{
+				WaitVisible(by,timeinsec);
+			}
+			catch(Exception e)
+			{
+				stillExists = false;
+			}
+		}*/
 		WebUI.delay(1)
-		WebDriverWait wait = new WebDriverWait(driver,300);
+		WebDriverWait wait = new WebDriverWait(driver, timeinsec);
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(by));
 	}
 
