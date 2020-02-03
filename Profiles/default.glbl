@@ -71,7 +71,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'adminnv@brandmuscle.com'</initValue>
+      <initValue>'cspwadmin@brandmuscle.com'</initValue>
       <name>posusername</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
