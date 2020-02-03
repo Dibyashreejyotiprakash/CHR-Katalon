@@ -213,7 +213,7 @@ public class AccountPage {
 
 	@Keyword
 	public void VerifyDeleteAddressListResourceMsg() {
-		String expectedaddresslistlable = "Address List"
+		String expectedaddresslistlable = "Address Lists"
 		println ("Expected Lable for AddressList "+ expectedaddresslistlable)
 		List<WebElement> alllables = action.GetElements(allbuttons)
 		String actualaddresslistlable = null
