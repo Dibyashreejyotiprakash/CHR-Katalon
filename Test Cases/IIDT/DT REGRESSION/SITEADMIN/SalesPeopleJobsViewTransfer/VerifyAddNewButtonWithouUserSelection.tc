@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>VerifyAddNewButtonWithouUserSelection</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>f1b28c37-67fd-4d2f-94f7-416bc9e6b86d</testCaseGuid>
+</TestCaseEntity>

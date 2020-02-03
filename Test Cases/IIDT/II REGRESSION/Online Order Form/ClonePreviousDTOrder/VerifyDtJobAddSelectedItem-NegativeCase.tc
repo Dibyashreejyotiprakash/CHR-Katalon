@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>VerifyDtJobAddSelectedItem-NegativeCase</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>ef87d346-237b-469d-86b7-8c61b1a1365d</testCaseGuid>
+</TestCaseEntity>

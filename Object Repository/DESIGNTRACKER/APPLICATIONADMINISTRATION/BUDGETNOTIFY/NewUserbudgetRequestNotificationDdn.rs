@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>NewUserbudgetRequestNotificationDdn</name>
+   <tag></tag>
+   <elementGuidId>d55ecd67-d253-4ccb-967a-dce2472caa15</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value></value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//*[@id='ctl00_ctl00_cphMain_cphMain_gvBudgetRequestNotification_ctl01_ddlUsers']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+</WebElementEntity>

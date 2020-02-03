@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>VerifyFulfillmentSearchByCorporationName</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>d33eb35c-9dc5-40a4-975a-a79ebc409cb8</testCaseGuid>
+</TestCaseEntity>

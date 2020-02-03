@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>VerifyErrorOnClosingInvalidJob</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>99cb1ee2-3b32-498e-9d5f-276e07cbd935</testCaseGuid>
+</TestCaseEntity>

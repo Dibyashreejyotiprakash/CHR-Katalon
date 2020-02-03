@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>ValidateMinimumQuantityWithMultipleLineItem</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>e4afa33f-5c8e-495b-bf3f-d9281dd06afd</testCaseGuid>
+</TestCaseEntity>

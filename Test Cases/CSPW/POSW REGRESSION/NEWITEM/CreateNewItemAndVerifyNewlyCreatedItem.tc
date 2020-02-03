@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>CreateNewItemAndVerifyNewlyCreatedItem</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>f035211d-43e6-4e47-9961-41b943445555</testCaseGuid>
+</TestCaseEntity>

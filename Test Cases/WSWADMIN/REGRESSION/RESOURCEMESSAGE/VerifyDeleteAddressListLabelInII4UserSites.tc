@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>VerifyDeleteAddressListLabelInII4UserSites</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>e36cda59-257a-4661-8cba-738824b78929</testCaseGuid>
+</TestCaseEntity>

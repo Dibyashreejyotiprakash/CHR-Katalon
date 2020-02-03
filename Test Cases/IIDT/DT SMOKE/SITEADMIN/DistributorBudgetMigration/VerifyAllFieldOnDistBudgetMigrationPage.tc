@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>VerifyAllFieldOnDistBudgetMigrationPage</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>7d94a53b-6a70-4a29-937f-87838ca90c0e</testCaseGuid>
+</TestCaseEntity>
