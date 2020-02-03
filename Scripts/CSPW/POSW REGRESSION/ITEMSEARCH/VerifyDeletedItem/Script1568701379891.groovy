@@ -18,7 +18,7 @@ CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameposw, Glo
 //Enter credential
 CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.PoswTestUserName, GlobalVariable.PoswTestPassword)
 //select BU as Empire Marchent 
-CustomKeywords.'com.poswm.LoginPage.SelectEmpireMerchantBU'()
+//CustomKeywords.'com.poswm.LoginPage.SelectEmpireMerchantBU'()
 
 CustomKeywords.'com.poswm.Homepage.ClickOnItemSearch'()
 
@@ -26,7 +26,7 @@ CustomKeywords.'com.poswm.WarehouseItemInventory.VerifyWareHouseInventoryPage'()
 
 CustomKeywords.'com.poswm.WarehouseItemInventory.SwichToWareHouseItemPageVerifyWareHouseItemDetails'()
 
-CustomKeywords.'com.poswm.WarehouseItemInventory.DeleteItem'()
+CustomKeywords.'com.poswm.WarehouseItemInventory.DeleteItem1'()
 
-CustomKeywords.'com.poswm.WarehouseItemInventory.VerifyAllFieldsInWareHouseitemDetailsPage'()
+//CustomKeywords.'com.poswm.WarehouseItemInventory.VerifyAllFieldsInWareHouseitemDetailsPage'()
 

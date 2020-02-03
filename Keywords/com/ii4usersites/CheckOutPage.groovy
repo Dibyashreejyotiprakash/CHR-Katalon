@@ -7,8 +7,6 @@ import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.checkpoint.Checkpoint
-import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
-import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
 import com.kms.katalon.core.model.FailureHandling
 import com.kms.katalon.core.testcase.TestCase
 import com.kms.katalon.core.testdata.TestData
@@ -45,8 +43,8 @@ public class CheckOutPage {
 			WebUI.delay(5)
 			action.Type(commentsbox, comment)
 			action.Click(continuetoreview)
-			action.WaitForPageToLoad()
-			
+			//action.WaitForPageToLoad()
+
 			return comment;
 		}
 		catch(Exception e) {

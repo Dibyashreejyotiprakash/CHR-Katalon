@@ -13,9 +13,6 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.openBrowser('')
-
-WebUI.maximizeWindow()
 
 CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameiiusersite, GlobalVariable.testtyperegression, GlobalVariable.environment)
 
@@ -35,5 +32,5 @@ CustomKeywords.'com.ii4usersites.FinishInCompleteOrderHistoryPage.DeleteLink'()
 //Need to add method to verify steps after delete
 CustomKeywords.'com.ii4usersites.FinishInCompleteOrderHistoryPage.VerifyNumberOfItemsAfterDelete'(itemCount)
 
-WebUI.closeBrowser()
+
 

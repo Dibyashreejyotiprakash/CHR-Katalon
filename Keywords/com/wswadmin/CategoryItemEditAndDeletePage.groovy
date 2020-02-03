@@ -78,9 +78,9 @@ public class CategoryItemEditAndDeletePage {
 
 			if(statusofeditpop == true) {
 				action.TypeAndClear(metatagtextbox, "Test Meta Tag")
-				WebUI.delay(4)
+				//WebUI.delay(4)
 				action.Click(metattagupdatebtn)
-				WebUI.delay(4)
+				//WebUI.delay(4)
 
 				boolean statusofedietdmsg = action.IsElementDisplayed(editsuccessfullmsg)
 				Assert.assertTrue(statusofedietdmsg)

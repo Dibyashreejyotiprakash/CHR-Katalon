@@ -40,6 +40,5 @@ public class FulfilmentCorpDistAdmin {
 		action.Type(corpddn, "339")
 		action.WaitVisible(corpddnvalue)
 		action.Click(corpddnvalue)
-		WebUI.delay(10)
 	}
 }

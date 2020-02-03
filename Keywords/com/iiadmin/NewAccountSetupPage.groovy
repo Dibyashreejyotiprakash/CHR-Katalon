@@ -36,20 +36,24 @@ public class NewAccountSetupPage {
 	By payperdownload = By.xpath("//label[contains(text(),'Pay per Download')]")
 	By monthlysubscription = By.xpath("//label[contains(text(),'Monthly Subscription')]")
 	By payfordownloads = By.xpath("//td[contains(text(),'Pay for Downloads')]")
-	By payperdownloadradiobtn = By.xpath("//input[@id='ctl00_Body_fvDistributors_DigitalDownloadPaymentType_0']")
-	By monthlysubscriptionradiobtn = By.xpath("//input[@id='ctl00_Body_fvDistributors_DigitalDownloadPaymentType_1']")
-
+	By payperdownloadradiobtn = By.xpath("//input[@id = 'ctl00_Body_fvAccounts_DigitalDownloadPaymentType_0']")
+	By monthlysubscriptionradiobtn = By.xpath("//input[@id='ctl00_Body_fvAccounts_DigitalDownloadPaymentType_1']")
+	By payperdownloadradiobtndist = By.xpath("//input[@id='ctl00_Body_fvDistributors_DigitalDownloadPaymentType_0']")
+	By monthlysubscriptionradiobtndist = By.xpath("//input[@id='ctl00_Body_fvDistributors_DigitalDownloadPaymentType_1']")
 
 	@Keyword
 	public void ValidateDDPaymentOptionsForCorp() {
 		try {
 			action.WaitVisible(corpdropdown)
-			action.SelectByValue(corpdropdown, "300")
+			action.SelectByText(corpdropdown, "300 - Instant Impact 4.0 Demo Corp (Dist.)")
+			//action.SelectByValue(corpdropdown, "300")
+			action.WaitVisible(payfordownloads)
+			action.ScrollToViewElement(payfordownloads)
 			action.IsElementDisplayed(payfordownloads)
 			action.IsElementDisplayed(payperdownloadradiobtn)
 			action.IsElementDisplayed(monthlysubscriptionradiobtn)
 			String attribute_val = action.Attribute(payperdownloadradiobtn, "checked")
-			Assert.assertEquals(attribute_val, "checked")
+			Assert.assertEquals(attribute_val, "true")
 		}
 		catch(Exception e) {
 			Assert.fail("ValidateDDPaymentOptions User failed due to "+ e)
@@ -61,14 +65,15 @@ public class NewAccountSetupPage {
 	public void ValidateDDPaymentOptionsForDist() {
 		try {
 			action.WaitVisible(corpdropdown)
-			action.SelectByValue(corpdropdown, "300")
+			
+			action.SelectByText(corpdropdown, "300 - Instant Impact 4.0 Demo Corp (Dist.)")
 			action.WaitVisible(distributordropdown)
-			action.SelectByValue(distributordropdown, "Chicago Beverage Systems")
+			action.SelectByText(distributordropdown, "Chicago Beverage Systems")
 			action.IsElementDisplayed(payfordownloads)
-			action.IsElementDisplayed(payperdownloadradiobtn)
-			action.IsElementDisplayed(monthlysubscriptionradiobtn)
-			String attribute_val = action.Attribute(payperdownloadradiobtn, "checked")
-			Assert.assertEquals(attribute_val, "checked")
+			action.IsElementDisplayed(payperdownloadradiobtndist)
+			action.IsElementDisplayed(monthlysubscriptionradiobtndist)
+			String attribute_val = action.Attribute(payperdownloadradiobtndist, "checked")
+			Assert.assertEquals(attribute_val, "true")
 		}
 		catch(Exception e) {
 			Assert.fail("ValidateDDPaymentOptions User failed due to "+ e)

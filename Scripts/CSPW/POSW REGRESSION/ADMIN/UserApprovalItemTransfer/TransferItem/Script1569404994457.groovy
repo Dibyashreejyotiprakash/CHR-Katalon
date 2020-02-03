@@ -18,12 +18,12 @@ CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameposw, Glo
 //Enter credential
 CustomKeywords.'com.poswm.LoginPage.PoswLogin'(GlobalVariable.PoswTestUserName, GlobalVariable.PoswTestPassword)
 //select BU as Empire Marchent 
-CustomKeywords.'com.poswm.LoginPage.SelectEmpireMerchantBU'()
+//CustomKeywords.'com.poswm.LoginPage.SelectEmpireMerchantBU'()
 
 CustomKeywords.'com.poswm.WarehouseDashBoardPage.ClickOnUserItemApprovalTransfer'()
 
 CustomKeywords.'com.poswm.UserTransfer.VerifyUserItemApprovalTransferPage'()
 
-CustomKeywords.'com.poswm.UserTransfer.VerifyAllFields'()
+//CustomKeywords.'com.poswm.UserTransfer.VerifyAllFields'()
 
 CustomKeywords.'com.poswm.UserTransfer.TransferItem'()

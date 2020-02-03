@@ -26,13 +26,13 @@ public class AssociateProductUnitPage {
 
 	WebDriver driver = DriverFactory.getWebDriver();
 	Interaction action = new Interaction();
-	
-	 By corptextbox = By.xpath("//*[@id='ctl00_cphMain_rcbCorp_Input']")
-	 By corpoddnarrow = By.xpath("//*[@id='ctl00_cphMain_rcbCorp_Arrow']")
-	 By corpddnvalue = By.xpath("//*[@id='ctl00_cphMain_rcbCorp_DropDown']//li[text()='300 - Instant Impact 4.0 Demo Corp (Dist.)']")
-	 By productunitarrow = By.xpath("//*[@id='ctl00_cphMain_rcbProductUnit_Arrow']")
-	 By productunittextbox = By.xpath("//*[@id='ctl00_cphMain_rcbProductUnit_Input']")
-	 By updatebtn = By.xpath("//*[@id='cphMain_btnUpdateFul']")
+
+	By corptextbox = By.xpath("//*[@id='ctl00_cphMain_rcbCorp_Input']")
+	By corpoddnarrow = By.xpath("//*[@id='ctl00_cphMain_rcbCorp_Arrow']")
+	By corpddnvalue = By.xpath("//*[@id='ctl00_cphMain_rcbCorp_DropDown']//li[text()='300 - Instant Impact 4.0 Demo Corp (Dist.)']")
+	By productunitarrow = By.xpath("//*[@id='ctl00_cphMain_rcbProductUnit_Arrow']")
+	By productunittextbox = By.xpath("//*[@id='ctl00_cphMain_rcbProductUnit_Input']")
+	By updatebtn = By.xpath("//*[@id='cphMain_btnUpdateFul']")
 
 	@Keyword
 	public void VerifyAssociateProductUnitPage() {
@@ -43,27 +43,23 @@ public class AssociateProductUnitPage {
 			Assert.fail("Verify Associate Product Unit Page failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
-	public void AssociateItemToProductUnit()
-	{
+	public void AssociateItemToProductUnit() {
 		try{
 			action.Click(corpoddnarrow)
 			action.Type(corptextbox, "300 - Instant Impact 4.0 Demo Corp (Dist.)")
 			action.Click(updatebtn)
 			action.ScrollToTopOgPage()
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Type(productunittextbox, "Test Product")
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.ScrollToBottomOfPage()
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(updatebtn)
 		}
 		catch(Exception e) {
 			Assert.fail("Associate Item To Product Unit failed due to "+ e)
 		}
 	}
-	
-	
-	
 }

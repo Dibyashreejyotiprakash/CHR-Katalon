@@ -110,7 +110,7 @@ public class QuoteItemSearch
 	{
 		try{
 			action.Click(firstquotelink)
-			WebUI.delay(10)
+			//WebUI.delay(10)
 			Set<String> windowids = driver.getWindowHandles()
 			Iterator<String> it = windowids.iterator()
 			while (it.hasNext()) {

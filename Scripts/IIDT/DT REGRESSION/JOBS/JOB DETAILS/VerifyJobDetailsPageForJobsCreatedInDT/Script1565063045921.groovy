@@ -25,7 +25,7 @@ CustomKeywords.'com.designtracker.HomePage.ClickOnNewJob'()
 
 CustomKeywords.'com.designtracker.JobNewPage.VerifyNewJobPage'()
 
-CustomKeywords.'com.designtracker.JobNewPage.VerifyCreateNewJobs'()
+CustomKeywords.'com.designtracker.JobNewPage.VerifyCreateNewJobs1'()
 
 CustomKeywords.'com.designtracker.JobDetailsPage.ClickOnDetailsBtn'()
 

@@ -86,7 +86,7 @@ public class GlobalMetataggingMaintenancePage {
 			action.Click(categorydropdown)
 			action.Click(searchcategoryfield)
 			action.Type(searchcategoryfield, "Brand Name")
-			WebUI.delay(3)
+			//WebUI.delay(3)
 			action.Click(selectbrandcategory)
 		}
 		catch(Exception e) {
@@ -164,10 +164,10 @@ public class GlobalMetataggingMaintenancePage {
 	public void ValidateDeleteSpecialCharacterGlobalMetatag(){
 
 		try {
-			WebUI.delay(8)
+			//WebUI.delay(8)
 			action.Click(globalsearchbox)
 			action.Type(globalsearchbox,"Te@t")
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.WaitVisible(specialcharactermetatag)
 			action.Click(specialmetatagelipssys)
 			action.Click(deleteoption)

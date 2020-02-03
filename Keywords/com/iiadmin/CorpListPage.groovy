@@ -57,8 +57,28 @@ public class CorpListPage {
 	public void NavigateToCorp300() {
 		String environment = GlobalVariable.environment
 		try{
+			
+			if(environment == "UAT")
+			{
 			WebUI.navigateToUrl("http://iiadmin.uat.brandmuscle.net/GraphicMaintenance/EditItems.aspx?CorpID=339")
 			action.WaitForPageToLoad()
+			}
+			else if(environment == "STAGING")
+			{
+				WebUI.navigateToUrl("http://iiadmin.stage.brandmuscle.net/GraphicMaintenance/EditItems.aspx?CorpID=339")
+				action.WaitForPageToLoad()
+			}
+			else if(environment == "PROD")
+			{
+				WebUI.navigateToUrl("http://iiadmin.brandmuscle.net/GraphicMaintenance/EditItems.aspx?CorpID=339")
+				action.WaitForPageToLoad()
+			}
+			else
+			{
+				println("No environment Match")
+				throw new Exception("No environment Match")
+			}
+			
 		}
 		catch(Exception e) {
 			Assert.fail("Navigate To Corp 339 failed due to "+ e)

@@ -11,12 +11,6 @@
    <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
    <testSuiteGuid>3fc1fc15-9202-4473-9d19-5a3029593243</testSuiteGuid>
    <testCaseLink>
-      <guid>c9832d3c-89d0-44bc-8240-327cd7702aed</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/IIDT/II REGRESSION/CouponMaker/VerifyLoginLogout</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
       <guid>c9ac5dff-d413-4f53-b0fe-699bac74c092</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>

@@ -215,6 +215,27 @@ public class JobNewPage {
 		}
 
 	}
+	
+	
+	@Keyword
+	public String VerifyCreateNewJobs() {
+		String jobIdValue = null
+		try {
+			action.WaitVisible(corporationddn)
+			action.SelectByText(corporationddn, "Demo Distributor (QA)")
+			action.SelectByText(marketddn, "Demo Dist. 1 QA")
+			action.SelectByText(salespersonddn, "TESTADMIN, TESTADMIN (demoqa@brandmuscle.com)")
+			action.SelectByIndex(accountddn, 1)
+			action.SelectByText(jobtypeddn, "Print Only")
+			action.Click(createjobbtn)
+			action.WaitForPageToLoad()
+			jobIdValue = action.GetText(jobid)
+			return jobIdValue
+		}
+		catch(Exception e) {
+			Assert.fail("Verify Create New Jobs Failed due to "+ e)
+		}
+	}
 
 }
 

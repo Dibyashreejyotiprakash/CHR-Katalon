@@ -75,6 +75,10 @@ class ShoppingCartPage {
 	By iconCrossBtn = By.xpath("//a[@id='ctl00_Body_shopCartItemsListView_ctrl0_delLineItemBtn']")
 
 	By firstitemeditlink = By.xpath("//*[@id='ctl00_Body_shopCartItemsListView_ctrl0_editItemDesignLink']")
+	By clearshoppingcartbtn = By.xpath("//a[@id='Body_lnkDeleteAll']")
+	By clearshoppingconfirm = By.xpath("(//span[contains(text(),'Yes')])[1]")
+	By shoppingCartEmptytext = By.xpath("//h4[contains(text(),'Your shopping cart is empty')]")
+
 
 	@Keyword
 	public void VerifyShoppingCartPage() {
@@ -580,6 +584,28 @@ class ShoppingCartPage {
 		try
 		{
 			action.ScrollToBottomOfPage()
+			action.WaitUntilElementClickable(btnContinueToCheckout)
+			action.Click(btnContinueToCheckout)
+			action.WaitForPageToLoad()
+		}
+		catch (Exception e)
+		{
+			println("Click On Check Out Btn failed due ");
+			throw e;
+		}
+
+	}
+
+	@Keyword
+	public void ClickOnbottomCheckOutBtn()
+	{
+
+		try
+		{
+			WebUI.delay(3)
+			action.ScrollToBottomOfPage()
+			action.WaitVisible(btnContinueToCheckout)
+			action.WaitUntilElementClickable(btnContinueToCheckout)
 			action.Click(btnContinueToCheckout)
 			action.WaitForPageToLoad()
 		}
@@ -596,12 +622,43 @@ class ShoppingCartPage {
 	{
 		try
 		{
+			WebUI.delay(5)
+			action.ScrollToBottomOfPage()
 			action.WaitVisible(btnContinueToCheckout)
+			action.WaitUntilElementClickable(btnContinueToCheckout)
 			action.Click(btnContinueToCheckout)
 		}
 		catch(Exception e)
 		{
 			Assert.fail("CheckoutDDitem failed due to "+e)
+		}
+	}
+
+	@Keyword
+	public void WaitForCheckoutBtn()
+	{
+		try
+		{
+			action.WaitVisible(btnContinueToCheckout)
+		}
+		catch(Exception e)
+		{
+			Assert.fail("WaitForCheckoutBtn failed due to "+e)
+		}
+
+	}
+
+	@Keyword
+	public void ClearShoppingCart() {
+		try {
+			action.Click(clearshoppingcartbtn)
+			action.WaitVisible(clearshoppingconfirm)
+			action.Click(clearshoppingconfirm)
+			action.WaitVisible(shoppingCartEmptytext)
+		}
+		catch(Exception e) {
+			println("ClearShoppingCart Failed")
+			Assert.fail("ClearShoppingCart failed due to "+e)
 		}
 	}
 

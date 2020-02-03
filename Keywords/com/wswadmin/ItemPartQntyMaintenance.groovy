@@ -43,7 +43,7 @@ public class ItemPartQntyMaintenance {
 	public void ValidatePart(){
 
 		try {
-			//WebUI.delay(10)
+			////WebUI.delay(10)
 			boolean grid_status = action.IsDisplayed(norecords)
 			println("Grid Status "+grid_status)
 
@@ -69,15 +69,15 @@ public class ItemPartQntyMaintenance {
 					action.Click(additempart)
 					action.Click(itempartdropdown)
 					action.Type(itempartdropdown, "CLV")
-					WebUI.delay(3)
+					//WebUI.delay(3)
 					action.WaitVisible(product1)
 					action.WaitUntilElementClickable(product1)
 					action.Click(product1)
-					WebUI.delay(3)
+					//WebUI.delay(3)
 					action.WaitUntilElementClickable(minqnty)
 					action.Click(minqnty)
 					action.Type(minqnty, "10")
-					WebUI.delay(2)
+					//WebUI.delay(2)
 					action.Click(addbtn)
 				}
 			}
@@ -86,15 +86,15 @@ public class ItemPartQntyMaintenance {
 				action.Click(additempart)
 				action.Click(itempartdropdown)
 				action.Type(itempartdropdown, "CLV")
-				WebUI.delay(5)
+				//WebUI.delay(5)
 				action.WaitVisible(product1)
 				action.WaitUntilElementClickable(product1)
 				action.Click(product1)
-				WebUI.delay(3)
+				//WebUI.delay(3)
 				action.WaitUntilElementClickable(minqnty)
 				action.Click(minqnty)
 				action.Type(minqnty, "10")
-				WebUI.delay(2)
+				//WebUI.delay(2)
 				action.Click(addbtn)
 			}
 		}
@@ -109,7 +109,7 @@ public class ItemPartQntyMaintenance {
 	public void ValidateAnotherPart(){
 
 		try {
-			WebUI.delay(10)
+			//WebUI.delay(10)
 			boolean grid_status = action.IsDisplayed(norecords)
 			println("Grid Status "+grid_status)
 
@@ -135,15 +135,15 @@ public class ItemPartQntyMaintenance {
 					action.Click(additempart)
 					action.Click(itempartdropdown)
 					action.Type(itempartdropdown, "CLV")
-					WebUI.delay(3)
+					//WebUI.delay(3)
 					action.WaitVisible(product2)
 					action.WaitUntilElementClickable(product2)
 					action.Click(product2)
-					WebUI.delay(3)
+					//WebUI.delay(3)
 					action.WaitUntilElementClickable(minqnty)
 					action.Click(minqnty)
 					action.Type(minqnty, "10")
-					WebUI.delay(2)
+					//WebUI.delay(2)
 					action.Click(addbtn)
 				}
 			}
@@ -152,15 +152,15 @@ public class ItemPartQntyMaintenance {
 				action.Click(additempart)
 				action.Click(itempartdropdown)
 				action.Type(itempartdropdown, "CLV")
-				WebUI.delay(5)
+				//WebUI.delay(5)
 				action.WaitVisible(product2)
 				action.WaitUntilElementClickable(product2)
 				action.Click(product2)
-				WebUI.delay(3)
+				//WebUI.delay(3)
 				action.WaitUntilElementClickable(minqnty)
 				action.Click(minqnty)
 				action.Type(minqnty, "7")
-				WebUI.delay(2)
+				//WebUI.delay(2)
 				action.Click(addbtn)
 			}
 		}

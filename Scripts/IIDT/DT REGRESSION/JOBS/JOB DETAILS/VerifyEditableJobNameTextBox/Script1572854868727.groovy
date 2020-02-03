@@ -30,13 +30,15 @@ CustomKeywords.'com.ii4usersites.CreateDesignPage.ClickOnNextStepBtnAndNavigateT
 
 CustomKeywords.'com.ii4usersites.ProductionSelectionPage.VerifyProductSelectionPage'()
 
+CustomKeywords.'com.ii4usersites.ProductionSelectionPage.SelectItemType'()
+
 CustomKeywords.'com.ii4usersites.ProductionSelectionPage.SetQuantity'()
 
 CustomKeywords.'com.ii4usersites.ProductionSelectionPage.ClickOnNo'()
 
 CustomKeywords.'com.ii4usersites.ProductionSelectionPage.ClickOnAddToKart'()
 
-CustomKeywords.'com.ii4usersites.ShoppingCartPage.VerifyShoppingCartPage'()
+//CustomKeywords.'com.ii4usersites.ShoppingCartPage.VerifyShoppingCartPage'()
 
 CustomKeywords.'com.ii4usersites.ShoppingCartPage.ClickOnCheckOutBtn'()
 

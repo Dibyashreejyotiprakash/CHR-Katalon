@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>ValidateGlobalAddMetatagFields</name>
+   <name>IIDTM-1053</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>6a78a3d9-e268-4c6a-87df-9aa1522d6b2e</testCaseGuid>
+   <testCaseGuid>ac8a2590-69f7-478a-be12-18eea201d359</testCaseGuid>
 </TestCaseEntity>

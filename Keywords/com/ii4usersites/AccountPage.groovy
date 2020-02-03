@@ -33,8 +33,9 @@ public class AccountPage {
 	By allbuttons = By.xpath("//*[@class='helpPage']/div[2]/div/div/div/h2")
 	By profilelbel = By.xpath("//*[@id='Body_lblAccountPageProfile']")
 	By accountlabel = By.xpath("//*[contains(text(),'AccountTest')]")
-
-
+	By mydownloadssec = By.xpath("//h2[@id='Body_lblMyDownloads']")
+	By mydownloadlink = By.xpath("//a[contains(text(),'View My Downloads')]")
+	
 
 	List<WebElement> alltabslables = action.GetElements(allbuttons)
 
@@ -159,6 +160,7 @@ public class AccountPage {
 		String actuallogolockerlable = null
 		for(int i=0;i<= alllables.size();i++) {
 			actuallogolockerlable = alllables.get(4).getText()
+			println ("@@@@ "+actuallogolockerlable)
 			if(actuallogolockerlable.equals(expectedlogolockerlable)) {
 				println ("Profile resource message is appearing "+ actuallogolockerlable )
 			}
@@ -211,7 +213,7 @@ public class AccountPage {
 
 	@Keyword
 	public void VerifyDeleteAddressListResourceMsg() {
-		String expectedaddresslistlable = "Address List"
+		String expectedaddresslistlable = "Address Lists"
 		println ("Expected Lable for AddressList "+ expectedaddresslistlable)
 		List<WebElement> alllables = action.GetElements(allbuttons)
 		String actualaddresslistlable = null
@@ -281,6 +283,25 @@ public class AccountPage {
 			}
 			break;
 		}
+	}
+	
+	@Keyword
+	public void NavigateToMyDownloadsPage()
+	{
+		try
+		{
+			action.WaitVisible(mydownloadssec)
+			action.ScrollToViewElement(mydownloadssec)
+			action.WaitVisible(mydownloadlink)
+			action.Click(mydownloadlink)
+			
+		}
+		catch(Exception e)
+		{
+			
+			
+		}
+		
 	}
 }
 

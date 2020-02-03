@@ -13,10 +13,7 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-
-CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameiiusersite, GlobalVariable.testtyperegression,GlobalVariable.environment)
-
-CustomKeywords.'com.ii4usersites.LoginPage.LoginToDemoCorp'(GlobalVariable.iiusersiteusername, GlobalVariable.iiusersitepassword)
+CustomKeywords.'com.utilities.Interaction.GetUrl'(GlobalVariable.bunameiiusersite, GlobalVariable.testtyperegression, GlobalVariable.environment)
 
 CustomKeywords.'com.ii4usersites.LoginPage.LoginToDemoCorp'(GlobalVariable.iiusersiteusername, GlobalVariable.iiusersitepassword)
 
@@ -26,13 +23,9 @@ CustomKeywords.'com.ii4usersites.OrderFormDefaultPage.ClickonCreateNewCustomOrde
 
 CustomKeywords.'com.ii4usersites.OrderFormOrderHederPage.EnterValuesToFiledsInOrderPage'()
 
-CustomKeywords.'com.ii4usersites.OrderFormDefaultPage.ClickonCreateNewCustomOrder'()
-
-CustomKeywords.'com.ii4usersites.OrderFormPrintDetails1Page.EnterAllVauesInPrintDetails1Page'()
+CustomKeywords.'com.ii4usersites.OrderFormItemDetails1Page.ClickOnSmallPrintBtn'()
 
 CustomKeywords.'com.ii4usersites.OrderFormPrintDetails1Page.EnterAllVauesInPrintDetails1Page'()
 
 CustomKeywords.'com.ii4usersites.OrderFormPrintDetails2Page.VerifyGLCodevisibilty'()
-
-
 

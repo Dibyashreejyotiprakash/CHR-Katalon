@@ -42,11 +42,15 @@ public class MyDownloadsPage extends ConfirmationPage {
 	By statuscolumn = By.xpath("//th[contains(text(),'Status')]")
 	By actioncolumn = By.xpath("//th[contains(text(),'Actions')]")
 	By unavailablerecord = By.xpath("(//label[contains(text(),'Unavailable')])[1]")
+	By mydownloadslink = By.xpath(".//*[@id='Body_divMyDownloadLink']/a")
 
 	@Keyword
 	public void ValidateOrder() {
 		try {
+			action.WaitVisible(mydownloadslink)
 			String check_Order_num = GetConfNumAndValidateOrderOnMyDownloads()
+			action.Click(mydownloadslink)
+			action.WaitVisible(ddSearch)
 			action.Type(ddSearch, check_Order_num)
 			action.Click(Searchbtn)
 			action.IsDisplayed(ddrecord)
@@ -66,8 +70,8 @@ public class MyDownloadsPage extends ConfirmationPage {
 			action.IsElementDisplayed(datecreated)
 			action.IsElementDisplayed(statuscolumn)
 			action.IsElementDisplayed(actioncolumn)
-			action.Click(showunavailablechkbox)
-			action.IsElementDisplayed(unavailablerecord)
+			//action.Click(showunavailablechkbox)
+			//action.IsElementDisplayed(unavailablerecord)
 		}
 		catch(Exception e) {
 			Assert.fail("ValidateMyDownloadsField Failed Due to "+e)

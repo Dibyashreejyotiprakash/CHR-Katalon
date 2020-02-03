@@ -108,15 +108,15 @@ public class SalesPeople {
 	@Keyword
 	public void ValidateMandatoryFieldForSalesPeople() {
 		try {
-			action.IsElementDisplayed(corpName)
+			//action.IsElementDisplayed(corpName)
 			action.SelectByText(corpName, "Instant Impact 4.0 Demo Corp (Dist.)")
-			action.WaitVisible(progressIndicator)
+			//action.WaitVisible(progressIndicator)
 			action.SelectByText(market, "Chicago Beverage Systems")
-			action.WaitVisible(progressIndicator)
+			//action.WaitVisible(progressIndicator)
 			action.Click(addnewsalepersonbtn)
-			action.IsElementDisplayed(insertbtn)
+			//action.IsElementDisplayed(insertbtn)
 			action.Click(insertbtn)
-			action.IsElementDisplayed(requiredfieldmssg)
+			//action.IsElementDisplayed(requiredfieldmssg)
 		}
 		catch(Exception e) {
 			Assert.fail("ValidateSalesPeopleFields Failed due to "+e)

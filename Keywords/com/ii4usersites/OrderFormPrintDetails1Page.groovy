@@ -46,55 +46,55 @@ public class OrderFormPrintDetails1Page {
 	By allitemslabel = By.xpath("//*[text()='All Items']")
 	By orderLineName = By.xpath("//*[@id='ctl00_Body_txtJobLineName']")
 	By allitemsvalueforSmallPrint = By.xpath("//li[contains(text(),'Counter Card')]")
-	
+
 	@Keyword
 	public void EnterAllVauesInPrintDetails1Page() {
 		try {
 			WebUI.scrollToPosition(500, 500)
 			action.WaitVisible(allitemsddn)
-			//WebUI.delay(15)
+			////WebUI.delay(15)
 			action.Click(allitemsddn)
-			//WebUI.delay(5)
+			////WebUI.delay(5)
 			//action.WaitVisible(allitemsvalue)
-			//WebUI.delay(5)
+			////WebUI.delay(5)
 			action.Click(allitemsvalue)
-			//WebUI.delay(10)
+			////WebUI.delay(10)
 			//action.WaitUntilElementClickable(sizeddn)
 			action.ScrollToViewElement(orderLineName)
 			action.Click(dropdownSize)
-			//WebUI.delay(5)
+			////WebUI.delay(5)
 			//action.WaitUntilElementClickable(sizevalue)
 
 			//action.WaitVisible(sizevalue)
-			//WebUI.delay(10)
+			////WebUI.delay(10)
 			action.Click(sizevalue)
-			//WebUI.delay(10)
+			////WebUI.delay(10)
 			//action.ScrollToViewElement(dropdownSize)
 			//action.ScrollToViewElement(paperddn)
 			//action.WaitUntilElementClickable(paperddn)
-			//WebUI.delay(10)
-			action.Click(paperddn)
-			//WebUI.delay(10)
+			////WebUI.delay(10)
+			//action.Click(paperddn)
+			////WebUI.delay(10)
 			//action.WaitUntilElementClickable(paperddnvalue)
-			//WebUI.delay(10)
-			action.Click(paperddnvalue)
-			//WebUI.delay(10)
-			//WebUI.delay(10)
+			////WebUI.delay(10)
+			//action.Click(paperddnvalue)
+			////WebUI.delay(10)
+			////WebUI.delay(10)
 			action.ScrollToBottomOfPage()
-			action.Click(accesoriesddn)
-			//WebUI.delay(10)
-			action.Click(accesoriesddnvalue)
-			//WebUI.delay(10)
+			//action.Click(accesoriesddn)
+			////WebUI.delay(10)
+			//action.Click(accesoriesddnvalue)
+			////WebUI.delay(10)
 			//action.WaitUntilElementClickable(nextbtn)
 			action.Click(nextbtn)
-			//WebUI.delay(10)
+			////WebUI.delay(10)
 			action.WaitForPageToLoad()
 		}
 		catch(Exception e) {
 			println ("Enter All Vaues In Print Details1 Page failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
 	public void EnterAllVauesInPrintDetails1PageForSmallPrint() {
 		try {

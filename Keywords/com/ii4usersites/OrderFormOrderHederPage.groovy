@@ -38,6 +38,7 @@ public class OrderFormOrderHederPage {
 	By accountnametobevalidated = By.xpath("(//li[contains(text(),'QATest2019')])[1]")
 	By nextbtn = By.xpath("//span[contains(text(),'Next')]")
 	By jobTittleTextField = By.xpath("//*[@id='ctl00_Body_rtbJobTitle']")
+	By jobduedatecustommsg = By.xpath("//*[@id='Body_lblCustomMessage']")
 
 
 	@Keyword
@@ -60,7 +61,6 @@ public class OrderFormOrderHederPage {
 		catch(Exception e) {
 			println ("Enter Values To Fileds In Order Page failed due to "+ e)
 			Assert.fail()
-			
 		}
 	}
 
@@ -97,7 +97,7 @@ public class OrderFormOrderHederPage {
 			action.WaitVisible(accountname)
 			action.Click(accountname)
 			action.Type(accountname, "QATest2019")
-			WebUI.delay(2)
+			//WebUI.delay(2)
 			action.IsElementDisplayed(accountnametobevalidated)
 		}
 		catch(Exception e) {
@@ -112,6 +112,18 @@ public class OrderFormOrderHederPage {
 		}
 		catch(Exception e) {
 			Assert.fail("ClickNextBtn failed "+e)
+		}
+	}
+
+	@Keyword
+	public void VerifyJobDueDateCustomMsg(){
+		try {
+			action.ScrollToBottomOfPage()
+			boolean statusofcustommsg = action.IsElementDisplayed(jobduedatecustommsg)
+			Assert.assertTrue(statusofcustommsg)
+		}
+		catch(Exception e) {
+			Assert.fail("Verify Job Due Date Custom Msg failed "+e)
 		}
 	}
 }

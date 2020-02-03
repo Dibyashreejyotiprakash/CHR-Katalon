@@ -59,9 +59,9 @@ public class LowStockNotificationPage {
 			action.WaitUntilElementClickable(corporationddn)
 			action.Click(corporationddn)
 			action.Type(corpddntextbox, "300")
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			action.Click(democorp)
-			WebUI.delay(5)
+			//WebUI.delay(5)
 			boolean statusoflowstockcheckbox = action.IsElementSelected(lowstockcheckbox)
 			println ("Status of check box *************"+ statusoflowstockcheckbox)
 
@@ -75,10 +75,10 @@ public class LowStockNotificationPage {
 			else {
 				action.Click(lowstockcheckbox)
 				action.WaitVisible(defaultemailnotificationlabel)
-				WebUI.delay(5)
+				//WebUI.delay(5)
 				boolean statusofdefaultemail = action.IsElementDisplayed(defaultemailnotificationlabel)
 				Assert.fail()
-				WebUI.delay(5)
+				//WebUI.delay(5)
 				boolean statusofadditionalemail = action.IsElementDisplayed(additionalemailnotificationlabel)
 				Assert.fail()
 				action.Click(aditilamailtextarea)
@@ -91,15 +91,13 @@ public class LowStockNotificationPage {
 			println ("Additional Mail failed due to "+ e)
 		}
 	}
-	
+
 	@Keyword
-	public void Verifyfields()
-	{
+	public void Verifyfields() {
 		try{
 			action.IsElementDisplayed(corporationddn)
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Assert.fail("Verify fields failed due to "+ e)
 		}
 	}
