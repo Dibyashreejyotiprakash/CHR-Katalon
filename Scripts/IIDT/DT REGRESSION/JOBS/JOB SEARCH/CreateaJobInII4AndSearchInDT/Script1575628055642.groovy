@@ -53,6 +53,6 @@ CustomKeywords.'com.designtracker.HomePage.ClickOnJobSearch'()
 
 CustomKeywords.'com.designtracker.JobSearchPage.VerifyJobSearchPage'()
 
-WebUI.delay(300)
+//WebUI.delay(300)
 
 CustomKeywords.'com.designtracker.JobSearchPage.VerifyCreatedJobInDTSearchPage'(confirmationno)

@@ -35,33 +35,6 @@ public class LoginPage {
 	By BUselectionDropdown = By.xpath("//*[@id='MainContent_ddlBusinessUnit']")
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	@Keyword
 	public void VerifyPoswLoginPage() {
 		try{
@@ -84,7 +57,7 @@ public class LoginPage {
 			action.Click(loginbtn)
 			action.WaitForPageToLoad()
 
-			SelectEmpireMerchantBU()
+			//SelectEmpireMerchantBU()
 		}
 		catch(Exception e) {
 			println ("Posw login failed ue to "+ e)
