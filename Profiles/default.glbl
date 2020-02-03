@@ -81,7 +81,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'UAT'</initValue>
+      <initValue>'DEV'</initValue>
       <name>environment</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -478,5 +478,10 @@
       <description></description>
       <initValue>'https://admintool.v5dev.brandmuscle.net/'</initValue>
       <name>consolidatorurlDEV</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://csg.v5dev.brandmuscle.net/'</initValue>
+      <name>poswDEV</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>
